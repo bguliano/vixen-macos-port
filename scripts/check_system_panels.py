@@ -188,7 +188,7 @@ def main():
     assert digest(executable) == manifest['executableSha256'] and digest(driver) == manifest['driverSha256']
     assert manifest['ownership'] == args.ownership
     assert all(digest(Path(p)) == h for p, h in manifest['pinnedInputHashes'].items())
-    owner_paths = [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist', Path.home()/'Library/Application Support/Vixen/Settings.xml']
+    owner_paths = [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist', Path.home()/'Library/Application Support/Vixen/Settings.xml']
     owner_before = {str(p): digest(p) for p in owner_paths}
     assert not (out/'events.json').exists()
     config = dict(manifest)

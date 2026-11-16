@@ -40,7 +40,7 @@ def write(p,value):Path(p).write_text(json.dumps(value,indent=2,sort_keys=True)+
 def hook(*args):return dict(action='hook',name='elementMapper',path=list(args))
 def wait(n=.3):return dict(action='wait',seconds=n)
 def owner_preferences():
-    paths=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist'];folder=Path.home()/'Library/Application Support/Vixen'
+    paths=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist'];folder=Path.home()/'Library/Application Support/Vixen'
     if folder.exists():paths+=sorted(p for p in folder.rglob('*') if p.is_file())
     return {str(p):sha(p) if p.is_file() else None for p in paths}
 def parse_state(detail):

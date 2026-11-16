@@ -22,7 +22,7 @@ def save(path,value):
     tmp=Path(str(path)+'.tmp');tmp.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n');tmp.replace(path)
 def canonical(node):return [node.tag,[list(p) for p in sorted(node.attrib.items())],(node.text or '').strip(),[canonical(c) for c in node]]
 def owner_preferences():
-    paths=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist'];folder=Path.home()/'Library/Application Support/Vixen'
+    paths=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist'];folder=Path.home()/'Library/Application Support/Vixen'
     if folder.exists():paths+=sorted(p for p in folder.rglob('*') if p.is_file())
     return {str(p):sha(p) if p.is_file() else None for p in paths}
 def assert_services(profile):

@@ -74,7 +74,7 @@ def main():
     assert all(digest(k)==v for k,v in m['pinnedInputHashes'].items())
     assert not (out/'native-result.json').exists()
     assert all(digest(out/'profile'/p)==h for p,h in m['fixtureHashes'].items())
-    prefs=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
+    prefs=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
     before={str(p):digest(p) if p.exists() else None for p in prefs}
     env={k:v for k,v in os.environ.items() if not k.startswith(('VIXEN_','DYLD_'))}
     settings=out/'private-settings';settings.mkdir(exist_ok=True)

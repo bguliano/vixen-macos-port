@@ -1,63 +1,68 @@
-# Vixen for macOS
+# Vixen for macOS: unofficial port (alpha)
 
-A work-in-progress native macOS port of [Vixen Lights](https://github.com/VixenLights/Vixen), with a Rust engine and SwiftUI/AppKit interface. This is an independent port, not an official Vixen release.
+> **This is an unofficial, community-made port by [bguliano](https://github.com/bguliano).**
+> It is not made, endorsed or supported by the Vixen Lights team, and [Vixen Lights](https://github.com/VixenLights/Vixen) has no official macOS version. Please report problems with this port [here](https://github.com/bguliano/vixen-macos-port/issues), not to the Vixen team.
 
-The current priority is reliable everyday use on the maintainer's Mac: opening, editing, saving and reopening shows, preview, playback, and export. Crashes, lost changes, broken workflows, and noticeable performance or synchronization issues take priority over exact Windows pixel or audio-sample parity. The port is not yet declared fully verified or ready for public release.
+A native macOS version of the Vixen 3 light sequencer, with a Rust engine and a SwiftUI/AppKit interface. It reads and writes the same show files as Vixen 3.13 for Windows.
 
-## Upstream and repository layout
+## Alpha status: please read first
 
-This public fork preserves the official Vixen commit history. The `macos-port` branch contains the native macOS port; `master` retains the original Windows source. The original Vixen source and its history are retained through the `upstream/Vixen` Git submodule, pinned to commit `e111ae41963abfa48b70f884445950e94e432e02`. Initialize it when cloning:
+This port is an **alpha**. It has **not been tested extensively**: almost all of the testing so far happened on one Mac, with one real show. Expect bugs, missing pieces and differences from Windows Vixen.
+
+- **Back up your show folder before opening it with this app**, and preferably work on a copy.
+- It runs only on **Apple Silicon Macs with macOS 26 or later**. Intel Macs aren't supported.
+- See [current status](docs/STATUS.md) and [known differences from Windows Vixen](docs/DIFFERENCES.md).
+
+## Download
+
+Download the latest `.zip` from [Releases](https://github.com/bguliano/vixen-macos-port/releases), unzip it, and drag **Vixen.app** into Applications. Release builds are signed and notarized by Apple, so they open normally.
+
+## Build from source
+
+You need:
+
+1. **Xcode** 26 or later (free, from the App Store). Open it once to finish installing its components.
+2. **Rust**, installed with the official installer from [rustup.rs](https://rustup.rs):
+
+   ```sh
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
+
+   Then open a new Terminal window. You don't need to choose a Rust version: the repository pins one, and rustup downloads it automatically on the first build.
+
+Then download the source and build:
 
 ```sh
-git clone --branch macos-port --recurse-submodules https://github.com/bguliano/vixen-macos-port.git
+git clone --depth 1 --branch macos-port --recurse-submodules --shallow-submodules https://github.com/bguliano/vixen-macos-port.git
 cd vixen-macos-port
-```
-
-- `app/`: native Swift interface and application resources.
-- `crates/`: Rust engine, effects, media, file formats, and app bindings.
-- `tests/` and `tools/`: reference fixtures and verification tools.
-- `scripts/`: app builds and workflow checks.
-- `docs/`: implementation specifications, differences, and continuation notes.
-
-Local toolchains, app bundles, raw verification captures, screenshots, credentials, personal show/media directories, machine-access scripts and private session handoffs are not uploaded. Some development notes refer to local evidence under `target/`; those references describe historical checks and are not reproducible evidence included in this repository.
-
-## Build
-
-The current build targets Apple Silicon and macOS 26 or later. It requires Apple's development tools with Swift 6.2 or later, Python 3, and the Rust version pinned in `rust-toolchain.toml`. Intel support and notarized distribution are not claimed.
-
-The build scripts use project-local Rust directories. After installing rustup through its official installer, initialize those directories in a Bash shell:
-
-```sh
-bash
-export RUSTUP_HOME="$PWD/.tools/rustup"
-export CARGO_HOME="$PWD/.tools/cargo"
-rustup toolchain install 1.99.1 --profile minimal --component clippy --component rustfmt
-mkdir -p "$CARGO_HOME/bin"
-ln -s "$(command -v rustup)" "$CARGO_HOME/bin/rustup"
-ln -s rustup "$CARGO_HOME/bin/cargo"
-ln -s rustup "$CARGO_HOME/bin/rustc"
-source ./env.sh
-cargo fetch --locked
-scripts/build_media_tools.sh --fetch
 scripts/build_app.sh release
 ```
 
-The initial fetches download dependencies and the checksum-pinned FFmpeg source. The app is written to `build/Vixen.app`. Build scripts generate Swift bindings automatically; do not run `swift build` directly in `app/`. Existing development machines with `.tools/` already initialized can start with `source ./env.sh`.
+The first build downloads the Rust dependencies and a checksum-verified FFmpeg source, then compiles everything. Expect it to take 5–15 minutes. The app is written to `build/Vixen.app`; you can open it with `open build/Vixen.app` or copy it to Applications. Don't run `swift build` directly in `app/`: the build script generates the Swift bindings first.
 
-## Verification and status
+The `--depth 1` and `--shallow-submodules` options skip Vixen's full 15-year history, which otherwise makes the download several times larger. Leave them out if you want that history.
+
+### Running the tests
+
+Build the app once first (the audio tests use the FFmpeg it builds), then:
 
 ```sh
-# In Bash, with the project-local toolchain initialized:
 source ./env.sh
 cargo test --workspace --locked
 ```
 
-Some integration checks require native macOS services, media helpers, foreground desktop access, or external hardware. Read the relevant script before running it. Always test with a private copy of a show.
+Some extra scripts in `scripts/` check the app's interface by driving it on screen. They need macOS accessibility permissions; read a script before running it.
 
-The latest recorded workspace suite passed 3,549 tests, with zero failures and 10 ignored tests. This records a local checkpoint, not proof that all user workflows or hardware configurations work. See [current status](docs/STATUS.md), [known differences](docs/DIFFERENCES.md), and [UI guide](docs/UI_GUIDE.md).
+## Repository layout
 
-Historical test helpers may refer to example paths under `/Users/developer`; configure those for your own private fixtures before using them. Private-fixture tests can skip when those files are absent, so a green test count alone does not establish real-show coverage. The public snapshot normalizes local paths and omits private orchestration records; the recorded local test results predate that packaging cleanup.
+- `macos-port` (default branch): this port. `master` is an unchanged copy of the official Windows source.
+- `upstream/Vixen`: a Git submodule pinned to the official Vixen commit this port follows.
+- `app/`: the native Swift interface and app resources.
+- `crates/`: the Rust engine, effects, media, file formats and app bindings.
+- `tests/` and `tools/`: reference fixtures and the tools that generated them.
+- `scripts/`: the app build and interface checks.
+- `docs/`: specifications, known differences and development notes. Some notes refer to local evidence under `target/` that isn't in this repository.
 
 ## Licenses and attribution
 
-Vixen's copyright and license are retained in [License.txt](License.txt) and the upstream submodule. This project also includes components under other licenses, including GPL-2.0-or-later analysis code. The upstream license alone does not describe every component or the combined app's distribution requirements. Preserve all notices and review [the component license inventory](docs/LICENSES.md) before distributing builds or making a public release.
+Vixen is created by the Vixen team; its copyright and license are retained in [License.txt](License.txt) and the upstream submodule. This port also includes components under other licenses, including GPL-2.0-or-later analysis code, so the upstream license alone doesn't describe the combined app. Review [the component license inventory](docs/LICENSES.md) before redistributing builds.

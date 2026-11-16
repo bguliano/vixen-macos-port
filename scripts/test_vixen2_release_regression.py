@@ -39,7 +39,7 @@ def saved_map(path):
     rows=[x for x in entries[0].iter() if local(x.tag)=='ChannelMapping'];assert len(rows)==6
     return [dict(channelName=text(x,'ChannelName'),channelNumber=int(text(x,'ChannelNumber')),output=int(text(x,'ChannelOutput')),target=text(x,'ElementNodeId'),mixing=text(x,'RgbPixel')=='true',channelColor={local(c.tag):(c.text or '') for c in child(x,'ChannelColor')},destinationColor={local(c.tag):(c.text or '') for c in child(x,'DestinationColor')}) for x in rows]
 def owner_preferences():
-    paths=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist']
+    paths=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist']
     folder=Path.home()/'Library/Application Support/Vixen'
     if folder.exists():paths+=sorted(p for p in folder.rglob('*') if p.is_file())
     return {str(p):digest(p) if p.is_file() else None for p in paths}

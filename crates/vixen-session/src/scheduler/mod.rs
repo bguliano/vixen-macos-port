@@ -428,9 +428,6 @@ pub fn save_scheduler(store: &mut ModuleStore, data: &SchedulerData, today: &Loc
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::path::Path;
-
-    const REAL_STORE: &str = "/Users/developer/Documents/Vixen 3/SystemData/ModuleStore.xml";
 
     pub(crate) fn at(year: i32, month: u8, day: u8, hour: u8, minute: u8, second: u8) -> LocalDateTime {
         LocalDateTime { year, month, day, hour, minute, second, millisecond: 0 }
@@ -468,30 +465,6 @@ mod tests {
         assert_eq!(millis_between(&at(2018, 12, 31, 23, 59, 59), &at(2019, 1, 1, 0, 0, 1)), 2000);
         assert_eq!(date(1999, 12, 31).shown(date(2026, 11, 9)), date(2026, 11, 9));
         assert_eq!(date(2000, 1, 1).shown(date(2026, 11, 9)), date(2000, 1, 1));
-    }
-
-    #[test]
-    fn the_owners_schedule_loads_and_saves_back_unchanged() {
-        let Ok(store) = vixen_io::load_module_store_file(Path::new(REAL_STORE)) else { return };
-        let data = load_scheduler(&store);
-        assert_eq!(data, SchedulerData { check_interval_seconds: 1, is_enabled: false, items: vec![owners_item()], status_position: (90, 204) });
-
-        let original = store.type_data(MODULE_TYPE).unwrap().data().unwrap().clone();
-        let mut copy = store.clone();
-        save_scheduler(&mut copy, &data, &at(2026, 11, 9, 8, 0, 0));
-        let saved = copy.type_data(MODULE_TYPE).unwrap().data().unwrap();
-        assert_eq!(saved.first_difference(&original, String::new()), None, "untouched, the times keep the day they were written on");
-
-        // Once a schedule changes, the times are written on the day of the save.
-        let mut changed = data.clone();
-        changed.items[0].end_time = time(21, 30);
-        changed.is_enabled = true;
-        save_scheduler(&mut copy, &changed, &at(2026, 11, 9, 8, 0, 0));
-        let saved = copy.type_data(MODULE_TYPE).unwrap().data().unwrap();
-        let item = saved.child("Items").unwrap().child("ScheduleItem").unwrap();
-        assert_eq!(item.child_text("EndTime").as_deref(), Some("2026-11-09T21:30:00"));
-        assert_eq!(item.child_text("StartTime").as_deref(), Some("2026-11-09T19:07:00"));
-        assert_eq!(load_scheduler(&copy), changed);
     }
 
     #[test]

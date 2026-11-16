@@ -19,9 +19,16 @@ struct AboutView: View {
                         .frame(width: 196, height: 197)
                         .accessibilityHidden(true)
                 }
-                Text(admin.version.versionName)
-                    .font(.system(size: 20))
-                    .padding(.top, 24)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(admin.version.versionName)
+                        .font(.system(size: 20))
+                    Text("Unofficial macOS port (alpha) by bguliano")
+                        .font(.headline)
+                    Text("This port is not made, endorsed or supported by the Vixen team, and Vixen has no official macOS version. Please report problems with this port on its GitHub page, not to the Vixen team.")
+                        .fixedSize(horizontal: false, vertical: true)
+                    Link("github.com/bguliano/vixen-macos-port", destination: URL(string: "https://github.com/bguliano/vixen-macos-port")!)
+                }
+                .padding(.top, 24)
             }
             ReadOnlyTextView(text: license)
             HStack {

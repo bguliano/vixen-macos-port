@@ -34,7 +34,7 @@ class Controls(unittest.TestCase):
         data=json.loads(self.inputs.read_text());data['sources'].pop('__candidate_mock__/807');self.inputs.write_text(json.dumps(data))
         with self.assertRaises(AssertionError):self.invoke()
     def test_clone_identity_and_audit_failure_refused(self):
-        for key,value in [('passed',False),('signatureVerified',False),('sourceUnchanged',False),('bundleIdentifier','com.vixenlights.vixen3.mac'),('sourceApp',str(self.out/'other.app')),('executableSha256','f'*64)]:
+        for key,value in [('passed',False),('signatureVerified',False),('sourceUnchanged',False),('bundleIdentifier','io.github.bguliano.vixen-macos-port'),('sourceApp',str(self.out/'other.app')),('executableSha256','f'*64)]:
             self.clone.write_text(json.dumps(dict(self.metadata,**{key:value})))
             with self.assertRaises(AssertionError,msg=key):self.invoke()
 

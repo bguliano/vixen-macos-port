@@ -98,7 +98,7 @@ def main():
     (out/'desktop-before.json').write_text(json.dumps(state,indent=2)+'\n')
     assert state['accessibility'] and state['eventPosting'], 'Permissions are unavailable; no permission prompt or app launch attempted'
     assert state['pid']>0 and not state['vixenProcesses'], 'Another Vixen process is present; stop without touching it'
-    owner_paths=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
+    owner_paths=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
     owner_before={str(path):read_only_state(path) for path in owner_paths}
     runtime=out/'runtime';runtime.mkdir()
     env={k:v for k,v in os.environ.items() if not k.startswith(('VIXEN_','DYLD_'))}

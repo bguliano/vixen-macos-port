@@ -62,8 +62,7 @@ if [ ! -f "$BUILD/config.key" ] || [ "$(cat "$BUILD/config.key")" != "$KEY" ]; t
     printf '%s\n' "$KEY" > "$BUILD/config.key"
     printf '%s\n' "${CONFIG[@]}" > "$WORK/provenance/configure-arguments.txt"
 fi
-JOBS="${VIXEN_MEDIA_JOBS:-3}"
-[ "$JOBS" -le 6 ] || JOBS=6
+JOBS="${VIXEN_MEDIA_JOBS:-$(sysctl -n hw.ncpu)}"
 ( cd "$BUILD" && /usr/bin/make -j "$JOBS" ffmpeg ffprobe )
 for MEDIA_TOOL in ffmpeg ffprobe; do
     # Do not overwrite an inode another decoder process may still be executing.

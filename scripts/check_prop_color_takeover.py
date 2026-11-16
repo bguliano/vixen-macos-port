@@ -67,7 +67,7 @@ def main():
     m = json.loads((out/'prepared.json').read_text())
     assert digest(exe) == m['executableSha256'] and all(digest(Path(k)) == v for k,v in m['inputHashes'].items())
     assert all(digest(Path(k)) == v for k,v in m['productionHashes'].items())
-    preferences = [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',
+    preferences = [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',
                    Path.home()/'Library/Application Support/Vixen/Settings.xml']
     before = {str(x): digest(x) if x.exists() else None for x in preferences}
     env = {k:v for k,v in os.environ.items() if not k.startswith(('VIXEN_', 'DYLD_'))}

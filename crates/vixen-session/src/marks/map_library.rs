@@ -1032,7 +1032,6 @@ impl crate::app::AppCore {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use vixen_io::module_store::load_module_store_file;
 
     fn temp_root(tag: &str) -> PathBuf {
         let dir = std::env::temp_dir().join(format!("vixen-map-library-{tag}-{}", Uuid::new_v4().simple()));
@@ -1465,27 +1464,5 @@ mod tests {
             assert!(!resolve_lipsync_mapping(&mut other, &lib), "only Map mode looks a map up");
             assert_eq!(other.string("PhonemeMapping"), "Gone");
         }
-    }
-
-    #[test]
-    fn the_owners_library_round_trips_untouched_and_a_flag_change_keeps_map_items() {
-        let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../target/show-copy/SystemData/ModuleStore.xml");
-        if !path.exists() {
-            return;
-        }
-        let mut store = load_module_store_file(&path).unwrap();
-        let before = vixen_xml::XElement::to_fragment(store.type_data(LIP_SYNC_MAP_TYPE_ID).unwrap().data().unwrap());
-        let mut lib = LipSyncLibrary::from_store(&store);
-        assert_eq!(lib.names(), ["New Map"]);
-        lib.write_to(&mut store);
-        let after = vixen_xml::XElement::to_fragment(store.type_data(LIP_SYNC_MAP_TYPE_ID).unwrap().data().unwrap());
-        assert_eq!(before, after);
-        lib.set_default("New Map");
-        lib.write_to(&mut store);
-        let data = store.type_data(LIP_SYNC_MAP_TYPE_ID).unwrap().data().unwrap();
-        let value = data.child("_library").unwrap().elements().next().unwrap().child("Value").unwrap();
-        assert_eq!(value.child_text("IsDefaultMapping").as_deref(), Some("true"));
-        let items = value.child("MapItems").unwrap();
-        assert!(!items.nil && items.elements().count() == 1, "a flag change is not an edit: MapItems stays");
     }
 }

@@ -78,7 +78,7 @@ def main():
         previous = subprocess.check_output(['/usr/bin/lsappinfo','front'],text=True,timeout=3).strip()
         assert previous.startswith('ASN:'), 'Foreground identity unavailable; no probe launched'
         (out/'foreground-before.json').write_text(json.dumps({'asn':previous})+'\n')
-        before = {str(p):digest(p) if p.exists() else None for p in [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']}
+        before = {str(p):digest(p) if p.exists() else None for p in [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']}
         environment = {k: v for k, v in os.environ.items() if not k.startswith(('VIXEN_', 'DYLD_'))}
         (out/'runtime').mkdir();(out/'settings').mkdir()
         shutil.copy2(profile/'ColorPalette.xml',out/'settings/ColorPalette.xml')

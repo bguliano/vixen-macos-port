@@ -41,7 +41,7 @@ def order(out, kind):
 
 
 def preferences():
-    paths = [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',
+    paths = [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',
              Path.home()/'Library/Application Support/Vixen/Settings.xml']
     return {str(p): digest(p) if p.exists() else None for p in paths}
 

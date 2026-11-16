@@ -23,7 +23,7 @@ def digest(path):
 
 
 def preferences():
-    files = [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist']
+    files = [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist']
     folder = Path.home()/'Library/Application Support/Vixen'
     if folder.exists():
         files += sorted(p for p in folder.rglob('*') if p.is_file())

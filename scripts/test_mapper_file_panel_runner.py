@@ -18,7 +18,7 @@ class RunnerTests(unittest.TestCase):
             out=Path(folder);home=out/'fake-home';settings=home/'Library/Application Support/Vixen';settings.mkdir(parents=True)
             (settings/'Settings.xml').write_text('owner settings sentinel')
             prefs=home/'Library/Preferences';prefs.mkdir(parents=True)
-            (prefs/'com.vixenlights.vixen3.mac.plist').write_text('owner preference sentinel')
+            (prefs/'io.github.bguliano.vixen-macos-port.plist').write_text('owner preference sentinel')
             for name in ['host','helper','frozen-input','source-profile']:(out/name).write_text(name)
             profile=out/'profile';profile.mkdir();(profile/'source.xml').write_text('private profile')
             source=out/'Input Café.vmap';saved=out/'Saved Noël.vmap'

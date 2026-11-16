@@ -1,7 +1,6 @@
 mod common;
 use common::*;
-use std::path::{Path, PathBuf};
-use std::sync::Arc;
+use std::path::Path;
 use std::time::Instant;
 use vixen_audio::{AudioClip, Peaks};
 use vixen_core::TimeSpan;
@@ -205,67 +204,4 @@ fn cancelled_peaks_return_none() {
     let clip = noise_clip(8000, 1, 8000 * 4096 / 8 * 4, 1);
     let c = std::sync::atomic::AtomicBool::new(true);
     assert!(Peaks::compute_cancellable(clip, &c).is_none());
-}
-
-fn data_dir() -> Option<PathBuf> {
-    let root = std::env::var("VIXEN_TEST_DATA")
-        .unwrap_or_else(|_| "/Users/developer/Documents/Vixen 3".to_string());
-    let p = PathBuf::from(root).join("Media");
-    p.is_dir().then_some(p)
-}
-
-#[test]
-fn every_real_media_file_decodes() {
-    let Some(dir) = data_dir() else {
-        eprintln!("skipping: no test data");
-        return;
-    };
-    let mut files: Vec<PathBuf> = std::fs::read_dir(&dir)
-        .unwrap()
-        .filter_map(|e| e.ok().map(|e| e.path()))
-        .filter(|p| {
-            matches!(
-                p.extension().and_then(|e| e.to_str()).map(|e| e.to_ascii_lowercase()).as_deref(),
-                Some("mp3" | "m4a" | "aac" | "wav" | "flac" | "ogg" | "aif" | "aiff")
-            )
-        })
-        .collect();
-    files.sort();
-    assert!(!files.is_empty());
-    let mut largest: Option<(u64, String, f64)> = None;
-    for f in &files {
-        let size = std::fs::metadata(f).unwrap().len();
-        let t = Instant::now();
-        let clip = AudioClip::load(f).unwrap_or_else(|e| panic!("{}: {e}", f.display()));
-        let dt = t.elapsed().as_secs_f64();
-        let dur = clip.duration().total_secs();
-        let declared = clip.declared_duration().map(|d| d.total_secs());
-        println!(
-            "{:<52} {:>7.1} KB {:>2}ch {}Hz {:>7.2}s declared={:?} concealed={} decode={:.3}s ({:.0}x realtime)",
-            f.file_name().unwrap().to_string_lossy(),
-            size as f64 / 1024.0,
-            clip.channels(),
-            clip.sample_rate(),
-            dur,
-            declared.map(|d| (d * 100.0).round() / 100.0),
-            clip.concealed_frames(),
-            dt,
-            dur / dt
-        );
-        assert!(dur > 1.0, "{} too short", f.display());
-        if let Some(d) = declared {
-            assert!((d - dur).abs() <= 0.1, "{}: decoded {dur}s vs declared {d}s", f.display());
-        }
-        let peaks = Peaks::compute(Arc::new(clip));
-        let v = peaks.range(TimeSpan::ZERO, peaks.clip().duration(), 2000);
-        let loud = v.iter().map(|(a, b)| a.abs().max(b.abs())).fold(0.0f32, f32::max);
-        let active = v.iter().filter(|(a, b)| b - a > 0.01).count();
-        assert!(loud > 0.05 && active > 1000, "{} looks silent (peak {loud}, active {active})", f.display());
-        assert!(loud <= 4.0);
-        if largest.as_ref().map(|l| size > l.0).unwrap_or(true) {
-            largest = Some((size, f.file_name().unwrap().to_string_lossy().into_owned(), dt));
-        }
-    }
-    let l = largest.unwrap();
-    println!("largest file: {} ({:.1} MB) decoded in {:.3}s", l.1, l.0 as f64 / 1e6, l.2);
 }

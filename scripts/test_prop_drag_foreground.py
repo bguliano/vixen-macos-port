@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def hashes(path): return {str(p.relative_to(path)):digest(p) for p in sorted(path.rglob('*')) if p.is_file()}
 def owner_states():
-    paths=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
+    paths=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
     return {str(p):{'exists':p.exists(),'sha256':digest(p) if p.is_file() else None} for p in paths}
 def package(path):
     with zipfile.ZipFile(path) as z:

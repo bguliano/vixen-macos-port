@@ -29,43 +29,6 @@ fn live(system: &SystemData) -> Vec<ControllerInfo> {
     crate::export::default_controller_info(system)
 }
 
-const REAL_STORE: &str = "/Users/developer/Documents/Vixen 3/SystemData/ModuleStore.xml";
-
-#[test]
-fn the_owners_profile_loads_and_saves_back_unchanged() {
-    let Ok(store) = vixen_io::load_module_store_file(Path::new(REAL_STORE)) else { return };
-    let profiles = load_profiles(&store);
-    assert_eq!(profiles.len(), 1);
-    let p = &profiles[0];
-    assert_eq!(p.name_text(), "Default");
-    assert_eq!(p.id, uuid::uuid!("d997511a-3c1e-4491-9f84-4fd9ddb4bec9"));
-    assert_eq!(p.format_text(), "Falcon Player Sequence");
-    assert!(p.is_falcon_format() && !p.is_falcon_2x_format());
-    assert_eq!(p.interval, 50);
-    assert!(p.include_audio && p.rename_audio && p.backup_universe_file);
-    assert!(!p.create_universe_file && !p.enable_compression && !p.fpp_direct_upload);
-    assert_eq!(p.sequence_files.len(), 7);
-    assert!(p.sequence_files[4].ends_with("Sandstorm.tim"));
-    assert_eq!(p.falcon_output_folder.as_deref(), Some("C:\\Users\\olduser\\Desktop\\Stuff\\Christmas Tree Lights 2018\\BACKUP"));
-    assert_eq!(p.controllers.as_ref().unwrap(), &[ProfileController { id: uuid::uuid!("970a3e5d-3764-4536-ac84-4be2bebed9d6"), index: 0, is_active: true }]);
-
-    let original = store.type_data(MODULE_TYPE).unwrap().data().unwrap().clone();
-    let mut copy = store.clone();
-    save_profiles(&mut copy, &profiles);
-    let saved = copy.type_data(MODULE_TYPE).unwrap().data().unwrap();
-    assert_eq!(saved.first_difference(&original, String::new()), None, "untouched, it goes back as it came");
-
-    // One change touches one member.
-    let mut changed = profiles.clone();
-    changed[0].interval = 25;
-    let mut copy = store.clone();
-    save_profiles(&mut copy, &changed);
-    let reloaded = load_profiles(&copy);
-    assert_eq!(reloaded[0].interval, 25);
-    assert_eq!(reloaded[0].sequence_files, p.sequence_files);
-    assert_eq!(reloaded[0].audio_output_folder, p.audio_output_folder);
-}
-
 #[test]
 fn a_new_profile_writes_the_data_contract_shape() {
     let root = temp_dir("shape");

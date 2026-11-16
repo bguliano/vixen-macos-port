@@ -1,8 +1,6 @@
 //! `evaluate` and the hand-off to controllers run on the engine thread 100 times a second, and may not allocate. This binary
 //! installs a counting allocator, so it only holds this one test's worth of checks.
 
-mod common;
-
 use std::alloc::{GlobalAlloc, Layout, System};
 use std::cell::Cell;
 use std::collections::HashMap;
@@ -18,7 +16,6 @@ use vixen_output::filters::{
     ShutterFilterConfig, TaggedFilterConfig,
 };
 use vixen_output::graph::{ControllerDef, FilterDef, GraphDefinition, OutputDef, OutputGraph, PatchDef};
-use vixen_output::runner::Mailbox;
 use vixen_output::{ids, ModuleIds};
 use vixen_xml::XElement;
 
@@ -51,41 +48,6 @@ fn allocations_during(f: impl FnOnce()) -> u64 {
     let before = ALLOCATIONS.with(Cell::get);
     f();
     ALLOCATIONS.with(Cell::get) - before
-}
-
-#[test]
-fn evaluating_the_real_graph_allocates_nothing() {
-    let Some(real) = common::load_real() else { return };
-    let mut graph = OutputGraph::build(&real.def, &real.modules);
-    let n = graph.element_count();
-    let frames: Vec<Vec<CombinedState>> = vec![
-        (0..n).map(|e| CombinedState { rgb: Some(RgbValue { r: e as u8, g: 2, b: 3 }), ..Default::default() }).collect(),
-        (0..n)
-            .map(|e| CombinedState { lighting: Some(LightingValue::new(Color::rgb(e as u8, 1, 2), 0.5)), ..Default::default() })
-            .collect(),
-        (0..n)
-            .map(|_| {
-                let mut s = CombinedState::default();
-                s.discrete.push(DiscreteValue::new(Color::RED, 0.5));
-                s
-            })
-            .collect(),
-        vec![CombinedState::default(); n],
-    ];
-    let mailboxes: Vec<Mailbox> = graph.controllers().iter().map(|c| Mailbox::new(c.output_count())).collect();
-    // One frame first, which is allowed to settle.
-    graph.evaluate(&frames[0]);
-    let allocations = allocations_during(|| {
-        for _ in 0..3 {
-            for frame in &frames {
-                graph.evaluate(frame);
-                for (c, m) in mailboxes.iter().enumerate() {
-                    m.publish(graph.commands(c));
-                }
-            }
-        }
-    });
-    assert_eq!(allocations, 0);
 }
 
 /// Every filter type in one element's path, with states of every kind, including the reference-counted ones.

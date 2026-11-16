@@ -214,7 +214,7 @@ def run(out):
     desktop = json.loads(subprocess.check_output([str(driver), '--desktop'], text=True, timeout=min(5,total_end-time.monotonic())))
     assert desktop['accessibility'] and desktop['eventPosting'] and not desktop['vixenProcesses']
     previous = desktop['application']; assert previous['pid'] > 0 and 'securityagent' not in previous['bundleIdentifier'].lower()
-    prefs = [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist', Path.home()/'Library/Application Support/Vixen/Settings.xml']
+    prefs = [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist', Path.home()/'Library/Application Support/Vixen/Settings.xml']
     before = {str(p): sha(p) for p in prefs}; write(out/'desktop-before.json', desktop)
     environment = {k: v for k, v in os.environ.items() if not k.startswith(('VIXEN_', 'DYLD_'))}
     environment.update(VIXEN_MUTE='1', VIXEN_SETTINGS_DIR=str(out/'private-settings'), TMPDIR=str(out/'runtime')+'/')

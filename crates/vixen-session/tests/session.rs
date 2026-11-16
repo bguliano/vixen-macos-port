@@ -1,12 +1,11 @@
 //! The session's edit, render, undo and save cycle, on a small tree and on a copy of a real sequence.
 
-use std::path::PathBuf;
 use std::sync::Arc;
 use uuid::Uuid;
 use vixen_core::{Color, ElementTree, TimeSpan};
 use vixen_effects::framework::ParamValue;
 use vixen_engine::schedule::EvalScratch;
-use vixen_io::{load_system, system::effective_store, DataPaths, ModuleStore};
+use vixen_io::ModuleStore;
 use vixen_session::sequence::{EffectId, SequenceSession, SessionEnvironment};
 use vixen_session::undo::{AddRemoveKind, MoveKind, UndoAction};
 
@@ -143,43 +142,6 @@ fn a_stale_render_never_overwrites_a_newer_edit() {
         }
         other => panic!("{other:?}"),
     }
-}
-
-#[test]
-fn a_real_sequence_saves_and_reopens_with_the_same_effects() {
-    let original = PathBuf::from("/Users/developer/Documents/Vixen 3");
-    if !original.is_dir() {
-        return;
-    }
-    let paths = DataPaths::new(&original);
-    let system = load_system(&paths).unwrap();
-    let env = SessionEnvironment { video_cache: None,
-        tree: Arc::new(system.tree.clone()),
-        store: Arc::new(effective_store(&system).into_owned()),
-        module_data_root: Some(paths.module_data_dir()),
-        frame_ms: system.default_update_interval,
-        media_dir: paths.media_dir(),
-    };
-    let mut session = SequenceSession::open(&paths.sequence_dir().join("Snoopy Christmas.tim"), &env).unwrap();
-    session.wait_for_renders();
-    assert!(!session.is_modified());
-    let count = session.effect_count();
-    assert!(count > 100);
-    assert!(session.effects().all(|e| e.is_rendered()));
-
-    let folder = PathBuf::from(env!("CARGO_TARGET_TMPDIR")).join("session-save");
-    let _ = std::fs::remove_dir_all(&folder);
-    std::fs::create_dir_all(&folder).unwrap();
-    let copy = folder.join("Copy.tim");
-    session.save(Some(&copy)).unwrap();
-    assert_eq!(session.path(), Some(copy.as_path()));
-    assert_eq!(session.effect_count(), count, "saving leaves the table alone");
-
-    let reopened = SequenceSession::open(&copy, &env).unwrap();
-    assert_eq!(reopened.effect_count(), count);
-    let starts: Vec<TimeSpan> = session.effects().map(|e| e.node.start).collect();
-    let again: Vec<TimeSpan> = reopened.effects().map(|e| e.node.start).collect();
-    assert_eq!(starts, again);
 }
 
 #[test]

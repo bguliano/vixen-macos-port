@@ -1,7 +1,5 @@
 //! Every controller and filter configuration reads and writes its module XML exactly: member order, namespaces, nil and types,
-//! checked both against the owner's real `ModuleStore.xml` and against samples laid out by the DataContractSerializer's rules.
-
-mod common;
+//! checked against samples laid out by the DataContractSerializer's rules.
 
 use uuid::{uuid, Uuid};
 use vixen_output::filters::tagged::{ColorWheelFilterConfig, FixtureColorWheelEntry};
@@ -15,7 +13,6 @@ use vixen_output::modules::{
     LauncherConfig, OpenDmxConfig, OpenDmxDevice, RdsConfig, RdsHardware, RenardConfig, RenderStyle, UniverseEntry,
 };
 use vixen_output::serial::{Parity, SerialSettings, StopBits};
-use vixen_output::xmlutil::unwrap_module;
 use vixen_output::{DotNetColor, ModuleIds};
 use vixen_xml::XElement;
 
@@ -58,72 +55,6 @@ fn filter_round_trip(type_id: Uuid, xml: &str) -> FilterConfig {
     assert_eq!(config.ids(), &ModuleIds::new(type_id, INSTANCE));
     assert_same(&config.to_xml(), &e);
     config
-}
-
-// ---------------------------------------------------------------- The owner's real data
-
-#[test]
-fn every_real_module_this_crate_owns_round_trips() {
-    let Some(real) = common::load_real() else { return };
-    let (mut filters, mut controllers) = (0, 0);
-    let (mut serial, mut dummy) = (0, 0);
-    for ((type_id, instance), module) in &real.modules {
-        let (data, _) = unwrap_module(module);
-        if let Some(config) = FilterConfig::from_xml(type_id, module) {
-            assert_eq!(config.ids(), &ModuleIds::new(*type_id, *instance));
-            assert_same(&config.to_xml(), data);
-            filters += 1;
-        } else if let Some(config) = ControllerConfig::from_xml(type_id, module) {
-            assert_eq!(config.ids(), &ModuleIds::new(*type_id, *instance));
-            assert_same(&config.to_xml().expect("real modules have data"), data);
-            match config {
-                ControllerConfig::GenericSerial(_) => serial += 1,
-                ControllerConfig::DummyLighting(_) => dummy += 1,
-                _ => {}
-            }
-            controllers += 1;
-        }
-    }
-    assert_eq!(filters, 1117);
-    assert_eq!(serial, 2);
-    assert_eq!(dummy, 4);
-    assert_eq!(controllers, 6);
-}
-
-#[test]
-fn a_real_module_element_rewraps_exactly() {
-    let Some(real) = common::load_real() else { return };
-    for ((type_id, _), module) in &real.modules {
-        let (descriptor, data) = if let Some(c) = FilterConfig::from_xml(type_id, module) {
-            (ids::filter_descriptor(type_id).unwrap(), (c.ids().to_owned(), c.to_xml()))
-        } else if let Some(c) = ControllerConfig::from_xml(type_id, module) {
-            (ids::controller_descriptor(type_id).unwrap(), (c.ids().to_owned(), c.to_xml().unwrap()))
-        } else {
-            continue;
-        };
-        let rebuilt = ids::module_element(descriptor, &data.0, data.1);
-        assert_same(&rebuilt, module);
-    }
-}
-
-#[test]
-fn real_generic_serial_data_reads_as_saved() {
-    let Some(real) = common::load_real() else { return };
-    let id = uuid!("ee79fee2-2d7d-4984-a178-288cee39a361");
-    let m = real.modules.get(&(ids::GENERIC_SERIAL, id)).expect("the Arduino's data");
-    let Some(ControllerConfig::GenericSerial(c)) = ControllerConfig::from_xml(&ids::GENERIC_SERIAL, m) else { panic!() };
-    assert_eq!(
-        c.serial,
-        SerialSettings {
-            port_name: Some("COM9".to_string()),
-            baud_rate: 9600,
-            parity: Parity::None,
-            data_bits: 8,
-            stop_bits: StopBits::One
-        }
-    );
-    assert_eq!(c.header.as_deref(), Some(""));
-    assert_eq!(c.footer.as_deref(), Some(""));
 }
 
 // ---------------------------------------------------------------- Controllers

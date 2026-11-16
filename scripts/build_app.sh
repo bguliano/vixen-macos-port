@@ -20,13 +20,15 @@ BUILD_ID="${VIXEN_BUILD_ID:-main}"
 WORK="$ROOT/target/build-$BUILD_ID"
 cd "$ROOT"
 source ./env.sh
+command -v cargo >/dev/null 2>&1 || exit 1
+xcrun --find swift >/dev/null 2>&1 || { echo "Xcode (or its command line tools) is required: install Xcode from the App Store, then run: xcode-select --install" >&2; exit 1; }
 export CARGO_TARGET_DIR="$WORK/cargo"
 # Keep Rust's C/C++ dependencies aligned with SwiftPM and Info.plist. Without an
 # explicit target, cc uses the build host's macOS version for native objects.
 export MACOSX_DEPLOYMENT_TARGET=26.0
 
-echo "==> Media fallback (offline pinned source build)"
-"$ROOT/scripts/build_media_tools.sh"
+echo "==> Media fallback (pinned FFmpeg source; downloaded and checksum-verified on the first build)"
+"$ROOT/scripts/build_media_tools.sh" --fetch
 
 CARGO_FEATURES=()
 SWIFT_MODULES=""
@@ -76,7 +78,7 @@ cmp -s "$GEN/vixen_ffiFFI.h" "$PKG/Sources/vixen_ffiFFI/include/vixen_ffiFFI.h" 
 cp "$RUST_OUT/libvixen_ffi.a" "$PKG/lib/libvixen_ffi.a"
 
 echo "==> Swift ($CONFIG)"
-( cd "$PKG" && VIXEN_SWIFT_MODULES="$SWIFT_MODULES" swift build -j "${VIXEN_SWIFT_JOBS:-6}" -c "$CONFIG" --scratch-path "$WORK/swift" --product Vixen )
+( cd "$PKG" && VIXEN_SWIFT_MODULES="$SWIFT_MODULES" swift build -j "${VIXEN_SWIFT_JOBS:-$(sysctl -n hw.ncpu)}" -c "$CONFIG" --scratch-path "$WORK/swift" --product Vixen )
 BIN="$WORK/swift/$CONFIG/Vixen"
 
 echo "==> Bundle"

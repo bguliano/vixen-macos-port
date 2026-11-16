@@ -17,7 +17,7 @@ sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
 tree = lambda p: {str(f.relative_to(p)):sha(f) for f in sorted(p.rglob('*')) if f.is_file()}
 
 def prefs():
-    paths = [Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
+    paths = [Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist',Path.home()/'Library/Application Support/Vixen/Settings.xml']
     return {str(p):sha(p) if p.exists() else None for p in paths}
 
 def front():

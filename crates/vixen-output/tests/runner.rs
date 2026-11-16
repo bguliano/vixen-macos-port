@@ -594,39 +594,6 @@ fn a_port_nobody_reads_doesnt_stop_the_engine_or_shutting_down() {
 }
 
 #[test]
-fn from_graph_builds_every_controller_and_honours_disabled_devices() {
-    let Some(real) = common::load_real() else { return };
-    let graph = OutputGraph::build(&real.def, &real.modules);
-    let mut runner = ControllerRunner::from_graph(&graph, &real.disabled, Duration::from_millis(real.default_update_interval_ms));
-    assert_eq!(runner.controller_count(), 2);
-    // Everything in this show is disabled, so starting touches no hardware.
-    runner.start_all();
-    assert!(!runner.is_running(0));
-    assert!(!runner.is_running(1));
-    assert_eq!(runner.status(0), ModuleStatus::Stopped);
-    runner.publish(&graph);
-    assert_eq!(runner.module(0).unwrap().output_count(), 16);
-    assert_eq!(runner.module(1).unwrap().output_count(), 3351);
-
-    // Enabling the real Arduino only finds COM9 isn't a port here. No hardware is touched.
-    runner.set_enabled(0, true);
-    runner.start(0);
-    wait_until("the port to report", Duration::from_secs(2), || matches!(runner.status(0), ModuleStatus::Unavailable(_)));
-    let ModuleStatus::Unavailable(reason) = runner.status(0) else { panic!() };
-    assert!(reason.contains("COM9"), "{reason}");
-    assert!(runner.is_running(0));
-    runner.stop(0);
-    let ControllerConfig::GenericSerial(saved) = runner.module(0).unwrap().config() else { panic!() };
-    assert_eq!(saved.serial.port_name.as_deref(), Some("COM9"));
-
-    // The dummy controller has no hardware at all.
-    runner.set_enabled(1, true);
-    runner.start(1);
-    wait_until("the dummy controller", Duration::from_secs(2), || runner.status(1) == ModuleStatus::Running);
-    runner.stop_all();
-}
-
-#[test]
 fn a_running_controller_answers_for_its_config_and_can_take_a_new_one() {
     let rx = UdpReceiver::new();
     let instance = Uuid::from_u128(5);

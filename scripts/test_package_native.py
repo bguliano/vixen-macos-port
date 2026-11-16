@@ -13,7 +13,7 @@ def tree(path):return {str(p.relative_to(path)):sha(p) for p in sorted(path.rglo
 def save(path,value):
     temp=Path(str(path)+'.tmp');temp.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n');temp.replace(path)
 def owner_preferences():
-    paths=[Path.home()/'Library/Preferences/com.vixenlights.vixen3.mac.plist'];folder=Path.home()/'Library/Application Support/Vixen'
+    paths=[Path.home()/'Library/Preferences/io.github.bguliano.vixen-macos-port.plist'];folder=Path.home()/'Library/Application Support/Vixen'
     if folder.exists():paths+=sorted(p for p in folder.rglob('*') if p.is_file())
     return {str(p):sha(p) if p.is_file() else None for p in paths}
 def backup_path(path):return backup_name(path.stat().st_mtime_ns)

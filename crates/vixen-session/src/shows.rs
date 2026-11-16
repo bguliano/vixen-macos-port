@@ -591,7 +591,6 @@ pub fn save_shows(store: &mut ModuleStore, shows: &[Show]) {
 mod tests {
     use super::*;
 
-    const REAL_STORE: &str = "/Users/developer/Documents/Vixen 3/SystemData/ModuleStore.xml";
     const SEQUENCES: &str = "/data/Vixen 3/Sequence";
 
     fn item(tab: ShowItemType, order: i32, file: &str) -> ShowItem {
@@ -623,29 +622,6 @@ mod tests {
 
     fn names(editor: &ShowEditor) -> Vec<String> {
         editor.rows().iter().map(|i| i.name_text().to_string()).collect()
-    }
-
-    #[test]
-    fn the_owners_show_loads_and_saves_back_unchanged() {
-        let Ok(store) = vixen_io::load_module_store_file(Path::new(REAL_STORE)) else { return };
-        let shows = load_shows(&store);
-        assert_eq!(shows, vec![owners_show()]);
-
-        let original = store.type_data(MODULE_TYPE).unwrap().data().unwrap().clone();
-        let mut copy = store.clone();
-        save_shows(&mut copy, &shows);
-        let saved = copy.type_data(MODULE_TYPE).unwrap().data().unwrap();
-        assert_eq!(saved.first_difference(&original, String::new()), None, "untouched, it goes back as it came");
-
-        // Opening the editor, looking at every tab and row, and pressing OK changes nothing either.
-        let mut editor = ShowEditor::new(shows[0].clone(), PathBuf::from(SEQUENCES));
-        for tab in ShowItemType::TABS {
-            editor.set_tab(tab);
-            for row in 0..editor.rows().len() {
-                editor.select(Some(row));
-            }
-        }
-        assert_eq!(editor.finish().unwrap(), shows[0]);
     }
 
     #[test]
