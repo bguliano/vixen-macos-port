@@ -15,7 +15,7 @@ This port is an **alpha**. It has **not been tested extensively**: almost all of
 
 ## Download
 
-Download the latest `.zip` from [Releases](https://github.com/bguliano/vixen-macos-port/releases), unzip it, and drag **Vixen.app** into Applications. Release builds are signed and notarized by Apple, so they open normally.
+Download the latest `.dmg` from [Releases](https://github.com/bguliano/vixen-macos-port/releases), open it, and drag **Vixen** onto the Applications shortcut. A `.zip` of the same app is there too. Release builds are signed and notarized by Apple, so they open normally.
 
 ## Build from source
 

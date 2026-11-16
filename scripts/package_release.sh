@@ -8,7 +8,7 @@
 # Create the notary profile once with:
 #   xcrun notarytool store-credentials <profile> --apple-id <Apple ID> --team-id <TEAMID>
 #
-# Writes target/release/Vixen-macOS-Port-<name>.zip and its .sha256.
+# Writes target/release/Vixen-macOS-Port-<name>.zip and .dmg, each with a .sha256.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 NAME="${1:?usage: scripts/package_release.sh <release name>}"
@@ -43,3 +43,5 @@ echo "==> Zip"
 ditto -c -k --keepParent "$APP" "$ZIP"
 ( cd "$OUT" && shasum -a 256 "$(basename "$ZIP")" > "$(basename "$ZIP").sha256" )
 echo "Built $ZIP"
+
+scripts/make_dmg.sh "$APP" "$OUT/Vixen-macOS-Port-$NAME.dmg"
