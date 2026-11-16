@@ -1,0 +1,519 @@
+{
+"class": "SerialPortConfig",
+"source": "Vixen.Common/Controls/SerialPortConfig.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SerialPortConfig",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Serial Port Config"
+},
+"events": {},
+"children": [
+{
+"name": "configuredPortValueLabel"
+},
+{
+"name": "currentConfiguredPortLabel"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "groupBox"
+}
+],
+"objects": {
+"groupBox": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 46
+},
+"Name": "groupBox",
+"Size": {
+"t": "size",
+"x": 243,
+"y": 175
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Port Details"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "comboBoxBaudRate"
+},
+{
+"name": "comboBoxStopBits"
+},
+{
+"name": "comboBoxParity"
+},
+{
+"name": "label2"
+},
+{
+"name": "label5"
+},
+{
+"name": "label3"
+},
+{
+"name": "label4"
+},
+{
+"name": "textBoxDataBits"
+},
+{
+"name": "label1"
+},
+{
+"name": "comboBoxPortName"
+}
+]
+},
+"comboBoxBaudRate": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 103,
+"y": 54
+},
+"Name": "comboBoxBaudRate",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 21
+},
+"TabIndex": 10
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": [],
+"Items": [
+"2400",
+"4800",
+"9600",
+"19200",
+"38400",
+"57600",
+"115200",
+"230400",
+"460800",
+"921600",
+"1048576"
+]
+},
+"comboBoxStopBits": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 103,
+"y": 134
+},
+"Name": "comboBoxStopBits",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 21
+},
+"TabIndex": 16
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"comboBoxParity": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 103,
+"y": 81
+},
+"Name": "comboBoxParity",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 21
+},
+"TabIndex": 12
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 39,
+"y": 62
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 13
+},
+"TabIndex": 9,
+"Text": "Baud rate"
+},
+"events": {},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 39,
+"y": 89
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 13
+},
+"TabIndex": 11,
+"Text": "Parity"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 39,
+"y": 115
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 49,
+"y": 13
+},
+"TabIndex": 13,
+"Text": "Data bits"
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 39,
+"y": 142
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 13
+},
+"TabIndex": 15,
+"Text": "Stop bits"
+},
+"events": {},
+"children": []
+},
+"textBoxDataBits": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 103,
+"y": 108
+},
+"MaxLength": 1,
+"Name": "textBoxDataBits",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 20
+},
+"TabIndex": 14
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 39,
+"y": 35
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 55,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Port name"
+},
+"events": {},
+"children": []
+},
+"comboBoxPortName": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 103,
+"y": 27
+},
+"Name": "comboBoxPortName",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 21
+},
+"TabIndex": 0
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 99,
+"y": 227
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 180,
+"y": 227
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"currentConfiguredPortLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 18
+},
+"Name": "currentConfiguredPortLabel",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 13
+},
+"TabIndex": 3,
+"Text": "Current Configured Port:"
+},
+"events": {},
+"children": []
+},
+"configuredPortValueLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 139,
+"y": 18
+},
+"Name": "configuredPortValueLabel",
+"Size": {
+"t": "size",
+"x": 51,
+"y": 13
+},
+"TabIndex": 4,
+"Text": "portname"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+267,
+262
+]
+}
+}
+}

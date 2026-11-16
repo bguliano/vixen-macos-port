@@ -1,0 +1,138 @@
+{
+"class": "GradientEditPanel",
+"source": "Vixen.Modules/App/ColorGradients/GradientEditPanel.designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "GradientEditPanel"
+},
+"events": {},
+"children": [
+{
+"name": "edit"
+},
+{
+"name": "grpStops"
+}
+],
+"objects": {
+"grpStops": {
+"type": "GroupBox",
+"props": {
+"Name": "grpStops",
+"TabStop": false
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "flowLayoutPanel1"
+}
+]
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"Name": "flowLayoutPanel1"
+},
+"events": {},
+"children": [
+{
+"name": "label4"
+},
+{
+"name": "lblColorSelect"
+},
+{
+"name": "label5"
+},
+{
+"name": "vColorLoc"
+},
+{
+"name": "btnDeleteColor"
+}
+]
+},
+"label4": {
+"type": "Label",
+"props": {
+"Name": "label4"
+},
+"events": {},
+"children": []
+},
+"lblColorSelect": {
+"type": "ColorLabel",
+"props": {
+"Name": "lblColorSelect"
+},
+"events": {
+"ColorChanged": "lblColorSelect_ColorChanged",
+"Click": "lblColorSelect_Click"
+},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"Name": "label5"
+},
+"events": {},
+"children": []
+},
+"vColorLoc": {
+"type": "ValueUpDown",
+"props": {
+"Name": "vColorLoc",
+"TrackerOrientation": {
+"t": "enum",
+"type": "Orientation",
+"v": "Vertical"
+}
+},
+"events": {
+"ValueChanged": "vColorLoc_ValueChanged"
+},
+"children": []
+},
+"btnDeleteColor": {
+"type": "Button",
+"props": {
+"Name": "btnDeleteColor",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnDeleteColor_Click"
+},
+"children": []
+},
+"edit": {
+"type": "GradientEdit",
+"props": {
+"Name": "edit"
+},
+"events": {
+"SelectionChanged": "edit_GradientChanged",
+"GradientChanged": "edit_GradientChanged",
+"KeyDown": "edit_KeyDown"
+},
+"children": []
+}
+},
+"unparsed": [
+"resources.ApplyResources(grpStops, \"grpStops\")",
+"resources.ApplyResources(flowLayoutPanel1, \"flowLayoutPanel1\")",
+"resources.ApplyResources(label4, \"label4\")",
+"resources.ApplyResources(lblColorSelect, \"lblColorSelect\")",
+"resources.ApplyResources(label5, \"label5\")",
+"resources.ApplyResources(vColorLoc, \"vColorLoc\")",
+"resources.ApplyResources(btnDeleteColor, \"btnDeleteColor\")",
+"resources.ApplyResources(edit, \"edit\")",
+"resources.ApplyResources(this, \"$this\")"
+]
+}

@@ -1,0 +1,286 @@
+{
+"class": "SetupDialog",
+"source": "Vixen.Modules/Controller/Renard/SetupDialog.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupDialog",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Renard Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 140
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Setup"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "buttonPortSetup"
+},
+{
+"name": "comboBoxProtocolVersion"
+},
+{
+"name": "label1"
+}
+]
+},
+"buttonPortSetup": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 62,
+"y": 87
+},
+"Name": "buttonPortSetup",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Port Setup",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonPortSetup_Click"
+},
+"children": []
+},
+"comboBoxProtocolVersion": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"Enabled": false,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 121,
+"y": 38
+},
+"Name": "comboBoxProtocolVersion",
+"Size": {
+"t": "size",
+"x": 50,
+"y": 21
+},
+"TabIndex": 1
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": [],
+"Items": [
+"1",
+"2"
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 29,
+"y": 40
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 86,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Protocol version:"
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 55,
+"y": 157
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 136,
+"y": 157
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+227,
+205
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+243,
+244
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+243,
+244
+]
+}
+}
+}

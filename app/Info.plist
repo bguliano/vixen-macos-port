@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key><string>en</string>
+    <key>CFBundleExecutable</key><string>Vixen</string>
+    <key>CFBundleIconFile</key><string>AppIcon</string>
+    <key>CFBundleIdentifier</key><string>com.vixenlights.vixen3.mac</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>Vixen</string>
+    <key>CFBundleDisplayName</key><string>Vixen</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>3.13.4</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>LSApplicationCategoryType</key><string>public.app-category.music</string>
+    <key>LSMinimumSystemVersion</key><string>26.0</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSHumanReadableCopyright</key><string>Copyright 2023 Vixen Team. macOS port.</string>
+    <key>NSDocumentsFolderUsageDescription</key><string>Vixen keeps its profile, sequences and logs in your Documents folder.</string>
+    <key>NSLocalNetworkUsageDescription</key><string>Vixen sends lighting data to your E1.31 and DDP controllers on the local network.</string>
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeIdentifier</key><string>com.vixenlights.timed-sequence</string>
+            <key>UTTypeDescription</key><string>Vixen Timed Sequence</string>
+            <key>UTTypeConformsTo</key><array><string>public.xml</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict><key>public.filename-extension</key><array><string>tim</string></array></dict>
+        </dict>
+    </array>
+    <key>UTImportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeIdentifier</key><string>com.vixenlights.vixen2-sequence</string>
+            <key>UTTypeDescription</key><string>Vixen 2.x Sequence</string>
+            <key>UTTypeConformsTo</key><array><string>public.xml</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict><key>public.filename-extension</key><array><string>vix</string></array></dict>
+        </dict>
+    </array>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeName</key><string>Vixen Timed Sequence</string>
+            <key>CFBundleTypeRole</key><string>Editor</string>
+            <key>LSHandlerRank</key><string>Owner</string>
+            <key>LSItemContentTypes</key><array><string>com.vixenlights.timed-sequence</string></array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeName</key><string>Vixen 2.x Sequence</string>
+            <key>CFBundleTypeRole</key><string>Editor</string>
+            <key>LSHandlerRank</key><string>Default</string>
+            <key>LSItemContentTypes</key><array><string>com.vixenlights.vixen2-sequence</string></array>
+        </dict>
+    </array>
+</dict>
+</plist>

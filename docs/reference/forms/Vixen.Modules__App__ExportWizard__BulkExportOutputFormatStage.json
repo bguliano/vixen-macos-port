@@ -1,0 +1,911 @@
+{
+"class": "BulkExportOutputFormatStage",
+"source": "Vixen.Modules/App/ExportWizard/BulkExportOutputFormatStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 23
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 524,
+"y": 70
+},
+"TabIndex": 14,
+"TabStop": false,
+"Text": "Export Format"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "resolutionComboBox"
+},
+{
+"name": "label4"
+},
+{
+"name": "outputFormatComboBox"
+},
+{
+"name": "label3"
+}
+]
+},
+"resolutionComboBox": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 431,
+"y": 24
+},
+"Name": "resolutionComboBox",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 24
+},
+"TabIndex": 2
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"TextChanged": "resolutionComboBox_TextChanged"
+},
+"children": [],
+"Items": [
+"25",
+"50",
+"100"
+]
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 350,
+"y": 27
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 15
+},
+"TabIndex": 11,
+"Text": "Timing (ms):"
+},
+"events": {},
+"children": []
+},
+"outputFormatComboBox": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 66,
+"y": 24
+},
+"Name": "outputFormatComboBox",
+"Size": {
+"t": "size",
+"x": 260,
+"y": 24
+},
+"TabIndex": 1
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "outputFormatComboBox_SelectedIndexChanged"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 27
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 15
+},
+"TabIndex": 9,
+"Text": "Format:"
+},
+"events": {},
+"children": []
+},
+"lblChooseOutputFormat": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "lblChooseOutputFormat",
+"Size": {
+"t": "size",
+"x": 279,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "Step 4:   Choose the Output Format and Destination"
+},
+"events": {},
+"children": []
+},
+"btnOuputFolderSelect": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 25,
+"y": 37
+},
+"Name": "btnOuputFolderSelect",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 23
+},
+"TabIndex": 8,
+"Text": "Output Folder",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnOuputFolderSelect_Click"
+},
+"children": []
+},
+"grpSequence": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 305
+},
+"Name": "grpSequence",
+"Size": {
+"t": "size",
+"x": 524,
+"y": 83
+},
+"TabIndex": 15,
+"TabStop": false,
+"Text": "Sequence"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "txtOutputFolder"
+},
+{
+"name": "label2"
+},
+{
+"name": "btnOuputFolderSelect"
+}
+]
+},
+"txtOutputFolder": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 38
+},
+"Name": "txtOutputFolder",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 438,
+"y": 23
+},
+"TabIndex": 9
+},
+"events": {
+"Leave": "txtOutputFolder_Leave"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 19
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 94,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "Sequence Folder"
+},
+"events": {},
+"children": []
+},
+"chkRenameAudio": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 25,
+"y": 47
+},
+"Name": "chkRenameAudio",
+"Size": {
+"t": "size",
+"x": 192,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Rename file to match sequence",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkRenameAudio_CheckedChanged"
+},
+"children": []
+},
+"chkIncludeAudio": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 22
+},
+"Name": "chkIncludeAudio",
+"Size": {
+"t": "size",
+"x": 100,
+"y": 19
+},
+"TabIndex": 10,
+"Text": "Include Audio",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkIncludeAudio_CheckedChanged"
+},
+"children": []
+},
+"grpAudio": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 394
+},
+"Name": "grpAudio",
+"Size": {
+"t": "size",
+"x": 524,
+"y": 133
+},
+"TabIndex": 20,
+"TabStop": false,
+"Text": "Audio"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "txtAudioOutputFolder"
+},
+{
+"name": "lblAudioExportPath"
+},
+{
+"name": "btnAudioOutputFolder"
+},
+{
+"name": "chkRenameAudio"
+},
+{
+"name": "chkIncludeAudio"
+}
+]
+},
+"txtAudioOutputFolder": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 88
+},
+"Name": "txtAudioOutputFolder",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 437,
+"y": 23
+},
+"TabIndex": 12
+},
+"events": {
+"Leave": "txtAudioOutputFolder_Leave"
+},
+"children": []
+},
+"lblAudioExportPath": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 69
+},
+"Name": "lblAudioExportPath",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 15
+},
+"TabIndex": 20,
+"Text": "Audio Folder"
+},
+"events": {},
+"children": []
+},
+"btnAudioOutputFolder": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 24,
+"y": 87
+},
+"Name": "btnAudioOutputFolder",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 23
+},
+"TabIndex": 11,
+"Text": "Audio Output Folder",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnAudioOutputFolder_Click"
+},
+"children": []
+},
+"grpFalcon": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 99
+},
+"Name": "grpFalcon",
+"Size": {
+"t": "size",
+"x": 524,
+"y": 200
+},
+"TabIndex": 23,
+"TabStop": false,
+"Text": "Falcon Pi Player 2.x"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "chkCompress"
+},
+{
+"name": "txtFalconInfo"
+},
+{
+"name": "chkFppIncludeAudio"
+},
+{
+"name": "chkBackupUniverseFile"
+},
+{
+"name": "chkCreateUniverseFile"
+},
+{
+"name": "rdoFilePath"
+},
+{
+"name": "rdoDirectUpload"
+},
+{
+"name": "lblFppHostAddress"
+},
+{
+"name": "txtFppHostAddress"
+},
+{
+"name": "txtFalconOutputFolder"
+},
+{
+"name": "btnFalconUniverseFolder"
+}
+]
+},
+"chkCompress": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 179,
+"y": 47
+},
+"Name": "chkCompress",
+"Size": {
+"t": "size",
+"x": 134,
+"y": 19
+},
+"TabIndex": 28,
+"Text": "Enable Compression",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkCompress_CheckedChanged"
+},
+"children": []
+},
+"txtFalconInfo": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "None"
+},
+"Cursor": {
+"t": "enum",
+"type": "Cursors",
+"v": "Default"
+},
+"Location": {
+"t": "point",
+"x": 24,
+"y": 76
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 1,
+"r": 2,
+"b": 1
+},
+"Multiline": true,
+"Name": "txtFalconInfo",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 466,
+"y": 45
+},
+"TabIndex": 27,
+"TabStop": false,
+"Text": {
+"t": "raw",
+"v": "\"Output folder or FPP network location. To save directly to FPP, select the mapped\" + \" media folder or network path in the form of \\\\\\\\hostname\\\\fpp or \\\\\\\\ip\\\\fpp\""
+}
+},
+"events": {},
+"children": []
+},
+"chkFppIncludeAudio": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 25,
+"y": 47
+},
+"Name": "chkFppIncludeAudio",
+"Size": {
+"t": "size",
+"x": 100,
+"y": 19
+},
+"TabIndex": 5,
+"Text": "Include Audio",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkIncludeAudio_CheckedChanged"
+},
+"children": []
+},
+"chkBackupUniverseFile": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 179,
+"y": 22
+},
+"Name": "chkBackupUniverseFile",
+"Size": {
+"t": "size",
+"x": 134,
+"y": 19
+},
+"TabIndex": 4,
+"Text": "Backup Universe File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkBackupUniverseFile_CheckedChanged"
+},
+"children": []
+},
+"chkCreateUniverseFile": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 25,
+"y": 22
+},
+"Name": "chkCreateUniverseFile",
+"Size": {
+"t": "size",
+"x": 129,
+"y": 19
+},
+"TabIndex": 3,
+"Text": "Create Universe File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkCreateUniverseFile_CheckedChanged"
+},
+"children": []
+},
+"rdoFilePath": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 130
+},
+"Name": "rdoFilePath",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 19
+},
+"TabIndex": 20,
+"TabStop": true,
+"Text": "File Path",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "rdoUploadMode_CheckedChanged"
+},
+"children": []
+},
+"rdoDirectUpload": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 120,
+"y": 130
+},
+"Name": "rdoDirectUpload",
+"Size": {
+"t": "size",
+"x": 97,
+"y": 19
+},
+"TabIndex": 21,
+"Text": "Direct Upload",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "rdoUploadMode_CheckedChanged"
+},
+"children": []
+},
+"lblFppHostAddress": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 23,
+"y": 159
+},
+"Name": "lblFppHostAddress",
+"Size": {
+"t": "size",
+"x": 79,
+"y": 15
+},
+"TabIndex": 22,
+"Text": "FPP Host / IP:",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"txtFppHostAddress": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 120,
+"y": 155
+},
+"Name": "txtFppHostAddress",
+"Size": {
+"t": "size",
+"x": 372,
+"y": 23
+},
+"TabIndex": 23,
+"Visible": false
+},
+"events": {
+"TextChanged": "txtFppHostAddress_TextChanged",
+"Leave": "txtFppHostAddress_Leave"
+},
+"children": []
+},
+"txtFalconOutputFolder": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 54,
+"y": 155
+},
+"Name": "txtFalconOutputFolder",
+"Size": {
+"t": "size",
+"x": 438,
+"y": 23
+},
+"TabIndex": 7
+},
+"events": {
+"TextChanged": "txtFalconOutputFolder_TextChanged",
+"Leave": "txtFalconOutputFolder_Leave"
+},
+"children": []
+},
+"btnFalconUniverseFolder": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 23,
+"y": 155
+},
+"Name": "btnFalconUniverseFolder",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 23
+},
+"TabIndex": 6,
+"Text": "Output Folder",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnFalconOutputFolder_Click"
+},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 5,
+"Size": {
+"t": "size",
+"x": 530,
+"y": 530
+},
+"TabIndex": 24
+},
+"events": {},
+"children": [
+{
+"name": "lblChooseOutputFormat",
+"col": 0,
+"row": 0
+},
+{
+"name": "grpAudio",
+"col": 0,
+"row": 4
+},
+{
+"name": "grpSequence",
+"col": 0,
+"row": 3
+},
+{
+"name": "groupBox1",
+"col": 0,
+"row": 1
+},
+{
+"name": "grpFalcon",
+"col": 0,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+530,
+530
+]
+}
+}
+}

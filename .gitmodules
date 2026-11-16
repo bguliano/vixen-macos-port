@@ -1,0 +1,3 @@
+[submodule "upstream/Vixen"]
+	path = upstream/Vixen
+	url = https://github.com/VixenLights/Vixen.git

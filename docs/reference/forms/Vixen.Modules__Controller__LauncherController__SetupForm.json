@@ -1,0 +1,105 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/Controller/LauncherController/SetupForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Text": "Launcher Controller Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "chkHideLaunchedWindows"
+},
+{
+"name": "button1"
+}
+],
+"objects": {
+"button1": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Font": {
+"t": "font",
+"name": "Microsoft Sans Serif",
+"size": 9.75
+},
+"Location": {
+"t": "point",
+"x": 150,
+"y": 58
+},
+"Name": "button1",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "Save",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"chkHideLaunchedWindows": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 108,
+"y": 23
+},
+"Name": "chkHideLaunchedWindows",
+"Size": {
+"t": "size",
+"x": 158,
+"y": 19
+},
+"TabIndex": 0,
+"Text": "Hide Launched Windows",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkHideLaunchedWindows_CheckedChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+382,
+105
+]
+}
+}
+}

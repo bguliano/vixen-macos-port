@@ -1,0 +1,65 @@
+{
+"class": "VixenPreviewSetupPropertiesDocument",
+"source": "Vixen.Modules/Preview/VixenPreview/VixenPreviewSetupPropertiesDocument.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CloseButton": false,
+"CloseButtonVisible": false,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "SizableToolWindow"
+},
+"Name": "VixenPreviewSetupPropertiesDocument",
+"Text": "Properties"
+},
+"events": {},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+270,
+344
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+8.25,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+}
+}
+}

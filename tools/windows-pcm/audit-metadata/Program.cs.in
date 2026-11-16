@@ -1,0 +1,105 @@
+// PE/CLI metadata only: never loads or executes a supplied assembly.
+using System.Collections.Immutable;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Reflection.Metadata.Ecma335;
+using System.Reflection.PortableExecutable;
+using System.Security.Cryptography;
+using System.Text.Json;
+
+if (args.Length < 1) throw new ArgumentException("Audit <assembly> [fully-qualified type ...]");
+var path = Path.GetFullPath(args[0]);
+var before = SHA256.HashData(File.ReadAllBytes(path));
+using var stream = File.OpenRead(path);
+using var pe = new PEReader(stream);
+var reader = pe.GetMetadataReader();
+var provider = new Types(reader);
+var definition = reader.GetAssemblyDefinition();
+var filter = args.Skip(1).ToHashSet(StringComparer.Ordinal);
+var codes = typeof(OpCodes).GetFields(BindingFlags.Public | BindingFlags.Static).Where(f => f.FieldType == typeof(OpCode)).Select(f => (OpCode)f.GetValue(null)!).ToDictionary(o => unchecked((ushort)o.Value));
+var types = new List<object>();
+foreach (var handle in reader.TypeDefinitions) {
+ var type = reader.GetTypeDefinition(handle); var name = provider.TypeName(handle);
+ if (filter.Count > 0 && !filter.Contains(name)) continue;
+ var methods = new List<object>();
+ foreach (var mh in type.GetMethods()) {
+  var m = reader.GetMethodDefinition(mh); var sig = m.DecodeSignature(provider, null);
+  var il = new List<object>(); object? bodyInfo = null;
+  if (m.RelativeVirtualAddress != 0) {
+   var body = pe.GetMethodBody(m.RelativeVirtualAddress); var bytes = body.GetILBytes()!;
+   var index = 0;
+   while(index < bytes.Length) {
+    int start = index; ushort op = bytes[index++]; if(op == 0xfe) op = (ushort)(0xfe00 | bytes[index++]);
+    var code = codes[op]; object? value = null;
+    int Int() { var n = BitConverter.ToInt32(bytes,index); index+=4; return n; }
+    switch(code.OperandType) {
+     case OperandType.InlineNone: break;
+     case OperandType.ShortInlineI: value = (sbyte)bytes[index++]; break;
+     case OperandType.InlineI: value = Int(); break;
+     case OperandType.InlineI8: value = BitConverter.ToInt64(bytes,index); index+=8; break;
+     case OperandType.ShortInlineR: {
+      var number = BitConverter.ToSingle(bytes,index);
+      value = float.IsFinite(number) ? (object)number : new { ieee754="binary32", bitsHex=BitConverter.ToUInt32(bytes,index).ToString("x8"), classification=float.IsNaN(number)?"NaN":number>0?"PositiveInfinity":"NegativeInfinity" };
+      index+=4; break;
+     }
+     case OperandType.InlineR: {
+      var number = BitConverter.ToDouble(bytes,index);
+      value = double.IsFinite(number) ? (object)number : new { ieee754="binary64", bitsHex=BitConverter.ToUInt64(bytes,index).ToString("x16"), classification=double.IsNaN(number)?"NaN":number>0?"PositiveInfinity":"NegativeInfinity" };
+      index+=8; break;
+     }
+     case OperandType.ShortInlineVar: value = bytes[index++]; break;
+     case OperandType.InlineVar: value = BitConverter.ToUInt16(bytes,index); index+=2; break;
+     case OperandType.ShortInlineBrTarget: { int d=(sbyte)bytes[index++]; value=$"IL_{index+d:x4}"; break; }
+     case OperandType.InlineBrTarget: { int d=Int(); value=$"IL_{index+d:x4}"; break; }
+     case OperandType.InlineSwitch: { int count=Int(); var offsets=new int[count]; for(int j=0;j<count;j++) offsets[j]=Int(); value=offsets.Select(d=>$"IL_{index+d:x4}").ToArray(); break; }
+     case OperandType.InlineString: value=reader.GetUserString(MetadataTokens.UserStringHandle(Int())); break;
+     case OperandType.InlineField: case OperandType.InlineMethod: case OperandType.InlineType: case OperandType.InlineTok: case OperandType.InlineSig: value=provider.Token(Int()); break;
+     default: throw new NotSupportedException(code.OperandType.ToString());
+    }
+    il.Add(new{offset=$"IL_{start:x4}",opcode=code.Name,operand=value});
+   }
+   bodyInfo=new{maxStack=body.MaxStack,localVariablesInitialized=body.LocalVariablesInitialized,localSignature=body.LocalSignature.IsNil?null:provider.Token(MetadataTokens.GetToken(body.LocalSignature)),ilSha256=Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant(),exceptionRegions=body.ExceptionRegions.Select(e=>new{kind=e.Kind.ToString(),e.TryOffset,e.TryLength,e.HandlerOffset,e.HandlerLength,catchType=e.CatchType.IsNil?null:provider.Name(e.CatchType)}),instructions=il};
+  }
+  methods.Add(new{name=reader.GetString(m.Name),attributes=m.Attributes.ToString(),implementationAttributes=m.ImplAttributes.ToString(),signature=provider.Signature(sig),body=bodyInfo});
+ }
+ types.Add(new{name,attributes=type.Attributes.ToString(),baseType=type.BaseType.IsNil?null:provider.Name(type.BaseType),fields=type.GetFields().Select(h=>{var f=reader.GetFieldDefinition(h);return new{name=reader.GetString(f.Name),attributes=f.Attributes.ToString(),type=f.DecodeSignature(provider,null)};}),methods});
+}
+var after = SHA256.HashData(File.ReadAllBytes(path));
+if(!before.SequenceEqual(after)) throw new IOException("Input changed during read-only inspection");
+var report=new{schema=1,scope="Read-only PE/CLI metadata and IL inspection; supplied assemblies never loaded or executed",path,bytes=stream.Length,sha256=Convert.ToHexString(before).ToLowerInvariant(),assembly=new{name=reader.GetString(definition.Name),version=definition.Version.ToString()},references=reader.AssemblyReferences.Select(h=>{var a=reader.GetAssemblyReference(h);return new{name=reader.GetString(a.Name),version=a.Version.ToString()};}),attributes=definition.GetCustomAttributes().Select(h=>{var a=reader.GetCustomAttribute(h);return new{constructor=provider.Name(a.Constructor),blob=Convert.ToHexString(reader.GetBlobBytes(a.Value))};}),typeNames=reader.TypeDefinitions.Select(provider.TypeName),memberReferences=reader.MemberReferences.Select(h=>provider.Name(h)),types,inputUnchanged=true};
+Console.WriteLine(JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
+
+sealed class Types(MetadataReader reader): ISignatureTypeProvider<string,object?> {
+ public string TypeName(TypeDefinitionHandle h) { var t=reader.GetTypeDefinition(h);var parent=t.GetDeclaringType();return parent.IsNil?Join(reader.GetString(t.Namespace),reader.GetString(t.Name)):TypeName(parent)+"+"+reader.GetString(t.Name); }
+ static string Join(string ns,string n)=>string.IsNullOrEmpty(ns)?n:ns+"."+n;
+ public string Signature(MethodSignature<string> s)=>s.ReturnType+" ("+string.Join(", ",s.ParameterTypes)+")";
+ public string Token(int token)=>Name(MetadataTokens.EntityHandle(token));
+ public string Name(EntityHandle h) {
+  switch(h.Kind) {
+   case HandleKind.TypeDefinition:return TypeName((TypeDefinitionHandle)h);
+   case HandleKind.TypeReference:{var t=reader.GetTypeReference((TypeReferenceHandle)h);return Join(reader.GetString(t.Namespace),reader.GetString(t.Name));}
+   case HandleKind.TypeSpecification:return reader.GetTypeSpecification((TypeSpecificationHandle)h).DecodeSignature(this,null);
+   case HandleKind.MethodDefinition:{var m=reader.GetMethodDefinition((MethodDefinitionHandle)h);return TypeName(m.GetDeclaringType())+"::"+reader.GetString(m.Name)+" "+Signature(m.DecodeSignature(this,null));}
+   case HandleKind.FieldDefinition:{var f=reader.GetFieldDefinition((FieldDefinitionHandle)h);return TypeName(f.GetDeclaringType())+"::"+reader.GetString(f.Name)+" "+f.DecodeSignature(this,null);}
+   case HandleKind.MemberReference:{var m=reader.GetMemberReference((MemberReferenceHandle)h);return Name(m.Parent)+"::"+reader.GetString(m.Name)+" "+(m.GetKind()==MemberReferenceKind.Method?Signature(m.DecodeMethodSignature(this,null)):m.DecodeFieldSignature(this,null));}
+   case HandleKind.MethodSpecification:{var m=reader.GetMethodSpecification((MethodSpecificationHandle)h);return Name(m.Method)+"<"+string.Join(",",m.DecodeSignature(this,null))+">";}
+   case HandleKind.StandaloneSignature:{var s=reader.GetStandaloneSignature((StandaloneSignatureHandle)h);return string.Join(",",s.DecodeLocalSignature(this,null));}
+   default:return h.Kind+":"+MetadataTokens.GetToken(h).ToString("x8");
+  }
+ }
+ public string GetArrayType(string e,ArrayShape s)=>e+"["+new string(',',s.Rank-1)+"]";
+ public string GetByReferenceType(string e)=>e+"&";
+ public string GetFunctionPointerType(MethodSignature<string> s)=>"fn "+Signature(s);
+ public string GetGenericInstantiation(string t,ImmutableArray<string> a)=>t+"<"+string.Join(",",a)+">";
+ public string GetGenericMethodParameter(object? c,int i)=>"!!"+i;
+ public string GetGenericTypeParameter(object? c,int i)=>"!"+i;
+ public string GetModifiedType(string m,string u,bool req)=>u+" mod"+(req?"req":"opt")+"("+m+")";
+ public string GetPinnedType(string e)=>e+" pinned";
+ public string GetPointerType(string e)=>e+"*";
+ public string GetPrimitiveType(PrimitiveTypeCode c)=>c.ToString();
+ public string GetSZArrayType(string e)=>e+"[]";
+ public string GetTypeFromDefinition(MetadataReader r,TypeDefinitionHandle h,byte k)=>TypeName(h);
+ public string GetTypeFromReference(MetadataReader r,TypeReferenceHandle h,byte k)=>Name(h);
+ public string GetTypeFromSpecification(MetadataReader r,object? c,TypeSpecificationHandle h,byte k)=>Name(h);
+}

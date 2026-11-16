@@ -1,0 +1,52 @@
+using System;
+using System.Drawing;
+internal sealed class OriginalCountDownMethods {
+// Explicit uniform-white brush fixture; original gradient selection is outside this oracle.
+private Brush CreateCrossHashBrush(Graphics graphics, Rectangle rectangle) { return new SolidBrush(Color.White); }
+public void Cross(Graphics graphics, Rectangle rectangle, Pen pen) { DrawFilmSpinnerCrossHash(graphics, rectangle, pen); }
+public void Spinner(Graphics graphics, Rectangle rectangle, int length, int angle) { DrawFilmSpinner(graphics, rectangle, 0, length, angle); }
+private void DrawFilmSpinner(
+			Graphics graphics,
+			Rectangle crossHashRect,
+			int frame,
+			int spinnerRadialLineLength,
+			int radialLineAngleInDegrees)
+		{
+			Rectangle brushRectangle = new Rectangle(crossHashRect.Left - 1, crossHashRect.Top - 1, crossHashRect.Width + 2, crossHashRect.Height + 2);
+
+			using (Brush brush = CreateCrossHashBrush(graphics, brushRectangle))
+			{
+				using (Pen pen = new Pen(brush, 1))
+				{
+					DrawFilmSpinnerCrossHash(graphics, crossHashRect, pen);
+															
+					DrawFilmSpinnerRadialLine(
+						graphics,
+						pen,
+						radialLineAngleInDegrees + 90,  // Adding 90 degrees to get 0 back to the X-axis
+						crossHashRect.Left + crossHashRect.Width / 2,
+						crossHashRect.Top + crossHashRect.Height / 2,
+						spinnerRadialLineLength);
+				}
+			}
+		}
+private void DrawFilmSpinnerCrossHash(Graphics graphics, Rectangle rect, Pen pen)
+		{
+			// Draw circle
+			graphics.DrawEllipse(pen, rect);
+
+			// Draw vertical line            
+			graphics.DrawLine(pen, rect.Left + rect.Width / 2, rect.Top, rect.Left + rect.Width / 2, rect.Bottom);
+
+			// Draw horizontal line            
+			graphics.DrawLine(pen, rect.Left, rect.Top + rect.Height / 2, rect.Left + rect.Width, rect.Top + rect.Height / 2);
+		}
+private void DrawFilmSpinnerRadialLine(Graphics graphics, Pen pen, int angleInDegrees, int lineStartX, int lineStartY, int lineLength)
+		{
+			double angleInRadians = angleInDegrees * (Math.PI / 180.0);
+			double ptX = lineStartX + lineLength * Math.Cos(angleInRadians);
+			double ptY = lineStartY - 1 * lineLength * Math.Sin(angleInRadians);
+
+			graphics.DrawLine(pen, lineStartX, lineStartY, (int)ptX, (int)ptY);
+		}
+}

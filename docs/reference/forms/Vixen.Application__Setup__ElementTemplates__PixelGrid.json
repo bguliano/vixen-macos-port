@@ -1,0 +1,742 @@
+{
+"class": "PixelGrid",
+"source": "Vixen.Application/Setup/ElementTemplates/PixelGrid.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "PixelGrid",
+"ShowInTaskbar": false,
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Pixel Grid / Matrix Setup"
+},
+"events": {
+"FormClosed": "PixelGrid_FormClosed",
+"Load": "PixelGrid_Load"
+},
+"children": [
+{
+"name": "groupBox2"
+},
+{
+"name": "groupBox1"
+},
+{
+"name": "textBoxSecondPrefix"
+},
+{
+"name": "textBoxFirstPrefix"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "groupBoxDimensions"
+},
+{
+"name": "groupBoxStringOrientation"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "textBoxName"
+},
+{
+"name": "label6"
+}
+],
+"objects": {
+"numericUpDownHeight": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 22
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownHeight",
+"Size": {
+"t": "size",
+"x": 66,
+"y": 23
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 20, 0, 0, 0})"
+}
+},
+"events": {
+"ValueChanged": "numericUpDownHeight_ValueChanged"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 454,
+"y": 283
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 342,
+"y": 283
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"numericUpDownWidth": {
+"type": "NumericUpDown",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 184,
+"y": 22
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownWidth",
+"Size": {
+"t": "size",
+"x": 66,
+"y": 23
+},
+"TabIndex": 2,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 32, 0, 0, 0})"
+}
+},
+"events": {
+"ValueChanged": "numericUpDownWidth_ValueChanged"
+},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 139,
+"y": 24
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 27,
+"Text": "Width"
+},
+"events": {},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 24
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 43,
+"y": 15
+},
+"TabIndex": 26,
+"Text": "Height"
+},
+"events": {},
+"children": []
+},
+"textBoxName": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 62,
+"y": 20
+},
+"Name": "textBoxName",
+"Size": {
+"t": "size",
+"x": 485,
+"y": 23
+},
+"TabIndex": 0,
+"Text": "Grid 1"
+},
+"events": {},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 23
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 24,
+"Text": "Name"
+},
+"events": {},
+"children": []
+},
+"radioButtonHorizontalFirst": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 29,
+"y": 22
+},
+"Name": "radioButtonHorizontalFirst",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 19
+},
+"TabIndex": 3,
+"TabStop": true,
+"Text": "Horizontal",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioButtonVerticalFirst": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 142,
+"y": 22
+},
+"Name": "radioButtonVerticalFirst",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 19
+},
+"TabIndex": 4,
+"TabStop": true,
+"Text": "Vertical",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonOrientation_CheckedChanged"
+},
+"children": []
+},
+"groupBoxStringOrientation": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 51
+},
+"Name": "groupBoxStringOrientation",
+"Size": {
+"t": "size",
+"x": 261,
+"y": 67
+},
+"TabIndex": 28,
+"TabStop": false,
+"Text": "String Orientation"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "radioButtonHorizontalFirst"
+},
+{
+"name": "radioButtonVerticalFirst"
+}
+]
+},
+"groupBoxDimensions": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 293,
+"y": 51
+},
+"Name": "groupBoxDimensions",
+"Size": {
+"t": "size",
+"x": 270,
+"y": 67
+},
+"TabIndex": 29,
+"TabStop": false,
+"Text": "Dimensions"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "numericUpDownHeight"
+},
+{
+"name": "label5"
+},
+{
+"name": "numericUpDownWidth"
+},
+{
+"name": "label4"
+}
+]
+},
+"textBoxSecondPrefix": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 378,
+"y": 130
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxSecondPrefix",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 33,
+"Text": "C"
+},
+"events": {},
+"children": []
+},
+"textBoxFirstPrefix": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 111,
+"y": 129
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxFirstPrefix",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 32,
+"Text": "R"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 290,
+"y": 132
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 15
+},
+"TabIndex": 31,
+"Text": "Pixel Prefix:"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 23,
+"y": 132
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 74,
+"y": 15
+},
+"TabIndex": 30,
+"Text": "String Prefix:"
+},
+"events": {},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 293,
+"y": 172
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 268,
+"y": 88
+},
+"TabIndex": 30,
+"TabStop": false,
+"Text": "Patching "
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "lblEveryValue"
+},
+{
+"name": "chkZigZag"
+}
+]
+},
+"lblEveryValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 115,
+"y": 37
+},
+"Name": "lblEveryValue",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 29,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"chkZigZag": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 36
+},
+"Name": "chkZigZag",
+"Size": {
+"t": "size",
+"x": 97,
+"y": 19
+},
+"TabIndex": 28,
+"Text": "Zig Zag Every",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkZigZag_CheckedChanged"
+},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 26,
+"y": 172
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 261,
+"y": 88
+},
+"TabIndex": 34,
+"TabStop": false,
+"Text": "Wire Start Location"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "radioTopLeft"
+},
+{
+"name": "radioBottomRight"
+},
+{
+"name": "radioBottomLeft"
+},
+{
+"name": "radioTopRight"
+}
+]
+},
+"radioTopLeft": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 22
+},
+"Name": "radioTopLeft",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 19
+},
+"TabIndex": 30,
+"TabStop": true,
+"Text": "Top Left",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioBottomRight": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 119,
+"y": 47
+},
+"Name": "radioBottomRight",
+"Size": {
+"t": "size",
+"x": 96,
+"y": 19
+},
+"TabIndex": 33,
+"TabStop": true,
+"Text": "Bottom Right",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioBottomLeft": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 47
+},
+"Name": "radioBottomLeft",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 19
+},
+"TabIndex": 31,
+"TabStop": true,
+"Text": "Bottom Left",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioTopRight": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 119,
+"y": 22
+},
+"Name": "radioTopRight",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 19
+},
+"TabIndex": 32,
+"TabStop": true,
+"Text": "Top Right",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+575,
+326
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).EndInit()"
+]
+}

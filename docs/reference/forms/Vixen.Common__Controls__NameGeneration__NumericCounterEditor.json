@@ -1,0 +1,325 @@
+{
+"class": "NumericCounterEditor",
+"source": "Vixen.Common/Controls/NameGeneration/NumericCounterEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "NumericCounterEditor"
+},
+"events": {
+"Load": "NumericCounterEditor_Load"
+},
+"children": [
+{
+"name": "editorLayoutPanel"
+}
+],
+"objects": {
+"editorLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 3,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "editorLayoutPanel",
+"Padding": {
+"t": "padding",
+"l": 3,
+"t_": 3,
+"r": 3,
+"b": 3
+},
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 221,
+"y": 88
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "label1",
+"col": 0,
+"row": 0
+},
+{
+"name": "numericUpDownStartNumber",
+"col": 1,
+"row": 0
+},
+{
+"name": "label2",
+"col": 0,
+"row": 1
+},
+{
+"name": "numericUpDownEndNumber",
+"col": 1,
+"row": 1
+},
+{
+"name": "checkBoxEndless",
+"col": 2,
+"row": 1
+},
+{
+"name": "label3",
+"col": 0,
+"row": 2
+},
+{
+"name": "numericUpDownStep",
+"col": 1,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Start Number:"
+},
+"events": {},
+"children": []
+},
+"numericUpDownStartNumber": {
+"type": "NumericUpDown",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, -2147483648})"
+},
+"Name": "numericUpDownStartNumber",
+"Size": {
+"t": "size",
+"x": 58,
+"y": 20
+},
+"TabIndex": 0
+},
+"events": {
+"ValueChanged": "numericUpDownStartNumber_ValueChanged"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 69,
+"y": 13
+},
+"TabIndex": 3,
+"Text": "End Number:"
+},
+"events": {},
+"children": []
+},
+"numericUpDownEndNumber": {
+"type": "NumericUpDown",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, -2147483648})"
+},
+"Name": "numericUpDownEndNumber",
+"Size": {
+"t": "size",
+"x": 58,
+"y": 20
+},
+"TabIndex": 2
+},
+"events": {
+"ValueChanged": "numericUpDownEndNumber_ValueChanged"
+},
+"children": []
+},
+"checkBoxEndless": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Name": "checkBoxEndless",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 17
+},
+"TabIndex": 4,
+"Text": "Endless",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxEndless_CheckedChanged"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 32,
+"y": 13
+},
+"TabIndex": 6,
+"Text": "Step:"
+},
+"events": {},
+"children": []
+},
+"numericUpDownStep": {
+"type": "NumericUpDown",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, -2147483648})"
+},
+"Name": "numericUpDownStep",
+"Size": {
+"t": "size",
+"x": 58,
+"y": 20
+},
+"TabIndex": 5
+},
+"events": {
+"ValueChanged": "numericUpDownStep_ValueChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+221,
+88
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartNumber)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownEndNumber)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStep)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartNumber)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownEndNumber)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStep)).EndInit()"
+]
+}

@@ -1,0 +1,577 @@
+{
+"class": "SetupPatchingGraphical",
+"source": "Vixen.Application/Setup/SetupPatchingGraphical.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"DoubleBuffered": true,
+"Name": "SetupPatchingGraphical"
+},
+"events": {
+"Load": "SetupPatchingGraphical_Load",
+"Resize": "SetupPatchingGraphical_Resize"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"roleBasedSecurityManager1": {
+"type": "RoleBasedSecurityManager",
+"props": {
+"CurrentRole": {
+"t": "enum",
+"type": "StandardRole",
+"v": "Administrator"
+},
+"CurrentRoleName": "Administrator"
+},
+"events": {},
+"children": []
+},
+"diagramDisplay": {
+"type": "Display",
+"props": {
+"AllowDrop": true,
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackColorGradient": {
+"t": "color",
+"system": "Control"
+},
+"BackgroundGradientAngle": 90,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "Fixed3D"
+},
+"DiagramSetController": {
+"t": "ref",
+"name": "diagramSetController"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"GridColor": {
+"t": "color",
+"name": "Gainsboro"
+},
+"GridSize": 19,
+"ImeMode": {
+"t": "enum",
+"type": "ImeMode",
+"v": "NoControl"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "diagramDisplay",
+"PropertyController": null,
+"RenderingQualityLowQuality": {
+"t": "enum",
+"type": "RenderingQuality",
+"v": "LowQuality"
+},
+"SelectionHilightColor": {
+"t": "color",
+"name": "Firebrick"
+},
+"SelectionInactiveColor": {
+"t": "color",
+"name": "Gray"
+},
+"SelectionInteriorColor": {
+"t": "color",
+"name": "WhiteSmoke"
+},
+"SelectionNormalColor": {
+"t": "color",
+"name": "DarkGreen"
+},
+"ShowDefaultContextMenu": false,
+"Size": {
+"t": "size",
+"x": 517,
+"y": 589
+},
+"SnapToGrid": false,
+"TabIndex": 1,
+"ToolPreviewBackColor": {
+"t": "color",
+"argb": [
+64,
+119,
+136,
+153
+]
+},
+"ToolPreviewColor": {
+"t": "color",
+"argb": [
+96,
+70,
+130,
+180
+]
+}
+},
+"events": {
+"ShapesSelected": "diagramDisplay_ShapesSelected",
+"ShapeDoubleClick": "displayDiagram_ShapeDoubleClick",
+"KeyDown": "diagramDisplay_KeyDown"
+},
+"children": []
+},
+"diagramSetController": {
+"type": "DiagramSetController",
+"props": {
+"ActiveTool": null,
+"Project": {
+"t": "ref",
+"name": "project"
+}
+},
+"events": {},
+"children": []
+},
+"project": {
+"type": "Project",
+"props": {
+"LibrarySearchPaths": {
+"t": "raw",
+"v": "(IList<string>)resources.GetObject(\"project.LibrarySearchPaths\")"
+},
+"Name": null,
+"Repository": {
+"t": "ref",
+"name": "cachedRepository"
+},
+"SecurityManager": {
+"t": "ref",
+"name": "roleBasedSecurityManager1"
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"cachedRepository": {
+"type": "CachedRepository",
+"props": {
+"ProjectName": null,
+"Store": null,
+"Version": 0
+},
+"events": {},
+"children": []
+},
+"copyFilterToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "copyFilterToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Copy Filter"
+},
+"events": {
+"Click": "copyFilterToolStripMenuItem_Click"
+},
+"children": []
+},
+"pasteFilterToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "pasteFilterToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Paste Filter"
+},
+"events": {
+"Click": "pasteFilterToolStripMenuItem_Click"
+},
+"children": []
+},
+"pasteFilterMultipleToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "pasteFilterMultipleToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Paste Filter (Multiple)"
+},
+"events": {
+"Click": "pasteFilterMultipleToolStripMenuItem_Click"
+},
+"children": []
+},
+"diagramContextMenuStrip": {
+"type": "ContextMenuStrip",
+"props": {
+"Name": "diagramContextMenuStrip",
+"Size": {
+"t": "size",
+"x": 187,
+"y": 70
+}
+},
+"events": {
+"Opening": "diagramContextMenuStrip_Opening"
+},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+],
+"Items": [
+{
+"ref": "copyFilterToolStripMenuItem"
+},
+{
+"ref": "pasteFilterToolStripMenuItem"
+},
+{
+"ref": "pasteFilterMultipleToolStripMenuItem"
+}
+]
+},
+"buttonDeleteFilter": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 40,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 10,
+"b": 3
+},
+"Name": "buttonDeleteFilter",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 43,
+"toolTipText": "Delete Filter",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDeleteFilter_Click"
+},
+"children": []
+},
+"buttonAddFilter": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAddFilter",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 44,
+"toolTipText": "Add Filter",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonAddFilter_Click"
+},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {
+"AutomaticDelay": 200,
+"AutoPopDelay": 5000,
+"InitialDelay": 200,
+"ReshowDelay": 40
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"buttonZoomIn": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 82,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonZoomIn",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 45,
+"toolTipText": "Zoom In",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonZoomIn_Click"
+},
+"children": []
+},
+"buttonZoomOut": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 118,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonZoomOut",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 46,
+"toolTipText": "Zoom Out",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonZoomOut_Click"
+},
+"children": []
+},
+"buttonZoomFit": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 154,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonZoomFit",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 47,
+"toolTipText": "Zoom to Fit",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonZoomFit_Click"
+},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 525,
+"y": 635
+},
+"TabIndex": 48
+},
+"events": {},
+"children": [
+{
+"name": "diagramDisplay",
+"col": 0,
+"row": 0
+},
+{
+"name": "flowLayoutPanelButton",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"flowLayoutPanelButton": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 598
+},
+"Name": "flowLayoutPanelButton",
+"Size": {
+"t": "size",
+"x": 519,
+"y": 34
+},
+"TabIndex": 2
+},
+"events": {},
+"children": [
+{
+"name": "buttonAddFilter"
+},
+{
+"name": "buttonDeleteFilter"
+},
+{
+"name": "buttonZoomIn"
+},
+{
+"name": "buttonZoomOut"
+},
+{
+"name": "buttonZoomFit"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+525,
+635
+]
+}
+}
+}

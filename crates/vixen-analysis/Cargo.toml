@@ -1,0 +1,13 @@
+[package]
+name = "vixen-analysis"
+version.workspace = true
+edition.workspace = true
+license = "GPL-2.0-or-later"
+description = "Beats and Bars audio analysis: a port of the QM Bar and Beat Tracker and Vixen's mark collection builder"
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+
+[dev-dependencies]
+serde_json.workspace = true
+vixen-audio = { path = "../vixen-audio" }

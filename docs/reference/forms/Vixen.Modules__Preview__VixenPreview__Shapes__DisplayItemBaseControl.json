@@ -1,0 +1,21 @@
+{
+"class": "DisplayItemBaseControl",
+"source": "Vixen.Modules/Preview/VixenPreview/Shapes/DisplayItemBaseControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+}
+},
+"events": {},
+"children": [],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+}
+}
+}

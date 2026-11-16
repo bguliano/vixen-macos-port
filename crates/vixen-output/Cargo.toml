@@ -1,0 +1,17 @@
+[package]
+name = "vixen-output"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-xml = { path = "../vixen-xml" }
+parking_lot.workspace = true
+uuid.workspace = true
+libc = "0.2"
+serialport = { version = "4", default-features = false }
+socket2 = { version = "0.5", features = ["all"] }
+core-foundation-sys = "0.8"
+
+[build-dependencies]
+cc = "1"

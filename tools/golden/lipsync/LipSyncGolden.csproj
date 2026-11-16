@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+<OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><AssemblyName>LipSyncGolden</AssemblyName>
+<ImplicitUsings>enable</ImplicitUsings><Nullable>disable</Nullable><UseAppHost>false</UseAppHost><InvariantGlobalization>true</InvariantGlobalization>
+<EnableDefaultCompileItems>false</EnableDefaultCompileItems><OutputPath>$(GoldenOut)/lipsync/bin/</OutputPath><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+<NoWarn>$(NoWarn);CS0436;CS1591;CA1416;CS0108;CS0162;CS0168;CS0219;CS0414;CS0649;CS8632</NoWarn>
+<VixenNativeBin>/Users/developer/Documents/Codex/2026-09-13/is-the/outputs/Vixen/native/Vixen.Native.Tests/bin/Release/net10.0</VixenNativeBin>
+<Upstream>$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Modules</Upstream>
+</PropertyGroup>
+<ItemGroup><Using Include="System.Drawing"/><Compile Include="*.cs"/>
+<Compile Include="$(Upstream)/Effect/LipSync/*.cs" Exclude="$(Upstream)/Effect/LipSync/FastPictureEffect.cs"/>
+<Compile Include="$(Upstream)/App/Marks/*.cs"/>
+<Compile Include="$(Upstream)/Property/Face/*.cs" Exclude="$(Upstream)/Property/Face/FaceSetupHelper*.cs"/>
+<Compile Include="$(Upstream)/App/LipSyncApp/LipSyncMapData.cs"/>
+<Compile Include="$(Upstream)/App/LipSyncApp/LipSyncMapItem.cs"/>
+<Compile Include="$(Upstream)/App/LipSyncApp/LipSyncMapStaticData.cs"/>
+<Compile Include="$(Upstream)/App/LipSyncApp/LipSyncMapDescriptor.cs"/>
+<Compile Include="$(Upstream)/App/LipSyncApp/LipSyncPhonemeUtils.cs"/>
+<Compile Include="$(Upstream)/App/LipSyncApp/LipSyncResources.Designer.cs"/>
+
+		<Reference Include="Vixen.Core"><HintPath>$(VixenNativeBin)/Vixen.Core.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.Effect.Native"><HintPath>$(VixenNativeBin)/Module.Effect.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.App.Native"><HintPath>$(VixenNativeBin)/Module.App.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.Property.Native"><HintPath>$(VixenNativeBin)/Module.Property.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.LayerMixingFilter.Native"><HintPath>$(VixenNativeBin)/Module.LayerMixingFilter.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.SequenceType.Native"><HintPath>$(VixenNativeBin)/Module.SequenceType.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.Timing.Native"><HintPath>$(VixenNativeBin)/Module.Timing.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Module.Media.Native"><HintPath>$(VixenNativeBin)/Module.Media.Native.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="NLog"><HintPath>$(VixenNativeBin)/NLog.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Newtonsoft.Json"><HintPath>$(VixenNativeBin)/Newtonsoft.Json.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Zstandard.Net"><HintPath>$(VixenNativeBin)/Zstandard.Net.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="System.Drawing.Common"><HintPath>$(VixenNativeBin)/System.Drawing.Common.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="System.Private.Windows.Core"><HintPath>$(VixenNativeBin)/System.Private.Windows.Core.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="System.Private.Windows.GdiPlus"><HintPath>$(VixenNativeBin)/System.Private.Windows.GdiPlus.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Microsoft.Win32.SystemEvents"><HintPath>$(VixenNativeBin)/Microsoft.Win32.SystemEvents.dll</HintPath><Private>true</Private></Reference>
+</ItemGroup></Project>

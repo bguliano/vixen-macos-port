@@ -1,0 +1,185 @@
+{
+"class": "MaskAndFillSetup",
+"source": "Vixen.Modules/LayerMixingFilter/MaskFill/MaskAndFillSetup.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "MaskAndFillSetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Mask And Fill Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "chkRequireMixingPartner"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOk"
+},
+{
+"name": "chkExcludeZero"
+}
+],
+"objects": {
+"chkExcludeZero": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 33,
+"y": 28
+},
+"Name": "chkExcludeZero",
+"Size": {
+"t": "size",
+"x": 128,
+"y": 19
+},
+"TabIndex": 0,
+"Text": "Exclude zero values",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkExcludeZero_CheckedChanged"
+},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 116,
+"y": 88
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 197,
+"y": 88
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"chkRequireMixingPartner": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 33,
+"y": 53
+},
+"Name": "chkRequireMixingPartner",
+"Size": {
+"t": "size",
+"x": 147,
+"y": 19
+},
+"TabIndex": 3,
+"Text": "Require Mixing Partner",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkRequireMixingPartner_CheckedChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+284,
+123
+]
+}
+}
+}

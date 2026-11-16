@@ -1,0 +1,62 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/vixen-core",
+    "crates/vixen-xml",
+    "crates/vixen-effects",
+    "crates/fx-basic",
+    "crates/fx-pixel-simple",
+    "crates/fx-pixel-motion",
+    "crates/fx-pixel-graphics",
+    "crates/fx-pixel-complex",
+    "crates/fx-pixel-physics",
+    "crates/fx-audio-state",
+    "crates/fx-fixture",
+    "crates/vixen-effect-registry",
+    "crates/vixen-io",
+    "crates/vixen-engine",
+    "crates/vixen-session",
+    "crates/vixen-export",
+    "crates/vixen-output",
+    "crates/vixen-audio",
+    "crates/vixen-analysis",
+    "crates/vixen-video",
+    "crates/vixen-media-tools",
+    "crates/vixen-render",
+    "crates/vixen-preview",
+    "crates/vixen-prop",
+    "crates/vixen-fpp",
+    "crates/vixen-web",
+    "crates/vixen-ffi",
+]
+
+[workspace.package]
+version = "3.13.4"
+edition = "2021"
+license-file = "upstream/Vixen/License.txt"
+
+[workspace.dependencies]
+uuid = { version = "1", features = ["v4"] }
+rayon = "1"
+smallvec = "1"
+fastrand = "2"
+parking_lot = "0.12"
+roxmltree = "0.20"
+thiserror = "2"
+tiny-skia = "0.11"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "bmp"] }
+serde = { version = "1", features = ["derive"] }
+# Private value drags and other JSON model transfers must retain every f64 bit.
+serde_json = { version = "1", features = ["float_roundtrip"] }
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 4
+debug = "line-tables-only"

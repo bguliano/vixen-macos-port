@@ -1,0 +1,501 @@
+{
+"class": "LipSyncTextConvertForm",
+"source": "Vixen.Modules/App/LipSyncApp/LipSyncTextConvertForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonConvert"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "LipSyncTextConvertForm",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"Text": "LipSync Text Convert"
+},
+"events": {
+"Activated": "LipSyncTextConvertForm_Activated",
+"FormClosed": "LipSyncTextConvertForm_FormClosed",
+"Load": "LipSyncTextConvert_Load",
+"Shown": "LipSyncTextConvertForm_Shown"
+},
+"children": [
+{
+"name": "checkBoxClearText"
+},
+{
+"name": "markAlignmentLabel"
+},
+{
+"name": "marksGroupBox"
+},
+{
+"name": "markCollectionLabel"
+},
+{
+"name": "markStartOffsetLabel"
+},
+{
+"name": "groupBox1"
+},
+{
+"name": "label3"
+},
+{
+"name": "textBox"
+},
+{
+"name": "buttonConvert"
+}
+],
+"objects": {
+"buttonConvert": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 195,
+"y": 369
+},
+"Name": "buttonConvert",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 0,
+"Text": "Convert",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "convertButton_Click"
+},
+"children": []
+},
+"textBox": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 10,
+"y": 298
+},
+"Multiline": true,
+"Name": "textBox",
+"Size": {
+"t": "size",
+"x": 271,
+"y": 53
+},
+"TabIndex": 2
+},
+"events": {
+"TextChanged": "textBox_TextChanged"
+},
+"children": []
+},
+"markCollectionCombo": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 27
+},
+"Name": "markCollectionCombo",
+"Size": {
+"t": "size",
+"x": 157,
+"y": 24
+},
+"Sorted": true,
+"TabIndex": 4
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "markCollectionCombo_SelectedIndexChanged",
+"EnabledChanged": "markCollectionCombo_EnabledChanged"
+},
+"children": []
+},
+"alignCombo": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 95
+},
+"Name": "alignCombo",
+"Size": {
+"t": "size",
+"x": 157,
+"y": 24
+},
+"TabIndex": 7
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 278
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "Text to Convert"
+},
+"events": {},
+"children": []
+},
+"startOffsetCombo": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 60
+},
+"Name": "startOffsetCombo",
+"Size": {
+"t": "size",
+"x": 157,
+"y": 24
+},
+"Sorted": true,
+"TabIndex": 10
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"DropDown": "startOffsetCombo_DropDown"
+},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 87,
+"y": 14
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 102
+},
+"TabIndex": 11,
+"TabStop": false,
+"Text": "Target / Spacing"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "markCollectionRadio"
+},
+{
+"name": "cursorRadio"
+},
+{
+"name": "clipBoardRadio"
+}
+]
+},
+"markCollectionRadio": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 75
+},
+"Name": "markCollectionRadio",
+"Size": {
+"t": "size",
+"x": 129,
+"y": 19
+},
+"TabIndex": 2,
+"TabStop": true,
+"Text": "Per Mark Collection",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "markCollectionRadio_CheckedChanged"
+},
+"children": []
+},
+"cursorRadio": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 22
+},
+"Name": "cursorRadio",
+"Size": {
+"t": "size",
+"x": 141,
+"y": 19
+},
+"TabIndex": 1,
+"TabStop": true,
+"Text": "Cursor / Even Spacing",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"clipBoardRadio": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 48
+},
+"Name": "clipBoardRadio",
+"Size": {
+"t": "size",
+"x": 158,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "Clipboard / Even Spacing",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"marksGroupBox": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 87,
+"y": 128
+},
+"Name": "marksGroupBox",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 137
+},
+"TabIndex": 12,
+"TabStop": false,
+"Text": "Marks"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "markCollectionCombo"
+},
+{
+"name": "startOffsetCombo"
+},
+{
+"name": "alignCombo"
+}
+]
+},
+"markAlignmentLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 226
+},
+"Name": "markAlignmentLabel",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Alignment",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"markCollectionLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 158
+},
+"Name": "markCollectionLabel",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Collection"
+},
+"events": {},
+"children": []
+},
+"markStartOffsetLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 192
+},
+"Name": "markStartOffsetLabel",
+"Size": {
+"t": "size",
+"x": 66,
+"y": 15
+},
+"TabIndex": 9,
+"Text": "Start Offset"
+},
+"events": {},
+"children": []
+},
+"checkBoxClearText": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 140,
+"y": 278
+},
+"Name": "checkBoxClearText",
+"Size": {
+"t": "size",
+"x": 141,
+"y": 19
+},
+"TabIndex": 13,
+"Text": "Clear after conversion",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+300,
+403
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+316,
+437
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+316,
+437
+]
+}
+}
+}

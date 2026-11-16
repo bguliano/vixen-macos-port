@@ -1,0 +1,569 @@
+{
+"class": "ConfigPreviews",
+"source": "Vixen.Application/ConfigPreviews.Designer.cs",
+"props": {
+"columnHeader1": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"columnHeader2": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MinimizeBox": false,
+"MaximizeBox": false,
+"Name": "ConfigPreviews",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Setup Previews"
+},
+"events": {
+"FormClosing": "ConfigPreviews_FormClosing",
+"Load": "ConfigPreviews_Load"
+},
+"children": [
+{
+"name": "buttonDuplicateSelected"
+},
+{
+"name": "label4"
+},
+{
+"name": "label3"
+},
+{
+"name": "groupBoxSelectedPreview"
+},
+{
+"name": "listViewPreviews"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "buttonDeletePreview"
+},
+{
+"name": "buttonAddPreview"
+},
+{
+"name": "buttonCancel"
+}
+],
+"objects": {
+"listViewGroup2": {
+"type": "ListViewGroup",
+"props": {
+"Header": "ListViewGroup",
+"Name": "listViewGroup1"
+},
+"events": {},
+"children": [],
+"ctor": [
+"ListViewGroup",
+{
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Left"
+}
+]
+},
+"groupBoxSelectedPreview": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 317
+},
+"Name": "groupBoxSelectedPreview",
+"Size": {
+"t": "size",
+"x": 455,
+"y": 182
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "Selected Preview"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "buttonUpdate"
+},
+{
+"name": "label2"
+},
+{
+"name": "textBoxName"
+},
+{
+"name": "buttonConfigurePreview"
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 150,
+"y": 76
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 221,
+"y": 15
+},
+"TabIndex": 33,
+"Text": "Configure details specific to the preview."
+},
+"events": {},
+"children": []
+},
+"buttonUpdate": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 359,
+"y": 24
+},
+"Name": "buttonUpdate",
+"Size": {
+"t": "size",
+"x": 85,
+"y": 29
+},
+"TabIndex": 2,
+"Text": "Update",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonUpdate_Click"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 16,
+"y": 31
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 15
+},
+"TabIndex": 26,
+"Text": "Name:"
+},
+"events": {},
+"children": []
+},
+"textBoxName": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 68,
+"y": 28
+},
+"Name": "textBoxName",
+"Size": {
+"t": "size",
+"x": 158,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"buttonConfigurePreview": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 15,
+"y": 69
+},
+"Name": "buttonConfigurePreview",
+"Size": {
+"t": "size",
+"x": 128,
+"y": 29
+},
+"TabIndex": 0,
+"Text": "Configure Preview",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonConfigurePreview_Click"
+},
+"children": []
+},
+"listViewPreviews": {
+"type": "ListView",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"CheckBoxes": true,
+"FullRowSelect": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "None"
+},
+"HideSelection": false,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 35
+},
+"Name": "listViewPreviews",
+"ShowGroups": false,
+"Size": {
+"t": "size",
+"x": 456,
+"y": 219
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"ItemCheck": "listViewPreviews_ItemCheck",
+"SelectedIndexChanged": "listViewPreviews_SelectedIndexChanged"
+},
+"children": [],
+"Columns": [
+{
+"ref": "columnHeader1"
+},
+{
+"ref": "columnHeader2"
+}
+],
+"Groups": [
+{
+"ref": "listViewGroup2"
+}
+]
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 252,
+"y": 516
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"buttonDeletePreview": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Bottom"
+},
+"Location": {
+"t": "point",
+"x": 318,
+"y": 272
+},
+"Name": "buttonDeletePreview",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 29
+},
+"TabIndex": 3,
+"Text": "Delete Selected",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDeletePreview_Click"
+},
+"children": []
+},
+"buttonAddPreview": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Bottom"
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 272
+},
+"Name": "buttonAddPreview",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 29
+},
+"TabIndex": 2,
+"Text": "Add New Preview",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonAddPreview_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 364,
+"y": 516
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Name"
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 230,
+"y": 14
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 31,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Type"
+},
+"events": {},
+"children": []
+},
+"buttonDuplicateSelected": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Bottom"
+},
+"Location": {
+"t": "point",
+"x": 167,
+"y": 272
+},
+"Name": "buttonDuplicateSelected",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 29
+},
+"TabIndex": 8,
+"Text": "Duplicate Selected",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDuplicateSelected_Click"
+},
+"children": []
+},
+"columnHeader1": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Name",
+"Width": 181
+},
+"events": {},
+"children": []
+},
+"columnHeader2": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Type",
+"Width": 182
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+482,
+569
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+498,
+2281
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+498,
+573
+]
+}
+}
+}

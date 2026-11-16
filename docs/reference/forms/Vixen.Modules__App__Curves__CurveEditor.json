@@ -1,0 +1,854 @@
+{
+"class": "CurveEditor",
+"source": "Vixen.Modules/App/Curves/CurveEditor.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Name": "CurveEditor",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Curve Editor"
+},
+"events": {},
+"children": [
+{
+"name": "grpCurve"
+},
+{
+"name": "groupBoxLibrary"
+},
+{
+"name": "labelInstructions1"
+},
+{
+"name": "labelInstructions2"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "zedGraphControl"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 370,
+"y": 718
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "Black"
+},
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 470,
+"y": 718
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"labelInstructions1": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 710
+},
+"Name": "labelInstructions1",
+"Size": {
+"t": "size",
+"x": 250,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Hold down Ctrl to add new points on the grid."
+},
+"events": {},
+"children": []
+},
+"labelInstructions2": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 732
+},
+"Name": "labelInstructions2",
+"Size": {
+"t": "size",
+"x": 184,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Hold down Alt to remove a point."
+},
+"events": {},
+"children": []
+},
+"groupBoxLibrary": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 602
+},
+"Name": "groupBoxLibrary",
+"Size": {
+"t": "size",
+"x": 549,
+"y": 98
+},
+"TabIndex": 8,
+"TabStop": false,
+"Text": "Library"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "buttonEditLibraryCurve"
+},
+{
+"name": "buttonUnlinkCurve"
+},
+{
+"name": "labelCurve"
+},
+{
+"name": "buttonSaveCurveToLibrary"
+},
+{
+"name": "buttonLoadCurveFromLibrary"
+}
+]
+},
+"buttonEditLibraryCurve": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 296,
+"y": 58
+},
+"Name": "buttonEditLibraryCurve",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "Edit Library Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonEditLibraryCurve_Click"
+},
+"children": []
+},
+"buttonUnlinkCurve": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 149,
+"y": 58
+},
+"Name": "buttonUnlinkCurve",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 29
+},
+"TabIndex": 3,
+"Text": "Unlink Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonUnlinkCurve_Click"
+},
+"children": []
+},
+"labelCurve": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 147,
+"y": 29
+},
+"Name": "labelCurve",
+"Size": {
+"t": "size",
+"x": 276,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "This curve is linked to the library curve: \\'ASDFASDF\\'"
+},
+"events": {},
+"children": []
+},
+"buttonSaveCurveToLibrary": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 58
+},
+"Name": "buttonSaveCurveToLibrary",
+"Size": {
+"t": "size",
+"x": 117,
+"y": 29
+},
+"TabIndex": 1,
+"Text": "Save Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonSaveCurveToLibrary_Click"
+},
+"children": []
+},
+"buttonLoadCurveFromLibrary": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 22
+},
+"Name": "buttonLoadCurveFromLibrary",
+"Size": {
+"t": "size",
+"x": 117,
+"y": 29
+},
+"TabIndex": 0,
+"Text": "Load Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonLoadCurveFromLibrary_Click"
+},
+"children": []
+},
+"yLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 434,
+"y": 64
+},
+"Name": "yLabel",
+"Size": {
+"t": "size",
+"x": 17,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Y:"
+},
+"events": {},
+"children": []
+},
+"xLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 434,
+"y": 30
+},
+"Name": "xLabel",
+"Size": {
+"t": "size",
+"x": 17,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "X:"
+},
+"events": {},
+"children": []
+},
+"grpCurve": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 13,
+"y": 497
+},
+"Name": "grpCurve",
+"Size": {
+"t": "size",
+"x": 549,
+"y": 99
+},
+"TabIndex": 9,
+"TabStop": false,
+"Text": "Curve"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "btnFunctionCurve"
+},
+{
+"name": "textBoxThreshold"
+},
+{
+"name": "label1"
+},
+{
+"name": "btnDraw"
+},
+{
+"name": "btnUpdateCoordinates"
+},
+{
+"name": "lblSelectedPoint"
+},
+{
+"name": "txtYValue"
+},
+{
+"name": "txtXValue"
+},
+{
+"name": "btnInvert"
+},
+{
+"name": "btnReverse"
+},
+{
+"name": "xLabel"
+},
+{
+"name": "yLabel"
+}
+]
+},
+"btnFunctionCurve": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 114,
+"y": 57
+},
+"Name": "btnFunctionCurve",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 19,
+"Text": "f(x) Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnFunctionCurve_Click"
+},
+"children": []
+},
+"textBoxThreshold": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 297,
+"y": 24
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxThreshold",
+"Size": {
+"t": "size",
+"x": 36,
+"y": 23
+},
+"TabIndex": 18,
+"Text": "5",
+"TextAlign": {
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Center"
+}
+},
+"events": {
+"TextChanged": "textBoxThreshold_TextChanged",
+"KeyPress": "textBoxThreshold_KeyPress"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 213,
+"y": 27
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 76,
+"y": 15
+},
+"TabIndex": 17,
+"Text": "Draw Interval",
+"toolTipText": "Min distance to create Curve point"
+},
+"events": {},
+"children": []
+},
+"btnDraw": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 114,
+"y": 20
+},
+"Name": "btnDraw",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 16,
+"Text": "Draw Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnDraw_Click"
+},
+"children": []
+},
+"btnUpdateCoordinates": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 345,
+"y": 57
+},
+"Name": "btnUpdateCoordinates",
+"Size": {
+"t": "size",
+"x": 79,
+"y": 29
+},
+"TabIndex": 15,
+"Text": "Update",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnUpdateCoordinates_Click"
+},
+"children": []
+},
+"lblSelectedPoint": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 351,
+"y": 27
+},
+"Name": "lblSelectedPoint",
+"Size": {
+"t": "size",
+"x": 82,
+"y": 15
+},
+"TabIndex": 14,
+"Text": "Selected Point"
+},
+"events": {},
+"children": []
+},
+"txtYValue": {
+"type": "NumericTextBox",
+"props": {
+"DecimalNumber": 15,
+"Enabled": false,
+"Groupsep": {
+"t": "raw",
+"v": "','"
+},
+"Location": {
+"t": "point",
+"x": 467,
+"y": 62
+},
+"MaxCheck": true,
+"MaxValue": 100,
+"MinCheck": true,
+"MinValue": 0,
+"Name": "txtYValue",
+"NumberFormat": {
+"t": "enum",
+"type": "NumberFormat",
+"v": "DecimalValue"
+},
+"Size": {
+"t": "size",
+"x": 62,
+"y": 23
+},
+"TabIndex": 13,
+"Usegroupseparator": false
+},
+"events": {},
+"children": []
+},
+"txtXValue": {
+"type": "NumericTextBox",
+"props": {
+"DecimalNumber": 15,
+"Enabled": false,
+"Groupsep": {
+"t": "raw",
+"v": "','"
+},
+"Location": {
+"t": "point",
+"x": 467,
+"y": 25
+},
+"MaxCheck": true,
+"MaxValue": 100,
+"MinCheck": true,
+"MinValue": 0,
+"Name": "txtXValue",
+"NumberFormat": {
+"t": "enum",
+"type": "NumberFormat",
+"v": "DecimalValue"
+},
+"Size": {
+"t": "size",
+"x": 62,
+"y": 23
+},
+"TabIndex": 12,
+"Usegroupseparator": false
+},
+"events": {},
+"children": []
+},
+"btnInvert": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 57
+},
+"Name": "btnInvert",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 9,
+"Text": "Invert Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnInvert_Click"
+},
+"children": []
+},
+"btnReverse": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 20
+},
+"Name": "btnReverse",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 0,
+"Text": "Reverse Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnReverse_Click"
+},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"zedGraphControl": {
+"type": "ZedGraphControl",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"IsAntiAlias": true,
+"IsEnableHEdit": true,
+"IsEnableHPan": false,
+"IsEnableHZoom": false,
+"IsEnableVEdit": true,
+"IsEnableVPan": false,
+"IsEnableVZoom": false,
+"IsEnableWheelZoom": false,
+"IsShowContextMenu": false,
+"LinkModifierKeys": {
+"t": "enum",
+"type": "Keys",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 13,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 6,
+"r": 5,
+"b": 6
+},
+"Name": "zedGraphControl",
+"PanModifierKeys": {
+"t": "enum",
+"type": "Keys",
+"v": "None"
+},
+"ScrollGrace": 0,
+"ScrollMaxX": 0,
+"ScrollMaxY": 0,
+"ScrollMaxY2": 0,
+"ScrollMinX": 0,
+"ScrollMinY": 0,
+"ScrollMinY2": 0,
+"Size": {
+"t": "size",
+"x": 549,
+"y": 482
+},
+"TabIndex": 0
+},
+"events": {
+"MouseDownEvent": "zedGraphControl_MouseDownEvent",
+"MouseUpEvent": "zedGraphControl_MouseUpEvent",
+"PreMouseMoveEvent": "zedGraphControl_PreMouseMoveEvent",
+"PostMouseMoveEvent": "zedGraphControl_PostMouseMoveEvent"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+575,
+750
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+591,
+784
+]
+}
+}
+}

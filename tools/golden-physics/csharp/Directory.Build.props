@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup>
+		<Out>/tmp/vixen-scratch/physics/csharp/out</Out>
+		<BaseIntermediateOutputPath>$(Out)/obj/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+		<MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+		<BaseOutputPath>$(Out)/projbin/$(MSBuildProjectName)/</BaseOutputPath>
+		<RestorePackagesPath>$(Out)/packages</RestorePackagesPath>
+		<RestoreFallbackFolders>/Users/developer/Documents/Codex/2026-09-13/is-the/work/nuget-packages</RestoreFallbackFolders>
+		<RestoreSources>$(Out)/empty-feed</RestoreSources>
+		<UseArtifactsOutput>false</UseArtifactsOutput>
+	</PropertyGroup>
+</Project>

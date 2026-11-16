@@ -1,0 +1,5102 @@
+{
+"class": "AutomaticMusicDetection",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/AutomaticMusicDetection.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Name": "AutomaticMusicDetection",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Automatic Detection Settings"
+},
+"events": {},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "numericUpDown1"
+},
+{
+"name": "btnPreviewAudio"
+},
+{
+"name": "btnOk"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "groupBox10"
+},
+{
+"name": "groupBox9"
+},
+{
+"name": "groupBox8"
+},
+{
+"name": "groupBox7"
+},
+{
+"name": "groupBox6"
+},
+{
+"name": "groupBox5"
+},
+{
+"name": "groupBox4"
+},
+{
+"name": "groupBox3"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"checkBox1": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox1",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "0",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox2": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox2",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "1",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox3": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox3",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "2",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox4": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox4",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "3",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox5": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox5",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "4",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox6": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox6",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "5",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox7": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox7",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "6",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox8": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox8",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "7",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox9": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox9",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "8",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox10": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox10",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "9",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox11": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox11",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "10",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox12": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox12",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "11",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 12,
+"TabStop": false,
+"Text": "Octave 0 (16-30hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox1"
+},
+{
+"name": "checkBox12"
+},
+{
+"name": "checkBox2"
+},
+{
+"name": "checkBox11"
+},
+{
+"name": "checkBox3"
+},
+{
+"name": "checkBox10"
+},
+{
+"name": "checkBox4"
+},
+{
+"name": "checkBox9"
+},
+{
+"name": "checkBox5"
+},
+{
+"name": "checkBox8"
+},
+{
+"name": "checkBox6"
+},
+{
+"name": "checkBox7"
+}
+]
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 52
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 13,
+"TabStop": false,
+"Text": "Octave 1 (32 - 64hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox13"
+},
+{
+"name": "checkBox14"
+},
+{
+"name": "checkBox15"
+},
+{
+"name": "checkBox16"
+},
+{
+"name": "checkBox17"
+},
+{
+"name": "checkBox18"
+},
+{
+"name": "checkBox19"
+},
+{
+"name": "checkBox20"
+},
+{
+"name": "checkBox21"
+},
+{
+"name": "checkBox22"
+},
+{
+"name": "checkBox23"
+},
+{
+"name": "checkBox24"
+}
+]
+},
+"checkBox13": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox13",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "12",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox14": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox14",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "23",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox15": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox15",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "13",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox16": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox16",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "22",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox17": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox17",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "14",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox18": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox18",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "21",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox19": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox19",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "15",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox20": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox20",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "20",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox21": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox21",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "16",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox22": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox22",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "19",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox23": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox23",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "17",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox24": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox24",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "18",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox3": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 104
+},
+"Name": "groupBox3",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 14,
+"TabStop": false,
+"Text": "Octave 2 (65-104hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox25"
+},
+{
+"name": "checkBox26"
+},
+{
+"name": "checkBox27"
+},
+{
+"name": "checkBox28"
+},
+{
+"name": "checkBox29"
+},
+{
+"name": "checkBox30"
+},
+{
+"name": "checkBox31"
+},
+{
+"name": "checkBox32"
+},
+{
+"name": "checkBox33"
+},
+{
+"name": "checkBox34"
+},
+{
+"name": "checkBox35"
+},
+{
+"name": "checkBox36"
+}
+]
+},
+"checkBox25": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox25",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "24",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox26": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox26",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "35",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox27": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox27",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "25",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox28": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox28",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "34",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox29": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox29",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "26",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox30": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox30",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "33",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox31": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox31",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "27",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox32": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox32",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "32",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox33": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox33",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "28",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox34": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox34",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "31",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox35": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox35",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "29",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox36": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox36",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "30",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox4": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 156
+},
+"Name": "groupBox4",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 15,
+"TabStop": false,
+"Text": "Octave 3 (131-247hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox37"
+},
+{
+"name": "checkBox38"
+},
+{
+"name": "checkBox39"
+},
+{
+"name": "checkBox40"
+},
+{
+"name": "checkBox41"
+},
+{
+"name": "checkBox42"
+},
+{
+"name": "checkBox43"
+},
+{
+"name": "checkBox44"
+},
+{
+"name": "checkBox45"
+},
+{
+"name": "checkBox46"
+},
+{
+"name": "checkBox47"
+},
+{
+"name": "checkBox48"
+}
+]
+},
+"checkBox37": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox37",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "36",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox38": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox38",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "47",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox39": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox39",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "37",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox40": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox40",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "46",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox41": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox41",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "38",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox42": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox42",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "45",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox43": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox43",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "39",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox44": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox44",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "44",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox45": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox45",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "40",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox46": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox46",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "43",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox47": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox47",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "41",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox48": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox48",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "42",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox5": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 208
+},
+"Name": "groupBox5",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 16,
+"TabStop": false,
+"Text": "Octave 4 (262-494hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox49"
+},
+{
+"name": "checkBox50"
+},
+{
+"name": "checkBox51"
+},
+{
+"name": "checkBox52"
+},
+{
+"name": "checkBox53"
+},
+{
+"name": "checkBox54"
+},
+{
+"name": "checkBox55"
+},
+{
+"name": "checkBox56"
+},
+{
+"name": "checkBox57"
+},
+{
+"name": "checkBox58"
+},
+{
+"name": "checkBox59"
+},
+{
+"name": "checkBox60"
+}
+]
+},
+"checkBox49": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox49",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "48",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox50": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox50",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "59",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox51": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox51",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "49",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox52": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox52",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "58",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox53": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox53",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "50",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox54": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox54",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "57",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox55": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox55",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "51",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox56": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox56",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "56",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox57": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox57",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "52",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox58": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox58",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "55",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox59": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox59",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "53",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox60": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox60",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "54",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox6": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 260
+},
+"Name": "groupBox6",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 17,
+"TabStop": false,
+"Text": "Octave 5 (523-988hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox61"
+},
+{
+"name": "checkBox62"
+},
+{
+"name": "checkBox63"
+},
+{
+"name": "checkBox64"
+},
+{
+"name": "checkBox65"
+},
+{
+"name": "checkBox66"
+},
+{
+"name": "checkBox67"
+},
+{
+"name": "checkBox68"
+},
+{
+"name": "checkBox69"
+},
+{
+"name": "checkBox70"
+},
+{
+"name": "checkBox71"
+},
+{
+"name": "checkBox72"
+}
+]
+},
+"checkBox61": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox61",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "60",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox62": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox62",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "71",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox63": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox63",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "61",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox64": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox64",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "70",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox65": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox65",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "62",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox66": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox66",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "69",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox67": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox67",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "63",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox68": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox68",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "68",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox69": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox69",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "64",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox70": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox70",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "67",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox71": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox71",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "65",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox72": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox72",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "66",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox7": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 312
+},
+"Name": "groupBox7",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 18,
+"TabStop": false,
+"Text": "Octave 6 (1046-1976hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox73"
+},
+{
+"name": "checkBox74"
+},
+{
+"name": "checkBox75"
+},
+{
+"name": "checkBox76"
+},
+{
+"name": "checkBox77"
+},
+{
+"name": "checkBox78"
+},
+{
+"name": "checkBox79"
+},
+{
+"name": "checkBox80"
+},
+{
+"name": "checkBox81"
+},
+{
+"name": "checkBox82"
+},
+{
+"name": "checkBox83"
+},
+{
+"name": "checkBox84"
+}
+]
+},
+"checkBox73": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox73",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "72",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox74": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox74",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "83",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox75": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox75",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "73",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox76": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox76",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "82",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox77": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox77",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "74",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox78": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox78",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "81",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox79": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox79",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "75",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox80": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox80",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "80",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox81": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox81",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "76",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox82": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox82",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "79",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox83": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox83",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "77",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox84": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox84",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "78",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox8": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 364
+},
+"Name": "groupBox8",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 19,
+"TabStop": false,
+"Text": "Octave 7 (2093-3951hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox85"
+},
+{
+"name": "checkBox86"
+},
+{
+"name": "checkBox87"
+},
+{
+"name": "checkBox88"
+},
+{
+"name": "checkBox89"
+},
+{
+"name": "checkBox90"
+},
+{
+"name": "checkBox91"
+},
+{
+"name": "checkBox92"
+},
+{
+"name": "checkBox93"
+},
+{
+"name": "checkBox94"
+},
+{
+"name": "checkBox95"
+},
+{
+"name": "checkBox96"
+}
+]
+},
+"checkBox85": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox85",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "84",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox86": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox86",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "95",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox87": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox87",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "85",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox88": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox88",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "94",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox89": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox89",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "86",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox90": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox90",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "93",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox91": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox91",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "87",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox92": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox92",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "92",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox93": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox93",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "88",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox94": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox94",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "91",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox95": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox95",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "89",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox96": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox96",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "90",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox9": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 416
+},
+"Name": "groupBox9",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 20,
+"TabStop": false,
+"Text": "Octave 8 (4186-7902hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox97"
+},
+{
+"name": "checkBox98"
+},
+{
+"name": "checkBox99"
+},
+{
+"name": "checkBox100"
+},
+{
+"name": "checkBox101"
+},
+{
+"name": "checkBox102"
+},
+{
+"name": "checkBox103"
+},
+{
+"name": "checkBox104"
+},
+{
+"name": "checkBox105"
+},
+{
+"name": "checkBox106"
+},
+{
+"name": "checkBox107"
+},
+{
+"name": "checkBox108"
+}
+]
+},
+"checkBox97": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox97",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "96",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox98": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox98",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "107",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox99": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox99",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "97",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox100": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox100",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "106",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox101": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox101",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "98",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox102": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox102",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "105",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox103": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox103",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "99",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox104": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox104",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "104",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox105": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox105",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "100",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox106": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox106",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "103",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox107": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox107",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "101",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox108": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox108",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "102",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"groupBox10": {
+"type": "GroupBox",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 468
+},
+"Name": "groupBox10",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 52
+},
+"TabIndex": 21,
+"TabStop": false,
+"Text": "Octave 9 (8372-15804hz)"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBox109"
+},
+{
+"name": "checkBox110"
+},
+{
+"name": "checkBox111"
+},
+{
+"name": "checkBox112"
+},
+{
+"name": "checkBox113"
+},
+{
+"name": "checkBox114"
+},
+{
+"name": "checkBox115"
+},
+{
+"name": "checkBox116"
+},
+{
+"name": "checkBox117"
+},
+{
+"name": "checkBox118"
+},
+{
+"name": "checkBox119"
+},
+{
+"name": "checkBox120"
+}
+]
+},
+"checkBox109": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 22
+},
+"Name": "checkBox109",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 0,
+"Tag": "108",
+"Text": "C",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox110": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 621,
+"y": 22
+},
+"Name": "checkBox110",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 19
+},
+"TabIndex": 11,
+"Tag": "119",
+"Text": "B",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox111": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 73,
+"y": 22
+},
+"Name": "checkBox111",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 1,
+"Tag": "109",
+"Text": "C# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox112": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 567,
+"y": 22
+},
+"Name": "checkBox112",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 10,
+"Tag": "118",
+"Text": "A#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox113": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 21
+},
+"Name": "checkBox113",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 19
+},
+"TabIndex": 2,
+"Tag": "110",
+"Text": "D ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox114": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 22
+},
+"Name": "checkBox114",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 9,
+"Tag": "117",
+"Text": "A",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox115": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 185,
+"y": 22
+},
+"Name": "checkBox115",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 19
+},
+"TabIndex": 3,
+"Tag": "111",
+"Text": "D# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox116": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 21
+},
+"Name": "checkBox116",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 19
+},
+"TabIndex": 8,
+"Tag": "116",
+"Text": "G#",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox117": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 21
+},
+"Name": "checkBox117",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 4,
+"Tag": "112",
+"Text": "E ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox118": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 409,
+"y": 21
+},
+"Name": "checkBox118",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 19
+},
+"TabIndex": 7,
+"Tag": "115",
+"Text": "G",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox119": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 22
+},
+"Name": "checkBox119",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 19
+},
+"TabIndex": 5,
+"Tag": "113",
+"Text": "F ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"checkBox120": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 353,
+"y": 21
+},
+"Name": "checkBox120",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 19
+},
+"TabIndex": 6,
+"Tag": "114",
+"Text": "F# ",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBox_CheckedChanged"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"argb": [
+40,
+40,
+40
+]
+},
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 553,
+"y": 525
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 22,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"MouseLeave": "buttonBackground_MouseLeave",
+"MouseHover": "buttonBackground_MouseHover"
+},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"argb": [
+40,
+40,
+40
+]
+},
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 458,
+"y": 525
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 23,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"MouseLeave": "buttonBackground_MouseLeave",
+"MouseHover": "buttonBackground_MouseHover"
+},
+"children": []
+},
+"btnPreviewAudio": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderColor": {
+"t": "color",
+"argb": [
+40,
+40,
+40
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 526
+},
+"Name": "btnPreviewAudio",
+"Size": {
+"t": "size",
+"x": 126,
+"y": 27
+},
+"TabIndex": 24,
+"Text": "Preview Audio",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnPreviewAudio_Click",
+"MouseLeave": "buttonBackground_MouseLeave",
+"MouseHover": "buttonBackground_MouseHover"
+},
+"children": []
+},
+"numericUpDown1": {
+"type": "NumericUpDown",
+"props": {
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 297,
+"y": 528
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000, 0, 0, 0})"
+},
+"Name": "numericUpDown1",
+"Size": {
+"t": "size",
+"x": 76,
+"y": 23
+},
+"TabIndex": 25
+},
+"events": {
+"ValueChanged": "numericUpDown1_ValueChanged"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 230,
+"y": 531
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 15
+},
+"TabIndex": 26,
+"Text": "Accuracy"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+670,
+565
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit()"
+]
+}

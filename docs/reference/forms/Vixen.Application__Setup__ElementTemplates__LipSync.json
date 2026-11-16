@@ -1,0 +1,204 @@
+{
+"class": "LipSync",
+"source": "Vixen.Application/Setup/ElementTemplates/LipSync.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "LipSync",
+"ShowIcon": false,
+"ShowInTaskbar": false,
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "LipSync Setup"
+},
+"events": {
+"FormClosed": "LipSync_FormClosed",
+"Load": "LipSync_Load"
+},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "textBoxTreeName"
+},
+{
+"name": "label6"
+}
+],
+"objects": {
+"textBoxTreeName": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 127,
+"y": 27
+},
+"Name": "textBoxTreeName",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 23
+},
+"TabIndex": 14,
+"Text": "LipSync"
+},
+"events": {},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 29
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "Element Name:"
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 225,
+"y": 83
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 20,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 113,
+"y": 83
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 19,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+344,
+127
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+360,
+165
+]
+}
+}
+}

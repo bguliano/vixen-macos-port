@@ -1,0 +1,12 @@
+pub mod butterfly;
+pub mod circles;
+pub mod color_wash;
+pub mod curtain;
+pub mod fire;
+pub mod garlands;
+pub mod life;
+pub mod plasma;
+pub mod snow_storm;
+pub mod spiral;
+pub mod spirograph;
+pub mod tree;

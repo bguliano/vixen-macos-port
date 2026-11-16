@@ -1,0 +1,233 @@
+{
+"class": "LetterCounterEditor",
+"source": "Vixen.Common/Controls/NameGeneration/LetterCounterEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "LetterCounterEditor"
+},
+"events": {
+"Load": "NumericCounterEditor_Load"
+},
+"children": [
+{
+"name": "editorLayoutPanel"
+}
+],
+"objects": {
+"editorLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "editorLayoutPanel",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 200,
+"y": 97
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "label1",
+"col": 0,
+"row": 0
+},
+{
+"name": "textBoxStartLetter",
+"col": 1,
+"row": 0
+},
+{
+"name": "label2",
+"col": 0,
+"row": 1
+},
+{
+"name": "numericUpDownSteps",
+"col": 1,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 94,
+"y": 20
+},
+"TabIndex": 1,
+"Text": "Start Letter:"
+},
+"events": {},
+"children": []
+},
+"textBoxStartLetter": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"MaxLength": 1,
+"Name": "textBoxStartLetter",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 26
+},
+"TabIndex": 0
+},
+"events": {
+"TextChanged": "textBoxStartLetter_TextChanged"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 55,
+"y": 20
+},
+"TabIndex": 3,
+"Text": "Steps:"
+},
+"events": {},
+"children": []
+},
+"numericUpDownSteps": {
+"type": "NumericUpDown",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownSteps",
+"Size": {
+"t": "size",
+"x": 66,
+"y": 26
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+}
+},
+"events": {
+"ValueChanged": "numericUpDownSteps_ValueChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+9,
+20
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+5,
+4,
+5
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+200,
+97
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownSteps)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownSteps)).EndInit()"
+]
+}

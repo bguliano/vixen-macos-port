@@ -1,0 +1,12 @@
+[package]
+name = "vixen-engine"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+uuid.workspace = true
+rayon.workspace = true
+parking_lot.workspace = true
+libc = "0.2"

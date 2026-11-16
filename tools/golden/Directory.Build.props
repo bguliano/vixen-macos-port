@@ -1,0 +1,15 @@
+<Project>
+	<!-- Everything the build produces lands under target/golden, never next to the sources and never in the
+	     read-only assets this project references. -->
+	<PropertyGroup>
+		<GoldenRepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../..'))</GoldenRepoRoot>
+		<GoldenOut>$(GoldenRepoRoot)/target/golden</GoldenOut>
+		<BaseIntermediateOutputPath>$(GoldenOut)/obj/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+		<MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+		<BaseOutputPath>$(GoldenOut)/projbin/$(MSBuildProjectName)/</BaseOutputPath>
+		<RestorePackagesPath>$(GoldenOut)/packages</RestorePackagesPath>
+		<RestoreFallbackFolders>/Users/developer/Documents/Codex/2026-09-13/is-the/work/nuget-packages</RestoreFallbackFolders>
+		<RestoreSources>$(GoldenOut)/empty-feed</RestoreSources>
+		<UseArtifactsOutput>false</UseArtifactsOutput>
+	</PropertyGroup>
+</Project>

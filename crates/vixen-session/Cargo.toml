@@ -1,0 +1,39 @@
+[package]
+name = "vixen-session"
+version.workspace = true
+edition.workspace = true
+
+# The preview designer's Import Prop. Optional so that work in progress on the prop crate can't stop this shared crate from building.
+[features]
+prop-import = ["dep:vixen-prop"]
+
+[dependencies]
+vixen-video = { path = "../vixen-video" }
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+vixen-effect-registry = { path = "../vixen-effect-registry" }
+fx-audio-state = { path = "../fx-audio-state" }
+fx-pixel-graphics = { path = "../fx-pixel-graphics" }
+vixen-engine = { path = "../vixen-engine" }
+vixen-io = { path = "../vixen-io" }
+vixen-audio = { path = "../vixen-audio" }
+vixen-analysis = { path = "../vixen-analysis" }
+vixen-export = { path = "../vixen-export" }
+vixen-fpp = { path = "../vixen-fpp" }
+vixen-web = { path = "../vixen-web" }
+vixen-output = { path = "../vixen-output" }
+vixen-preview = { path = "../vixen-preview" }
+vixen-prop = { path = "../vixen-prop", optional = true }
+vixen-render = { path = "../vixen-render" }
+vixen-xml = { path = "../vixen-xml" }
+fx-fixture = { path = "../fx-fixture" }
+uuid.workspace = true
+parking_lot.workspace = true
+rayon.workspace = true
+image.workspace = true
+thiserror.workspace = true
+serde_json.workspace = true
+libc = "0.2"
+rust_decimal = { version = "=1.43.0", default-features = false }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+unicode-normalization = "=0.1.26"

@@ -1,0 +1,13 @@
+# Portable Vixen2 release verification
+
+The refreshed portable pack passes 164 offscreen native steps on macOS 27.2.1: 15 relocated startup/resource steps, 11 WMA waveform steps, 47 playback ownership steps, and 91 Video selection/save/reopen steps. Actual macOS 26 remains unverified. The separate macOS 26 gate correctly refused this host before cloning or launching Vixen.
+
+Acceptance: `target/second-mac-pack-vixen2-color-acceptance.json`. Independent read-only review: `target/second-mac-pack-vixen2-color-independent-review.json`, with 43 checks. The review recomputes all archive, staged and extracted file hashes, executable modes/signatures, all 164 individual result rows, canonical preferences and private executable code/data. No app was launched during this review.
+
+The immutable archive is `target/vixen-macos26-verification-pack-vixen2-color.zip`, 37,019,358 bytes, SHA256 `b013ab6a069d1c44eca7754c595c25cad28bf7ea32b1f00510d3c7deb8d65fd6`. Its 483 entries contain 482 manifest-pinned files plus the manifest. Staging and the extraction under `/private/tmp/Vixen portable f75 ü 20261112` remain unchanged. All 231 packaged app files equal the promoted `f75a4722…` release. The host smoke uses a unique Cocoa-domain clone with executable SHA256 `8b5ea3e327066b59c8a0f4bb5647dcd9c6394a49fbac8f819c5db31a409f133b`; its executable code/data equals the release.
+
+The first host attempt remains preserved under `target/second-mac-pack-vixen2-color-host-smoke`. The sandbox denied the launch-helper probe's private Unix socket bind before its helper or Vixen subprocess was started. Source ordering, traceback, and absent Vixen process log/result confirm this is a harness-environment failure. The identical immutable pack then passed in fresh `target/second-mac-pack-vixen2-color-host-smoke-v2` results with native access. The previous portable archive remains unchanged.
+
+Canonical owner preference hashes match before, after, and during independent review. The private app's `launched=false` field describes clone preparation; the separate host result proves subsequent scoped launches. Each Vixen child sets its own test-output settings directory after clearing inherited environment variables. The parent settings override is not presented as surviving that cleanup.
+
+These results cover muted, offscreen, direct-executable launches on the recorded host. They do not establish macOS 26 execution, physical gestures, audible synchronization, real controllers, Windows interoperability, Finder/Gatekeeper behavior, Developer ID signing or notarization. The pack's historical 569-step baseline and current 353-step source checkpoint are explicitly distinct; the 164 portable steps are separate evidence on this release.

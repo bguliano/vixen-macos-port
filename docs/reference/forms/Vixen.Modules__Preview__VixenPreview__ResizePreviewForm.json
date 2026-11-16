@@ -1,0 +1,637 @@
+{
+"class": "ResizePreviewForm",
+"source": "Vixen.Modules/Preview/VixenPreview/ResizePreviewForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ResizePreviewForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Resize Preview"
+},
+"events": {
+"Load": "ResizePreviewForm_Load"
+},
+"children": [
+{
+"name": "_scaleShapes"
+},
+{
+"name": "buttonHelp"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBox1",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 279,
+"y": 63
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Existing Image Size"
+},
+"events": {},
+"children": [
+{
+"name": "labelWidth"
+},
+{
+"name": "labelHeight"
+},
+{
+"name": "label3"
+},
+{
+"name": "label4"
+}
+]
+},
+"labelWidth": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 55,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "labelWidth",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Width:"
+},
+"events": {},
+"children": []
+},
+"labelHeight": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 192,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "labelHeight",
+"Size": {
+"t": "size",
+"x": 43,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Height"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Width:"
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 46,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Height:"
+},
+"events": {},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 84
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBox2",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 279,
+"y": 63
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "New Image Size"
+},
+"events": {},
+"children": [
+{
+"name": "pictureBoxLock"
+},
+{
+"name": "numericHeight"
+},
+{
+"name": "label1"
+},
+{
+"name": "label2"
+},
+{
+"name": "numericWidth"
+}
+]
+},
+"numericHeight": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 203,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 10000, 0, 0, 0 })"
+},
+"Name": "numericHeight",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 23
+},
+"TabIndex": 2,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 100, 0, 0, 0 })"
+}
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 31
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Width:"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 153,
+"y": 31
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 46,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "Height:"
+},
+"events": {},
+"children": []
+},
+"numericWidth": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 51,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 10000, 0, 0, 0 })"
+},
+"Name": "numericWidth",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 23
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 100, 0, 0, 0 })"
+}
+},
+"events": {
+"ValueChanged": "numericWidth_ValueChanged"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 205,
+"y": 180
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 111,
+"y": 180
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"buttonHelp": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Image": {
+"t": "image",
+"file": "ResizePreviewForm__buttonHelp.Image.png"
+},
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 180
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 27
+},
+"TabIndex": 59,
+"Text": "Help",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"imageListLocks": {
+"type": "ImageList",
+"props": {
+"ColorDepth": {
+"t": "enum",
+"type": "ColorDepth",
+"v": "Depth8Bit"
+},
+"ImageStream": "\n        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs\n        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu\n        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAPBsAAAJNU0Z0AUkBTAIBAQUB\n        AAFIAQABSAEAASABAAEgAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAYADAAFAAwABAQEAAQgG\n        AAEgGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB\n        AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB\n        kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC\n        MwIAATMBZgIAATMBmQIAATMBzAIAATMB/wIAAWYDAAFmATMCAAJmAgABZgGZAgABZgHMAgABZgH/AgAB\n        mQMAAZkBMwIAAZkBZgIAApkCAAGZAcwCAAGZAf8CAAHMAwABzAEzAgABzAFmAgABzAGZAgACzAIAAcwB\n        /wIAAf8BZgIAAf8BmQIAAf8BzAEAATMB/wIAAf8BAAEzAQABMwEAAWYBAAEzAQABmQEAATMBAAHMAQAB\n        MwEAAf8BAAH/ATMCAAMzAQACMwFmAQACMwGZAQACMwHMAQACMwH/AQABMwFmAgABMwFmATMBAAEzAmYB\n        AAEzAWYBmQEAATMBZgHMAQABMwFmAf8BAAEzAZkCAAEzAZkBMwEAATMBmQFmAQABMwKZAQABMwGZAcwB\n        AAEzAZkB/wEAATMBzAIAATMBzAEzAQABMwHMAWYBAAEzAcwBmQEAATMCzAEAATMBzAH/AQABMwH/ATMB\n        AAEzAf8BZgEAATMB/wGZAQABMwH/AcwBAAEzAv8BAAFmAwABZgEAATMBAAFmAQABZgEAAWYBAAGZAQAB\n        ZgEAAcwBAAFmAQAB/wEAAWYBMwIAAWYCMwEAAWYBMwFmAQABZgEzAZkBAAFmATMBzAEAAWYBMwH/AQAC\n        ZgIAAmYBMwEAA2YBAAJmAZkBAAJmAcwBAAFmAZkCAAFmAZkBMwEAAWYBmQFmAQABZgKZAQABZgGZAcwB\n        AAFmAZkB/wEAAWYBzAIAAWYBzAEzAQABZgHMAZkBAAFmAswBAAFmAcwB/wEAAWYB/wIAAWYB/wEzAQAB\n        ZgH/AZkBAAFmAf8BzAEAAcwBAAH/AQAB/wEAAcwBAAKZAgABmQEzAZkBAAGZAQABmQEAAZkBAAHMAQAB\n        mQMAAZkCMwEAAZkBAAFmAQABmQEzAcwBAAGZAQAB/wEAAZkBZgIAAZkBZgEzAQABmQEzAWYBAAGZAWYB\n        mQEAAZkBZgHMAQABmQEzAf8BAAKZATMBAAKZAWYBAAOZAQACmQHMAQACmQH/AQABmQHMAgABmQHMATMB\n        AAFmAcwBZgEAAZkBzAGZAQABmQLMAQABmQHMAf8BAAGZAf8CAAGZAf8BMwEAAZkBzAFmAQABmQH/AZkB\n        AAGZAf8BzAEAAZkC/wEAAcwDAAGZAQABMwEAAcwBAAFmAQABzAEAAZkBAAHMAQABzAEAAZkBMwIAAcwC\n        MwEAAcwBMwFmAQABzAEzAZkBAAHMATMBzAEAAcwBMwH/AQABzAFmAgABzAFmATMBAAGZAmYBAAHMAWYB\n        mQEAAcwBZgHMAQABmQFmAf8BAAHMAZkCAAHMAZkBMwEAAcwBmQFmAQABzAKZAQABzAGZAcwBAAHMAZkB\n        /wEAAswCAALMATMBAALMAWYBAALMAZkBAAPMAQACzAH/AQABzAH/AgABzAH/ATMBAAGZAf8BZgEAAcwB\n        /wGZAQABzAH/AcwBAAHMAv8BAAHMAQABMwEAAf8BAAFmAQAB/wEAAZkBAAHMATMCAAH/AjMBAAH/ATMB\n        ZgEAAf8BMwGZAQAB/wEzAcwBAAH/ATMB/wEAAf8BZgIAAf8BZgEzAQABzAJmAQAB/wFmAZkBAAH/AWYB\n        zAEAAcwBZgH/AQAB/wGZAgAB/wGZATMBAAH/AZkBZgEAAf8CmQEAAf8BmQHMAQAB/wGZAf8BAAH/AcwC\n        AAH/AcwBMwEAAf8BzAFmAQAB/wHMAZkBAAH/AswBAAH/AcwB/wEAAv8BMwEAAcwB/wFmAQAC/wGZAQAC\n        /wHMAQACZgH/AQABZgH/AWYBAAFmAv8BAAH/AmYBAAH/AWYB/wEAAv8BZgEAASEBAAGlAQADXwEAA3cB\n        AAOGAQADlgEAA8sBAAOyAQAD1wEAA90BAAPjAQAD6gEAA/EBAAP4AQAB8AH7Af8BAAGkAqABAAOAAwAB\n        /wIAAf8DAAL/AQAB/wMAAf8BAAH/AQAC/wIAA/+EAAj/dwAC/wHzA/IB8wH0Av91AAL/AfMBkgLrAW0B\n        6wHwAfQC/wQAA/9tAAH/AfMB7AHtAvcBkgHsAW0BBwH0Av8DAAP/BAAE/2UAAf8B7wGSAe8B7QHsAQcB\n        vAHtAW0BBwH0Av8CAAH/AZoB/wMAAv8C9AH/ZQAB/wHsAQcB7QH3AfQB8QHrAbwB7QFtAQcB9AL/AQAB\n        /wFZAf8CAAL/AfQBmgF6Af9lAAH/AewB8AHtAfIC/wHyAesBvAHtAW0BBwH0A/8BWQH/AQAC/wH0AZkB\n        WQH/ZgAB/wHtAfIB7QEHAfQC/wHxAesBvAHtAW0BBwH0Av8BUwH/AQAB/wH0ARoBUwH0Af9mAAH/AfcB\n        8wHvAewBvAH0Av8B8QHrAbwB7QFtAfEC/wEyA/8B8wFTARsB/2cAAf8B9AHtAfQB7wHsAbwB9AH/AfMB\n        vAHrAbwB7AHrAv8BLAL/AfQBLAEaAf9pAAH/AfIB7QH0Ae8B7AG8AfMB6wHqARIBBwGSAW0B/wMAAf8B\n        LAF1Af9rAAH/AfIB7QH0Ae8B7AG8AesB9AHsARIB9wHrAf8EAAj/ZwAB/wHyAe0B9AHvAuwBkgHzAewB\n        6gHrAf8EAAH/BfQC/2gAAf8B8gHtAfQB7wHtAewBkgHzAewB7wH/BAAB/wEsATIBUwJZAZoB/2kAAf8B\n        8gHtAfMB8gG8Ae0BkgH0Af8BAAj/bgAB/wH0AfcB7QLsAQcB/wEAAv8B8wPyAfMB9AL/aQAI/wQAAv8B\n        8wGSAusBbQHrAfAB9AL/aAAC/wX0Af8EAAH/AfMB9AHsAeoC9wHsAW0BBwH0Av9nAAH/AZoCWQFTATIB\n        LAH/BAAB/wHvAZIB8wHsARIBBwG8Ae0BbQEHAfQC/2sABP8DAAH/AewB7QGSAfMB7AESAesBvAHtAW0B\n        BwH0Av9pAAL/AvQF/wHsAbwB7AGSAfQB6wHyAesBvAHtAW0BBwH0Av9nAAL/AfQBdQEsAv8B9AL/Ae0B\n        8gHtA+wB/wHyAesBvAHtAW0BBwH0Af9mAAL/AfQBmQEyAf8BAAH/ASwC/wH3AfMB7wHsAbwB9AL/AfEB\n        6wG8Ae0BbQHxAf9mAAH/AfQBGgFTAfQB/wEAAf8BUwL/AfQB7QH0Ae8B7AG8AfQC/wHxAesBvAHsAesB\n        /2UAAv8B8wFZARsB/wIAAf8BUwH/AQAB/wHyAe0B9AHvAewBvAH0Av8BvAEHAZIBbQH/ZQAB/wH0AVkB\n        GgH/AwAB/wFZAf8CAAH/AfIB7QH0Ae8B7AG8AvQB8QHsAfcB6wH/ZQAB/wF6AZoB/wQAAf8BWQH/AwAB\n        /wHyAe0B9AHvAewBBwHwAu0B9wHrAf9tAAH/AZoB/wQAAf8B8gHtAfQB7wPtAe8B7QHvAf91AAH/AfIB\n        7QHzAfIB8AEHAZIB7AH/dwAB/wH0AfcB7QLsAQcB//8AagAU/wwAFP8JAAj/GAAI/xoAAv8B8xDyAfMC\n        /woAAv8B8xDyAfMC/wcAAv8B8wPyAfMB9AL/FgAC/wHzA/IB8wH0Av8ZAAH/AfMBUhAqAVIB8wH/CgAB\n        /wHzAVIQKgFSAfMB/wYAAv8B8wGSAusBbQHrAfAB9AL/FAAC/wHzAZIC6wFtAesB8AH0Av8YAAH/AlIQ\n        WQJSAf8KAAH/AlIQWQJSAf8GAAH/AfMB7AHtAvcBkgHsAW0BBwH0Av8TAAH/AfMB7AHtAvcBkgHsAW0B\n        BwL/GAAB/wErAXoBWQFSDDEBWQF6AVkBKwH/CgAB/wErAXoBWQFSAzEJUgFZAXoBWQErAf8GAAH/Ae8B\n        kgHvAe0B7AEHAbwB7QFtAQcB9AL/EgAB/wHvAZIB7wHtAewBBwG8Ae0BbQHyA/8WAAH/ASsBeg9ZAnoB\n        KwH/CgAB/wErAXoPWQJ6ASsB/wYAAf8B7AEHAe0B9wH0AfEB7AG8Ae0BbQEHAfQC/xEAAf8B7AEHAe0B\n        9wH0AfEB6wEHAe8F/xUAAf8BKwF6AVkBUgwxAVgCegErAf8KAAH/ASsBegFZAVIDMQFSBDEEUgFZAnoB\n        KwH/BgAB/wHsAfAB7QHyAv8B8QHsAbwB7QFtAQcB9AL/EAAB/wHsAfAB7QHyAv8B8QHvAv8B8wG8AfQC\n        /xQAAf8BKwF6BlkEMQVZAnoBKwH/CgAB/wErAXoGWQQxBVkCegErAf8GAAH/Ae0B8gHtAQcB9AL/AfEB\n        7AG8Ae0BbQEHAfQB/xAAAf8B7QHyAe0BBwH0Av8BAAH/AfQB7AFtAQcB9AH/FAAB/wErAXoBWQFSBTEC\n        KgUxAVgCegErAf8KAAH/ASsBegFZAVICMQJSATECKgExBFIBWQJ6ASsB/wYAAf8B9wHzAe8B7AG8AfQC\n        /wHxAewBvAHtAW0B8QH/EAAB/wH3AfMB7wHsAbwB9AP/AewB7wGSAW0B8QH/FAAB/wErAXoGWQExAioB\n        MQVZAnoBKwH/CgAB/wErAXoGWQExAioBMQVZAnoBKwH/BgAB/wH0AfcB9AHvAewBvAH0Af8B8wG8AewB\n        vAHsAesB/xAAAf8B9AHtAfQB7wHsAbwB9AL/AfEB6wG8AewB6wH/FAAB/wErAXoBWQYxAiQFMQFYAVkB\n        egErAf8KAAH/ASsBegFZAVICMQFSAjECJAIxA1ICWQF6ASsB/wcAAf8B8gH3AfQB7wHsAbwB8wHrAeoB\n        bQEHAZIBbQH/EQAB/wHyAe0B9AHvAewBvAH0Av8BvAEHAZIBbQH/FAAB/wErAZoFWQExASsCKgErATEF\n        WQGaASsB/woAAf8BKwGaBVkBMQErAioBKwExBVkBmgErAf8IAAH/AfIB9wH0Ae8B7AG8AesB9AHsARIB\n        9wHrAf8SAAH/AfIB7QH0Ae8B7AG8AvQB8QHsAfcB6wH/FAAB/wErAZoBWQUxASQCKgEkBDEBWAFZAZoB\n        KwH/CgAB/wErAZoBWQFSATECUgExASQCKgEkATEDUgJZAZoBKwH/CQAB/wHyAfcB9AHvAuwBkgHzAewB\n        6gHrAfQB/xIAAf8B8gHtAfQB7wHsAQcB8ALtAfcB6wH/FAAB/wExAZoFWQExBCMBMQVZAZoBMQH/CgAB\n        /wExAZoFWQExBCMBMQVZAZoBMQH/CgAB/wHyAfcB9AHvAe0B7AGSAfMB7AFtAfMC/xIAAf8B8gHtAfQB\n        7wPtAe8B7QHvAf8UAAH/AVIBoAFZBTEBKgIjASoEMQFYAVkBmgExAf8KAAH/AVIBoAFZAVIBMQJSATEB\n        KgIjASoBMQNSAlkBmgExAf8LAAH/AfIB9wHzAfIBvAHtAZIB8wHtAW0B8wH0Bv8NAAH/AfIB7QHzAfIB\n        8AEHAZIB7AH/AQAI/wwAAf8BUgGgBVkGMQVZAaABUgH/CgAB/wFSAaAFWQYxBVkBoAFSAf8MAAH/AfQB\n        9wHtA+wBkgHzAe0BbQTyAfMB9AL/DQAB/wH0AfcB7QLsAQcB/wEAAv8B8wPyAfMB9AL/CwAB/wFSAaAB\n        WQ0xAVIBWQGgAVIB/woAAf8BUgGgAVkNMQFSAVkBoAFSAf8SAAH/Ae0B9wHzAe0BbQLrAW0B6wHwAfQC\n        /xQAAv8B8wGSAusBbQHrAfAB9AL/CgAB/wF0AXoQwwF6AXQB/woAAf8BdAF6EMMBegF0Af8TAAH/Ae0B\n        9wHzAewB6gH3AZIB7AFtAQcB9AL/EwAB/wHzAewB7QL3AZIB7AFtAQcB9AL/CgAB/wF0BDEIUgQxAXQB\n        /wwAAf8BdAQxDFIBdAH/FQAB/wHsAZIB8wHsARIBBwG8Ae0BbQEHAfQC/xIAAf8B7wGSAe8B7QHsAQcB\n        vAHtAW0BBwH0Av8KAAH/AewB/wHvAewB/wYAAf8B7AHzAbwB7AH/DgAB/wHsAf8B7wHsAf8GAAb/FgAB\n        /wHsAe0BkgHzAewBEgHsAbwB7QFtAQcB9AL/EQAB/wHsAQcB7QH3AfQB8QHrAbwB7QFtAQcB9AL/CQAB\n        /wHsAf8B7wHsAf8GAAH/AewB8wEHAewB/w4AAf8B7AH/Ae8B7AH/BgAB/wH0AvMB9AH/FgAB/wHsAbwB\n        7AGSAfQB6gHyAewBvAHtAW0BBwH0Av8QAAH/AewB8AHtAfIC/wHyAesBvAHtAW0BBwH0Av8IAAH/AewB\n        9AHvAewC/wQAAv8B7AHyAQcB7AH/DgAB/wHsAfQB7wHsAv8EAAL/AQcC7AEHAf8WAAH/Ae0B8gHtAewB\n        6wHsAf8B8gHsAbwB7QFtAQcB9AH/EAAB/wHtAfIB7QEHAfQC/wHxAesBvAHtAW0BBwH0Af8IAAH/AewB\n        9AHvAewB9AH/BAAB/wH0AewB8gG8AewB/w4AAf8B7AH0Ae8B7AH0Af8EAAH/AfQB7AHzAbwB7AH/FgAB\n        /wH3AfMB7wHsAbwB9AL/AfEB7AG8AewBbQHxAf8QAAH/AfcB8wHvAewB8AH/AQAB/wHxAesBvAHtAW0B\n        8QH/CAAB/wHsAfQB7wHtAfIC/wIAAv8B8gGSAfIB8AHsAf8OAAH/AewB9AHvAe0B8gL/AgAC/wHyAfcB\n        8gHwAewB/xYAAf8B9AH3AfQB7wHsAbwB9AL/AfEB7AG8AewB6wH/EAAB/wH0Ae0B9AH3Ae0E/wHxAesB\n        vAHsAesB/wgAAf8B7AH0Ae8BkgEHAfQE/wH0AQcB9wLyAewB/w4AAf8B7AH0Ae8BkgEHAfQE/wH0AQcB\n        9wLyAewB/xcAAf8B8gH3AfQB7wHsAbwB9AL/AfABBwGSAW0B/xEAAf8B8gHtAfcC/wL0Av8BvAEHAZIB\n        bQH/CAAB/wH3AfEBvAHvAe0B8QT0AfEB7QG8AvIB9wH/DgAB/wH3AfEBvAHvAe0B8QT0AfEB7QG8AfEB\n        8gH3Af8YAAH/AfIB9wH0Ae8B7AG8AvQB8QHsAfcB6wH/EgAB/wHzAv8B8wH3AQcC9AHxAewB9wHrAf8I\n        AAH/AfIB7wHzAe8B9wHtAQcC8AEHAe0B7wHwAfQBBwHyAf8OAAH/AfIB7wHzAe8B9wHtAQcC8AEHAe0B\n        7wHwAfQBBwHyAf8ZAAH/AfIB9wH0Ae8B7AEHAfAC7QH3AesB/xQAAv8C7wHsAQcB8ALtAfcB6wH/CQAB\n        /wH3AbwB8QLvBPcBBwG8AvMB9wH/EAAB/wH3AbwB8QLvBPcBBwG8AvMB9wH/GwAB/wHyAfcB9AHvA+0B\n        7wHtAe8B/xQAAf8B8wHtAfQB7wPtAe8B7QHvAf8KAAH/Ae0BvAHzAbwDBwG8AfEB9AHzAfcB/xIAAf8B\n        7QG8AfMBvAMHAbwB8QH0AfMB9wH/HQAB/wHyAfcB8wHyAfABBwGSAewB/xYAAf8B8gHtAfMB8gHwAQcB\n        kgHsAf8MAAH/Au8B8AT0AfIBBwHvAf8UAAH/Au8B8AT0AfIBBwHvAf8fAAH/AfQB9wHtAuwBBwH/GAAB\n        /wH0AfcB7QLsAQcB/w4AAf8B8gHvBPcB7wHyAf8WAAH/AfIB7wT3Ae8B8gH/SwABQgFNAT4HAAE+AwAB\n        KAMAAYADAAFAAwABAQEAAQEGAAEEFgAD/wEABP8MAAHgAR8C/wwAAcABDwL/DAABgAEHAY8B/wwAAYAB\n        AwGPAQ8MAAGAAQEBjgEPDAABgAEAAYwBDwwAAYABAAEIAR8MAAGAAQABCAEfDAABgAIAAT8MAAGAAgAB\n        fwwAAcABAAFwAf8MAAHgAQABeAEHDAAB8AEAAXgBBwwAAfgBAAF4AQcMAAH8AQABgAF/DAAB/gEBAQAB\n        PwwAAeABHgEAAR8MAAHgAR4BAAEPDAAB4AEeAQABBwwAAf8BDgEAAQMMAAH+AgABAQwAAfwCAAEBDAAB\n        +AEQAQABAQwAAfgBEAEAAQEMAAHwATEBAAEBDAAB8AFxAYABAQwAAfAB8QHAAQEMAAH/AfEB4AEBDAAC\n        /wHwAQMMAAL/AfgBBwwABP8MABD/AfwCAAE/AfwCAAE/AeABHwL/AeABHwL/AfgCAAEfAfgCAAEfAcAB\n        DwL/AcABDwL/AfgCAAEfAfgCAAEfAYABBwL/AYABBwL/AfgCAAEfAfgCAAEfAYABAwL/AYABBwL/AfgC\n        AAEfAfgCAAEfAYABAQL/AYABAQL/AfgCAAEfAfgCAAEfAYABAAL/AYABAAL/AfgCAAEfAfgCAAEfAYAB\n        AAF/Af8BgAEAAX8B/wH4AgABHwH4AgABHwGAAQABfwH/AYABQAF/Af8B+AIAAR8B+AIAAR8BgAEAAX8B\n        /wGAAQABfwH/AfgCAAEfAfgCAAEfAYABAAF/Af8BgAEAAX8B/wH4AgABHwH4AgABHwHAAQABfwH/AcAB\n        AAF/Af8B+AIAAR8B+AIAAR8B4AEAAX8B/wHgAQABfwH/AfgCAAEfAfgCAAEfAfABAAE/Af8B8AEAAX8B\n        /wH4AgABHwH4AgABHwH4AQABHwH/AfgBAAF/Af8B+AIAAR8B+AIAAR8B/AIAAX8B/AEAAYABfwH4AgAB\n        HwH4AgABHwH+AgABPwH+AQEBAAE/AfgCAAEfAfgCAAEfAf8B+AEAAR8B/wH+AQABHwH4AgABHwH4AgAB\n        HwH/AfwBAAEPAf8B/gEAAQ8B/AIAAT8B/AIAAT8B/wH+AQABBwH/Af4BAAEHAf4BBwHgAX8B/gEHAeAB\n        fwH/Af4BAAEDAf8B/gEAAQMB/gEHAeABfwH+AQcB4AF/Af8B/gEAAQEB/wH+AQABAQH+AQMBwAF/Af4B\n        AwHAAX8B/wH+AQABAQH/Af4BAAEBAf4BAwHAAX8B/gEDAcABfwH/Af4BAAEBAf8B/gECAQEB/gEBAYAB\n        fwH+AQEBgAF/Af8B/gEAAQEB/wH+AQABAQH+AgABfwH+AgABfwL/AQABAQL/AQABAQH+AgABfwH+AgAB\n        fwL/AYABAQL/AYABAQH+AgABfwH+AgABfwL/AcABAQL/AeABAQH/AgAC/wIAA/8B4AEBAv8B4AEBAf8B\n        gAEBAv8BgAEBA/8B8AEDAv8B8AEDAf8BwAEDAv8BwAEDA/8B+AEHAv8B+AEHAf8B4AEHAv8B4AEHCf8L\n",
+"TransparentColor": {
+"t": "color",
+"name": "Transparent"
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"_scaleShapes": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 153
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "_scaleShapes",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 19
+},
+"TabIndex": 60,
+"Text": "Scale Shapes",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"pictureBoxLock": {
+"type": "PictureBox",
+"props": {
+"Image": {
+"t": "image",
+"file": "ResizePreviewForm__pictureBoxLock.Image.png"
+},
+"Location": {
+"t": "point",
+"x": 125,
+"y": 27
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 3,
+"r": 2,
+"b": 3
+},
+"Name": "pictureBoxLock",
+"Size": {
+"t": "size",
+"x": 22,
+"y": 24
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "StretchImage"
+},
+"TabIndex": 3,
+"TabStop": false
+},
+"events": {
+"Click": "pictureBoxLock_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+307,
+224
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+}
+}
+}

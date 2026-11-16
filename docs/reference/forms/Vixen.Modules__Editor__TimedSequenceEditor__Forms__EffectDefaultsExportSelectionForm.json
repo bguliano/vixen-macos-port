@@ -1,0 +1,188 @@
+{
+"class": "EffectDefaultsExportSelectionForm",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/EffectDefaultsExportSelectionForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "EffectDefaultsExportSelectionForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Export Effect Defaults"
+},
+"events": {},
+"children": [
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOk"
+},
+{
+"name": "checkedListBoxEffects"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 9
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 240,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Select saved effect defaults to export:"
+},
+"events": {},
+"children": []
+},
+"checkedListBoxEffects": {
+"type": "CheckedListBox",
+"props": {
+"CheckOnClick": true,
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 30
+},
+"Name": "checkedListBoxEffects",
+"Size": {
+"t": "size",
+"x": 300,
+"y": 200
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 126,
+"y": 240
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 219,
+"y": 240
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+324,
+279
+]
+}
+}
+}

@@ -1,0 +1,575 @@
+{
+"class": "ChromaKeySetup",
+"source": "Vixen.Modules/LayerMixingFilter/ChromaKey/ChromaKeySetup.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ChromaKeySetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Chroma Key Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "chkTransparentOnZeroBrightness"
+},
+{
+"name": "label7"
+},
+{
+"name": "label6"
+},
+{
+"name": "trkSaturationTolerance"
+},
+{
+"name": "trkHueTolerance"
+},
+{
+"name": "label5"
+},
+{
+"name": "colorPanel1"
+},
+{
+"name": "label4"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "trkUpperLimit"
+},
+{
+"name": "trkLowerLimit"
+},
+{
+"name": "numUpperLimit"
+},
+{
+"name": "numLowerLimit"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOk"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 172,
+"y": 274
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 253,
+"y": 274
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"numLowerLimit": {
+"type": "NumericTextBox",
+"props": {
+"DecimalNumber": 0,
+"Groupsep": {
+"t": "raw",
+"v": "','"
+},
+"Location": {
+"t": "point",
+"x": 300,
+"y": 142
+},
+"MaxCheck": true,
+"MaxValue": 100,
+"MinCheck": true,
+"MinValue": 0,
+"Name": "numLowerLimit",
+"NumberFormat": {
+"t": "enum",
+"type": "NumberFormat",
+"v": "UnsignedInteger"
+},
+"Size": {
+"t": "size",
+"x": 26,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "0",
+"Usegroupseparator": false
+},
+"events": {
+"TextChanged": "numLowerLimit_TextChanged",
+"LostFocus": "numLowerLimit_LostFocus"
+},
+"children": []
+},
+"numUpperLimit": {
+"type": "NumericTextBox",
+"props": {
+"DecimalNumber": 0,
+"Groupsep": {
+"t": "raw",
+"v": "','"
+},
+"Location": {
+"t": "point",
+"x": 300,
+"y": 184
+},
+"MaxCheck": true,
+"MaxValue": 100,
+"MinCheck": true,
+"MinValue": 0,
+"Name": "numUpperLimit",
+"NumberFormat": {
+"t": "enum",
+"type": "NumberFormat",
+"v": "UnsignedInteger"
+},
+"Size": {
+"t": "size",
+"x": 26,
+"y": 23
+},
+"TabIndex": 4,
+"Text": "0",
+"Usegroupseparator": false
+},
+"events": {
+"TextChanged": "numUpperLimit_TextChanged",
+"LostFocus": "numUpperLimit_LostFocus"
+},
+"children": []
+},
+"trkLowerLimit": {
+"type": "TrackBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 58,
+"y": 142
+},
+"Maximum": 99,
+"Name": "trkLowerLimit",
+"Size": {
+"t": "size",
+"x": 236,
+"y": 45
+},
+"TabIndex": 1,
+"TickFrequency": 5
+},
+"events": {
+"Scroll": "trkLowerLimit_Scroll"
+},
+"children": []
+},
+"trkUpperLimit": {
+"type": "TrackBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 58,
+"y": 184
+},
+"Maximum": 100,
+"Minimum": 1,
+"Name": "trkUpperLimit",
+"Size": {
+"t": "size",
+"x": 236,
+"y": 45
+},
+"TabIndex": 3,
+"TickFrequency": 5,
+"Value": 100
+},
+"events": {
+"Scroll": "trkUpperLimit_Scroll"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 146
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Lower"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 187
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Upper"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 120,
+"y": 118
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "Brightness Range"
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 46,
+"y": 13
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 36,
+"y": 15
+},
+"TabIndex": 9,
+"Text": "Color"
+},
+"events": {},
+"children": []
+},
+"colorPanel1": {
+"type": "ColorPanel",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Black"
+},
+"Color": {
+"t": "color",
+"name": "Black"
+},
+"Location": {
+"t": "point",
+"x": 31,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "colorPanel1",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 64
+},
+"TabIndex": 11
+},
+"events": {
+"ColorChanged": "colorPanel1_ColorChanged"
+},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 192,
+"y": 13
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 57,
+"y": 15
+},
+"TabIndex": 12,
+"Text": "Tolerance"
+},
+"events": {},
+"children": []
+},
+"trkHueTolerance": {
+"type": "TrackBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 193,
+"y": 36
+},
+"Maximum": 180,
+"Name": "trkHueTolerance",
+"Size": {
+"t": "size",
+"x": 132,
+"y": 45
+},
+"TabIndex": 13,
+"TickFrequency": 20,
+"Value": 5
+},
+"events": {
+"Scroll": "trkHueTolerance_Scroll"
+},
+"children": []
+},
+"trkSaturationTolerance": {
+"type": "TrackBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 193,
+"y": 76
+},
+"Maximum": 99,
+"Name": "trkSaturationTolerance",
+"Size": {
+"t": "size",
+"x": 132,
+"y": 45
+},
+"TabIndex": 14,
+"TickFrequency": 10,
+"Value": 5
+},
+"events": {
+"Scroll": "trkSaturationTolerance_Scroll"
+},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 157,
+"y": 36
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "Hue"
+},
+"events": {},
+"children": []
+},
+"label7": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 121,
+"y": 76
+},
+"Name": "label7",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 15
+},
+"TabIndex": 16,
+"Text": "Saturation"
+},
+"events": {},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {
+"AutomaticDelay": 250
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"chkTransparentOnZeroBrightness": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 16,
+"y": 232
+},
+"Name": "chkTransparentOnZeroBrightness",
+"Size": {
+"t": "size",
+"x": 217,
+"y": 19
+},
+"TabIndex": 17,
+"Text": "Treat Zero Brightness as Transparent.",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkTransparentOnZeroBrightness_CheckedChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+340,
+311
+]
+}
+}
+}

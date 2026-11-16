@@ -1,0 +1,393 @@
+{
+"class": "PreviewPixelSetupForm",
+"source": "Vixen.Modules/Preview/VixenPreview/PreviewPixelSetupForm.Designer.cs",
+"props": {
+"AllowDrop": true,
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "PreviewPixelSetupForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Single Bulb Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 3,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 5,
+"Size": {
+"t": "size",
+"x": 312,
+"y": 145
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "lblPrefixName",
+"col": 0,
+"row": 0
+},
+{
+"name": "lblIndex",
+"col": 0,
+"row": 1
+},
+{
+"name": "suffixIndexChooser",
+"col": 1,
+"row": 1
+},
+{
+"name": "lightSizeChooser",
+"col": 1,
+"row": 2
+},
+{
+"name": "txtPrefixName",
+"col": 1,
+"row": 0
+},
+{
+"name": "lblLightSize",
+"col": 0,
+"row": 2
+},
+{
+"name": "button1",
+"col": 1,
+"row": 4
+},
+{
+"name": "button2",
+"col": 2,
+"row": 4
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"lblPrefixName": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 6
+},
+"Name": "lblPrefixName",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Prefix Name"
+},
+"events": {},
+"children": []
+},
+"lblIndex": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 32
+},
+"Name": "lblIndex",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Suffix Starting Index"
+},
+"events": {},
+"children": []
+},
+"suffixIndexChooser": {
+"type": "NumericUpDown",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 110,
+"y": 29
+},
+"Name": "suffixIndexChooser",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 20
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"lightSizeChooser": {
+"type": "NumericUpDown",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 110,
+"y": 55
+},
+"Name": "lightSizeChooser",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 20
+},
+"TabIndex": 2
+},
+"events": {},
+"children": []
+},
+"txtPrefixName": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 110,
+"y": 3
+},
+"Name": "txtPrefixName",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 20
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblLightSize": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 58
+},
+"Name": "lblLightSize",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 13
+},
+"TabIndex": 5,
+"Text": "Light Size"
+},
+"events": {},
+"children": []
+},
+"button1": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 115,
+"y": 113
+},
+"Name": "button1",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 3,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"button2": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 216,
+"y": 113
+},
+"Name": "button2",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+312,
+145
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.suffixIndexChooser)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.lightSizeChooser)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.suffixIndexChooser)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.lightSizeChooser)).EndInit()"
+]
+}

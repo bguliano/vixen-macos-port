@@ -1,0 +1,117 @@
+{
+"class": "SequencePackageImportSequencesStage",
+"source": "Vixen.Modules/App/TimedSequenceMapper/SequencePackageImport/SequencePackageImportSequencesStage.Designer.cs",
+"props": {
+"sequenceColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"Name": "SequencePackageImportSequencesStage"
+},
+"events": {},
+"children": [
+{
+"name": "lstSequences"
+},
+{
+"name": "lblChooseSequences"
+}
+],
+"objects": {
+"lblChooseSequences": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 11,
+"y": 12
+},
+"Name": "lblChooseSequences",
+"Size": {
+"t": "size",
+"x": 193,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Step 2:  Select sequences to import."
+},
+"events": {},
+"children": []
+},
+"lstSequences": {
+"type": "ListView",
+"props": {
+"CheckBoxes": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "None"
+},
+"HideSelection": false,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 47
+},
+"Name": "lstSequences",
+"Size": {
+"t": "size",
+"x": 485,
+"y": 318
+},
+"TabIndex": 1,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"ItemChecked": "lstSequences_ItemChecked",
+"KeyUp": "lstSequences_KeyUp"
+},
+"children": [],
+"Columns": [
+{
+"ref": "sequenceColumn"
+}
+]
+},
+"sequenceColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Sequence Names"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+511,
+474
+]
+}
+}
+}

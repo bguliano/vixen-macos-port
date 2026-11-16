@@ -1,0 +1,357 @@
+{
+"class": "MarkTapper",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/MarkTapper.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Icon": {
+"t": "image",
+"file": "MarkTapper___this.Icon.ico"
+},
+"KeyPreview": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "MarkTapper",
+"ShowIcon": false,
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Mark Tapper"
+},
+"events": {
+"FormClosing": "MarkTapper_FormClosing",
+"KeyDown": "MarkTapper_KeyDown"
+},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "panelTap"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "groupBoxControls"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"groupBoxControls": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 12,
+"y": 44
+},
+"Name": "groupBoxControls",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 138
+},
+"TabIndex": 4,
+"TabStop": false,
+"Text": "Controls"
+},
+"events": {},
+"children": [
+{
+"name": "buttonResume"
+},
+{
+"name": "buttonStop"
+},
+{
+"name": "buttonPause"
+},
+{
+"name": "buttonPlay"
+}
+]
+},
+"buttonResume": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 6,
+"y": 77
+},
+"Name": "buttonResume",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 7,
+"Text": "Resume",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonResume_Click"
+},
+"children": []
+},
+"buttonStop": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 6,
+"y": 106
+},
+"Name": "buttonStop",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 6,
+"Text": "Stop",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonStop_Click"
+},
+"children": []
+},
+"buttonPause": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 6,
+"y": 48
+},
+"Name": "buttonPause",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 5,
+"Text": "Pause",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonPause_Click"
+},
+"children": []
+},
+"buttonPlay": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 6,
+"y": 19
+},
+"Name": "buttonPlay",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 4,
+"Text": "Play",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonPlay_Click"
+},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 69,
+"y": 193
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 6,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 150,
+"y": 193
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 7,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"timerTap": {
+"type": "Timer",
+"props": {
+"Interval": 80
+},
+"events": {
+"Tick": "timerTap_Tick"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"panelTap": {
+"type": "Panel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 107,
+"y": 63
+},
+"Name": "panelTap",
+"Size": {
+"t": "size",
+"x": 118,
+"y": 107
+},
+"TabIndex": 8
+},
+"events": {
+"MouseDown": "panelTap_MouseDown"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 9
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 219,
+"y": 26
+},
+"TabIndex": 9,
+"Text": "Start the sequence, then tap the panel or the\r\nspacebar in time to create marks."
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+237,
+228
+]
+}
+}
+}

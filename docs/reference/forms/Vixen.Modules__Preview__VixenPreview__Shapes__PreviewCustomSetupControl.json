@@ -1,0 +1,335 @@
+{
+"class": "PreviewCustomSetupControl",
+"source": "Vixen.Modules/Preview/VixenPreview/Shapes/PreviewCustomSetupControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "PreviewCustomSetupControl",
+"Title": "Custom Prop Properties"
+},
+"events": {
+"Load": "PreviewCustomSetupControl_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"buttonHelp": {
+"type": "RoundButton",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Image": {
+"t": "image",
+"file": "PreviewCustomSetupControl__buttonHelp.Image.png"
+},
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 387,
+"y": 3
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 22,
+"y": 22
+},
+"TabIndex": 57,
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"btnSyncLightSize": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 31
+},
+"Name": "btnSyncLightSize",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 23
+},
+"TabIndex": 56,
+"Text": "Sync",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnSyncBulbSize_Click"
+},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 7
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 13
+},
+"TabIndex": 54,
+"Text": "String"
+},
+"events": {},
+"children": []
+},
+"comboBoxStringToEdit": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 50,
+"y": 3
+},
+"Name": "comboBoxStringToEdit",
+"Size": {
+"t": "size",
+"x": 331,
+"y": 21
+},
+"TabIndex": 55
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "comboBoxStringToEdit_SelectedIndexChanged"
+},
+"children": [],
+"Items": [
+"Standard",
+"Pixel"
+]
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 3,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 412,
+"y": 468
+},
+"TabIndex": 56
+},
+"events": {},
+"children": [
+{
+"name": "buttonHelp",
+"col": 2,
+"row": 0
+},
+{
+"name": "label6",
+"col": 0,
+"row": 0
+},
+{
+"name": "comboBoxStringToEdit",
+"col": 1,
+"row": 0
+},
+{
+"name": "panelProperties",
+"col": 0,
+"row": 2
+},
+{
+"name": "btnSyncLightSize",
+"col": 0,
+"row": 1
+},
+{
+"name": "lblSync",
+"col": 1,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"panelProperties": {
+"type": "Panel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 60
+},
+"Name": "panelProperties",
+"Size": {
+"t": "size",
+"x": 406,
+"y": 405
+},
+"TabIndex": 58
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 3
+},
+"lblSync": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 50,
+"y": 36
+},
+"Name": "lblSync",
+"Size": {
+"t": "size",
+"x": 173,
+"y": 13
+},
+"TabIndex": 59,
+"Text": "Syncronize all light sizes with string."
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+412,
+468
+]
+}
+}
+}

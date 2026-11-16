@@ -1,0 +1,665 @@
+{
+"class": "DataZipForm",
+"source": "Vixen.Application/DataZipForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonStartCancel"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonClose"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "DataZipForm",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Profile Archive Wizard"
+},
+"events": {
+"Load": "DataZipForm_Load"
+},
+"children": [
+{
+"name": "statusStrip1"
+},
+{
+"name": "buttonClose"
+},
+{
+"name": "groupBox1"
+},
+{
+"name": "buttonStartCancel"
+}
+],
+"objects": {
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 280,
+"y": 250
+},
+"TabIndex": 0,
+"TabStop": false
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "groupBox2"
+},
+{
+"name": "textBoxFileName"
+},
+{
+"name": "label3"
+},
+{
+"name": "buttonSetSaveFolder"
+},
+{
+"name": "textBoxSaveFolder"
+},
+{
+"name": "label2"
+},
+{
+"name": "comboBoxProfiles"
+},
+{
+"name": "label1"
+}
+]
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 10,
+"y": 19
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 264,
+"y": 90
+},
+"TabIndex": 19,
+"TabStop": false,
+"Text": "Profile artifacts to include"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBoxUserSettings"
+},
+{
+"name": "checkBoxMedia"
+},
+{
+"name": "checkBoxLogs"
+},
+{
+"name": "checkBoxTemplate"
+},
+{
+"name": "checkBoxModule"
+},
+{
+"name": "checkBoxSystem"
+},
+{
+"name": "checkBoxProgram"
+},
+{
+"name": "checkBoxSequence"
+}
+]
+},
+"checkBoxUserSettings": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 90,
+"y": 65
+},
+"Name": "checkBoxUserSettings",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 17
+},
+"TabIndex": 20,
+"Text": "User Settings",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxMedia": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 7,
+"y": 65
+},
+"Name": "checkBoxMedia",
+"Size": {
+"t": "size",
+"x": 55,
+"y": 17
+},
+"TabIndex": 19,
+"Text": "Media",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxLogs": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 169,
+"y": 42
+},
+"Name": "checkBoxLogs",
+"Size": {
+"t": "size",
+"x": 49,
+"y": 17
+},
+"TabIndex": 13,
+"Text": "Logs",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxTemplate": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 90,
+"y": 42
+},
+"Name": "checkBoxTemplate",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 17
+},
+"TabIndex": 18,
+"Text": "Template",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxModule": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 6,
+"y": 19
+},
+"Name": "checkBoxModule",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 17
+},
+"TabIndex": 14,
+"Text": "Module",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxSystem": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 7,
+"y": 42
+},
+"Name": "checkBoxSystem",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 17
+},
+"TabIndex": 17,
+"Text": "System",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxProgram": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 90,
+"y": 19
+},
+"Name": "checkBoxProgram",
+"Size": {
+"t": "size",
+"x": 65,
+"y": 17
+},
+"TabIndex": 15,
+"Text": "Program",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxSequence": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 169,
+"y": 19
+},
+"Name": "checkBoxSequence",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 17
+},
+"TabIndex": 16,
+"Text": "Sequence",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"textBoxFileName": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 9,
+"y": 216
+},
+"Name": "textBoxFileName",
+"Size": {
+"t": "size",
+"x": 233,
+"y": 20
+},
+"TabIndex": 9
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 200
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 176,
+"y": 13
+},
+"TabIndex": 8,
+"Text": "Archive file name, without extension"
+},
+"events": {},
+"children": []
+},
+"buttonSetSaveFolder": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 248,
+"y": 173
+},
+"Image": {
+"t": "raw",
+"v": "Tools.GetIcon(Resources.folder, (int)(16 * ScalingTools.GetScaleFactor()))"
+},
+"Name": "buttonSetSaveFolder",
+"Size": {
+"t": "size",
+"x": 23,
+"y": 23
+},
+"TabIndex": 7,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSetSaveFolder_Click"
+},
+"children": []
+},
+"textBoxSaveFolder": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 9,
+"y": 173
+},
+"Name": "textBoxSaveFolder",
+"Size": {
+"t": "size",
+"x": 233,
+"y": 20
+},
+"TabIndex": 6
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 157
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 124,
+"y": 13
+},
+"TabIndex": 5,
+"Text": "Folder to save archive to"
+},
+"events": {},
+"children": []
+},
+"comboBoxProfiles": {
+"type": "ComboBox",
+"props": {
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 128
+},
+"Name": "comboBoxProfiles",
+"Size": {
+"t": "size",
+"x": 261,
+"y": 21
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 112
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 86,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "Profile to archive"
+},
+"events": {},
+"children": []
+},
+"buttonStartCancel": {
+"type": "Button",
+"props": {
+"Cursor": {
+"t": "enum",
+"type": "Cursors",
+"v": "Arrow"
+},
+"Location": {
+"t": "point",
+"x": 131,
+"y": 284
+},
+"Name": "buttonStartCancel",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 23
+},
+"TabIndex": 10,
+"Text": "Start",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonStartCancel_Click"
+},
+"children": []
+},
+"buttonClose": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 217,
+"y": 284
+},
+"Name": "buttonClose",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"folderBrowserSaveFolder": {
+"type": "FolderBrowserDialog",
+"props": {},
+"events": {},
+"children": []
+},
+"statusStrip1": {
+"type": "StatusStrip",
+"props": {
+"Location": {
+"t": "point",
+"x": 0,
+"y": 322
+},
+"Name": "statusStrip1",
+"Size": {
+"t": "size",
+"x": 303,
+"y": 22
+},
+"TabIndex": 11,
+"Text": "statusStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripProgressBar"
+},
+{
+"ref": "toolStripStatusLabel"
+}
+]
+},
+"toolStripProgressBar": {
+"type": "ToolStripProgressBar",
+"props": {
+"Name": "toolStripProgressBar",
+"Size": {
+"t": "size",
+"x": 100,
+"y": 16
+},
+"Style": {
+"t": "enum",
+"type": "ProgressBarStyle",
+"v": "Continuous"
+},
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusLabel",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 17
+}
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+303,
+344
+]
+}
+}
+}

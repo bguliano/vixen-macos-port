@@ -1,0 +1,465 @@
+{
+"AboutVixen": [
+"Vixen.Application__AboutVixen.json"
+],
+"CheckForUpdates": [
+"Vixen.Application__CheckForUpdates.json"
+],
+"ConfigPreviews": [
+"Vixen.Application__ConfigPreviews.json"
+],
+"DataProfileForm": [
+"Vixen.Application__DataProfileForm.json"
+],
+"DataZipForm": [
+"Vixen.Application__DataZipForm.json"
+],
+"InstalledModules": [
+"Vixen.Application__InstalledModules.json"
+],
+"OptionsDialog": [
+"Vixen.Application__OptionsDialog.json"
+],
+"ReleaseNotes": [
+"Vixen.Application__ReleaseNotes.json"
+],
+"SelectProfile": [
+"Vixen.Application__SelectProfile.json"
+],
+"DisplaySetup": [
+"Vixen.Application__Setup__DisplaySetup.json"
+],
+"Icicles": [
+"Vixen.Application__Setup__ElementTemplates__Icicles.json"
+],
+"LipSync": [
+"Vixen.Application__Setup__ElementTemplates__LipSync.json"
+],
+"Megatree": [
+"Vixen.Application__Setup__ElementTemplates__Megatree.json"
+],
+"NumberedGroup": [
+"Vixen.Application__Setup__ElementTemplates__NumberedGroup.json"
+],
+"PixelGrid": [
+"Vixen.Application__Setup__ElementTemplates__PixelGrid.json"
+],
+"Starburst": [
+"Vixen.Application__Setup__ElementTemplates__StarBurst.json"
+],
+"SetupControllersSimple": [
+"Vixen.Application__Setup__SetupControllersSimple.json"
+],
+"SetupElementsTree": [
+"Vixen.Application__Setup__SetupElementsTree.json"
+],
+"SetupPatchingGraphical": [
+"Vixen.Application__Setup__SetupPatchingGraphical.json"
+],
+"SetupPatchingSimple": [
+"Vixen.Application__Setup__SetupPatchingSimple.json"
+],
+"VixenApplication": [
+"Vixen.Application__VixenApplication.json"
+],
+"BaseForm": [
+"Vixen.Common__Controls__BaseForm.json"
+],
+"ControllerTree": [
+"Vixen.Common__Controls__ControllerTree.json"
+],
+"ElementTree": [
+"Vixen.Common__Controls__ElementTree.json"
+],
+"ListSelectDialog": [
+"Vixen.Common__Controls__ListSelectDialog.json"
+],
+"MessageBoxForm": [
+"Vixen.Common__Controls__MessageBoxForm.json"
+],
+"LetterCounterEditor": [
+"Vixen.Common__Controls__NameGeneration__LetterCounterEditor.json"
+],
+"LetterIteratorEditor": [
+"Vixen.Common__Controls__NameGeneration__LetterIteratorEditor.json"
+],
+"NameGenerator": [
+"Vixen.Common__Controls__NameGeneration__NameGenerator.json"
+],
+"NumericCounterEditor": [
+"Vixen.Common__Controls__NameGeneration__NumericCounterEditor.json"
+],
+"SubstitutionRenamer": [
+"Vixen.Common__Controls__NameGeneration__SubstitutionRenamer.json"
+],
+"WordIteratorEditor": [
+"Vixen.Common__Controls__NameGeneration__WordIteratorEditor.json"
+],
+"NumberDialog": [
+"Vixen.Common__Controls__NumberDialog.json"
+],
+"SerialPortConfig": [
+"Vixen.Common__Controls__SerialPortConfig.json"
+],
+"TextDialog": [
+"Vixen.Common__Controls__TextDialog.json"
+],
+"UndoDropDownControl": [
+"Vixen.Common__Controls__Undo__UndoDropDownControl.json"
+],
+"WizardForm": [
+"Vixen.Common__Controls__Wizard__WizardForm.json"
+],
+"BeatsAndBarsProgress": [
+"Vixen.Modules__Analysis__BeatsAndBars__BeatsAndBarsProgress.json"
+],
+"BeatsAndBarsDialog": [
+"Vixen.Modules__Analysis__BeatsAndBars__BeatsAndBarsSettings.json"
+],
+"MusicStaff": [
+"Vixen.Modules__Analysis__BeatsAndBars__MusicStaff.json"
+],
+"PreviewWaveform": [
+"Vixen.Modules__Analysis__BeatsAndBars__PreviewWaveform.json"
+],
+"ColorGradientEditor": [
+"Vixen.Modules__App__ColorGradients__ColorGradientEditor.json"
+],
+"ColorGradientLibrarySelector": [
+"Vixen.Modules__App__ColorGradients__ColorGradientLibrarySelector.json"
+],
+"GradientEditPanel": [
+"Vixen.Modules__App__ColorGradients__GradientEditPanel.json"
+],
+"CurveEditor": [
+"Vixen.Modules__App__Curves__CurveEditor.json"
+],
+"CurveLibrarySelector": [
+"Vixen.Modules__App__Curves__CurveLibrarySelector.json"
+],
+"FunctionGenerator": [
+"Vixen.Modules__App__Curves__FunctionGenerator.json"
+],
+"BulkExportConfigStage": [
+"Vixen.Modules__App__ExportWizard__BulkExportConfigStage.json"
+],
+"BulkExportControllersStage": [
+"Vixen.Modules__App__ExportWizard__BulkExportControllersStage.json"
+],
+"BulkExportFinishedStage": [
+"Vixen.Modules__App__ExportWizard__BulkExportFinishedStage.json"
+],
+"BulkExportOutputFormatStage": [
+"Vixen.Modules__App__ExportWizard__BulkExportOutputFormatStage.json"
+],
+"BulkExportSourcesStage": [
+"Vixen.Modules__App__ExportWizard__BulkExportSourcesStage.json"
+],
+"BulkExportSummaryStage": [
+"Vixen.Modules__App__ExportWizard__BulkExportSummaryStage.json"
+],
+"InstrumentationForm": [
+"Vixen.Modules__App__Instrumentation__InstrumentationForm.json"
+],
+"LipSyncMapMatrixEditor": [
+"Vixen.Modules__App__LipSyncApp__LipSyncMapMatrixEditor.json"
+],
+"LipSyncMapSelector": [
+"Vixen.Modules__App__LipSyncApp__LipSyncMapSelector.json"
+],
+"LipSyncMultiPicSelect": [
+"Vixen.Modules__App__LipSyncApp__LipSyncMultiPicSelect.json"
+],
+"LipSyncNodeSelect": [
+"Vixen.Modules__App__LipSyncApp__LipSyncNodeSelect.json"
+],
+"LipSyncTextConvertFailForm": [
+"Vixen.Modules__App__LipSyncApp__LipSyncTextConvertFailForm.json"
+],
+"LipSyncTextConvertForm": [
+"Vixen.Modules__App__LipSyncApp__LipSyncTextConvertForm.json"
+],
+"LaunchTypeEditor": [
+"Vixen.Modules__App__Shows__Editors__LaunchTypeEditor.json"
+],
+"LaunchTypeTester": [
+"Vixen.Modules__App__Shows__Editors__LaunchTypeTester.json"
+],
+"PauseTypeEditor": [
+"Vixen.Modules__App__Shows__Editors__PauseTypeEditor.json"
+],
+"SequenceTypeEditor": [
+"Vixen.Modules__App__Shows__Editors__SequenceTypeEditor.json"
+],
+"ShowTypeEditor": [
+"Vixen.Modules__App__Shows__Editors__ShowTypeEditor.json"
+],
+"TypeEditorBase": [
+"Vixen.Modules__App__Shows__Editors__TypeEditorBase.json"
+],
+"WebPageTypeEditor": [
+"Vixen.Modules__App__Shows__Editors__WebPageTypeEditor.json"
+],
+"WebPageTypeTester": [
+"Vixen.Modules__App__Shows__Editors__WebPageTypeTester.json"
+],
+"ShowEditorForm": [
+"Vixen.Modules__App__Shows__ShowEditorForm.json"
+],
+"ShowListForm": [
+"Vixen.Modules__App__Shows__ShowListForm.json"
+],
+"SetupForm": [
+"Vixen.Modules__App__SuperScheduler__SetupForm.json",
+"Vixen.Modules__Controller__E131__SetupForm.json",
+"Vixen.Modules__Controller__LauncherController__SetupForm.json",
+"Vixen.Modules__Controller__RDSController__SetupForm.json",
+"Vixen.Modules__Property__Grid__SetupForm.json",
+"Vixen.Modules__Property__Location__SetupForm.json",
+"Vixen.Modules__Property__Order__SetupForm.json",
+"Vixen.Modules__Property__Orientation__SetupForm.json"
+],
+"SetupScheduleForm": [
+"Vixen.Modules__App__SuperScheduler__SetupScheduleForm.json"
+],
+"StatusForm": [
+"Vixen.Modules__App__SuperScheduler__StatusForm.json"
+],
+"SequencePackageExportFinishedStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageExport__SequencePackageExportFinishedStage.json"
+],
+"SequencePackageExportOutputStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageExport__SequencePackageExportOutputStage.json"
+],
+"SequencePackageExportSourcesStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageExport__SequencePackageExportSourcesStage.json"
+],
+"SequencePackageExportSummaryStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageExport__SequencePackageExportSummaryStage.json"
+],
+"SequencePackageImportFinishedStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageImport__SequencePackageImportFinishedStage.json"
+],
+"SequencePackageImportInputStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageImport__SequencePackageImportInputStage.json"
+],
+"SequencePackageImportSequencesStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageImport__SequencePackageImportSequencesStage.json"
+],
+"SequencePackageImportSummaryStage": [
+"Vixen.Modules__App__TimedSequenceMapper__SequencePackageImport__SequencePackageImportSummaryStage.json"
+],
+"DDPSetup": [
+"Vixen.Modules__Controller__DDP__DDPSetup.json"
+],
+"DebugControllerOutputForm": [
+"Vixen.Modules__Controller__DebugController__DebugControllerOutputForm.json"
+],
+"DummyLightingOutputForm": [
+"Vixen.Modules__Controller__DummyLighting__DummyLightingOutputForm.json"
+],
+"DummyLightingSetup": [
+"Vixen.Modules__Controller__DummyLighting__DummyLightingSetup.json"
+],
+"AboutBox": [
+"Vixen.Modules__Controller__E131__AboutBox.json"
+],
+"UnicastForm": [
+"Vixen.Modules__Controller__E131__UnicastForm.json"
+],
+"SetupDialog": [
+"Vixen.Modules__Controller__ElexolEtherIO__SetupDialog.json",
+"Vixen.Modules__Controller__GenericSerial__SetupDialog.json",
+"Vixen.Modules__Controller__OpenDMX__SetupDialog.json",
+"Vixen.Modules__Controller__Renard__SetupDialog.json"
+],
+"AutomaticMusicDetection": [
+"Vixen.Modules__Editor__TimedSequenceEditor__AutomaticMusicDetection.json"
+],
+"BulkEffectMoveForm": [
+"Vixen.Modules__Editor__TimedSequenceEditor__BulkEffectMoveForm.json"
+],
+"CreateEvenMarksForm": [
+"Vixen.Modules__Editor__TimedSequenceEditor__CreateEvenMarksForm.json"
+],
+"EffectDistributionDialog": [
+"Vixen.Modules__Editor__TimedSequenceEditor__EffectDistributionDialog.json"
+],
+"EffectParameterPickerControl": [
+"Vixen.Modules__Editor__TimedSequenceEditor__EffectParameterPickerControl.json"
+],
+"EffectTimeEditor": [
+"Vixen.Modules__Editor__TimedSequenceEditor__EffectTimeEditor.json"
+],
+"ExportDialog": [
+"Vixen.Modules__Editor__TimedSequenceEditor__ExportDialog.json"
+],
+"ColorCollectionLibrary_Form": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__ColorCollectionLibrary_Form.json"
+],
+"EffectDefaultsExportSelectionForm": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__EffectDefaultsExportSelectionForm.json"
+],
+"FindEffectForm": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__FindEffectForm.json"
+],
+"FormEffectEditor": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__FormEffectEditor.json"
+],
+"FormParameterPicker": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__FormParameterPicker.json"
+],
+"Form_AddMultipleEffects": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_AddMultipleEffects.json"
+],
+"Form_ColorLibrary": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_ColorLibrary.json"
+],
+"Form_CurveLibrary": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_CurveLibrary.json"
+],
+"Form_Effects": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_Effects.json"
+],
+"Form_GradientLibrary": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_GradientLibrary.json"
+],
+"Form_Grid": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_Grid.json"
+],
+"Form_Marks": [
+"Vixen.Modules__Editor__TimedSequenceEditor__Forms__Form_Marks.json"
+],
+"InvalidAudioPathDialog": [
+"Vixen.Modules__Editor__TimedSequenceEditor__InvalidAudioPathDialog.json"
+],
+"LayerEditor": [
+"Vixen.Modules__Editor__TimedSequenceEditor__LayerEditor.json"
+],
+"MarkCollectionImportDialog": [
+"Vixen.Modules__Editor__TimedSequenceEditor__MarkCollectionImportDialog.json"
+],
+"MarkTapper": [
+"Vixen.Modules__Editor__TimedSequenceEditor__MarkTapper.json"
+],
+"SetSequenceLength": [
+"Vixen.Modules__Editor__TimedSequenceEditor__SetSequenceLength.json"
+],
+"TimedSequenceEditorForm": [
+"Vixen.Modules__Editor__TimedSequenceEditor__TimedSequenceEditorForm.json"
+],
+"ChromaKeySetup": [
+"Vixen.Modules__LayerMixingFilter__ChromaKey__ChromaKeySetup.json"
+],
+"LumaKeySetup": [
+"Vixen.Modules__LayerMixingFilter__LumaKey__LumaKeySetup.json"
+],
+"MaskAndFillSetup": [
+"Vixen.Modules__LayerMixingFilter__MaskFill__MaskAndFillSetup.json"
+],
+"ColorBreakdownItemControl": [
+"Vixen.Modules__OutputFilter__ColorBreakdown__ColorBreakdownItemControl.json"
+],
+"ColorBreakdownSetup": [
+"Vixen.Modules__OutputFilter__ColorBreakdown__ColorBreakdownSetup.json"
+],
+"ColorWheelFilterSetup": [
+"Vixen.Modules__OutputFilter__ColorWheelFilter__ColorWheelFilterSetup.json"
+],
+"DimmingCurveHelper": [
+"Vixen.Modules__OutputFilter__DimmingCurve__DimmingCurveHelper.json"
+],
+"DimmingFilterSetup": [
+"Vixen.Modules__OutputFilter__DimmingFilter__DimmingFilterSetup.json"
+],
+"PrismFilterSetup": [
+"Vixen.Modules__OutputFilter__PrismFilter__PrismFilterSetup.json"
+],
+"ShutterFilterSetup": [
+"Vixen.Modules__OutputFilter__ShutterFilter__ShutterFilterSetup.json"
+],
+"TaggedFilterSetup": [
+"Vixen.Modules__OutputFilter__TaggedFilter__TaggedFilterSetup.json"
+],
+"GDIControl": [
+"Vixen.Modules__Preview__VixenPreview__GDIPreview__GDIControl.json"
+],
+"GDIPreviewForm": [
+"Vixen.Modules__Preview__VixenPreview__GDIPreview__GDIPreviewForm.json"
+],
+"LocationOffsetForm": [
+"Vixen.Modules__Preview__VixenPreview__LocationOffsetForm.json"
+],
+"OpenGlPreviewForm": [
+"Vixen.Modules__Preview__VixenPreview__OpenGL__OpenGLPreviewForm.json"
+],
+"PreviewPixelSetupForm": [
+"Vixen.Modules__Preview__VixenPreview__PreviewPixelSetupForm.json"
+],
+"ResizePreviewForm": [
+"Vixen.Modules__Preview__VixenPreview__ResizePreviewForm.json"
+],
+"DisplayItemBaseControl": [
+"Vixen.Modules__Preview__VixenPreview__Shapes__DisplayItemBaseControl.json"
+],
+"PreviewCustomCreateForm": [
+"Vixen.Modules__Preview__VixenPreview__Shapes__PreviewCustomCreateForm.json"
+],
+"PreviewCustomDefineDisplayItems": [
+"Vixen.Modules__Preview__VixenPreview__Shapes__PreviewCustomDefineDisplayItems.json"
+],
+"PreviewCustomSetupControl": [
+"Vixen.Modules__Preview__VixenPreview__Shapes__PreviewCustomSetupControl.json"
+],
+"PreviewSetElements": [
+"Vixen.Modules__Preview__VixenPreview__Shapes__PreviewSetElements.json"
+],
+"PreviewShapeBaseSetupControl": [
+"Vixen.Modules__Preview__VixenPreview__Shapes__PreviewShapeBaseSetupControl.json"
+],
+"TemplateDialog": [
+"Vixen.Modules__Preview__VixenPreview__TemplateDialog.json"
+],
+"VixenPreviewControl": [
+"Vixen.Modules__Preview__VixenPreview__VixenPreviewControl.json"
+],
+"VixenPreviewSetup3": [
+"Vixen.Modules__Preview__VixenPreview__VixenPreviewSetup3.json"
+],
+"VixenPreviewSetupDocument": [
+"Vixen.Modules__Preview__VixenPreview__VixenPreviewSetupDocument.json"
+],
+"VixenPreviewSetupElementsDocument": [
+"Vixen.Modules__Preview__VixenPreview__VixenPreviewSetupElementsDocument.json"
+],
+"VixenPreviewSetupPropertiesDocument": [
+"Vixen.Modules__Preview__VixenPreview__VixenPreviewSetupPropertiesDocument.json"
+],
+"ColorPanel": [
+"Vixen.Modules__Property__Color__ColorPanel.json"
+],
+"ColorSetsSetupForm": [
+"Vixen.Modules__Property__Color__ColorSetsSetupForm.json"
+],
+"ColorSetupForm": [
+"Vixen.Modules__Property__Color__ColorSetupForm.json"
+],
+"ColorSetupHelper": [
+"Vixen.Modules__Property__Color__ColorSetupHelper.json"
+],
+"FaceSetupHelper": [
+"Vixen.Modules__Property__Face__FaceSetupHelper.json"
+],
+"OrderSetupHelper": [
+"Vixen.Modules__Property__Order__OrderSetupHelper.json"
+],
+"ConversionProgressForm": [
+"Vixen.Modules__Sequence__Vixen2x__ConversionProgressForm.json"
+],
+"Vixen2xSequenceImporterChannelMapper": [
+"Vixen.Modules__Sequence__Vixen2x__Vixen2xSequenceImporterChannelMapper.json"
+],
+"Vixen2xSequenceImporterForm": [
+"Vixen.Modules__Sequence__Vixen2x__Vixen2xSequenceImporterForm.json"
+]
+}

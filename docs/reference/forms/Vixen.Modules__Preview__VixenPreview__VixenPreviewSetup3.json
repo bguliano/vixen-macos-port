@@ -1,0 +1,5342 @@
+{
+"class": "VixenPreviewSetup3",
+"source": "Vixen.Modules/Preview/VixenPreview/VixenPreviewSetup3.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"IsMdiContainer": true,
+"MainMenuStrip": {
+"t": "ref",
+"name": "menuStrip"
+},
+"Name": "VixenPreviewSetup3",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "Manual"
+},
+"Text": "Preview Configuration"
+},
+"events": {
+"FormClosing": "VixenPreviewSetup3_FormClosing",
+"Load": "VixenPreviewSetup3_Load",
+"Move": "VixenPreviewSetup3_Move",
+"Resize": "VixenPreviewSetup3_Resize"
+},
+"children": [
+{
+"name": "tableLayoutMain"
+},
+{
+"name": "menuStrip"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"panel11": {
+"type": "Panel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 917,
+"y": 24
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 2,
+"r": 2,
+"b": 2
+},
+"Name": "panel11",
+"Size": {
+"t": "size",
+"x": 126,
+"y": 83
+},
+"TabIndex": 15
+},
+"events": {},
+"children": [
+{
+"name": "toolStripUndo"
+}
+]
+},
+"toolStripUndo": {
+"type": "ToolStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "toolStripUndo",
+"Padding": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 124,
+"y": 25
+},
+"TabIndex": 2,
+"Text": "toolStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "undoButton"
+},
+{
+"ref": "redoButton"
+}
+]
+},
+"undoButton": {
+"type": "UndoButton",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"ButtonType": {
+"t": "enum",
+"type": "UndoButtonType",
+"v": "UndoButton"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageScaling": {
+"t": "enum",
+"type": "ToolStripItemImageScaling",
+"v": "None"
+},
+"Name": "undoButton",
+"Size": {
+"t": "size",
+"x": 52,
+"y": 22
+},
+"Text": "Undo"
+},
+"events": {
+"ButtonClick": "undoButton_ButtonClick"
+},
+"children": []
+},
+"redoButton": {
+"type": "UndoButton",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"ButtonType": {
+"t": "enum",
+"type": "UndoButtonType",
+"v": "UndoButton"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageScaling": {
+"t": "enum",
+"type": "ToolStripItemImageScaling",
+"v": "None"
+},
+"Name": "redoButton",
+"Size": {
+"t": "size",
+"x": 50,
+"y": 22
+},
+"Text": "Redo"
+},
+"events": {
+"ButtonClick": "redoButton_ButtonClick"
+},
+"children": []
+},
+"lblUndoRedo": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 919,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "lblUndoRedo",
+"Size": {
+"t": "size",
+"x": 122,
+"y": 22
+},
+"TabIndex": 3,
+"Text": "Undo/Redo",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"lblLock": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 1049,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "lblLock",
+"Size": {
+"t": "size",
+"x": 147,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Lock/Unlock",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"pnlLock": {
+"type": "Panel",
+"props": {
+"AutoSize": true,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 1049,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "pnlLock",
+"Size": {
+"t": "size",
+"x": 147,
+"y": 81
+},
+"TabIndex": 28
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel6"
+}
+]
+},
+"tableLayoutPanel6": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 4,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 1
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel6",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 136,
+"y": 33
+},
+"TabIndex": 23
+},
+"events": {},
+"children": [
+{
+"name": "btnLock",
+"col": 0,
+"row": 0
+},
+{
+"name": "btnUnlock",
+"col": 1,
+"row": 0
+},
+{
+"name": "btnUnlockAll",
+"col": 2,
+"row": 0
+},
+{
+"name": "btnToggleHideLocked",
+"col": 3,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"btnLock": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnLock",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 32,
+"Tag": "",
+"toolTipText": "Lock",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "lockButton_ButtonClick"
+},
+"children": []
+},
+"btnUnlock": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnUnlock",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 31,
+"Tag": "",
+"toolTipText": "Unlock",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "unlockButton_ButtonClick"
+},
+"children": []
+},
+"btnUnlockAll": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnUnlockAll",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 32,
+"Tag": "",
+"toolTipText": "Unlock All",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "unlockAllButton_ButtonClick"
+},
+"children": []
+},
+"btnToggleHideLocked": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 106,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnToggleHideLocked",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 33,
+"Tag": "",
+"toolTipText": "Hide Locked",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toggleHideLockedButton_Click"
+},
+"children": []
+},
+"tableLayoutPanel2": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 5,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel2",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 159,
+"y": 74
+},
+"TabIndex": 22
+},
+"events": {},
+"children": [
+{
+"name": "buttonDistributeVertical",
+"col": 3,
+"row": 1
+},
+{
+"name": "buttonMatchProperties",
+"col": 4,
+"row": 0
+},
+{
+"name": "buttonAlignBottom",
+"col": 2,
+"row": 1
+},
+{
+"name": "buttonAlignLeft",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonAlignVertMid",
+"col": 1,
+"row": 1
+},
+{
+"name": "buttonAlignRight",
+"col": 1,
+"row": 0
+},
+{
+"name": "buttonAlignHorizMid",
+"col": 0,
+"row": 1
+},
+{
+"name": "buttonDistributeHorizontal",
+"col": 3,
+"row": 0
+},
+{
+"name": "buttonAlignTop",
+"col": 2,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"buttonDistributeVertical": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 106,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonDistributeVertical",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 24,
+"toolTipText": "Distribute Vertically",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonMatchProperties": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 140,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonMatchProperties",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 27
+},
+"TabIndex": 20,
+"toolTipText": "Match Properties",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonAlignBottom": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAlignBottom",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 23,
+"toolTipText": "Align Bottom",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonAlignLeft": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Center"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAlignLeft",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 16,
+"toolTipText": "Align Left",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonAlignVertMid": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAlignVertMid",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 22,
+"toolTipText": "Align Vertically",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonAlignRight": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAlignRight",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 17,
+"toolTipText": "Align Right",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonAlignHorizMid": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAlignHorizMid",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 21,
+"toolTipText": "Align Horizontally",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonDistributeHorizontal": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 106,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonDistributeHorizontal",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 19,
+"toolTipText": "Distribute Horizontally",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"buttonAlignTop": {
+"type": "Button",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonAlignTop",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 18,
+"toolTipText": "Align Top",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "toolbarAlignButton_Click"
+},
+"children": []
+},
+"label7": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 538,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label7",
+"Size": {
+"t": "size",
+"x": 167,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Align",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"pnlSelect": {
+"type": "Panel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 175,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "pnlSelect",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 81
+},
+"TabIndex": 12
+},
+"events": {},
+"children": [
+{
+"name": "buttonSelect"
+}
+]
+},
+"buttonSelect": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonSelect.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 7,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonSelect",
+"Size": {
+"t": "size",
+"x": 47,
+"y": 46
+},
+"TabIndex": 0,
+"Tag": "",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"label8": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 175,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label8",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Select",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"lblCustomProp": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 799,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "lblCustomProp",
+"Size": {
+"t": "size",
+"x": 112,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Custom Prop",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 364,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 166,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Smart Objects",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel3": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 3,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel3",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 96,
+"y": 73
+},
+"TabIndex": 22
+},
+"events": {},
+"children": [
+{
+"name": "buttonPolyLine",
+"col": 2,
+"row": 1
+},
+{
+"name": "buttonDrawPixel",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonTriangle",
+"col": 1,
+"row": 1
+},
+{
+"name": "buttonLine",
+"col": 1,
+"row": 0
+},
+{
+"name": "buttonRectangle",
+"col": 2,
+"row": 0
+},
+{
+"name": "buttonEllipse",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"buttonPolyLine": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonPolyLine.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonPolyLine",
+"Size": {
+"t": "size",
+"x": 20,
+"y": 27
+},
+"TabIndex": 5,
+"Tag": "",
+"toolTipText": "Multi-Point String",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonDrawPixel": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonDrawPixel.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonDrawPixel",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 0,
+"Tag": "",
+"toolTipText": "Single Light",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonTriangle": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonTriangle.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonTriangle",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 4,
+"Tag": "",
+"toolTipText": "Triangle",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonLine": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonLine.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonLine",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 1,
+"Tag": "",
+"toolTipText": "Light String",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonRectangle": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonRectangle.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonRectangle",
+"Size": {
+"t": "size",
+"x": 20,
+"y": 27
+},
+"TabIndex": 2,
+"Tag": "",
+"toolTipText": "Rectangle",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonEllipse": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonEllipse.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonEllipse",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 3,
+"Tag": "",
+"toolTipText": "Ellipse",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 246,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 110,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Basic Drawing",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"panel2": {
+"type": "Panel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "panel2",
+"Size": {
+"t": "size",
+"x": 163,
+"y": 81
+},
+"TabIndex": 7
+},
+"events": {},
+"children": [
+{
+"name": "trackBarBackgroundAlpha"
+},
+{
+"name": "buttonSetBackground"
+}
+]
+},
+"trackBarBackgroundAlpha": {
+"type": "TrackBar",
+"props": {
+"LargeChange": 10,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Maximum": 255,
+"Name": "trackBarBackgroundAlpha",
+"Size": {
+"t": "size",
+"x": 94,
+"y": 45
+},
+"TabIndex": 33,
+"TickFrequency": 25
+},
+"events": {
+"ValueChanged": "trackBarBackgroundAlpha_ValueChanged"
+},
+"children": []
+},
+"buttonSetBackground": {
+"type": "Button",
+"props": {
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonSetBackground.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 9,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonSetBackground",
+"Size": {
+"t": "size",
+"x": 47,
+"y": 46
+},
+"TabIndex": 32,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSetBackground_Click"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 163,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Background",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"dialogSelectBackground": {
+"type": "OpenFileDialog",
+"props": {
+"Filter": "JPG Files|*.jpg|PNG Files|*.png|GIF Files|*.gif|BMP Files|*.bmp|All Files|*.*",
+"SupportMultiDottedExtensions": true
+},
+"events": {},
+"children": []
+},
+"menuStrip": {
+"type": "MenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "menuStrip",
+"Padding": {
+"t": "padding",
+"l": 7,
+"t_": 2,
+"r": 0,
+"b": 2
+},
+"Size": {
+"t": "size",
+"x": 1194,
+"y": 24
+},
+"TabIndex": 11,
+"Text": "menuStrip"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "fileToolStripMenuItem"
+},
+{
+"ref": "viewToolStripMenuItem"
+},
+{
+"ref": "editToolStripMenuItem"
+},
+{
+"ref": "settingsToolStripMenuItem"
+},
+{
+"ref": "helpToolStripMenuItem"
+}
+]
+},
+"fileToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "fileToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 20
+},
+"Text": "&File"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "saveToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator2"
+},
+{
+"ref": "importPropToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator1"
+},
+{
+"ref": "exitToolStripMenuItem"
+}
+]
+},
+"saveToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "saveToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"S"
+]
+},
+"Size": {
+"t": "size",
+"x": 138,
+"y": 22
+},
+"Text": "&Save"
+},
+"events": {
+"Click": "saveToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator2": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator2",
+"Size": {
+"t": "size",
+"x": 135,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"importPropToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "importPropToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 138,
+"y": 22
+},
+"Text": "Import Prop"
+},
+"events": {
+"Click": "importPropToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator1",
+"Size": {
+"t": "size",
+"x": 135,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"exitToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exitToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Alt",
+"F4"
+]
+},
+"Size": {
+"t": "size",
+"x": 138,
+"y": 22
+},
+"Text": "E&xit"
+},
+"events": {
+"Click": "exitToolStripMenuItem_Click"
+},
+"children": []
+},
+"viewToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "viewToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 20
+},
+"Text": "&View"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "propInformationToolStripMenuItem"
+},
+{
+"ref": "propEditorToolStripMenuItem"
+}
+]
+},
+"propInformationToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "propInformationToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Prop &Information"
+},
+"events": {
+"Click": "propInformationToolStripMenuItem_Click"
+},
+"children": []
+},
+"propEditorToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "propEditorToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Prop Editor"
+},
+"events": {
+"Click": "btnCustomPropEditor_Click"
+},
+"children": []
+},
+"editToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 20
+},
+"Text": "&Edit"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "copyToolStripMenuItem"
+},
+{
+"ref": "copyToolStripMenuItem1"
+},
+{
+"ref": "pasteToolStripMenuItem"
+},
+{
+"ref": "deleteToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItem1"
+},
+{
+"ref": "undoToolStripMenuItem"
+},
+{
+"ref": "redoToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator3"
+},
+{
+"ref": "lockToolStripMenuItem"
+},
+{
+"ref": "unlockToolStripMenuItem"
+},
+{
+"ref": "unlockAllToolStripMenuItem"
+},
+{
+"ref": "hideLockedToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator4"
+},
+{
+"ref": "backgroundPropertiesToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator5"
+},
+{
+"ref": "addTemplateMenu"
+}
+]
+},
+"copyToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__copyToolStripMenuItem.Image.png"
+},
+"Name": "copyToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+X",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "Cu&t"
+},
+"events": {
+"Click": "copyToolStripMenuItem_Click"
+},
+"children": []
+},
+"copyToolStripMenuItem1": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__copyToolStripMenuItem1.Image.png"
+},
+"Name": "copyToolStripMenuItem1",
+"ShortcutKeyDisplayString": "Ctrl+C",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Copy"
+},
+"events": {
+"Click": "copyToolStripMenuItem1_Click"
+},
+"children": []
+},
+"pasteToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__pasteToolStripMenuItem.Image.png"
+},
+"Name": "pasteToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+V",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Paste"
+},
+"events": {
+"Click": "pasteToolStripMenuItem_Click"
+},
+"children": []
+},
+"deleteToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__deleteToolStripMenuItem.Image.png"
+},
+"Name": "deleteToolStripMenuItem",
+"ShortcutKeyDisplayString": "Del",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Delete"
+},
+"events": {
+"Click": "deleteToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItem1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripMenuItem1",
+"Size": {
+"t": "size",
+"x": 200,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"undoToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__undoToolStripMenuItem.Image.png"
+},
+"Name": "undoToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+Z",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Undo"
+},
+"events": {
+"Click": "undoButton_ButtonClick"
+},
+"children": []
+},
+"redoToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__redoToolStripMenuItem.Image.png"
+},
+"Name": "redoToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+Y",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Redo"
+},
+"events": {
+"Click": "redoButton_ButtonClick"
+},
+"children": []
+},
+"toolStripSeparator3": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator3",
+"Size": {
+"t": "size",
+"x": 200,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"lockToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__lockToolStripMenuItem.Image.png"
+},
+"Name": "lockToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+L",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Lock"
+},
+"events": {
+"Click": "lockButton_ButtonClick"
+},
+"children": []
+},
+"unlockToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__unlockToolStripMenuItem.Image.png"
+},
+"Name": "unlockToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+U",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Unlock"
+},
+"events": {
+"Click": "unlockButton_ButtonClick"
+},
+"children": []
+},
+"unlockAllToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__unlockAllToolStripMenuItem.Image.png"
+},
+"Name": "unlockAllToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+N",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Unlock All"
+},
+"events": {
+"Click": "unlockAllButton_ButtonClick"
+},
+"children": []
+},
+"hideLockedToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "hideLockedToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Hide Locked"
+},
+"events": {
+"Click": "toggleHideLockedButton_Click"
+},
+"children": []
+},
+"toolStripSeparator4": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator4",
+"Size": {
+"t": "size",
+"x": 200,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"backgroundPropertiesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "backgroundPropertiesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "&Background Properties..."
+},
+"events": {
+"Click": "backgroundPropertiesToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator5": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator5",
+"Size": {
+"t": "size",
+"x": 200,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"addTemplateMenu": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "addTemplateMenu",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 22
+},
+"Text": "Templates (Legacy)"
+},
+"events": {
+"Click": "buttonAddToPreview_Click"
+},
+"children": []
+},
+"settingsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "settingsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 20
+},
+"Text": "Settings"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "saveLocationsToolStripMenuItem"
+},
+{
+"ref": "locationOffsetSetupToolStripMenuItem"
+},
+{
+"ref": "useOpenGLPreviewToolStripMenuItem"
+},
+{
+"ref": "keepInsertModeToolStripMenuItem"
+}
+]
+},
+"saveLocationsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Name": "saveLocationsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 217,
+"y": 22
+},
+"Text": "Update Location Properties",
+"ToolTipText": "Update location properties for each preview item for positioning."
+},
+"events": {
+"Click": "saveLocationsToolStripMenuItem_Click"
+},
+"children": []
+},
+"locationOffsetSetupToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "locationOffsetSetupToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 217,
+"y": 22
+},
+"Text": "Location Offset Setup"
+},
+"events": {
+"Click": "locationOffsetSetupToolStripMenuItem_Click"
+},
+"children": []
+},
+"keepInsertModeToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": false,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Name": "keepInsertModeToolStripMenuItemToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 217,
+"y": 22
+},
+"Text": "Keep Insert Mode Active",
+"ToolTipText": "Stay in insert mode after inserting each Prop."
+},
+"events": {
+"Click": "keepInsertModeToolStripMenuItem_Click"
+},
+"children": []
+},
+"useOpenGLPreviewToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "useOpenGLPreviewToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 217,
+"y": 22
+},
+"Text": "Use OpenGL Preview"
+},
+"events": {
+"CheckedChanged": "useOpenGLPreviewToolStripMenuItem_Click"
+},
+"children": []
+},
+"helpToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "helpToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 20
+},
+"Text": "Help"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "viewHelpToolStripMenuItem"
+},
+{
+"ref": "vixenYouTubeChannelToolStripMenuItem"
+},
+{
+"ref": "templateHelpToolStripMenuItem"
+},
+{
+"ref": "customPropHelpToolStripMenuItem"
+}
+]
+},
+"viewHelpToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Image": {
+"t": "image",
+"file": "VixenPreviewSetup3__viewHelpToolStripMenuItem.Image.png"
+},
+"Name": "viewHelpToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"F1"
+]
+},
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "&View Help"
+},
+"events": {
+"Click": "viewHelpToolStripMenuItem_Click"
+},
+"children": []
+},
+"vixenYouTubeChannelToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "vixenYouTubeChannelToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "Vixen YouTube Channel"
+},
+"events": {
+"Click": "vixenYouTubeChannelToolStripMenuItem_Click"
+},
+"children": []
+},
+"templateHelpToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "templateHelpToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "Template Help"
+},
+"events": {
+"Click": "templateHelpToolStripMenuItem_Click"
+},
+"children": []
+},
+"customPropHelpToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "customPropHelpToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "Custom Prop Help"
+},
+"events": {},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"buttonIcicle": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonIcicle.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 140,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonIcicle",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 27
+},
+"TabIndex": 14,
+"Tag": "",
+"toolTipText": "Icicles",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonMultiString": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonMultiString.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 140,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonMultiString",
+"Size": {
+"t": "size",
+"x": 12,
+"y": 27
+},
+"TabIndex": 10,
+"Tag": "",
+"toolTipText": "Multi-String",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonPixelGrid": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonPixelGrid.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 106,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonPixelGrid",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 13,
+"Tag": "",
+"toolTipText": "Pixel Grid",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonSemiCircle": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonSemiCircle.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonSemiCircle",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 6,
+"Tag": "",
+"toolTipText": "Arch",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonStar": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonStar.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonStar",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 12,
+"Tag": "",
+"toolTipText": "Star",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonNet": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonNet.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonNet",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 7,
+"Tag": "",
+"toolTipText": "Net",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonCane": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonCane.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonCane",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 11,
+"Tag": "",
+"toolTipText": "Candy Cane",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonStarBurst": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonStarBurst.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 106,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonStarBurst",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 9,
+"Tag": "",
+"toolTipText": "Star Burst",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"buttonMegaTree": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonMegaTree.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonMegaTree",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 8,
+"Tag": "",
+"toolTipText": "Mega Tree",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"btnAddCustomProp": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnAddCustomProp",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 31,
+"Tag": "",
+"toolTipText": "Add Custom Prop",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "importPropToolStripMenuItem_Click"
+},
+"children": []
+},
+"btnCustomPropLibrary": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 72,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnCustomPropLibrary",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 28,
+"Tag": "",
+"toolTipText": "Custom Prop Library",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonCustomPropLibrary_Click"
+},
+"children": []
+},
+"btnCustomPropEditor": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnCustomPropEditor",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 32,
+"Tag": "",
+"toolTipText": "Custom Prop Editor",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnCustomPropEditor_Click"
+},
+"children": []
+},
+"buttonMovingHead": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImage": {
+"t": "image",
+"file": "VixenPreviewSetup3__buttonMovingHead.BackgroundImage.png"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"FlatAppearance.BorderColor": {
+"t": "color",
+"name": "White"
+},
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.CheckedBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseDownBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 36
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonMovingHead",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 15,
+"Tag": "",
+"toolTipText": "Intelligent Fixture",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "toolbarButton_Click"
+},
+"children": []
+},
+"labelZoomLevel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 1143,
+"y": 8
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "labelZoomLevel",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "100%"
+},
+"events": {},
+"children": []
+},
+"panel9": {
+"type": "Panel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 2,
+"y": 566
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 2,
+"r": 2,
+"b": 2
+},
+"Name": "panel9",
+"Size": {
+"t": "size",
+"x": 1190,
+"y": 33
+},
+"TabIndex": 16
+},
+"events": {},
+"children": [
+{
+"name": "panel10"
+},
+{
+"name": "labelZoomLevel"
+},
+{
+"name": "trackerZoom"
+}
+]
+},
+"panel10": {
+"type": "Panel",
+"props": {
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"name": "Black"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Left"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 2,
+"r": 2,
+"b": 2
+},
+"Name": "panel10",
+"Size": {
+"t": "size",
+"x": 391,
+"y": 31
+},
+"TabIndex": 7
+},
+"events": {},
+"children": [
+{
+"name": "label14"
+},
+{
+"name": "label13"
+},
+{
+"name": "label12"
+},
+{
+"name": "label11"
+},
+{
+"name": "label10"
+},
+{
+"name": "label9"
+}
+]
+},
+"label14": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"name": "Yellow"
+},
+"Location": {
+"t": "point",
+"x": 341,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "label14",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 15
+},
+"TabIndex": 12,
+"Tag": "KEEP_FORECOLOR",
+"Text": "Pixel #1"
+},
+"events": {},
+"children": []
+},
+"label13": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"name": "DarkRed"
+},
+"Location": {
+"t": "point",
+"x": 289,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "label13",
+"Size": {
+"t": "size",
+"x": 45,
+"y": 15
+},
+"TabIndex": 11,
+"Tag": "KEEP_FORECOLOR",
+"Text": "Locked"
+},
+"events": {},
+"children": []
+},
+"label12": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"name": "HotPink"
+},
+"Location": {
+"t": "point",
+"x": 186,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "label12",
+"Size": {
+"t": "size",
+"x": 97,
+"y": 15
+},
+"TabIndex": 10,
+"Tag": "KEEP_FORECOLOR",
+"Text": "Element Selected"
+},
+"events": {},
+"children": []
+},
+"label11": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"name": "White"
+},
+"Location": {
+"t": "point",
+"x": 118,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "label11",
+"Size": {
+"t": "size",
+"x": 62,
+"y": 15
+},
+"TabIndex": 9,
+"Tag": "KEEP_FORECOLOR",
+"Text": "Un-Linked"
+},
+"events": {},
+"children": []
+},
+"label10": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"name": "LimeGreen"
+},
+"Location": {
+"t": "point",
+"x": 54,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "label10",
+"Size": {
+"t": "size",
+"x": 51,
+"y": 15
+},
+"TabIndex": 8,
+"Tag": "KEEP_FORECOLOR",
+"Text": "Selected"
+},
+"events": {},
+"children": []
+},
+"label9": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"name": "Turquoise"
+},
+"Location": {
+"t": "point",
+"x": 7,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Name": "label9",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 15
+},
+"TabIndex": 7,
+"Tag": "KEEP_FORECOLOR",
+"Text": "Linked"
+},
+"events": {},
+"children": []
+},
+"trackerZoom": {
+"type": "HMiniTracker",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 887,
+"y": 2
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 2,
+"r": 2,
+"b": 2
+},
+"Maximum": 400,
+"Minimum": 25,
+"Name": "trackerZoom",
+"Size": {
+"t": "size",
+"x": 252,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "hMiniTracker1",
+"Value": 100
+},
+"events": {
+"ValueChanged": "trackerZoom_ValueChanged"
+},
+"children": []
+},
+"dockPanel": {
+"type": "DockPanel",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 120
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "dockPanel",
+"Size": {
+"t": "size",
+"x": 1186,
+"y": 441
+},
+"TabIndex": 20
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 5,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 159,
+"y": 73
+},
+"TabIndex": 15
+},
+"events": {},
+"children": [
+{
+"name": "buttonMovingHead",
+"col": 0,
+"row": 1
+},
+{
+"name": "buttonMultiString",
+"col": 4,
+"row": 0
+},
+{
+"name": "buttonPixelGrid",
+"col": 2,
+"row": 1
+},
+{
+"name": "buttonSemiCircle",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonStar",
+"col": 1,
+"row": 1
+},
+{
+"name": "buttonNet",
+"col": 1,
+"row": 0
+},
+{
+"name": "buttonCane",
+"col": 0,
+"row": 1
+},
+{
+"name": "buttonStarBurst",
+"col": 3,
+"row": 0
+},
+{
+"name": "buttonMegaTree",
+"col": 2,
+"row": 0
+},
+{
+"name": "buttonIcicle",
+"col": 3,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"tableLayoutPanel4": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 3,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 1
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel4",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 102,
+"y": 33
+},
+"TabIndex": 22
+},
+"events": {},
+"children": [
+{
+"name": "btnCustomPropEditor",
+"col": 0,
+"row": 0
+},
+{
+"name": "btnAddCustomProp",
+"col": 1,
+"row": 0
+},
+{
+"name": "btnCustomPropLibrary",
+"col": 2,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"tableLayoutMain": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 24
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutMain",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 1194,
+"y": 601
+},
+"TabIndex": 22
+},
+"events": {},
+"children": [
+{
+"name": "tlpToolBar",
+"col": 0,
+"row": 0
+},
+{
+"name": "dockPanel",
+"col": 0,
+"row": 1
+},
+{
+"name": "panel9",
+"col": 0,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+]
+},
+"tlpToolBar": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"ColumnCount": 9,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tlpToolBar",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 1168,
+"y": 111
+},
+"TabIndex": 21
+},
+"events": {},
+"children": [
+{
+"name": "panel11",
+"col": 7,
+"row": 1
+},
+{
+"name": "panel2",
+"col": 0,
+"row": 1
+},
+{
+"name": "pnlSelect",
+"col": 1,
+"row": 1
+},
+{
+"name": "pnlBasicDrawing",
+"col": 2,
+"row": 1
+},
+{
+"name": "pnlSmartObjects",
+"col": 3,
+"row": 1
+},
+{
+"name": "panel4",
+"col": 4,
+"row": 1
+},
+{
+"name": "customPropPanel",
+"col": 6,
+"row": 1
+},
+{
+"name": "label1",
+"col": 0,
+"row": 0
+},
+{
+"name": "label8",
+"col": 1,
+"row": 0
+},
+{
+"name": "label2",
+"col": 2,
+"row": 0
+},
+{
+"name": "label3",
+"col": 3,
+"row": 0
+},
+{
+"name": "label7",
+"col": 4,
+"row": 0
+},
+{
+"name": "lblCustomProp",
+"col": 6,
+"row": 0
+},
+{
+"name": "lblUndoRedo",
+"col": 7,
+"row": 0
+},
+{
+"name": "lblLock",
+"col": 8,
+"row": 0
+},
+{
+"name": "pnlLock",
+"col": 8,
+"row": 1
+},
+{
+"name": "lblBulbSize",
+"col": 5,
+"row": 0
+},
+{
+"name": "pnlBulbSize",
+"col": 5,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"pnlBasicDrawing": {
+"type": "Panel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 246,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "pnlBasicDrawing",
+"Size": {
+"t": "size",
+"x": 110,
+"y": 81
+},
+"TabIndex": 23
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel3"
+}
+]
+},
+"pnlSmartObjects": {
+"type": "Panel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 364,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "pnlSmartObjects",
+"Size": {
+"t": "size",
+"x": 166,
+"y": 81
+},
+"TabIndex": 24
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+]
+},
+"panel4": {
+"type": "Panel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 538,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "panel4",
+"Size": {
+"t": "size",
+"x": 167,
+"y": 81
+},
+"TabIndex": 25
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel2"
+}
+]
+},
+"customPropPanel": {
+"type": "Panel",
+"props": {
+"AutoSize": true,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 799,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "customPropPanel",
+"Size": {
+"t": "size",
+"x": 112,
+"y": 81
+},
+"TabIndex": 26
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel4"
+}
+]
+},
+"lblBulbSize": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"argb": [
+250,
+250,
+250
+]
+},
+"Location": {
+"t": "point",
+"x": 713,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "lblBulbSize",
+"Size": {
+"t": "size",
+"x": 78,
+"y": 22
+},
+"TabIndex": 0,
+"Text": "Bulb Size",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"pnlBulbSize": {
+"type": "Panel",
+"props": {
+"AutoSize": true,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 713,
+"y": 25
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "pnlBulbSize",
+"Size": {
+"t": "size",
+"x": 78,
+"y": 81
+},
+"TabIndex": 27
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel5"
+}
+]
+},
+"tableLayoutPanel5": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 2,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 1
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel5",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 68,
+"y": 33
+},
+"TabIndex": 22
+},
+"events": {},
+"children": [
+{
+"name": "btnBulbDecrease",
+"col": 0,
+"row": 0
+},
+{
+"name": "btnBulbIncrease",
+"col": 1,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"btnBulbDecrease": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnBulbDecrease",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 32,
+"Tag": "",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnBulbDecrease_Click"
+},
+"children": []
+},
+"btnBulbIncrease": {
+"type": "Button",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Enabled": false,
+"FlatAppearance.BorderSize": 0,
+"FlatAppearance.MouseOverBackColor": {
+"t": "color",
+"argb": [
+80,
+80,
+80
+]
+},
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 38,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "btnBulbIncrease",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 27
+},
+"TabIndex": 31,
+"Tag": "",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnBulbIncrease_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1194,
+625
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1038,
+656
+]
+}
+}
+}

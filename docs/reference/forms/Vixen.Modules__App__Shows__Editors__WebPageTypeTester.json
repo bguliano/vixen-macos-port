@@ -1,0 +1,128 @@
+{
+"class": "WebPageTypeTester",
+"source": "Vixen.Modules/App/Shows/Editors/WebPageTypeTester.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonClose"
+},
+"Name": "WebPageTypeTester",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Web Page Test"
+},
+"events": {},
+"children": [
+{
+"name": "labelURL"
+},
+{
+"name": "buttonClose"
+},
+{
+"name": "webBrowser"
+}
+],
+"objects": {
+"webBrowser": {
+"type": "WebBrowser",
+"props": {
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"MinimumSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Name": "webBrowser",
+"Size": {
+"t": "size",
+"x": 643,
+"y": 391
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"buttonClose": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 580,
+"y": 415
+},
+"Name": "buttonClose",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"labelURL": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 420
+},
+"Name": "labelURL",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "URL"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+667,
+447
+]
+}
+}
+}

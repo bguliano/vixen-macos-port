@@ -1,0 +1,287 @@
+{
+"class": "BulkExportConfigStage",
+"source": "Vixen.Modules/App/ExportWizard/BulkExportConfigStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "BulkExportConfigStage"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"btnDeleteProfile": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 499,
+"y": 38
+},
+"Name": "btnDeleteProfile",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 27
+},
+"TabIndex": 10,
+"Text": "-",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDeleteProfile_Click"
+},
+"children": []
+},
+"btnAddProfile": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 466,
+"y": 38
+},
+"Name": "btnAddProfile",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 27
+},
+"TabIndex": 9,
+"Text": "+",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonAddProfile_Click"
+},
+"children": []
+},
+"lblConfigurations": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 44
+},
+"Name": "lblConfigurations",
+"Size": {
+"t": "size",
+"x": 86,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "Configurations"
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"ColumnCount": 5,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 562,
+"y": 382
+},
+"TabIndex": 13
+},
+"events": {},
+"children": [
+{
+"name": "lblChooseConfiguration",
+"col": 0,
+"row": 0
+},
+{
+"name": "lblConfigurations",
+"col": 0,
+"row": 2
+},
+{
+"name": "btnAddProfile",
+"col": 2,
+"row": 2
+},
+{
+"name": "btnDeleteProfile",
+"col": 3,
+"row": 2
+},
+{
+"name": "comboProfiles",
+"col": 1,
+"row": 2
+},
+{
+"name": "btnRename",
+"col": 4,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"lblChooseConfiguration": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "lblChooseConfiguration",
+"Size": {
+"t": "size",
+"x": 264,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "Step 1:  Select or start a new export configuration"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 4
+},
+"comboProfiles": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 95,
+"y": 38
+},
+"Name": "comboProfiles",
+"Size": {
+"t": "size",
+"x": 365,
+"y": 23
+},
+"TabIndex": 14
+},
+"events": {
+"SelectedIndexChanged": "comboProfiles_SelectedIndexChanged"
+},
+"children": []
+},
+"btnRename": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 532,
+"y": 38
+},
+"Name": "btnRename",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 27
+},
+"TabIndex": 15,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnRename_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+568,
+385
+]
+}
+}
+}

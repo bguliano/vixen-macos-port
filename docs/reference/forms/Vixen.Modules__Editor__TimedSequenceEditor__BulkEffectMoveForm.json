@@ -1,0 +1,475 @@
+{
+"class": "BulkEffectMoveForm",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/BulkEffectMoveForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "BulkEffectMoveForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Bulk Effect Move"
+},
+"events": {},
+"children": [
+{
+"name": "checkBoxMoveMarks"
+},
+{
+"name": "checkBoxClipEffects"
+},
+{
+"name": "checkBoxVisibleRows"
+},
+{
+"name": "groupBox1"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOk"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "linkLabel1"
+},
+{
+"name": "label1"
+},
+{
+"name": "txtOffset"
+},
+{
+"name": "txtEndTime"
+},
+{
+"name": "txtStartTime"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"txtStartTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 14
+},
+"Name": "txtStartTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"txtEndTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 44
+},
+"Name": "txtEndTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"txtOffset": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 74
+},
+"Name": "txtOffset",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 2
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 50,
+"y": 14
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Start Time"
+},
+"events": {},
+"children": []
+},
+"linkLabel1": {
+"type": "LinkLabel",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 77,
+"y": 27
+},
+"Name": "linkLabel1",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 54,
+"y": 44
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 57,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "End Time"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 70,
+"y": 74
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Offset"
+},
+"events": {},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 114,
+"y": 266
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 7,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 208,
+"y": 266
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 8,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 54,
+"y": 103
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 184,
+"y": 78
+},
+"TabIndex": 9,
+"TabStop": false,
+"Text": "Direction"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "radioButtonBackward"
+},
+{
+"name": "radioButtonForward"
+}
+]
+},
+"radioButtonBackward": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 51
+},
+"Name": "radioButtonBackward",
+"Size": {
+"t": "size",
+"x": 76,
+"y": 19
+},
+"TabIndex": 1,
+"Text": "Backward",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioButtonForward": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 24
+},
+"Name": "radioButtonForward",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "Forward",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"checkBoxVisibleRows": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 188
+},
+"Name": "checkBoxVisibleRows",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 19
+},
+"TabIndex": 10,
+"Text": "Process visible rows only",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxClipEffects": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 210
+},
+"Name": "checkBoxClipEffects",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 19
+},
+"TabIndex": 10,
+"Text": "Clip Effects",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkBoxMoveMarks": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 232
+},
+"Name": "checkBoxMoveMarks",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Include Marks",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+307,
+307
+]
+}
+}
+}

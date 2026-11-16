@@ -1,0 +1,291 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/Property/Grid/SetupForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Grid Setup"
+},
+"events": {},
+"children": [
+{
+"name": "labelProduct"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "nudHeight"
+},
+{
+"name": "label2"
+},
+{
+"name": "nudWidth"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 26
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Width"
+},
+"events": {},
+"children": []
+},
+"nudWidth": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 90,
+"y": 24
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 10000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "nudWidth",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 20
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+}
+},
+"events": {
+"ValueChanged": "nudWidth_ValueChanged",
+"Leave": "nudWidth_Leave"
+},
+"children": []
+},
+"nudHeight": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 90,
+"y": 50
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 10000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "nudHeight",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 20
+},
+"TabIndex": 3,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+}
+},
+"events": {
+"ValueChanged": "nudHeight_ValueChanged",
+"Leave": "nudHeight_Leave"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 50
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 38,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "Height"
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 44,
+"y": 132
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 125,
+"y": 132
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"labelProduct": {
+"type": "Label",
+"props": {
+"ForeColor": {
+"t": "color",
+"name": "Red"
+},
+"Location": {
+"t": "point",
+"x": 29,
+"y": 82
+},
+"Name": "labelProduct",
+"Size": {
+"t": "size",
+"x": 144,
+"y": 30
+},
+"TabIndex": 6,
+"Text": "label3",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+212,
+167
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit()"
+]
+}

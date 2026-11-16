@@ -1,0 +1,291 @@
+{
+"class": "CurveLibrarySelector",
+"source": "Vixen.Modules/App/Curves/CurveLibrarySelector.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"KeyPreview": true,
+"Name": "CurveLibrarySelector",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Curve Library"
+},
+"events": {
+"FormClosing": "CurveLibrarySelector_FormClosing",
+"Load": "CurveLibrarySelector_Load",
+"KeyDown": "CurveLibrarySelector_KeyDown"
+},
+"children": [
+{
+"name": "buttonNewCurve"
+},
+{
+"name": "buttonDeleteCurve"
+},
+{
+"name": "buttonEditCurve"
+},
+{
+"name": "listViewCurves"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 449,
+"y": 390
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 349,
+"y": 390
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"listViewCurves": {
+"type": "ListView",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "listViewCurves",
+"Size": {
+"t": "size",
+"x": 532,
+"y": 364
+},
+"TabIndex": 6,
+"UseCompatibleStateImageBehavior": false
+},
+"events": {
+"SelectedIndexChanged": "listViewCurves_SelectedIndexChanged",
+"MouseDoubleClick": "listViewCurves_MouseDoubleClick"
+},
+"children": []
+},
+"buttonEditCurve": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 114,
+"y": 390
+},
+"Name": "buttonEditCurve",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 7,
+"Text": "Edit Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonEditCurve_Click"
+},
+"children": []
+},
+"buttonDeleteCurve": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 215,
+"y": 390
+},
+"Name": "buttonDeleteCurve",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 8,
+"Text": "Delete Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDeleteCurve_Click"
+},
+"children": []
+},
+"buttonNewCurve": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 390
+},
+"Name": "buttonNewCurve",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 9,
+"Text": "New Curve",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonNewCurve_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+556,
+434
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+572,
+472
+]
+}
+}
+}

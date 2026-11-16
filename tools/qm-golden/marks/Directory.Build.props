@@ -1,0 +1,15 @@
+<Project>
+	<!-- Everything the build produces lands under target/analysis, never next to the sources and never in the
+	     read-only assets this project references. -->
+	<PropertyGroup>
+		<RepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../../..'))</RepoRoot>
+		<CsOut>$(RepoRoot)/target/analysis/qm-golden/cs</CsOut>
+		<BaseIntermediateOutputPath>$(CsOut)/obj/</BaseIntermediateOutputPath>
+		<MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+		<BaseOutputPath>$(CsOut)/projbin/</BaseOutputPath>
+		<RestorePackagesPath>$(CsOut)/packages</RestorePackagesPath>
+		<RestoreFallbackFolders>/Users/developer/Documents/Codex/2026-09-13/is-the/work/nuget-packages</RestoreFallbackFolders>
+		<RestoreSources>$(CsOut)/empty-feed</RestoreSources>
+		<UseArtifactsOutput>false</UseArtifactsOutput>
+	</PropertyGroup>
+</Project>

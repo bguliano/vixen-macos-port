@@ -1,0 +1,119 @@
+{
+"class": "PreviewShapeBaseSetupControl",
+"source": "Vixen.Modules/Preview/VixenPreview/Shapes/PreviewShapeBaseSetupControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "PreviewShapeBaseSetupControl",
+"Title": "Pixel Grid Properties"
+},
+"events": {},
+"children": [
+{
+"name": "buttonHelp"
+},
+{
+"name": "propertyGrid"
+}
+],
+"objects": {
+"propertyGrid": {
+"type": "PropertyGrid",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "propertyGrid",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 277
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"buttonHelp": {
+"type": "RoundButton",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Image": {
+"t": "image",
+"file": "PreviewShapeBaseSetupControl__buttonHelp.Image.png"
+},
+"Location": {
+"t": "point",
+"x": 173,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 22,
+"y": 22
+},
+"TabIndex": 61,
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+195,
+277
+]
+}
+}
+}

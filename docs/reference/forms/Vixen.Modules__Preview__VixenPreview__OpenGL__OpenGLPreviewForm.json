@@ -1,0 +1,213 @@
+{
+"class": "OpenGlPreviewForm",
+"source": "Vixen.Modules/Preview/VixenPreview/OpenGL/OpenGLPreviewForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "OpenGlPreviewForm",
+"Text": "Preview"
+},
+"events": {
+"FormClosing": "PreviewWindow_FormClosing",
+"Move": "OpenGlPreviewForm_Move",
+"Resize": "glControl_Resize"
+},
+"children": [
+{
+"name": "statusStrip"
+},
+{
+"name": "glControl"
+}
+],
+"objects": {
+"glControl": {
+"type": "GLControl",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Black"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "glControl",
+"Size": {
+"t": "size",
+"x": 284,
+"y": 262
+},
+"TabIndex": 0
+},
+"events": {
+"Paint": "glControl_Paint",
+"KeyDown": "glControl_KeyDown",
+"MouseDown": "glControl_MouseDown",
+"MouseMove": "glControl_MouseMove",
+"MouseUp": "glControl_MouseUp"
+},
+"children": []
+},
+"statusStrip": {
+"type": "StatusStrip",
+"props": {
+"Location": {
+"t": "point",
+"x": 0,
+"y": 240
+},
+"Name": "statusStrip",
+"Padding": {
+"t": "padding",
+"l": 1,
+"t_": 0,
+"r": 16,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 284,
+"y": 22
+},
+"TabIndex": 2,
+"Text": "statusStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripStatusPixelsLabel"
+},
+{
+"ref": "toolStripStatusPixels"
+},
+{
+"ref": "toolStripStatusLabelDistance"
+},
+{
+"ref": "toolStripStatusDistance"
+},
+{
+"ref": "toolStripStatusLabel1"
+},
+{
+"ref": "toolStripStatusFPS"
+}
+]
+},
+"toolStripStatusPixelsLabel": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusPixelsLabel",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 17
+},
+"Text": "Lights:"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusPixels": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusPixels",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 17
+},
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel1": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusLabel1",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 17
+},
+"Text": "FPS:"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusFPS": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusFPS",
+"Size": {
+"t": "size",
+"x": 19,
+"y": 17
+},
+"Text": "20"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabelDistance": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusLabelDistance",
+"Size": {
+"t": "size",
+"x": 52,
+"y": 17
+},
+"Text": "Distance"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusDistance": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusDistance",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 17
+},
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+284,
+262
+]
+}
+}
+}

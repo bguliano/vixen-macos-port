@@ -1,0 +1,66 @@
+VIXEN WINDOWS DIAGNOSTICS v3.2 — OFFLINE
+
+1. Copy this ZIP to the Windows PC and use Extract All.
+   Extract to a new local folder outside Vixen and your show, for example Downloads.
+2. Double-click Run-Capture.cmd. Do not run Vixen for this diagnostic.
+3. Wait for COPY THIS ZIP BACK (or COPY THIS ENTIRE FOLDER BACK).
+   Copy that result back to the Mac and tell us its location.
+
+No install, download, administrator access, playback or controllers are used.
+The supplied song is a separate verified copy. Your Vixen/show files are read only.
+
+This version automatically inspects Program Files\Vixen Lights\Vixen and ordinary
+registry installation locations. You do not need to select the manufacturer folder.
+If your Vixen is elsewhere, you can use PowerShell from this extracted folder:
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Run-Capture.ps1 -VixenRoot 'D:\My Vixen'
+The root must be an ordinary local installation folder, never a drive root.
+
+WHAT TO EXPECT
+
+The first line shows a new results-* folder. A small supervisor is compiled using
+Windows' already-installed .NET Framework compiler (not a new SDK installation).
+Compilation runs in its own60-second worker; errors stay in compiler.log.
+If the compiler is unavailable or fails, return the result folder.
+The supervisor then runs separate timed stages: installation inventory, integrity,
+runtime listings, graphics availability and, only if compatible, original PCM.
+For your audited Vixen3.12.4 install, a separate capture helper is compiled by the
+same Windows compiler, then runs on the existing .NET8 runtime. It checks all
+nine copied dependency hashes and the reader API before opening the test song.
+Progress is printed about every5 seconds and kept in progress.log. A stage may
+fail or time out without preventing later independent diagnostics.
+
+Most machines should finish well under a minute when PCM is skipped. If original
+PCM is compatible, its two original decodes may take up to5 minutes. The supervisor
+has an overall11-minute budget and the independent bootstrap stops it after12.
+If it appears paused, press Escape once to clear console text-selection mode.
+Do not close the window during normal progress. A timeout should report itself.
+
+ALWAYS RETURN THE RESULT, EVEN WHEN PCM IS SKIPPED
+
+A result ZIP includes all finished stage data and partial failed-worker reports.
+It contains a diagnostics checkpoint taken before ZIP creation; the final package
+status also remains in the results folder. If ZIP creation fails or times out,
+copy the whole results-* folder instead (ignore any .zip.partial file).
+If bootstrap fails before creating results (for example an unsafe extraction
+location), the explanation appears only in the console; move/extract and rerun.
+
+This pack supports the exact Vixen3.12.4/.NET8/NAudio2.2.1 binaries returned in
+v3.1. It uses private verified copies of those same installed reader/cache DLLs.
+The separate strict .NET10/NAudio2.3 probe is unchanged. An unknown or changed
+installation is refused and the diagnostics are still packaged.
+Do not install or upgrade Vixen or a runtime for this test.
+
+LIMITS AND PRIVACY
+
+Your returned v3.1 completed all six diagnostic stages and copied all nine audio
+libraries successfully. This new v3.2 adds a separately audited .NET8 capture;
+its actual Windows compilation and decoding remain to be verified by this run.
+Local tests exercise error/deadline paths but do not replace Windows execution.
+System.Drawing success is availability only, not original Vixen effect raster parity.
+Results contain Windows/install paths and versions; share them only for this task.
+A small, bounded copy of the identified installation's audio dependency DLLs is
+saved privately in results/reference-assemblies, with original/copy hashes. This
+lets us audit compatibility without another inventory roundtrip. No Vixen application executable, show, media library, credentials or user
+configuration is copied. Keep it private.
+No Vixen application binary is executed. The optional PCM host invokes only the
+original installed audio-reader/cache classes after exact dependency checks.

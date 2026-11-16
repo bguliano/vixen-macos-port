@@ -1,0 +1,310 @@
+{
+"class": "LocationOffsetForm",
+"source": "Vixen.Modules/Preview/VixenPreview/LocationOffsetForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "LocationOffsetForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Text": "Location Offset"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 5,
+"Size": {
+"t": "size",
+"x": 236,
+"y": 124
+},
+"TabIndex": 6
+},
+"events": {},
+"children": [
+{
+"name": "button1",
+"col": 0,
+"row": 4
+},
+{
+"name": "txtY",
+"col": 1,
+"row": 2
+},
+{
+"name": "label4",
+"col": 0,
+"row": 2
+},
+{
+"name": "label3",
+"col": 0,
+"row": 1
+},
+{
+"name": "txtX",
+"col": 1,
+"row": 1
+},
+{
+"name": "btnCancel",
+"col": 1,
+"row": 4
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"button1": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 28,
+"y": 94
+},
+"Name": "button1",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "button1_Click"
+},
+"children": []
+},
+"txtY": {
+"type": "NumericTextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 52
+},
+"Name": "txtY",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 23
+},
+"TabIndex": 5
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Right"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 69,
+"y": 56
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 46,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Vertical",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Right"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 53,
+"y": 27
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 62,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Horizontal",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"txtX": {
+"type": "NumericTextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 23
+},
+"Name": "txtX",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 23
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 121,
+"y": 94
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+236,
+124
+]
+}
+}
+}

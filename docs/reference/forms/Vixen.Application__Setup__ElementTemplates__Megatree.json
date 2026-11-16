@@ -1,0 +1,654 @@
+{
+"class": "Megatree",
+"source": "Vixen.Application/Setup/ElementTemplates/Megatree.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "Megatree",
+"ShowInTaskbar": false,
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Megatree Setup"
+},
+"events": {
+"FormClosed": "Megatree_FormClosed",
+"Load": "Megatree_Load"
+},
+"children": [
+{
+"name": "grpWireStart"
+},
+{
+"name": "grpPatching"
+},
+{
+"name": "textBoxPixelPrefix"
+},
+{
+"name": "textBoxStringPrefix"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "checkBoxPixelTree"
+},
+{
+"name": "label1"
+},
+{
+"name": "numericUpDownStrings"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "numericUpDownPixelsPerString"
+},
+{
+"name": "label4"
+},
+{
+"name": "label5"
+},
+{
+"name": "textBoxTreeName"
+},
+{
+"name": "label6"
+}
+],
+"objects": {
+"numericUpDownPixelsPerString": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 114,
+"y": 126
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownPixelsPerString",
+"Size": {
+"t": "size",
+"x": 91,
+"y": 23
+},
+"TabIndex": 3,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 50, 0, 0, 0})"
+}
+},
+"events": {
+"ValueChanged": "numericUpDownPixelsPerString_ValueChanged"
+},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 128
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 82,
+"y": 15
+},
+"TabIndex": 17,
+"Text": "Pixels / String:"
+},
+"events": {},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 61
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 77,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "String Count:"
+},
+"events": {},
+"children": []
+},
+"textBoxTreeName": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 114,
+"y": 23
+},
+"Name": "textBoxTreeName",
+"Size": {
+"t": "size",
+"x": 412,
+"y": 23
+},
+"TabIndex": 0,
+"Text": "Megatree"
+},
+"events": {},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 27
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 66,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "Tree Name:"
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 422,
+"y": 263
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 310,
+"y": 263
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"numericUpDownStrings": {
+"type": "NumericUpDown",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 114,
+"y": 59
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownStrings",
+"Size": {
+"t": "size",
+"x": 91,
+"y": 23
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 16, 0, 0, 0})"
+}
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 95
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 59,
+"y": 15
+},
+"TabIndex": 22,
+"Text": "Pixel Tree:"
+},
+"events": {},
+"children": []
+},
+"checkBoxPixelTree": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 114,
+"y": 95
+},
+"Name": "checkBoxPixelTree",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 14
+},
+"TabIndex": 2,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxPixelTree_CheckedChanged"
+},
+"children": []
+},
+"textBoxPixelPrefix": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 330,
+"y": 125
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxPixelPrefix",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 27,
+"Text": "Px"
+},
+"events": {},
+"children": []
+},
+"textBoxStringPrefix": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 330,
+"y": 58
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxStringPrefix",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 26,
+"Text": "S"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 242,
+"y": 128
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 15
+},
+"TabIndex": 25,
+"Text": "Pixel Prefix:"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 242,
+"y": 61
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 74,
+"y": 15
+},
+"TabIndex": 24,
+"Text": "String Prefix:"
+},
+"events": {},
+"children": []
+},
+"grpWireStart": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 177
+},
+"Name": "grpWireStart",
+"Size": {
+"t": "size",
+"x": 261,
+"y": 64
+},
+"TabIndex": 36,
+"TabStop": false,
+"Text": "Wire Start Location"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "radioBottomRight"
+},
+{
+"name": "radioBottomLeft"
+}
+]
+},
+"radioBottomRight": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 119,
+"y": 22
+},
+"Name": "radioBottomRight",
+"Size": {
+"t": "size",
+"x": 96,
+"y": 19
+},
+"TabIndex": 33,
+"TabStop": true,
+"Text": "Bottom Right",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioBottomLeft": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 22
+},
+"Name": "radioBottomLeft",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 19
+},
+"TabIndex": 31,
+"TabStop": true,
+"Text": "Bottom Left",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"grpPatching": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 330,
+"y": 177
+},
+"Name": "grpPatching",
+"Size": {
+"t": "size",
+"x": 182,
+"y": 64
+},
+"TabIndex": 35,
+"TabStop": false,
+"Text": "Patching "
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "lblEveryValue"
+},
+{
+"name": "chkZigZag"
+}
+]
+},
+"lblEveryValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 109,
+"y": 24
+},
+"Name": "lblEveryValue",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 29,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"chkZigZag": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 23
+},
+"Name": "chkZigZag",
+"Size": {
+"t": "size",
+"x": 97,
+"y": 19
+},
+"TabIndex": 28,
+"Text": "Zig Zag Every",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkZigZag_CheckedChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+542,
+307
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+360,
+253
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownPixelsPerString)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStrings)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownPixelsPerString)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStrings)).EndInit()"
+]
+}

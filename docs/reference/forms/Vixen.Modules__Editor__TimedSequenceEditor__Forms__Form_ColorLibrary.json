@@ -1,0 +1,362 @@
+{
+"class": "Form_ColorLibrary",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/Form_ColorLibrary.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ControlBox": false,
+"DockAreas": {
+"t": "flags",
+"v": [
+"Float",
+"DockLeft)",
+"DockRight)",
+"DockTop)",
+"DockBottom"
+]
+},
+"DoubleBuffered": true,
+"Name": "Form_ColorLibrary",
+"Text": "Color Library"
+},
+"events": {
+"FormClosing": "Form_ColorLibrary_FormClosing",
+"Load": "ColorPalette_Load"
+},
+"children": [
+{
+"name": "panel1"
+},
+{
+"name": "toolStripColors"
+}
+],
+"objects": {
+"toolStripColors": {
+"type": "ToolStrip",
+"props": {
+"AutoSize": false,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "toolStripColors",
+"Padding": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 602,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "Colors"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripButtonEditColor"
+},
+{
+"ref": "toolStripButtonNewColor"
+},
+{
+"ref": "toolStripButtonDeleteColor"
+},
+{
+"ref": "toolStripButtonExportColors"
+},
+{
+"ref": "toolStripButtonImportColors"
+}
+]
+},
+"toolStripButtonEditColor": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonEditColor",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 24
+},
+"Text": "Edit Color"
+},
+"events": {
+"Click": "toolStripButtonEditColor_Click"
+},
+"children": []
+},
+"toolStripButtonNewColor": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonNewColor",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 24
+},
+"Text": "New Color"
+},
+"events": {
+"Click": "toolStripButtonNewColor_Click"
+},
+"children": []
+},
+"toolStripButtonDeleteColor": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonDeleteColor",
+"Size": {
+"t": "size",
+"x": 76,
+"y": 24
+},
+"Text": "Delete Color"
+},
+"events": {
+"Click": "toolStripButtonDeleteColor_Click"
+},
+"children": []
+},
+"toolStripButtonExportColors": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonExportColors",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 24
+},
+"Text": "Export",
+"ToolTipText": "Export Favorite Colors"
+},
+"events": {
+"Click": "toolStripButtonExportColors_Click"
+},
+"children": []
+},
+"toolStripButtonImportColors": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonImportColors",
+"Size": {
+"t": "size",
+"x": 47,
+"y": 24
+},
+"Text": "Import",
+"ToolTipText": "Import Favorite Colors"
+},
+"events": {
+"Click": "toolStripButtonImportColors_Click"
+},
+"children": []
+},
+"listViewColors": {
+"type": "ListView",
+"props": {
+"AllowDrop": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"LabelWrap": false,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 6,
+"t_": 6,
+"r": 6,
+"b": 6
+},
+"Name": "listViewColors",
+"ShowItemToolTips": true,
+"Size": {
+"t": "size",
+"x": 602,
+"y": 392
+},
+"TabIndex": 1,
+"UseCompatibleStateImageBehavior": false
+},
+"events": {
+"ItemDrag": "listViewColors_ItemDrag",
+"SelectedIndexChanged": "listViewColors_SelectedIndexChanged",
+"DragDrop": "listViewColors_DragDrop",
+"DragEnter": "listViewColors_DragEnter",
+"DragLeave": "listViewColors_DragLeave",
+"MouseDoubleClick": "listViewColors_MouseDoubleClick"
+},
+"children": []
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 27
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 602,
+"y": 392
+},
+"TabIndex": 4
+},
+"events": {},
+"children": [
+{
+"name": "listViewColors"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+602,
+419
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+7.875,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6
+]
+}
+}
+}

@@ -1,0 +1,29 @@
+{
+"class": "ColorPanel",
+"source": "Vixen.Modules/Property/Color/ColorPanel.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"DoubleBuffered": true,
+"Name": "ColorPanel"
+},
+"events": {
+"Click": "ColorPanel_Click"
+},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+}
+}
+}

@@ -1,0 +1,290 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/Property/Location/SetupForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Location Setup"
+},
+"events": {},
+"children": [
+{
+"name": "label3"
+},
+{
+"name": "numericUpDownZPosition"
+},
+{
+"name": "label2"
+},
+{
+"name": "numericUpDownYPosition"
+},
+{
+"name": "label1"
+},
+{
+"name": "numericUpDownXPosition"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 111,
+"y": 178
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 16,
+"y": 178
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"numericUpDownXPosition": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 106,
+"y": 53
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 276447231, 23283, 0, 0})"
+},
+"Name": "numericUpDownXPosition",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 23
+},
+"TabIndex": 7
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 55
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "X Position"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 90
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 15
+},
+"TabIndex": 10,
+"Text": "Y Position"
+},
+"events": {},
+"children": []
+},
+"numericUpDownYPosition": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 106,
+"y": 88
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 276447231, 23283, 0, 0})"
+},
+"Name": "numericUpDownYPosition",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 23
+},
+"TabIndex": 9
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 125
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 15
+},
+"TabIndex": 12,
+"Text": "Z Position"
+},
+"events": {},
+"children": []
+},
+"numericUpDownZPosition": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 106,
+"y": 122
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 276447231, 23283, 0, 0})"
+},
+"Name": "numericUpDownZPosition",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 23
+},
+"TabIndex": 11
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+212,
+218
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownXPosition)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownYPosition)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownZPosition)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownXPosition)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownYPosition)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownZPosition)).EndInit()"
+]
+}

@@ -1,0 +1,5444 @@
+{
+"class": "TimedSequenceEditorForm",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/TimedSequenceEditorForm.Designer.cs",
+"props": {
+"AllowDrop": true,
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"DoubleBuffered": true,
+"KeyPreview": true,
+"MainMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "menuStrip"
+},
+"Name": "TimedSequenceEditorForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Timed Sequence Editor"
+},
+"events": {
+"Load": "TimedSequenceEditorForm_Load",
+"Shown": "TimedSequenceEditorForm_Shown"
+},
+"children": [
+{
+"name": "toolStripContainer"
+},
+{
+"name": "statusStrip"
+},
+{
+"name": "menuStrip"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"toolStripAudio": {
+"type": "ToolStripEx",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"ClickThrough": true,
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "toolStripAudio",
+"Size": {
+"t": "size",
+"x": 587,
+"y": 25
+},
+"TabIndex": 1,
+"Text": "Audio"
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "toolStripButton_AssociateAudio"
+},
+{
+"ref": "toolStripButton_DecreaseTimingSpeed"
+},
+{
+"ref": "audioToolStripLabel_TimingSpeed"
+},
+{
+"ref": "toolStripButton_IncreaseTimingSpeed"
+},
+{
+"ref": "audioToolStripButton_Audio_Devices"
+}
+]
+},
+"contextMenuStripAll": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Name": "contextMenuStripEffect",
+"Size": {
+"t": "size",
+"x": 169,
+"y": 92
+}
+},
+"events": {
+"Opening": "contextMenuStripAll_Opening"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+],
+"Items": [
+{
+"ref": "add_RemoveContextToolStripMenuItem"
+},
+{
+"ref": "toolbarsToolStripMenuItem"
+},
+{
+"ref": "imageSizeToolStripMenuItem"
+},
+{
+"ref": "resetToolStripMenuItem"
+}
+]
+},
+"add_RemoveContextToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "add_RemoveContextToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Show/Hide Items"
+},
+"events": {},
+"children": []
+},
+"toolbarsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolbarsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Toolbars"
+},
+"events": {},
+"children": []
+},
+"imageSizeToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "imageSizeToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Toggle Image Size"
+},
+"events": {
+"Click": "imageSizeToolStripMenuItem_Click"
+},
+"children": []
+},
+"resetToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "resetToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Reset Toolbar"
+},
+"events": {
+"Click": "resetToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripButton_AssociateAudio": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "toolStripButton_AssociateAudio",
+"Size": {
+"t": "size",
+"x": 96,
+"y": 22
+},
+"Tag": "Associate Audio",
+"Text": "Associate Audio"
+},
+"events": {
+"Click": "toolStripMenuItem_associateAudio_Click"
+},
+"children": []
+},
+"toolStripButton_DecreaseTimingSpeed": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "toolStripButton_DecreaseTimingSpeed",
+"Size": {
+"t": "size",
+"x": 132,
+"y": 22
+},
+"Tag": "Timing Speed",
+"Text": "Decrease Timing speed"
+},
+"events": {
+"Click": "toolStripButton_DecreaseTimingSpeed_Click"
+},
+"children": []
+},
+"audioToolStripLabel_TimingSpeed": {
+"type": "ToolStripLabel",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"DoubleClickEnabled": true,
+"Name": "audioToolStripLabel_TimingSpeed",
+"Size": {
+"t": "size",
+"x": 113,
+"y": 22
+},
+"Tag": "Timing Speed: 100%",
+"Text": "Timing Speed: 100%",
+"ToolTipText": "Timing speed"
+},
+"events": {
+"Click": "audioToolStripLabel_TimingSpeed_Click",
+"DoubleClick": "audioToolStripLabel_TimingSpeed_DoubleClick",
+"MouseEnter": "audioToolStripLabel_TimingSpeed_MouseEnter",
+"MouseLeave": "audioToolStripLabel_TimingSpeed_MouseLeave"
+},
+"children": []
+},
+"toolStripButton_IncreaseTimingSpeed": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "toolStripButton_IncreaseTimingSpeed",
+"Size": {
+"t": "size",
+"x": 139,
+"y": 22
+},
+"Tag": "Timing Speed",
+"Text": "Increasing Timing speed"
+},
+"events": {
+"Click": "toolStripButton_IncreaseTimingSpeed_Click"
+},
+"children": []
+},
+"audioToolStripButton_Audio_Devices": {
+"type": "ToolStripDropDownButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__audioToolStripButton_Audio_Devices.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "audioToolStripButton_Audio_Devices",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 22
+},
+"Tag": "Audio Devices",
+"Text": "Audio Devices"
+},
+"events": {},
+"children": []
+},
+"menuStrip": {
+"type": "MenuStripEx",
+"props": {
+"ClickThrough": true,
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "menuStrip",
+"Padding": {
+"t": "padding",
+"l": 7,
+"t_": 2,
+"r": 0,
+"b": 2
+},
+"Size": {
+"t": "size",
+"x": 1348,
+"y": 24
+},
+"TabIndex": 2,
+"Text": "Menu"
+},
+"events": {
+"MenuActivate": "menuStrip_MenuActivate"
+},
+"children": [],
+"Items": [
+{
+"ref": "sequenceToolStripMenuItem"
+},
+{
+"ref": "editToolStripMenuItem"
+},
+{
+"ref": "viewToolStripMenuItem"
+},
+{
+"ref": "toolsToolStripMenuItem"
+},
+{
+"ref": "helpDocumentationToolStripMenuItem"
+}
+]
+},
+"sequenceToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "sequenceToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 20
+},
+"Text": "Sequence"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "toolStripMenuItem_Save"
+},
+{
+"ref": "toolStripMenuItem_SaveAs"
+},
+{
+"ref": "autoSaveToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator15"
+},
+{
+"ref": "playbackToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator16"
+},
+{
+"ref": "exportToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator1"
+},
+{
+"ref": "toolStripMenuItem_Close"
+}
+]
+},
+"toolStripMenuItem_Save": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_Save",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"S"
+]
+},
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Save"
+},
+"events": {
+"Click": "toolStripMenuItem_Save_Click"
+},
+"children": []
+},
+"toolStripMenuItem_SaveAs": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_SaveAs",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Alt)",
+"S"
+]
+},
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Save As..."
+},
+"events": {
+"Click": "toolStripMenuItem_SaveAs_Click"
+},
+"children": []
+},
+"autoSaveToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Name": "autoSaveToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Auto Save"
+},
+"events": {
+"Click": "toolStripMenuItem_AutoSave_Click"
+},
+"children": []
+},
+"toolStripSeparator15": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator15",
+"Size": {
+"t": "size",
+"x": 183,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"playbackToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "playbackToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Playback"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "playToolStripMenuItem"
+},
+{
+"ref": "pauseToolStripMenuItem"
+},
+{
+"ref": "stopToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItem_Loop"
+},
+{
+"ref": "playOptionsToolStripMenuItem"
+}
+]
+},
+"playToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "playToolStripMenuItem",
+"ShortcutKeys": {
+"t": "enum",
+"type": "Keys",
+"v": "F5"
+},
+"Size": {
+"t": "size",
+"x": 141,
+"y": 22
+},
+"Text": "Play"
+},
+"events": {
+"Click": "playToolStripMenuItem_Click"
+},
+"children": []
+},
+"pauseToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "pauseToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 141,
+"y": 22
+},
+"Text": "Pause"
+},
+"events": {
+"Click": "pauseToolStripMenuItem_Click"
+},
+"children": []
+},
+"stopToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "stopToolStripMenuItem",
+"ShortcutKeys": {
+"t": "enum",
+"type": "Keys",
+"v": "F8"
+},
+"Size": {
+"t": "size",
+"x": 141,
+"y": 22
+},
+"Text": "Stop"
+},
+"events": {
+"Click": "stopToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItem_Loop": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "toolStripMenuItem_Loop",
+"ShortcutKeys": {
+"t": "enum",
+"type": "Keys",
+"v": "F9"
+},
+"Size": {
+"t": "size",
+"x": 141,
+"y": 22
+},
+"Text": "Loop"
+},
+"events": {
+"CheckedChanged": "toolStripMenuItem_Loop_CheckedChanged"
+},
+"children": []
+},
+"playOptionsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "playOptionsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 141,
+"y": 22
+},
+"Text": "Play Options"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "delayOffToolStripMenuItem"
+},
+{
+"ref": "delay5SecondsToolStripMenuItem"
+},
+{
+"ref": "delay10SecondsToolStripMenuItem"
+},
+{
+"ref": "delay20SecondsToolStripMenuItem"
+},
+{
+"ref": "delay30SecondsToolStripMenuItem"
+},
+{
+"ref": "delay60SecondsToolStripMenuItem"
+}
+]
+},
+"delayOffToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Name": "delayOffToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Delay Off"
+},
+"events": {
+"Click": "delayOffToolStripMenuItem_Click"
+},
+"children": []
+},
+"delay5SecondsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "delay5SecondsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Delay 5 Seconds"
+},
+"events": {
+"Click": "delay5SecondsToolStripMenuItem_Click"
+},
+"children": []
+},
+"delay10SecondsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "delay10SecondsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Delay 10 Seconds"
+},
+"events": {
+"Click": "delay10SecondsToolStripMenuItem_Click"
+},
+"children": []
+},
+"delay20SecondsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "delay20SecondsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Delay 20 Seconds"
+},
+"events": {
+"Click": "delay20SecondsToolStripMenuItem_Click"
+},
+"children": []
+},
+"delay30SecondsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "delay30SecondsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Delay 30 Seconds"
+},
+"events": {
+"Click": "delay30SecondsToolStripMenuItem_Click"
+},
+"children": []
+},
+"delay60SecondsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "delay60SecondsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 165,
+"y": 22
+},
+"Text": "Delay 60 Seconds"
+},
+"events": {
+"Click": "delay60SecondsToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator16": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator16",
+"Size": {
+"t": "size",
+"x": 183,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"exportToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exportToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Export"
+},
+"events": {
+"Click": "exportToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator1",
+"Size": {
+"t": "size",
+"x": 183,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"toolStripMenuItem_Close": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_Close",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Q"
+]
+},
+"Size": {
+"t": "size",
+"x": 186,
+"y": 22
+},
+"Text": "Close"
+},
+"events": {
+"Click": "toolStripMenuItem_Close_Click"
+},
+"children": []
+},
+"editToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 20
+},
+"Text": "Edit"
+},
+"events": {
+"DropDownOpening": "editToolStripMenuItem_DropDownOpening"
+},
+"children": [],
+"DropDownItems": [
+{
+"ref": "addEffectToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator2"
+},
+{
+"ref": "toolStripMenuItem_Cut"
+},
+{
+"ref": "toolStripMenuItem_Copy"
+},
+{
+"ref": "toolStripMenuItem_Paste"
+},
+{
+"ref": "toolStripMenuItem_PasteSpecial"
+},
+{
+"ref": "toolStripSeparator8"
+},
+{
+"ref": "undoToolStripMenuItem"
+},
+{
+"ref": "redoToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator3"
+},
+{
+"ref": "selectAllElementsToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItem_deleteElements"
+},
+{
+"ref": "toolStripSeparator10"
+},
+{
+"ref": "toolStripMenuItem_SnapTo"
+},
+{
+"ref": "toolStripMenuItem_ResizeIndicator"
+},
+{
+"ref": "cADStyleSelectionBoxToolStripMenuItem"
+},
+{
+"ref": "legacyCursorActiveRowToolStripMenuItem"
+}
+]
+},
+"addEffectToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "addEffectToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Add Effect"
+},
+"events": {},
+"children": []
+},
+"toolStripSeparator2": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator2",
+"Size": {
+"t": "size",
+"x": 212,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"toolStripMenuItem_Cut": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"ImageScaling": {
+"t": "enum",
+"type": "ToolStripItemImageScaling",
+"v": "None"
+},
+"Name": "toolStripMenuItem_Cut",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"X"
+]
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Cut"
+},
+"events": {
+"Click": "toolStripMenuItem_Cut_Click"
+},
+"children": []
+},
+"toolStripMenuItem_Copy": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_Copy",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"C"
+]
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Copy"
+},
+"events": {
+"Click": "toolStripMenuItem_Copy_Click"
+},
+"children": []
+},
+"toolStripMenuItem_Paste": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_Paste",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"V"
+]
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Paste"
+},
+"events": {
+"Click": "toolStripMenuItem_Paste_Click"
+},
+"children": []
+},
+"toolStripMenuItem_PasteSpecial": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_PasteSpecial",
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Paste Special"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "toolStripMenuItem_PasteInvert"
+},
+{
+"ref": "toolStripMenuItem_PasteToMarks"
+}
+]
+},
+"toolStripMenuItem_PasteInvert": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_PasteInvert",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 22
+},
+"Text": "Invert"
+},
+"events": {
+"Click": "toolStripMenuItem_PasteInvert_Click"
+},
+"children": []
+},
+"toolStripMenuItem_PasteToMarks": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_PasteToMarks",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 22
+},
+"Text": "Visible Marks"
+},
+"events": {
+"Click": "toolStripMenuItem_PasteToMarks_Click"
+},
+"children": []
+},
+"toolStripSeparator8": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator8",
+"Size": {
+"t": "size",
+"x": 212,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"undoToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "undoToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Z"
+]
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Undo"
+},
+"events": {
+"Click": "undoToolStripMenuItem_Click"
+},
+"children": []
+},
+"redoToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "redoToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Y"
+]
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Redo"
+},
+"events": {
+"Click": "redoToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator3": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator3",
+"Size": {
+"t": "size",
+"x": 212,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"selectAllElementsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "selectAllElementsToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"A"
+]
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Select All Elements"
+},
+"events": {
+"Click": "selectAllElementsToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItem_deleteElements": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_deleteElements",
+"ShortcutKeys": {
+"t": "enum",
+"type": "Keys",
+"v": "Delete"
+},
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Delete"
+},
+"events": {
+"Click": "toolStripMenuItem_deleteElements_Click"
+},
+"children": []
+},
+"toolStripSeparator10": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator10",
+"Size": {
+"t": "size",
+"x": 212,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"toolStripMenuItem_SnapTo": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "toolStripMenuItem_SnapTo",
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Snap To Marks / Effects"
+},
+"events": {
+"CheckedChanged": "toolStripMenuItem_SnapTo_CheckedChanged"
+},
+"children": []
+},
+"toolStripMenuItem_ResizeIndicator": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "toolStripMenuItem_ResizeIndicator",
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Resize / Draw Indicator"
+},
+"events": {
+"CheckStateChanged": "toolStripMenuItem_ResizeIndicator_CheckStateChanged"
+},
+"children": [],
+"DropDownItems": [
+{
+"ref": "toolStripMenuItem_RIColor_Blue"
+},
+{
+"ref": "toolStripMenuItem_RIColor_Yellow"
+},
+{
+"ref": "toolStripMenuItem_RIColor_Green"
+},
+{
+"ref": "toolStripMenuItem_RIColor_White"
+},
+{
+"ref": "toolStripMenuItem_RIColor_Red"
+}
+]
+},
+"toolStripMenuItem_RIColor_Blue": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_RIColor_Blue",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 22
+},
+"Text": "Blue"
+},
+"events": {
+"Click": "toolStripMenuItem_RIColor_Blue_Click"
+},
+"children": []
+},
+"toolStripMenuItem_RIColor_Yellow": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_RIColor_Yellow",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 22
+},
+"Text": "Yellow"
+},
+"events": {
+"Click": "toolStripMenuItem_RIColor_Yellow_Click"
+},
+"children": []
+},
+"toolStripMenuItem_RIColor_Green": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_RIColor_Green",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 22
+},
+"Text": "Green"
+},
+"events": {
+"Click": "toolStripMenuItem_RIColor_Green_Click"
+},
+"children": []
+},
+"toolStripMenuItem_RIColor_White": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_RIColor_White",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 22
+},
+"Text": "White"
+},
+"events": {
+"Click": "toolStripMenuItem_RIColor_White_Click"
+},
+"children": []
+},
+"toolStripMenuItem_RIColor_Red": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_RIColor_Red",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 22
+},
+"Text": "Red"
+},
+"events": {
+"Click": "toolStripMenuItem_RIColor_Red_Click"
+},
+"children": []
+},
+"cADStyleSelectionBoxToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "cADStyleSelectionBoxToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "CAD Style Selection Box"
+},
+"events": {
+"Click": "cADStyleSelectionBoxToolStripMenuItem_Click"
+},
+"children": []
+},
+"legacyCursorActiveRowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "legacyCursorActiveRowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 215,
+"y": 22
+},
+"Text": "Legacy Cursor / Active Row"
+},
+"events": {
+"Click": "legacyCursorActiveRowToolStripMenuItem_Click"
+},
+"children": []
+},
+"viewToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "viewToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 20
+},
+"Text": "View"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "toolStripMenuItem_zoomTimeIn"
+},
+{
+"ref": "toolStripMenuItem_zoomTimeOut"
+},
+{
+"ref": "zoomUnderMousePositionToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator14"
+},
+{
+"ref": "toolStripMenuItem_zoomRowsIn"
+},
+{
+"ref": "toolStripMenuItem_zoomRowsOut"
+},
+{
+"ref": "toolStripMenuItem2"
+},
+{
+"ref": "toolStripMenuItem3"
+},
+{
+"ref": "toolStripSeparator4"
+},
+{
+"ref": "highlightRowsWithEffectsToolStripMenuItem"
+},
+{
+"ref": "showEffectInfoToolStripMenuItem"
+},
+{
+"ref": "showHiddenToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator5"
+},
+{
+"ref": "fullWaveformToolStripMenuItem"
+},
+{
+"ref": "lockRulerHeightToolStripMenuItem"
+},
+{
+"ref": "lockWaveformHeightToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItem1"
+},
+{
+"ref": "toolbarToolStripMenuItem"
+},
+{
+"ref": "effectWindowToolStripMenuItem"
+},
+{
+"ref": "markWindowToolStripMenuItem"
+},
+{
+"ref": "gridWindowToolStripMenuItem"
+},
+{
+"ref": "effectEditorWindowToolStripMenuItem"
+},
+{
+"ref": "mixingFilterEditorWindowToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItemFindEffects"
+},
+{
+"ref": "toolStripMenuItemColorLibrary"
+},
+{
+"ref": "toolStripMenuItemGradientLibrary"
+},
+{
+"ref": "toolStripMenuItemCurveLibrary"
+}
+]
+},
+"toolStripMenuItem_zoomTimeIn": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_zoomTimeIn",
+"ShortcutKeyDisplayString": "Ctrl+ +",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Add"
+]
+},
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Zoom Time In"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomTimeIn_Click"
+},
+"children": []
+},
+"toolStripMenuItem_zoomTimeOut": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_zoomTimeOut",
+"ShortcutKeyDisplayString": "Ctrl+ -",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Subtract"
+]
+},
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Zoom Time Out"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomTimeOut_Click"
+},
+"children": []
+},
+"zoomUnderMousePositionToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "zoomUnderMousePositionToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Zoom Under Mouse Position"
+},
+"events": {
+"CheckedChanged": "zoomUnderMousePositionToolStripMenuItem_CheckedChanged"
+},
+"children": []
+},
+"toolStripSeparator14": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator14",
+"Size": {
+"t": "size",
+"x": 231,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"toolStripMenuItem_zoomRowsIn": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_zoomRowsIn",
+"ShortcutKeyDisplayString": "Ctrl+Shift+ +",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Shift)",
+"Add"
+]
+},
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Zoom Rows In"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomRowsIn_Click"
+},
+"children": []
+},
+"toolStripMenuItem_zoomRowsOut": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_zoomRowsOut",
+"ShortcutKeyDisplayString": "Ctrl+Shift+ -",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Shift)",
+"Subtract"
+]
+},
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Zoom Rows Out"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomRowsOut_Click"
+},
+"children": []
+},
+"toolStripMenuItem2": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem2",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Collapse All Element Groups"
+},
+"events": {
+"Click": "collapeAllElementGroupsToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItem3": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem3",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Reset Row Height to Default"
+},
+"events": {
+"Click": "resetRowHeightToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator4": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator4",
+"Size": {
+"t": "size",
+"x": 231,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"highlightRowsWithEffectsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "highlightRowsWithEffectsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Highlight Rows With Effects"
+},
+"events": {
+"CheckedChanged": "HighlightRowsWithEffectsToolStripMenuItem_CheckedChanged"
+},
+"children": []
+},
+"showEffectInfoToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "showEffectInfoToolStripMenuItem",
+"ShortcutKeyDisplayString": "Ctrl+ I",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"I"
+]
+},
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Show Effect Info"
+},
+"events": {
+"Click": "showEffectInfoToolStripMenuItem_Click"
+},
+"children": []
+},
+"showHiddenToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "showHiddenToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Show Hidden Rows",
+"ToolTipText": {
+"t": "raw",
+"v": "\"Show rows tagged Hidden for this session. Resets to off the next time a sequenc\" + \"e is opened.\""
+}
+},
+"events": {
+"Click": "showHiddenToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator5": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator5",
+"Size": {
+"t": "size",
+"x": 231,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"fullWaveformToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "fullWaveformToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Full Waveform"
+},
+"events": {
+"CheckedChanged": "fullWaveformToolStripMenuItem_CheckedChanged"
+},
+"children": []
+},
+"lockRulerHeightToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "lockRulerHeightToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Lock Ruler Height"
+},
+"events": {
+"Click": "lockRulerHeightToolStripMenuItem_Click"
+},
+"children": []
+},
+"lockWaveformHeightToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"CheckOnClick": true,
+"Name": "lockWaveformHeightToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Lock Waveform Height"
+},
+"events": {
+"Click": "lockWaveformHeightToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItem1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripMenuItem1",
+"Size": {
+"t": "size",
+"x": 231,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"toolbarToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolbarToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Toolbars"
+},
+"events": {},
+"children": []
+},
+"effectWindowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "effectWindowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Effect Window"
+},
+"events": {
+"Click": "effectWindowToolStripMenuItem_Click"
+},
+"children": []
+},
+"markWindowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "markWindowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Mark Window"
+},
+"events": {
+"Click": "markWindowToolStripMenuItem_Click"
+},
+"children": []
+},
+"gridWindowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "gridWindowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Timeline Window"
+},
+"events": {
+"Click": "gridWindowToolStripMenuItem_Click"
+},
+"children": []
+},
+"effectEditorWindowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "effectEditorWindowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Effect Editor Window"
+},
+"events": {
+"Click": "effectEditorWindowToolStripMenuItem_Click"
+},
+"children": []
+},
+"mixingFilterEditorWindowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "mixingFilterEditorWindowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Layer Editor Window"
+},
+"events": {
+"Click": "mixingFilterEditorWindowToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItemFindEffects": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItemFindEffects",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Find Effects or Layers"
+},
+"events": {
+"Click": "toolStripMenuItemFindEffects_Click"
+},
+"children": []
+},
+"toolStripMenuItemColorLibrary": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItemColorLibrary",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Color Library Window"
+},
+"events": {
+"Click": "toolStripMenuItemColorLibrary_Click"
+},
+"children": []
+},
+"toolStripMenuItemGradientLibrary": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItemGradientLibrary",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Gradient Library Window"
+},
+"events": {
+"Click": "toolStripMenuItemGradientLibrary_Click"
+},
+"children": []
+},
+"toolStripMenuItemCurveLibrary": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItemCurveLibrary",
+"Size": {
+"t": "size",
+"x": 234,
+"y": 22
+},
+"Text": "Curve Library Window"
+},
+"events": {
+"Click": "toolStripMenuItemCurveLibrary_Click"
+},
+"children": []
+},
+"toolsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 46,
+"y": 20
+},
+"Text": "Tools"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "audioToolStripMenuItem"
+},
+{
+"ref": "divideMarksEvenlyToolStripMenuItem"
+},
+{
+"ref": "modifySequenceLengthToolStripMenuItem"
+},
+{
+"ref": "curveEditorToolStripMenuItem"
+},
+{
+"ref": "colorGradientEditorToolStripMenuItem"
+},
+{
+"ref": "ColorCollectionsToolStripMenuItem"
+},
+{
+"ref": "lipSyncMappingsToolStripMenuItem"
+},
+{
+"ref": "bulkEffectMoveToolStripMenuItem"
+},
+{
+"ref": "effectDefaultsToolStripMenuItem"
+}
+]
+},
+"audioToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "audioToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Audio"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "toolStripMenuItem_associateAudio"
+},
+{
+"ref": "toolStripMenuItem_removeAudio"
+},
+{
+"ref": "toolStripSeparator7"
+},
+{
+"ref": "beatBarDetectionToolStripMenuItem"
+},
+{
+"ref": "speedTempoToolStripMenuItem"
+}
+]
+},
+"toolStripMenuItem_associateAudio": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItem_associateAudio",
+"Size": {
+"t": "size",
+"x": 173,
+"y": 22
+},
+"Text": "Associate Audio..."
+},
+"events": {
+"Click": "toolStripMenuItem_associateAudio_Click"
+},
+"children": []
+},
+"toolStripMenuItem_removeAudio": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "toolStripMenuItem_removeAudio",
+"Size": {
+"t": "size",
+"x": 173,
+"y": 22
+},
+"Text": "Remove Audio"
+},
+"events": {
+"Click": "toolStripMenuItem_removeAudio_Click"
+},
+"children": []
+},
+"toolStripSeparator7": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator7",
+"Size": {
+"t": "size",
+"x": 170,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"beatBarDetectionToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "beatBarDetectionToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 173,
+"y": 22
+},
+"Text": "Beat/Bar Detection"
+},
+"events": {
+"Click": "toolStripMenuItem_BeatBarDetection_Click"
+},
+"children": []
+},
+"divideMarksEvenlyToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": true,
+"Name": "divideMarksEvenlyToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 173,
+"y": 22
+},
+"Text": "Create Evenly Divided Marks"
+},
+"events": {
+"Click": "toolStripMenuItem_divideMarksEvenly_Click"
+},
+"children": []
+},
+"speedTempoToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"CheckOnClick": true,
+"Name": "speedTempoToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 173,
+"y": 22
+},
+"Text": "Speed / Tempo"
+},
+"events": {
+"Click": "speedTempoToolStripMenuItem_Click"
+},
+"children": []
+},
+"modifySequenceLengthToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "modifySequenceLengthToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Sequence Length..."
+},
+"events": {
+"Click": "modifySequenceLengthToolStripMenuItem_Click"
+},
+"children": []
+},
+"curveEditorToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "curveEditorToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Curve Editor"
+},
+"events": {
+"Click": "curveEditorToolStripMenuItem_Click"
+},
+"children": []
+},
+"colorGradientEditorToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "colorGradientEditorToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Color Gradient Editor"
+},
+"events": {
+"Click": "colorGradientToolStripMenuItem_Click"
+},
+"children": []
+},
+"ColorCollectionsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "ColorCollectionsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Color Collection Editor"
+},
+"events": {
+"Click": "ColorCollectionsToolStripMenuItem_Click"
+},
+"children": []
+},
+"lipSyncMappingsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "lipSyncMappingsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "LipSync"
+},
+"events": {
+"DropDownOpening": "lipSyncMappingsToolStripMenuItem_DropDownOpening"
+},
+"children": [],
+"DropDownItems": [
+{
+"ref": "defaultMapToolStripMenuItem"
+},
+{
+"ref": "phonemeMappingsToolStripMenuItem"
+},
+{
+"ref": "changeMapToolStripMenuItem"
+},
+{
+"ref": "lyricConverterToolStripMenuItem"
+},
+{
+"ref": "papagayoImportToolStripMenuItem"
+}
+]
+},
+"defaultMapToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "defaultMapToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Default Image Map"
+},
+"events": {
+"DropDownOpening": "defaultMapToolStripMenuItem_DropDownOpening"
+},
+"children": []
+},
+"phonemeMappingsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "phonemeMappingsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Edit Image Maps"
+},
+"events": {
+"Click": "editMapsToolStripMenuItem_Click"
+},
+"children": []
+},
+"changeMapToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "changeMapToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Edit Element Face Mapping"
+},
+"events": {
+"Click": "changeMapToolStripMenuItem_Click"
+},
+"children": []
+},
+"lyricConverterToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "lyricConverterToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Lyric Converter"
+},
+"events": {
+"Click": "textConverterToolStripMenuItem_Click"
+},
+"children": []
+},
+"papagayoImportToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "papagayoImportToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Papagayo Import"
+},
+"events": {
+"Click": "papagayoImportToolStripMenuItem_Click"
+},
+"children": []
+},
+"bulkEffectMoveToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "bulkEffectMoveToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Bulk Effects Move"
+},
+"events": {
+"Click": "bulkEffectMoveToolStripMenuItem_Click"
+},
+"children": []
+},
+"effectDefaultsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "effectDefaultsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 22
+},
+"Text": "Effect Defaults"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "exportEffectDefaultsToolStripMenuItem"
+},
+{
+"ref": "importEffectDefaultsToolStripMenuItem"
+},
+{
+"ref": "dumpEffectDefaultsToolStripMenuItem"
+}
+]
+},
+"exportEffectDefaultsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exportEffectDefaultsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Export..."
+},
+"events": {
+"Click": "exportEffectDefaultsToolStripMenuItem_Click"
+},
+"children": []
+},
+"importEffectDefaultsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "importEffectDefaultsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Import..."
+},
+"events": {
+"Click": "importEffectDefaultsToolStripMenuItem_Click"
+},
+"children": []
+},
+"dumpEffectDefaultsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "dumpEffectDefaultsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 22
+},
+"Text": "Dump (Readable XML)..."
+},
+"events": {
+"Click": "dumpEffectDefaultsToolStripMenuItem_Click"
+},
+"children": []
+},
+"helpDocumentationToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "helpDocumentationToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 20
+},
+"Text": "Help"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "onlineHelpToolStripMenuItem"
+},
+{
+"ref": "vixenYouTubeChannelToolStripMenuItem"
+}
+]
+},
+"onlineHelpToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "onlineHelpToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "Online Help"
+},
+"events": {
+"Click": "helpDocumentationToolStripMenuItem_Click"
+},
+"children": []
+},
+"vixenYouTubeChannelToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "vixenYouTubeChannelToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "Vixen YouTube Channel"
+},
+"events": {
+"Click": "vixenYouTubeChannelToolStripMenuItem_Click"
+},
+"children": []
+},
+"timerPlaying": {
+"type": "Timer",
+"props": {
+"Interval": 40
+},
+"events": {
+"Tick": "timerPlaying_Tick"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"statusStrip": {
+"type": "StatusStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 22,
+"y": 22
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 612
+},
+"Name": "statusStrip",
+"Padding": {
+"t": "padding",
+"l": 1,
+"t_": 0,
+"r": 17,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 1348,
+"y": 22
+},
+"TabIndex": 4,
+"Text": "statusStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripStatusLabel2"
+},
+{
+"ref": "toolStripStatusLabel_currentTime"
+},
+{
+"ref": "toolStripStatusLabel1"
+},
+{
+"ref": "toolStripStatusLabel_sequenceLength"
+},
+{
+"ref": "toolStripStatusLabel3"
+},
+{
+"ref": "toolStripStatusLabel_delayPlay"
+},
+{
+"ref": "toolStripStatusLabel4"
+},
+{
+"ref": "toolStripStatusLabel_RenderingElements"
+},
+{
+"ref": "toolStripProgressBar_RenderingElements"
+}
+]
+},
+"toolStripStatusLabel2": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel2",
+"Size": {
+"t": "size",
+"x": 96,
+"y": 20
+},
+"Text": "Current Position:",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel_currentTime": {
+"type": "ToolStripStatusLabel",
+"props": {
+"BorderSides": {
+"t": "enum",
+"type": "ToolStripStatusLabelBorderSides",
+"v": "Right"
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel_currentTime",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 20
+},
+"Text": "0:00.000",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel1": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel1",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 20
+},
+"Text": "Sequence Length:",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel_sequenceLength": {
+"type": "ToolStripStatusLabel",
+"props": {
+"BorderSides": {
+"t": "enum",
+"type": "ToolStripStatusLabelBorderSides",
+"v": "Right"
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel_sequenceLength",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 20
+},
+"Text": "0:00.000",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel3": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel3",
+"Size": {
+"t": "size",
+"x": 77,
+"y": 20
+},
+"Text": "Play Delayed:",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel_delayPlay": {
+"type": "ToolStripStatusLabel",
+"props": {
+"BorderSides": {
+"t": "enum",
+"type": "ToolStripStatusLabelBorderSides",
+"v": "Right"
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel_delayPlay",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 20
+},
+"Text": "00 Seconds",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel4": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel4",
+"Size": {
+"t": "size",
+"x": 1027,
+"y": 20
+},
+"Spring": true
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel_RenderingElements": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel_RenderingElements",
+"Size": {
+"t": "size",
+"x": 115,
+"y": 20
+},
+"Text": "Rendering Elements:",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"toolStripProgressBar_RenderingElements": {
+"type": "ToolStripProgressBar",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripProgressBar_RenderingElements",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 20
+},
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {
+"Filter": "All files (*.*)|*.*"
+},
+"events": {},
+"children": []
+},
+"toolStripContainer": {
+"type": "ToolStripContainer",
+"props": {
+"BottomToolStripPanelVisible": false,
+"ContentPanel.Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"ContentPanel.Size": {
+"t": "size",
+"x": 1348,
+"y": 463
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"LeftToolStripPanelVisible": false,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 24
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "toolStripContainer",
+"RightToolStripPanelVisible": false,
+"Size": {
+"t": "size",
+"x": 1348,
+"y": 588
+},
+"TabIndex": 5,
+"Text": "toolStripContainer1",
+"TopToolStripPanel.ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"TopToolStripPanel.RenderMode": {
+"t": "enum",
+"type": "ToolStripRenderMode",
+"v": "System"
+}
+},
+"events": {},
+"children": [],
+"ContentPanel.Controls": [
+{
+"name": "dockPanel"
+}
+],
+"TopToolStripPanel.Controls": [
+{
+"name": "toolStripAudio"
+},
+{
+"name": "toolStripAlignment"
+},
+{
+"name": "toolStripEffects"
+},
+{
+"name": "toolStripView"
+},
+{
+"name": "toolStripFile"
+},
+{
+"name": "toolStripEdit"
+},
+{
+"name": "toolStripMode"
+},
+{
+"name": "toolStripTools"
+},
+{
+"name": "toolStripPlayBack"
+},
+{
+"name": "toolStripColorLibrary"
+},
+{
+"name": "toolStripCurveLibrary"
+},
+{
+"name": "toolStripGradientLibrary"
+}
+]
+},
+"dockPanel": {
+"type": "DockPanel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"DockLeftPortion": 200,
+"DocumentStyle": {
+"t": "enum",
+"type": "DocumentStyle",
+"v": "DockingWindow"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "dockPanel",
+"Size": {
+"t": "size",
+"x": 1348,
+"y": 463
+},
+"TabIndex": 13
+},
+"events": {},
+"children": []
+},
+"toolStripAlignment": {
+"type": "ToolStrip",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 25
+},
+"Name": "toolStripAlignment",
+"Size": {
+"t": "size",
+"x": 446,
+"y": 25
+},
+"TabIndex": 15,
+"Text": "Alignment",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "alignmentToolStripButton_CloseGaps"
+},
+{
+"ref": "alignmentToolStripDropDownButton_CloseGaps"
+},
+{
+"ref": "alignmentToolStripDropDownButton_AlignTo"
+},
+{
+"ref": "alignmentToolStripButton_Start"
+},
+{
+"ref": "alignmentToolStripButton_End"
+},
+{
+"ref": "alignmentToolStripButton_Both"
+},
+{
+"ref": "alignmentToolStripButton_Distribute"
+}
+]
+},
+"alignmentToolStripButton_CloseGaps": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripButton_CloseGaps.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripButton_CloseGaps",
+"Size": {
+"t": "size",
+"x": 69,
+"y": 22
+},
+"Tag": "Effect Close Gapes",
+"Text": "Close Gaps"
+},
+"events": {
+"Click": "toolStripSplitButton_CloseGaps_ButtonClick"
+},
+"children": []
+},
+"alignmentToolStripDropDownButton_CloseGaps": {
+"type": "ToolStripDropDownButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "None"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripDropDownButton_CloseGaps.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripDropDownButton_CloseGaps",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 22
+},
+"Tag": "Effect Close Gapes",
+"Text": "Close Gaps",
+"ToolTipText": "Close Gaps"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "alignmentToolStripMenuItemCloseGap100"
+},
+{
+"ref": "alignmentToolStripMenuItemCloseGap200"
+},
+{
+"ref": "alignmentToolStripMenuItemCloseGap300"
+},
+{
+"ref": "alignmentToolStripMenuItemCloseGap400"
+}
+]
+},
+"alignmentToolStripMenuItemCloseGap100": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItemCloseGap100",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 22
+},
+"Tag": ".100",
+"Text": ".100"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItemCloseGap200": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItemCloseGap200",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 22
+},
+"Tag": ".200",
+"Text": ".200"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItemCloseGap300": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItemCloseGap300",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 22
+},
+"Tag": ".300",
+"Text": ".300"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItemCloseGap400": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItemCloseGap400",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 22
+},
+"Tag": ".400",
+"Text": ".400"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripDropDownButton_AlignTo": {
+"type": "ToolStripDropDownButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripDropDownButton_AlignTo.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripDropDownButton_AlignTo",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 22
+},
+"Tag": "Effect Align To",
+"Text": "Align To"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "alignmentToolStripMenuItem_AlignTo200"
+},
+{
+"ref": "alignmentToolStripMenuItem_AlignTo400"
+},
+{
+"ref": "alignmentToolStripMenuItem_AlignTo600"
+},
+{
+"ref": "alignmentToolStripMenuItem_AlignTo800"
+},
+{
+"ref": "alignmentToolStripMenuItem_AlignTo1000"
+},
+{
+"ref": "alignmentToolStripMenuItem_AlignTo2000"
+}
+]
+},
+"alignmentToolStripMenuItem_AlignTo200": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItem_AlignTo200",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 22
+},
+"Text": ".200"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItem_AlignTo400": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItem_AlignTo400",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 22
+},
+"Text": ".400"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItem_AlignTo600": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItem_AlignTo600",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 22
+},
+"Text": ".600"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItem_AlignTo800": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItem_AlignTo800",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 22
+},
+"Text": ".800"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItem_AlignTo1000": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItem_AlignTo1000",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 22
+},
+"Text": "1.000"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripMenuItem_AlignTo2000": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "alignmentToolStripMenuItem_AlignTo2000",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 22
+},
+"Text": "2.000"
+},
+"events": {},
+"children": []
+},
+"alignmentToolStripButton_Start": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripButton_Start.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripButton_Start",
+"Size": {
+"t": "size",
+"x": 65,
+"y": 22
+},
+"Tag": "Start Mark",
+"Text": "Start Mark",
+"ToolTipText": "Align Start to nearest mark"
+},
+"events": {
+"Click": "alignmentToolStripButton_Click"
+},
+"children": []
+},
+"alignmentToolStripButton_End": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripButton_End.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripButton_End",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 22
+},
+"Tag": "End Mark",
+"Text": "End Mark",
+"ToolTipText": "Align End to nearest mark"
+},
+"events": {
+"Click": "alignmentToolStripButton_End_Click"
+},
+"children": []
+},
+"alignmentToolStripButton_Both": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripButton_Both.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripButton_Both",
+"Size": {
+"t": "size",
+"x": 71,
+"y": 22
+},
+"Tag": "Both Mark",
+"Text": "Both Marks",
+"ToolTipText": "Align Both to nearest mark"
+},
+"events": {
+"Click": "alignmentToolStripButton_Both_Click"
+},
+"children": []
+},
+"alignmentToolStripButton_Distribute": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__alignmentToolStripButton_Distribute.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "alignmentToolStripButton_Distribute",
+"Size": {
+"t": "size",
+"x": 92,
+"y": 22
+},
+"Tag": "Distribute Mark",
+"Text": "Distribute Mark"
+},
+"events": {
+"Click": "alignmentToolStripButton_Distribute_Click"
+},
+"children": []
+},
+"toolStripEffects": {
+"type": "ToolStripEx",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"ClickThrough": true,
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripEffect"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 25
+},
+"Name": "toolStripEffects",
+"Size": {
+"t": "size",
+"x": 111,
+"y": 25
+},
+"TabIndex": 14,
+"Text": "Effects",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": []
+},
+"contextMenuStripEffect": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Name": "contextMenuStripEffect",
+"Size": {
+"t": "size",
+"x": 172,
+"y": 92
+}
+},
+"events": {
+"Opening": "contextMenuStripEffect_Opening"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+],
+"Items": [
+{
+"ref": "effectGroupsToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItemLabelPosition"
+},
+{
+"ref": "toolbarsToolStripMenuItem_Effect"
+},
+{
+"ref": "resetEffectsToolStripMenuItem"
+}
+]
+},
+"effectGroupsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "effectGroupsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 171,
+"y": 22
+},
+"Text": "Show/Hide Effects"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "basicToolStripMenuItem"
+},
+{
+"ref": "pixelToolStripMenuItem"
+},
+{
+"ref": "deviceToolStripMenuItem"
+},
+{
+"ref": "intelligentFixtureToolStripMenuItem"
+}
+]
+},
+"basicToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "basicToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 109,
+"y": 22
+},
+"Tag": "Basic",
+"Text": "Basic"
+},
+"events": {
+"Click": "toolStripMenuItemEffectGroup_Click"
+},
+"children": []
+},
+"pixelToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "pixelToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 109,
+"y": 22
+},
+"Tag": "Pixel",
+"Text": "Pixel"
+},
+"events": {
+"Click": "toolStripMenuItemEffectGroup_Click"
+},
+"children": []
+},
+"deviceToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "deviceToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 109,
+"y": 22
+},
+"Tag": "Device",
+"Text": "Device"
+},
+"events": {
+"Click": "toolStripMenuItemEffectGroup_Click"
+},
+"children": []
+},
+"intelligentFixtureToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "intelligentFixtureToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 109,
+"y": 22
+},
+"Tag": "Fixture",
+"Text": "Fixture"
+},
+"events": {
+"Click": "toolStripMenuItemEffectGroup_Click"
+},
+"children": []
+},
+"toolStripMenuItemLabelPosition": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolStripMenuItemLabelPosition",
+"Size": {
+"t": "size",
+"x": 171,
+"y": 22
+},
+"Text": "Label Postion"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "noLabelToolStripMenuItem"
+},
+{
+"ref": "aboveImageToolStripMenuItem"
+},
+{
+"ref": "belowImageToolStripMenuItem"
+}
+]
+},
+"noLabelToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "noLabelToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 144,
+"y": 22
+},
+"Tag": "0",
+"Text": "No Label"
+},
+"events": {
+"Click": "toolStripMenuItemLabelPosition_Click"
+},
+"children": []
+},
+"aboveImageToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "aboveImageToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 144,
+"y": 22
+},
+"Tag": "1",
+"Text": "Above Image"
+},
+"events": {
+"Click": "toolStripMenuItemLabelPosition_Click"
+},
+"children": []
+},
+"belowImageToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "belowImageToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 144,
+"y": 22
+},
+"Tag": "2",
+"Text": "Below Image"
+},
+"events": {
+"Click": "toolStripMenuItemLabelPosition_Click"
+},
+"children": []
+},
+"toolbarsToolStripMenuItem_Effect": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolbarsToolStripMenuItem_Effect",
+"Size": {
+"t": "size",
+"x": 171,
+"y": 22
+},
+"Text": "Toolbars"
+},
+"events": {},
+"children": []
+},
+"resetEffectsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "resetEffectsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 171,
+"y": 22
+},
+"Text": "Reset Toolbar"
+},
+"events": {
+"Click": "resetEffectsToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripView": {
+"type": "ToolStrip",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 25
+},
+"Name": "toolStripView",
+"Size": {
+"t": "size",
+"x": 366,
+"y": 25
+},
+"TabIndex": 18,
+"Text": "View"
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "viewToolStripButton_ZoomTimeIn"
+},
+{
+"ref": "viewToolStripButton_ZoomTimeOut"
+},
+{
+"ref": "viewToolStripButton_ZoomRowIn"
+},
+{
+"ref": "viewToolStripButton_ZoomRowOut"
+}
+]
+},
+"viewToolStripButton_ZoomTimeIn": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "viewToolStripButton_ZoomTimeIn",
+"Size": {
+"t": "size",
+"x": 85,
+"y": 22
+},
+"Tag": "Zoom Time In",
+"Text": "Zoom Time In"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomTimeIn_Click"
+},
+"children": []
+},
+"viewToolStripButton_ZoomTimeOut": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "viewToolStripButton_ZoomTimeOut",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 22
+},
+"Tag": "Zoom Time Out",
+"Text": "Zoom Time Out"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomTimeOut_Click"
+},
+"children": []
+},
+"viewToolStripButton_ZoomRowIn": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "viewToolStripButton_ZoomRowIn",
+"Size": {
+"t": "size",
+"x": 82,
+"y": 22
+},
+"Tag": "Zoom Row In",
+"Text": "Zoom Row In",
+"ToolTipText": "Zoom Row In"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomRowsIn_Click"
+},
+"children": []
+},
+"viewToolStripButton_ZoomRowOut": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "viewToolStripButton_ZoomRowOut",
+"Size": {
+"t": "size",
+"x": 92,
+"y": 22
+},
+"Tag": "Zoom Row Out",
+"Text": "Zoom Row Out",
+"ToolTipText": "Zoom Row Out"
+},
+"events": {
+"Click": "toolStripMenuItem_zoomRowsOut_Click"
+},
+"children": []
+},
+"toolStripFile": {
+"type": "ToolStrip",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 50
+},
+"Name": "toolStripFile",
+"Size": {
+"t": "size",
+"x": 247,
+"y": 25
+},
+"TabIndex": 18,
+"Text": "File",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "fileToolStripButton_Save"
+},
+{
+"ref": "fileToolStripButton_SaveAs"
+},
+{
+"ref": "fileToolStripButton_AutoSave"
+},
+{
+"ref": "fileToolStripButton_Export"
+},
+{
+"ref": "fileToolStripButton_Close"
+}
+]
+},
+"fileToolStripButton_Save": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "fileToolStripButton_Save",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 22
+},
+"Tag": "Save",
+"Text": "Save"
+},
+"events": {
+"Click": "toolStripMenuItem_Save_Click"
+},
+"children": []
+},
+"fileToolStripButton_SaveAs": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__fileToolStripButton_SaveAs.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "fileToolStripButton_SaveAs",
+"Size": {
+"t": "size",
+"x": 51,
+"y": 22
+},
+"Tag": "Save As",
+"Text": "Save As"
+},
+"events": {
+"Click": "toolStripMenuItem_SaveAs_Click"
+},
+"children": []
+},
+"fileToolStripButton_AutoSave": {
+"type": "ToolStripButton",
+"props": {
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__fileToolStripButton_AutoSave.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "fileToolStripButton_AutoSave",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 22
+},
+"Tag": "Auto Save",
+"Text": "Auto Save"
+},
+"events": {
+"Click": "fileToolStripButton_AutoSave_Click"
+},
+"children": []
+},
+"fileToolStripButton_Export": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__fileToolStripButton_Export.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "fileToolStripButton_Export",
+"Size": {
+"t": "size",
+"x": 45,
+"y": 22
+},
+"Tag": "Export",
+"Text": "Export"
+},
+"events": {},
+"children": []
+},
+"fileToolStripButton_Close": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__fileToolStripButton_Close.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "fileToolStripButton_Close",
+"Size": {
+"t": "size",
+"x": 40,
+"y": 22
+},
+"Tag": "Close",
+"Text": "Close"
+},
+"events": {
+"Click": "toolStripMenuItem_Close_Click"
+},
+"children": []
+},
+"toolStripEdit": {
+"type": "ToolStrip",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 50
+},
+"Name": "toolStripEdit",
+"Size": {
+"t": "size",
+"x": 235,
+"y": 25
+},
+"TabIndex": 17,
+"Text": "Edit"
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag",
+"MouseEnter": "toolStripEdit_MouseEnter"
+},
+"children": [],
+"Items": [
+{
+"ref": "editToolStripButton_Undo"
+},
+{
+"ref": "editToolStripButton_Redo"
+},
+{
+"ref": "editToolStripButton_Cut"
+},
+{
+"ref": "editToolStripButton_Copy"
+},
+{
+"ref": "editToolStripButton_Paste"
+},
+{
+"ref": "editToolStripButton_PasteDropDown"
+}
+]
+},
+"editToolStripButton_Undo": {
+"type": "UndoButton",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"ButtonType": {
+"t": "enum",
+"type": "UndoButtonType",
+"v": "UndoButton"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "editToolStripButton_Undo",
+"Size": {
+"t": "size",
+"x": 52,
+"y": 22
+},
+"Tag": "Undo",
+"Text": "Undo"
+},
+"events": {
+"ButtonClick": "undoButton_ButtonClick"
+},
+"children": []
+},
+"editToolStripButton_Redo": {
+"type": "UndoButton",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"ButtonType": {
+"t": "enum",
+"type": "UndoButtonType",
+"v": "UndoButton"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "editToolStripButton_Redo",
+"Size": {
+"t": "size",
+"x": 50,
+"y": 22
+},
+"Tag": "Redo",
+"Text": "Redo"
+},
+"events": {
+"ButtonClick": "redoButton_ButtonClick"
+},
+"children": []
+},
+"editToolStripButton_Cut": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"Name": "editToolStripButton_Cut",
+"Size": {
+"t": "size",
+"x": 30,
+"y": 22
+},
+"Tag": "Cut",
+"Text": "Cut"
+},
+"events": {
+"Click": "toolStripMenuItem_Cut_Click"
+},
+"children": []
+},
+"editToolStripButton_Copy": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"Name": "editToolStripButton_Copy",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 22
+},
+"Tag": "Copy",
+"Text": "Copy"
+},
+"events": {
+"Click": "toolStripMenuItem_Copy_Click"
+},
+"children": []
+},
+"editToolStripButton_Paste": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"Name": "editToolStripButton_Paste",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 22
+},
+"Tag": "Paste",
+"Text": "Paste"
+},
+"events": {
+"Click": "toolStripMenuItem_Paste_Click"
+},
+"children": []
+},
+"editToolStripButton_PasteDropDown": {
+"type": "ToolStripDropDownButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__editToolStripButton_PasteDropDown.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "editToolStripButton_PasteDropDown",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 22
+},
+"Tag": "Paste",
+"ToolTipText": "Paste Special"
+},
+"events": {
+"DropDownOpened": "editToolStripMenuItem_DropDownOpening"
+},
+"children": [],
+"DropDownItems": [
+{
+"ref": "editToolStripButton_PasteInvert"
+},
+{
+"ref": "editToolStripButton_PasteVisibleMarks"
+}
+]
+},
+"editToolStripButton_PasteInvert": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editToolStripButton_PasteInvert",
+"Size": {
+"t": "size",
+"x": 187,
+"y": 22
+},
+"Text": "Paste - Invert"
+},
+"events": {
+"Click": "toolStripMenuItem_PasteInvert_Click"
+},
+"children": []
+},
+"editToolStripButton_PasteVisibleMarks": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editToolStripButton_PasteVisibleMarks",
+"Size": {
+"t": "size",
+"x": 187,
+"y": 22
+},
+"Text": "Paste - Visible Mark/s"
+},
+"events": {
+"Click": "toolStripMenuItem_PasteToMarks_Click"
+},
+"children": []
+},
+"toolStripMode": {
+"type": "ToolStrip",
+"props": {
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 75
+},
+"Name": "toolStripMode",
+"Size": {
+"t": "size",
+"x": 343,
+"y": 25
+},
+"TabIndex": 20,
+"Text": "Mode"
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "modeToolStripButton_DrawMode"
+},
+{
+"ref": "modeToolStripButton_SelectionMode"
+},
+{
+"ref": "modeToolStripButton_SnapTo"
+},
+{
+"ref": "modeToolStripDropDownButton_SnapToStrength"
+},
+{
+"ref": "modeToolStripButton_DragBoxFilter"
+},
+{
+"ref": "modeToolStripDropDownButton_DragBoxFilter"
+}
+]
+},
+"modeToolStripButton_DrawMode": {
+"type": "ToolStripButton",
+"props": {
+"CheckOnClick": true,
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "modeToolStripButton_DrawMode",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 22
+},
+"Tag": "Effect Draw Mode",
+"Text": "Draw Mode",
+"ToolTipText": "Draw Mode"
+},
+"events": {
+"Click": "toolStripButton_DrawMode_Click"
+},
+"children": []
+},
+"modeToolStripButton_SelectionMode": {
+"type": "ToolStripButton",
+"props": {
+"Checked": true,
+"CheckOnClick": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "modeToolStripButton_SelectionMode",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 22
+},
+"Tag": "Effect Selection Mode",
+"Text": "Selection Mode"
+},
+"events": {
+"Click": "toolStripButton_SelectionMode_Click"
+},
+"children": []
+},
+"modeToolStripButton_SnapTo": {
+"type": "ToolStripButton",
+"props": {
+"CheckOnClick": true,
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "modeToolStripButton_SnapTo",
+"Size": {
+"t": "size",
+"x": 52,
+"y": 22
+},
+"Tag": "Effect Snap To",
+"Text": "Snap To",
+"ToolTipText": "Snap To Marks / Effect"
+},
+"events": {
+"CheckedChanged": "toolStripButton_SnapTo_CheckedChanged"
+},
+"children": []
+},
+"modeToolStripDropDownButton_SnapToStrength": {
+"type": "ToolStripDropDownButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "None"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__modeToolStripDropDownButton_SnapToStrength.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "modeToolStripDropDownButton_SnapToStrength",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 22
+},
+"Tag": "Effect Snap To",
+"Text": "Snap To",
+"ToolTipText": "Snap Strength"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "modeToolStripMenuItem_SnapStrength_1"
+},
+{
+"ref": "modeToolStripMenuItem_SnapStrength_2"
+},
+{
+"ref": "modeToolStripMenuItem_SnapStrength_3"
+},
+{
+"ref": "modeToolStripMenuItem_SnapStrength_4"
+}
+]
+},
+"modeToolStripMenuItem_SnapStrength_1": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "modeToolStripMenuItem_SnapStrength_1",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 22
+},
+"Tag": "1",
+"Text": "1"
+},
+"events": {},
+"children": []
+},
+"modeToolStripMenuItem_SnapStrength_2": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "modeToolStripMenuItem_SnapStrength_2",
+"ShowShortcutKeys": false,
+"Size": {
+"t": "size",
+"x": 80,
+"y": 22
+},
+"Tag": "2",
+"Text": "2"
+},
+"events": {},
+"children": []
+},
+"modeToolStripMenuItem_SnapStrength_3": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "modeToolStripMenuItem_SnapStrength_3",
+"ShowShortcutKeys": false,
+"Size": {
+"t": "size",
+"x": 80,
+"y": 22
+},
+"Tag": "3",
+"Text": "3"
+},
+"events": {},
+"children": []
+},
+"modeToolStripMenuItem_SnapStrength_4": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "modeToolStripMenuItem_SnapStrength_4",
+"ShowShortcutKeys": false,
+"Size": {
+"t": "size",
+"x": 80,
+"y": 22
+},
+"Tag": "4",
+"Text": "4"
+},
+"events": {},
+"children": []
+},
+"modeToolStripButton_DragBoxFilter": {
+"type": "ToolStripButton",
+"props": {
+"CheckOnClick": true,
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "modeToolStripButton_DragBoxFilter",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 22
+},
+"Tag": "Effect Drag Box Filter",
+"Text": "Drag Box Filter"
+},
+"events": {
+"CheckedChanged": "toolStripButton_DragBoxFilter_CheckedChanged"
+},
+"children": []
+},
+"modeToolStripDropDownButton_DragBoxFilter": {
+"type": "ToolStripDropDownButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "None"
+},
+"Image": {
+"t": "image",
+"file": "TimedSequenceEditorForm__modeToolStripDropDownButton_DragBoxFilter.Image.png"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "modeToolStripDropDownButton_DragBoxFilter",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 22
+},
+"Tag": "Effect Drag Box Filter",
+"Text": "Drag Box Filter",
+"ToolTipText": "Drag Box Filter"
+},
+"events": {},
+"children": []
+},
+"toolStripTools": {
+"type": "ToolStrip",
+"props": {
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 100
+},
+"Name": "toolStripTools",
+"Size": {
+"t": "size",
+"x": 362,
+"y": 25
+},
+"TabIndex": 19,
+"Text": "Tools",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "toolsToolStripButton_LipSync"
+},
+{
+"ref": "toolsToolStripButton_CurveLibrary"
+},
+{
+"ref": "toolsToolStripButton_ColorLibrary"
+},
+{
+"ref": "toolsToolStripButton_ColorGradient"
+}
+]
+},
+"toolsToolStripButton_LipSync": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolsToolStripButton_LipSync",
+"Size": {
+"t": "size",
+"x": 102,
+"y": 22
+},
+"Tag": "Lip Sync",
+"Text": "LipSync Edit Map",
+"ToolTipText": "Edit LipSync Map"
+},
+"events": {
+"Click": "editMapsToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolsToolStripButton_CurveLibrary": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolsToolStripButton_CurveLibrary",
+"Size": {
+"t": "size",
+"x": 81,
+"y": 22
+},
+"Tag": "Curve Library",
+"Text": "Curve Library"
+},
+"events": {
+"Click": "curveEditorToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolsToolStripButton_ColorLibrary": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolsToolStripButton_ColorLibrary",
+"Size": {
+"t": "size",
+"x": 79,
+"y": 22
+},
+"Tag": "Color Library",
+"Text": "Color Library"
+},
+"events": {
+"Click": "ColorCollectionsToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolsToolStripButton_ColorGradient": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolsToolStripButton_ColorGradient",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 22
+},
+"Tag": "Color Gradient",
+"Text": "Color Gradient",
+"ToolTipText": "Color Gradient Library"
+},
+"events": {
+"Click": "colorGradientToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripPlayBack": {
+"type": "ToolStrip",
+"props": {
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripAll"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 100
+},
+"Name": "toolStripPlayBack",
+"Size": {
+"t": "size",
+"x": 184,
+"y": 25
+},
+"TabIndex": 16,
+"Text": "PlayBack"
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag"
+},
+"children": [],
+"Items": [
+{
+"ref": "playBackToolStripButton_Start"
+},
+{
+"ref": "playBackToolStripButton_Play"
+},
+{
+"ref": "playBackToolStripButton_Stop"
+},
+{
+"ref": "playBackToolStripButton_End"
+},
+{
+"ref": "playBackToolStripButton_Loop"
+}
+]
+},
+"playBackToolStripButton_Start": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "playBackToolStripButton_Start",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 22
+},
+"Tag": "Start",
+"Text": "Start"
+},
+"events": {
+"Click": "toolStripButton_Start_Click"
+},
+"children": []
+},
+"playBackToolStripButton_Play": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "playBackToolStripButton_Play",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 22
+},
+"Tag": "Play",
+"Text": "Play",
+"ToolTipText": "Play F5"
+},
+"events": {
+"Click": "toolStripButton_Play_Click"
+},
+"children": []
+},
+"playBackToolStripButton_Stop": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "playBackToolStripButton_Stop",
+"Size": {
+"t": "size",
+"x": 35,
+"y": 22
+},
+"Tag": "Stop",
+"Text": "Stop",
+"ToolTipText": "Stop F8"
+},
+"events": {
+"Click": "toolStripButton_Stop_Click"
+},
+"children": []
+},
+"playBackToolStripButton_End": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "playBackToolStripButton_End",
+"Size": {
+"t": "size",
+"x": 31,
+"y": 22
+},
+"Tag": "End",
+"Text": "End"
+},
+"events": {
+"Click": "toolStripButton_End_Click"
+},
+"children": []
+},
+"playBackToolStripButton_Loop": {
+"type": "ToolStripButton",
+"props": {
+"CheckOnClick": true,
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "playBackToolStripButton_Loop",
+"Size": {
+"t": "size",
+"x": 38,
+"y": 22
+},
+"Tag": "Loop",
+"Text": "Loop",
+"ToolTipText": "Loop F9"
+},
+"events": {
+"CheckedChanged": "toolStripButton_Loop_CheckedChanged"
+},
+"children": []
+},
+"toolStripColorLibrary": {
+"type": "ToolStrip",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripLibraries"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 6,
+"y": 125
+},
+"Name": "toolStripColorLibrary",
+"Padding": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 111,
+"y": 25
+},
+"TabIndex": 15,
+"Text": "Library Color",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag",
+"DragDrop": "toolStripColorLibrary_DragDrop",
+"DragEnter": "toolStripColorLibrary_DragEnter",
+"Leave": "toolStripLibrary_Leave",
+"MouseEnter": "toolStrips_MouseEnter"
+},
+"children": []
+},
+"contextMenuStripLibraries": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Name": "contextMenuStripEffect",
+"Size": {
+"t": "size",
+"x": 169,
+"y": 202
+},
+"Text": "Libraries"
+},
+"events": {
+"Closing": "contextMenuStripLibraries_Closing",
+"Opening": "contextMenuStripLibraries_Opening"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+],
+"Items": [
+{
+"ref": "newToolStripMenuItemLibraries"
+},
+{
+"ref": "editToolStripMenuItemLibraries"
+},
+{
+"ref": "deleteToolStripMenuItemLibraries"
+},
+{
+"ref": "importToolStripMenuItemLibraries"
+},
+{
+"ref": "exportToolStripMenuItemLibraries"
+},
+{
+"ref": "add_RemoveLibraryToolStripMenuItem"
+},
+{
+"ref": "toolBarsToolStripMenuItemLibraries"
+},
+{
+"ref": "imageSizeToolStripMenuItemLibraries"
+},
+{
+"ref": "resetLibraryToolStripMenuItem"
+}
+]
+},
+"newToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "newToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "New"
+},
+"events": {
+"Click": "toolStripMenuItemNewItem_Click"
+},
+"children": []
+},
+"editToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Edit"
+},
+"events": {
+"Click": "toolStripMenuItemEditItem_Click"
+},
+"children": []
+},
+"deleteToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "deleteToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Delete"
+},
+"events": {
+"Click": "toolStripMenuItemDeleteItem_Click"
+},
+"children": []
+},
+"importToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "importToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Import"
+},
+"events": {
+"Click": "toolStripMenuItemImport_Click"
+},
+"children": []
+},
+"exportToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exportToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Export"
+},
+"events": {
+"Click": "toolStripMenuItemExport_Click"
+},
+"children": []
+},
+"add_RemoveLibraryToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "add_RemoveLibraryToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Show/Hide Items"
+},
+"events": {},
+"children": []
+},
+"toolBarsToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "toolBarsToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Toolbars"
+},
+"events": {},
+"children": []
+},
+"imageSizeToolStripMenuItemLibraries": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "imageSizeToolStripMenuItemLibraries",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Toggle Image Size"
+},
+"events": {
+"Click": "imageSizeToolStripMenuItem_Click"
+},
+"children": []
+},
+"resetLibraryToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "resetLibraryToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 168,
+"y": 22
+},
+"Text": "Reset Toolbar"
+},
+"events": {
+"Click": "resetToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripCurveLibrary": {
+"type": "ToolStrip",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripLibraries"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 403,
+"y": 125
+},
+"Name": "toolStripCurveLibrary",
+"Padding": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 111,
+"y": 25
+},
+"TabIndex": 16,
+"Text": "Library Curve",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag",
+"DragDrop": "toolStripCurveLibrary_DragDrop",
+"DragEnter": "toolStripCurveLibrary_DragEnter",
+"Leave": "toolStripLibrary_Leave",
+"MouseEnter": "toolStrips_MouseEnter"
+},
+"children": []
+},
+"toolStripGradientLibrary": {
+"type": "ToolStrip",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripLibraries"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "None"
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"LayoutStyle": {
+"t": "enum",
+"type": "ToolStripLayoutStyle",
+"v": "HorizontalStackWithOverflow"
+},
+"Location": {
+"t": "point",
+"x": 441,
+"y": 125
+},
+"Name": "toolStripGradientLibrary",
+"Padding": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 111,
+"y": 25
+},
+"TabIndex": 17,
+"Text": "Library Gradient",
+"Visible": false
+},
+"events": {
+"EndDrag": "toolStrip_EndDrag",
+"DragDrop": "toolStripGradientLibrary_DragDrop",
+"DragEnter": "toolStripGradientLibrary_DragEnter",
+"Leave": "toolStripLibrary_Leave",
+"MouseEnter": "toolStrips_MouseEnter"
+},
+"children": []
+},
+"saveFileDialog": {
+"type": "SaveFileDialog",
+"props": {
+"Title": "Save Timed Sequence"
+},
+"events": {},
+"children": []
+},
+"contextMenuStripElementSelection": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Name": "contextMenuStripElementSelection",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 4
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"timerPostponePlay": {
+"type": "Timer",
+"props": {},
+"events": {
+"Tick": "timerPostponePlay_Tick"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"timerDelayCountdown": {
+"type": "Timer",
+"props": {
+"Interval": 1000
+},
+"events": {
+"Tick": "timerDelayCountdown_Tick"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1348,
+634
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4
+]
+}
+}
+}

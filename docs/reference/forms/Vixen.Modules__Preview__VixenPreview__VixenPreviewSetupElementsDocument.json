@@ -1,0 +1,354 @@
+{
+"class": "VixenPreviewSetupElementsDocument",
+"source": "Vixen.Modules/Preview/VixenPreview/VixenPreviewSetupElementsDocument.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CloseButton": false,
+"CloseButtonVisible": false,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "SizableToolWindow"
+},
+"Name": "VixenPreviewSetupElementsDocument",
+"Text": "Elements"
+},
+"events": {
+"Load": "VixenPreviewSetupElementsDocument_Load"
+},
+"children": [
+{
+"name": "mainTableLayoutPanel"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"imageListStatus": {
+"type": "ImageList",
+"props": {
+"ImageStream": "\n        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w\n        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0\n        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABw\n        CAAAAk1TRnQBSQFMAgEBAwEAASgBAAEoAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo\n        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA\n        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5\n        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA\n        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm\n        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM\n        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA\n        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz\n        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ\n        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM\n        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA\n        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA\n        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ\n        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/\n        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA\n        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm\n        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ\n        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz\n        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA\n        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM\n        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM\n        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM\n        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA\n        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM\n        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ\n        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz\n        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm\n        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw\n        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/8cABf8LAAX/CwAF/xoA\n        Af8BvAIuAVAB9AH/CQAB/wPxAbwB9AH/CQAB/wHwAlkBeQH0Af8YAAH/ARwENgEvAfQIAAH/AfAB8wLy\n        AfMB8QH0CAAB/wGZBHoBWQH0GAAB/wE1BTYBcggAAf8B8QXyAfAIAAH/B3oYAAH/AVcFNgEuCAAB/wHy\n        BvEIAAH/BnoBWRgAAf8BeQU1AS4IAAH/AfMF8AHxCAAB/wGaBHoCWRgAAf8BLwFXAzUBmQHzCAAB/wHx\n        BPAB8wH0CAAB/wFZAXoDWQGaAfQZAAH/AS8BmQGfAXgBmQoAAf8B8QLzAvIKAAH/AVkBmgEaApr/AFYA\n        AUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcAA/8BAAb/AgAG/wIABv8CAAH8AR8B/AEf\n        AfwBHwIAAfgBDwH4AQ8B+AEPAgAB8AEPAfABDwHwAQ8CAAHwAQ8B8AEPAfABDwIAAfABDwHwAQ8B8AEP\n        AgAB8AEPAfABDwHwAQ8CAAHwAQ8B8AEPAfABDwIAAfgBHwH4AR8B+AEfAgAG/wIABv8CAAb/AgAG/wIA\n        Bv8CAAs=\n",
+"TransparentColor": {
+"t": "color",
+"name": "Transparent"
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"treeElements": {
+"type": "ElementTree",
+"props": {
+"AllowDragging": true,
+"AllowPropertyEdit": true,
+"AllowWireExport": true,
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ExportDiagram": null,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 40
+},
+"Name": "treeElements",
+"Size": {
+"t": "size",
+"x": 210,
+"y": 370
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"mainTableLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "mainTableLayoutPanel",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 216,
+"y": 413
+},
+"TabIndex": 1
+},
+"events": {},
+"children": [
+{
+"name": "AddTemplatePanel",
+"col": 0,
+"row": 0
+},
+{
+"name": "treeElements",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"AddTemplatePanel": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "AddTemplatePanel",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 37
+},
+"TabIndex": 45,
+"WrapContents": false
+},
+"events": {},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "comboBoxNewItemType"
+},
+{
+"name": "buttonAddTemplate"
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 12
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 12,
+"r": 3,
+"b": 0
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 13
+},
+"TabIndex": 29,
+"Text": "Add:"
+},
+"events": {},
+"children": []
+},
+"comboBoxNewItemType": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 38,
+"y": 8
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 8,
+"r": 3,
+"b": 3
+},
+"Name": "comboBoxNewItemType",
+"Size": {
+"t": "size",
+"x": 146,
+"y": 21
+},
+"TabIndex": 30
+},
+"events": {
+"DrawItem": "ComboBoxNewItemType_DrawItem",
+"SelectedIndexChanged": "ComboBoxNewItemType_SelectedIndexChanged"
+},
+"children": []
+},
+"buttonAddTemplate": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 190,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 6,
+"r": 3,
+"b": 3
+},
+"Name": "buttonAddTemplate",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 31,
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "ButtonAddTemplate_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+216,
+413
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+8.25,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1,
+2,
+1,
+2
+]
+}
+}
+}

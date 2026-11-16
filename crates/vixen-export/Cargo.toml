@@ -1,0 +1,12 @@
+[package]
+name = "vixen-export"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+thiserror.workspace = true
+uuid.workspace = true
+zstd = "0.13"
+base64 = "0.22"
+serde_json.workspace = true

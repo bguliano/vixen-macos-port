@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace VixenRaster {
+    [DataContract] public sealed class CaseSpec {
+        [DataMember] public string id, family, operation, fillMode;
+        [DataMember] public int width, height, maxWidth, maxHeight;
+        [DataMember] public bool alpha;
+        [DataMember] public double scale;
+        [DataMember] public double[] rect, line, points;
+        [DataMember] public int angle, lineLength, constantAlpha;
+        [DataMember] public int[] swatches;
+        [DataMember] public string inputPattern;
+    }
+    [DataContract] public sealed class CaseSet {
+        [DataMember] public int schema = 3;
+        [DataMember] public string byteOrder = "ARGB8-row-major-top-down";
+        [DataMember] public CaseSpec[] cases;
+    }
+    [DataContract] public sealed class FileRecord {
+        [DataMember] public string path, sha256;
+        [DataMember] public long bytes;
+    }
+    [DataContract] public sealed class PackManifest {
+        [DataMember] public int schema;
+        [DataMember] public FileRecord[] files;
+    }
+    [DataContract] public sealed class RasterReport {
+        [DataMember] public int schema = 3;
+        [DataMember] public string status, id, byteOrder = "ARGB8-row-major-top-down";
+        [DataMember] public CaseSpec input;
+        [DataMember] public int outputWidth, outputHeight, inputStride, outputStride;
+        [DataMember] public string inputPixelFormat, outputPixelFormat;
+        [DataMember] public bool inputUnchanged, inputReadbacksEqual, outputReadbacksEqual;
+        [DataMember] public FileRecord[] files;
+        [DataMember] public string originalMethodsSha256, countDownMethodsSha256, fastPixelSha256, hostSha256;
+        [DataMember] public DrawingDefaults freshGraphicsDefaults;
+        [DataMember] public DrawingDefaults actualDrawingDefaults;
+        [DataMember] public string drawingStateScope;
+    }
+    [DataContract] public sealed class PathObservation {
+        [DataMember] public string label;
+        [DataMember] public float flatness;
+        [DataMember] public float[] points;
+        [DataMember] public int[] pointBits, types;
+        [DataMember] public DrawingDefaults drawingDefaults;
+        [DataMember] public string penColor, penStartCap, penEndCap, penLineJoin, penAlignment, fillMode;
+        [DataMember] public float penWidth, penMiterLimit;
+    }
+    [DataContract] public sealed class PathTraceReport {
+        [DataMember] public int schema=3;
+        [DataMember] public string id;
+        [DataMember] public PathObservation[] paths;
+    }
+    [DataContract] public sealed class DrawingDefaults {
+        [DataMember] public string smoothing, pixelOffset, interpolation, compositingMode, compositingQuality, pageUnit;
+        [DataMember] public float pageScale, dpiX, dpiY;
+        [DataMember] public float[] transform;
+        [DataMember] public float[] clipBounds, visibleClipBounds;
+        [DataMember] public bool clipIsInfinite;
+    }
+    [DataContract] public sealed class RuntimeReport {
+        [DataMember] public int schema = 1;
+        [DataMember] public string status, os, clr, hostSha256;
+        [DataMember] public bool is64BitProcess, is64BitOperatingSystem;
+        [DataMember] public string drawingIdentity, drawingPath, drawingSha256, gdiplusPath, gdiplusVersion, gdiplusSha256;
+        [DataMember] public DrawingDefaults freshGraphicsDefaults;
+        [DataMember] public string scope = "Windows Framework GDI+ availability/provenance; not whole-effect or installed Vixen binary equivalence";
+    }
+    public static class Data {
+        public static string Hash(byte[] bytes) { using(var sha=SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-","").ToLowerInvariant(); }
+        public static string HashFile(string path) { using(var file=File.OpenRead(path)) using(var sha=SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(file)).Replace("-","").ToLowerInvariant(); }
+        public static byte[] Json(object value) { using(var stream=new MemoryStream()) { new DataContractJsonSerializer(value.GetType()).WriteObject(stream,value); return stream.ToArray(); } }
+        public static void SaveNew(string path,object value) { WriteNew(path,Json(value)); }
+        public static void WriteNew(string path,byte[] bytes) { using(var file=new FileStream(path,FileMode.CreateNew,FileAccess.Write,FileShare.Read)) { file.Write(bytes,0,bytes.Length);file.Flush(); } }
+        public static T Read<T>(string path,int limit) {
+            if(new FileInfo(path).Length>limit) throw new InvalidDataException("JSON exceeds limit");
+            using(var stream=File.OpenRead(path)) return (T)new DataContractJsonSerializer(typeof(T)).ReadObject(stream);
+        }
+        public static FileRecord Record(string directory,string name) { string p=Path.Combine(directory,name);return new FileRecord{path=name,bytes=new FileInfo(p).Length,sha256=HashFile(p)}; }
+        public static CaseSet Cases() {
+            var all=new List<CaseSpec>();
+            foreach(int width in new[]{3,4,7,8,9}) foreach(int target in new[]{6,7,8,9,12,13}) foreach(bool alpha in new[]{false,true})
+                all.Add(new CaseSpec{id="picture-resize-"+width+"x4-to-"+target+"x6-"+(alpha?"alpha":"opaque"),family="picture",operation="resize-exact",width=width,height=4,maxWidth=target,maxHeight=6,alpha=alpha});
+            foreach(int alpha in new[]{1,127,128,254})all.Add(new CaseSpec{id="picture-gray-alpha-"+alpha,family="picture",operation="grayscale",width=16,height=3,alpha=true,constantAlpha=alpha,inputPattern="gray-swatches-alpha-rows-0-selected-255",swatches=new[]{0,0,0,128,128,128,255,255,255,1,129,127,2,124,1,2,136,255,4,4,254,5,5,255,6,244,127,6,250,254,7,239,1,7,245,128,7,251,255,9,107,0,9,113,127,10,108,1}});
+            double[][] rects={new double[]{0,0,4,4},new double[]{2,3,9,9},new double[]{1,1,20,12},new double[]{5,5,20,12},new double[]{12,10,12,12},new double[]{-2,2,9,9},new double[]{3,4,9,5},new double[]{5.5,5.5,20,12}};
+            for(int i=0;i<rects.Length;i++)all.Add(new CaseSpec{id="detail-ellipse-"+(i+1),family="primitive",operation="ellipse",width=40,height=40,alpha=true,rect=rects[i]});
+            double[][] lines={new double[]{7.929,6.757,5.786,8.665},new double[]{22.071,6.757,24.214,8.665},new double[]{2.25,2.25,9.75,5.75},new double[]{2.5,2.5,6.5,10.5}};
+            for(int i=0;i<lines.Length;i++) foreach(bool reverse in new[]{false,true}) {
+                var line=lines[i];if(reverse)line=new[]{line[2],line[3],line[0],line[1]};
+                all.Add(new CaseSpec{id="detail-line-"+(i+1)+(reverse?"-reverse":"-forward"),family="primitive",operation="line",width=40,height=40,alpha=true,line=line});
+            }
+            return new CaseSet{cases=all.ToArray()};
+        }
+        public static CaseSet ValidateCases(string path) {
+            var actual=Read<CaseSet>(path,65536);var expected=Cases();
+            if(actual==null || actual.schema!=3 || actual.byteOrder!=expected.byteOrder || actual.cases==null || actual.cases.Length!=expected.cases.Length) throw new InvalidDataException("Case schema/grid mismatch");
+            for(int i=0;i<expected.cases.Length;i++) if(Hash(Json(actual.cases[i]))!=Hash(Json(expected.cases[i]))) throw new InvalidDataException("Unexpected case at "+i);
+            return actual;
+        }
+        public static byte[] Requested(CaseSpec c) {
+            var bytes=new byte[c.width*c.height*4];int[] alpha={0,1,127,128,254,255};
+            if(c.family!="picture")return bytes;
+            if(c.inputPattern=="gray-swatches-alpha-rows-0-selected-255") {
+                for(int y=0;y<c.height;y++)for(int x=0;x<c.width;x++){int o=(y*c.width+x)*4;bytes[o]=(byte)(y==0?0:y==1?c.constantAlpha:255);for(int k=0;k<3;k++)bytes[o+k+1]=(byte)c.swatches[x*3+k];}
+                return bytes;
+            }
+            for(int y=0;y<c.height;y++) for(int x=0;x<c.width;x++) { int i=y*c.width+x,o=i*4;bytes[o]=(byte)(c.constantAlpha>0?c.constantAlpha:c.alpha?alpha[i%6]:255);bytes[o+1]=(byte)((71*x+31*y+17)%256);bytes[o+2]=(byte)((29*x+97*y+43)%256);bytes[o+3]=(byte)((113*x+19*y+89)%256); }
+            return bytes;
+        }
+    }
+}

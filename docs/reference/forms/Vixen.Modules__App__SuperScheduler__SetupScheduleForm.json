@@ -1,0 +1,782 @@
+{
+"class": "SetupScheduleForm",
+"source": "Vixen.Modules/App/SuperScheduler/SetupScheduleForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupScheduleForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Schedule a Show"
+},
+"events": {
+"Load": "SetupScheduleForm_Load"
+},
+"children": [
+{
+"name": "groupBox4"
+},
+{
+"name": "groupBox3"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonHelp"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"buttonHelp": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Image": {
+"t": "raw",
+"v": "Common.Resources.Tools.GetIcon(Resources.help, (int)(16 * ScalingTools.GetScaleFactor()))"
+},
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 378
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 27
+},
+"TabIndex": 60,
+"Text": "Help",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 286,
+"y": 378
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 62,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonCancel_Click"
+},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 195,
+"y": 378
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 61,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 102
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 359,
+"y": 89
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Dates:"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "dateStop"
+},
+{
+"name": "label2"
+},
+{
+"name": "dateStart"
+},
+{
+"name": "label1"
+}
+]
+},
+"dateStop": {
+"type": "DateTimePicker",
+"props": {
+"Location": {
+"t": "point",
+"x": 51,
+"y": 54
+},
+"Name": "dateStop",
+"Size": {
+"t": "size",
+"x": 233,
+"y": 23
+},
+"TabIndex": 8
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 59
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Stop:"
+},
+"events": {},
+"children": []
+},
+"dateStart": {
+"type": "DateTimePicker",
+"props": {
+"Location": {
+"t": "point",
+"x": 51,
+"y": 25
+},
+"Name": "dateStart",
+"Size": {
+"t": "size",
+"x": 233,
+"y": 23
+},
+"TabIndex": 6
+},
+"events": {
+"ValueChanged": "dateStart_ValueChanged"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 30
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Start:"
+},
+"events": {},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 197
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 359,
+"y": 82
+},
+"TabIndex": 63,
+"TabStop": false,
+"Text": "Days:"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkSaturday"
+},
+{
+"name": "checkSunday"
+},
+{
+"name": "checkMonday"
+},
+{
+"name": "checkFriday"
+},
+{
+"name": "checkTuesday"
+},
+{
+"name": "checkWednesday"
+},
+{
+"name": "checkThursday"
+}
+]
+},
+"checkSaturday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 175,
+"y": 51
+},
+"Name": "checkSaturday",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 19
+},
+"TabIndex": 12,
+"Text": "Saturday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkSunday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 24
+},
+"Name": "checkSunday",
+"Size": {
+"t": "size",
+"x": 65,
+"y": 19
+},
+"TabIndex": 6,
+"Text": "Sunday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkMonday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 93,
+"y": 24
+},
+"Name": "checkMonday",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 19
+},
+"TabIndex": 7,
+"Text": "Monday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkFriday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 93,
+"y": 51
+},
+"Name": "checkFriday",
+"Size": {
+"t": "size",
+"x": 58,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Friday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkTuesday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 175,
+"y": 24
+},
+"Name": "checkTuesday",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 19
+},
+"TabIndex": 8,
+"Text": "Tuesday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkWednesday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 258,
+"y": 24
+},
+"Name": "checkWednesday",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 19
+},
+"TabIndex": 9,
+"Text": "Wednesday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"checkThursday": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 51
+},
+"Name": "checkThursday",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 19
+},
+"TabIndex": 10,
+"Text": "Thursday",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"groupBox3": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 286
+},
+"Name": "groupBox3",
+"Size": {
+"t": "size",
+"x": 359,
+"y": 80
+},
+"TabIndex": 64,
+"TabStop": false,
+"Text": "Time:"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "labelDuration"
+},
+{
+"name": "label9"
+},
+{
+"name": "label3"
+},
+{
+"name": "dateEndTime"
+},
+{
+"name": "dateStartTime"
+}
+]
+},
+"labelDuration": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 72,
+"y": 54
+},
+"Name": "labelDuration",
+"Size": {
+"t": "size",
+"x": 45,
+"y": 15
+},
+"TabIndex": 72,
+"Text": "(hours)"
+},
+"events": {},
+"children": []
+},
+"label9": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 183,
+"y": 32
+},
+"Name": "label9",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 15
+},
+"TabIndex": 71,
+"Text": "End Time:"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 32
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 15
+},
+"TabIndex": 70,
+"Text": "Start Time:"
+},
+"events": {},
+"children": []
+},
+"dateEndTime": {
+"type": "DateTimePicker",
+"props": {
+"Format": {
+"t": "enum",
+"type": "DateTimePickerFormat",
+"v": "Time"
+},
+"Location": {
+"t": "point",
+"x": 250,
+"y": 28
+},
+"Name": "dateEndTime",
+"ShowUpDown": true,
+"Size": {
+"t": "size",
+"x": 100,
+"y": 23
+},
+"TabIndex": 69
+},
+"events": {
+"ValueChanged": "dateEndTime_ValueChanged"
+},
+"children": []
+},
+"dateStartTime": {
+"type": "DateTimePicker",
+"props": {
+"Format": {
+"t": "enum",
+"type": "DateTimePickerFormat",
+"v": "Time"
+},
+"Location": {
+"t": "point",
+"x": 76,
+"y": 28
+},
+"Name": "dateStartTime",
+"ShowUpDown": true,
+"Size": {
+"t": "size",
+"x": 100,
+"y": 23
+},
+"TabIndex": 68
+},
+"events": {
+"ValueChanged": "dateStartTime_ValueChanged"
+},
+"children": []
+},
+"groupBox4": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "groupBox4",
+"Size": {
+"t": "size",
+"x": 359,
+"y": 81
+},
+"TabIndex": 65,
+"TabStop": false,
+"Text": "Show"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "label4"
+},
+{
+"name": "comboBoxShow"
+},
+{
+"name": "checkEnabled"
+}
+]
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 25
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 15
+},
+"TabIndex": 19,
+"Text": "Show to Start:"
+},
+"events": {},
+"children": []
+},
+"comboBoxShow": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 100,
+"y": 22
+},
+"Name": "comboBoxShow",
+"Size": {
+"t": "size",
+"x": 245,
+"y": 24
+},
+"TabIndex": 18
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"checkEnabled": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 100,
+"y": 53
+},
+"Name": "checkEnabled",
+"Size": {
+"t": "size",
+"x": 112,
+"y": 19
+},
+"TabIndex": 0,
+"Text": "Enable Schedule",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+385,
+417
+]
+}
+}
+}

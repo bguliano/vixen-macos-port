@@ -1,0 +1,181 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/Property/Orientation/SetupForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Orientation Setup"
+},
+"events": {
+"Load": "SetupForm_Load"
+},
+"children": [
+{
+"name": "comboBoxOrientation"
+},
+{
+"name": "label1"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 156,
+"y": 108
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 61,
+"y": 108
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 55
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "Orientation"
+},
+"events": {},
+"children": []
+},
+"comboBoxOrientation": {
+"type": "ComboBox",
+"props": {
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 88,
+"y": 52
+},
+"Name": "comboBoxOrientation",
+"Size": {
+"t": "size",
+"x": 155,
+"y": 23
+},
+"TabIndex": 9
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+257,
+148
+]
+}
+}
+}

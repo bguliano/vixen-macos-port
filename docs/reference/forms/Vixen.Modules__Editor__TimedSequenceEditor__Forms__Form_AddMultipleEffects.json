@@ -1,0 +1,786 @@
+{
+"class": "Form_AddMultipleEffects",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/Form_AddMultipleEffects.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "btnOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "ref",
+"name": "btnCancel"
+},
+"ControlBox": false,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Name": "Form_AddMultipleEffects",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Add Multiple Effects"
+},
+"events": {
+"Load": "Form_AddMultipleEffects_Load"
+},
+"children": [
+{
+"name": "flowLayoutPanel1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 45
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Number of effects to add"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 75
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "Starting time"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 135
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Duration"
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 165
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Duration between"
+},
+"events": {},
+"children": []
+},
+"btnOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 17,
+"y": 30
+},
+"Name": "btnOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 13,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnOK_Click"
+},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 198,
+"y": 30
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 14,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"txtStartTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 169,
+"y": 72
+},
+"Name": "txtStartTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 2
+},
+"events": {},
+"children": []
+},
+"txtDuration": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 169,
+"y": 132
+},
+"Name": "txtDuration",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"txtDurationBetween": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 169,
+"y": 162
+},
+"Name": "txtDurationBetween",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 5
+},
+"events": {},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"txtEffectCount": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 169,
+"y": 42
+},
+"Name": "txtEffectCount",
+"Size": {
+"t": "size",
+"x": 117,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"lblPossibleEffects": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 89,
+"y": 10
+},
+"Name": "lblPossibleEffects",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "n effects possible."
+},
+"events": {
+"DoubleClick": "lblPossibleEffects_DoubleClick"
+},
+"children": []
+},
+"listBoxMarkCollections": {
+"type": "ListView",
+"props": {
+"CheckBoxes": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 118
+},
+"Name": "listBoxMarkCollections",
+"Size": {
+"t": "size",
+"x": 268,
+"y": 111
+},
+"TabIndex": 10,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "List"
+},
+"Visible": false
+},
+"events": {
+"ItemChecked": "listBoxMarkCollections_ItemChecked"
+},
+"children": []
+},
+"checkBoxAlignToBeatMarks": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 3
+},
+"Name": "checkBoxAlignToBeatMarks",
+"Size": {
+"t": "size",
+"x": 129,
+"y": 19
+},
+"TabIndex": 7,
+"Text": "Align to beat marks",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxAlignToBeatMarks_CheckStateChanged"
+},
+"children": []
+},
+"checkBoxFillDuration": {
+"type": "CheckBox",
+"props": {
+"AutoCheck": false,
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 57
+},
+"Name": "checkBoxFillDuration",
+"Size": {
+"t": "size",
+"x": 172,
+"y": 19
+},
+"TabIndex": 9,
+"Text": "Fill duration between marks",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxFillDuration_CheckStateChanged"
+},
+"children": []
+},
+"checkBoxSelectEffects": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 4
+},
+"Name": "checkBoxSelectEffects",
+"Size": {
+"t": "size",
+"x": 126,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Select / Edit effects",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnShowBeatMarkOptions": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 192
+},
+"Name": "btnShowBeatMarkOptions",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 27
+},
+"TabIndex": 21,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnShowBeatMarkOptions_Click"
+},
+"children": []
+},
+"lblShowBeatMarkOptions": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 52,
+"y": 197
+},
+"Name": "lblShowBeatMarkOptions",
+"Size": {
+"t": "size",
+"x": 192,
+"y": 15
+},
+"TabIndex": 22,
+"Text": "Show beat mark alignment options"
+},
+"events": {},
+"children": []
+},
+"btnHideBeatMarkOptions": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 192
+},
+"Name": "btnHideBeatMarkOptions",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 27
+},
+"TabIndex": 6,
+"UseVisualStyleBackColor": true,
+"Visible": false
+},
+"events": {
+"Click": "btnHideBeatMarkOptions_Click"
+},
+"children": []
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "Fixed3D"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "TopDown"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 321,
+"y": 557
+},
+"TabIndex": 25
+},
+"events": {},
+"children": [
+{
+"name": "panelMain"
+},
+{
+"name": "panelBeatAlignment"
+},
+{
+"name": "panelOKCancel"
+}
+]
+},
+"panelMain": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "panelMain",
+"Size": {
+"t": "size",
+"x": 303,
+"y": 222
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "lblEndingTime"
+},
+{
+"name": "txtEndTime"
+},
+{
+"name": "label1"
+},
+{
+"name": "label2"
+},
+{
+"name": "btnHideBeatMarkOptions"
+},
+{
+"name": "label3"
+},
+{
+"name": "lblShowBeatMarkOptions"
+},
+{
+"name": "label4"
+},
+{
+"name": "btnShowBeatMarkOptions"
+},
+{
+"name": "txtStartTime"
+},
+{
+"name": "txtDuration"
+},
+{
+"name": "txtDurationBetween"
+},
+{
+"name": "lblPossibleEffects"
+},
+{
+"name": "txtEffectCount"
+}
+]
+},
+"lblEndingTime": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 17,
+"y": 105
+},
+"Name": "lblEndingTime",
+"Size": {
+"t": "size",
+"x": 71,
+"y": 15
+},
+"TabIndex": 24,
+"Text": "Ending time"
+},
+"events": {},
+"children": []
+},
+"txtEndTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 169,
+"y": 102
+},
+"Name": "txtEndTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"panelBeatAlignment": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 231
+},
+"Name": "panelBeatAlignment",
+"Visible": false,
+"Size": {
+"t": "size",
+"x": 303,
+"y": 238
+},
+"TabIndex": 1
+},
+"events": {},
+"children": [
+{
+"name": "chkUseMarkStartEnd"
+},
+{
+"name": "checkBoxSkipEOBeat"
+},
+{
+"name": "checkBoxAlignToBeatMarks"
+},
+{
+"name": "checkBoxFillDuration"
+},
+{
+"name": "listBoxMarkCollections"
+}
+]
+},
+"chkUseMarkStartEnd": {
+"type": "CheckBox",
+"props": {
+"AutoCheck": false,
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 82
+},
+"Name": "chkUseMarkStartEnd",
+"Size": {
+"t": "size",
+"x": 155,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Align to mark start / end",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckStateChanged": "chkUseMarkStartEnd_CheckStateChanged"
+},
+"children": []
+},
+"checkBoxSkipEOBeat": {
+"type": "CheckBox",
+"props": {
+"AutoCheck": false,
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 30
+},
+"Name": "checkBoxSkipEOBeat",
+"Size": {
+"t": "size",
+"x": 136,
+"y": 19
+},
+"TabIndex": 8,
+"Text": "Skip every other beat",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxSkipEOBeat_CheckedChanged"
+},
+"children": []
+},
+"panelOKCancel": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 475
+},
+"Name": "panelOKCancel",
+"Size": {
+"t": "size",
+"x": 303,
+"y": 66
+},
+"TabIndex": 2
+},
+"events": {},
+"children": [
+{
+"name": "checkBoxSelectEffects"
+},
+{
+"name": "btnOK"
+},
+{
+"name": "btnCancel"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+321,
+557
+]
+}
+}
+}

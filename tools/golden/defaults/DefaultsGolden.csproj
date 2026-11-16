@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>disable</Nullable><UseAppHost>false</UseAppHost>
+    <OutputPath>$(GoldenOut)/defaults/bin/</OutputPath><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Core/Services/EffectDefaults/EffectDefaultsStore.cs" Link="EffectDefaultsStore.cs" />
+    <Compile Include="$(GoldenOut)/defaults/OriginalBinaryMethods.cs" Link="OriginalBinaryMethods.cs" />
+    <Content Include="$(GoldenOut)/bin/*.dll" CopyToOutputDirectory="PreserveNewest" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

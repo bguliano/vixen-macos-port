@@ -1,0 +1,751 @@
+{
+"class": "LipSyncMultiPicSelect",
+"source": "Vixen.Modules/App/LipSyncApp/LipSyncMultiPicSelect.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "acceptButton"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "cancelButton"
+},
+"Name": "LipSyncMultiPicSelect",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Text": "Image Mapper"
+},
+"events": {
+"Load": "LipSyncMultiPicSelect_Load"
+},
+"children": [
+{
+"name": "infoLabel"
+},
+{
+"name": "cancelButton"
+},
+{
+"name": "acceptButton"
+},
+{
+"name": "WQ_Label"
+},
+{
+"name": "U_Label"
+},
+{
+"name": "REST_Label"
+},
+{
+"name": "O_Label"
+},
+{
+"name": "MBP_Label"
+},
+{
+"name": "L_Label"
+},
+{
+"name": "FV_Label"
+},
+{
+"name": "ETC_Label"
+},
+{
+"name": "E_Label"
+},
+{
+"name": "AI_Label"
+},
+{
+"name": "wq_comboBox"
+},
+{
+"name": "u_comboBox"
+},
+{
+"name": "rest_comboBox"
+},
+{
+"name": "o_comboBox"
+},
+{
+"name": "mbp_comboBox"
+},
+{
+"name": "l_comboBox"
+},
+{
+"name": "fv_comboBox"
+},
+{
+"name": "etc_comboBox"
+},
+{
+"name": "e_comboBox"
+},
+{
+"name": "ai_comboBox"
+}
+],
+"objects": {
+"ai_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 64
+},
+"MaxDropDownItems": 99,
+"Name": "ai_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"e_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 91
+},
+"MaxDropDownItems": 99,
+"Name": "e_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"etc_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 118
+},
+"MaxDropDownItems": 99,
+"Name": "etc_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 2
+},
+"events": {},
+"children": []
+},
+"fv_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 145
+},
+"MaxDropDownItems": 99,
+"Name": "fv_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"l_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 172
+},
+"MaxDropDownItems": 99,
+"Name": "l_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"mbp_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 199
+},
+"MaxDropDownItems": 99,
+"Name": "mbp_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 5
+},
+"events": {},
+"children": []
+},
+"o_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 226
+},
+"MaxDropDownItems": 99,
+"Name": "o_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 6
+},
+"events": {},
+"children": []
+},
+"rest_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 253
+},
+"MaxDropDownItems": 99,
+"Name": "rest_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 7
+},
+"events": {},
+"children": []
+},
+"u_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 280
+},
+"MaxDropDownItems": 99,
+"Name": "u_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 8
+},
+"events": {},
+"children": []
+},
+"wq_comboBox": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 307
+},
+"MaxDropDownItems": 99,
+"Name": "wq_comboBox",
+"Size": {
+"t": "size",
+"x": 156,
+"y": 21
+},
+"TabIndex": 9
+},
+"events": {},
+"children": []
+},
+"AI_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 67
+},
+"Name": "AI_Label",
+"Size": {
+"t": "size",
+"x": 17,
+"y": 13
+},
+"TabIndex": 10,
+"Text": "AI"
+},
+"events": {},
+"children": []
+},
+"E_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 25,
+"y": 94
+},
+"Name": "E_Label",
+"Size": {
+"t": "size",
+"x": 14,
+"y": 13
+},
+"TabIndex": 11,
+"Text": "E"
+},
+"events": {},
+"children": []
+},
+"ETC_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 11,
+"y": 121
+},
+"Name": "ETC_Label",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 13
+},
+"TabIndex": 12,
+"Text": "ETC"
+},
+"events": {},
+"children": []
+},
+"FV_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 148
+},
+"Name": "FV_Label",
+"Size": {
+"t": "size",
+"x": 20,
+"y": 13
+},
+"TabIndex": 13,
+"Text": "FV"
+},
+"events": {},
+"children": []
+},
+"L_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 175
+},
+"Name": "L_Label",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 13
+},
+"TabIndex": 14,
+"Text": "L"
+},
+"events": {},
+"children": []
+},
+"MBP_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 202
+},
+"Name": "MBP_Label",
+"Size": {
+"t": "size",
+"x": 30,
+"y": 13
+},
+"TabIndex": 15,
+"Text": "MBP"
+},
+"events": {},
+"children": []
+},
+"O_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 229
+},
+"Name": "O_Label",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 13
+},
+"TabIndex": 16,
+"Text": "O"
+},
+"events": {},
+"children": []
+},
+"REST_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 256
+},
+"Name": "REST_Label",
+"Size": {
+"t": "size",
+"x": 36,
+"y": 13
+},
+"TabIndex": 17,
+"Text": "REST"
+},
+"events": {},
+"children": []
+},
+"U_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 283
+},
+"Name": "U_Label",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 13
+},
+"TabIndex": 18,
+"Text": "U"
+},
+"events": {},
+"children": []
+},
+"WQ_Label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 310
+},
+"Name": "WQ_Label",
+"Size": {
+"t": "size",
+"x": 26,
+"y": 13
+},
+"TabIndex": 19,
+"Text": "WQ"
+},
+"events": {},
+"children": []
+},
+"acceptButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 45,
+"y": 354
+},
+"Name": "acceptButton",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 20,
+"Text": "Accept",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "acceptButton_Click"
+},
+"children": []
+},
+"cancelButton": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 126,
+"y": 354
+},
+"Name": "cancelButton",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 21,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"infoLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 24
+},
+"Name": "infoLabel",
+"Size": {
+"t": "size",
+"x": 19,
+"y": 13
+},
+"TabIndex": 22,
+"Text": "----"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+245,
+401
+]
+}
+}
+}

@@ -1,0 +1,61 @@
+{
+"class": "SequencePackageExportFinishedStage",
+"source": "Vixen.Modules/App/TimedSequenceMapper/SequencePackageExport/SequencePackageExportFinishedStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "SequencePackageExportFinishedStage"
+},
+"events": {},
+"children": [
+{
+"name": "lblFinished"
+}
+],
+"objects": {
+"lblFinished": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 38
+},
+"Name": "lblFinished",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Package Export Complete"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+363,
+317
+]
+}
+}
+}

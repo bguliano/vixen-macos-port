@@ -1,0 +1,330 @@
+{
+"class": "MarkCollectionImportDialog",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/MarkCollectionImportDialog.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "MarkCollectionImportDialog",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Import Type Selection"
+},
+"events": {},
+"children": [
+{
+"name": "radioPangolinBeyond"
+},
+{
+"name": "radioTimingTrackBrowser"
+},
+{
+"name": "radioPapagayo"
+},
+{
+"name": "radioXTiming"
+},
+{
+"name": "radioVixen3Beats"
+},
+{
+"name": "btnOk"
+},
+{
+"name": "radioAudacityBeats"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "radioBeats"
+},
+{
+"name": "radioBars"
+}
+],
+"objects": {
+"radioVixen3Beats": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 93
+},
+"Name": "radioVixen3Beats",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 19
+},
+"TabIndex": 3,
+"Text": "Vixen 3",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioAudacityBeats": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 67
+},
+"Name": "radioAudacityBeats",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 19
+},
+"TabIndex": 2,
+"Text": "Audacity Beats",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioBeats": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 40
+},
+"Name": "radioBeats",
+"Size": {
+"t": "size",
+"x": 155,
+"y": 19
+},
+"TabIndex": 1,
+"Text": "Vamp Beat Tracker: Beats",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioBars": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 14
+},
+"Name": "radioBars",
+"Size": {
+"t": "size",
+"x": 149,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "Vamp Beat Tracker: Bars",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 105,
+"y": 231
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 231
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"radioXTiming": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 118
+},
+"Name": "radioXTiming",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 19
+},
+"TabIndex": 4,
+"Text": "xTiming",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioPapagayo": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 143
+},
+"Name": "radioPapagayo",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 19
+},
+"TabIndex": 5,
+"Text": "Papagayo Voice Tracks",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioTimingTrackBrowser": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 168
+},
+"Name": "radioTimingTrackBrowser",
+"Size": {
+"t": "size",
+"x": 169,
+"y": 19
+},
+"TabIndex": 6,
+"Text": "Singing Faces Lyric Browser",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioPangolinBeyond": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 193
+},
+"Name": "radioPangolinBeyond",
+"Size": {
+"t": "size",
+"x": 117,
+"y": 19
+},
+"TabIndex": 7,
+"Text": "Pangolin Beyond",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+207,
+270
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+150,
+309
+]
+}
+}
+}

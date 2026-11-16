@@ -1,0 +1,157 @@
+{
+"class": "ShowTypeEditor",
+"source": "Vixen.Modules/App/Shows/Editors/ShowTypeEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "ShowTypeEditor"
+},
+"events": {},
+"children": [
+{
+"name": "comboBoxShow"
+},
+{
+"name": "checkBoxStopCurrentShow"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 6
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 74,
+"y": 13
+},
+"TabIndex": 10,
+"Text": "Show to Start:"
+},
+"events": {},
+"children": []
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {},
+"events": {},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"checkBoxStopCurrentShow": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 80,
+"y": 28
+},
+"Name": "checkBoxStopCurrentShow",
+"Size": {
+"t": "size",
+"x": 115,
+"y": 17
+},
+"TabIndex": 16,
+"Text": "Stop Current Show",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxStopCurrentShow_CheckedChanged"
+},
+"children": []
+},
+"comboBoxShow": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 74,
+"y": 3
+},
+"Name": "comboBoxShow",
+"Size": {
+"t": "size",
+"x": 213,
+"y": 21
+},
+"TabIndex": 17
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "comboBoxShow_SelectedIndexChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+290,
+150
+]
+}
+}
+}

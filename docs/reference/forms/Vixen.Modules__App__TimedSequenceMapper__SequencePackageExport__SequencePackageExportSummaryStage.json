@@ -1,0 +1,451 @@
+{
+"class": "SequencePackageExportSummaryStage",
+"source": "Vixen.Modules/App/TimedSequenceMapper/SequencePackageExport/SequencePackageExportSummaryStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "SequencePackageExportSummaryStage"
+},
+"events": {},
+"children": [
+{
+"name": "mainLayoutPanel"
+}
+],
+"objects": {
+"taskProgress": {
+"type": "ProgressBar",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 287
+},
+"Name": "taskProgress",
+"Size": {
+"t": "size",
+"x": 607,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblTaskProgress": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 269
+},
+"Name": "lblTaskProgress",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Ready"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblOverallProgress": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 313
+},
+"Name": "lblOverallProgress",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Ready"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"mainLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"ColumnCount": 2,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "mainLayoutPanel",
+"RowCount": 12,
+"Size": {
+"t": "size",
+"x": 613,
+"y": 356
+},
+"TabIndex": 6
+},
+"events": {},
+"children": [
+{
+"name": "lblOutputFolder",
+"col": 1,
+"row": 3
+},
+{
+"name": "lblSummary",
+"col": 0,
+"row": 0
+},
+{
+"name": "lblSequences",
+"col": 0,
+"row": 2
+},
+{
+"name": "lblTaskProgress",
+"col": 0,
+"row": 7
+},
+{
+"name": "taskProgress",
+"col": 0,
+"row": 8
+},
+{
+"name": "lblDestination",
+"col": 0,
+"row": 3
+},
+{
+"name": "lblAudio",
+"col": 0,
+"row": 4
+},
+{
+"name": "lblOverallProgress",
+"col": 0,
+"row": 9
+},
+{
+"name": "lblSequenceCount",
+"col": 1,
+"row": 2
+},
+{
+"name": "overallProgress",
+"col": 0,
+"row": 11
+},
+{
+"name": "lblAudioOption",
+"col": 1,
+"row": 4
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+]
+},
+"lblOutputFolder": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 76,
+"y": 50
+},
+"Name": "lblOutputFolder",
+"Size": {
+"t": "size",
+"x": 184,
+"y": 15
+},
+"TabIndex": 11,
+"Text": "c:\\My Documents\\Vixen 3\\Export"
+},
+"events": {},
+"children": []
+},
+"lblSummary": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "lblSummary",
+"Size": {
+"t": "size",
+"x": 196,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Export Sequence Package Summary"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblSequences": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 35
+},
+"Name": "lblSequences",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Sequences"
+},
+"events": {},
+"children": []
+},
+"lblDestination": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 50
+},
+"Name": "lblDestination",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Destination"
+},
+"events": {},
+"children": []
+},
+"lblAudio": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 65
+},
+"Name": "lblAudio",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Audio"
+},
+"events": {},
+"children": []
+},
+"lblSequenceCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 76,
+"y": 35
+},
+"Name": "lblSequenceCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "5"
+},
+"events": {},
+"children": []
+},
+"overallProgress": {
+"type": "ProgressBar",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 331
+},
+"Name": "overallProgress",
+"Size": {
+"t": "size",
+"x": 607,
+"y": 22
+},
+"TabIndex": 2
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblAudioOption": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 76,
+"y": 65
+},
+"Name": "lblAudioOption",
+"Size": {
+"t": "size",
+"x": 161,
+"y": 15
+},
+"TabIndex": 12,
+"Text": "Renamed to match sequence"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Padding": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+0,
+0,
+0,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+616,
+377
+]
+}
+}
+}

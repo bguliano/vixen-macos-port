@@ -1,0 +1,179 @@
+{
+"class": "TextDialog",
+"source": "Vixen.Common/Controls/TextDialog.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"KeyPreview": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "TextDialog",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+}
+},
+"events": {
+"KeyDown": "TextDialog_KeyDown"
+},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "textBoxResponse"
+},
+{
+"name": "labelPrompt"
+}
+],
+"objects": {
+"labelPrompt": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "labelPrompt",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "[]"
+},
+"events": {},
+"children": []
+},
+"textBoxResponse": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 15,
+"y": 38
+},
+"Name": "textBoxResponse",
+"Size": {
+"t": "size",
+"x": 372,
+"y": 20
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 221,
+"y": 71
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 25
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 307,
+"y": 71
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 25
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+399,
+108
+]
+}
+}
+}

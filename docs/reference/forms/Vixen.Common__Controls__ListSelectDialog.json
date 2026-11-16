@@ -1,0 +1,238 @@
+{
+"class": "ListSelectDialog",
+"source": "Vixen.Common/Controls/ListSelectDialog.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ListSelectDialog",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Select Item"
+},
+"events": {
+"Load": "ListSelectDialog_Load",
+"KeyPress": "ListSelectDialog_KeyPress"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 142,
+"y": 3
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 22,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 241,
+"y": 3
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 23,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"listBoxItems": {
+"type": "ListBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FormattingEnabled": true,
+"ItemHeight": 15,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "listBoxItems",
+"Size": {
+"t": "size",
+"x": 337,
+"y": 141
+},
+"TabIndex": 24
+},
+"events": {
+"SelectedIndexChanged": "listBoxItems_SelectedIndexChanged",
+"MouseDoubleClick": "listBoxItems_MouseDoubleClick"
+},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 343,
+"y": 196
+},
+"TabIndex": 25
+},
+"events": {},
+"children": [
+{
+"name": "listBoxItems",
+"col": 0,
+"row": 0
+},
+{
+"name": "flowLayoutPanel1",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 75.0
+},
+{
+"type": "Percent",
+"size": 25.0
+}
+]
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "RightToLeft"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 150
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 337,
+"y": 43
+},
+"TabIndex": 25
+},
+"events": {},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+343,
+196
+]
+}
+}
+}

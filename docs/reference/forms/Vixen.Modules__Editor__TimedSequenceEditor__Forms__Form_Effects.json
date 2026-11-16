@@ -1,0 +1,207 @@
+{
+"class": "Form_Effects",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/Form_Effects.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"ControlBox": false,
+"Name": "Form_Effects",
+"Text": "Effects"
+},
+"events": {
+"Load": "Form_Effects_Load"
+},
+"children": [
+{
+"name": "treeEffects"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"treeNode1": {
+"type": "TreeNode",
+"props": {
+"ImageKey": "rightarrow.png",
+"Name": "treeBasic",
+"SelectedImageIndex": 1,
+"Text": "Basic Lighting"
+},
+"events": {},
+"children": [],
+"ctor": [
+"Basic Lighting"
+]
+},
+"treeNode2": {
+"type": "TreeNode",
+"props": {
+"ImageKey": "rightarrow.png",
+"Name": "treeAdvanced",
+"SelectedImageIndex": 1,
+"Text": "Pixel Lighting"
+},
+"events": {},
+"children": [],
+"ctor": [
+"Pixel Lighting"
+]
+},
+"treeNode3": {
+"type": "TreeNode",
+"props": {
+"ImageKey": "rightarrow.png",
+"Name": "treeDevice",
+"SelectedImageIndex": 1,
+"StateImageKey": "(none)",
+"Text": "Device Action"
+},
+"events": {},
+"children": [],
+"ctor": [
+"Device Action"
+]
+},
+"treeNode4": {
+"type": "TreeNode",
+"props": {
+"Name": "intelligentFixture",
+"Text": "Intelligent Fixture"
+},
+"events": {},
+"children": [],
+"ctor": [
+"Intelligent Fixture"
+]
+},
+"treeEffects": {
+"type": "TreeView",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FullRowSelect": true,
+"ImageIndex": 0,
+"ImageList": {
+"t": "enum",
+"type": "this",
+"v": "effectTreeImages"
+},
+"ItemHeight": 22,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "treeEffects",
+"SelectedImageIndex": 0,
+"ShowLines": false,
+"ShowPlusMinus": false,
+"ShowRootLines": false,
+"Size": {
+"t": "size",
+"x": 209,
+"y": 442
+},
+"TabIndex": 0
+},
+"events": {
+"AfterCollapse": "treeEffects_AfterCollapse",
+"AfterExpand": "treeEffects_AfterExpand",
+"AfterSelect": "treeEffects_AfterSelect",
+"MouseClick": "treeEffects_MouseClick",
+"MouseDown": "treeEffects_MouseDown",
+"MouseMove": "treeEffects_MouseMove"
+},
+"children": [],
+"Nodes": [
+{
+"ref": "treeNode1"
+},
+{
+"ref": "treeNode2"
+},
+{
+"ref": "treeNode3"
+},
+{
+"ref": "treeNode4"
+}
+]
+},
+"effectTreeImages": {
+"type": "ImageList",
+"props": {
+"ImageStream": "\n        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w\n        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0\n        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABI\n        CwAAAk1TRnQBSQFMAgEBAwEAARgBAAEYAQABEgEAARIBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFI\n        AwABEgMAAQEBAAEgBQABQAEUEgADPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af+QAAM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/5AAAz8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/kAADPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/A7IB/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af+QAAM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wOZAf8D3QH/A5kB/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/5AAAz8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/A5kB/wPd\n        Af8D3QH/A7IB/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/kAADPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DmQH/A90B/wPdAf8D3QH/A5kB/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wPXAf8D3QH/A5kB/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af+QAAM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wOZAf8D3QH/A90B/wPd\n        Af8D3QH/A5kB/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DzAH/A90B/wPdAf8D3QH/A5kB/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/5AAAz8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/A5kB/wPdAf8D3QH/A90B/wPdAf8D3QH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A7IB/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/kAADPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DmQH/A90B/wPdAf8D3QH/A90B/wPX\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wPMAf8D3QH/A90B/wPd\n        Af8D3QH/A90B/wPdAf8D3QH/A5kB/wM/Af8DPwH/Az8B/wM/Af+QAAM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wOZAf8D3QH/A90B/wPdAf8DzAH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8D1wH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A7IB/wM/Af8DPwH/\n        Az8B/5AAAz8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/A4YB/wPdAf8D3QH/A90B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DmQH/A5kB/wOZAf8DmQH/A5kB/wOZ\n        Af8DmQH/A5YB/wOZAf8DPwH/Az8B/wM/Af8DPwH/kAADPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DmQH/\n        A90B/wPMAf8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af+QAAM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8D1wH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/5AAAz8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/kAADPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af+QAAM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/\n        Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/5AAAz8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/Af8DPwH/Az8B/wM/\n        Af8DPwH/kAABQgFNAT4HAAE+AwABKAMAAUgDAAESAwABAQEAAQEFAAHYFwAD/wUAAQ8B/wH8CQABDwH/\n        AfwJAAEPAf8B/AkAAQ8B/wH8CQABDwH/AfwJAAEPAf8B/AkAAQ8B/wH8CQABDwH/AfwJAAEPAf8B/AkA\n        AQ8B/wH8CQABDwH/AfwJAAEPAf8B/AkAAQ8B/wH8CQABDwH/AfwJAAEPAf8B/AkAAQ8B/wH8CQABDwH/\n        AfwJAAEPAf8B/AUACw==\n",
+"TransparentColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+209,
+442
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+8.25,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+}
+}
+}

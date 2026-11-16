@@ -1,0 +1,819 @@
+{
+"class": "ExportDialog",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/ExportDialog.Designer.cs",
+"props": {
+"controllerColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"channelsColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"startColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"endColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonStart"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnUserCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ExportDialog",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Export Sequence"
+},
+"events": {
+"FormClosed": "ExportDialog_FormClosed",
+"Load": "ExportForm_Load"
+},
+"children": [
+{
+"name": "chkCompress"
+},
+{
+"name": "tableLayoutPanel1"
+},
+{
+"name": "btnUserCancel"
+},
+{
+"name": "textBox1"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "buttonStop"
+},
+{
+"name": "statusStrip1"
+},
+{
+"name": "groupBox1"
+},
+{
+"name": "buttonStart"
+}
+],
+"objects": {
+"listViewItem1": {
+"type": "ListViewItem",
+"props": {
+"StateImageIndex": 0
+},
+"events": {},
+"children": [],
+"ctor": [
+"Test"
+]
+},
+"buttonStart": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 490
+},
+"Name": "buttonStart",
+"Size": {
+"t": "size",
+"x": 104,
+"y": 27
+},
+"TabIndex": 8,
+"Text": "Start",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonStart_Click"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 28
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 15
+},
+"TabIndex": 9,
+"Text": "Format:"
+},
+"events": {},
+"children": []
+},
+"outputFormatComboBox": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 73,
+"y": 23
+},
+"Name": "outputFormatComboBox",
+"Size": {
+"t": "size",
+"x": 244,
+"y": 24
+},
+"TabIndex": 10
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "outputFormatComboBox_SelectedIndexChanged"
+},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 323,
+"y": 28
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 74,
+"y": 15
+},
+"TabIndex": 11,
+"Text": "Timing (ms):"
+},
+"events": {},
+"children": []
+},
+"resolutionComboBox": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 404,
+"y": 23
+},
+"Name": "resolutionComboBox",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 24
+},
+"TabIndex": 12
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "resolutionComboBox_SelectedIndexChanged"
+},
+"children": [],
+"Items": [
+"25",
+"50",
+"100"
+]
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 488,
+"y": 70
+},
+"TabIndex": 13,
+"TabStop": false,
+"Text": "Settings"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "resolutionComboBox"
+},
+{
+"name": "label4"
+},
+{
+"name": "outputFormatComboBox"
+},
+{
+"name": "label3"
+}
+]
+},
+"statusStrip1": {
+"type": "StatusStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 520
+},
+"Name": "statusStrip1",
+"Padding": {
+"t": "padding",
+"l": 1,
+"t_": 0,
+"r": 16,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 516,
+"y": 24
+},
+"SizingGrip": false,
+"TabIndex": 14,
+"Text": "statusStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "progressLabel"
+},
+{
+"ref": "exportProgressBar"
+},
+{
+"ref": "currentTimeLabel"
+}
+]
+},
+"progressLabel": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "progressLabel",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 19
+}
+},
+"events": {},
+"children": []
+},
+"exportProgressBar": {
+"type": "ToolStripProgressBar",
+"props": {
+"Name": "exportProgressBar",
+"Size": {
+"t": "size",
+"x": 117,
+"y": 18
+}
+},
+"events": {},
+"children": []
+},
+"currentTimeLabel": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "currentTimeLabel",
+"Size": {
+"t": "size",
+"x": 55,
+"y": 19
+},
+"Text": "00:00.000"
+},
+"events": {},
+"children": []
+},
+"buttonStop": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 129,
+"y": 490
+},
+"Name": "buttonStop",
+"Size": {
+"t": "size",
+"x": 104,
+"y": 27
+},
+"TabIndex": 15,
+"Text": "Stop",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonCancel_Click",
+"MouseEnter": "stopButton_MouseEnter"
+},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 88
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 488,
+"y": 281
+},
+"TabIndex": 16,
+"TabStop": false,
+"Text": "Network"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "networkListView"
+}
+]
+},
+"networkListView": {
+"type": "ListViewEx",
+"props": {
+"AllowDrop": true,
+"AllowRowReorder": true,
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"CheckBoxes": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "Nonclickable"
+},
+"HideSelection": false,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 22
+},
+"MultiSelect": false,
+"Name": "networkListView",
+"OwnerDraw": true,
+"Size": {
+"t": "size",
+"x": 473,
+"y": 254
+},
+"TabIndex": 1,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"ColumnWidthChanged": "networkListView_ColumnWidthChanged"
+},
+"children": [],
+"Columns": [
+{
+"ref": "controllerColumn"
+},
+{
+"ref": "channelsColumn"
+},
+{
+"ref": "startColumn"
+},
+{
+"ref": "endColumn"
+}
+],
+"Items": [
+{
+"ref": "listViewItem1"
+}
+]
+},
+"backgroundWorker1": {
+"type": "BackgroundWorker",
+"props": {
+"WorkerReportsProgress": true,
+"WorkerSupportsCancellation": true
+},
+"events": {},
+"children": []
+},
+"textBox1": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 370
+},
+"Multiline": true,
+"Name": "textBox1",
+"Size": {
+"t": "size",
+"x": 488,
+"y": 36
+},
+"TabIndex": 17,
+"Text": {
+"t": "raw",
+"v": "\"You must have all of your required display elements to controller outputs fully p\" + \"atched in the Display Setup for the export to produce correct results.\""
+}
+},
+"events": {},
+"children": []
+},
+"btnUserCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 375,
+"y": 490
+},
+"Name": "btnUserCancel",
+"Size": {
+"t": "size",
+"x": 104,
+"y": 27
+},
+"TabIndex": 18,
+"Text": "Close",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"chkGenerateControllerInfo": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 6
+},
+"Name": "chkGenerateControllerInfo",
+"Size": {
+"t": "size",
+"x": 150,
+"y": 19
+},
+"TabIndex": 19,
+"Text": "Generate Controller File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkGenerateControllerInfo_CheckedChanged"
+},
+"children": []
+},
+"radio1x": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "radio1x",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 19
+},
+"TabIndex": 21,
+"Text": "FPP 1.x",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radio2x": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 71,
+"y": 3
+},
+"Name": "radio2x",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 19
+},
+"TabIndex": 22,
+"TabStop": true,
+"Text": "FPP 2.x",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radio2x_CheckedChanged"
+},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 412
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 481,
+"y": 32
+},
+"TabIndex": 23
+},
+"events": {},
+"children": [
+{
+"name": "chkGenerateControllerInfo",
+"col": 0,
+"row": 0
+},
+{
+"name": "panel1",
+"col": 1,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 159,
+"y": 3
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 314,
+"y": 26
+},
+"TabIndex": 20
+},
+"events": {},
+"children": [
+{
+"name": "radio1x"
+},
+{
+"name": "radio2x"
+}
+]
+},
+"chkCompress": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 450
+},
+"Name": "chkCompress",
+"Size": {
+"t": "size",
+"x": 134,
+"y": 19
+},
+"TabIndex": 24,
+"Text": "Enable Compression",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkCompress_CheckedChanged"
+},
+"children": []
+},
+"controllerColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Controller",
+"Width": 176
+},
+"events": {},
+"children": []
+},
+"channelsColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Channels",
+"Width": 76
+},
+"events": {},
+"children": []
+},
+"startColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Start"
+},
+"events": {},
+"children": []
+},
+"endColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "End",
+"Width": 161
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+516,
+544
+]
+}
+}
+}

@@ -1,0 +1,311 @@
+{
+"class": "LipSyncMapSelector",
+"source": "Vixen.Modules/App/LipSyncApp/LipSyncMapSelector.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"DoubleBuffered": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"KeyPreview": true,
+"Name": "LipSyncMapSelector",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Image Maps"
+},
+"events": {
+"FormClosing": "LipSyncMapSelector_FormClosing",
+"Load": "LipSyncMapSelector_Load",
+"KeyDown": "LipSyncMapSelector_KeyDown",
+"Resize": "LipSyncMapSelector_Resize"
+},
+"children": [
+{
+"name": "mappingsListView"
+},
+{
+"name": "buttonCloneMap"
+},
+{
+"name": "buttonNewMap"
+},
+{
+"name": "buttonDeleteMap"
+},
+{
+"name": "buttonEditMap"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 357,
+"y": 315
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"buttonEditMap": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 380,
+"y": 45
+},
+"Name": "buttonEditMap",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 27
+},
+"TabIndex": 7,
+"Text": "Edit",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonEditMap_Click"
+},
+"children": []
+},
+"buttonDeleteMap": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 380,
+"y": 78
+},
+"Name": "buttonDeleteMap",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 27
+},
+"TabIndex": 8,
+"Text": "Remove",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDeleteMapping_Click"
+},
+"children": []
+},
+"buttonNewMap": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 380,
+"y": 12
+},
+"Name": "buttonNewMap",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 27
+},
+"TabIndex": 9,
+"Text": "New",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonNewMap_Click"
+},
+"children": []
+},
+"buttonCloneMap": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 380,
+"y": 111
+},
+"Name": "buttonCloneMap",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 27
+},
+"TabIndex": 10,
+"Text": "Clone",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonCloneMap_Click"
+},
+"children": []
+},
+"mappingsListView": {
+"type": "ListView",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom",
+"Left",
+"Right"
+]
+},
+"FullRowSelect": true,
+"LabelEdit": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 12
+},
+"MaximumSize": {
+"t": "size",
+"x": 524,
+"y": 377
+},
+"Name": "mappingsListView",
+"Size": {
+"t": "size",
+"x": 348,
+"y": 273
+},
+"TabIndex": 12,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"AfterLabelEdit": "mappingsListView_AfterLabelEdit",
+"BeforeLabelEdit": "mappingsListView_BeforeLabelEdit",
+"SelectedIndexChanged": "mappingsListView_SelectedIndexChanged",
+"DoubleClick": "mappingsListView_DoubleClick",
+"KeyDown": "mappingsListView_KeyDown"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+462,
+356
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+640,
+480
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+375,
+300
+]
+}
+}
+}

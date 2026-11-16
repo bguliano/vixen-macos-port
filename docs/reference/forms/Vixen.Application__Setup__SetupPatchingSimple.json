@@ -1,0 +1,1926 @@
+{
+"class": "SetupPatchingSimple",
+"source": "Vixen.Application/Setup/SetupPatchingSimple.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoScroll": true,
+"AutoSize": true,
+"DoubleBuffered": true,
+"Name": "SetupPatchingSimple"
+},
+"events": {
+"Load": "SetupPatchingSimple_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanelContainer"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"groupBoxElements": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBoxElements",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 258,
+"y": 301
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Selected Elements"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "tableLayoutPanel4"
+}
+]
+},
+"tableLayoutPanel4": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 19
+},
+"Name": "tableLayoutPanel4",
+"RowCount": 9,
+"Size": {
+"t": "size",
+"x": 250,
+"y": 279
+},
+"TabIndex": 24
+},
+"events": {},
+"children": [
+{
+"name": "labelFilterCount",
+"col": 1,
+"row": 7
+},
+{
+"name": "label5",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonUnpatchElements",
+"col": 0,
+"row": 8
+},
+{
+"name": "labelElementCount",
+"col": 1,
+"row": 6
+},
+{
+"name": "labelPatchPointCount",
+"col": 1,
+"row": 0
+},
+{
+"name": "labelGroupCount",
+"col": 1,
+"row": 5
+},
+{
+"name": "label3",
+"col": 0,
+"row": 6
+},
+{
+"name": "label6",
+"col": 0,
+"row": 1
+},
+{
+"name": "labelItemCount",
+"col": 1,
+"row": 4
+},
+{
+"name": "labelConnectedPatchPointCount",
+"col": 1,
+"row": 1
+},
+{
+"name": "label2",
+"col": 0,
+"row": 5
+},
+{
+"name": "label7",
+"col": 0,
+"row": 2
+},
+{
+"name": "labelUnconnectedPatchPointCount",
+"col": 1,
+"row": 2
+},
+{
+"name": "label1",
+"col": 0,
+"row": 4
+},
+{
+"name": "label4",
+"col": 0,
+"row": 7
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"labelFilterCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 162
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelFilterCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 4
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 104,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Total Patch Points:",
+"toolTipText": "The total number of Patch Points connected to the selected elements.  Patch Points are the outputs from any element or filter, but before it gets to the controllers."
+},
+"events": {},
+"children": []
+},
+"buttonUnpatchElements": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 68,
+"y": 217
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 8,
+"r": 4,
+"b": 8
+},
+"Name": "buttonUnpatchElements",
+"Size": {
+"t": "size",
+"x": 113,
+"y": 25
+},
+"TabIndex": 22,
+"Text": "Unpatch Elements",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonUnpatchElements_Click"
+},
+"children": [],
+"layoutColumnSpan": 2
+},
+"labelElementCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 139
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelElementCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 20,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"labelPatchPointCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 4
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelPatchPointCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 11,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"labelGroupCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 116
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelGroupCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 19,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 139
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 58,
+"y": 15
+},
+"TabIndex": 16,
+"Text": "Elements:",
+"toolTipText": "The number of elements found in (or descending from) the selected elements."
+},
+"events": {},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 27
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Connected:",
+"toolTipText": "The number of Patch Points connected to the selected elements that are being patched to controller outputs."
+},
+"events": {},
+"children": []
+},
+"labelItemCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 93
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelItemCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 18,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"labelConnectedPatchPointCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 27
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelConnectedPatchPointCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 12,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 116
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "Groups:",
+"toolTipText": "The number of groups found from the selected elements."
+},
+"events": {},
+"children": []
+},
+"label7": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 50
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label7",
+"Size": {
+"t": "size",
+"x": 81,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Unconnected:",
+"toolTipText": "The number of Patch Points connected to the selected elements that have nothing else connected."
+},
+"events": {},
+"children": []
+},
+"labelUnconnectedPatchPointCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 116,
+"y": 50
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelUnconnectedPatchPointCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 93
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 14,
+"Text": "Items:",
+"toolTipText": "The number of items selected in the element view."
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 162
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 15
+},
+"TabIndex": 17,
+"Text": "Filters:",
+"toolTipText": "The number of filters found in the patching connections from the selected elements."
+},
+"events": {},
+"children": []
+},
+"checkBoxReverseElementOrder": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 75
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "checkBoxReverseElementOrder",
+"Size": {
+"t": "size",
+"x": 145,
+"y": 19
+},
+"TabIndex": 23,
+"Text": "Reverse Element Order",
+"toolTipText": "The order in which Elements will be patched to controller outputs. This does not effect the order in which color channels are patched to controller outputs.",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxReverseElementOrder_CheckedChanged"
+},
+"children": []
+},
+"groupBoxControllers": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 270,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBoxControllers",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 259,
+"y": 301
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "Selected Controllers"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "selectedControllersLayout"
+}
+]
+},
+"selectedControllersLayout": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 19
+},
+"Name": "selectedControllersLayout",
+"RowCount": 9,
+"Size": {
+"t": "size",
+"x": 251,
+"y": 279
+},
+"TabIndex": 35
+},
+"events": {},
+"children": [
+{
+"name": "labelLastOutput",
+"col": 1,
+"row": 7
+},
+{
+"name": "buttonUnpatchControllers",
+"col": 0,
+"row": 8
+},
+{
+"name": "label20",
+"col": 0,
+"row": 0
+},
+{
+"name": "label9",
+"col": 0,
+"row": 7
+},
+{
+"name": "labelFirstOutput",
+"col": 1,
+"row": 6
+},
+{
+"name": "labelOutputCount",
+"col": 1,
+"row": 0
+},
+{
+"name": "label16",
+"col": 0,
+"row": 1
+},
+{
+"name": "label8",
+"col": 0,
+"row": 6
+},
+{
+"name": "labelPatchedOutputCount",
+"col": 1,
+"row": 1
+},
+{
+"name": "labelControllerCount",
+"col": 1,
+"row": 4
+},
+{
+"name": "labelUnpatchedOutputCount",
+"col": 1,
+"row": 2
+},
+{
+"name": "label21",
+"col": 0,
+"row": 4
+},
+{
+"name": "label15",
+"col": 0,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"labelLastOutput": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 83,
+"y": 189
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"MaximumSize": {
+"t": "size",
+"x": 160,
+"y": 0
+},
+"Name": "labelLastOutput",
+"Size": {
+"t": "size",
+"x": 160,
+"y": 45
+},
+"TabIndex": 33,
+"Text": "Controller XXXXXXXXXXXXXXXXXXXX #0"
+},
+"events": {},
+"children": []
+},
+"buttonUnpatchControllers": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 60,
+"y": 246
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 8,
+"r": 4,
+"b": 8
+},
+"Name": "buttonUnpatchControllers",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 25
+},
+"TabIndex": 28,
+"Text": "Unpatch Controllers",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonUnpatchControllers_Click"
+},
+"children": [],
+"layoutColumnSpan": 2
+},
+"label20": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 4
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label20",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "Outputs:",
+"toolTipText": "The total number of controller outputs selected."
+},
+"events": {},
+"children": []
+},
+"label9": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 189
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label9",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 15
+},
+"TabIndex": 31,
+"Text": "Last output:",
+"toolTipText": "The last output in the list of selected outputs (as will be used for patching)."
+},
+"events": {},
+"children": []
+},
+"labelFirstOutput": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 83,
+"y": 136
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"MaximumSize": {
+"t": "size",
+"x": 160,
+"y": 0
+},
+"Name": "labelFirstOutput",
+"Size": {
+"t": "size",
+"x": 160,
+"y": 45
+},
+"TabIndex": 32,
+"Text": "Controller XXXXXXXXXXXXXXXXXXXX #0"
+},
+"events": {},
+"children": []
+},
+"labelOutputCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 83,
+"y": 4
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelOutputCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 22,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"label16": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 27
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label16",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 15
+},
+"TabIndex": 19,
+"Text": "Patched:",
+"toolTipText": "The number of controller outputs selected that are already connected to something."
+},
+"events": {},
+"children": []
+},
+"label8": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 136
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label8",
+"Size": {
+"t": "size",
+"x": 71,
+"y": 15
+},
+"TabIndex": 30,
+"Text": "First output:",
+"toolTipText": "The first output in the list of selected outputs (as will be used for patching)."
+},
+"events": {},
+"children": []
+},
+"labelPatchedOutputCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 83,
+"y": 27
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelPatchedOutputCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 26,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"labelControllerCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 83,
+"y": 93
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelControllerCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"labelUnpatchedOutputCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 83,
+"y": 50
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelUnpatchedOutputCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 27,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"label21": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 93
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label21",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 15
+},
+"TabIndex": 14,
+"Text": "Controllers:",
+"toolTipText": "The number of controllers (or part thereof) selected."
+},
+"events": {},
+"children": []
+},
+"label15": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 50
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "label15",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 15
+},
+"TabIndex": 20,
+"Text": "Unpatched:",
+"toolTipText": "The number of controller outputs selected that are not connected to anything."
+},
+"events": {},
+"children": []
+},
+"checkBoxReverseOutputOrder": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 75
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "checkBoxReverseOutputOrder",
+"Size": {
+"t": "size",
+"x": 201,
+"y": 19
+},
+"TabIndex": 29,
+"Text": "Reverse order of selected outputs",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxReverseOutputOrder_CheckedChanged"
+},
+"children": []
+},
+"groupBoxPatching": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 310
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBoxPatching",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 525,
+"y": 223
+},
+"TabIndex": 2,
+"TabStop": false,
+"Text": "Patching Options"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "tableLayoutPanelPatchingOptions"
+}
+],
+"layoutColumnSpan": 2
+},
+"tableLayoutPanelPatchingOptions": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 19
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "tableLayoutPanelPatchingOptions",
+"RowCount": 5,
+"Size": {
+"t": "size",
+"x": 517,
+"y": 201
+},
+"TabIndex": 5
+},
+"events": {},
+"children": [
+{
+"name": "groupBoxElementOptions",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonDoPatching",
+"col": 0,
+"row": 3
+},
+{
+"name": "labelPatchWarning",
+"col": 0,
+"row": 2
+},
+{
+"name": "groupBoxOutputOptions",
+"col": 1,
+"row": 0
+},
+{
+"name": "labelPatchSummary",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"groupBoxElementOptions": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBoxElementOptions",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 250,
+"y": 116
+},
+"TabIndex": 1,
+"TabStop": false
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "checkBoxReverseElementOrder"
+},
+{
+"name": "radioButtonAllAvailablePatchPoints"
+},
+{
+"name": "radioButtonUnconnectedPatchPointsOnly"
+}
+]
+},
+"radioButtonAllAvailablePatchPoints": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "radioButtonAllAvailablePatchPoints",
+"Size": {
+"t": "size",
+"x": 177,
+"y": 19
+},
+"TabIndex": 1,
+"Text": "Use all available patch points",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonPatching_CheckedChanged"
+},
+"children": []
+},
+"radioButtonUnconnectedPatchPointsOnly": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 22
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "radioButtonUnconnectedPatchPointsOnly",
+"Size": {
+"t": "size",
+"x": 212,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "Use unconnected patch points only",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonPatching_CheckedChanged"
+},
+"children": []
+},
+"buttonDoPatching": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 175,
+"y": 172
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "buttonDoPatching",
+"Size": {
+"t": "size",
+"x": 167,
+"y": 25
+},
+"TabIndex": 0,
+"Text": "Patch Elements",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDoPatching_Click"
+},
+"children": [],
+"layoutColumnSpan": 2
+},
+"labelPatchWarning": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 104,
+"y": 149
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelPatchWarning",
+"Size": {
+"t": "size",
+"x": 309,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "WARNING: too many elements, some will not be patched"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"groupBoxOutputOptions": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 262,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "groupBoxOutputOptions",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Size": {
+"t": "size",
+"x": 251,
+"y": 116
+},
+"TabIndex": 2,
+"TabStop": false
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "radioButtonAllOutputs"
+},
+{
+"name": "radioButtonUnpatchedOutputsOnly"
+},
+{
+"name": "checkBoxReverseOutputOrder"
+}
+]
+},
+"radioButtonAllOutputs": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "radioButtonAllOutputs",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 19
+},
+"TabIndex": 3,
+"Text": "Use all selected controller outputs",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonPatching_CheckedChanged"
+},
+"children": []
+},
+"radioButtonUnpatchedOutputsOnly": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 22
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "radioButtonUnpatchedOutputsOnly",
+"Size": {
+"t": "size",
+"x": 175,
+"y": 19
+},
+"TabIndex": 2,
+"TabStop": true,
+"Text": "Only use unpatched outputs",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonPatching_CheckedChanged"
+},
+"children": []
+},
+"labelPatchSummary": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 92,
+"y": 126
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "labelPatchSummary",
+"Size": {
+"t": "size",
+"x": 333,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "This will patch 9999 element points to 9999 controller outputs."
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {
+"AutomaticDelay": 200,
+"AutoPopDelay": 5000,
+"InitialDelay": 200,
+"ReshowDelay": 40
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"tableLayoutPanelContainer": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanelContainer",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 533,
+"y": 536
+},
+"TabIndex": 34
+},
+"events": {},
+"children": [
+{
+"name": "groupBoxElements",
+"col": 0,
+"row": 0
+},
+{
+"name": "groupBoxControllers",
+"col": 1,
+"row": 0
+},
+{
+"name": "groupBoxPatching",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+533,
+536
+]
+}
+}
+}

@@ -1,0 +1,1 @@
+[{"id": "rotated-outside", "strings": 21, "pixels": 21, "ms": 100, "settings": {"PolygonType": "FreeForm", "DisplayElementWidth": 20, "DisplayElementHeight": 20}, "shapes": [{"kind": "Ellipse", "points": [[-1, 3], [9, 3], [9, 7], [-1, 7]], "center": [4, 5], "w": 10, "h": 4, "angle": 30.0, "fill": "Solid", "color": [[0.0, [0, 0, 255]]]}]}]

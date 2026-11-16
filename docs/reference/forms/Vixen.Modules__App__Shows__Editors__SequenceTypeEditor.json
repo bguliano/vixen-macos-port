@@ -1,0 +1,188 @@
+{
+"class": "SequenceTypeEditor",
+"source": "Vixen.Modules/App/Shows/Editors/SequenceTypeEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"Name": "SequenceTypeEditor"
+},
+"events": {
+"Load": "SequenceTypeEditor_Load"
+},
+"children": [
+{
+"name": "labelName"
+},
+{
+"name": "labelSequence"
+},
+{
+"name": "buttonSelectSequence"
+},
+{
+"name": "textBoxSequence"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 30
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 51,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Location:"
+},
+"events": {},
+"children": []
+},
+"textBoxSequence": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 50,
+"y": 27
+},
+"Multiline": true,
+"Name": "textBoxSequence",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 260,
+"y": 20
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"buttonSelectSequence": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 316,
+"y": 27
+},
+"Name": "buttonSelectSequence",
+"Size": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"TabIndex": 6,
+"Text": "S",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSelectSequence_Click"
+},
+"children": []
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {
+"FileName": "openFileDialog",
+"Multiselect": true
+},
+"events": {
+"FileOk": "OpenFileDialog_FileOk"
+},
+"children": []
+},
+"labelSequence": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 47,
+"y": 6
+},
+"Name": "labelSequence",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 13
+},
+"TabIndex": 9,
+"Text": "Sequence Name"
+},
+"events": {},
+"children": []
+},
+"labelName": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 6
+},
+"Name": "labelName",
+"Size": {
+"t": "size",
+"x": 38,
+"y": 13
+},
+"TabIndex": 10,
+"Text": "Name:"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+352,
+79
+]
+}
+}
+}

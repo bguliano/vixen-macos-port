@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <CaptureRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../..'))</CaptureRoot>
+    <BaseIntermediateOutputPath>$(CaptureRoot)/target/windows-pcm/obj/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+    <OutputPath>$(CaptureRoot)/target/windows-pcm/bin/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,347 @@
+{
+"class": "DDPSetup",
+"source": "Vixen.Modules/Controller/DDP/DDPSetup.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "DDPSetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "DDP Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "groupBox1"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonCancel"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 295,
+"y": 178
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 4
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 106,
+"y": 39
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+}
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 182,
+"y": 178
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 4
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 106,
+"y": 39
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 16,
+"y": 19
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 4
+},
+"Name": "groupBox1",
+"Padding": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 4
+},
+"Size": {
+"t": "size",
+"x": 385,
+"y": 130
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Configuration"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "radioButtonIPAddress"
+},
+{
+"name": "radioButtonHostName"
+},
+{
+"name": "label1"
+},
+{
+"name": "textBoxIPAddress"
+},
+{
+"name": "textBoxHostName"
+}
+]
+},
+"radioButtonIPAddress": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 24
+},
+"Name": "radioButtonIPAddress",
+"Size": {
+"t": "size",
+"x": 94,
+"y": 21
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "IP Address",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "Radio_CheckedChanged"
+},
+"children": []
+},
+"radioButtonHostName": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 140,
+"y": 24
+},
+"Name": "radioButtonHostName",
+"Size": {
+"t": "size",
+"x": 94,
+"y": 21
+},
+"TabIndex": 1,
+"Text": "Host Name",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "Radio_CheckedChanged"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 74
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 81,
+"y": 20
+},
+"TabIndex": 10,
+"Text": "IP Address:"
+},
+"events": {},
+"children": []
+},
+"textBoxIPAddress": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 138,
+"y": 69
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 4
+},
+"Name": "textBoxIPAddress",
+"Size": {
+"t": "size",
+"x": 160,
+"y": 27
+},
+"TabIndex": 2
+},
+"events": {},
+"children": []
+},
+"textBoxHostName": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 138,
+"y": 69
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 4
+},
+"Name": "textBoxHostName",
+"Size": {
+"t": "size",
+"x": 160,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "myhost.local"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+8,
+20
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+421,
+230
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+3,
+4,
+3,
+4
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+439,
+277
+]
+}
+}
+}

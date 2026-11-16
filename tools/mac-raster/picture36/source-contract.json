@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "scope": "Original Picture method signatures/bodies preserved exactly after UTF-8 BOM/newline decoding; complete FastPixel with explicit using System. No Vixen effects or binary release equivalence claimed.",
+  "upstreamCommit": "e111ae41963abfa48b70f884445950e94e432e02",
+  "picture": {
+    "path": "upstream/Vixen/src/Vixen.Modules/Effect/Picture/Picture.cs",
+    "sha256": "a5102426351a0f1b75c7f06369b1b6d2eb0c06c7491a72dba4bb655a191ecab9",
+    "methods": [
+      {
+        "signature": "public static Bitmap ScalePictureImage(Image image, int maxWidth, int maxHeight)",
+        "startLine": 1286,
+        "endLine": 1302,
+        "sha256": "1f7fabb369e4ad7dbd9e7f00e70e4e9ddc66c20b546f5d9174d51deaeeb971be"
+      },
+      {
+        "signature": "public static Bitmap ScaleImage(Image image, double scale)",
+        "startLine": 1304,
+        "endLine": 1328,
+        "sha256": "f8878340536121eb501da8e862db1c180e17b88bd534f930b2cf0b75d1080cc1"
+      },
+      {
+        "signature": "public static Image ConvertToGrayScale(Image srce)",
+        "startLine": 1330,
+        "endLine": 1349,
+        "sha256": "f8a5b17fada09abf8eec359d7664d40296fca1548134bc62bf3fb2fcef78e1f0"
+      }
+    ]
+  },
+  "fastPixel": {
+    "path": "upstream/Vixen/src/Vixen.Common/FastPixel/FastPixel.cs",
+    "sha256": "74afded565f8dc3aa8c68061dbeec0d753f6cb9380c93ae4dac4d394d90bbffb",
+    "adaptation": "Explicit using System; original class body unchanged."
+  },
+  "supervisor": {
+    "path": "tools/windows-pcm/Supervisor.cs",
+    "sha256": "53804924a18c76a0186a2ce7b26b73a5bd0039fe74dbc3bbe0168f4246bcf5a1",
+    "scope": "StageSpec/StageResult/interfaces, ConsoleProgress, CaptureSupervisor constructor/stage/checkpoint/parser, Paths and Windows native launcher extracted. PCM/inventory workflow and entry point omitted. Summary DTO supplied separately. Per-stream cap 32MiB\u21921MiB; explicit Reserve setter added."
+  },
+  "generated": {
+    "OriginalPictureMethods.cs.in": "99fd85069dff5a2f52171f548d8a5d56b38861d9b5f7cd4c7c1dd191e0b35360",
+    "OriginalFastPixel.cs.in": "317e65e80e1b50874822b14654f94c253a8cfde8b2435d08a6c8147a39762230",
+    "SupervisorEngine.cs.in": "c1b8e068a79563c7c966daec2dbce90b95ca91ff4e2a7e46347b580b1fa56969"
+  }
+}

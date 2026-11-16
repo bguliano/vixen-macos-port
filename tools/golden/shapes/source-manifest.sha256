@@ -1,0 +1,4 @@
+e678b379598f861a1836c686c78426ba081f11d67a3609553b515512f665bbf2  tools/golden/shapes/Program.cs
+2e0e0cc7a940452c289f9839e8322bfd1461912add29f66bcfb2c7c88bfae736  tools/golden/shapes/ShapeGeometryGolden.csproj
+44a01254b97b3caefed372f0844eaab9523a0f5f088116ab449d9b1d9c0f3fa8  tools/golden/shapes/SvgValues.cs
+10adf6647b98c7cc4457347947d6aa57aa869da152e33817293c54748c91d597  upstream/Vixen/src/Vixen.Modules/Effect/Shapes/GeometricShapes.cs

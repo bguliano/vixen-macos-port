@@ -1,0 +1,273 @@
+// C# 5 / common .NET Framework BCL surface. Compile with Windows Framework csc,
+// but launch only through dotnet + the separate net8 runtimeconfig. No decoder is
+// replaced: this host calls the exact nine audited Vixen installation binaries.
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
+
+internal static class LegacyCapture
+{
+    private const string ContractId = "vixen-3.12.4-net8-installed-audio-1";
+    private const string InputHash = "c1724f9916c61c623b9a19abbc80a7b161a0df79c8c504e427b8ba576289ada3";
+    private const long MaxPcmBytes = 268435456;
+    private static readonly string[] Names = { "AudioPlayer.dll", "NAudio.Core.dll", "NAudio.Wasapi.dll", "NAudio.WinMM.dll", "NAudio.Vorbis.dll", "NVorbis.dll", "NLog.dll", "Libraries.dll", "Preferences.dll" };
+    private static readonly string[] Hashes = {
+        "32c8c728b54dd32c7fb5db77f0f1b782dc86a0b7149c7b038a60a03123b0e605",
+        "fcf493fc47a2f478a65303886b975fbdbf714cbb1f2d79f7fce97e4bb16b01a8",
+        "618ef0e49d64e7a66dfe64bbf6ae81705b9d9683d8a9f321e5c3024d666bdf82",
+        "749a01ebbb5edd8b1a03c5263b04de6acadecf52e4cc84d7412bc6e93f180958",
+        "0ae4de203ffeb14cc5f10859402d3f56e9fe6689c58587d52ba4aa731ef3e8c0",
+        "55e7477deeb341058d5543515ed371575a415d8edcf9d0e933a41ca2dee54ad4",
+        "a3ab311be101f8132df3b333a10328eef0033f2c783e42b39b6986346d0097ac",
+        "2571a918d8997e24b7d1aca05127153240f2ad231beda4868fdb50f706f63f3e",
+        "70ec3a7be8be5c8b7900e96f86436a192842f31f4ee8083dd1c9613a2a83e34d"
+    };
+    private static readonly long[] Sizes = { 38400, 187904, 179200, 57344, 14848, 80896, 956416, 3584, 4608 };
+    private const string Usage = "LegacyCapture [--validate-contract|--preflight] --vixen-bin <private nine-DLL folder> [--out <NEW folder>]\nLegacyCapture --vixen-bin <private nine-DLL folder> --input <known MP3> --out <NEW folder>\nCapture requires Windows x64/.NET 8 and exact Vixen 3.12.4 binaries. No playback, application startup, profile, controller, or network is opened.\n--validate-contract hashes only; --preflight checks reflection API shape without constructing readers; --self-test tests host helpers only.";
+    private static bool IsWindows { get { return Environment.OSVersion.Platform == PlatformID.Win32NT; } }
+    private static string AssemblyDirectory;
+
+    public static int Main(string[] args)
+    {
+        try {
+            if (args.Length == 1 && (args[0] == "--help" || args[0] == "-h")) { Console.WriteLine(Usage); return 0; }
+            if (args.Length == 1 && args[0] == "--self-test") { SelfTest(); return 0; }
+            var options = Parse(args);
+            var identities = ValidateBinaries(options.Bin);
+            if (options.Mode == "validate") { Console.WriteLine(Json(Obj("status", "contract-matched", "contract", Contract(identities), "assembliesLoaded", false))); return 0; }
+            if (options.Mode == "capture" && (!IsWindows || Architecture("ProcessArchitecture") != "X64" || Environment.Version.Major != 8))
+                throw new PlatformNotSupportedException("Actual capture requires Windows x64 running .NET 8; use dotnet with the supplied runtimeconfig. No decoder was opened.");
+            if (options.Mode == "capture") ValidateInput(options.Input);
+            var api = InspectApi(options.Bin);
+            if (options.Mode == "preflight") {
+                ValidateBinaries(options.Bin);
+                var result = Obj("schema", 1, "status", "api-preflight-passed", "runtime", Runtime(), "referenceBinaryContract", Contract(identities), "api", api.Description,
+                    "decoderConstructed", false, "scope", "Reflection API shape only. No reader/cache constructor, type initializer, playback, or decode was explicitly invoked. This does not prove Windows decode or another runtime.");
+                CreateOutput(options.Output);
+                WriteJson(Path.Combine(options.Output, "preflight.json"), result);
+                Console.WriteLine(Json(result)); return 0;
+            }
+            Capture(options, api, identities); return 0;
+        } catch (Exception ex) {
+            while (ex is TargetInvocationException && ex.InnerException != null) ex = ex.InnerException;
+            Console.Error.WriteLine("ERROR: " + ex.GetType().Name + ": " + ex.Message);
+            return 1;
+        }
+    }
+
+    private sealed class Options { public string Mode, Bin, Input, Output; }
+    private static Options Parse(string[] args)
+    {
+        string mode = "capture"; int start = 0;
+        if (args.Length > 0 && (args[0] == "--validate-contract" || args[0] == "--preflight")) { mode = args[0] == "--preflight" ? "preflight" : "validate"; start = 1; }
+        var values = new Dictionary<string, string>(StringComparer.Ordinal);
+        for (int i = start; i < args.Length; i += 2) {
+            if (i + 1 >= args.Length || (args[i] != "--vixen-bin" && args[i] != "--input" && args[i] != "--out") || values.ContainsKey(args[i])) throw new ArgumentException(Usage);
+            values.Add(args[i], args[i + 1]);
+        }
+        int expected = mode == "capture" ? 3 : mode == "preflight" ? 2 : 1;
+        if (values.Count != expected || !values.ContainsKey("--vixen-bin") || (mode != "validate" && !values.ContainsKey("--out")) || (mode == "capture" && !values.ContainsKey("--input"))) throw new ArgumentException(Usage);
+        var result = new Options { Mode = mode, Bin = LocalPath(values["--vixen-bin"]), Input = mode == "capture" ? LocalPath(values["--input"]) : null, Output = mode == "validate" ? null : LocalPath(values["--out"]) };
+        if (!Directory.Exists(result.Bin)) throw new DirectoryNotFoundException("Private binary folder does not exist.");
+        if (result.Output != null) {
+            if (File.Exists(result.Output) || Directory.Exists(result.Output)) throw new IOException("Output already exists; use a new folder.");
+            if (!Directory.Exists(Path.GetDirectoryName(result.Output))) throw new DirectoryNotFoundException("Output parent must already exist.");
+            if (Within(result.Output, result.Bin)) throw new ArgumentException("Output must be outside the supplied binary folder.");
+        }
+        return result;
+    }
+    private static string LocalPath(string value)
+    {
+        if (String.IsNullOrWhiteSpace(value)) throw new ArgumentException("Empty path.");
+        string path = Path.GetFullPath(value);
+        if (path.StartsWith("\\\\", StringComparison.Ordinal) || (IsWindows && new DriveInfo(Path.GetPathRoot(path)).DriveType == DriveType.Network)) throw new ArgumentException("Use ordinary local paths, not network locations.");
+        string root = Path.GetPathRoot(path), current = root;
+        foreach (string part in path.Substring(root.Length).Split(new char[] { Path.DirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries)) {
+            current = Path.Combine(current, part); FileAttributes attr;
+            try { attr = File.GetAttributes(current); } catch (FileNotFoundException) { break; } catch (DirectoryNotFoundException) { break; }
+            if ((attr & FileAttributes.ReparsePoint) != 0) throw new ArgumentException("Use ordinary files, not links/junctions/cloud placeholders.");
+        }
+        return path;
+    }
+    private static bool Within(string path, string dir) { return String.Equals(path, dir, StringComparison.OrdinalIgnoreCase) || path.StartsWith(String.Concat(dir.TrimEnd(new char[] { Path.DirectorySeparatorChar }), Path.DirectorySeparatorChar.ToString()), StringComparison.OrdinalIgnoreCase); }
+    private static void ValidateInput(string path)
+    {
+        if (!File.Exists(path) || !String.Equals(Path.GetExtension(path), ".mp3", StringComparison.OrdinalIgnoreCase) || new FileInfo(path).Length > 32 * 1024 * 1024 || Hash(path) != InputHash)
+            throw new InvalidDataException("This audited capture requires the unchanged diagnostic MP3 from the pack.");
+    }
+    private static List<object> ValidateBinaries(string directory)
+    {
+        // A private folder with only the audited DLLs prevents LoadFrom's sibling
+        // probing from choosing unrelated application/configuration assemblies.
+        var actual = Directory.GetFiles(directory);
+        if (actual.Length != Names.Length || Directory.GetDirectories(directory).Length != 0) throw new InvalidDataException("Binary folder must contain exactly the nine audited DLLs, with no other files or directories. Use the private reference-copy output.");
+        var entries = new List<object>();
+        for (int i = 0; i < Names.Length; ++i) {
+            string path = LocalPath(Path.Combine(directory, Names[i]));
+            if (!File.Exists(path) || new FileInfo(path).Length != Sizes[i] || Hash(path) != Hashes[i]) throw new InvalidDataException("Audited installed-binary contract mismatch: " + Names[i]);
+            var name = AssemblyName.GetAssemblyName(path);
+            if (name.Name != Path.GetFileNameWithoutExtension(Names[i])) throw new InvalidDataException("Assembly name mismatch: " + Names[i]);
+            entries.Add(Obj("name", Names[i], "bytes", Sizes[i], "sha256", Hashes[i], "identity", name.FullName));
+        }
+        return entries;
+    }
+    private static object Contract(List<object> files) { return Obj("schema", 1, "id", ContractId, "vixenVersion", "3.12.4", "audioPlayerAssemblyVersion", "3.12.1371.4", "productCommit", "41c3f4f7e3ea13e8b21648a7398753fb60ad9a5a", "runtimeMajor", 8, "naudioAssemblyVersion", "2.2.1.0", "inventoryArchiveSha256", "8741a09e9920869227bee6667cb069152a97fe737534284aa9ad5858419e304d", "files", files, "scope", "Exact installed binaries from the returned v3.1 run; not a claim that this install matches the current upstream net10 source."); }
+    private static Assembly Resolve(object sender, ResolveEventArgs args)
+    {
+        var wanted = new AssemblyName(args.Name);
+        for (int i = 0; i < Names.Length; ++i) if (wanted.Name == Path.GetFileNameWithoutExtension(Names[i])) {
+            string path = Path.Combine(AssemblyDirectory, Names[i]);
+            if (Hash(path) != Hashes[i]) throw new InvalidDataException("Dependency changed: " + Names[i]);
+            return Assembly.LoadFrom(path);
+        }
+        throw new FileNotFoundException("Unresolved dependency outside the audited binary contract: " + wanted.Name);
+    }
+    private sealed class Api { public Type Reader, Cached, LogManager, LoggingConfiguration; public ConstructorInfo ReaderCtor, CachedCtor; public FieldInfo Stream; public MethodInfo Read; public object Description; }
+    private static Api InspectApi(string directory)
+    {
+        AssemblyDirectory = directory; AppDomain.CurrentDomain.AssemblyResolve += Resolve;
+        var logging = Assembly.LoadFrom(Path.Combine(directory, "NLog.dll"));
+        var assembly = Assembly.LoadFrom(Path.Combine(directory, "AudioPlayer.dll"));
+        var result = new Api();
+        result.Reader = assembly.GetType("Common.AudioPlayer.FileReader.AudioFileReader", true);
+        result.Cached = assembly.GetType("Common.AudioPlayer.SampleProvider.CachedSampleSource", true);
+        result.LogManager = logging.GetType("NLog.LogManager", true);
+        result.LoggingConfiguration = logging.GetType("NLog.Config.LoggingConfiguration", true);
+        result.ReaderCtor = result.Reader.GetConstructor(new Type[] { typeof(string) });
+        result.CachedCtor = result.Cached.GetConstructor(new Type[] { typeof(string) });
+        result.Stream = result.Reader.GetField("_readerStream", BindingFlags.NonPublic | BindingFlags.Instance);
+        result.Read = result.Reader.GetMethod("Read", new Type[] { typeof(float[]), typeof(int), typeof(int) });
+        if (result.ReaderCtor == null || result.CachedCtor == null || result.Stream == null || result.Read == null || result.Read.ReturnType != typeof(int) || !typeof(IDisposable).IsAssignableFrom(result.Reader) || result.Cached.GetProperty("AudioData") == null || result.Cached.GetProperty("AudioData").PropertyType != typeof(float[]) || result.Reader.GetProperty("StreamLength") == null || result.Reader.GetProperty("StreamLength").PropertyType != typeof(long) || result.Reader.GetProperty("WaveFormat") == null || result.Cached.GetProperty("WaveFormat") == null || result.LogManager.GetProperty("Configuration") == null || result.LoggingConfiguration.GetConstructor(Type.EmptyTypes) == null)
+            throw new MissingMemberException("The exact audited reader/cache/logging API shape is unavailable.");
+        result.Description = Obj("reader", result.Reader.FullName, "cache", result.Cached.FullName, "readerConstructor", "(string)", "cacheConstructor", "(string)", "read", "int Read(float[],int,int)", "privateStreamField", result.Stream.Name, "cacheDataType", "float[]", "streamLengthType", "long");
+        return result;
+    }
+    private static object Prop(object value, string name) { var p = value.GetType().GetProperty(name); if (p == null) throw new MissingMemberException(value.GetType().FullName, name); return p.GetValue(value, null); }
+    private sealed class Format
+    {
+        public string Encoding; public int SampleRate, Channels, BitsPerSample, BlockAlign, AverageBytesPerSecond;
+        public object Data() { return Obj("Encoding", Encoding, "SampleRate", SampleRate, "Channels", Channels, "BitsPerSample", BitsPerSample, "BlockAlign", BlockAlign, "AverageBytesPerSecond", AverageBytesPerSecond); }
+        public bool Same(Format o) { return Encoding == o.Encoding && SampleRate == o.SampleRate && Channels == o.Channels && BitsPerSample == o.BitsPerSample && BlockAlign == o.BlockAlign && AverageBytesPerSecond == o.AverageBytesPerSecond; }
+    }
+    private static Format WaveFormat(object value) { return new Format { Encoding = Prop(value, "Encoding").ToString(), SampleRate = (int)Prop(value, "SampleRate"), Channels = (int)Prop(value, "Channels"), BitsPerSample = (int)Prop(value, "BitsPerSample"), BlockAlign = (int)Prop(value, "BlockAlign"), AverageBytesPerSecond = (int)Prop(value, "AverageBytesPerSecond") }; }
+    private static void CheckFormat(Format f) { if (f.Encoding != "IeeeFloat" || f.BitsPerSample != 32 || f.SampleRate != 44100 || f.Channels != 2 || f.BlockAlign != 8 || f.AverageBytesPerSecond != 352800) throw new InvalidDataException("Unexpected diagnostic PCM format; capture refused without conversion."); }
+    private static string Hex(byte[] bytes) { var text = new StringBuilder(bytes.Length * 2); foreach (byte b in bytes) text.Append(b.ToString("x2", CultureInfo.InvariantCulture)); return text.ToString(); }
+    private static string Hash(string path) { using (var f = File.OpenRead(path)) using (var sha = SHA256.Create()) return Hex(sha.ComputeHash(f)); }
+    private static object Identity(string path) { return Obj("path", path, "bytes", new FileInfo(path).Length, "sha256", Hash(path), "fileVersion", FileVersionInfo.GetVersionInfo(path).FileVersion); }
+    private static string Architecture(string property)
+    {
+        // Reflect the Core runtime API so Framework csc needs only its stock BCL.
+        var type = typeof(object).Assembly.GetType("System.Runtime.InteropServices.RuntimeInformation")
+            ?? Type.GetType("System.Runtime.InteropServices.RuntimeInformation, System.Runtime.InteropServices.RuntimeInformation", false);
+        var member = type == null ? null : type.GetProperty(property, BindingFlags.Public | BindingFlags.Static);
+        return member == null ? "Unknown" : Convert.ToString(member.GetValue(null, null), CultureInfo.InvariantCulture);
+    }
+    private static object Runtime() { return Obj("os", Environment.OSVersion.ToString(), "framework", ".NET " + Environment.Version, "processArchitecture", Architecture("ProcessArchitecture"), "osArchitecture", Architecture("OSArchitecture")); }
+    [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)] private static extern bool CreateDirectoryW(string path, IntPtr attributes);
+    private static void CreateOutput(string path)
+    {
+        if (IsWindows) { if (!CreateDirectoryW(path, IntPtr.Zero)) throw new Win32Exception(Marshal.GetLastWin32Error(), "Cannot create fresh output folder."); }
+        else { // Only read-only API preflight is supported here, never a PCM capture.
+            if (File.Exists(path) || Directory.Exists(path)) throw new IOException("Output already exists.");
+            Directory.CreateDirectory(path);
+        }
+    }
+    private static void Capture(Options options, Api api, List<object> identities)
+    {
+        if (!BitConverter.IsLittleEndian) throw new PlatformNotSupportedException("Little endian required.");
+        api.LogManager.GetProperty("Configuration").SetValue(null, Activator.CreateInstance(api.LoggingConfiguration), null);
+        Format negotiated, converted; long streamBytes, readerSamples = 0; string decoderType, readerHash;
+        using (var reader = (IDisposable)api.ReaderCtor.Invoke(new object[] { options.Input })) {
+            var stream = api.Stream.GetValue(reader);
+            if (stream == null || stream.GetType().FullName != "NAudio.Wave.MediaFoundationReader") throw new InvalidDataException("Original MP3 decoder must be MediaFoundationReader.");
+            decoderType = stream.GetType().AssemblyQualifiedName;
+            negotiated = WaveFormat(Prop(stream, "WaveFormat")); converted = WaveFormat(Prop(reader, "WaveFormat")); CheckFormat(converted);
+            streamBytes = (long)Prop(reader, "StreamLength");
+            var buffer = new float[checked(converted.SampleRate * converted.Channels)]; var bytes = new byte[checked(buffer.Length * 4)];
+            using (var sha = SHA256.Create()) {
+                while (true) {
+                    int count = (int)api.Read.Invoke(reader, new object[] { buffer, 0, buffer.Length });
+                    if (count == 0) break;
+                    if (count < 0 || count > buffer.Length) throw new InvalidDataException("Invalid original reader sample count.");
+                    readerSamples = checked(readerSamples + count);
+                    if (readerSamples * 4 > MaxPcmBytes) throw new InvalidDataException("Original reader exceeded bounded diagnostic PCM size.");
+                    Buffer.BlockCopy(buffer, 0, bytes, 0, checked(count * 4));
+                    sha.TransformBlock(bytes, 0, count * 4, bytes, 0);
+                }
+                sha.TransformFinalBlock(new byte[0], 0, 0); readerHash = Hex(sha.Hash);
+            }
+        }
+        var cache = api.CachedCtor.Invoke(new object[] { options.Input });
+        var samples = (float[])Prop(cache, "AudioData"); var format = WaveFormat(Prop(cache, "WaveFormat")); CheckFormat(format);
+        if (!format.Same(converted) || samples.Length == 0 || samples.LongLength * 4 > MaxPcmBytes || samples.Length % format.Channels != 0) throw new InvalidDataException("Invalid original cache format/count.");
+        long nonFinite = 0; foreach (float value in samples) if (Single.IsNaN(value) || Single.IsInfinity(value)) ++nonFinite;
+        if (nonFinite != 0) throw new InvalidDataException("Original cache contains nonfinite samples.");
+        var byteBuffer = new byte[1024 * 1024]; string cacheHash;
+        using (var sha = SHA256.Create()) {
+            for (long offset = 0; offset < samples.LongLength * 4; offset += byteBuffer.Length) {
+                int count = (int)Math.Min(byteBuffer.Length, samples.LongLength * 4 - offset);
+                Buffer.BlockCopy(samples, checked((int)offset), byteBuffer, 0, count); sha.TransformBlock(byteBuffer, 0, count, byteBuffer, 0);
+            }
+            sha.TransformFinalBlock(new byte[0], 0, 0); cacheHash = Hex(sha.Hash);
+        }
+        if (readerSamples != samples.LongLength || readerHash != cacheHash) throw new InvalidDataException("Separate full reader and original cache differ; no capture published.");
+        ValidateInput(options.Input); ValidateBinaries(options.Bin);
+        CreateOutput(options.Output); string pcmPath = Path.Combine(options.Output, "cached.f32le");
+        using (var file = new FileStream(pcmPath, FileMode.CreateNew, FileAccess.Write, FileShare.None)) {
+            for (long offset = 0; offset < samples.LongLength * 4; offset += byteBuffer.Length) {
+                int count = (int)Math.Min(byteBuffer.Length, samples.LongLength * 4 - offset); Buffer.BlockCopy(samples, checked((int)offset), byteBuffer, 0, count); file.Write(byteBuffer, 0, count);
+            }
+        }
+        if (Hash(pcmPath) != cacheHash) throw new IOException("PCM write hash mismatch.");
+        var managed = new List<object>();
+        foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()) if (!assembly.IsDynamic && assembly.Location.Length > 0) managed.Add(Obj("identity", assembly.FullName, "file", Identity(assembly.Location)));
+        var native = new List<object>(); using (var process = Process.GetCurrentProcess()) foreach (ProcessModule module in process.Modules) if (module.ModuleName.StartsWith("mf", StringComparison.OrdinalIgnoreCase) || String.Equals(module.ModuleName, "mp3dmod.dll", StringComparison.OrdinalIgnoreCase) || String.Equals(module.ModuleName, "coreclr.dll", StringComparison.OrdinalIgnoreCase)) native.Add(Identity(module.FileName));
+        var manifest = Obj("schema", 1, "status", "captured-on-windows", "capturedUtc", DateTime.UtcNow.ToString("o", CultureInfo.InvariantCulture),
+            "input", Obj("path", options.Input, "bytes", new FileInfo(options.Input).Length, "sha256", InputHash), "runtime", Runtime(),
+            "decoder", Obj("type", decoderType, "negotiatedFormat", negotiated.Data(), "reportedStreamBytes", streamBytes, "separateReaderSamples", readerSamples, "separateReaderPcmSha256", readerHash, "note", "Full separate AudioFileReader decode equals the unchanged original CachedSampleSource float count/hash."),
+            "pcm", Obj("file", "cached.f32le", "sha256", cacheHash, "bytes", new FileInfo(pcmPath).Length, "format", format.Data(), "samples", samples.LongLength, "frames", samples.LongLength / format.Channels, "nonFiniteSamples", nonFinite, "timeOrigin", "Original CachedSampleSource.AudioData[0]; no trim, shift, resample or quantization added."),
+            "referenceBinaryContract", Contract(identities), "managedAssemblies", managed, "nativeDecoderRuntimeModules", native);
+        ValidateInput(options.Input); ValidateBinaries(options.Bin);
+        WriteJson(Path.Combine(options.Output, "manifest.json"), manifest);
+        Console.WriteLine("Captured " + (samples.LongLength / format.Channels) + " frames at " + format.SampleRate + " Hz / " + format.Channels + " channels.");
+        Console.WriteLine("Original decoder negotiated " + negotiated.Encoding + " / " + negotiated.BitsPerSample + " bits. Output: " + options.Output);
+    }
+    private static Dictionary<string, object> Obj(params object[] values) { if (values.Length % 2 != 0) throw new ArgumentException("Object requires pairs."); var result = new Dictionary<string, object>(StringComparer.Ordinal); for (int i = 0; i < values.Length; i += 2) result.Add((string)values[i], values[i + 1]); return result; }
+    private static void WriteJson(string path, object value) { using (var file = new FileStream(path, FileMode.CreateNew, FileAccess.Write, FileShare.None)) using (var writer = new StreamWriter(file, new UTF8Encoding(false))) writer.Write(Json(value) + "\n"); }
+    private static string Json(object value) { var text = new StringBuilder(); AppendJson(text, value); return text.ToString(); }
+    private static void AppendJson(StringBuilder text, object value)
+    {
+        if (value == null) { text.Append("null"); return; }
+        var s = value as string;
+        if (s != null) { text.Append('"'); foreach (char c in s) { if (c == '"' || c == '\\') { text.Append('\\'); text.Append(c); } else if (c < 32 || c >= 127) { text.Append("\\u"); text.Append(((int)c).ToString("x4", CultureInfo.InvariantCulture)); } else text.Append(c); } text.Append('"'); return; }
+        if (value is bool) { text.Append((bool)value ? "true" : "false"); return; }
+        var map = value as IDictionary;
+        if (map != null) { text.Append('{'); bool comma = false; foreach (DictionaryEntry entry in map) { if (!(entry.Key is string)) throw new InvalidDataException("JSON keys must be strings."); if (comma) text.Append(','); comma = true; AppendJson(text, entry.Key); text.Append(':'); AppendJson(text, entry.Value); } text.Append('}'); return; }
+        var list = value as IEnumerable;
+        if (list != null) { text.Append('['); bool comma = false; foreach (object item in list) { if (comma) text.Append(','); comma = true; AppendJson(text, item); } text.Append(']'); return; }
+        if (value is int || value is long || value is uint || value is ulong || value is byte || value is short || value is decimal) { text.Append(Convert.ToString(value, CultureInfo.InvariantCulture)); return; }
+        throw new InvalidDataException("Unsupported JSON value type " + value.GetType().FullName);
+    }
+    private static void SelfTest()
+    {
+        int count = 0;
+        if (Json(Obj("quote", "x\"\\\né", "bool", true, "array", new object[] { 1, null, false, Int64.MaxValue })) != "{\"quote\":\"x\\\"\\\\\\u000a\\u00e9\",\"bool\":true,\"array\":[1,null,false,9223372036854775807]}") throw new Exception("JSON escaping failed"); ++count;
+        if (Hex(new byte[] { 0, 1, 127, 128, 255 }) != "00017f80ff") throw new Exception("Hex failed"); ++count;
+        float[] samples = { 0f, -1f, 0.5f, 1f }; var bytes = new byte[16]; Buffer.BlockCopy(samples, 0, bytes, 0, 16);
+        if (BitConverter.IsLittleEndian && Hex(bytes) != "00000000000080bf0000003f0000803f") throw new Exception("Float byte preservation failed"); ++count;
+        string hashA, hashB; using (var sha = SHA256.Create()) hashA = Hex(sha.ComputeHash(bytes)); using (var sha = SHA256.Create()) { sha.TransformBlock(bytes, 0, 8, bytes, 0); sha.TransformBlock(bytes, 8, 8, bytes, 8); sha.TransformFinalBlock(new byte[0], 0, 0); hashB = Hex(sha.Hash); }
+        if (hashA != hashB) throw new Exception("Streaming hash failed"); ++count;
+        var expected = new Format { Encoding = "IeeeFloat", SampleRate = 44100, Channels = 2, BitsPerSample = 32, BlockAlign = 8, AverageBytesPerSecond = 352800 }; CheckFormat(expected); ++count;
+        bool rejected = false; try { CheckFormat(new Format { Encoding = "Pcm", SampleRate = 44100, Channels = 2, BitsPerSample = 16 }); } catch (InvalidDataException) { rejected = true; } if (!rejected) throw new Exception("Format refusal failed"); ++count;
+        Console.WriteLine(Json(Obj("status", "host-self-test-passed", "checks", count, "runtime", Runtime(), "scope", "Host helpers only; no supplied assemblies or decoder invoked.")));
+    }
+}

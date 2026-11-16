@@ -1,0 +1,10 @@
+[package]
+name = "fx-audio-state"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+uuid.workspace = true
+roxmltree.workspace = true

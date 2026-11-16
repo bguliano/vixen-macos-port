@@ -1,0 +1,13 @@
+# Color library: hidden Layers drop target
+
+The current-release v5 physical Color run completed its input and exited cleanly, but did not reorder or copy the palette as expected. The same Gradient workflow passed29 steps and three real drags. The failed Color run remains in `target/library-color-foreground-current-v5`; it is not accepted because its setup/UI rows succeeded.
+
+The unshown native hierarchy probe identified a SwiftUI String drop destination retained under the invisible Layers panel. It registered `public.data` and `public.item`, spanned x846–1094/y568–596 in window coordinates, and overlapped all four recorded Color drag destinations at y595. Native Color conforms to those broad types; the custom Gradient payload does not. Library cell geometry and production pasteboard round trips were correct. This evidence identifies a concrete interception path consistent with the physical failure; fixed physical behavior still needs confirmation.
+
+`LayersFindPanels.swift` now attaches the row's drag/drop modifiers only when `panelIsShowing` is true. The outer LayerRow identity, draft/focus state, bindings and active drop rules remain in place. An explicit Bool return preserves the intended SwiftUI drop overload. Only this file differs among808 production inputs.
+
+Baseline/fixed native registrations across Color, Gradient, Curve, Layers, then Color again changed from **1/1/1/1/1 to 0/0/0/1/0**. All cell geometry, payload values/types and active Layers geometry remained equal. Twenty-two safety observations show prohibited activation, an unshown alpha-zero offscreen window, no key/main window, no input and unchanged external foreground. The independent comparison and hashes are in `target/library-color-routing-baseline-fixed.json`. This is actual native registration/hierarchy evidence, not a simulated physical drag pass.
+
+The full optimized candidate `target/native-layer-drop-release/Vixen.app` has executable SHA256 `afb362dff706b40e674e967dcc11312b4a7708627c11ccf7fa1c11c76bc8e917`. Its222 resources, four native executables, architecture/minimum-OS declarations and signatures pass the bundle audit. Build/source evidence: `target/native-layer-drop-build-report.json`. A code-equivalent private clone is ready for testing. The accepted standard bundles remain unchanged; this candidate has not been promoted.
+
+Remaining acceptance: real Color reorder/copy/persistence, active Layers dragging, layer-name state across a tab change, and focused complete-app startup/resource checks. Earlier failed or superseded probe preparations remain retained; probe02's combined assertion failed before recording foreground, so it does not establish foreground preservation. Later probes do not retroactively qualify it.

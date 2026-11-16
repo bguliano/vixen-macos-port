@@ -1,0 +1,42 @@
+{
+"class": "PreviewCustomDefineDisplayItems",
+"source": "Vixen.Modules/Preview/VixenPreview/Shapes/PreviewCustomDefineDisplayItems.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Name": "PreviewCustomDefineDisplayItems",
+"Text": "Display Items"
+},
+"events": {},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+709,
+403
+]
+}
+}
+}

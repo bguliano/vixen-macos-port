@@ -1,0 +1,758 @@
+{
+"class": "DisplaySetup",
+"source": "Vixen.Application/Setup/DisplaySetup.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"DoubleBuffered": true,
+"Name": "DisplaySetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Display Setup"
+},
+"events": {
+"Load": "DisplaySetup_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanelContainer"
+}
+],
+"objects": {
+"tableLayoutPanelElementSetup": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"GrowStyle": {
+"t": "enum",
+"type": "TableLayoutPanelGrowStyle",
+"v": "FixedSize"
+},
+"Location": {
+"t": "point",
+"x": 6,
+"y": 6
+},
+"Name": "tableLayoutPanelElementSetup",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 325,
+"y": 725
+},
+"TabIndex": 4
+},
+"events": {},
+"children": [
+{
+"name": "elementHeaderLineDivider",
+"col": 0,
+"row": 1
+},
+{
+"name": "elementLabel",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"elementHeaderLineDivider": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "Fixed3D"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 25
+},
+"Name": "elementHeaderLineDivider",
+"Size": {
+"t": "size",
+"x": 319,
+"y": 2
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"elementLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 5,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "elementLabel",
+"Size": {
+"t": "size",
+"x": 315,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Elements",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"patchingPaneTableLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"GrowStyle": {
+"t": "enum",
+"type": "TableLayoutPanelGrowStyle",
+"v": "FixedSize"
+},
+"Location": {
+"t": "point",
+"x": 340,
+"y": 6
+},
+"Name": "patchingPaneTableLayoutPanel",
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 601,
+"y": 725
+},
+"TabIndex": 10
+},
+"events": {},
+"children": [
+{
+"name": "patchingHeaderLabel",
+"col": 0,
+"row": 0
+},
+{
+"name": "patchingPanelLineSeperator",
+"col": 0,
+"row": 1
+},
+{
+"name": "radioButtonPatchingGraphical",
+"col": 1,
+"row": 2
+},
+{
+"name": "radioButtonPatchingSimple",
+"col": 0,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"patchingHeaderLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 273,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "patchingHeaderLabel",
+"Size": {
+"t": "size",
+"x": 54,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Patching",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"patchingPanelLineSeperator": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "Fixed3D"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 25
+},
+"Name": "patchingPanelLineSeperator",
+"Size": {
+"t": "size",
+"x": 595,
+"y": 2
+},
+"TabIndex": 69
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"radioButtonPatchingGraphical": {
+"type": "RadioButton",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 399,
+"y": 30
+},
+"Name": "radioButtonPatchingGraphical",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 19
+},
+"TabIndex": 5,
+"TabStop": true,
+"Text": "Graphical View",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonPatchingGraphical_CheckedChanged"
+},
+"children": []
+},
+"radioButtonPatchingSimple": {
+"type": "RadioButton",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 94,
+"y": 30
+},
+"Name": "radioButtonPatchingSimple",
+"Size": {
+"t": "size",
+"x": 111,
+"y": 19
+},
+"TabIndex": 3,
+"TabStop": true,
+"Text": "Simple Patching",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButtonPatchingSimple_CheckedChanged"
+},
+"children": []
+},
+"tableLayoutPanelControllerSetup": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"GrowStyle": {
+"t": "enum",
+"type": "TableLayoutPanelGrowStyle",
+"v": "FixedSize"
+},
+"Location": {
+"t": "point",
+"x": 950,
+"y": 6
+},
+"Name": "tableLayoutPanelControllerSetup",
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 325,
+"y": 725
+},
+"TabIndex": 65
+},
+"events": {},
+"children": [
+{
+"name": "controllerHeaderLineDivider",
+"col": 0,
+"row": 1
+},
+{
+"name": "controllersHeaderLabel",
+"col": 0,
+"row": 0
+},
+{
+"name": "flowLayoutOkCancelButtons",
+"col": 0,
+"row": 3
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "Absolute",
+"size": 40.0
+}
+]
+},
+"controllerHeaderLineDivider": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "Fixed3D"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 25
+},
+"Name": "controllerHeaderLineDivider",
+"Size": {
+"t": "size",
+"x": 319,
+"y": 2
+},
+"TabIndex": 68
+},
+"events": {},
+"children": []
+},
+"controllersHeaderLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 5,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "controllersHeaderLabel",
+"Size": {
+"t": "size",
+"x": 315,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Controllers",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"flowLayoutOkCancelButtons": {
+"type": "FlowLayoutPanel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Location": {
+"t": "point",
+"x": 34,
+"y": 688
+},
+"Name": "flowLayoutOkCancelButtons",
+"Size": {
+"t": "size",
+"x": 288,
+"y": 35
+},
+"TabIndex": 69
+},
+"events": {},
+"children": [
+{
+"name": "buttonOk"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonHelp"
+}
+]
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 29
+},
+"TabIndex": 11,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 98,
+"y": 3
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 29
+},
+"TabIndex": 12,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonHelp": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Image": {
+"t": "raw",
+"v": "Common.Resources.Tools.GetIcon(Resources.help, (int)(16 * ScalingTools.GetScaleFactor()))"
+},
+"AutoSize": true,
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 193,
+"y": 3
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 29
+},
+"TabIndex": 60,
+"Text": "Help",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"tableLayoutPanelContainer": {
+"type": "TableLayoutPanel",
+"props": {
+"CellBorderStyle": {
+"t": "enum",
+"type": "TableLayoutPanelCellBorderStyle",
+"v": "OutsetDouble"
+},
+"ColumnCount": 3,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanelContainer",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 1281,
+"y": 737
+},
+"TabIndex": 11
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanelControllerSetup",
+"col": 2,
+"row": 0
+},
+{
+"name": "tableLayoutPanelElementSetup",
+"col": 0,
+"row": 0
+},
+{
+"name": "patchingPaneTableLayoutPanel",
+"col": 1,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 25.0
+},
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 25.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1281,
+737
+]
+}
+}
+}

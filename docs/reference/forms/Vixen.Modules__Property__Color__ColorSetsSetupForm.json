@@ -1,0 +1,513 @@
+{
+"class": "ColorSetsSetupForm",
+"source": "Vixen.Modules/Property/Color/ColorSetsSetupForm.Designer.cs",
+"props": {
+"columnHeader1": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ColorSetsSetupForm",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Color Sets"
+},
+"events": {
+"FormClosing": "ColorSetsSetupForm_FormClosing",
+"Load": "ColorSetsSetupForm_Load"
+},
+"children": [
+{
+"name": "button1"
+},
+{
+"name": "groupBoxColorSet"
+},
+{
+"name": "buttonRemoveColorSet"
+},
+{
+"name": "buttonAddColorSet"
+},
+{
+"name": "label1"
+},
+{
+"name": "listViewColorSets"
+}
+],
+"objects": {
+"listViewItem1": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"lkjhlkjh"
+]
+},
+"listViewItem2": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"kvgvhgv"
+]
+},
+"listViewItem3": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"uytruyt"
+]
+},
+"listViewColorSets": {
+"type": "ListView",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"FullRowSelect": true,
+"GridLines": true,
+"HideSelection": false,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 30
+},
+"MultiSelect": false,
+"Name": "listViewColorSets",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 95
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "List"
+}
+},
+"events": {
+"SelectedIndexChanged": "listViewColorSets_SelectedIndexChanged"
+},
+"children": [],
+"Columns": [
+{
+"ref": "columnHeader1"
+}
+],
+"Items": [
+{
+"ref": "listViewItem1"
+},
+{
+"ref": "listViewItem2"
+},
+{
+"ref": "listViewItem3"
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 14
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Defined Color Sets:"
+},
+"events": {},
+"children": []
+},
+"groupBoxColorSet": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 8
+},
+"Name": "groupBoxColorSet",
+"Size": {
+"t": "size",
+"x": 302,
+"y": 218
+},
+"TabIndex": 4,
+"TabStop": false,
+"Text": "Selected Color Set"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "panelColorSet"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+}
+]
+},
+"panelColorSet": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 57,
+"y": 21
+},
+"Name": "panelColorSet",
+"Size": {
+"t": "size",
+"x": 238,
+"y": 193
+},
+"TabIndex": 13
+},
+"events": {},
+"children": [
+{
+"name": "buttonAddColor"
+},
+{
+"name": "buttonUpdate"
+},
+{
+"name": "tableLayoutPanelColors"
+},
+{
+"name": "textBoxName"
+}
+]
+},
+"buttonAddColor": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 203,
+"y": 159
+},
+"Name": "buttonAddColor",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 12,
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonAddColor_Click"
+},
+"children": []
+},
+"buttonUpdate": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 16,
+"y": 161
+},
+"Name": "buttonUpdate",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 25
+},
+"TabIndex": 11,
+"Text": "Make New Color Set",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonUpdate_Click"
+},
+"children": []
+},
+"tableLayoutPanelColors": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 5,
+"Location": {
+"t": "point",
+"x": 16,
+"y": 43
+},
+"Name": "tableLayoutPanelColors",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 202,
+"y": 110
+},
+"TabIndex": 4
+},
+"events": {},
+"children": [],
+"ColumnStyles": [
+{
+"type": "Absolute",
+"size": 40.0
+},
+{
+"type": "Absolute",
+"size": 40.0
+},
+{
+"type": "Absolute",
+"size": 40.0
+},
+{
+"type": "Absolute",
+"size": 40.0
+},
+{
+"type": "Absolute",
+"size": 40.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 33.33333
+},
+{
+"type": "Percent",
+"size": 33.33333
+},
+{
+"type": "Percent",
+"size": 33.33333
+}
+]
+},
+"textBoxName": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 16,
+"y": 8
+},
+"Name": "textBoxName",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 20
+},
+"TabIndex": 0
+},
+"events": {
+"TextChanged": "textBoxName_TextChanged"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 73
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 13
+},
+"TabIndex": 3,
+"Text": "Colors:"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 29
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 38,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "Name:"
+},
+"events": {},
+"children": []
+},
+"button1": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 334,
+"y": 232
+},
+"Name": "button1",
+"Size": {
+"t": "size",
+"x": 90,
+"y": 25
+},
+"TabIndex": 10,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonRemoveColorSet": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 70,
+"y": 134
+},
+"Name": "buttonRemoveColorSet",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 3,
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonRemoveColorSet_Click"
+},
+"children": []
+},
+"buttonAddColorSet": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 24,
+"y": 134
+},
+"Name": "buttonAddColorSet",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 2,
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonAddColorSet_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+443,
+261
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+459,
+299
+]
+}
+}
+}

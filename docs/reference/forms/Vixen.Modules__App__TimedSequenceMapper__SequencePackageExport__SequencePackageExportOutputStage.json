@@ -1,0 +1,260 @@
+{
+"class": "SequencePackageExportOutputStage",
+"source": "Vixen.Modules/App/TimedSequenceMapper/SequencePackageExport/SequencePackageExportOutputStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"Name": "SequencePackageExportOutputStage"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"lblChooseOutputFormat": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "lblChooseOutputFormat",
+"Size": {
+"t": "size",
+"x": 504,
+"y": 25
+},
+"TabIndex": 15,
+"Text": "Step 2:   Configure the Output Folder"
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 510,
+"y": 510
+},
+"TabIndex": 24
+},
+"events": {},
+"children": [
+{
+"name": "grpSequence",
+"col": 0,
+"row": 2
+},
+{
+"name": "lblChooseOutputFormat",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Absolute",
+"size": 25.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"grpSequence": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 48
+},
+"Name": "grpSequence",
+"Size": {
+"t": "size",
+"x": 499,
+"y": 117
+},
+"TabIndex": 15,
+"TabStop": false,
+"Text": "Export Configuration"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "txtOutputFolder"
+},
+{
+"name": "label2"
+},
+{
+"name": "chkIncludeAudio"
+},
+{
+"name": "btnOuputFolderSelect"
+}
+]
+},
+"txtOutputFolder": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 37
+},
+"Name": "txtOutputFolder",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 438,
+"y": 23
+},
+"TabIndex": 9
+},
+"events": {
+"Leave": "txtOutputFolder_Leave"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 19
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 144,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "Sequence Export Location"
+},
+"events": {},
+"children": []
+},
+"chkIncludeAudio": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 25,
+"y": 76
+},
+"Name": "chkIncludeAudio",
+"Size": {
+"t": "size",
+"x": 100,
+"y": 19
+},
+"TabIndex": 5,
+"Text": "Include Audio",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkIncludeAudio_CheckedChanged"
+},
+"children": []
+},
+"btnOuputFolderSelect": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 25,
+"y": 37
+},
+"Name": "btnOuputFolderSelect",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 23
+},
+"TabIndex": 8,
+"Text": "Output Folder",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnOutputFolderSelect_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+510,
+510
+]
+}
+}
+}

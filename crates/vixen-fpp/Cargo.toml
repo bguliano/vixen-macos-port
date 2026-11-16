@@ -1,0 +1,13 @@
+[package]
+name = "vixen-fpp"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+libc = "0.2"
+serde_json.workspace = true
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[build-dependencies]
+cc = "1"

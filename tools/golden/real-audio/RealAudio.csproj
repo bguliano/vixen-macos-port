@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>disable</Nullable><UseAppHost>false</UseAppHost>
+    <OutputPath>$(GoldenOut)/real-audio/bin/</OutputPath><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(GoldenOut)/helpers/OriginalAudioMethods.cs" Link="OriginalAudioMethods.cs" />
+    <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Common/AudioPlayer/SampleProvider/CachedSoundSampleProvider.cs" Link="CachedSoundSampleProvider.cs" />
+    <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Modules/Media/Audio/SampleProviders/MonoSampleProvider.cs" Link="MonoSampleProvider.cs" />
+    <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Modules/Media/Audio/AudioUtilities.cs" Link="AudioUtilities.cs" />
+    <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Modules/Media/Audio/AudioFilters.cs" Link="AudioFilters.cs" />
+    <Reference Include="NAudio.Core"><HintPath>$(GoldenOut)/helpers/lib/NAudio.Core.dll</HintPath><Private>true</Private></Reference>
+  </ItemGroup>
+</Project>

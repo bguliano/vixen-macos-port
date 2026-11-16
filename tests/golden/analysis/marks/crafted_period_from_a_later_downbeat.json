@@ -1,0 +1,432 @@
+{
+  "name": "crafted_period_from_a_later_downbeat",
+  "main_features": "crafted",
+  "preview_features": "crafted",
+  "crafted_beats": [
+    [
+      0,
+      100000000,
+      "3"
+    ],
+    [
+      0,
+      600000000,
+      "4"
+    ],
+    [
+      1,
+      100000000,
+      "1"
+    ],
+    [
+      1,
+      700000000,
+      "2"
+    ],
+    [
+      2,
+      100000000,
+      "3"
+    ],
+    [
+      2,
+      800000000,
+      "4"
+    ],
+    [
+      3,
+      100000000,
+      "1"
+    ]
+  ],
+  "no_bars": false,
+  "settings": {
+    "bars_enabled": true,
+    "beat_collections_enabled": true,
+    "beat_splits_enabled": false,
+    "all_features_enabled": true,
+    "collection_base_name": "Beats",
+    "divisions": 1,
+    "all_features_color": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "bars_color": [
+      255,
+      255,
+      255,
+      128
+    ],
+    "beat_counts_color": [
+      255,
+      255,
+      128,
+      0
+    ],
+    "beat_splits_color": [
+      255,
+      0,
+      255,
+      0
+    ],
+    "beats_per_bar": 4,
+    "note_size": 4,
+    "all_collection_name": "Beats - All",
+    "bars_collection_name": "Beats 1/4 Beat #1 (Bar)",
+    "beat_collection_names": [
+      "Beats Beat #1",
+      "Beats Beat #2",
+      "Beats Beat #3",
+      "Beats Beat #4"
+    ],
+    "split_collection_names": [
+      "Beats Beat #1a",
+      "Beats Beat #1b",
+      "Beats Beat #2a",
+      "Beats Beat #2b"
+    ]
+  },
+  "existing": [],
+  "exception": null,
+  "audio": {
+    "raw_bytes": 32768,
+    "bytes_per_sample": 4,
+    "channels": 2,
+    "frequency": 44100,
+    "samples_len": 8192,
+    "samples_fnv1a64": "0x3e46d05f2fb86df4",
+    "preview_len": 441000,
+    "preview_fnv1a64": "0x3cec4e97290a6ff4",
+    "plugins": [
+      {
+        "blocks": 16,
+        "blocks_fnv1a64": "0xedbc9efd8e82e73b",
+        "bpb": 4
+      },
+      {
+        "blocks": 861,
+        "blocks_fnv1a64": "0xf8369aa7a4e392a2",
+        "bpb": 4
+      }
+    ]
+  },
+  "preview": {
+    "beat_period": 450,
+    "collection": {
+      "name": "Beat Marks",
+      "color": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": false,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          1000000,
+          4500000,
+          ""
+        ],
+        [
+          6000000,
+          4500000,
+          ""
+        ],
+        [
+          11000000,
+          4500000,
+          ""
+        ],
+        [
+          17000000,
+          4500000,
+          ""
+        ],
+        [
+          21000000,
+          4500000,
+          ""
+        ],
+        [
+          28000000,
+          4500000,
+          ""
+        ],
+        [
+          31000000,
+          4500000,
+          ""
+        ]
+      ]
+    },
+    "split_collection": {
+      "name": "Beat Split Marks",
+      "color": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": false,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          1000000,
+          4500000,
+          ""
+        ],
+        [
+          3500000,
+          4500000,
+          ""
+        ],
+        [
+          6000000,
+          4500000,
+          ""
+        ],
+        [
+          8500000,
+          4500000,
+          ""
+        ],
+        [
+          11000000,
+          4500000,
+          ""
+        ],
+        [
+          14000000,
+          4500000,
+          ""
+        ],
+        [
+          17000000,
+          4500000,
+          ""
+        ],
+        [
+          19000000,
+          4500000,
+          ""
+        ],
+        [
+          21000000,
+          4500000,
+          ""
+        ],
+        [
+          24500000,
+          4500000,
+          ""
+        ],
+        [
+          28000000,
+          4500000,
+          ""
+        ],
+        [
+          29500000,
+          4500000,
+          ""
+        ]
+      ]
+    }
+  },
+  "collections": [
+    {
+      "name": "Beats - All",
+      "color": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": true,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          1000000,
+          4500000,
+          ""
+        ],
+        [
+          1000000,
+          4500000,
+          ""
+        ],
+        [
+          6000000,
+          4500000,
+          ""
+        ],
+        [
+          11000000,
+          4500000,
+          ""
+        ],
+        [
+          17000000,
+          4500000,
+          ""
+        ],
+        [
+          21000000,
+          4500000,
+          ""
+        ],
+        [
+          28000000,
+          4500000,
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "Beats 1/4 Beat #1 (Bar)",
+      "color": [
+        255,
+        255,
+        255,
+        128
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": false,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          11000000,
+          4500000,
+          ""
+        ],
+        [
+          31000000,
+          4500000,
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "Beats Beat #2",
+      "color": [
+        255,
+        255,
+        128,
+        0
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": false,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          17000000,
+          4500000,
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "Beats Beat #3",
+      "color": [
+        255,
+        255,
+        128,
+        0
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": false,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          1000000,
+          4500000,
+          ""
+        ],
+        [
+          21000000,
+          4500000,
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "Beats Beat #4",
+      "color": [
+        255,
+        255,
+        128,
+        0
+      ],
+      "is_bold": false,
+      "is_solid_line": false,
+      "is_default": false,
+      "level": 1,
+      "show_grid_lines": true,
+      "show_mark_bar": false,
+      "show_tail_grid_lines": false,
+      "locked": false,
+      "collection_type": "Generic",
+      "linked": false,
+      "marks": [
+        [
+          6000000,
+          4500000,
+          ""
+        ],
+        [
+          28000000,
+          4500000,
+          ""
+        ]
+      ]
+    }
+  ]
+}

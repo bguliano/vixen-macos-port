@@ -1,0 +1,21 @@
+{
+"class": "TypeEditorBase",
+"source": "Vixen.Modules/App/Shows/Editors/TypeEditorBase.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+}
+},
+"events": {},
+"children": [],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+}
+}
+}

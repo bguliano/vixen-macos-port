@@ -1,0 +1,198 @@
+{
+"class": "ReleaseNotes",
+"source": "Vixen.Application/ReleaseNotes.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ReleaseNotes",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Vixen Release Notes"
+},
+"events": {
+"Load": "ReleaseNotes_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"btnOK": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 674,
+"y": 533
+},
+"Margin": {
+"t": "padding",
+"l": 12,
+"t_": 12,
+"r": 12,
+"b": 12
+},
+"Name": "btnOK",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 26
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"textBoxReleaseNotes": {
+"type": "TextBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 2
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Multiline": true,
+"Name": "textBoxReleaseNotes",
+"ScrollBars": {
+"t": "enum",
+"type": "ScrollBars",
+"v": "Both"
+},
+"Size": {
+"t": "size",
+"x": 768,
+"y": 517
+},
+"TabIndex": 4
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 774,
+"y": 571
+},
+"TabIndex": 5
+},
+"events": {},
+"children": [
+{
+"name": "btnOK",
+"col": 1,
+"row": 1
+},
+{
+"name": "textBoxReleaseNotes",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+774,
+571
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4
+]
+}
+}
+}

@@ -1,0 +1,152 @@
+{
+"class": "PauseTypeEditor",
+"source": "Vixen.Modules/App/Shows/Editors/PauseTypeEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "PauseTypeEditor"
+},
+"events": {
+"Load": "SequenceTypeEditor_Load"
+},
+"children": [
+{
+"name": "numericUpDownPauseSeconds"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 1,
+"y": 7
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Pause (seconds):"
+},
+"events": {},
+"children": []
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {
+"FileName": "openFileDialog",
+"Multiselect": true
+},
+"events": {},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"numericUpDownPauseSeconds": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 112,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 900, 0, 0, 0 })"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0 })"
+},
+"Name": "numericUpDownPauseSeconds",
+"Size": {
+"t": "size",
+"x": 55,
+"y": 23
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0 })"
+}
+},
+"events": {
+"ValueChanged": "numericUpDownPauseSeconds_ValueChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+332,
+91
+]
+}
+}
+}

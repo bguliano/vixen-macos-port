@@ -1,0 +1,297 @@
+{
+"class": "CreateEvenMarksForm",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/CreateEvenMarksForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "ref",
+"name": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "CreateEvenMarksForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Create Evenly Divided Marks"
+},
+"events": {},
+"children": [
+{
+"name": "labelStart"
+},
+{
+"name": "txtStartTime"
+},
+{
+"name": "labelEnd"
+},
+{
+"name": "txtEndTime"
+},
+{
+"name": "labelDivide"
+},
+{
+"name": "updownDivide"
+},
+{
+"name": "btnOk"
+},
+{
+"name": "btnCancel"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"labelStart": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 50,
+"y": 14
+},
+"Name": "labelStart",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Start Time"
+},
+"events": {},
+"children": []
+},
+"txtStartTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 14
+},
+"Name": "txtStartTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"labelEnd": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 54,
+"y": 44
+},
+"Name": "labelEnd",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "End Time"
+},
+"events": {},
+"children": []
+},
+"txtEndTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 44
+},
+"Name": "txtEndTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"labelDivide": {
+"type": "Label",
+"props": {
+"AutoSize": false,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 70
+},
+"Name": "labelDivide",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 30
+},
+"TabIndex": 4,
+"Text": "Number of Divisions"
+},
+"events": {},
+"children": []
+},
+"updownDivide": {
+"type": "NumericUpDown",
+"props": {
+"Location": {
+"t": "point",
+"x": 121,
+"y": 74
+},
+"Name": "updownDivide",
+"Minimum": 1,
+"Maximum": 10000,
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 5
+},
+"events": {},
+"children": []
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 114,
+"y": 130
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 208,
+"y": 130
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 7,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+307,
+180
+]
+}
+}
+}

@@ -1,0 +1,58 @@
+{
+"class": "LayerEditor",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/LayerEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "LayerEditor",
+"Text": "Layers"
+},
+"events": {},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+331,
+302
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Segoe UI",
+9,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+}
+}
+}

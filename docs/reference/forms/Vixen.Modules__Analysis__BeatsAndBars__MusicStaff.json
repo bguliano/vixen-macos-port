@@ -1,0 +1,381 @@
+{
+"class": "MusicStaff",
+"source": "Vixen.Modules/Analysis/BeatsAndBars/MusicStaff.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "MusicStaff"
+},
+"events": {
+"Paint": "MusicStaff_Paint"
+},
+"children": [
+{
+"name": "DivTimeLabelVal"
+},
+{
+"name": "DivTimeLabel"
+},
+{
+"name": "BarPeriodLabelVal"
+},
+{
+"name": "BarPeriodLabel"
+},
+{
+"name": "BPMLabelVal"
+},
+{
+"name": "BPMLabel"
+},
+{
+"name": "splitBeatsCB"
+},
+{
+"name": "NoteSizeLabel"
+},
+{
+"name": "BeatsPerBarLabel"
+},
+{
+"name": "tsLabel"
+},
+{
+"name": "staffPictureBox"
+}
+],
+"objects": {
+"staffPictureBox": {
+"type": "PictureBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Image": {
+"t": "raw",
+"v": "global::VixenModules.Analysis.BeatsAndBars.Properties.Resources.fullstaff"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 31
+},
+"Name": "staffPictureBox",
+"Size": {
+"t": "size",
+"x": 592,
+"y": 76
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "StretchImage"
+},
+"TabIndex": 0,
+"TabStop": false
+},
+"events": {
+"Click": "pictureBox1_Click",
+"Paint": "staffBox1_Paint"
+},
+"children": []
+},
+"tsLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 114
+},
+"Name": "tsLabel",
+"Size": {
+"t": "size",
+"x": 172,
+"y": 13
+},
+"TabIndex": 3,
+"Text": "Click staff to change time signature"
+},
+"events": {},
+"children": []
+},
+"BeatsPerBarLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 88,
+"y": 48
+},
+"Name": "BeatsPerBarLabel",
+"Size": {
+"t": "size",
+"x": 19,
+"y": 20
+},
+"TabIndex": 4,
+"Text": "0"
+},
+"events": {
+"Click": "BeatsPerBarLabel_Click"
+},
+"children": []
+},
+"NoteSizeLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 88,
+"y": 68
+},
+"Name": "NoteSizeLabel",
+"Size": {
+"t": "size",
+"x": 19,
+"y": 20
+},
+"TabIndex": 5,
+"Text": "0"
+},
+"events": {
+"Click": "NoteSizeLabel_Click"
+},
+"children": []
+},
+"splitBeatsCB": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 229,
+"y": 114
+},
+"Name": "splitBeatsCB",
+"Size": {
+"t": "size",
+"x": 76,
+"y": 17
+},
+"TabIndex": 6,
+"Text": "Split Beats",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "splitBeatsCB_CheckedChanged"
+},
+"children": []
+},
+"BPMLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 70,
+"y": 14
+},
+"Name": "BPMLabel",
+"Size": {
+"t": "size",
+"x": 37,
+"y": 13
+},
+"TabIndex": 7,
+"Text": "BPM:"
+},
+"events": {},
+"children": []
+},
+"BPMLabelVal": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 109,
+"y": 14
+},
+"Name": "BPMLabelVal",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 13
+},
+"TabIndex": 8,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"BarPeriodLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 226,
+"y": 15
+},
+"Name": "BarPeriodLabel",
+"Size": {
+"t": "size",
+"x": 102,
+"y": 13
+},
+"TabIndex": 9,
+"Text": "Bar Period (sec):"
+},
+"events": {},
+"children": []
+},
+"BarPeriodLabelVal": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 317,
+"y": 15
+},
+"Name": "BarPeriodLabelVal",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 13
+},
+"TabIndex": 10,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"DivTimeLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 128,
+"y": 14
+},
+"Name": "DivTimeLabel",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 13
+},
+"TabIndex": 11,
+"Text": "Div Time (ms):"
+},
+"events": {},
+"children": []
+},
+"DivTimeLabelVal": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 207,
+"y": 14
+},
+"Name": "DivTimeLabelVal",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 13
+},
+"TabIndex": 12,
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+600,
+143
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.staffPictureBox)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.staffPictureBox)).EndInit()"
+]
+}

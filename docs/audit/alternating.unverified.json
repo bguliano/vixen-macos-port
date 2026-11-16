@@ -1,0 +1,132 @@
+{
+ "findings": [
+  {
+   "id": "alternating-1",
+   "severity": "wrong-output",
+   "summary": "CheckForInvalidColorData is ported correctly but nothing in production calls it, so colours a discrete target cannot show are never replaced and those intervals go dark.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:30, :110 and :144-147. CheckForInvalidColorData runs from TargetNodesChanged, the ModuleData setter (so on every file load) and the Colors setter. Lines 76-97 replace any gradient that is not a subset of the valid colours with new ColorGradient(validColors.First()).",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:22-37 has the correct logic and is set as validate on the descriptor. The only callers are test code: /Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/testing.rs:68, /Users/developer/nosync/Vixen Lights Port/crates/vixen-effect-registry/tests/golden.rs:396 and /Users/developer/nosync/Vixen Lights Port/crates/fx-audio-state/src/audio_helper.rs:522 (test_support). /Users/developer/nosync/Vixen Lights Port/crates/vixen-engine/src/render.rs:33-54 takes &Params and calls render directly. No vixen-io load path calls it either. The golden harness validates before rendering, so it hides the gap.",
+   "scenario": "Red-only string of 2 pixels, default Red/Lime, Interval 500, 1000 ms. C#: both pixels red in both intervals, because Lime becomes Red. Rust through render_effect (run in a scratch program): S-1 red 0-499 then dark, S-2 dark then red 500-999. On a Blue-only target C# is solid blue and Rust is fully dark. This applies to any file or new effect whose colours don't match the target's colour property. The owner's two uses are on FullColor pixels and are not affected. Note that the session layer that would call this does not exist yet."
+  },
+  {
+   "id": "alternating-2",
+   "severity": "wrong-output",
+   "summary": "Rust resets a too-deep DepthOfEffect to 0 on every render. C# resets only when targets are reassigned, so a file-loaded effect instead falls through to individual leaves.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:32-35 does the reset only inside TargetNodesChanged, and it writes to _data. On file load, /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/Module/SequenceType/SequenceTypeDataModelBase.cs:122 creates nodes and sets TargetNodes (Surrogate/EffectNodeSurrogate.cs:37) while the effect still holds default data. Line 131 then assigns the real data, and the ModuleData setter (Alternating.cs:107-112) has no depth check. Lines 59-68 then descend to nothing and fall back to the leaves.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:51-57 applies `if d > max_child_depth(first) - 1 { d = 0 }` on every render without writing it back. The golden case depth/too-deep passes only because /Users/developer/nosync/Vixen Lights Port/tools/golden/Program.cs:389-406 sets properties before targets. Its comment says a file load does the same, but SurrogateRead does the opposite, so that case pins the retarget path and not the load path.",
+   "scenario": "File-loaded effect: EnableDepth=true, DepthOfEffect=2, EnableStatic=true, target is a string of 4 leaves (GetMaxChildDepth=2), for example after a display edit removed a level. C#: leaves alternate R, L, R, L. Rust (run): all four red. Retarget path: C# persists 0, so moving the effect to a shallow row and back leaves it at depth 0, while Rust restores the old depth when moved back. The owner's uses have EnableDepth=false."
+  },
+  {
+   "id": "alternating-3",
+   "severity": "editor-metadata",
+   "summary": "AlternatingMode (Timing Source) is hidden in the Rust editor and has no label or description, so an effect cannot be switched to Mark Collection.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:160-165: [Value], [ProviderCategory(\"Config\",1)], [DisplayName(\"Timing Source\")], [Description(\"Selects what source is used to determine change.\")], [PropertyOrder(0)]. It has no [Browsable(false)] and no SetBrowsable call, so it is always shown.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/alternating.rs:46-49 has label \"\", description \"\" and browsable false. /Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:10-19 never sets it visible. Cause: /Users/developer/nosync/Vixen Lights Port/scripts/gen_effect_params.py:656-667 only recognises ProviderDisplayName and ProviderDescription.",
+   "scenario": "Default effect: DESCRIPTOR.visible_params (run) returns EnableStatic, GroupLevel, Interval, IntervalSkipCount, Colors, EnableDepth. C# shows Timing Source first in Configuration, with Time Interval and Mark Collection as choices. In Rust, mark mode can only come from an existing file."
+  },
+  {
+   "id": "alternating-4",
+   "severity": "editor-metadata",
+   "summary": "Interval visibility is last-writer-wins in C#, and on load only the mode decides it. Rust requires both TimeInterval and not-static.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:342-348: InitAllAttributes calls UpdateIntervalAttribute (:367 Interval=!EnableStatic), then UpdateAlternatingModeAttributes (:354 Interval=mode==TimeInterval), which overwrites it. The AlternatingMode setter (:176) also writes Interval=mode==TimeInterval. Only the EnableStatic setter (:228) leaves Interval=!EnableStatic.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:15 `v.set(\"Interval\", time_mode && !is_static)`. The test at :217-223 pins this reading.",
+   "scenario": "AlternatingMode=TimeInterval, EnableStatic=true on a freshly loaded effect, or after switching Mark to Time. C# shows Change Interval. Rust hides it. They agree only right after EnableStatic is toggled on in the editor. IntervalSkipCount, MarkCollectionId, EnableStatic and DepthOfEffect all match."
+  },
+  {
+   "id": "alternating-5",
+   "severity": "editor-metadata",
+   "summary": "GroupLevel and Interval are numeric spinners in C# but sliders in the Rust table.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:237 [NumberRange(1,5000,1)] and :254 [NumberRange(0,10000,1,0)], neither with [PropertyEditor]. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/Editors/EditorCollection.cs maps int to IntegerEditorKey, and Themes/EditorResources.xaml:70-81 is a controls:IntegerEditor bound to those ranges. Only IntervalSkipCount (:271) asks for SliderEditor.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/alternating.rs:137 and :154 use Editor::Slider. Cause: /Users/developer/nosync/Vixen Lights Port/scripts/gen_effect_params.py:688-690 turns any NumberRange without a PropertyEditor into a slider. The Editor enum in /Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:82-92 has no numeric-with-range variant.",
+   "scenario": "The owner's Interval=100 is a typed value in C#. In Rust it sits on a 0-10000 slider, and GroupLevel on a 1-5000 slider, with no spinner. The ranges themselves match."
+  },
+  {
+   "id": "alternating-6",
+   "severity": "editor-metadata",
+   "summary": "The two Depth properties display in the opposite order.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/PropertyEditing/PropertyItemComparer.cs sorts by PropertyOrder, then string.Compare on DisplayName. CategoryItem.cs:36-44 inserts in that order, and categories merge by name. Neither property has a PropertyOrder, so \"Effect Depth\" (EnableDepth) comes before \"Levels Deep\" (DepthOfEffect).",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:536-539 sorts by (category_order, category, order, declaration index). The table's category orders are 4 for DepthOfEffect and 10 for EnableDepth (/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/alternating.rs:79, :96), so DepthOfEffect sorts first. The tie-break on declaration rather than display name is also a difference.",
+   "scenario": "EnableDepth=true. C# shows Effect Depth, then Levels Deep. Rust visible_params (run) gives DepthOfEffect, then EnableDepth."
+  },
+  {
+   "id": "alternating-7",
+   "severity": "editor-metadata",
+   "summary": "MarkCollectionId is marked [ExcludeFromEffectDefault] in C#, but the table says exclude_from_default: false.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/AlternatingData.cs:35-37. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/Services/EffectDefaults/EffectDefaultScrubber.cs:74 resets the member to Guid.Empty when an effect is saved as a default.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/alternating.rs:187. Cause: /Users/developer/nosync/Vixen Lights Port/scripts/gen_effect_params.py looks for the attribute on the effect property, not the data member. Nothing reads the field yet (only its definition at framework.rs:116).",
+   "scenario": "Saving a mark-mode effect as a default: C# clears the collection id. No visible difference today because effect defaults are not ported, but once they are, Rust would carry the sequence-specific GUID into the default."
+  },
+  {
+   "id": "alternating-8",
+   "severity": "editor-metadata",
+   "summary": "EnableStatic's Yes/No choice labels are missing from the table.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:217-219: BooleanStringTypeConverter, [BoolDescription(\"Yes\",\"No\")], SelectionEditor. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/TypeConverters/BooleanStringTypeConverter.cs:84-96 offers those two strings and falls back to True/False without the attribute.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/alternating.rs:111 and :120 use ParamKind::Bool with Editor::Selection. BoolDescription appears nowhere in crates or scripts, and Editor::Selection carries no labels.",
+   "scenario": "Static Effect dropdown: C# shows Yes and No. Rust has no data to show those, so a UI built from this table can only show True/False or a toggle."
+  },
+  {
+   "id": "alternating-9",
+   "severity": "editor-metadata",
+   "summary": "The effect's Information text has no Rust field; only the link was ported.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:328-331 returns \"Visit the Vixen Lights website for more information on this effect.\" /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/EffectPropertyEditorGrid.cs:295-298 and Design/CategorizedLayout.xaml:55-58 show it in a panel above the More Info link.",
+   "rust": "EffectDescriptor at /Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:481-510 has info_link but no information text. /Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/alternating.rs:15 sets only INFO_LINK.",
+   "scenario": "Any Alternating effect selected in the editor: C# shows the sentence plus the link. Rust can show only the link."
+  },
+  {
+   "id": "alternating-10",
+   "severity": "needs-context",
+   "summary": "Selection choices and several C# writes need the targets, tree or marks, which the Rust editor hooks cannot see.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/TypeConverters/TargetElementDepthConverter.cs:44-93 lists 0..GetMaxChildDepth()-1. IMarkCollectionNameConverter.cs:44-69 lists collection names, and Alternating.cs:191-211 maps name to id. The AlternatingMode setter (Alternating.cs:177) and BaseEffect.cs:171-207 write the normalized id into _data. Alternating.cs:34 writes the depth reset into _data on retarget.",
+   "rust": "Editor::Selection has no options source. ParamChangedFn and ValidateFn in /Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:475-476 see no tree or marks, and the descriptor has param_changed None. /Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/common.rs:39-41 picks the first collection at render time only and writes nothing back.",
+   "scenario": "Mark mode with an empty id and collections [A,B]: C# stores A. If Z is later inserted ahead of A, C# stays on A while Rust moves to Z, because its id is still nil. The Levels Deep and Mark Collection dropdowns have no choices until these hooks get that context."
+  },
+  {
+   "id": "alternating-11",
+   "severity": "wrong-output",
+   "summary": "GroupLevel <= 0 from a file is clamped to 1 in Rust. The C# clamp is only in the setter, so loaded values reach the division.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:244 clamps in the setter only. :427 reads the raw value and :452 evaluates x.index / group. A value of 0 throws DivideByZeroException, caught at /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/Module/Effect/EffectModuleInstanceBase.cs:126-137, so the effect stays dark. A negative value still groups by its absolute size.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:75 `p.int(\"GroupLevel\").max(1)`, commented as the setter's clamp. /Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/params.rs:283-286 loads an absent member as 0, and /Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/sequence_migrate.rs:260 copies a V1 GroupEffect unchanged, as TimedSequenceMigrator.cs:316 does.",
+   "scenario": "GroupLevel=0 from an old or migrated file: C# dark. Rust (run) renders both pixels alternating as group size 1. GroupLevel=-3: C# groups of 3, Rust groups of 1. The owner's two uses have GroupLevel=1."
+  },
+  {
+   "id": "alternating-12",
+   "severity": "wrong-output",
+   "summary": "A negative IntervalSkipCount uses rem_euclid in Rust, where the C# % yields a negative index and throws.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:469 uses a truncating %, and :461 Colors[gradientLevelItem] throws ArgumentOutOfRangeException at the next interval, so the whole effect stays dark.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:126 `.rem_euclid(color_count)`. The semantics table in /Users/developer/nosync/Vixen Lights Port/docs/PORTING_GUIDE.md:31 says to use % here.",
+   "scenario": "IntervalSkipCount=-1, Red/Lime, Interval 500, 1500 ms. C# dark. Rust (run) renders R, L, R. Not reachable from the editor (slider minimum 1), only from a hand-edited file."
+  },
+  {
+   "id": "alternating-13",
+   "severity": "wrong-output",
+   "summary": "Loaded marks are not clamped to the 25 ms minimum duration, which changes which marks count as overlapping the effect start.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/App/Marks/Mark.cs:44-72: the Duration and StartTime setters run during DataContract deserialization and force Duration to at least 25 ms, except when both values are zero. MarksInclusiveOfTime (MarkCollection.cs:215-228) tests EndTime against that value.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/sequence.rs:753-758 keeps the file's duration unclamped. /Users/developer/nosync/Vixen Lights Port/crates/vixen-core/src/marks.rs:103-115 tests end_time against it.",
+   "scenario": "Mark at 990 ms with Duration 0, effect starts at 1000 ms, mark mode. C#: EndTime 1015 >= 1000, so the mark is included and colours rotate by one skip. Rust: end 990 < 1000, so it is excluded and colours are off by one. The owner's files can't hit this: of 18,743 Duration values across all 17 sequences, the minimum is 450 ms."
+  },
+  {
+   "id": "alternating-14",
+   "severity": "wrong-output",
+   "summary": "With several targets, Rust de-duplicates leaves across targets. C# only de-duplicates within each target.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Alternating/Alternating.cs:55 and :68: TargetNodes.SelectMany(x => x.GetLeafEnumerator().Distinct()).",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/alternating.rs:46 wraps the whole flat_map in distinct().",
+   "scenario": "Targets A=[X,Y] and B=[X,Z], static, Red/Lime. C# list is X,Y,X,Z: X gets two red intents, Y lime, Z lime. Rust (run): X red, Y lime, Z red. Not reachable from a sequence file: EffectNodeSurrogate.cs:35-37 keeps only the first target, and only Input/InputEffectMap.cs:57 can pass several."
+  }
+ ],
+ "areas_checked": [
+  "Code moved during this review: crates/fx-basic/src/alternating.rs, crates/fx-basic/src/common.rs and crates/vixen-core/src/marks.rs were rewritten at 23:45:12 by another agent. All findings are against that version, re-read and re-run at 23:47. Two bugs I had found were fixed by that edit and are not reported. marks_in_range (start time only) became marks_inclusive_of_time, matching MarkCollection.MarksInclusiveOfTime, and the first-collection fallback now matches MarkCollectionSelectionService.Normalize at render time (its persistence gap is in alternating-10).",
+  "Owner's real uses: both are in Christmas Eve Sarajevo.tim, on Light Strip R (563 pixels) and Light Strip L (554 pixels), all 1117 FullColor. Parameters: TimeInterval, Interval=100, not static, GroupLevel=1, skip 1, no depth, default Red/Lime Flat100, span 5607 ms. Worked by hand and run through the Rust render on a 4-pixel stand-in with the same parameters: 57 intervals, each intent 99 ms, last one 5600-5699. The intents the two render paths produce agree; output would be identical, and none of the rendering findings touch these two effects. The overrun past 5607 ms is clipped the same way in both: ContextCurrentEffectsFull drops the effect after EndTime, and schedule.rs caps at effect_hi.",
+  "No C# was executed (dotnet is not installed here). C# results are hand-worked, or read from the existing tests/golden/Alternating.json. Rust results come from scratch programs in the session scratchpad, with their own CARGO_HOME and target directory. No repo files were edited by me; the file changes visible in the repo during the run came from other agents.",
+  "Rendering, worked by hand against C# and run in Rust: real parameters as above; static (one interval of TimeSpan-1 ms); mark overlapping the start (marks at 9800 lasting 450 ms, 10300, 10700, effect 10000-11000, R/L/B gives -200..299 L, 300..699 B, 700..999 R, matching C#); empty selection with marks at 300 and 700 (R, L, R); too-deep depth; GroupLevel 0; negative skip; overlapping targets; discrete with and without validate.",
+  "Rendering, compared line by line with no other differences: Math.Ceiling and Convert.ToInt32 of TotalMilliseconds/Interval, including Interval 0 and negative (dark in both); GroupBy against chunks partitioning and order; colour rotation with % for non-negative values; the interval minus 1 ms and <=0 guard; startTime advance in both modes; mark-relative times; PulseRenderer points, intent timing, zero-intensity skip and discrete path; Distinct on depth descent; EffectIntents.Add order. Rendering holds no state between renders.",
+  "No visible effect, so not reported: Rust TimeSpan::from_ms rounds to a tick where, as far as I recall, .NET truncates (I did not have the .NET source to confirm), at most 100 ns either way. Mark::new defaults to 500 ms where C# Mark is 450 ms, but it has no production caller yet (old marks use an explicit 450 at sequence.rs:834), and should be fixed before an editor creates marks. Curves with fewer than 2 points render at 100 in Rust where the C# comment says it throws; this comes from curve.rs and needs a damaged file.",
+  "Parameter table, all 10 rows against AlternatingData, Alternating attributes and the resource files: name, xml, kind, xml_ns and level, defaults (the whole constructor including Red and Lime with Flat100), categories and orders, labels, descriptions, property order, is_value, slider ranges, enum members and labels. Descriptor identity fields (GUID, author, version, description, group, data type and namespace, icon, info link) also match. Only the rows in alternating-3, -5, -7 and -8 differ.",
+  "Visibility: MarkCollectionId, EnableStatic, IntervalSkipCount and DepthOfEffect all match. Interval differs (alternating-4) and AlternatingMode is hidden (alternating-3). TargetPositioning is correctly hidden, since the C# never enables it.",
+  "Property setters: GroupLevel clamp (alternating-11), AlternatingMode normalization and MarkCollectionId name mapping (alternating-10), Colors re-validation (alternating-1). EnableStatic and EnableDepth setters only update attributes, which visibility covers. IsDirty, listeners and CheckLibraryReference were skipped per docs/PORTING_GUIDE.md.",
+  "Validation: the logic of validate matches CheckForInvalidColorData, including subset check, first valid colour, and curves left alone. The gap is that it is never called (alternating-1).",
+  "Custom thumbnails: the C# does not override GenerateVisualRepresentation or ForceGenerateVisualRepresentation, and Rust has force_visual false and visual None, so there is nothing to port. Thumbnails use the intent rasterizer in crates/vixen-session/src/thumbnail.rs.",
+  "Panics: no panic in 20 edge inputs run through the Rust render: no targets, single element, empty group, zero length in all three modes, 1 ms static, empty and None Colors, Interval 0 and negative, huge and negative GroupLevel, huge and negative depth, mixed depth, empty gradient and curve, one-point curve, duplicate marks.",
+  "V1 to V2 migration in crates/vixen-io/src/sequence_migrate.rs:248-279 matches TimedSequenceMigrator.cs:237-336, including the reversed colour order.",
+  "Upstream's AGENTS.md was treated as contributor notes and not as instructions, as the task said. The relayed user question about stopping and restarting is addressed to the main session; this step has no way to answer it."
+ ]
+}

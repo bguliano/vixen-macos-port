@@ -1,0 +1,215 @@
+{
+"class": "AboutVixen",
+"source": "Vixen.Application/AboutVixen.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "AboutVixen",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "About Vixen"
+},
+"events": {
+"Load": "AboutVixen_Load"
+},
+"children": [
+{
+"name": "pictureBoxIcon"
+},
+{
+"name": "labelHeading"
+},
+{
+"name": "textBoxLicense"
+},
+{
+"name": "btnOK"
+}
+],
+"objects": {
+"btnOK": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 770,
+"y": 708
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "btnOK",
+"Size": {
+"t": "size",
+"x": 100,
+"y": 35
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"textBoxLicense": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 12,
+"y": 259
+},
+"Multiline": true,
+"Name": "textBoxLicense",
+"ScrollBars": {
+"t": "enum",
+"type": "ScrollBars",
+"v": "Both"
+},
+"Size": {
+"t": "size",
+"x": 858,
+"y": 437
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"pictureBoxIcon": {
+"type": "PictureBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "pictureBoxIcon",
+"Size": {
+"t": "size",
+"x": 196,
+"y": 197
+},
+"TabIndex": 9,
+"TabStop": false
+},
+"events": {},
+"children": []
+},
+"labelHeading": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 13.8,
+"bold": true
+},
+"Location": {
+"t": "point",
+"x": 243,
+"y": 35
+},
+"Name": "labelHeading",
+"Size": {
+"t": "size",
+"x": 79,
+"y": 32
+},
+"TabIndex": 8,
+"Text": "Vixen"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+8,
+20
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+882,
+753
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+5,
+4,
+5
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+900,
+800
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+900,
+800
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit()"
+]
+}

@@ -1,0 +1,348 @@
+{
+"class": "ColorSetupForm",
+"source": "Vixen.Modules/Property/Color/ColorSetupForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ColorSetupForm",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Element Color"
+},
+"events": {
+"Load": "ColorSetupForm_Load"
+},
+"children": [
+{
+"name": "groupBoxOptions"
+},
+{
+"name": "buttonOk"
+}
+],
+"objects": {
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 356,
+"y": 188
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 27,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"groupBoxOptions": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom",
+"Left",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "groupBoxOptions",
+"Size": {
+"t": "size",
+"x": 447,
+"y": 167
+},
+"TabIndex": 29,
+"TabStop": false,
+"Text": "Element Color"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "panel1"
+}
+]
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 10,
+"y": 18
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 429,
+"y": 145
+},
+"TabIndex": 7
+},
+"events": {},
+"children": [
+{
+"name": "colorPanelSingleColor"
+},
+{
+"name": "buttonColorSetsSetup"
+},
+{
+"name": "comboBoxColorSet"
+},
+{
+"name": "radioButtonOptionFullColor"
+},
+{
+"name": "radioButtonOptionMultiple"
+},
+{
+"name": "radioButtonOptionSingle"
+}
+]
+},
+"colorPanelSingleColor": {
+"type": "ColorPanel",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Color": {
+"t": "color",
+"name": "Maroon"
+},
+"Location": {
+"t": "point",
+"x": 208,
+"y": 9
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "colorPanelSingleColor",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 34
+},
+"TabIndex": 6
+},
+"events": {},
+"children": []
+},
+"buttonColorSetsSetup": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 356,
+"y": 59
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "buttonColorSetsSetup",
+"Size": {
+"t": "size",
+"x": 40,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "......",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonColorSetsSetup_Click"
+},
+"children": []
+},
+"comboBoxColorSet": {
+"type": "ComboBox",
+"props": {
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 208,
+"y": 60
+},
+"Name": "comboBoxColorSet",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 23
+},
+"TabIndex": 4
+},
+"events": {
+"SelectedIndexChanged": "comboBoxColorSet_SelectedIndexChanged"
+},
+"children": []
+},
+"radioButtonOptionFullColor": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 107
+},
+"Name": "radioButtonOptionFullColor",
+"Size": {
+"t": "size",
+"x": 190,
+"y": 19
+},
+"TabIndex": 2,
+"TabStop": true,
+"Text": "Any color (ie. fully mixing RGB)",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AnyRadioButtonCheckedChanged"
+},
+"children": []
+},
+"radioButtonOptionMultiple": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 61
+},
+"Name": "radioButtonOptionMultiple",
+"Size": {
+"t": "size",
+"x": 177,
+"y": 19
+},
+"TabIndex": 1,
+"TabStop": true,
+"Text": "Multiple independent colors:",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AnyRadioButtonCheckedChanged"
+},
+"children": []
+},
+"radioButtonOptionSingle": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 17
+},
+"Name": "radioButtonOptionSingle",
+"Size": {
+"t": "size",
+"x": 90,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "Single color:",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AnyRadioButtonCheckedChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+475,
+232
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+491,
+270
+]
+}
+}
+}

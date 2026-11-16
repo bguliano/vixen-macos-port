@@ -1,0 +1,50 @@
+{
+"class": "GDIControl",
+"source": "Vixen.Modules/Preview/VixenPreview/GDIPreview/GDIControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "GDIControl"
+},
+"events": {
+"Resize": "GDIControl_Resize"
+},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+12,
+25
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+6,
+6,
+6
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+626,
+379
+]
+}
+}
+}

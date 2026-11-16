@@ -1,0 +1,289 @@
+{
+"class": "DummyLightingSetup",
+"source": "Vixen.Modules/Controller/DummyLighting/DummyLightingSetup.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Name": "DummyLightingSetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Dummy Lighting Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "textBoxWindowTitle"
+},
+{
+"name": "radioButtonSingleRGB"
+},
+{
+"name": "radioButtonMultiRGB"
+},
+{
+"name": "radioButtonMonochrome"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 213,
+"y": 220
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 308,
+"y": 220
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioButtonMonochrome": {
+"type": "RadioButton",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 74
+},
+"Name": "radioButtonMonochrome",
+"Size": {
+"t": "size",
+"x": 198,
+"y": 19
+},
+"TabIndex": 1,
+"TabStop": true,
+"Text": "Set up as monochrome channels",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButton_CheckedChanged"
+},
+"children": []
+},
+"radioButtonMultiRGB": {
+"type": "RadioButton",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 106
+},
+"Name": "radioButtonMultiRGB",
+"Size": {
+"t": "size",
+"x": 365,
+"y": 50
+},
+"TabIndex": 2,
+"TabStop": true,
+"Text": {
+"t": "raw",
+"v": "\"Set up as RGB channels, with every 3 inputs mapping to the R, G, B components of \" + \"a single RGB output\""
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButton_CheckedChanged"
+},
+"children": []
+},
+"radioButtonSingleRGB": {
+"type": "RadioButton",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 168
+},
+"Name": "radioButtonSingleRGB",
+"Size": {
+"t": "size",
+"x": 238,
+"y": 34
+},
+"TabIndex": 3,
+"TabStop": true,
+"Text": "Set up as RGB channels, with every input\r\nmapping to a full-color RGB channel\r\n",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioButton_CheckedChanged"
+},
+"children": []
+},
+"textBoxWindowTitle": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 107,
+"y": 28
+},
+"Name": "textBoxWindowTitle",
+"Size": {
+"t": "size",
+"x": 192,
+"y": 23
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 31
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Window Title:"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+414,
+275
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+430,
+313
+]
+}
+}
+}

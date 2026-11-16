@@ -1,0 +1,188 @@
+{
+"class": "GDIPreviewForm",
+"source": "Vixen.Modules/Preview/VixenPreview/GDIPreview/GDIPreviewForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "GDIPreviewForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "Manual"
+},
+"Text": "Vixen Preview"
+},
+"events": {
+"FormClosing": "GDIPreviewForm_FormClosing",
+"Load": "GDIPreviewForm_Load",
+"Move": "GDIPreviewForm_Move",
+"Resize": "GDIPreviewForm_Resize"
+},
+"children": [
+{
+"name": "gdiControl"
+},
+{
+"name": "statusStrip"
+}
+],
+"objects": {
+"statusStrip": {
+"type": "StatusStrip",
+"props": {
+"Location": {
+"t": "point",
+"x": 0,
+"y": 406
+},
+"Name": "statusStrip",
+"Padding": {
+"t": "padding",
+"l": 1,
+"t_": 0,
+"r": 16,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 896,
+"y": 22
+},
+"TabIndex": 1,
+"Text": "statusStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripStatusPixelsLabel"
+},
+{
+"ref": "toolStripStatusPixels"
+},
+{
+"ref": "toolStripStatusLabel1"
+},
+{
+"ref": "toolStripStatusFPS"
+}
+]
+},
+"toolStripStatusPixelsLabel": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusPixelsLabel",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 17
+},
+"Text": "Lights:"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusPixels": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusPixels",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 17
+},
+"Text": "0"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel1": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusLabel1",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 17
+},
+"Text": "FPS:"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusFPS": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusFPS",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 17
+},
+"Text": "1,000,0009"
+},
+"events": {},
+"children": []
+},
+"gdiControl": {
+"type": "GDIControl",
+"props": {
+"Background": {
+"t": "image",
+"file": "GDIPreviewForm__gdiControl.Background.png"
+},
+"BackgroundAlpha": 50,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FrameRate": 0,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "gdiControl",
+"Size": {
+"t": "size",
+"x": 896,
+"y": 406
+},
+"TabIndex": 2
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+896,
+428
+]
+}
+}
+}

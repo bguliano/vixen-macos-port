@@ -1,0 +1,170 @@
+{
+"class": "LetterIteratorEditor",
+"source": "Vixen.Common/Controls/NameGeneration/LetterIteratorEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "LetterIteratorEditor"
+},
+"events": {
+"Load": "NumericCounterEditor_Load"
+},
+"children": [
+{
+"name": "editorLayoutPanel"
+}
+],
+"objects": {
+"editorLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "editorLayoutPanel",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 208,
+"y": 112
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "label1",
+"col": 0,
+"row": 0
+},
+{
+"name": "textBoxLetters",
+"col": 0,
+"row": 1
+},
+{
+"name": "label2",
+"col": 0,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 150,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Enter a list of Letters to be use"
+},
+"events": {},
+"children": []
+},
+"textBoxLetters": {
+"type": "TextBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Name": "textBoxLetters",
+"TabIndex": 7
+},
+"events": {
+"TextChanged": "textBoxLetters_TextChanged"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 6,
+"r": 3,
+"b": 0
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 198,
+"y": 13
+},
+"TabIndex": 8,
+"Text": "Example: LCR LR NS EW UL (Only one)"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+208,
+112
+]
+}
+}
+}

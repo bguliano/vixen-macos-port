@@ -1,0 +1,235 @@
+{
+"class": "SequencePackageExportSourcesStage",
+"source": "Vixen.Modules/App/TimedSequenceMapper/SequencePackageExport/SequencePackageExportSourcesStage.Designer.cs",
+"props": {
+"sequences": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "BulkExportSourcesStage"
+},
+"events": {},
+"children": [
+{
+"name": "btnAddAll"
+},
+{
+"name": "btnDelete"
+},
+{
+"name": "btnAdd"
+},
+{
+"name": "lstSequences"
+},
+{
+"name": "lblChooseSequences"
+}
+],
+"objects": {
+"lblChooseSequences": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 11,
+"y": 12
+},
+"Name": "lblChooseSequences",
+"Size": {
+"t": "size",
+"x": 190,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Step 2:  Select sequences to export."
+},
+"events": {},
+"children": []
+},
+"lstSequences": {
+"type": "ListView",
+"props": {
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 77
+},
+"Name": "lstSequences",
+"Size": {
+"t": "size",
+"x": 468,
+"y": 374
+},
+"TabIndex": 1,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"SelectedIndexChanged": "lstSequences_SelectedIndexChanged",
+"KeyUp": "lstSequences_KeyUp"
+},
+"children": [],
+"Columns": [
+{
+"ref": "sequences"
+}
+]
+},
+"selectSequencesDialog": {
+"type": "OpenFileDialog",
+"props": {
+"DefaultExt": "tim",
+"Filter": "Sequence Files|*.tim",
+"Multiselect": true,
+"Title": "Select Sequences"
+},
+"events": {
+"FileOk": "openFileDialog1_FileOk"
+},
+"children": []
+},
+"btnAdd": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 3,
+"r": 1,
+"b": 3
+},
+"Name": "btnAdd",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "button1",
+"UseVisualStyleBackColor": true,
+"toolTipText": "Explore Sequence folder"
+},
+"events": {
+"Click": "btnSelectSequences_Click"
+},
+"children": []
+},
+"btnDelete": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 76,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 1,
+"t_": 3,
+"r": 3,
+"b": 3
+},
+"Name": "btnDelete",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 23
+},
+"TabIndex": 3,
+"Text": "button2",
+"UseVisualStyleBackColor": true,
+"toolTipText": "Remove Sequence(s) from list"
+},
+"events": {
+"Click": "btnDelete_Click"
+},
+"children": []
+},
+"btnAddAll": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 44,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 1,
+"t_": 3,
+"r": 3,
+"b": 3
+},
+"Name": "btnAddAll",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 23
+},
+"TabIndex": 4,
+"Text": "button2",
+"UseVisualStyleBackColor": true,
+"toolTipText": "Add All Sequences from Profile"
+},
+"events": {
+"Click": "btnAddAll_Click"
+},
+"children": []
+},
+"toolTip": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": []
+},
+"sequences": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Sequences"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+502,
+474
+]
+}
+}
+}

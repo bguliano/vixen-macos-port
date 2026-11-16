@@ -1,0 +1,20 @@
+[package]
+name = "fx-pixel-graphics"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-video = { path = "../vixen-video" }
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+uuid.workspace = true
+resvg = { version = "0.45", default-features = false }
+roxmltree.workspace = true
+tiny-skia.workspace = true
+svgtypes = "0.15"
+image.workspace = true
+
+[dev-dependencies]
+serde_json = { workspace = true, features = ["float_roundtrip"] }
+fastrand.workspace = true
+flate2 = "1"

@@ -1,0 +1,72 @@
+{
+"class": "VixenPreviewControl",
+"source": "Vixen.Modules/Preview/VixenPreview/VixenPreviewControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "VixenPreviewControl"
+},
+"events": {
+"Load": "VixenPreviewControl_Load",
+"Paint": "VixenPreviewControl_Paint",
+"MouseDown": "VixenPreviewControl_MouseDown",
+"MouseMove": "VixenPreviewControl_MouseMove",
+"MouseUp": "VixenPreviewControl_MouseUp",
+"PreviewKeyDown": "VixenPreviewControl_PreviewKeyDown",
+"Resize": "VixenPreviewControl_Resize"
+},
+"children": [],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"contextMenuStrip1": {
+"type": "ContextMenuStrip",
+"props": {
+"Name": "contextMenuStrip1",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 4
+}
+},
+"events": {
+"ItemClicked": "contextMenuStrip1_ItemClicked"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+290,
+240
+]
+}
+}
+}

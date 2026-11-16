@@ -1,0 +1,23 @@
+ 7:17  up 11 days,  7:59, 1 user, load averages: 7.81 10.41 10.40
+== 144 Hz, scale 2
+Window 37142 at scale 2, on a 144 Hz display. wgpu will check occlusion: the layer has a route to a delegate
+Flood: 20107638 frames published in 3.00s, 313 rendered (104.3 per second), 20107323 dropped, last frame 155.041µs of CPU, frame gaps: p10 6.7 ms, median 8.6 ms, p99 14.9 ms, worst 27.8 ms
+Steady: 73 frames published at 25 ms intervals, 73 rendered, 2 dropped, frame gaps: p10 26.9 ms, median 27.7 ms, p99 28.3 ms, worst 28.5 ms
+Idle for 2s: 0 frames rendered, 579µs of process CPU
+Hidden for 1s with changes arriving: 0 frames rendered, 24.996ms of process CPU
+Shown again: 1 frames rendered within 500 ms
+Resized over 60 steps: 60 frames rendered, drawable now 1040 x 720
+Stopped in 3.750542ms
+PASS
+ 7:17  up 11 days,  7:59, 1 user, load averages: 6.83 10.11 10.30
+== 72 Hz, scale 1
+Window 37154 at scale 1, on a 72 Hz display. wgpu will check occlusion: the layer has a route to a delegate
+Flood: 18560522 frames published in 3.00s, 217 rendered (72.3 per second), 18560303 dropped, last frame 87.541µs of CPU, frame gaps: p10 10.7 ms, median 13.9 ms, p99 20.0 ms, worst 22.9 ms
+Steady: 73 frames published at 25 ms intervals, 73 rendered, 2 dropped, frame gaps: p10 27.3 ms, median 27.8 ms, p99 28.2 ms, worst 28.2 ms
+Idle for 2s: 0 frames rendered, 677µs of process CPU
+Hidden for 1s with changes arriving: 0 frames rendered, 21.648ms of process CPU
+Shown again: 1 frames rendered within 500 ms
+Resized over 60 steps: 60 frames rendered, drawable now 520 x 360
+Stopped in 8.645708ms
+PASS
+ 7:17  up 11 days,  7:59, 1 user, load averages: 6.38 9.91 10.22

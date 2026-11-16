@@ -1,0 +1,134 @@
+{
+"class": "FormParameterPicker",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/FormParameterPicker.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "None"
+},
+"Name": "FormParameterPicker",
+"Text": "FormParameterPicker"
+},
+"events": {},
+"children": [
+{
+"name": "flowLayoutPanel1"
+}
+],
+"objects": {
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "TopDown"
+},
+"Location": {
+"t": "point",
+"x": 1,
+"y": 1
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"MaximumSize": {
+"t": "size",
+"x": 800,
+"y": 800
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 724,
+"y": 123
+},
+"TabIndex": 1
+},
+"events": {
+"Paint": "flowLayoutPanel1_Paint"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+726,
+125
+]
+},
+"Padding": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1
+]
+}
+}
+}

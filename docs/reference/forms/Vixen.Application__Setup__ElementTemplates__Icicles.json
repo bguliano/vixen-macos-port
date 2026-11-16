@@ -1,0 +1,468 @@
+{
+"class": "Icicles",
+"source": "Vixen.Application/Setup/ElementTemplates/Icicles.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "Icicles",
+"ShowInTaskbar": false,
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Icicles Setup"
+},
+"events": {
+"FormClosed": "Icicles_FormClosed",
+"FormClosing": "Icicles_FormClosing",
+"Load": "Icicles_Load"
+},
+"children": [
+{
+"name": "textBoxPixelPrefix"
+},
+{
+"name": "textBoxStringPrefix"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "textBoxStringPattern"
+},
+{
+"name": "numericUpDownStrings"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "label4"
+},
+{
+"name": "label5"
+},
+{
+"name": "textBoxTreeName"
+},
+{
+"name": "label6"
+}
+],
+"objects": {
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 97
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 123,
+"y": 15
+},
+"TabIndex": 17,
+"Text": "Pixels / String Pattern:"
+},
+"events": {},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 61
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 77,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "String Count:"
+},
+"events": {},
+"children": []
+},
+"textBoxTreeName": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 152,
+"y": 22
+},
+"Name": "textBoxTreeName",
+"Size": {
+"t": "size",
+"x": 390,
+"y": 23
+},
+"TabIndex": 0,
+"Text": "Icicles"
+},
+"events": {},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 27
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "Icicle Name:"
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 437,
+"y": 169
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 325,
+"y": 169
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"numericUpDownStrings": {
+"type": "NumericUpDown",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 152,
+"y": 56
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1000, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownStrings",
+"Size": {
+"t": "size",
+"x": 91,
+"y": 23
+},
+"TabIndex": 1,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 50, 0, 0, 0})"
+}
+},
+"events": {},
+"children": []
+},
+"textBoxStringPattern": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 152,
+"y": 94
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxStringPattern",
+"Size": {
+"t": "size",
+"x": 176,
+"y": 23
+},
+"TabIndex": 18
+},
+"events": {
+"KeyPress": "textBoxStringPattern_KeyPress"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 149,
+"y": 124
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 82,
+"y": 15
+},
+"TabIndex": 19,
+"Text": "Example: 7,9,5"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 334,
+"y": 57
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 74,
+"y": 15
+},
+"TabIndex": 20,
+"Text": "String Prefix:"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 334,
+"y": 97
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 68,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "Pixel Prefix:"
+},
+"events": {},
+"children": []
+},
+"textBoxStringPrefix": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 422,
+"y": 55
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxStringPrefix",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 22,
+"Text": "S"
+},
+"events": {},
+"children": []
+},
+"textBoxPixelPrefix": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 422,
+"y": 94
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "textBoxPixelPrefix",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 23,
+"Text": "Px"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+560,
+214
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+576,
+253
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+576,
+253
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStrings)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownStrings)).EndInit()"
+]
+}

@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using VixenRaster;
+
+namespace VixenCapture {
+    [DataContract] public sealed class CaseOutcome {
+        [DataMember] public string id,status,error,manifestSha256;
+    }
+    [DataContract] public sealed class Summary {
+        [DataMember] public int schema=1;
+        [DataMember] public string version="bitmap-storage-1",status="starting",results,compilerPath,compilerSha256,compilerVersion;
+        [DataMember] public bool validWindowsRasterCaptured,comparisonPerformed=false;
+        [DataMember] public int expectedCases=Data.Cases().cases.Length,completedCases;
+        [DataMember] public List<StageResult> stages=new List<StageResult>();
+        [DataMember] public List<string> notes=new List<string>();
+        [DataMember] public List<CaseOutcome> cases=new List<CaseOutcome>();
+    }
+    public sealed class RasterWorkflow {
+        readonly CaptureSupervisor supervisor;
+        readonly string pack,output,compiler,powershell;
+        public RasterWorkflow(string pack,string output,string compiler,string powershell,IStageLauncher launcher,double seconds) {
+            this.pack=pack;this.output=output;this.compiler=compiler;this.powershell=powershell;
+            supervisor=new CaptureSupervisor(output,launcher,seconds);
+        }
+        public Summary Report {get{return supervisor.Report;}}
+        StageResult Run(string name,string executable,int seconds,params string[] args) {return supervisor.RunStage(new StageSpec{Name=name,Executable=executable,Arguments=args,Seconds=seconds});}
+        static bool Complete(StageResult result) {return result.status=="completed" && result.exitCode==0 && result.error==null && !result.timedOut && !result.outputLimit;}
+        public static void ValidateManifest(string directory,CaseSpec spec,string host,string methods) {Data.ValidateReport(directory,spec,host,methods);}
+        public int Run() {
+            supervisor.Reserve(40);
+            supervisor.Note("Raster-only verification: no Vixen install selection, PCM, profile, application launch or download.");
+            Report.compilerPath=compiler;
+            bool trusted=false,ready=false;string reason="pack-integrity-unavailable";
+            string host=Path.Combine(output,"RasterCapture.exe");
+            var integrity=Run("integrity",powershell,10,"-NoLogo","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",Path.Combine(pack,"Pack-Worker.ps1"),"-Stage","integrity","-Out",output);
+            trusted=Complete(integrity);
+            if(trusted) {
+                try {
+                    Data.ValidateCases(Path.Combine(pack,"cases.json"));
+                    Report.compilerSha256=Data.HashFile(compiler);Report.compilerVersion=FileVersionInfo.GetVersionInfo(compiler).FileVersion;
+                    var compiled=Run("compile-raster",compiler,30,"/nologo","/noconfig","/target:exe","/platform:anycpu","/langversion:5","/reference:System.dll","/reference:System.Core.dll","/reference:System.Xml.dll","/reference:System.Drawing.dll","/reference:System.Runtime.Serialization.dll","/out:"+host,Path.Combine(pack,"Shared.cs.in"),Path.Combine(pack,"OriginalPictureMethods.cs.in"),Path.Combine(pack,"RasterCapture.cs.in"));
+                    reason="compile-failed";
+                    if(Complete(compiled) && File.Exists(host) && new FileInfo(host).Length>0 && new FileInfo(host).Length<1048576) {
+                        var probe=Run("preflight",host,10,"--preflight");reason="preflight-failed";
+                        if(Complete(probe)) {
+                            var metadata=Data.Read<RuntimeReport>(Path.Combine(output,"preflight.json"),65536);
+                            ready=metadata.status=="available" && metadata.hostSha256==Data.HashFile(host) && Regex.IsMatch(metadata.gdiplusSha256??"","^[a-f0-9]{64}$") && Regex.IsMatch(metadata.drawingSha256??"","^[a-f0-9]{64}$");
+                            if(!ready) reason="preflight-manifest-invalid";
+                        }
+                    }
+                } catch(Exception error) {reason="dependency-error";supervisor.Note(error.GetType().Name+": "+error.Message);}
+            }
+            string hostHash=null,methodsHash=null;
+            var caseRoot=Path.Combine(output,"cases");
+            if(ready) {
+                try {
+                    hostHash=Data.HashFile(host);methodsHash=Data.HashFile(Path.Combine(pack,"OriginalPictureMethods.cs.in"));
+                    Directory.CreateDirectory(caseRoot);
+                } catch(Exception error) {ready=false;reason="capture-setup-error";supervisor.Note(error.GetType().Name+": "+error.Message);}
+            }
+            foreach(var spec in Data.Cases().cases) {
+                var outcome=new CaseOutcome{id=spec.id,status="skipped-dependency",error=ready?null:reason};Report.cases.Add(outcome);
+                if(ready) {
+                    string directory=Path.Combine(caseRoot,spec.id);
+                    try {
+                        Directory.CreateDirectory(directory);
+                        var capture=Run("case-"+spec.id,host,5,"--case",pack,spec.id);outcome.status=capture.status;
+                        if(Complete(capture)) {
+                            ValidateManifest(directory,spec,hostHash,methodsHash);
+                            outcome.status="captured";outcome.manifestSha256=Data.HashFile(Path.Combine(directory,"manifest.json"));Report.completedCases++;Report.validWindowsRasterCaptured=true;
+                        }
+                        else outcome.error="Stage "+capture.status+"; exit="+capture.exitCode+"; "+capture.error;
+                    } catch(Exception error) {outcome.status="invalid-or-incomplete";outcome.error=error.GetType().Name+": "+error.Message;}
+                }
+                supervisor.Checkpoint();
+            }
+            var recheck=Run("integrity-final",powershell,10,"-NoLogo","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",Path.Combine(pack,"Pack-Worker.ps1"),"-Stage","integrity","-Out",output);
+            Report.status=Report.completedCases==Data.Cases().cases.Length && Complete(recheck)?"captured-comparison-pending":"partial-or-diagnostics-only";
+            supervisor.Checkpoint();
+            // This finalized capture summary enters the ZIP. The later package
+            // stage and changing bootstrap/progress logs remain in the folder.
+            CaptureSupervisor.Save(Report,Path.Combine(output,"capture-summary.json"));
+            supervisor.Reserve(0);
+            var packaged=Run("package",powershell,30,"-NoLogo","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",Path.Combine(pack,"Pack-Worker.ps1"),"-Stage","package","-Out",output);
+            bool zip=Complete(packaged) && File.Exists(output+".zip") && new FileInfo(output+".zip").Length>0;
+            supervisor.Note(zip?"COPY THIS ZIP BACK: "+output+".zip":"COPY THIS ENTIRE FOLDER BACK: "+output);
+            supervisor.Note("Capture success is not comparison success. Original drawing and Mac pixel parity remain distinct.");
+            return zip && Report.status=="captured-comparison-pending"?0:2;
+        }
+    }
+    public static class RasterEntry {
+        public static int Main(string[] args) {
+            // Independent process deadline survives a filesystem/progress stall;
+            // process exit closes all noninherited KILL_ON_JOB_CLOSE handles.
+            var deadline=new System.Threading.Thread(delegate(){System.Threading.Thread.Sleep(210000);Environment.Exit(124);});deadline.IsBackground=true;deadline.Start();
+            if(args.Length!=3) {Console.Error.WriteLine("Expected pack, private results and existing Framework compiler");return 2;}
+            string output=null;
+            try {
+                string pack=Paths.Local(args[0],true);output=Paths.Local(args[1],true);string compiler=Paths.Local(args[2],true);
+                if(Path.GetDirectoryName(output)!=pack || !Path.GetFileName(output).StartsWith("results-")) throw new IOException("Private results must be a direct pack child");
+                string windows=Environment.GetFolderPath(Environment.SpecialFolder.Windows);
+                string c64=Path.Combine(windows,@"Microsoft.NET\Framework64\v4.0.30319\csc.exe"),c32=Path.Combine(windows,@"Microsoft.NET\Framework\v4.0.30319\csc.exe");
+                if(!String.Equals(compiler,c64,StringComparison.OrdinalIgnoreCase) && !String.Equals(compiler,c32,StringComparison.OrdinalIgnoreCase)) throw new IOException("Only installed Framework compiler allowed");
+                return new RasterWorkflow(pack,output,compiler,Path.Combine(windows,@"System32\WindowsPowerShell\v1.0\powershell.exe"),new WindowsLauncher(),180).Run();
+            } catch(Exception error) {
+                Console.Error.WriteLine(error);if(output!=null) {try{File.WriteAllText(Path.Combine(output,"supervisor-error.txt"),error.ToString());}catch{}}
+                return 2;
+            }
+        }
+    }
+}

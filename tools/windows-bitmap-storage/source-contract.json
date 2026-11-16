@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "upstreamCommit": "e111ae41963abfa48b70f884445950e94e432e02",
+  "designSHA256": "03aaa32a6dd4963b72ffb05820acfde44291bbdf38126fe76308ad4ce999528c",
+  "unchangedCopies": {
+    "SupervisorEngine.cs.in": {
+      "source": "tools/windows-raster-detail/SupervisorEngine.cs.in",
+      "sha256": "c1b8e068a79563c7c966daec2dbce90b95ca91ff4e2a7e46347b580b1fa56969"
+    },
+    "OriginalPictureMethods.cs.in": {
+      "source": "tools/windows-raster-detail/OriginalPictureMethods.cs.in",
+      "sha256": "99fd85069dff5a2f52171f548d8a5d56b38861d9b5f7cd4c7c1dd191e0b35360"
+    },
+    "Pack-Worker.ps1": {
+      "source": "tools/windows-raster-detail/Pack-Worker.ps1",
+      "sha256": "91faa6f72fedb98f6d9a8e46fa50cfd75183ea8a76810ac8ce65f7af913a5d64"
+    },
+    "Compile-Supervisor.ps1": {
+      "source": "tools/windows-raster-detail/Compile-Supervisor.ps1",
+      "sha256": "8f45c6d0d42cab0811138afdfc4d46e2b01d28b4d2a43cd55650adfc4e651ccd"
+    }
+  },
+  "adaptedCopies": {
+    "Run-Raster.ps1": {
+      "source": "tools/windows-raster-detail/Run-Raster.ps1",
+      "sourceSHA256": "79888609f2b64673b49d51f266a32fbb3cc5d01e550793e2b6c1a17cb89b5be2"
+    },
+    "Watch-Raster.ps1": {
+      "source": "tools/windows-raster-detail/Watch-Raster.ps1",
+      "sourceSHA256": "fa2e286ad065fe7bdec7b498432f3daf8f71fe7ae66a743cbf7aa6f87062b3a8"
+    }
+  },
+  "originalPicture": {
+    "path": "upstream/Vixen/src/Vixen.Modules/Effect/Picture/Picture.cs",
+    "sha256": "a5102426351a0f1b75c7f06369b1b6d2eb0c06c7491a72dba4bb655a191ecab9",
+    "methods": [
+      {
+        "signature": "public static Bitmap ScalePictureImage(Image image, int maxWidth, int maxHeight)",
+        "startLine": 1286,
+        "endLine": 1302,
+        "sha256": "1f7fabb369e4ad7dbd9e7f00e70e4e9ddc66c20b546f5d9174d51deaeeb971be"
+      },
+      {
+        "signature": "public static Bitmap ScaleImage(Image image, double scale)",
+        "startLine": 1304,
+        "endLine": 1328,
+        "sha256": "f8878340536121eb501da8e862db1c180e17b88bd534f930b2cf0b75d1080cc1"
+      },
+      {
+        "signature": "public static Image ConvertToGrayScale(Image srce)",
+        "startLine": 1330,
+        "endLine": 1349,
+        "sha256": "f8a5b17fada09abf8eec359d7664d40296fca1548134bc62bf3fb2fcef78e1f0"
+      }
+    ]
+  },
+  "scope": "Eight supplemental seeded-storage experiments only. Old80 pack/source/consumer untouched. Original grayscale method byte-exact; no installed Vixen or full-effect equivalence; no Windows execution."
+}

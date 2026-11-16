@@ -1,0 +1,7 @@
+[package]
+name = "vixen-xml"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+roxmltree.workspace = true

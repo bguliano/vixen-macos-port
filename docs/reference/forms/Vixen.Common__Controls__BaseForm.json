@@ -1,0 +1,38 @@
+{
+"class": "BaseForm",
+"source": "Vixen.Common/Controls/BaseForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"Name": "BaseForm",
+"Text": "BaseForm"
+},
+"events": {},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+284,
+262
+]
+}
+}
+}

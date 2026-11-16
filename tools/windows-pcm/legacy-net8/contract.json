@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "vixen-3.12.4-net8-installed-audio-1",
+  "scope": "Exact installed binary capture contract; does not assert identity with the current upstream net10 source build.",
+  "inventoryArchiveSha256": "8741a09e9920869227bee6667cb069152a97fe737534284aa9ad5858419e304d",
+  "vixenVersion": "3.12.4",
+  "audioPlayerAssemblyVersion": "3.12.1371.4",
+  "productCommit": "41c3f4f7e3ea13e8b21648a7398753fb60ad9a5a",
+  "runtimeMajor": 8,
+  "naudioAssemblyVersion": "2.2.1.0",
+  "files": [
+    {
+      "name": "AudioPlayer.dll",
+      "bytes": 38400,
+      "sha256": "32c8c728b54dd32c7fb5db77f0f1b782dc86a0b7149c7b038a60a03123b0e605"
+    },
+    {
+      "name": "NAudio.Core.dll",
+      "bytes": 187904,
+      "sha256": "fcf493fc47a2f478a65303886b975fbdbf714cbb1f2d79f7fce97e4bb16b01a8"
+    },
+    {
+      "name": "NAudio.Wasapi.dll",
+      "bytes": 179200,
+      "sha256": "618ef0e49d64e7a66dfe64bbf6ae81705b9d9683d8a9f321e5c3024d666bdf82"
+    },
+    {
+      "name": "NAudio.WinMM.dll",
+      "bytes": 57344,
+      "sha256": "749a01ebbb5edd8b1a03c5263b04de6acadecf52e4cc84d7412bc6e93f180958"
+    },
+    {
+      "name": "NAudio.Vorbis.dll",
+      "bytes": 14848,
+      "sha256": "0ae4de203ffeb14cc5f10859402d3f56e9fe6689c58587d52ba4aa731ef3e8c0"
+    },
+    {
+      "name": "NVorbis.dll",
+      "bytes": 80896,
+      "sha256": "55e7477deeb341058d5543515ed371575a415d8edcf9d0e933a41ca2dee54ad4"
+    },
+    {
+      "name": "NLog.dll",
+      "bytes": 956416,
+      "sha256": "a3ab311be101f8132df3b333a10328eef0033f2c783e42b39b6986346d0097ac"
+    },
+    {
+      "name": "Libraries.dll",
+      "bytes": 3584,
+      "sha256": "2571a918d8997e24b7d1aca05127153240f2ad231beda4868fdb50f706f63f3e"
+    },
+    {
+      "name": "Preferences.dll",
+      "bytes": 4608,
+      "sha256": "70ec3a7be8be5c8b7900e96f86436a192842f31f4ee8083dd1c9613a2a83e34d"
+    }
+  ]
+}

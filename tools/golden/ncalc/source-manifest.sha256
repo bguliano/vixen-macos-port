@@ -1,0 +1,7 @@
+059b32bc68602ac9ed8c652d096a673c1036011e5a211b76db341cfafab19210  upstream/Vixen/src/Vixen.Modules/App/Curves/CurveEditor.cs
+b7ba2ff298e9f75c169946c9a01d7bce9355f059b0855a41935625be1e01e41c  upstream/Vixen/Directory.Packages.props
+f57605a50a5885595b2b553cbcac1428b0dde8d6463ee580aa9af14a0a7b7e8f  target/ncalc-reference/antlr4.4.6.4.nupkg
+16fc82480be642bf68fbfe391775c6bfe7e31397c2d249e22224a22c00041544  target/ncalc-reference/antlr4.runtime.4.6.4.nupkg
+efd9c9a03851e5dc23dd00a2b46f39ebc41025006aa3e27374c8cbaf5c3877cf  target/ncalc-reference/ncalc2.2.1.0.nupkg
+e6d6af03342fe8861c907cc2b19a53b0ecd325611f3220e9f7bda223e09ee1d4  target/ncalc-reference/lib/Antlr4.Runtime.dll
+f1d4881dce927b8b1a8f1212d8303a2ea129e8c911910f73ce3d00f8b9422336  target/ncalc-reference/lib/NCalc2.dll

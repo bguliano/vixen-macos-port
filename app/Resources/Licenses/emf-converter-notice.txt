@@ -1,0 +1,5 @@
+Nominal aliased stroke and Bezier fixed-point arithmetic adapted from ChristopherVR/emf-converter.
+Copyright 2025-present pptx-viewer contributors. Licensed under Apache-2.0; see emf-converter.txt.
+Upstream: https://github.com/ChristopherVR/emf-converter
+Sources: src/emf-plus-nominal-line.ts and src/emf-plus-bezier.ts.
+Modified for Rust, bounded inputs/iteration and exact integer scan intersections.

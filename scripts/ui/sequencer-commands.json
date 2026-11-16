@@ -1,0 +1,252 @@
+{
+  "steps": [
+    {
+      "action": "window",
+      "id": "administration"
+    },
+    {
+      "action": "wait",
+      "seconds": 2
+    },
+    {
+      "action": "window",
+      "id": "sequencer"
+    },
+    {
+      "action": "wait",
+      "seconds": 4
+    },
+    {
+      "action": "focus",
+      "window": "Ruler"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.resize",
+      "path": [
+        "1400",
+        "900"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "mouse",
+      "x": 900,
+      "y": 340
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Select All Elements"
+      ]
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Delete"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.dropEffect",
+      "path": [
+        "Pulse",
+        "0"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.dropEffect",
+      "path": [
+        "Pulse",
+        "0"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.dropEffect",
+      "path": [
+        "Pulse",
+        "0"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "mouse",
+      "x": 920,
+      "y": 215
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "a",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "c",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "v",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "z",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "z",
+        "cmd",
+        "shift"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "z",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "y",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "s",
+        "cmd"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "menus",
+      "name": "after-commands"
+    },
+    {
+      "action": "snapshot",
+      "name": "after-commands"
+    },
+    {
+      "action": "quit"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<AssemblyName>QmMarksGolden</AssemblyName>
+		<RootNamespace>QmMarksGolden</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<UseAppHost>false</UseAppHost>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<NoWarn>$(NoWarn);CS1591;CA1416;NU1701;CS8981;CS0067</NoWarn>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<OutputPath>$(CsOut)/bin/</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<VixenNativeBin>/Users/developer/Documents/Codex/2026-09-13/is-the/outputs/Vixen/native/Vixen.Native.Tests/bin/Release/net10.0</VixenNativeBin>
+		<Upstream>$(RepoRoot)/upstream/Vixen/src</Upstream>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="Program.cs" />
+		<Compile Include="Stubs.cs" />
+		<!-- The real sources under test, unmodified. Only what is Windows-only is stubbed. -->
+		<Compile Include="$(Upstream)/Vixen.Modules/Analysis/BeatsAndBars/BeatsAndBars.cs" />
+		<Compile Include="$(Upstream)/Vixen.Modules/App/Marks/Annotations.cs" />
+		<Compile Include="$(Upstream)/Vixen.Modules/App/Marks/BindableBase.cs" />
+		<Compile Include="$(Upstream)/Vixen.Modules/App/Marks/Mark.cs" />
+		<Compile Include="$(Upstream)/Vixen.Modules/App/Marks/MarkCollection.cs" />
+		<Compile Include="$(Upstream)/Vixen.Modules/App/Marks/MarkDecorator.cs" />
+		<Using Include="System.Drawing" />
+		<Reference Include="Vixen.Core"><HintPath>$(VixenNativeBin)/Vixen.Core.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="NLog"><HintPath>$(VixenNativeBin)/NLog.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Newtonsoft.Json"><HintPath>$(VixenNativeBin)/Newtonsoft.Json.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Zstandard.Net"><HintPath>$(VixenNativeBin)/Zstandard.Net.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="System.Drawing.Common"><HintPath>$(VixenNativeBin)/System.Drawing.Common.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="System.Private.Windows.Core"><HintPath>$(VixenNativeBin)/System.Private.Windows.Core.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="System.Private.Windows.GdiPlus"><HintPath>$(VixenNativeBin)/System.Private.Windows.GdiPlus.dll</HintPath><Private>true</Private></Reference>
+		<Reference Include="Microsoft.Win32.SystemEvents"><HintPath>$(VixenNativeBin)/Microsoft.Win32.SystemEvents.dll</HintPath><Private>true</Private></Reference>
+	</ItemGroup>
+</Project>

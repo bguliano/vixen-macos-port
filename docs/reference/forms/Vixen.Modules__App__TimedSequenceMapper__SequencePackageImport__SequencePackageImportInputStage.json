@@ -1,0 +1,433 @@
+{
+"class": "SequencePackageImportInputStage",
+"source": "Vixen.Modules/App/TimedSequenceMapper/SequencePackageImport/SequencePackageImportInputStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"Name": "SequencePackageImportInputStage"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"lblChooseOutputFormat": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "lblChooseOutputFormat",
+"Size": {
+"t": "size",
+"x": 504,
+"y": 25
+},
+"TabIndex": 15,
+"Text": "Step 1:   Select the Sequence Package to import"
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 5,
+"Size": {
+"t": "size",
+"x": 510,
+"y": 510
+},
+"TabIndex": 24
+},
+"events": {},
+"children": [
+{
+"name": "groupBox1",
+"col": 0,
+"row": 3
+},
+{
+"name": "grpSequence",
+"col": 0,
+"row": 2
+},
+{
+"name": "lblChooseOutputFormat",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Absolute",
+"size": 25.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 136
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 504,
+"y": 170
+},
+"TabIndex": 16,
+"TabStop": false,
+"Text": "Profile Map Configuration"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "btnEditMap"
+},
+{
+"name": "btnCreateMap"
+},
+{
+"name": "txtProfileMap"
+},
+{
+"name": "txtMapFile"
+},
+{
+"name": "label1"
+},
+{
+"name": "btnMapFile"
+}
+]
+},
+"btnEditMap": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 106,
+"y": 125
+},
+"Name": "btnEditMap",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 27,
+"Text": "Edit Map",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnEditMap_Click"
+},
+"children": []
+},
+"btnCreateMap": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 25,
+"y": 125
+},
+"Name": "btnCreateMap",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 26,
+"Text": "Create Map",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnCreateMap_Click"
+},
+"children": []
+},
+"txtProfileMap": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 25,
+"y": 23
+},
+"Multiline": true,
+"Name": "txtProfileMap",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 468,
+"y": 34
+},
+"TabIndex": 25,
+"Text": {
+"t": "raw",
+"v": "\"Select the map file locaton if you have previously mapped this pacakge file. If y\" + \"ou have not previously mapped it, use the Create Map button to create one.\""
+}
+},
+"events": {},
+"children": []
+},
+"txtMapFile": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 88
+},
+"Name": "txtMapFile",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 438,
+"y": 23
+},
+"TabIndex": 23
+},
+"events": {
+"Leave": "txtMapFile_Leave"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 70
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 15
+},
+"TabIndex": 24,
+"Text": "Profile Map File"
+},
+"events": {},
+"children": []
+},
+"btnMapFile": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 25,
+"y": 88
+},
+"Name": "btnMapFile",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 23
+},
+"TabIndex": 22,
+"Text": "Map File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnMapFile_Click"
+},
+"children": []
+},
+"grpSequence": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 48
+},
+"Name": "grpSequence",
+"Size": {
+"t": "size",
+"x": 504,
+"y": 82
+},
+"TabIndex": 15,
+"TabStop": false,
+"Text": "Package Location"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "txtPackageFile"
+},
+{
+"name": "label2"
+},
+{
+"name": "btnOuputFolderSelect"
+}
+]
+},
+"txtPackageFile": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 37
+},
+"Name": "txtPackageFile",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 438,
+"y": 23
+},
+"TabIndex": 9
+},
+"events": {
+"Leave": "txtPackageFile_Leave"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 22,
+"y": 19
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 126,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "Sequence Package File"
+},
+"events": {},
+"children": []
+},
+"btnOuputFolderSelect": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 25,
+"y": 37
+},
+"Name": "btnOuputFolderSelect",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 23
+},
+"TabIndex": 8,
+"Text": "Sequence Package File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnOutputFolderSelect_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+510,
+510
+]
+}
+}
+}

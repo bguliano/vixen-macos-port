@@ -1,0 +1,378 @@
+{
+  "steps": [
+    {
+      "action": "window",
+      "id": "administration"
+    },
+    {
+      "action": "wait",
+      "seconds": 2
+    },
+    {
+      "action": "window",
+      "id": "sequencer"
+    },
+    {
+      "action": "wait",
+      "seconds": 4
+    },
+    {
+      "action": "focus",
+      "window": "Ruler"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.resize",
+      "path": [
+        "1400",
+        "900"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "mouse",
+      "x": 900,
+      "y": 340
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Select All Elements"
+      ]
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Delete"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.dropEffect",
+      "path": [
+        "Pulse",
+        "0"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.dropEffect",
+      "path": [
+        "Pulse",
+        "0"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.dropEffect",
+      "path": [
+        "Pulse",
+        "0"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Select All Elements"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.pointer",
+      "path": [
+        "920",
+        "215"
+      ]
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "d"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.7
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "snapshot",
+      "name": "distributed"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "i"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.7
+    },
+    {
+      "action": "snapshot",
+      "name": "distribution-dialog"
+    },
+    {
+      "action": "dump",
+      "name": "distribution-dialog"
+    },
+    {
+      "action": "click",
+      "label": "Cancel"
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "i"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.6
+    },
+    {
+      "action": "click",
+      "label": "Specified duration"
+    },
+    {
+      "action": "hook",
+      "name": "timeField.Specified duration",
+      "path": [
+        "focus"
+      ]
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "5"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "hook",
+      "name": "timeField.Specified duration"
+    },
+    {
+      "action": "click",
+      "label": "Spaced duration"
+    },
+    {
+      "action": "hook",
+      "name": "timeField.Spaced duration",
+      "path": [
+        "focus"
+      ]
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "left"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "1"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "key",
+      "key": "0"
+    },
+    {
+      "action": "hook",
+      "name": "timeField.Spaced duration"
+    },
+    {
+      "action": "click",
+      "label": "Last Effect"
+    },
+    {
+      "action": "snapshot",
+      "name": "distribution-options"
+    },
+    {
+      "action": "click",
+      "label": "OK"
+    },
+    {
+      "action": "wait",
+      "seconds": 0.6
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Undo Distributed 3 effects"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "menu",
+      "path": [
+        "Edit",
+        "Redo Distributed 3 effects"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "timelineState"
+    },
+    {
+      "action": "quit"
+    }
+  ]
+}

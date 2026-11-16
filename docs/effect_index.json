@@ -1,0 +1,897 @@
+[
+ {
+  "module": "alternating",
+  "name": "Alternating",
+  "class": "Alternating",
+  "data_class": "AlternatingData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Alternating",
+  "module_files": [
+   "Vixen.Modules/Effect/Alternating/Alternating.cs"
+  ],
+  "csharp_lines": 675,
+  "params": 10,
+  "todos": []
+ },
+ {
+  "module": "balls",
+  "name": "Balls",
+  "class": "Balls",
+  "data_class": "BallData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Balls",
+  "module_files": [
+   "Vixen.Modules/Effect/Balls/Balls.cs"
+  ],
+  "csharp_lines": 1052,
+  "params": 21,
+  "todos": []
+ },
+ {
+  "module": "bars",
+  "name": "Bars",
+  "class": "Bars",
+  "data_class": "BarsData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Bars",
+  "module_files": [
+   "Vixen.Modules/Effect/Bars/Bars.cs"
+  ],
+  "csharp_lines": 3295,
+  "params": 18,
+  "todos": []
+ },
+ {
+  "module": "border",
+  "name": "Border",
+  "class": "Border",
+  "data_class": "BorderData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Border",
+  "module_files": [
+   "Vixen.Modules/Effect/Border/Border.cs"
+  ],
+  "csharp_lines": 1882,
+  "params": 30,
+  "todos": []
+ },
+ {
+  "module": "butterfly",
+  "name": "Butterfly",
+  "class": "Butterfly",
+  "data_class": "ButterflyData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Butterfly",
+  "module_files": [
+   "Vixen.Modules/Effect/Butterfly/Butterfly.cs"
+  ],
+  "csharp_lines": 848,
+  "params": 13,
+  "todos": []
+ },
+ {
+  "module": "candle",
+  "name": "Candle Flicker",
+  "class": "CandleModule",
+  "data_class": "CandleData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Candle",
+  "module_files": [
+   "Vixen.Modules/Effect/Candle/CandleModule.cs"
+  ],
+  "csharp_lines": 451,
+  "params": 9,
+  "todos": []
+ },
+ {
+  "module": "chase",
+  "name": "Chase",
+  "class": "Chase",
+  "data_class": "ChaseData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Chase",
+  "module_files": [
+   "Vixen.Modules/Effect/Chase/Chase.cs"
+  ],
+  "csharp_lines": 985,
+  "params": 13,
+  "todos": []
+ },
+ {
+  "module": "circles",
+  "name": "Circles",
+  "class": "Circles",
+  "data_class": "CirclesData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Circles",
+  "module_files": [
+   "Vixen.Modules/Effect/Circles/Circles.cs"
+  ],
+  "csharp_lines": 645,
+  "params": 13,
+  "todos": []
+ },
+ {
+  "module": "color_wash",
+  "name": "Colorwash",
+  "class": "ColorWash",
+  "data_class": "ColorWashData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/ColorWash",
+  "module_files": [
+   "Vixen.Modules/Effect/ColorWash/ColorWash.cs"
+  ],
+  "csharp_lines": 571,
+  "params": 11,
+  "todos": []
+ },
+ {
+  "module": "count_down",
+  "name": "Count Down",
+  "class": "CountDown",
+  "data_class": "CountDownData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/CountDown",
+  "module_files": [
+   "Vixen.Modules/Effect/CountDown/CountDown.cs"
+  ],
+  "csharp_lines": 1741,
+  "params": 25,
+  "todos": []
+ },
+ {
+  "module": "curtain",
+  "name": "Curtain",
+  "class": "Curtain",
+  "data_class": "CurtainData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Curtain",
+  "module_files": [
+   "Vixen.Modules/Effect/Curtain/Curtain.cs"
+  ],
+  "csharp_lines": 954,
+  "params": 11,
+  "todos": []
+ },
+ {
+  "module": "custom_value",
+  "name": "Custom Value",
+  "class": "CustomValueModule",
+  "data_class": "CustomValueData",
+  "group": "Device",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/CustomValue",
+  "module_files": [
+   "Vixen.Modules/Effect/CustomValue/CustomValue.cs"
+  ],
+  "csharp_lines": 425,
+  "params": 7,
+  "todos": []
+ },
+ {
+  "module": "dissolve",
+  "name": "Dissolve",
+  "class": "Dissolve",
+  "data_class": "DissolveData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Dissolve",
+  "module_files": [
+   "Vixen.Modules/Effect/Dissolve/Dissolve.cs"
+  ],
+  "csharp_lines": 1198,
+  "params": 18,
+  "todos": []
+ },
+ {
+  "module": "fire",
+  "name": "Fire",
+  "class": "Fire",
+  "data_class": "FireData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Fire",
+  "module_files": [
+   "Vixen.Modules/Effect/Fire/Fire.cs"
+  ],
+  "csharp_lines": 817,
+  "params": 9,
+  "todos": []
+ },
+ {
+  "module": "fireworks",
+  "name": "Fireworks",
+  "class": "Fireworks",
+  "data_class": "FireworksData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Fireworks",
+  "module_files": [
+   "Vixen.Modules/Effect/Fireworks/Fireworks.cs"
+  ],
+  "csharp_lines": 1261,
+  "params": 28,
+  "todos": []
+ },
+ {
+  "module": "fixture",
+  "name": "Fixture",
+  "class": "FixtureModule",
+  "data_class": "FixtureData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Fixture/FixtureEffect",
+  "module_files": [
+   "Vixen.Modules/Effect/Fixture/FixtureEffect/FixtureModule.cs"
+  ],
+  "csharp_lines": 1527,
+  "params": 5,
+  "todos": [
+   "FunctionData = new List<FixtureFunctionData>()"
+  ]
+ },
+ {
+  "module": "fixture_strobe",
+  "name": "Fixture Strobe",
+  "class": "FixtureStrobeModule",
+  "data_class": "FixtureStrobeData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/FixtureStrobe",
+  "module_files": [
+   "Vixen.Modules/Effect/FixtureStrobe/FixtureStrobeModule.cs"
+  ],
+  "csharp_lines": 372,
+  "params": 4,
+  "todos": []
+ },
+ {
+  "module": "frost",
+  "name": "Frost",
+  "class": "FrostModule",
+  "data_class": "FrostData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Frost",
+  "module_files": [
+   "Vixen.Modules/Effect/Frost/FrostModule.cs"
+  ],
+  "csharp_lines": 311,
+  "params": 3,
+  "todos": []
+ },
+ {
+  "module": "garlands",
+  "name": "Garlands",
+  "class": "Garlands",
+  "data_class": "GarlandsData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Garlands",
+  "module_files": [
+   "Vixen.Modules/Effect/Garlands/Garlands.cs"
+  ],
+  "csharp_lines": 952,
+  "params": 12,
+  "todos": []
+ },
+ {
+  "module": "glediator",
+  "name": "Glediator",
+  "class": "Glediator",
+  "data_class": "GlediatorData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Glediator",
+  "module_files": [
+   "Vixen.Modules/Effect/Glediator/Glediator.cs"
+  ],
+  "csharp_lines": 445,
+  "params": 8,
+  "todos": []
+ },
+ {
+  "module": "gobo",
+  "name": "Gobo",
+  "class": "GoboModule",
+  "data_class": "GoboData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Gobo",
+  "module_files": [
+   "Vixen.Modules/Effect/Gobo/GoboModule.cs"
+  ],
+  "csharp_lines": 406,
+  "params": 4,
+  "todos": []
+ },
+ {
+  "module": "launcher",
+  "name": "Launcher",
+  "class": "Module",
+  "data_class": "Data",
+  "group": "Device",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Launcher",
+  "module_files": [
+   "Vixen.Modules/Effect/Launcher/Module.cs"
+  ],
+  "csharp_lines": 260,
+  "params": 3,
+  "todos": []
+ },
+ {
+  "module": "life",
+  "name": "Life",
+  "class": "Life",
+  "data_class": "LifeData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Life",
+  "module_files": [
+   "Vixen.Modules/Effect/Life/Life.cs"
+  ],
+  "csharp_lines": 553,
+  "params": 9,
+  "todos": []
+ },
+ {
+  "module": "line_dance",
+  "name": "Line Dance",
+  "class": "LineDanceModule",
+  "data_class": "LineDanceData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/LineDance",
+  "module_files": [
+   "Vixen.Modules/Effect/LineDance/LineDanceModule.cs"
+  ],
+  "csharp_lines": 1551,
+  "params": 12,
+  "todos": []
+ },
+ {
+  "module": "lip_sync",
+  "name": "LipSync",
+  "class": "LipSync",
+  "data_class": "LipSyncData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/LipSync",
+  "module_files": [
+   "Vixen.Modules/Effect/LipSync/LipSync.cs"
+  ],
+  "csharp_lines": 1337,
+  "params": 16,
+  "todos": []
+ },
+ {
+  "module": "liquid",
+  "name": "Liquid",
+  "class": "Liquid",
+  "data_class": "LiquidData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Liquid",
+  "module_files": [
+   "Vixen.Modules/Effect/Liquid/Liquid/Liquid.cs"
+  ],
+  "csharp_lines": 4015,
+  "params": 23,
+  "todos": [
+   "EmitterData = new List<EmitterData>()"
+  ]
+ },
+ {
+  "module": "meteors",
+  "name": "Meteors",
+  "class": "Meteors",
+  "data_class": "MeteorsData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Meteors",
+  "module_files": [
+   "Vixen.Modules/Effect/Meteors/Meteors.cs"
+  ],
+  "csharp_lines": 1649,
+  "params": 36,
+  "todos": []
+ },
+ {
+  "module": "morph",
+  "name": "Morph",
+  "class": "Morph",
+  "data_class": "MorphData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Morph",
+  "module_files": [
+   "Vixen.Modules/Effect/Morph/Morph/Morph.cs"
+  ],
+  "csharp_lines": 4587,
+  "params": 24,
+  "todos": [
+   "MorphPolygonData = new List<MorphPolygonData>()"
+  ]
+ },
+ {
+  "module": "pattern",
+  "name": "Pattern",
+  "class": "Pattern",
+  "data_class": "WeaveData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Pattern",
+  "module_files": [
+   "Vixen.Modules/Effect/Pattern/Pattern.cs",
+   "Vixen.Modules/Effect/Pattern/PatternBrick.cs",
+   "Vixen.Modules/Effect/Pattern/PatternWeave.cs"
+  ],
+  "csharp_lines": 3827,
+  "params": 26,
+  "todos": []
+ },
+ {
+  "module": "picture",
+  "name": "Picture",
+  "class": "Picture",
+  "data_class": "PictureData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Picture",
+  "module_files": [
+   "Vixen.Modules/Effect/Picture/Picture.cs"
+  ],
+  "csharp_lines": 1720,
+  "params": 26,
+  "todos": []
+ },
+ {
+  "module": "pin_wheel",
+  "name": "Pinwheel",
+  "class": "PinWheel",
+  "data_class": "PinWheelData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/PinWheel",
+  "module_files": [
+   "Vixen.Modules/Effect/PinWheel/PinWheel.cs"
+  ],
+  "csharp_lines": 1042,
+  "params": 27,
+  "todos": []
+ },
+ {
+  "module": "plasma",
+  "name": "Plasma",
+  "class": "Plasma",
+  "data_class": "PlasmaData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Plasma",
+  "module_files": [
+   "Vixen.Modules/Effect/Plasma/Plasma.cs"
+  ],
+  "csharp_lines": 550,
+  "params": 10,
+  "todos": []
+ },
+ {
+  "module": "prism",
+  "name": "Prism",
+  "class": "PrismModule",
+  "data_class": "PrismData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Prism",
+  "module_files": [
+   "Vixen.Modules/Effect/Prism/PrismModule.cs"
+  ],
+  "csharp_lines": 364,
+  "params": 4,
+  "todos": []
+ },
+ {
+  "module": "pulse",
+  "name": "Pulse",
+  "class": "Pulse",
+  "data_class": "PulseData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Pulse",
+  "module_files": [
+   "Vixen.Modules/Effect/Pulse/Pulse.cs"
+  ],
+  "csharp_lines": 478,
+  "params": 3,
+  "todos": []
+ },
+ {
+  "module": "rds",
+  "name": "RDS",
+  "class": "RDSModule",
+  "data_class": "RDSData",
+  "group": "Device",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/RDS",
+  "module_files": [
+   "Vixen.Modules/Effect/RDS/RDSModule.cs"
+  ],
+  "csharp_lines": 208,
+  "params": 2,
+  "todos": []
+ },
+ {
+  "module": "set_level",
+  "name": "Set Level",
+  "class": "SetLevel",
+  "data_class": "SetLevelData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/SetLevel",
+  "module_files": [
+   "Vixen.Modules/Effect/SetLevel/SetLevel.cs"
+  ],
+  "csharp_lines": 248,
+  "params": 3,
+  "todos": []
+ },
+ {
+  "module": "set_position",
+  "name": "Set Position",
+  "class": "SetPositionModule",
+  "data_class": "SetPositionData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/SetPosition",
+  "module_files": [
+   "Vixen.Modules/Effect/SetPosition/SetPositionModule.cs"
+  ],
+  "csharp_lines": 384,
+  "params": 5,
+  "todos": []
+ },
+ {
+  "module": "set_zoom",
+  "name": "Set Zoom",
+  "class": "SetZoomModule",
+  "data_class": "SetZoomData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/SetZoom",
+  "module_files": [
+   "Vixen.Modules/Effect/SetZoom/SetZoomModule.cs"
+  ],
+  "csharp_lines": 239,
+  "params": 2,
+  "todos": []
+ },
+ {
+  "module": "shapes",
+  "name": "Shapes",
+  "class": "Shapes",
+  "data_class": "ShapesData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Shapes",
+  "module_files": [
+   "Vixen.Modules/Effect/Shapes/Shapes.cs"
+  ],
+  "csharp_lines": 2799,
+  "params": 47,
+  "todos": []
+ },
+ {
+  "module": "shockwave",
+  "name": "Shockwave",
+  "class": "Shockwave",
+  "data_class": "ShockwaveData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Shockwave",
+  "module_files": [
+   "Vixen.Modules/Effect/Shockwave/Shockwave.cs",
+   "Vixen.Modules/Effect/Shockwave/Shockwave_Diamond.cs"
+  ],
+  "csharp_lines": 1017,
+  "params": 18,
+  "todos": []
+ },
+ {
+  "module": "snow_storm",
+  "name": "Snowstorm",
+  "class": "SnowStorm",
+  "data_class": "SnowStormData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/SnowStorm",
+  "module_files": [
+   "Vixen.Modules/Effect/SnowStorm/SnowStorm.cs"
+  ],
+  "csharp_lines": 673,
+  "params": 12,
+  "todos": []
+ },
+ {
+  "module": "snowflakes",
+  "name": "Snowflakes",
+  "class": "Snowflakes",
+  "data_class": "SnowflakesData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Snowflakes",
+  "module_files": [
+   "Vixen.Modules/Effect/Snowflakes/Snowflakes.cs"
+  ],
+  "csharp_lines": 2016,
+  "params": 36,
+  "todos": []
+ },
+ {
+  "module": "spin",
+  "name": "Spin",
+  "class": "Spin",
+  "data_class": "SpinData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Spin",
+  "module_files": [
+   "Vixen.Modules/Effect/Spin/Spin.cs"
+  ],
+  "csharp_lines": 1060,
+  "params": 18,
+  "todos": []
+ },
+ {
+  "module": "spin_color_wheel",
+  "name": "Spin Color Wheel",
+  "class": "SpinColorWheelModule",
+  "data_class": "SpinColorWheelData",
+  "group": "IntelligentFixture",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/SpinColorWheel",
+  "module_files": [
+   "Vixen.Modules/Effect/SpinColorWheel/SpinColorWheelModule.cs"
+  ],
+  "csharp_lines": 445,
+  "params": 5,
+  "todos": []
+ },
+ {
+  "module": "spiral",
+  "name": "Spiral",
+  "class": "Spiral",
+  "data_class": "SpiralData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Spiral",
+  "module_files": [
+   "Vixen.Modules/Effect/Spiral/Spiral.cs"
+  ],
+  "csharp_lines": 905,
+  "params": 17,
+  "todos": []
+ },
+ {
+  "module": "spirograph",
+  "name": "Spirograph",
+  "class": "Spirograph",
+  "data_class": "SpirographData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Spirograph",
+  "module_files": [
+   "Vixen.Modules/Effect/Spirograph/Spirograph.cs"
+  ],
+  "csharp_lines": 608,
+  "params": 17,
+  "todos": []
+ },
+ {
+  "module": "state",
+  "name": "State",
+  "class": "State",
+  "data_class": "StateData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/State",
+  "module_files": [
+   "Vixen.Modules/Effect/State/State.cs"
+  ],
+  "csharp_lines": 2629,
+  "params": 15,
+  "todos": [
+   "CustomStateItems = []"
+  ]
+ },
+ {
+  "module": "strobe",
+  "name": "Strobe",
+  "class": "Strobe",
+  "data_class": "StrobeData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Strobe",
+  "module_files": [
+   "Vixen.Modules/Effect/Strobe/Strobe.cs"
+  ],
+  "csharp_lines": 644,
+  "params": 10,
+  "todos": []
+ },
+ {
+  "module": "text",
+  "name": "Text",
+  "class": "Text",
+  "data_class": "TextData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Text",
+  "module_files": [
+   "Vixen.Modules/Effect/Text/Text.cs"
+  ],
+  "csharp_lines": 2395,
+  "params": 36,
+  "todos": [
+   "Text = new List<string>{String.Empty}"
+  ]
+ },
+ {
+  "module": "tree",
+  "name": "Tree",
+  "class": "Tree",
+  "data_class": "TreeData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Tree",
+  "module_files": [
+   "Vixen.Modules/Effect/Tree/Tree.cs"
+  ],
+  "csharp_lines": 638,
+  "params": 12,
+  "todos": []
+ },
+ {
+  "module": "twinkle",
+  "name": "Twinkle",
+  "class": "Twinkle",
+  "data_class": "TwinkleData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Twinkle",
+  "module_files": [
+   "Vixen.Modules/Effect/Twinkle/Twinkle.cs"
+  ],
+  "csharp_lines": 1043,
+  "params": 12,
+  "todos": []
+ },
+ {
+  "module": "vu_meter",
+  "name": "VU Meter",
+  "class": "VUMeter",
+  "data_class": "VUMeterData",
+  "group": "Pixel",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/VUMeter",
+  "module_files": [
+   "Vixen.Modules/Effect/VUMeter/VUMeter.cs"
+  ],
+  "csharp_lines": 272,
+  "params": 16,
+  "todos": [
+   "MeterColorGradient = linearGradient"
+  ]
+ },
+ {
+  "module": "vertical_meter",
+  "name": "Vertical Meter",
+  "class": "VerticalMeter",
+  "data_class": "VerticalMeterData",
+  "group": "Pixel",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/VerticalMeter",
+  "module_files": [
+   "Vixen.Modules/Effect/VerticalMeter/VerticalMeter.cs"
+  ],
+  "csharp_lines": 323,
+  "params": 17,
+  "todos": [
+   "MeterColorGradient = linearGradient"
+  ]
+ },
+ {
+  "module": "video",
+  "name": "Video",
+  "class": "Video",
+  "data_class": "VideoData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Video",
+  "module_files": [
+   "Vixen.Modules/Effect/Video/Video.cs"
+  ],
+  "csharp_lines": 1587,
+  "params": 28,
+  "todos": [
+   "VideoSize = new Size(600, 400)"
+  ]
+ },
+ {
+  "module": "wave",
+  "name": "Wave",
+  "class": "Wave",
+  "data_class": "WaveData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Wave",
+  "module_files": [
+   "Vixen.Modules/Effect/Wave/Wave/Wave.cs"
+  ],
+  "csharp_lines": 3191,
+  "params": 5,
+  "todos": [
+   "WaveformData = new List<WaveformData>()"
+  ]
+ },
+ {
+  "module": "waveform",
+  "name": "Waveform",
+  "class": "Waveform",
+  "data_class": "WaveformData",
+  "group": "Pixel",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Waveform",
+  "module_files": [
+   "Vixen.Modules/Effect/Waveform/Waveform.cs"
+  ],
+  "csharp_lines": 393,
+  "params": 18,
+  "todos": [
+   "MeterColorGradient = linearGradient"
+  ]
+ },
+ {
+  "module": "whirlpool",
+  "name": "Whirlpool",
+  "class": "Whirlpool",
+  "data_class": "WhirlpoolData",
+  "group": "Pixel",
+  "is_pixel": true,
+  "dir": "Vixen.Modules/Effect/Whirlpool",
+  "module_files": [
+   "Vixen.Modules/Effect/Whirlpool/Whirlpool/Whirlpool.cs"
+  ],
+  "csharp_lines": 7161,
+  "params": 33,
+  "todos": [
+   "WhirlData = new List<WhirlData>()"
+  ]
+ },
+ {
+  "module": "wipe",
+  "name": "Wipe",
+  "class": "WipeModule",
+  "data_class": "WipeData",
+  "group": "Basic",
+  "is_pixel": false,
+  "dir": "Vixen.Modules/Effect/Wipe",
+  "module_files": [
+   "Vixen.Modules/Effect/Wipe/WipeModule.cs"
+  ],
+  "csharp_lines": 1452,
+  "params": 19,
+  "todos": []
+ }
+]

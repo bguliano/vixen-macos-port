@@ -1,0 +1,79 @@
+{
+  "name": "no_preview_features",
+  "main_features": "click_120_bpb4",
+  "preview_features": "short_noise_0",
+  "settings": {
+    "bars_enabled": true,
+    "beat_collections_enabled": true,
+    "beat_splits_enabled": false,
+    "all_features_enabled": true,
+    "collection_base_name": "Beats",
+    "divisions": 1,
+    "all_features_color": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "bars_color": [
+      255,
+      255,
+      255,
+      128
+    ],
+    "beat_counts_color": [
+      255,
+      255,
+      128,
+      0
+    ],
+    "beat_splits_color": [
+      255,
+      0,
+      255,
+      0
+    ],
+    "beats_per_bar": 4,
+    "note_size": 4,
+    "all_collection_name": "Beats - All",
+    "bars_collection_name": "Beats 1/4 Beat #1 (Bar)",
+    "beat_collection_names": [
+      "Beats Beat #1",
+      "Beats Beat #2",
+      "Beats Beat #3",
+      "Beats Beat #4"
+    ],
+    "split_collection_names": [
+      "Beats Beat #1a",
+      "Beats Beat #1b",
+      "Beats Beat #2a",
+      "Beats Beat #2b"
+    ]
+  },
+  "existing": [],
+  "exception": "KeyNotFoundException",
+  "audio": {
+    "raw_bytes": 32768,
+    "bytes_per_sample": 4,
+    "channels": 2,
+    "frequency": 44100,
+    "samples_len": 8192,
+    "samples_fnv1a64": "0x3e46d05f2fb86df4",
+    "preview_len": 441000,
+    "preview_fnv1a64": "0x3cec4e97290a6ff4",
+    "plugins": [
+      {
+        "blocks": 0,
+        "blocks_fnv1a64": "0xcbf29ce484222325",
+        "bpb": -1
+      },
+      {
+        "blocks": 861,
+        "blocks_fnv1a64": "0xf8369aa7a4e392a2",
+        "bpb": 4
+      }
+    ]
+  },
+  "preview": null,
+  "collections": []
+}

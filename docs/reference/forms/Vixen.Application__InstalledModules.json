@@ -1,0 +1,288 @@
+{
+"class": "InstalledModules",
+"source": "Vixen.Application/InstalledModules.Designer.cs",
+"props": {
+"nameHeader": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"descriptionHeader": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"authorHeader": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"versionHeader": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"fileHeader": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonClose"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "InstalledModules",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Installed Modules"
+},
+"events": {
+"Load": "InstalledModules_Load"
+},
+"children": [
+{
+"name": "buttonClose"
+},
+{
+"name": "panel1"
+}
+],
+"objects": {
+"panel1": {
+"type": "Panel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 895,
+"y": 357
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "listViewModules"
+},
+{
+"name": "buttonCopyModuleId"
+}
+]
+},
+"listViewModules": {
+"type": "ListViewEx",
+"props": {
+"AllowDrop": true,
+"AllowRowReorder": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "Nonclickable"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 12
+},
+"Name": "listViewModules",
+"OwnerDraw": true,
+"Size": {
+"t": "size",
+"x": 873,
+"y": 309
+},
+"TabIndex": 2,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"SelectedIndexChanged": "listViewModules_SelectedIndexChanged"
+},
+"children": [],
+"Columns": [
+{
+"ref": "nameHeader"
+},
+{
+"ref": "descriptionHeader"
+},
+{
+"ref": "authorHeader"
+},
+{
+"ref": "versionHeader"
+},
+{
+"ref": "fileHeader"
+}
+]
+},
+"buttonCopyModuleId": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 327
+},
+"Name": "buttonCopyModuleId",
+"Size": {
+"t": "size",
+"x": 122,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "Copy Module Id",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonCopyModuleId_Click"
+},
+"children": []
+},
+"buttonClose": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 793,
+"y": 363
+},
+"Name": "buttonClose",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"nameHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Name"
+},
+"events": {},
+"children": []
+},
+"descriptionHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Description"
+},
+"events": {},
+"children": []
+},
+"authorHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Author"
+},
+"events": {},
+"children": []
+},
+"versionHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Version"
+},
+"events": {},
+"children": []
+},
+"fileHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "File",
+"Width": 629
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+899,
+418
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+915,
+681
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+915,
+456
+]
+}
+}
+}

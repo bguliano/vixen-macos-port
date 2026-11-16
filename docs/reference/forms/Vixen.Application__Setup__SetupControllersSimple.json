@@ -1,0 +1,799 @@
+{
+"class": "SetupControllersSimple",
+"source": "Vixen.Application/Setup/SetupControllersSimple.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"Name": "SetupControllersSimple"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"groupBoxSelectedController": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 486
+},
+"Name": "groupBoxSelectedController",
+"Size": {
+"t": "size",
+"x": 249,
+"y": 112
+},
+"TabIndex": 32,
+"TabStop": false,
+"Text": "Selected Controller"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "panel1"
+}
+]
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 8,
+"y": 16
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 235,
+"y": 77
+},
+"TabIndex": 46
+},
+"events": {},
+"children": [
+{
+"name": "labelOutputCount"
+},
+{
+"name": "buttonStopController"
+},
+{
+"name": "buttonStartController"
+},
+{
+"name": "label2"
+},
+{
+"name": "buttonNumberChannelsController"
+},
+{
+"name": "labelControllerType"
+},
+{
+"name": "buttonConfigureController"
+},
+{
+"name": "label1"
+},
+{
+"name": "buttonRenameController"
+},
+{
+"name": "buttonDeleteController"
+}
+]
+},
+"labelOutputCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 57,
+"y": 25
+},
+"Name": "labelOutputCount",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 13
+},
+"TabIndex": 3,
+"Text": "Output Count"
+},
+"events": {},
+"children": []
+},
+"buttonStopController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 154,
+"y": 49
+},
+"Name": "buttonStopController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 45,
+"toolTipText": "Stop / Disable",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonStopController_Click"
+},
+"children": []
+},
+"buttonStartController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 124,
+"y": 49
+},
+"Name": "buttonStartController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 44,
+"toolTipText": "Start / Enable",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonStartController_Click"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 1,
+"y": 25
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 47,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "Outputs:"
+},
+"events": {},
+"children": []
+},
+"buttonNumberChannelsController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 34,
+"y": 49
+},
+"Name": "buttonNumberChannelsController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 43,
+"toolTipText": "Channel Count",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonNumberChannelsController_Click"
+},
+"children": []
+},
+"labelControllerType": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 57,
+"y": 6
+},
+"Name": "labelControllerType",
+"Size": {
+"t": "size",
+"x": 78,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Controller Type"
+},
+"events": {},
+"children": []
+},
+"buttonConfigureController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 49
+},
+"Name": "buttonConfigureController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 42,
+"toolTipText": "Configure",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonConfigureController_Click"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 1,
+"y": 6
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 34,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Type:"
+},
+"events": {},
+"children": []
+},
+"buttonRenameController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 64,
+"y": 49
+},
+"Name": "buttonRenameController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 41,
+"toolTipText": "Rename",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonRenameController_Click"
+},
+"children": []
+},
+"buttonDeleteController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 94,
+"y": 49
+},
+"Name": "buttonDeleteController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 40,
+"toolTipText": "Delete",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDeleteController_Click"
+},
+"children": []
+},
+"buttonAddController": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 201,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 6,
+"r": 1,
+"b": 3
+},
+"Name": "buttonAddController",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 35,
+"toolTipText": "Add",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonAddController_Click"
+},
+"children": []
+},
+"buttonRaiseControllerOrdering": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 229,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 6,
+"r": 1,
+"b": 3
+},
+"Name": "buttonRaiseControllerOrdering",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 36,
+"toolTipText": "Move Controller(s) up",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonRaiseControllerOrdering_Click"
+},
+"children": []
+},
+"buttonLowerControllerOrdering": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 263,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 6,
+"r": 1,
+"b": 3
+},
+"Name": "buttonLowerControllerOrdering",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 37,
+"toolTipText": "Move Controller(s) down",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonLowerControllerOrdering_Click"
+},
+"children": []
+},
+"comboBoxNewControllerType": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 38,
+"y": 8
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 8,
+"r": 3,
+"b": 3
+},
+"Name": "comboBoxNewControllerType",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 21
+},
+"TabIndex": 34
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 12
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 12,
+"r": 3,
+"b": 0
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 13
+},
+"TabIndex": 33,
+"Text": "Add:"
+},
+"events": {},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {
+"AutomaticDelay": 200,
+"AutoPopDelay": 5000,
+"InitialDelay": 200,
+"ReshowDelay": 40
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"buttonSelectSourceElements": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "buttonSelectSourceElements",
+"Size": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"TabIndex": 40,
+"toolTipText": "Find elements patched to these outputs",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonSelectSourceElements_Click"
+},
+"children": []
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 449
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 249,
+"y": 31
+},
+"TabIndex": 41
+},
+"events": {},
+"children": [
+{
+"name": "buttonSelectSourceElements"
+}
+]
+},
+"flowLayoutPanel2": {
+"type": "FlowLayoutPanel",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "flowLayoutPanel2",
+"Size": {
+"t": "size",
+"x": 291,
+"y": 34
+},
+"TabIndex": 42,
+"WrapContents": false
+},
+"events": {},
+"children": [
+{
+"name": "label5"
+},
+{
+"name": "comboBoxNewControllerType"
+},
+{
+"name": "buttonAddController"
+},
+{
+"name": "buttonRaiseControllerOrdering"
+},
+{
+"name": "buttonLowerControllerOrdering"
+}
+]
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 255,
+"y": 601
+},
+"TabIndex": 43
+},
+"events": {},
+"children": [
+{
+"name": "flowLayoutPanel2",
+"col": 0,
+"row": 0
+},
+{
+"name": "groupBoxSelectedController",
+"col": 0,
+"row": 3
+},
+{
+"name": "flowLayoutPanel1",
+"col": 0,
+"row": 2
+},
+{
+"name": "controllerTree",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"controllerTree": {
+"type": "ControllerTree",
+"props": {
+"AutoScroll": true,
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 43
+},
+"Name": "controllerTree",
+"Size": {
+"t": "size",
+"x": 249,
+"y": 400
+},
+"TabIndex": 36
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+255,
+601
+]
+}
+}
+}

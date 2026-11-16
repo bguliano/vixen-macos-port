@@ -1,0 +1,219 @@
+{
+"class": "FunctionGenerator",
+"source": "Vixen.Modules/App/Curves/FunctionGenerator.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnGenerate"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "FunctionGenerator",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Function Curve Generator"
+},
+"events": {},
+"children": [
+{
+"name": "lnkHelp"
+},
+{
+"name": "txtDescription"
+},
+{
+"name": "label1"
+},
+{
+"name": "txtFunction"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnGenerate"
+}
+],
+"objects": {
+"btnGenerate": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 178,
+"y": 130
+},
+"Name": "btnGenerate",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "Generate",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnGenerate_Click"
+},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 267,
+"y": 130
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"TabStop": false,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"txtFunction": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 75,
+"y": 104
+},
+"Name": "txtFunction",
+"Size": {
+"t": "size",
+"x": 283,
+"y": 20
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 107
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 13
+},
+"TabIndex": 4,
+"Text": "Function"
+},
+"events": {},
+"children": []
+},
+"txtDescription": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 24,
+"y": 12
+},
+"Multiline": true,
+"Name": "txtDescription",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 334,
+"y": 63
+},
+"TabIndex": 6,
+"Text": "Enter the mathmatical f(x) that provides the value of y. The function will be run with values of x from 0-100 incremented by the Draw Interval to get the x,y values in the curve.  Example gamma function where 2.2 is the gamma and 80 is the max level: Pow(x/100, 2.2) * 80."
+},
+"events": {},
+"children": []
+},
+"lnkHelp": {
+"type": "LinkLabel",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 24,
+"y": 72
+},
+"Name": "lnkHelp",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 13
+},
+"TabIndex": 7,
+"TabStop": true,
+"Text": "Help"
+},
+"events": {
+"LinkClicked": "lnkHelp_LinkClicked"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+370,
+175
+]
+}
+}
+}

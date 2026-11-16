@@ -1,0 +1,24 @@
+[package]
+name = "vixen-effect-registry"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+fx-basic = { path = "../fx-basic" }
+fx-pixel-simple = { path = "../fx-pixel-simple" }
+fx-pixel-motion = { path = "../fx-pixel-motion" }
+fx-pixel-graphics = { path = "../fx-pixel-graphics" }
+fx-pixel-complex = { path = "../fx-pixel-complex" }
+fx-pixel-physics = { path = "../fx-pixel-physics" }
+fx-audio-state = { path = "../fx-audio-state" }
+fx-fixture = { path = "../fx-fixture" }
+
+[dev-dependencies]
+# The parameters in the golden files must read back as the exact doubles the C# used.
+serde_json = { workspace = true, features = ["float_roundtrip"] }
+fastrand = { workspace = true }
+vixen-io = { path = "../vixen-io" }
+flate2 = "1"
+vixen-xml = { path = "../vixen-xml" }

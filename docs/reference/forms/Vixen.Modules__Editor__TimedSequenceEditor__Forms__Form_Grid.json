@@ -1,0 +1,92 @@
+{
+"class": "Form_Grid",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/Form_Grid.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CloseButton": false,
+"CloseButtonVisible": false,
+"Name": "Form_Grid",
+"Text": "Timeline"
+},
+"events": {
+"KeyDown": "Form_Grid_KeyDown",
+"DockStateChanged": "Form_Grid_DockStateChanged"
+},
+"children": [
+{
+"name": "timelineControl"
+}
+],
+"objects": {
+"timelineControl": {
+"type": "TimelineControl",
+"props": {
+"AllowGridResize": true,
+"Audio": null,
+"AutoSize": true,
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "timelineControl",
+"SequenceLoading": false,
+"Size": {
+"t": "size",
+"x": 1012,
+"y": 399
+},
+"TabIndex": 3
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "InstanceId"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1012,
+399
+]
+}
+}
+}

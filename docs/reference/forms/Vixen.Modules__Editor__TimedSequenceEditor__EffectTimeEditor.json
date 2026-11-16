@@ -1,0 +1,340 @@
+{
+"class": "EffectTimeEditor",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/EffectTimeEditor.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "EffectTimeEditor",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Effect Time Editor"
+},
+"events": {},
+"children": [
+{
+"name": "lblSetSequenceLength"
+},
+{
+"name": "btnSetFullSequence"
+},
+{
+"name": "txtEndTime"
+},
+{
+"name": "label3"
+},
+{
+"name": "txtDuration"
+},
+{
+"name": "txtStartTime"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "btnOk"
+}
+],
+"objects": {
+"btnOk": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 34,
+"y": 197
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 8,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 41,
+"y": 45
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 31,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Start"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 20,
+"y": 78
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Duration"
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 129,
+"y": 197
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 9,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"txtStartTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 82,
+"y": 42
+},
+"Milliseconds": 0,
+"Name": "txtStartTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 1,
+"TimeSpan": {
+"t": "raw",
+"v": "TimeSpan.Parse(\"00:00:00\")"
+}
+},
+"events": {},
+"children": []
+},
+"txtDuration": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 82,
+"y": 75
+},
+"Milliseconds": 0,
+"Name": "txtDuration",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 4,
+"TimeSpan": {
+"t": "raw",
+"v": "TimeSpan.Parse(\"00:00:00\")"
+}
+},
+"events": {},
+"children": []
+},
+"txtEndTime": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 82,
+"y": 110
+},
+"Milliseconds": 0,
+"Name": "txtEndTime",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 6,
+"TimeSpan": {
+"t": "raw",
+"v": "TimeSpan.Parse(\"00:00:00\")"
+}
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 46,
+"y": 112
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "End"
+},
+"events": {},
+"children": []
+},
+"btnSetFullSequence": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 177,
+"y": 146
+},
+"Name": "btnSetFullSequence",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 27
+},
+"TabIndex": 8,
+"Text": "Set",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnSetFullSequence_Click"
+},
+"children": []
+},
+"lblSetSequenceLength": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 20,
+"y": 152
+},
+"Name": "lblSetSequenceLength",
+"Size": {
+"t": "size",
+"x": 145,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Match sequence start/end"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+247,
+236
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+263,
+275
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+263,
+275
+]
+}
+}
+}

@@ -1,0 +1,46 @@
+{
+"class": "FormEffectEditor",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/FormEffectEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"BackColor": {
+"t": "color",
+"system": "Control"
+},
+"ControlBox": false,
+"ForeColor": {
+"t": "color",
+"system": "WindowText"
+},
+"Name": "FormEffectEditor",
+"Text": "Effect Editor"
+},
+"events": {},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+367,
+521
+]
+}
+}
+}

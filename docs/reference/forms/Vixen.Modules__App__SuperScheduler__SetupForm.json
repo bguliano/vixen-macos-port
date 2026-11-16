@@ -1,0 +1,560 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/App/SuperScheduler/SetupForm.Designer.cs",
+"props": {
+"columnShow": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"columnSchedule": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"columnStatus": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"Name": "SetupForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Scheduler"
+},
+"events": {
+"Load": "SetupForm_Load"
+},
+"children": [
+{
+"name": "buttonHelp"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "buttonClose"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 770,
+"y": 76
+},
+"TabIndex": 4,
+"TabStop": false,
+"Text": "Shows"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "label1"
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"Location": {
+"t": "point",
+"x": 7,
+"y": 18
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 756,
+"y": 52
+},
+"TabIndex": 0,
+"Text": "Shows are sets of sequences, events and actions. You setup a show first and then schedule it to happen at a certain time below. You can setup multipe shows that happen at different times or on different days.",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"buttonClose": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 689,
+"y": 435
+},
+"Name": "buttonClose",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonClose_Click"
+},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 97
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 770,
+"y": 325
+},
+"TabIndex": 7,
+"TabStop": false,
+"Text": "Scheduled Shows"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "buttonEditShow"
+},
+{
+"name": "listViewItems"
+},
+{
+"name": "buttonDeleteSchedule"
+},
+{
+"name": "buttonEditSchedule"
+},
+{
+"name": "buttonAddSchedule"
+}
+]
+},
+"buttonEditShow": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 10,
+"y": 291
+},
+"Name": "buttonEditShow",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 10,
+"toolTipText": "Edit Selected Show",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonEditShow_Click"
+},
+"children": []
+},
+"listViewItems": {
+"type": "ListView",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"ContextMenuStrip": {
+"t": "enum",
+"type": "this",
+"v": "contextMenuStripList"
+},
+"FullRowSelect": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 22
+},
+"MultiSelect": false,
+"Name": "listViewItems",
+"Size": {
+"t": "size",
+"x": 752,
+"y": 261
+},
+"TabIndex": 8,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"DoubleClick": "listViewItems_DoubleClick"
+},
+"children": [],
+"Columns": [
+{
+"ref": "columnShow"
+},
+{
+"ref": "columnSchedule"
+},
+{
+"ref": "columnStatus"
+}
+]
+},
+"contextMenuStripList": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Name": "contextMenuStrip1",
+"Size": {
+"t": "size",
+"x": 226,
+"y": 98
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+],
+"Items": [
+{
+"ref": "addAScheduledShowToolStripMenuItem"
+},
+{
+"ref": "editTheSelectedScheduleToolStripMenuItem"
+},
+{
+"ref": "deleteTheSelectedScheduleToolStripMenuItem"
+},
+{
+"ref": "toolStripMenuItem1"
+},
+{
+"ref": "editTheAssociatedShowToolStripMenuItem"
+}
+]
+},
+"addAScheduledShowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "addAScheduledShowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 225,
+"y": 22
+},
+"Text": "Add a Scheduled Show..."
+},
+"events": {
+"Click": "addAScheduledShowToolStripMenuItem_Click"
+},
+"children": []
+},
+"editTheSelectedScheduleToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editTheSelectedScheduleToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 225,
+"y": 22
+},
+"Text": "Edit the Selected Schedule..."
+},
+"events": {
+"Click": "editTheSelectedScheduleToolStripMenuItem_Click"
+},
+"children": []
+},
+"deleteTheSelectedScheduleToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "deleteTheSelectedScheduleToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 225,
+"y": 22
+},
+"Text": "Delete the Selected Schedule"
+},
+"events": {
+"Click": "deleteTheSelectedScheduleToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripMenuItem1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripMenuItem1",
+"Size": {
+"t": "size",
+"x": 222,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"editTheAssociatedShowToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "editTheAssociatedShowToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 225,
+"y": 22
+},
+"Text": "Edit the Associated Show..."
+},
+"events": {
+"Click": "editTheAssociatedShowToolStripMenuItem_Click"
+},
+"children": []
+},
+"buttonDeleteSchedule": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 735,
+"y": 291
+},
+"Name": "buttonDeleteSchedule",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 7,
+"toolTipText": "Delete the Selected Schedule",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDeleteSchedule_Click"
+},
+"children": []
+},
+"buttonEditSchedule": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 706,
+"y": 291
+},
+"Name": "buttonEditSchedule",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 6,
+"toolTipText": "Edit the Selected Schedule",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonEditSchedule_Click"
+},
+"children": []
+},
+"buttonAddSchedule": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 677,
+"y": 291
+},
+"Name": "buttonAddSchedule",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 5,
+"toolTipText": "Add a New Scheduled Show",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonAddSchedule_Click"
+},
+"children": []
+},
+"buttonHelp": {
+"type": "Button",
+"props": {
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 435
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 27
+},
+"TabIndex": 61,
+"Text": "Help",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"columnShow": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Show",
+"Width": 100
+},
+"events": {},
+"children": []
+},
+"columnSchedule": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Schedule",
+"Width": 460
+},
+"events": {},
+"children": []
+},
+"columnStatus": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Status"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+798,
+475
+]
+}
+}
+}

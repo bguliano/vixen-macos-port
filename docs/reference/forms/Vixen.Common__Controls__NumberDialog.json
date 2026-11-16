@@ -1,0 +1,218 @@
+{
+"class": "NumberDialog",
+"source": "Vixen.Common/Controls/NumberDialog.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"KeyPreview": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "NumberDialog",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+}
+},
+"events": {},
+"children": [
+{
+"name": "numericUpDownChooser"
+},
+{
+"name": "button2"
+},
+{
+"name": "button1"
+},
+{
+"name": "labelPrompt"
+}
+],
+"objects": {
+"button2": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 258,
+"y": 82
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "button2",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"button1": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 158,
+"y": 82
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "button1",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"labelPrompt": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 31
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "labelPrompt",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "[]"
+},
+"events": {},
+"children": []
+},
+"numericUpDownChooser": {
+"type": "NumericUpDown",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 253,
+"y": 29
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "numericUpDownChooser",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {
+"KeyDown": "numericUpDownChooser_KeyDown"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+365,
+125
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+}
+}
+}

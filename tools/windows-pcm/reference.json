@@ -1,0 +1,11 @@
+{
+  "note": "Reference source contract only. Binary hashes identify the supplied Windows installation; they do not prove that it was built from these sources.",
+  "targetFramework": "net10.0-windows",
+  "naudioAssemblyVersion": "2.3.0.0",
+  "files": {
+    "upstream/Vixen/src/Vixen.Common/AudioPlayer/FileReader/AudioFileReader.cs": "22b04d5c9256188083b06ea32ceb56fe927ecd960358e6078f75c4d4fdd49e10",
+    "upstream/Vixen/src/Vixen.Common/AudioPlayer/SampleProvider/CachedSampleSource.cs": "7cc45147f267ed08a2d94218a20312aea4c0c46399f594bb7cb26914a8d7cc95",
+    "upstream/Vixen/Directory.Packages.props": "b7ba2ff298e9f75c169946c9a01d7bce9355f059b0855a41935625be1e01e41c",
+    "upstream/Vixen/global.json": "3d6ebbd2eb234ff4bf1374428592079d379290cd82a950841fbd87c97acc3432"
+  }
+}

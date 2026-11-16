@@ -1,0 +1,163 @@
+{
+"class": "PreviewCustomCreateForm",
+"source": "Vixen.Modules/Preview/VixenPreview/Shapes/PreviewCustomCreateForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "PreviewCustomCreateForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Create a Template"
+},
+"events": {},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "textBoxTemplateName"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 9
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 82,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Template Name"
+},
+"events": {},
+"children": []
+},
+"textBoxTemplateName": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 100,
+"y": 6
+},
+"Name": "textBoxTemplateName",
+"Size": {
+"t": "size",
+"x": 181,
+"y": 20
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 125,
+"y": 39
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 206,
+"y": 39
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Canel",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonCancel_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+298,
+77
+]
+}
+}
+}

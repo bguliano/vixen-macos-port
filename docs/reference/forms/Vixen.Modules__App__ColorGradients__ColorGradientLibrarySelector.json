@@ -1,0 +1,286 @@
+{
+"class": "ColorGradientLibrarySelector",
+"source": "Vixen.Modules/App/ColorGradients/ColorGradientLibrarySelector.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"KeyPreview": true,
+"Name": "ColorGradientLibrarySelector",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Color Gradient Library"
+},
+"events": {
+"FormClosing": "ColorGradientLibrarySelector_FormClosing",
+"Load": "ColorGradientLibrarySelector_Load",
+"KeyDown": "ColorGradientLibrarySelector_KeyDown"
+},
+"children": [
+{
+"name": "buttonNewColorGradient"
+},
+{
+"name": "buttonDeleteColorGradient"
+},
+{
+"name": "buttonEditColorGradient"
+},
+{
+"name": "listViewColorGradients"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 450,
+"y": 315
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 350,
+"y": 315
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"listViewColorGradients": {
+"type": "ListView",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "listViewColorGradients",
+"Size": {
+"t": "size",
+"x": 529,
+"y": 287
+},
+"TabIndex": 6,
+"UseCompatibleStateImageBehavior": false
+},
+"events": {
+"SelectedIndexChanged": "listViewColorGradients_SelectedIndexChanged",
+"MouseDoubleClick": "listViewColorGradients_MouseDoubleClick"
+},
+"children": []
+},
+"buttonEditColorGradient": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 126,
+"y": 315
+},
+"Name": "buttonEditColorGradient",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 7,
+"Text": "Edit Gradient",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonEditColorGradient_Click"
+},
+"children": []
+},
+"buttonDeleteColorGradient": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 238,
+"y": 315
+},
+"Name": "buttonDeleteColorGradient",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 8,
+"Text": "Delete Gradient",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonDeleteColorGradient_Click"
+},
+"children": []
+},
+"buttonNewColorGradient": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 315
+},
+"Name": "buttonNewColorGradient",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 9,
+"Text": "New Gradient",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonNewColorGradient_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+558,
+359
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+574,
+397
+]
+}
+}
+}

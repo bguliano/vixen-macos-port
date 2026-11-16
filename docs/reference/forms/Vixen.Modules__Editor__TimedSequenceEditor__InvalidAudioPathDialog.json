@@ -1,0 +1,215 @@
+{
+"class": "InvalidAudioPathDialog",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/InvalidAudioPathDialog.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "InvalidAudioPathDialog",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Missing Audio File"
+},
+"events": {},
+"children": [
+{
+"name": "labelAudioPath"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "buttonKeepAudio"
+},
+{
+"name": "buttonRemoveAudio"
+},
+{
+"name": "buttonLocateAudio"
+}
+],
+"objects": {
+"buttonLocateAudio": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Retry"
+},
+"Location": {
+"t": "point",
+"x": 174,
+"y": 135
+},
+"Name": "buttonLocateAudio",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 27
+},
+"TabIndex": 0,
+"Text": "Select New Audio",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonLocateAudio_Click"
+},
+"children": []
+},
+"buttonRemoveAudio": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Abort"
+},
+"Location": {
+"t": "point",
+"x": 324,
+"y": 135
+},
+"Name": "buttonRemoveAudio",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 27
+},
+"TabIndex": 0,
+"Text": "Forget This Audio",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonRemoveAudio_Click"
+},
+"children": []
+},
+"buttonKeepAudio": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Ignore"
+},
+"Location": {
+"t": "point",
+"x": 475,
+"y": 135
+},
+"Name": "buttonKeepAudio",
+"Size": {
+"t": "size",
+"x": 143,
+"y": 27
+},
+"TabIndex": 0,
+"Text": "Proceed As Is",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonKeepAudio_Click"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 15
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 177,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Audio file not found at the path:"
+},
+"events": {},
+"children": []
+},
+"labelAudioPath": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 42
+},
+"Name": "labelAudioPath",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 170,
+"y": 117
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Selected the action you wish to take:"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+632,
+172
+]
+}
+}
+}

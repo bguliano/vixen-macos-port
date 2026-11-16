@@ -1,0 +1,722 @@
+{
+"class": "Vixen2xSequenceImporterChannelMapper",
+"source": "Vixen.Modules/Sequence/Vixen2x/Vixen2xSequenceImporterChannelMapper.Designer.cs",
+"props": {
+"v2Channel": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"v2ChannelOutput": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"v2ChannelName": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"v2ChannelColor": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"destinationElement": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"destinationColor": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"RGBPixelColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"Name": "Vixen2xSequenceImporterChannelMapper",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Vixen 2.x Channel Mapping"
+},
+"events": {
+"Load": "Vixen2xSequenceImporterChannelMapper_Load"
+},
+"children": [
+{
+"name": "checkBoxRGB"
+},
+{
+"name": "comboBoxColorOrder"
+},
+{
+"name": "label1"
+},
+{
+"name": "numericUpDownRepeatElements"
+},
+{
+"name": "mappingNameTextBox"
+},
+{
+"name": "mappingNameLabel"
+},
+{
+"name": "destinationColorButton"
+},
+{
+"name": "multiSelectTreeview1"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "listViewMapping"
+}
+],
+"objects": {
+"listViewGroup1": {
+"type": "ListViewGroup",
+"props": {
+"Header": "group1",
+"Name": "listViewGroup1"
+},
+"events": {},
+"children": [],
+"ctor": [
+"group1",
+{
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Left"
+}
+]
+},
+"listViewGroup2": {
+"type": "ListViewGroup",
+"props": {
+"Header": "group2",
+"Name": "listViewGroup2"
+},
+"events": {},
+"children": [],
+"ctor": [
+"group2",
+{
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Left"
+}
+]
+},
+"listViewGroup3": {
+"type": "ListViewGroup",
+"props": {
+"Header": "group3",
+"Name": "listViewGroup3"
+},
+"events": {},
+"children": [],
+"ctor": [
+"group3",
+{
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Left"
+}
+]
+},
+"listViewItem1": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"qwerqewr"
+]
+},
+"listViewItem2": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+[
+{
+"t": "raw",
+"v": "new System.Windows.Forms.ListViewItem.ListViewSubItem(null, \"asdfasdf\")"
+},
+{
+"t": "raw",
+"v": "new System.Windows.Forms.ListViewItem.ListViewSubItem(null, \"sub1\", System.Drawing.SystemColors.Info, System.Drawing.SystemColors.HotTrack, new System.Drawing.Font(\"Microsoft Sans Serif\", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))))"
+},
+{
+"t": "raw",
+"v": "new System.Windows.Forms.ListViewItem.ListViewSubItem(null, \"sub2\")"
+}
+],
+-1
+]
+},
+"listViewItem3": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"jjjjjjjjjjjjjj"
+]
+},
+"listViewItem4": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"hhhhhhhhhhhhhh"
+]
+},
+"listViewMapping": {
+"type": "ListView",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left"
+]
+},
+"FullRowSelect": true,
+"GridLines": true,
+"HideSelection": false,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "listViewMapping",
+"ShowGroups": false,
+"Size": {
+"t": "size",
+"x": 732,
+"y": 562
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"DragDrop": "listViewMapping_DragDrop",
+"DragEnter": "listViewMapping_DragEnter"
+},
+"children": [],
+"Columns": [
+{
+"ref": "v2Channel"
+},
+{
+"ref": "v2ChannelOutput"
+},
+{
+"ref": "v2ChannelName"
+},
+{
+"ref": "v2ChannelColor"
+},
+{
+"ref": "destinationElement"
+},
+{
+"ref": "destinationColor"
+},
+{
+"ref": "RGBPixelColumn"
+}
+],
+"Groups": [
+{
+"ref": "listViewGroup1"
+},
+{
+"ref": "listViewGroup2"
+},
+{
+"ref": "listViewGroup3"
+}
+],
+"Items": [
+{
+"ref": "listViewItem1"
+},
+{
+"ref": "listViewItem2"
+},
+{
+"ref": "listViewItem3"
+},
+{
+"ref": "listViewItem4"
+}
+]
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 885,
+"y": 594
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 2,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonCancel_Click"
+},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 997,
+"y": 594
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"multiSelectTreeview1": {
+"type": "MultiSelectTreeview",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"CustomDragCursor": null,
+"DragDefaultMode": {
+"t": "enum",
+"type": "DragDropEffects",
+"v": "Move"
+},
+"DragDestinationNodeBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"DragDestinationNodeForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"DragSourceNodeBackColor": {
+"t": "color",
+"system": "ControlLight"
+},
+"DragSourceNodeForeColor": {
+"t": "color",
+"system": "ControlText"
+},
+"Location": {
+"t": "point",
+"x": 754,
+"y": 14
+},
+"Name": "multiSelectTreeview1",
+"SelectedNodes": {
+"t": "raw",
+"v": "(System.Collections.Generic.List<System.Windows.Forms.TreeNode>)(resources.GetObject(\"multiSelectTreeview1.SelectedNodes\"))"
+},
+"Size": {
+"t": "size",
+"x": 348,
+"y": 562
+},
+"TabIndex": 5,
+"UsingCustomDragCursor": false
+},
+"events": {
+"ItemDrag": "multiSelectTreeview1_ItemDrag",
+"DragEnter": "multiSelectTreeview1_DragEnter"
+},
+"children": []
+},
+"destinationColorButton": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 343,
+"y": 594
+},
+"Name": "destinationColorButton",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 6,
+"Text": "Set Import Color",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "destinationColorButton_Click"
+},
+"children": []
+},
+"mappingNameLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 601
+},
+"Name": "mappingNameLabel",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Mapping Name:"
+},
+"events": {},
+"children": []
+},
+"mappingNameTextBox": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 117,
+"y": 598
+},
+"Name": "mappingNameTextBox",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 23
+},
+"TabIndex": 8
+},
+"events": {},
+"children": []
+},
+"numericUpDownRepeatElements": {
+"type": "NumericUpDown",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 602,
+"y": 598
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 20, 0, 0, 0})"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+},
+"Name": "numericUpDownRepeatElements",
+"Size": {
+"t": "size",
+"x": 47,
+"y": 23
+},
+"TabIndex": 9,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 1, 0, 0, 0})"
+}
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 478,
+"y": 601
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 111,
+"y": 15
+},
+"TabIndex": 10,
+"Text": "Repeat Elements:   x"
+},
+"events": {},
+"children": []
+},
+"checkBoxRGB": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 661,
+"y": 600
+},
+"Name": "checkBoxRGB",
+"Size": {
+"t": "size",
+"x": 94,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Color Mixing"
+},
+"events": {
+"CheckedChanged": "checkBoxRGB_CheckedChanged"
+},
+"children": []
+},
+"comboBoxColorOrder": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 758,
+"y": 595
+},
+"Name": "comboBoxColorOrder",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 23
+},
+"TabIndex": 12
+},
+"events": {},
+"children": [],
+"Items": [
+"RGB",
+"RBG",
+"BRG",
+"BGR",
+"GRB",
+"GBR"
+]
+},
+"v2Channel": {
+"type": "ColumnHeader",
+"props": {
+"Text": "V2 Channel",
+"Width": 68
+},
+"events": {},
+"children": []
+},
+"v2ChannelOutput": {
+"type": "ColumnHeader",
+"props": {
+"Text": "V2 Output",
+"Width": 68
+},
+"events": {},
+"children": []
+},
+"v2ChannelName": {
+"type": "ColumnHeader",
+"props": {
+"Text": "V2 Name",
+"Width": 130
+},
+"events": {},
+"children": []
+},
+"v2ChannelColor": {
+"type": "ColumnHeader",
+"props": {
+"Text": "V2 Color",
+"Width": 70
+},
+"events": {},
+"children": []
+},
+"destinationElement": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Destination Element",
+"Width": 150
+},
+"events": {},
+"children": []
+},
+"destinationColor": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Import Color",
+"Width": 120
+},
+"events": {},
+"children": []
+},
+"RGBPixelColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Color Mixing"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1109,
+637
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownRepeatElements)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.numericUpDownRepeatElements)).EndInit()"
+]
+}

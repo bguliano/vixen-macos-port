@@ -1,0 +1,71 @@
+{
+ "findings": [
+  {
+   "id": "butterfly-1",
+   "severity": "missing-feature",
+   "summary": "The base class's TargetPositioning setter is not ported: switching to Locations does not force the orientation to Vertical.",
+   "csharp": "upstream/Vixen/src/Vixen.Modules/Effect/Effect/PixelEffectBase.cs:141-160. The setter does `if (TargetPositioning == Locations) StringOrientation = StringOrientation.Vertical; else SetOrientation();`. Butterfly inherits this.",
+   "rust": "crates/fx-pixel-simple/src/butterfly.rs:6-12 sets no param_changed, so it keeps `param_changed: None` from generated/butterfly.rs:263. Visibility (butterfly.rs:24) then hides StringOrientation, so the stale value can't be corrected in the editor. crates/fx-pixel-physics/src/liquid/mod.rs:85-89 shows the port of this side effect that Butterfly needs. Nothing but tests/golden.rs:190 calls param_changed yet, because the session and FFI crates are still stubs, so the app must also call it when the editor is wired up.",
+   "scenario": "50 leaves at x 100..118, y 50..58, Type1, Iterations=2, red-to-lime, 1000 ms, 50 ms frames, StringOrientation=Horizontal, and the user selects Locations. C# renders as Vertical: for the leaf at (104,52), the math uses x=4, y=6. Rust stays Horizontal, so BufferHt is 19 instead of 9, the offsets swap, and the math uses x=54, y=66. In frame 5 that leaf is C# (188,66,0) and Rust (240,14,0), and 49 of 50 elements differ. Existing sequences are unaffected: all 36 real uses are Strings, and a stored value is honoured on load in both. The golden data has no Horizontal-then-Locations case, so it can't catch this."
+  },
+  {
+   "id": "butterfly-2",
+   "severity": "needs-context",
+   "summary": "Changing an effect's target does not re-read the target's Orientation property, so new, moved or pasted effects keep the wrong orientation.",
+   "csharp": "PixelEffectBase.cs:254-261 (TargetNodesChanged calls SetOrientation when positioning is Strings), :263-270, and the TargetPositioning setter's else branch at :150-153. BaseEffect.cs:243-263 reads the first target's Orientation property. Callers include TimedSequenceEditorForm.cs:3864 (new effect) and :2228 (moved to another row). On load, EffectNodeSurrogate.cs:37 sets targets before SequenceTypeDataModelBase.cs:131 assigns the stored data, so the stored orientation wins.",
+   "rust": "crates/vixen-effects/src/pixel.rs:390-395 only reads the stored StringOrientation. ParamChangedFn (framework.rs:475) is `fn(&str, &mut Params)` with no tree or targets, so no existing hook can do this. Outside tests, ElementTree::orientation (crates/vixen-core/src/element.rs:377) is only called by the preview (crates/vixen-preview/src/shape/pixel_grid.rs:55). new_params() always gives Vertical.",
+   "scenario": "Add a new Type2 Butterfly (1 s, 50 ms frames, 4 strings of 12) to a node whose Orientation property is Horizontal. C# renders Horizontal and Rust renders Vertical. At string 2, pixel 5, frame 5, C# gives (127,127,0) and Rust gives (212,42,0), and 442 of 960 element-frames differ. Types 3 and 4 also differ; Types 1 and 5 are symmetric under the swap and come out identical. Existing sequences are unaffected because the stored value wins on load, and the owner's Light Strip L and R nodes have no Orientation property."
+  },
+  {
+   "id": "butterfly-3",
+   "severity": "needs-context",
+   "summary": "Curves and gradients linked to a library entry are not refreshed from the library at render time.",
+   "csharp": "Curve.cs:73-81 (the Points getter calls CheckLibraryReference) and :131-170 (copies the library's points when the name is found). ColorGradient.cs:650-658 (GetColorBlend calls CheckLibraryReference) and :1340-1377 (CloneDataFrom the library gradient). This applies to Butterfly's LevelCurve (Butterfly.cs:347), SpeedCurve (:621) and Color (:577).",
+   "rust": "crates/vixen-core/src/curve.rs:54-62 and gradient.rs:179-181 only use the stored points. library_reference_name is only read and written (crates/vixen-io/src/values.rs:229, 281). crates/vixen-io/src/library.rs loads the libraries, but nothing applies them, and RenderCtx (framework.rs:357-371) has no library.",
+   "scenario": "4 of the 36 real Butterfly effects (Carol of the Bells (Lindsey Stirling).tim) link LevelCurve to the library curve \"Accelerate\". Today the stored 101 points equal the library's, so nothing visible changes yet. If that library curve is edited, C# renders the new curve on next render and Rust keeps the sequence's old copy. Linked gradients behave the same way, though none of the 36 use one."
+  },
+  {
+   "id": "butterfly-4",
+   "severity": "crash-risk",
+   "summary": "`BufferHt * curState` panics on overflow in debug builds, where C# wraps silently; release builds wrap like C#.",
+   "csharp": "Butterfly.cs:345 and :418: `int frame = (BufferHt * curState / (int)TimeSpan.TotalMilliseconds) % maxframe;`. This is unchecked int arithmetic; no csproj or props file sets CheckForOverflowUnderflow, so it wraps and keeps rendering.",
+   "rust": "crates/fx-pixel-simple/src/butterfly.rs:122: `info.buffer_ht() * cur_state` is a plain i32 multiply. The dev profile (root Cargo.toml) keeps overflow checks on and the release profile does not. crates/vixen-engine/src/render.rs:45 catches the panic, so the effect goes dark instead of crashing. `wrapping_mul` would match C# in every build.",
+   "scenario": "Run with one string of 100 pixels, 180 s, Type4, Repeat=20 (effective repeat 120), Iterations=1. A dev build panicked with \"attempt to multiply with overflow\", and so did 300 pixels at 200 s. A release build rendered both cases. C# keeps lighting, and Type4 doesn't use `frame` anyway. The owner's 36 uses can't reach this: the product peaks at about 29 million, against a limit of 2.1 billion."
+  },
+  {
+   "id": "butterfly-5",
+   "severity": "wrong-output",
+   "summary": "Malformed effect data that makes C# throw and stay dark renders lit in Rust. This only affects damaged or hand-edited files.",
+   "csharp": "ZedGraph/PointPairList.cs:621-622 throws when a curve has fewer than 2 points. A null LevelCurve or Gradient throws at Butterfly.cs:347 or :577. In location mode, a leaf with no Element throws at PixelEffectBase.cs:429. EffectModuleInstanceBase.cs:126-138 catches and logs these, and the effect stays dark.",
+   "rust": "crates/vixen-core/src/curve.rs:83-88 returns NaN, which get_value maps to 100. framework.rs:247-259 returns Curve::default() (a ramp) or ColorGradient::default() (white) for a nil member. crates/vixen-io/src/params.rs:283-300 gives an absent reference member the table default. crates/vixen-effects/src/pixel.rs:573 skips a leaf with no element and renders the rest. PORTING_GUIDE says a C# exception should leave the effect dark.",
+   "scenario": "A Butterfly whose LevelCurve has one point: C# logs an exception and stays dark, while Rust renders at 100% brightness. A nil LevelCurve: C# stays dark, while Rust fades in on a 0 to 100 ramp. A location-mode target containing an empty group: C# stays dark, while Rust lights the other leaves. None of the 36 real uses hit this: all have every member and curves of at least 2 points."
+  },
+  {
+   "id": "butterfly-6",
+   "severity": "editor-metadata",
+   "summary": "Butterfly's Information text has nowhere to live in the Rust descriptor.",
+   "csharp": "Butterfly.cs:243-246 returns \"Visit the Vixen Lights website for more information on this effect.\" EffectPropertyEditorGrid.cs:295-298 reads it, and Design/CategorizedLayout.xaml:55-58 shows it above a \"More Info\" link.",
+   "rust": "EffectDescriptor (crates/vixen-effects/src/framework.rs:481-510) has `info_link` but no information text. generated/butterfly.rs:15 carries only the link.",
+   "scenario": "Select a Butterfly in the effect editor. C# shows that sentence and the link; a Rust editor built from the descriptor can only show the link. This gap applies to the descriptor generally, not just Butterfly, and has no effect on the lights."
+  }
+ ],
+ "areas_checked": [
+  "Rendering, against real C#: no differences. tests/golden/Butterfly.json appeared during this audit, generated by tools/golden through the real Vixen runtime. All 230 exact cases matched, with 1,069,029 frame values compared and 0 mismatched. They cover all five types, Direction, Iterations and Speed, Repeat, skips and chunks, Gradient and Rainbow, level curves, Horizontal, Locations, uneven and shared targets, 49 ms, 50 ms and zero-length effects, and two targets.",
+  "How that golden run was done: the in-repo `cargo test -p vixen-effect-registry --test golden` does not compile at the moment, because crates/vixen-effect-registry/Cargo.toml has no dev-dependencies for serde_json and fastrand. I ran an unmodified copy of golden.rs from the scratchpad instead, changing only the golden folder path. Someone working on the golden tests should add those dev-dependencies.",
+  "Rendering, line by line: Butterfly.cs against butterfly.rs covers integer and float division, the float bufferDim, truncating casts, the order of operations, the {0,1} and {1,0} pixel fixes, the fractional part in Type4, the location flip and offsets, _position reset in SetupRender, _negPosition (only read in Speed mode, where it is set every frame), and UseBaseColor (only the Text effect sets it, so Butterfly's hard-coded Transparent is correct).",
+  "Independent cross-check: I wrote a Python transliteration of the C# with C# numeric semantics. Compared with the Rust, 1,900 randomized cases (1,014,000 or so element-frames, including Horizontal plus Locations, single-pixel targets and scattered or duplicate locations) showed 0 differences. It shares my reading of the C#, which is why the golden result above matters more.",
+  "Concrete sets worked by hand. Defaults on a 4x12 grid over 1 s, string 2 pixel 5 frame 5: position 0.5, curState 1500, offset -1.5, h 0.68694, giving (79,175,0). Type2 Horizontal, Repeat 2, Iterations 1, chunks 3, skips 2 over 2 s, string 1 pixel 3: frame 0 has h 3.162, which clamps to lime (0,255,0); frame 10 has h 1.581, so (int)4.74 % 2 is 0 and the pixel is background black. Type4 Speed flat 20, level 50, Rainbow over 0.5 s, string 1 pixel 2 frame 0: _position -0.24, curState 720, offset +1.44, h 0.7, giving (25,0,127). All agreed with the transliteration and the Rust.",
+  "Owner's real data, read-only, from the path in docs/UI_GUIDE.md: all 36 uses are Type1, Gradient, Strings, BackgroundChunks 1, BackgroundSkips 2, with Iterations in 34 and Speed in 2, Vertical in 26 and Horizontal in 10, Forward in 32 and Backwards in 4, all on Light Strip L (554 pixels) or R (563), with DefaultUpdateInterval 10 ms. I loaded these through vixen-io and rendered them through the real descriptor, comparing with the transliteration: 8,808,644 element-frames, 0 differences. The scratch copies of those files are deleted.",
+  "Parameter table: every member matches for name, xml name, type, namespace and level, category and order, label, description (the Speed description really is the key text, as the resx has no entry), property order, browsable state, slider ranges (1-20, 1-20, 2-10, 1-10), enum members, order and labels (Type2 first, Backwards labelled Backward), and defaults from the whole ButterflyData constructor.",
+  "Default gradient, not reported as open: when I started, generated/butterfly.rs:142 used ColorGradient::default() (white) where ButterflyData builds red at 0 to lime at 1. Another worker changed the line at 23:45:12, during this audit. The current table matches C#, confirmed by compare_defaults in the golden run and by sampling the table directly. Files were changing while I worked; butterfly.rs itself was unchanged throughout (last modified 22:44:53) and the findings reflect the tree at 23:50.",
+  "Visibility: UpdateMovementTypeAttribute, UpdateGradientColorAttribute, UpdateStringOrientationAttributes and EnableTargetPositioning all match butterfly.rs:18-26.",
+  "Property setters: MovementType and ColorScheme only refresh visibility, which is ported. StringOrientation only stores its value. TargetPositioning has side effects; see butterfly-1 and butterfly-2.",
+  "[OnDeserialized]: the SpeedCurve fallback is ported in crates/vixen-io/src/fixups.rs:219-221. Absent value-type members get default(T), and the first enum member is correct, including ButterflyType defaulting to Type2.",
+  "Validation: Butterfly has no CheckForInvalidColorData and does no discrete colour handling in C#, and Rust has neither. No difference.",
+  "Custom thumbnails: Butterfly overrides neither GenerateVisualRepresentation nor ForceGenerateVisualRepresentation, and Rust has visual None and force_visual false. No difference.",
+  "Panics: empty targets, a leaf target (no leaf parents, so no render in both), a single pixel, zero-length effects and effects shorter than one frame all stayed safe. Division and modulo are guarded by the early returns (number_frames at least 1, BufferHt above 0) and by `background_skips.max(1)`. With skips 0 and chunks above 1, C# throws and goes dark, while Rust renders every pixel transparent, which also looks dark. Only butterfly-4 can panic.",
+  "Intent timing and element order: frame length, intent span and start 0, peel order for both orientations, distinct elements, and shared-slot behaviour for duplicate locations all match C# and are covered by the golden cases.",
+  "Performance, not reported as a finding: no effect on the lights. PixelLocationFrameBuffer::new (pixel.rs:148) removes duplicates with a linear scan, where C# uses a hash-based Distinct. That only matters for location-mode targets with tens of thousands of pixels, and all 36 real uses are Strings.",
+  "Nothing in the repo or the real data was edited. Builds and harness files went to the scratchpad."
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "short_silence_0",
+  "input": {"kind": "silence", "rate": 44100, "seed": 1, "amplitude": 0, "length": 0, "position": 0, "frequency": 0, "lead": 0, "tail": 0},
+  "input_len": 0,
+  "input_fnv1a64": "0xcbf29ce484222325",
+  "driver": "beatsandbars",
+  "params": {"bpb": 4},
+  "step_size": 512,
+  "block_size": 1024,
+  "blocks": 1,
+  "features": {
+  },
+  "intermediate": {
+    "df_len": 0,
+    "df_fnv1a64": "0xcbf29ce484222325",
+    "beat_period_rle": [],
+    "tempi_len": 0,
+    "tempi_fnv1a64": "0xcbf29ce484222325",
+    "beats": [],
+    "downbeats": [],
+    "beatsd_len": 0,
+    "beatsd_fnv1a64": "0xcbf29ce484222325",
+    "downsampled_len": 0,
+    "downsampled_fnv1a64": "0xcbf29ce484222325"
+  }
+}

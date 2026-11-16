@@ -1,0 +1,372 @@
+{
+"class": "SetupDialog",
+"source": "Vixen.Modules/Controller/GenericSerial/SetupDialog.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOkay"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Icon": {
+"t": "image",
+"file": "SetupDialog___this.Icon.ico"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupDialog",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Generic Serial Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "groupBox1"
+},
+{
+"name": "gbPacketData"
+},
+{
+"name": "btnOkay"
+},
+{
+"name": "btnCancel"
+}
+],
+"objects": {
+"btnCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 257,
+"y": 269
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnOkay": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 162,
+"y": 269
+},
+"Name": "btnOkay",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnOkay_Click"
+},
+"children": []
+},
+"gbPacketData": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 16,
+"y": 102
+},
+"Name": "gbPacketData",
+"Size": {
+"t": "size",
+"x": 328,
+"y": 160
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "Packet Data"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "tbFooter"
+},
+{
+"name": "cbFooter"
+},
+{
+"name": "tbHeader"
+},
+{
+"name": "cbHeader"
+}
+]
+},
+"tbFooter": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 29,
+"y": 121
+},
+"Name": "tbFooter",
+"Size": {
+"t": "size",
+"x": 291,
+"y": 23
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"cbFooter": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 8,
+"y": 95
+},
+"Name": "cbFooter",
+"Size": {
+"t": "size",
+"x": 118,
+"y": 19
+},
+"TabIndex": 2,
+"Text": "Send a text footer",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "cbFooter_CheckedChanged"
+},
+"children": []
+},
+"tbHeader": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 29,
+"y": 51
+},
+"Name": "tbHeader",
+"Size": {
+"t": "size",
+"x": 291,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"cbHeader": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 8,
+"y": 23
+},
+"Name": "cbHeader",
+"Size": {
+"t": "size",
+"x": 122,
+"y": 19
+},
+"TabIndex": 0,
+"Text": "Send a text header",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "cbHeader_CheckedChanged"
+},
+"children": []
+},
+"btnPortSetup": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 139,
+"y": 42
+},
+"Name": "btnPortSetup",
+"Size": {
+"t": "size",
+"x": 182,
+"y": 27
+},
+"TabIndex": 0,
+"Text": "Setup/Change Serial Port",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnPortSetup_Click"
+},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 16,
+"y": 14
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 328,
+"y": 81
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Serial Port Settings"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "lblSettings"
+},
+{
+"name": "lblSettingsLbl"
+},
+{
+"name": "btnPortSetup"
+}
+]
+},
+"lblSettings": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 75,
+"y": 23
+},
+"Name": "lblSettings",
+"Size": {
+"t": "size",
+"x": 209,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "COM1: 115200, Space, 8, OnePointFive"
+},
+"events": {},
+"children": []
+},
+"lblSettingsLbl": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 8,
+"y": 23
+},
+"Name": "lblSettingsLbl",
+"Size": {
+"t": "size",
+"x": 59,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Currently:"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+363,
+317
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+379,
+355
+]
+}
+}
+}

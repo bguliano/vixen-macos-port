@@ -1,0 +1,152 @@
+{
+"class": "SetSequenceLength",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/SetSequenceLength.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetSequenceLength",
+"Text": "Sequence Length",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+}
+},
+"events": {},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "timeControl"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonCancel"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 28,
+"y": 23
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 152,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Enter new sequence length:"
+},
+"events": {},
+"children": []
+},
+"timeControl": {
+"type": "TimeControl",
+"props": {
+"Location": {
+"t": "point",
+"x": 28,
+"y": 46
+},
+"Name": "Time Control",
+"Size": {
+"t": "size",
+"x": 152,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 81,
+"y": 98
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 162,
+"y": 98
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+270,
+136
+]
+}
+}
+}

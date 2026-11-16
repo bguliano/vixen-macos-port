@@ -1,0 +1,74 @@
+{
+"class": "Form_Marks",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/Form_Marks.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoScroll": true,
+"AutoSize": true,
+"ControlBox": false,
+"Icon": {
+"t": "image",
+"file": "Form_Marks___this.Icon.ico"
+},
+"Name": "Form_Marks",
+"Text": "Mark Collections"
+},
+"events": {},
+"children": [],
+"objects": {
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+192,
+356
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+8.25,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+2
+]
+}
+}
+}

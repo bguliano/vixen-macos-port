@@ -1,0 +1,10 @@
+[package]
+name = "vixen-media-tools"
+version.workspace = true
+edition.workspace = true
+license-file.workspace = true
+
+[dependencies]
+libc = "0.2"
+thiserror.workspace = true
+

@@ -1,0 +1,1057 @@
+{
+"class": "BulkExportSummaryStage",
+"source": "Vixen.Modules/App/ExportWizard/BulkExportSummaryStage.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+}
+},
+"events": {},
+"children": [
+{
+"name": "mainLayoutPanel"
+}
+],
+"objects": {
+"taskProgress": {
+"type": "ProgressBar",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 350
+},
+"Name": "taskProgress",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblTaskProgress": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 332
+},
+"Name": "lblTaskProgress",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Ready"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblOverallProgress": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 376
+},
+"Name": "lblOverallProgress",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Ready"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"mainLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "mainLayoutPanel",
+"RowCount": 23,
+"Size": {
+"t": "size",
+"x": 676,
+"y": 419
+},
+"TabIndex": 6
+},
+"events": {
+"Paint": "mainLayoutPanel_Paint"
+},
+"children": [
+{
+"name": "lblAudioOutputFolder",
+"col": 1,
+"row": 7
+},
+{
+"name": "lblAudioOption",
+"col": 1,
+"row": 6
+},
+{
+"name": "lblOutputFolder",
+"col": 1,
+"row": 5
+},
+{
+"name": "lblTimingValue",
+"col": 1,
+"row": 4
+},
+{
+"name": "lblFormatName",
+"col": 1,
+"row": 3
+},
+{
+"name": "lblSummary",
+"col": 0,
+"row": 0
+},
+{
+"name": "lblSequences",
+"col": 0,
+"row": 2
+},
+{
+"name": "lblTaskProgress",
+"col": 0,
+"row": 18
+},
+{
+"name": "taskProgress",
+"col": 0,
+"row": 19
+},
+{
+"name": "lblFormat",
+"col": 0,
+"row": 3
+},
+{
+"name": "lblTiming",
+"col": 0,
+"row": 4
+},
+{
+"name": "lblDestination",
+"col": 0,
+"row": 5
+},
+{
+"name": "lblAudio",
+"col": 0,
+"row": 6
+},
+{
+"name": "lblAudioDestination",
+"col": 0,
+"row": 7
+},
+{
+"name": "lblOverallProgress",
+"col": 0,
+"row": 20
+},
+{
+"name": "lblSequenceCount",
+"col": 1,
+"row": 2
+},
+{
+"name": "overallProgress",
+"col": 0,
+"row": 22
+},
+{
+"name": "chkSaveConfig",
+"col": 0,
+"row": 16
+},
+{
+"name": "comboConfigName",
+"col": 1,
+"row": 16
+},
+{
+"name": "lblUniverse",
+"col": 0,
+"row": 8
+},
+{
+"name": "lblUniverseFolder",
+"col": 1,
+"row": 8
+},
+{
+"name": "lblUniverseFileWarning",
+"col": 1,
+"row": 9
+},
+{
+"name": "lblFppInfo",
+"col": 0,
+"row": 10
+},
+{
+"name": "lblFppHostName",
+"col": 0,
+"row": 11
+},
+{
+"name": "lblFppHostNameValue",
+"col": 1,
+"row": 11
+},
+{
+"name": "lblFppDescription",
+"col": 0,
+"row": 12
+},
+{
+"name": "lblFppDescriptionValue",
+"col": 1,
+"row": 12
+},
+{
+"name": "lblFppPlatform",
+"col": 0,
+"row": 13
+},
+{
+"name": "lblFppPlatformValue",
+"col": 1,
+"row": 13
+},
+{
+"name": "lblFppVariant",
+"col": 0,
+"row": 14
+},
+{
+"name": "lblFppVariantValue",
+"col": 1,
+"row": 14
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 22.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+]
+},
+"lblAudioOutputFolder": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 110
+},
+"Name": "lblAudioOutputFolder",
+"Size": {
+"t": "size",
+"x": 182,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "c:\\My Documents\\Vixen 3\\Export"
+},
+"events": {},
+"children": []
+},
+"lblAudioOption": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 95
+},
+"Name": "lblAudioOption",
+"Size": {
+"t": "size",
+"x": 161,
+"y": 15
+},
+"TabIndex": 12,
+"Text": "Renamed to match sequence"
+},
+"events": {},
+"children": []
+},
+"lblOutputFolder": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 80
+},
+"Name": "lblOutputFolder",
+"Size": {
+"t": "size",
+"x": 182,
+"y": 15
+},
+"TabIndex": 11,
+"Text": "c:\\My Documents\\Vixen 3\\Export"
+},
+"events": {},
+"children": []
+},
+"lblTimingValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 65
+},
+"Name": "lblTimingValue",
+"Size": {
+"t": "size",
+"x": 38,
+"y": 15
+},
+"TabIndex": 10,
+"Text": "50 ms"
+},
+"events": {},
+"children": []
+},
+"lblFormatName": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 50
+},
+"Name": "lblFormatName",
+"Size": {
+"t": "size",
+"x": 131,
+"y": 15
+},
+"TabIndex": 9,
+"Text": "Falcon Sequence Player"
+},
+"events": {},
+"children": []
+},
+"lblSummary": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 0
+},
+"Name": "lblSummary",
+"Size": {
+"t": "size",
+"x": 96,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Action Summary"
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblSequences": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 35
+},
+"Name": "lblSequences",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Sequences"
+},
+"events": {},
+"children": []
+},
+"lblFormat": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 50
+},
+"Name": "lblFormat",
+"Size": {
+"t": "size",
+"x": 45,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "Format"
+},
+"events": {},
+"children": []
+},
+"lblTiming": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 65
+},
+"Name": "lblTiming",
+"Size": {
+"t": "size",
+"x": 45,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Timing"
+},
+"events": {},
+"children": []
+},
+"lblDestination": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 80
+},
+"Name": "lblDestination",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Destination"
+},
+"events": {},
+"children": []
+},
+"lblAudio": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 95
+},
+"Name": "lblAudio",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Audio"
+},
+"events": {},
+"children": []
+},
+"lblAudioDestination": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 110
+},
+"Name": "lblAudioDestination",
+"Size": {
+"t": "size",
+"x": 102,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Audio Destination"
+},
+"events": {},
+"children": []
+},
+"lblSequenceCount": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 35
+},
+"Name": "lblSequenceCount",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "5"
+},
+"events": {},
+"children": []
+},
+"overallProgress": {
+"type": "ProgressBar",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 394
+},
+"Name": "overallProgress",
+"Size": {
+"t": "size",
+"x": 670,
+"y": 22
+},
+"TabIndex": 2
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"chkSaveConfig": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Left"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 280
+},
+"Name": "chkSaveConfig",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 19
+},
+"TabIndex": 18,
+"Text": "Save export settings",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkSaveConfig_CheckedChanged"
+},
+"children": []
+},
+"comboConfigName": {
+"type": "ComboBox",
+"props": {
+"AutoCompleteMode": {
+"t": "enum",
+"type": "AutoCompleteMode",
+"v": "SuggestAppend"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 278
+},
+"Name": "comboConfigName",
+"Size": {
+"t": "size",
+"x": 332,
+"y": 23
+},
+"TabIndex": 19
+},
+"events": {
+"TextUpdate": "comboConfigName_TextUpdate",
+"TextChanged": "comboConfigName_TextChanged"
+},
+"children": []
+},
+"lblUniverse": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 125
+},
+"Name": "lblUniverse",
+"Size": {
+"t": "size",
+"x": 136,
+"y": 15
+},
+"TabIndex": 20,
+"Text": "Universe File Destination"
+},
+"events": {},
+"children": []
+},
+"lblUniverseFolder": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 125
+},
+"Name": "lblUniverseFolder",
+"Size": {
+"t": "size",
+"x": 182,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "c:\\My Documents\\Vixen 3\\Export"
+},
+"events": {
+"Click": "lblUniverseFolder_Click"
+},
+"children": []
+},
+"lblUniverseFileWarning": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ForeColor": {
+"t": "color",
+"name": "Yellow"
+},
+"Location": {
+"t": "point",
+"x": 145,
+"y": 140
+},
+"Name": "lblUniverseFileWarning",
+"Size": {
+"t": "size",
+"x": 528,
+"y": 15
+},
+"TabIndex": 22,
+"Text": "Universe Warning",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppInfo": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9,
+"bold": true
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 175
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 20,
+"r": 3,
+"b": 3
+},
+"Name": "lblFppInfo",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 15
+},
+"TabIndex": 30,
+"Text": "FPP Device Info",
+"Visible": false
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"lblFppHostName": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 193
+},
+"Name": "lblFppHostName",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 15
+},
+"TabIndex": 31,
+"Text": "Host Name",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppHostNameValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 193
+},
+"Name": "lblFppHostNameValue",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 32,
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppDescription": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 208
+},
+"Name": "lblFppDescription",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 15
+},
+"TabIndex": 33,
+"Text": "Description",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppDescriptionValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 208
+},
+"Name": "lblFppDescriptionValue",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 34,
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppPlatform": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 223
+},
+"Name": "lblFppPlatform",
+"Size": {
+"t": "size",
+"x": 53,
+"y": 15
+},
+"TabIndex": 35,
+"Text": "Platform",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppPlatformValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 223
+},
+"Name": "lblFppPlatformValue",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 36,
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppVariant": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 238
+},
+"Name": "lblFppVariant",
+"Size": {
+"t": "size",
+"x": 43,
+"y": 15
+},
+"TabIndex": 37,
+"Text": "Variant",
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"lblFppVariantValue": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 145,
+"y": 238
+},
+"Name": "lblFppVariantValue",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 38,
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Padding": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+0,
+0,
+0,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+676,
+434
+]
+}
+}
+}

@@ -1,0 +1,358 @@
+{
+"class": "MessageBoxForm",
+"source": "Vixen.Common/Controls/MessageBoxForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Icon": {
+"t": "image",
+"file": "MessageBoxForm___this.Icon.ico"
+},
+"KeyPreview": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "MessageBoxForm",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Select more marks",
+"TopMost": true
+},
+"events": {
+"FormClosed": "MessageBoxForm_FormClosed"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"buttonOk": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonOk_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 189,
+"y": 3
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "CANCEL",
+"UseVisualStyleBackColor": true,
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"buttonNo": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "No"
+},
+"Location": {
+"t": "point",
+"x": 96,
+"y": 3
+},
+"Name": "buttonNo",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "NO",
+"UseVisualStyleBackColor": true,
+"Visible": false
+},
+"events": {},
+"children": []
+},
+"messageIcon": {
+"type": "PictureBox",
+"props": {
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Center"
+},
+"Location": {
+"t": "point",
+"x": 2,
+"y": 2
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 2,
+"r": 2,
+"b": 2
+},
+"Name": "messageIcon",
+"Size": {
+"t": "size",
+"x": 95,
+"y": 94
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "Zoom"
+},
+"TabIndex": 5,
+"TabStop": false
+},
+"events": {
+"Paint": "messageIcon_Paint"
+},
+"children": []
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "RightToLeft"
+},
+"Location": {
+"t": "point",
+"x": 114,
+"y": 101
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 279,
+"y": 33
+},
+"TabIndex": 7
+},
+"events": {},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonNo"
+},
+{
+"name": "buttonOk"
+}
+],
+"layoutColumnSpan": 2
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 396,
+"y": 143
+},
+"TabIndex": 8
+},
+"events": {},
+"children": [
+{
+"name": "messageIcon",
+"col": 0,
+"row": 0
+},
+{
+"name": "flowLayoutPanel1",
+"col": 0,
+"row": 1
+},
+{
+"name": "txtMessage",
+"col": 1,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 25.0
+},
+{
+"type": "Percent",
+"size": 75.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"txtMessage": {
+"type": "RichTextBox",
+"props": {
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "None"
+},
+"Cursor": {
+"t": "enum",
+"type": "Cursors",
+"v": "Arrow"
+},
+"Location": {
+"t": "point",
+"x": 101,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 5,
+"r": 5,
+"b": 1
+},
+"Name": "txtMessage",
+"ReadOnly": true,
+"ScrollBars": {
+"t": "enum",
+"type": "RichTextBoxScrollBars",
+"v": "None"
+},
+"Size": {
+"t": "size",
+"x": 290,
+"y": 92
+},
+"TabIndex": 8,
+"Text": ""
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+396,
+143
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.messageIcon)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.messageIcon)).EndInit()"
+]
+}

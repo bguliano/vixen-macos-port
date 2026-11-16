@@ -1,0 +1,422 @@
+{
+"class": "DimmingCurveHelper",
+"source": "Vixen.Modules/OutputFilter/DimmingCurve/DimmingCurveHelper.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOk"
+},
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "DimmingCurveHelper",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Dimming Curve Configuration"
+},
+"events": {
+"HelpButtonClicked": "DimmingCurveHelper_HelpButtonClicked",
+"Load": "DimmingCurveHelper_Load"
+},
+"children": [
+{
+"name": "radioButtonInsertAfter"
+},
+{
+"name": "label4"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonHelp"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "radioButtonExistingAddNew"
+},
+{
+"name": "radioButtonExistingUpdate"
+},
+{
+"name": "lblQuestion"
+},
+{
+"name": "radioButtonExistingDoNothing"
+},
+{
+"name": "buttonSetupCurve"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 28,
+"y": 35
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 318,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "This will set up a dimming curve for each selected element."
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 28,
+"y": 67
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 430,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Use the button below to configure the dimming curve for the selected elements."
+},
+"events": {},
+"children": []
+},
+"buttonSetupCurve": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 189,
+"y": 110
+},
+"Name": "buttonSetupCurve",
+"Size": {
+"t": "size",
+"x": 152,
+"y": 35
+},
+"TabIndex": 2,
+"Text": "Setup Dimming Curve",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSetupCurve_Click"
+},
+"children": []
+},
+"radioButtonExistingDoNothing": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 31,
+"y": 188
+},
+"Name": "radioButtonExistingDoNothing",
+"Size": {
+"t": "size",
+"x": 237,
+"y": 19
+},
+"TabIndex": 3,
+"TabStop": true,
+"Text": "Leave the existing dimming curve alone.",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"lblQuestion": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 28,
+"y": 159
+},
+"Name": "lblQuestion",
+"Size": {
+"t": "size",
+"x": 447,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "If some elements are already patched to a dimming curve, what do you want to do?"
+},
+"events": {},
+"children": []
+},
+"radioButtonExistingUpdate": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 31,
+"y": 215
+},
+"Name": "radioButtonExistingUpdate",
+"Size": {
+"t": "size",
+"x": 311,
+"y": 19
+},
+"TabIndex": 5,
+"TabStop": true,
+"Text": "Update the existing dimming curve with the new data.",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioButtonExistingAddNew": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 31,
+"y": 265
+},
+"Name": "radioButtonExistingAddNew",
+"Size": {
+"t": "size",
+"x": 321,
+"y": 19
+},
+"TabIndex": 6,
+"TabStop": true,
+"Text": "Add a new dimming curve anyway (not recommended).",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonHelp": {
+"type": "Button",
+"props": {
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 319
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 27
+},
+"TabIndex": 63,
+"Tag": {
+"t": "enum",
+"type": "HelpStrings",
+"v": "Patching"
+},
+"Text": "Help",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true,
+"Image": {
+"t": "raw",
+"v": "Common.Resources.Tools.GetIcon(Resources.help, (int)(16 * ScalingTools.GetScaleFactor()))"
+}
+},
+"events": {
+"Click": "DimmingCurveHelper_HelpButtonClicked"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 399,
+"y": 319
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 24,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 287,
+"y": 319
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 23,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 138,
+"y": 92
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 254,
+"y": 15
+},
+"TabIndex": 25,
+"Text": "Hint: Use a library curve to make editing easier."
+},
+"events": {},
+"children": []
+},
+"radioButtonInsertAfter": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 31,
+"y": 240
+},
+"Name": "radioButtonInsertAfter",
+"Size": {
+"t": "size",
+"x": 268,
+"y": 19
+},
+"TabIndex": 26,
+"TabStop": true,
+"Text": "Insert a new dimming curve after the element.",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+518,
+363
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+534,
+376
+]
+}
+},
+"unparsed": [
+"int iconSize = (int)(24 * ScalingTools.GetScaleFactor())"
+]
+}

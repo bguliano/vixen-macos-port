@@ -1,0 +1,271 @@
+{
+"class": "SelectProfile",
+"source": "Vixen.Application/SelectProfile.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonLoad"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SelectProfile",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Select a Profile"
+},
+"events": {
+"Load": "SelectProfile_Load"
+},
+"children": [
+{
+"name": "flowLayoutPanel1"
+}
+],
+"objects": {
+"listBoxProfiles": {
+"type": "ListBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FormattingEnabled": true,
+"ItemHeight": 15,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 28
+},
+"Name": "listBoxProfiles",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 109
+},
+"TabIndex": 0
+},
+"events": {
+"DoubleClick": "listBoxProfiles_DoubleClick"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 3,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 5,
+"r": 3,
+"b": 5
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Select a Profile to Load:"
+},
+"events": {},
+"children": []
+},
+"buttonLoad": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 96,
+"y": 3
+},
+"Name": "buttonLoad",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "Load",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonLoad_Click"
+},
+"children": []
+},
+"buttonEditor": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "buttonEditor",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "Profile Editor",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonEditor_Click"
+},
+"children": []
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "TopDown"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 184
+},
+"TabIndex": 4
+},
+"events": {},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "listBoxProfiles"
+},
+{
+"name": "tableLayoutPanel1"
+}
+]
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 143
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 186,
+"y": 33
+},
+"TabIndex": 2
+},
+"events": {},
+"children": [
+{
+"name": "buttonEditor",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonLoad",
+"col": 1,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 33.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+195,
+184
+]
+}
+}
+}

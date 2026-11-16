@@ -1,0 +1,260 @@
+{
+"class": "OrderSetupHelper",
+"source": "Vixen.Modules/Property/Order/OrderSetupHelper.Designer.cs",
+"props": {
+"columnOrder": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"columnName": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "OrderSetupHelper",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Patching Order Preference"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"Padding": {
+"t": "padding",
+"l": 7,
+"t_": 7,
+"r": 7,
+"b": 7
+},
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 462,
+"y": 519
+},
+"TabIndex": 1
+},
+"events": {},
+"children": [
+{
+"name": "btnOk",
+"col": 0,
+"row": 2
+},
+{
+"name": "btnCancel",
+"col": 1,
+"row": 2
+},
+{
+"name": "elementList",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+]
+},
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Right"
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 296,
+"y": 486
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Right"
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 377,
+"y": 486
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"elementList": {
+"type": "DragDropListView",
+"props": {
+"AllowDrop": true,
+"AllowItemDrag": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FullRowSelect": true,
+"InsertionLineColor": {
+"t": "color",
+"argb": [
+235,
+235,
+235
+]
+},
+"Location": {
+"t": "point",
+"x": 10,
+"y": 10
+},
+"Name": "elementList",
+"OwnerDraw": true,
+"Size": {
+"t": "size",
+"x": 442,
+"y": 450
+},
+"TabIndex": 3,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {},
+"children": [],
+"Columns": [
+{
+"ref": "columnOrder"
+},
+{
+"ref": "columnName"
+}
+],
+"layoutColumnSpan": 2
+},
+"columnOrder": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Order"
+},
+"events": {},
+"children": []
+},
+"columnName": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Name"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+462,
+519
+]
+}
+}
+}

@@ -1,0 +1,532 @@
+{
+"class": "FaceSetupHelper",
+"source": "Vixen.Modules/Property/Face/FaceSetupHelper.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "FaceSetupHelper",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Face Setup"
+},
+"events": {
+"Load": "FaceSetupHelper_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+}
+],
+"objects": {
+"dataGridViewCellStyle1": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleLeft"
+},
+"BackColor": {
+"t": "color",
+"system": "Control"
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"system": "WindowText"
+},
+"SelectionBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"SelectionForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"WrapMode": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "True"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle2": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleLeft"
+},
+"BackColor": {
+"t": "color",
+"system": "Window"
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"system": "ControlText"
+},
+"SelectionBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"SelectionForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"WrapMode": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle3": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleLeft"
+},
+"BackColor": {
+"t": "color",
+"system": "Control"
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"system": "WindowText"
+},
+"SelectionBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"SelectionForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"WrapMode": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "True"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle4": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleLeft"
+},
+"BackColor": {
+"t": "color",
+"system": "Window"
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"system": "ControlText"
+},
+"SelectionBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"SelectionForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"WrapMode": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+}
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 774,
+"y": 364
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 681,
+"y": 364
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 864,
+"y": 394
+},
+"TabIndex": 7
+},
+"events": {},
+"children": [
+{
+"name": "tabControl",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonOK",
+"col": 0,
+"row": 2
+},
+{
+"name": "buttonCancel",
+"col": 1,
+"row": 2
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "Absolute",
+"size": 20.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"tabControl": {
+"type": "TabControl",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ItemSize": {
+"t": "size",
+"x": 42,
+"y": 18
+},
+"Location": {
+"t": "point",
+"x": 6,
+"y": 6
+},
+"Margin": {
+"t": "padding",
+"l": 6,
+"t_": 6,
+"r": 6,
+"b": 6
+},
+"Name": "tabControl",
+"SelectedIndex": 1,
+"Size": {
+"t": "size",
+"x": 852,
+"y": 329
+},
+"TabIndex": 7
+},
+"events": {},
+"children": [
+{
+"name": "tabMouth"
+},
+{
+"name": "tabOther"
+}
+],
+"layoutColumnSpan": 2
+},
+"tabMouth": {
+"type": "TabPage",
+"props": {
+"Location": {
+"t": "point",
+"x": 4,
+"y": 22
+},
+"Margin": {
+"t": "padding",
+"l": 6,
+"t_": 6,
+"r": 6,
+"b": 6
+},
+"Name": "tabMouth",
+"Size": {
+"t": "size",
+"x": 844,
+"y": 303
+},
+"TabIndex": 1,
+"Text": "Mouth",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": [
+{
+"name": "dataGridViewMouth"
+}
+]
+},
+"dataGridViewMouth": {
+"type": "DataGridView",
+"props": {
+"ColumnHeadersDefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle1"
+},
+"ColumnHeadersHeightSizeMode": {
+"t": "enum",
+"type": "DataGridViewColumnHeadersHeightSizeMode",
+"v": "AutoSize"
+},
+"DefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle2"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "dataGridViewMouth",
+"Size": {
+"t": "size",
+"x": 844,
+"y": 303
+},
+"TabIndex": 5
+},
+"events": {
+"CellContentClick": "dataGridView_CellContentClick",
+"CellDoubleClick": "dataGridView_CellDoubleClick",
+"CellPainting": "dataGridViewMouth_CellPainting"
+},
+"children": []
+},
+"tabOther": {
+"type": "TabPage",
+"props": {
+"Location": {
+"t": "point",
+"x": 4,
+"y": 22
+},
+"Margin": {
+"t": "padding",
+"l": 6,
+"t_": 6,
+"r": 6,
+"b": 6
+},
+"Name": "tabOther",
+"Size": {
+"t": "size",
+"x": 844,
+"y": 303
+},
+"TabIndex": 2,
+"Text": "Outlines/Eyes"
+},
+"events": {},
+"children": [
+{
+"name": "dataGridViewOther"
+}
+]
+},
+"dataGridViewOther": {
+"type": "DataGridView",
+"props": {
+"ColumnHeadersDefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle3"
+},
+"ColumnHeadersHeightSizeMode": {
+"t": "enum",
+"type": "DataGridViewColumnHeadersHeightSizeMode",
+"v": "AutoSize"
+},
+"DefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle4"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "dataGridViewOther",
+"Size": {
+"t": "size",
+"x": 844,
+"y": 303
+},
+"TabIndex": 22
+},
+"events": {
+"CellContentClick": "dataGridView_CellContentClick",
+"CellDoubleClick": "dataGridView_CellDoubleClick",
+"CellPainting": "dataGridViewOther_CellPainting"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+864,
+394
+]
+}
+}
+}

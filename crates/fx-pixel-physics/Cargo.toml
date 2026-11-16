@@ -1,0 +1,12 @@
+[package]
+name = "fx-pixel-physics"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+uuid.workspace = true
+
+[build-dependencies]
+cc = { version = "1", features = ["parallel"] }

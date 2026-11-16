@@ -1,0 +1,19 @@
+[package]
+name = "vixen-video"
+version.workspace = true
+edition.workspace = true
+license-file.workspace = true
+
+[dependencies]
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSString", "NSURL", "NSDictionary", "NSValue", "NSError", "NSArray", "NSObject"] }
+objc2-av-foundation = { version = "0.3", default-features = false, features = ["std", "AVAsset", "AVAssetReader", "AVAssetReaderOutput", "AVAssetTrack", "AVMediaFormat", "objc2-core-media", "objc2-core-foundation", "AVGeometry"] }
+objc2-core-media = { version = "0.3", default-features = false, features = ["std", "CMTime", "CMTimeRange", "CMSampleBuffer", "CMBase", "objc2-core-video"] }
+objc2-core-video = { version = "0.3", default-features = false, features = ["std", "CVBuffer", "CVImageBuffer", "CVPixelBuffer", "CVReturn", "CVBase"] }
+objc2-core-foundation = { version = "0.3", default-features = false, features = ["std", "CFCGTypes", "CFDictionary", "CFNumber", "CFString"] }
+image = { workspace = true, features = ["ico"] }
+serde = { version = "1", features = ["derive"] }
+serde_json.workspace = true
+uuid.workspace = true
+siphasher = "1"
+vixen-media-tools = { path = "../vixen-media-tools" }

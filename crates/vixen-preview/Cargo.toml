@@ -1,0 +1,9 @@
+[package]
+name = "vixen-preview"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-xml = { path = "../vixen-xml" }
+uuid.workspace = true

@@ -1,0 +1,309 @@
+{
+"class": "ShowListForm",
+"source": "Vixen.Modules/App/Shows/ShowListForm.Designer.cs",
+"props": {
+"columnHeader1": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ShowListForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Shows"
+},
+"events": {
+"Load": "ShowListForm_Load"
+},
+"children": [
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonHelp"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 327,
+"y": 242
+},
+"TabIndex": 0,
+"TabStop": false
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "listViewShows"
+},
+{
+"name": "buttonDelete"
+},
+{
+"name": "buttonEdit"
+},
+{
+"name": "buttonAdd"
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 18
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "Shows"
+},
+"events": {},
+"children": []
+},
+"listViewShows": {
+"type": "ListView",
+"props": {
+"AutoArrange": false,
+"FullRowSelect": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "None"
+},
+"HideSelection": false,
+"LabelEdit": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 38
+},
+"MultiSelect": false,
+"Name": "listViewShows",
+"Size": {
+"t": "size",
+"x": 303,
+"y": 160
+},
+"Sorting": {
+"t": "enum",
+"type": "SortOrder",
+"v": "Ascending"
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"AfterLabelEdit": "listViewShows_AfterLabelEdit",
+"DoubleClick": "listViewShows_DoubleClick"
+},
+"children": [],
+"Columns": [
+{
+"ref": "columnHeader1"
+}
+]
+},
+"buttonDelete": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 287,
+"y": 205
+},
+"Name": "buttonDelete",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 14,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDelete_Click"
+},
+"children": []
+},
+"buttonEdit": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 258,
+"y": 205
+},
+"Name": "buttonEdit",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 13,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonEdit_Click"
+},
+"children": []
+},
+"buttonAdd": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 229,
+"y": 205
+},
+"Name": "buttonAdd",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 28
+},
+"TabIndex": 12,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonAdd_Click"
+},
+"children": []
+},
+"buttonHelp": {
+"type": "Button",
+"props": {
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 271
+},
+"Name": "buttonHelp",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 27
+},
+"TabIndex": 63,
+"Text": "Help",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonHelp_Click"
+},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 253,
+"y": 271
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 64,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"columnHeader1": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Shows",
+"Width": 235
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+355,
+312
+]
+}
+}
+}

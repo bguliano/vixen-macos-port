@@ -1,0 +1,584 @@
+{
+"class": "LipSyncNodeSelect",
+"source": "Vixen.Modules/App/LipSyncApp/LipSyncNodeSelect.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "LipSyncNodeSelect",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "LipSync Mapping Node Select"
+},
+"events": {
+"FormClosing": "LipSyncNodeSelect_FormClosing",
+"Load": "LipSyncNodeSelect_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanel1"
+},
+{
+"name": "panel1"
+}
+],
+"objects": {
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 483,
+"y": 6
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 0,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 576,
+"y": 6
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"chosenTargets": {
+"type": "ListBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FormattingEnabled": true,
+"ItemHeight": 15,
+"Location": {
+"t": "point",
+"x": 411,
+"y": 3
+},
+"Name": "chosenTargets",
+"SelectionMode": {
+"t": "enum",
+"type": "SelectionMode",
+"v": "MultiExtended"
+},
+"Size": {
+"t": "size",
+"x": 261,
+"y": 389
+},
+"TabIndex": 3
+},
+"events": {},
+"children": []
+},
+"buttonAdd": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 30,
+"y": 3
+},
+"Name": "buttonAdd",
+"Size": {
+"t": "size",
+"x": 78,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "->",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonAdd_Click"
+},
+"children": []
+},
+"buttonRemove": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 30,
+"y": 36
+},
+"Name": "buttonRemove",
+"Size": {
+"t": "size",
+"x": 78,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "<-",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonRemove_Click"
+},
+"children": []
+},
+"buttonReset": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 30,
+"y": 69
+},
+"Name": "buttonReset",
+"Size": {
+"t": "size",
+"x": 78,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Reset",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonReset_Click"
+},
+"children": []
+},
+"recurseCB": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Top"
+},
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 220
+},
+"Name": "recurseCB",
+"Size": {
+"t": "size",
+"x": 110,
+"y": 19
+},
+"TabIndex": 7,
+"Text": "Add Recursively",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"allowGroupsCheckbox": {
+"type": "CheckBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Top"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 21,
+"y": 195
+},
+"Name": "allowGroupsCheckbox",
+"Size": {
+"t": "size",
+"x": 97,
+"y": 19
+},
+"TabIndex": 8,
+"Text": "Allow Groups",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "allowGroupsCheckbox_CheckedChanged"
+},
+"children": []
+},
+"stringsGroupBox": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 102
+},
+"Name": "stringsGroupBox",
+"Size": {
+"t": "size",
+"x": 133,
+"y": 87
+},
+"TabIndex": 10,
+"TabStop": false,
+"Text": "Strings are:"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "colsRadioButton"
+},
+{
+"name": "rowsRadioButton"
+}
+]
+},
+"colsRadioButton": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 48
+},
+"Name": "colsRadioButton",
+"Size": {
+"t": "size",
+"x": 63,
+"y": 19
+},
+"TabIndex": 11,
+"Text": "Vertical",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"rowsRadioButton": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 22
+},
+"Name": "rowsRadioButton",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 19
+},
+"TabIndex": 9,
+"Text": "Horizontal",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"nodeTreeView": {
+"type": "MultiSelectTreeview",
+"props": {
+"AllowDrop": true,
+"CustomDragCursor": null,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"DragDefaultMode": {
+"t": "enum",
+"type": "DragDropEffects",
+"v": "Move"
+},
+"DragDestinationNodeBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"DragDestinationNodeForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"DragSourceNodeBackColor": {
+"t": "color",
+"system": "ControlLight"
+},
+"DragSourceNodeForeColor": {
+"t": "color",
+"system": "ControlText"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "nodeTreeView",
+"SelectedNodes": {
+"t": "raw",
+"v": "(List<TreeNode>)resources.GetObject(\"nodeTreeView.SelectedNodes\")"
+},
+"Size": {
+"t": "size",
+"x": 260,
+"y": 389
+},
+"TabIndex": 2,
+"UsingCustomDragCursor": false
+},
+"events": {},
+"children": []
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Bottom"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 395
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 675,
+"y": 38
+},
+"TabIndex": 11
+},
+"events": {},
+"children": [
+{
+"name": "buttonOk"
+},
+{
+"name": "buttonCancel"
+}
+]
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "TopDown"
+},
+"Location": {
+"t": "point",
+"x": 269,
+"y": 3
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 136,
+"y": 389
+},
+"TabIndex": 12
+},
+"events": {},
+"children": [
+{
+"name": "buttonAdd"
+},
+{
+"name": "buttonRemove"
+},
+{
+"name": "buttonReset"
+},
+{
+"name": "stringsGroupBox"
+},
+{
+"name": "allowGroupsCheckbox"
+},
+{
+"name": "recurseCB"
+}
+]
+},
+"tableLayoutPanel1": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 3,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel1",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 675,
+"y": 395
+},
+"TabIndex": 13
+},
+"events": {},
+"children": [
+{
+"name": "nodeTreeView",
+"col": 0,
+"row": 0
+},
+{
+"name": "flowLayoutPanel1",
+"col": 1,
+"row": 0
+},
+{
+"name": "chosenTargets",
+"col": 2,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+675,
+433
+]
+}
+}
+}

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<AssemblyName>PhysicsDiff</AssemblyName>
+		<RootNamespace>PhysicsDiff</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<UseAppHost>false</UseAppHost>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<NoWarn>$(NoWarn);CS0436;CS1591;CA1416;NU1701;CS0108;CS0162;CS0168;CS0219;CS0414;CS0649;CS8632</NoWarn>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+		<OutputPath>$(Out)/bin/</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<VixenNativeBin>/Users/developer/Documents/Codex/2026-09-13/is-the/outputs/Vixen/native/Vixen.Native.Tests/bin/Release/net10.0</VixenNativeBin>
+		<Upstream>/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules</Upstream>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="*.cs" />
+		<Compile Include="$(Upstream)/App/Polygon/*.cs" LinkBase="Upstream/Polygon" />
+		<Compile Include="$(Upstream)/Effect/Morph/IMorphPolygon/*.cs" LinkBase="Upstream/IMorph" />
+		<Compile Include="$(Upstream)/Effect/Morph/Morph/*.cs" Exclude="$(Upstream)/Effect/Morph/Morph/MorphDescriptor.cs" LinkBase="Upstream/Morph" />
+		<Compile Include="$(Upstream)/Effect/Effect/ExpandoObjectBase.cs" LinkBase="Upstream/Effect" />
+		<Compile Include="$(Upstream)/Effect/Effect/NotifyPropertyObservableCollection.cs" LinkBase="Upstream/Effect" />
+		<Reference Include="Vixen.Core"><HintPath>$(VixenNativeBin)/Vixen.Core.dll</HintPath></Reference>
+		<Reference Include="Module.Effect.Native"><HintPath>$(VixenNativeBin)/Module.Effect.Native.dll</HintPath></Reference>
+		<Reference Include="Module.App.Native"><HintPath>$(VixenNativeBin)/Module.App.Native.dll</HintPath></Reference>
+		<Reference Include="Module.Property.Native"><HintPath>$(VixenNativeBin)/Module.Property.Native.dll</HintPath></Reference>
+		<Reference Include="Module.LayerMixingFilter.Native"><HintPath>$(VixenNativeBin)/Module.LayerMixingFilter.Native.dll</HintPath></Reference>
+		<Reference Include="NLog"><HintPath>$(VixenNativeBin)/NLog.dll</HintPath></Reference>
+		<Reference Include="Newtonsoft.Json"><HintPath>$(VixenNativeBin)/Newtonsoft.Json.dll</HintPath></Reference>
+		<Reference Include="Zstandard.Net"><HintPath>$(VixenNativeBin)/Zstandard.Net.dll</HintPath></Reference>
+		<Reference Include="System.Drawing.Common"><HintPath>$(VixenNativeBin)/System.Drawing.Common.dll</HintPath></Reference>
+		<Reference Include="System.Private.Windows.Core"><HintPath>$(VixenNativeBin)/System.Private.Windows.Core.dll</HintPath></Reference>
+		<Reference Include="System.Private.Windows.GdiPlus"><HintPath>$(VixenNativeBin)/System.Private.Windows.GdiPlus.dll</HintPath></Reference>
+		<Reference Include="Microsoft.Win32.SystemEvents"><HintPath>$(VixenNativeBin)/Microsoft.Win32.SystemEvents.dll</HintPath></Reference>
+	</ItemGroup>
+</Project>

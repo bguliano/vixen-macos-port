@@ -1,0 +1,133 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using VixenRaster;
+
+namespace VixenCapture {
+    [DataContract] public sealed class CaseOutcome {
+        [DataMember] public string id,status,error,manifestSha256;
+    }
+    [DataContract] public sealed class Summary {
+        [DataMember] public int schema=2;
+        [DataMember] public string version="raster-2",status="starting",results,compilerPath,compilerSha256,compilerVersion;
+        [DataMember] public bool validWindowsRasterCaptured,comparisonPerformed=false;
+        [DataMember] public int expectedCases=74,completedCases;
+        [DataMember] public List<StageResult> stages=new List<StageResult>();
+        [DataMember] public List<string> notes=new List<string>();
+        [DataMember] public List<CaseOutcome> cases=new List<CaseOutcome>();
+    }
+    public sealed class RasterWorkflow {
+        readonly CaptureSupervisor supervisor;
+        readonly string pack,output,compiler,powershell;
+        public RasterWorkflow(string pack,string output,string compiler,string powershell,IStageLauncher launcher,double seconds) {
+            this.pack=pack;this.output=output;this.compiler=compiler;this.powershell=powershell;
+            supervisor=new CaptureSupervisor(output,launcher,seconds);
+        }
+        public Summary Report {get{return supervisor.Report;}}
+        StageResult Run(string name,string executable,int seconds,params string[] args) {return supervisor.RunStage(new StageSpec{Name=name,Executable=executable,Arguments=args,Seconds=seconds});}
+        static bool Complete(StageResult result) {return result.status=="completed" && result.exitCode==0;}
+        public static void ValidateManifest(string directory,CaseSpec spec,string host,string methods,string countdown,string fastPixel) {
+            var report=Data.Read<RasterReport>(Path.Combine(directory,"manifest.json"),65536);
+            if(report==null || report.schema!=2 || report.status!="complete" || report.id!=spec.id || Data.Hash(Data.Json(report.input))!=Data.Hash(Data.Json(spec)) || report.byteOrder!="ARGB8-row-major-top-down") throw new InvalidDataException("Case identity/schema mismatch");
+            if(report.outputWidth<1 || report.outputHeight<1 || report.outputWidth>64 || report.outputHeight>64 || report.inputStride!=spec.width*4 || report.outputStride!=report.outputWidth*4 || report.inputPixelFormat!="Format32bppArgb" || report.outputPixelFormat!="Format32bppArgb") throw new InvalidDataException("Dimensions/stride/format mismatch");
+            if(!report.inputUnchanged || !report.inputReadbacksEqual || !report.outputReadbacksEqual) throw new InvalidDataException("Input mutation or GDI/FastPixel readback discrepancy; raw evidence retained");
+            if(report.hostSha256!=host || report.originalMethodsSha256!=methods || report.countDownMethodsSha256!=countdown || report.fastPixelSha256!=fastPixel || report.freshGraphicsDefaults==null) throw new InvalidDataException("Host/source/defaults provenance mismatch");
+            if(spec.family=="picture") {
+                if(report.actualDrawingDefaults!=null || report.drawingStateScope!="fresh-defaults-only-original-picture-body-uninstrumented")throw new InvalidDataException("Picture state provenance scope mismatch");
+            } else {
+                var state=report.actualDrawingDefaults;
+                if(report.drawingStateScope!="actual-before-identity-transform-fixture" || state==null || state.transform==null || state.transform.Length!=6 || state.clipBounds==null || state.clipBounds.Length!=4 || state.visibleClipBounds==null || state.visibleClipBounds.Length!=4)throw new InvalidDataException("Actual fixture Graphics state missing");
+            }
+            var names=new HashSet<string>(new[]{"input-requested.argb","input-getpixel.argb","input-fastpixel.argb","output-getpixel.argb","output-fastpixel.argb"},StringComparer.Ordinal);
+            if(report.files==null || report.files.Length!=5) throw new InvalidDataException("Expected exactly five raw buffers");
+            foreach(var file in report.files) {
+                if(file==null || !names.Remove(file.path)) throw new InvalidDataException("Unexpected/duplicate raw file");
+                string path=Paths.Local(Path.Combine(directory,file.path),true);
+                long expected=file.path.StartsWith("input-")?spec.width*spec.height*4:report.outputWidth*report.outputHeight*4;
+                if(file.bytes!=expected || new FileInfo(path).Length!=expected || file.sha256!=Data.HashFile(path)) throw new InvalidDataException("Raw byte length/hash mismatch");
+            }
+            if(Data.HashFile(Path.Combine(directory,"input-requested.argb"))!=Data.Hash(Data.Requested(spec))) throw new InvalidDataException("Requested input differs from synthetic case");
+        }
+        public int Run() {
+            supervisor.Reserve(70);
+            supervisor.Note("Raster-only verification: no Vixen install selection, PCM, profile, application launch or download.");
+            Report.compilerPath=compiler;
+            bool trusted=false,ready=false;string reason="pack-integrity-unavailable";
+            string host=Path.Combine(output,"RasterCapture.exe");
+            var integrity=Run("integrity",powershell,20,"-NoLogo","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",Path.Combine(pack,"Pack-Worker.ps1"),"-Stage","integrity","-Out",output);
+            trusted=Complete(integrity);
+            if(trusted) {
+                try {
+                    Data.ValidateCases(Path.Combine(pack,"cases.json"));
+                    Report.compilerSha256=Data.HashFile(compiler);Report.compilerVersion=FileVersionInfo.GetVersionInfo(compiler).FileVersion;
+                    var compiled=Run("compile-raster",compiler,30,"/nologo","/noconfig","/target:exe","/platform:anycpu","/langversion:5","/reference:System.dll","/reference:System.Core.dll","/reference:System.Xml.dll","/reference:System.Drawing.dll","/reference:System.Runtime.Serialization.dll","/out:"+host,Path.Combine(pack,"Shared.cs.in"),Path.Combine(pack,"OriginalPictureMethods.cs.in"),Path.Combine(pack,"OriginalCountDownMethods.cs.in"),Path.Combine(pack,"OriginalFastPixel.cs.in"),Path.Combine(pack,"RasterCapture.cs.in"));
+                    reason="compile-failed";
+                    if(Complete(compiled) && File.Exists(host) && new FileInfo(host).Length>0 && new FileInfo(host).Length<1048576) {
+                        var probe=Run("preflight",host,15,"--preflight");reason="preflight-failed";
+                        if(Complete(probe)) {
+                            var metadata=Data.Read<RuntimeReport>(Path.Combine(output,"preflight.json"),65536);
+                            ready=metadata.status=="available" && metadata.hostSha256==Data.HashFile(host) && Regex.IsMatch(metadata.gdiplusSha256??"","^[a-f0-9]{64}$") && Regex.IsMatch(metadata.drawingSha256??"","^[a-f0-9]{64}$");
+                            if(!ready) reason="preflight-manifest-invalid";
+                        }
+                    }
+                } catch(Exception error) {reason="dependency-error";supervisor.Note(error.GetType().Name+": "+error.Message);}
+            }
+            string hostHash=null,methodsHash=null,countdownHash=null,fastHash=null;
+            var caseRoot=Path.Combine(output,"cases");
+            if(ready) {
+                try {
+                    hostHash=Data.HashFile(host);methodsHash=Data.HashFile(Path.Combine(pack,"OriginalPictureMethods.cs.in"));countdownHash=Data.HashFile(Path.Combine(pack,"OriginalCountDownMethods.cs.in"));fastHash=Data.HashFile(Path.Combine(pack,"OriginalFastPixel.cs.in"));
+                    Directory.CreateDirectory(caseRoot);
+                } catch(Exception error) {ready=false;reason="capture-setup-error";supervisor.Note(error.GetType().Name+": "+error.Message);}
+            }
+            foreach(var spec in Data.Cases().cases) {
+                var outcome=new CaseOutcome{id=spec.id,status="skipped-dependency",error=ready?null:reason};Report.cases.Add(outcome);
+                if(ready) {
+                    string directory=Path.Combine(caseRoot,spec.id);
+                    try {
+                        Directory.CreateDirectory(directory);
+                        var capture=Run("case-"+spec.id,host,10,"--case",pack,spec.id);outcome.status=capture.status;
+                        if(Complete(capture)) {
+                            ValidateManifest(directory,spec,hostHash,methodsHash,countdownHash,fastHash);
+                            outcome.status="captured";outcome.manifestSha256=Data.HashFile(Path.Combine(directory,"manifest.json"));Report.completedCases++;Report.validWindowsRasterCaptured=true;
+                        }
+                        else outcome.error="Stage "+capture.status+"; exit="+capture.exitCode+"; "+capture.error;
+                    } catch(Exception error) {outcome.status="invalid-or-incomplete";outcome.error=error.GetType().Name+": "+error.Message;}
+                }
+                supervisor.Checkpoint();
+            }
+            var recheck=Run("integrity-final",powershell,20,"-NoLogo","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",Path.Combine(pack,"Pack-Worker.ps1"),"-Stage","integrity","-Out",output);
+            Report.status=Report.completedCases==74 && Complete(recheck)?"captured-comparison-pending":"partial-or-diagnostics-only";
+            supervisor.Checkpoint();
+            // This finalized capture summary enters the ZIP. The later package
+            // stage and changing bootstrap/progress logs remain in the folder.
+            CaptureSupervisor.Save(Report,Path.Combine(output,"capture-summary.json"));
+            supervisor.Reserve(0);
+            var packaged=Run("package",powershell,60,"-NoLogo","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",Path.Combine(pack,"Pack-Worker.ps1"),"-Stage","package","-Out",output);
+            bool zip=Complete(packaged) && File.Exists(output+".zip") && new FileInfo(output+".zip").Length>0;
+            supervisor.Note(zip?"COPY THIS ZIP BACK: "+output+".zip":"COPY THIS ENTIRE FOLDER BACK: "+output);
+            supervisor.Note("Capture success is not comparison success. Original drawing and Mac pixel parity remain distinct.");
+            return zip && Report.status=="captured-comparison-pending"?0:2;
+        }
+    }
+    public static class RasterEntry {
+        public static int Main(string[] args) {
+            if(args.Length!=3) {Console.Error.WriteLine("Expected pack, private results and existing Framework compiler");return 2;}
+            string output=null;
+            try {
+                string pack=Paths.Local(args[0],true);output=Paths.Local(args[1],true);string compiler=Paths.Local(args[2],true);
+                if(Path.GetDirectoryName(output)!=pack || !Path.GetFileName(output).StartsWith("results-")) throw new IOException("Private results must be a direct pack child");
+                string windows=Environment.GetFolderPath(Environment.SpecialFolder.Windows);
+                string c64=Path.Combine(windows,@"Microsoft.NET\Framework64\v4.0.30319\csc.exe"),c32=Path.Combine(windows,@"Microsoft.NET\Framework\v4.0.30319\csc.exe");
+                if(!String.Equals(compiler,c64,StringComparison.OrdinalIgnoreCase) && !String.Equals(compiler,c32,StringComparison.OrdinalIgnoreCase)) throw new IOException("Only installed Framework compiler allowed");
+                return new RasterWorkflow(pack,output,compiler,Path.Combine(windows,@"System32\WindowsPowerShell\v1.0\powershell.exe"),new WindowsLauncher(),660).Run();
+            } catch(Exception error) {
+                Console.Error.WriteLine(error);if(output!=null) {try{File.WriteAllText(Path.Combine(output,"supervisor-error.txt"),error.ToString());}catch{}}
+                return 2;
+            }
+        }
+    }
+}

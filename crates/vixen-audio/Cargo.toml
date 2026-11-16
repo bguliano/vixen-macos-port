@@ -1,0 +1,15 @@
+[package]
+name = "vixen-audio"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-effects = { path = "../vixen-effects" }
+vixen-media-tools = { path = "../vixen-media-tools" }
+parking_lot.workspace = true
+serde_json.workspace = true
+cpal = "0.15"
+symphonia = { version = "0.5", default-features = false, features = [
+    "mp1", "mp2", "mp3", "aac", "isomp4", "flac", "wav", "ogg", "vorbis", "aiff", "pcm", "alac",
+] }

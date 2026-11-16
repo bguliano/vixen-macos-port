@@ -1,0 +1,379 @@
+{
+"class": "FindEffectForm",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/FindEffectForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ControlBox": false,
+"Name": "FindEffectForm",
+"Text": "Find Effects/Layers"
+},
+"events": {
+"Load": "FindEffectForm_Load",
+"Resize": "FindEffectForm_Resize"
+},
+"children": [
+{
+"name": "comboBoxFind"
+},
+{
+"name": "checkBoxCollapseAllGroups"
+},
+{
+"name": "listViewEffectStartTime"
+},
+{
+"name": "comboBoxAvailableEffect"
+},
+{
+"name": "linkLabel1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"linkLabel1": {
+"type": "LinkLabel",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 48,
+"y": 336
+},
+"Name": "linkLabel1",
+"Size": {
+"t": "size",
+"x": 0,
+"y": 15
+},
+"TabIndex": 4
+},
+"events": {},
+"children": []
+},
+"comboBoxAvailableEffect": {
+"type": "ComboBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 46
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"MaxDropDownItems": 20,
+"Name": "comboBoxAvailableEffect",
+"Size": {
+"t": "size",
+"x": 288,
+"y": 23
+},
+"TabIndex": 12
+},
+"events": {
+"SelectedIndexChanged": "comboBoxAvailableEffect_SelectedIndexChanged",
+"Click": "comboBoxAvailableEffect_Click"
+},
+"children": []
+},
+"toolTipFindEffects": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"checkBoxCollapseAllGroups": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 164,
+"y": 10
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "checkBoxCollapseAllGroups",
+"Size": {
+"t": "size",
+"x": 127,
+"y": 19
+},
+"TabIndex": 20,
+"Text": "Collapse all Groups",
+"toolTipText": "When enabled will collapse all groups prior to finding selected Effects.",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"contextMenuStrip1": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Name": "contextMenuStrip1",
+"Size": {
+"t": "size",
+"x": 197,
+"y": 26
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+],
+"Items": [
+{
+"ref": "findAllSelectedEffectsToolStripMenuItem"
+}
+]
+},
+"findAllSelectedEffectsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "findAllSelectedEffectsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 196,
+"y": 22
+},
+"Text": "Find all selected effects"
+},
+"events": {
+"Click": "findAllSelectedEffectsToolStripMenuItem_Click"
+},
+"children": []
+},
+"comboBoxFind": {
+"type": "ComboBox",
+"props": {
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 9
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"MaxDropDownItems": 20,
+"Name": "comboBoxFind",
+"Size": {
+"t": "size",
+"x": 123,
+"y": 23
+},
+"TabIndex": 21
+},
+"events": {
+"SelectedIndexChanged": "comboBoxFind_SelectedIndexChanged"
+},
+"children": [],
+"Items": [
+"Effects",
+"Layers"
+]
+},
+"listViewEffectStartTime": {
+"type": "ListViewEx",
+"props": {
+"AllowDrop": true,
+"AllowRowReorder": false,
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom",
+"Left",
+"Right"
+]
+},
+"ContextMenuStrip": {
+"t": "ref",
+"name": "contextMenuStrip1"
+},
+"FullRowSelect": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "Nonclickable"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 83
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 2,
+"r": 3,
+"b": 2
+},
+"Name": "listViewEffectStartTime",
+"OwnerDraw": true,
+"Size": {
+"t": "size",
+"x": 308,
+"y": 330
+},
+"TabIndex": 14,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"DoubleClick": "listViewEffectStartTime_DoubleClick",
+"MouseUp": "listViewEffectStartTime_MouseUp"
+},
+"children": [],
+"Columns": [
+{
+"ref": "elementHeader"
+},
+{
+"ref": "startTimeHeader"
+},
+{
+"ref": "LayerEffectHeader"
+}
+]
+},
+"elementHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Element",
+"Width": 104
+},
+"events": {},
+"children": []
+},
+"startTimeHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Effect Start Time",
+"Width": 160
+},
+"events": {},
+"children": []
+},
+"LayerEffectHeader": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Layer",
+"Width": 40
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+311,
+414
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+3,
+2,
+3,
+2
+]
+}
+}
+}

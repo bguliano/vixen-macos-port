@@ -1,0 +1,347 @@
+{
+"class": "LumaKeySetup",
+"source": "Vixen.Modules/LayerMixingFilter/LumaKey/LumaKeySetup.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "LumaKeySetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Luma Key Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "trkUpperLimit"
+},
+{
+"name": "trkLowerLimit"
+},
+{
+"name": "numUpperLimit"
+},
+{
+"name": "numLowerLimit"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOk"
+}
+],
+"objects": {
+"btnOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 172,
+"y": 142
+},
+"Name": "btnOk",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 253,
+"y": 142
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"numLowerLimit": {
+"type": "NumericTextBox",
+"props": {
+"DecimalNumber": 0,
+"Groupsep": {
+"t": "raw",
+"v": "','"
+},
+"Location": {
+"t": "point",
+"x": 300,
+"y": 49
+},
+"MaxCheck": true,
+"MaxValue": 100,
+"MinCheck": true,
+"MinValue": 0,
+"Name": "numLowerLimit",
+"NumberFormat": {
+"t": "enum",
+"type": "NumberFormat",
+"v": "UnsignedInteger"
+},
+"Size": {
+"t": "size",
+"x": 26,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "0",
+"Usegroupseparator": false
+},
+"events": {
+"TextChanged": "numLowerLimit_TextChanged",
+"LostFocus": "numLowerLimit_LostFocus"
+},
+"children": []
+},
+"numUpperLimit": {
+"type": "NumericTextBox",
+"props": {
+"DecimalNumber": 0,
+"Groupsep": {
+"t": "raw",
+"v": "','"
+},
+"Location": {
+"t": "point",
+"x": 300,
+"y": 90
+},
+"MaxCheck": true,
+"MaxValue": 100,
+"MinCheck": true,
+"MinValue": 0,
+"Name": "numUpperLimit",
+"NumberFormat": {
+"t": "enum",
+"type": "NumberFormat",
+"v": "UnsignedInteger"
+},
+"Size": {
+"t": "size",
+"x": 26,
+"y": 23
+},
+"TabIndex": 4,
+"Text": "0",
+"Usegroupseparator": false
+},
+"events": {
+"TextChanged": "numUpperLimit_TextChanged",
+"LostFocus": "numUpperLimit_LostFocus"
+},
+"children": []
+},
+"trkLowerLimit": {
+"type": "TrackBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 58,
+"y": 49
+},
+"Maximum": 99,
+"Name": "trkLowerLimit",
+"Size": {
+"t": "size",
+"x": 236,
+"y": 45
+},
+"TabIndex": 1,
+"TickFrequency": 5
+},
+"events": {
+"Scroll": "trkLowerLimit_Scroll"
+},
+"children": []
+},
+"trkUpperLimit": {
+"type": "TrackBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 58,
+"y": 90
+},
+"Maximum": 100,
+"Minimum": 1,
+"Name": "trkUpperLimit",
+"Size": {
+"t": "size",
+"x": 236,
+"y": 45
+},
+"TabIndex": 3,
+"TickFrequency": 5,
+"Value": 100
+},
+"events": {
+"Scroll": "trkUpperLimit_Scroll"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 52
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Lower"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 93
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Upper"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 120,
+"y": 19
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 97,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "Brightness Limits"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+340,
+177
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.trkLowerLimit)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.trkUpperLimit)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.trkLowerLimit)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.trkUpperLimit)).EndInit()"
+]
+}

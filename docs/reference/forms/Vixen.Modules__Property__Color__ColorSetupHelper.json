@@ -1,0 +1,470 @@
+{
+"class": "ColorSetupHelper",
+"source": "Vixen.Modules/Property/Color/ColorSetupHelper.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedSingle"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ColorSetupHelper",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Color Configuration"
+},
+"events": {
+"Load": "ColorSetupHelper_Load"
+},
+"children": [
+{
+"name": "label4"
+},
+{
+"name": "comboBoxColorOrder"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "colorPanelSingleColor"
+},
+{
+"name": "buttonColorSetsSetup"
+},
+{
+"name": "comboBoxColorSet"
+},
+{
+"name": "radioButtonOptionFullColor"
+},
+{
+"name": "radioButtonOptionMultiple"
+},
+{
+"name": "radioButtonOptionSingle"
+},
+{
+"name": "label1"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 422,
+"y": 329
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 22,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 310,
+"y": 329
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 21,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Font": {
+"t": "font",
+"name": "Microsoft Sans Serif",
+"size": 9.75,
+"bold": true
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 22
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 240,
+"y": 16
+},
+"TabIndex": 23,
+"Text": "How do these items handle color?"
+},
+"events": {},
+"children": []
+},
+"buttonColorSetsSetup": {
+"type": "Button",
+"props": {
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 276,
+"y": 217
+},
+"Name": "buttonColorSetsSetup",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 28,
+"Text": "Edit Colors",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonColorSetsSetup_Click"
+},
+"children": []
+},
+"comboBoxColorSet": {
+"type": "ComboBox",
+"props": {
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"Enabled": false,
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 115,
+"y": 219
+},
+"Name": "comboBoxColorSet",
+"Size": {
+"t": "size",
+"x": 140,
+"y": 23
+},
+"TabIndex": 27
+},
+"events": {},
+"children": []
+},
+"radioButtonOptionFullColor": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 42,
+"y": 276
+},
+"Name": "radioButtonOptionFullColor",
+"Size": {
+"t": "size",
+"x": 380,
+"y": 19
+},
+"TabIndex": 26,
+"TabStop": true,
+"Text": "They can be any color: they are full RGB and mix to make any color.",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AnyRadioButtonCheckedChanged"
+},
+"children": []
+},
+"radioButtonOptionMultiple": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 42,
+"y": 160
+},
+"Name": "radioButtonOptionMultiple",
+"Size": {
+"t": "size",
+"x": 431,
+"y": 19
+},
+"TabIndex": 25,
+"TabStop": true,
+"Text": "They can be multiple colors, but the colors are independent: they do not mix.",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AnyRadioButtonCheckedChanged"
+},
+"children": []
+},
+"radioButtonOptionSingle": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 42,
+"y": 63
+},
+"Name": "radioButtonOptionSingle",
+"Size": {
+"t": "size",
+"x": 377,
+"y": 19
+},
+"TabIndex": 24,
+"TabStop": true,
+"Text": "They are a single color, and do not change color at all. The color is:",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AnyRadioButtonCheckedChanged"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 188
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 361,
+"y": 15
+},
+"TabIndex": 30,
+"Text": "(eg. multiple strings of different colors wrapped around each item.)"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 223
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 15
+},
+"TabIndex": 31,
+"Text": "Colors:"
+},
+"events": {},
+"children": []
+},
+"colorPanelSingleColor": {
+"type": "ColorPanel",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "RoyalBlue"
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Color": {
+"t": "color",
+"name": "RoyalBlue"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 68,
+"y": 96
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 5,
+"r": 5,
+"b": 5
+},
+"Name": "colorPanelSingleColor",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 34
+},
+"TabIndex": 29
+},
+"events": {},
+"children": []
+},
+"comboBoxColorOrder": {
+"type": "ComboBox",
+"props": {
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"Enabled": false,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 141,
+"y": 301
+},
+"Name": "comboBoxColorOrder",
+"Size": {
+"t": "size",
+"x": 114,
+"y": 23
+},
+"TabIndex": 32
+},
+"events": {},
+"children": [],
+"Items": [
+"RGB",
+"RBG",
+"GBR",
+"GRB",
+"BRG",
+"BGR",
+"RGBW",
+"GRWB"
+]
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 63,
+"y": 304
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 15
+},
+"TabIndex": 33,
+"Text": "Color Order:"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+541,
+372
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+557,
+410
+]
+}
+}
+}

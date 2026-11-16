@@ -1,0 +1,18 @@
+[package]
+name = "vixen-output-endurance"
+version = "0.1.0"
+edition = "2021"
+[workspace]
+[dependencies]
+vixen-core = { path = "../../crates/vixen-core" }
+vixen-engine = { path = "../../crates/vixen-engine" }
+vixen-effects = { path = "../../crates/vixen-effects" }
+vixen-session = { path = "../../crates/vixen-session" }
+vixen-io = { path = "../../crates/vixen-io" }
+vixen-output = { path = "../../crates/vixen-output" }
+uuid = { version = "1", features = ["v4"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+[profile.dev]
+opt-level = 1
+[profile.dev.package."*"]
+opt-level = 2

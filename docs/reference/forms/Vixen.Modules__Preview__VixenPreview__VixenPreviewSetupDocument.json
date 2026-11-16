@@ -1,0 +1,110 @@
+{
+"class": "VixenPreviewSetupDocument",
+"source": "Vixen.Modules/Preview/VixenPreview/VixenPreviewSetupDocument.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CloseButton": false,
+"CloseButtonVisible": false,
+"Name": "VixenPreviewSetupDocument",
+"Text": "Preview"
+},
+"events": {
+"FormClosing": "VixenPreviewSetupDocument_FormClosing",
+"Load": "VixenPreviewSetupDocument_Load",
+"Paint": "VixenPreviewSetupDocument_Paint"
+},
+"children": [
+{
+"name": "previewControl"
+}
+],
+"objects": {
+"previewControl": {
+"type": "VixenPreviewControl",
+"props": {
+"AllowDrop": true,
+"Background": {
+"t": "resx",
+"key": "previewControl.Background"
+},
+"BackgroundAlpha": 255,
+"CurrentTool": {
+"t": "enum",
+"type": "Tools",
+"v": "Select"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "previewControl",
+"Paused": false,
+"SelectedDisplayItems": {
+"t": "raw",
+"v": "(System.Collections.Generic.List<VixenModules.Preview.VixenPreview.Shapes.DisplayItem>)(resources.GetObject(\"previewControl.SelectedDisplayItems\"))"
+},
+"ShowInfo": false,
+"Size": {
+"t": "size",
+"x": 758,
+"y": 394
+},
+"TabIndex": 0,
+"ZoomLevel": 1
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+758,
+394
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+8.25,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+}
+}
+}

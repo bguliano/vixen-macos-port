@@ -1,0 +1,366 @@
+{
+  "schema": 1,
+  "byteOrder": "ARGB8-row-major-top-down",
+  "cases": [
+    {
+      "id": "picture-3x5-opaque-identity",
+      "operation": "identity",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-opaque-fit-1x1",
+      "operation": "fit",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 1,
+      "maxHeight": 1,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-opaque-fit-5x3",
+      "operation": "fit",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 5,
+      "maxHeight": 3,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-opaque-fit-13x11",
+      "operation": "fit",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 13,
+      "maxHeight": 11,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-opaque-scale-25",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.25
+    },
+    {
+      "id": "picture-3x5-opaque-scale-50",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.5
+    },
+    {
+      "id": "picture-3x5-opaque-scale-100",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "picture-3x5-opaque-scale-150",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "picture-3x5-opaque-grayscale",
+      "operation": "grayscale",
+      "width": 3,
+      "height": 5,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-alpha-identity",
+      "operation": "identity",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-alpha-fit-1x1",
+      "operation": "fit",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 1,
+      "maxHeight": 1,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-alpha-fit-5x3",
+      "operation": "fit",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 5,
+      "maxHeight": 3,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-alpha-fit-13x11",
+      "operation": "fit",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 13,
+      "maxHeight": 11,
+      "scale": 0
+    },
+    {
+      "id": "picture-3x5-alpha-scale-25",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.25
+    },
+    {
+      "id": "picture-3x5-alpha-scale-50",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.5
+    },
+    {
+      "id": "picture-3x5-alpha-scale-100",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "picture-3x5-alpha-scale-150",
+      "operation": "scale",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "picture-3x5-alpha-grayscale",
+      "operation": "grayscale",
+      "width": 3,
+      "height": 5,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-opaque-identity",
+      "operation": "identity",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-opaque-fit-1x1",
+      "operation": "fit",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 1,
+      "maxHeight": 1,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-opaque-fit-5x3",
+      "operation": "fit",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 5,
+      "maxHeight": 3,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-opaque-fit-13x11",
+      "operation": "fit",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 13,
+      "maxHeight": 11,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-opaque-scale-25",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.25
+    },
+    {
+      "id": "picture-8x4-opaque-scale-50",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.5
+    },
+    {
+      "id": "picture-8x4-opaque-scale-100",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "picture-8x4-opaque-scale-150",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "picture-8x4-opaque-grayscale",
+      "operation": "grayscale",
+      "width": 8,
+      "height": 4,
+      "alpha": false,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-alpha-identity",
+      "operation": "identity",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-alpha-fit-1x1",
+      "operation": "fit",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 1,
+      "maxHeight": 1,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-alpha-fit-5x3",
+      "operation": "fit",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 5,
+      "maxHeight": 3,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-alpha-fit-13x11",
+      "operation": "fit",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 13,
+      "maxHeight": 11,
+      "scale": 0
+    },
+    {
+      "id": "picture-8x4-alpha-scale-25",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.25
+    },
+    {
+      "id": "picture-8x4-alpha-scale-50",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0.5
+    },
+    {
+      "id": "picture-8x4-alpha-scale-100",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.0
+    },
+    {
+      "id": "picture-8x4-alpha-scale-150",
+      "operation": "scale",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "picture-8x4-alpha-grayscale",
+      "operation": "grayscale",
+      "width": 8,
+      "height": 4,
+      "alpha": true,
+      "maxWidth": 0,
+      "maxHeight": 0,
+      "scale": 0
+    }
+  ]
+}

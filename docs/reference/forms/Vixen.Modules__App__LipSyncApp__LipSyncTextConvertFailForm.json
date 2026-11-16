@@ -1,0 +1,713 @@
+{
+"class": "LipSyncTextConvertFailForm",
+"source": "Vixen.Modules/App/LipSyncApp/LipSyncTextConvertFailForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"Name": "LipSyncTextConvertFailForm",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Text Conversion Failure"
+},
+"events": {
+"Load": "LipSyncTextConvertFailForm_Load"
+},
+"children": [
+{
+"name": "label10"
+},
+{
+"name": "label9"
+},
+{
+"name": "label8"
+},
+{
+"name": "label7"
+},
+{
+"name": "label6"
+},
+{
+"name": "label5"
+},
+{
+"name": "label4"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+},
+{
+"name": "buttonClear"
+},
+{
+"name": "lButton"
+},
+{
+"name": "restButton"
+},
+{
+"name": "etcButton"
+},
+{
+"name": "wqButton"
+},
+{
+"name": "mbpButton"
+},
+{
+"name": "fvButton"
+},
+{
+"name": "uButton"
+},
+{
+"name": "oButton"
+},
+{
+"name": "eButton"
+},
+{
+"name": "aiButton"
+},
+{
+"name": "phonemeTextBox"
+},
+{
+"name": "errorLabel"
+}
+],
+"objects": {
+"errorLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 24
+},
+"Name": "errorLabel",
+"Size": {
+"t": "size",
+"x": 32,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "Error"
+},
+"events": {},
+"children": []
+},
+"phonemeTextBox": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 61
+},
+"Name": "phonemeTextBox",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 308,
+"y": 23
+},
+"TabIndex": 1
+},
+"events": {},
+"children": []
+},
+"aiButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 91
+},
+"Name": "aiButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 2,
+"TextImageRelation": {
+"t": "enum",
+"type": "TextImageRelation",
+"v": "ImageBeforeText"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "aiButton_Click"
+},
+"children": []
+},
+"eButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 80,
+"y": 91
+},
+"Name": "eButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 3,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "eButton_Click"
+},
+"children": []
+},
+"oButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 80,
+"y": 163
+},
+"Name": "oButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 4,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "oButton_Click"
+},
+"children": []
+},
+"uButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 206,
+"y": 164
+},
+"Name": "uButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 5,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "uButton_Click"
+},
+"children": []
+},
+"fvButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 206,
+"y": 91
+},
+"Name": "fvButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 6,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "fvButton_Click"
+},
+"children": []
+},
+"mbpButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 163
+},
+"Name": "mbpButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 7,
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "BottomCenter"
+},
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "mbpButton_Click"
+},
+"children": []
+},
+"wqButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 269,
+"y": 164
+},
+"Name": "wqButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 8,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "wqButton_Click"
+},
+"children": []
+},
+"etcButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 143,
+"y": 91
+},
+"Name": "etcButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 9,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "etcButton_Click"
+},
+"children": []
+},
+"restButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 143,
+"y": 164
+},
+"Name": "restButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 10,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "restButton_Click"
+},
+"children": []
+},
+"lButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 269,
+"y": 91
+},
+"Name": "lButton",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 50
+},
+"TabIndex": 11,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "lButton_Click"
+},
+"children": []
+},
+"buttonClear": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 339,
+"y": 61
+},
+"Name": "buttonClear",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 12,
+"Text": "Clear",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonClear_Click"
+},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 238,
+"y": 257
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 13,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOk_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 339,
+"y": 257
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 14,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 144
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 18,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "AI"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 80,
+"y": 144
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 16,
+"Text": "E"
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 143,
+"y": 144
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 15
+},
+"TabIndex": 17,
+"Text": "ETC"
+},
+"events": {},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 206,
+"y": 144
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 20,
+"y": 15
+},
+"TabIndex": 18,
+"Text": "FV"
+},
+"events": {},
+"children": []
+},
+"label5": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 266,
+"y": 144
+},
+"Name": "label5",
+"Size": {
+"t": "size",
+"x": 10,
+"y": 15
+},
+"TabIndex": 19,
+"Text": "I"
+},
+"events": {},
+"children": []
+},
+"label6": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 216
+},
+"Name": "label6",
+"Size": {
+"t": "size",
+"x": 32,
+"y": 15
+},
+"TabIndex": 20,
+"Text": "MBP"
+},
+"events": {},
+"children": []
+},
+"label7": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 80,
+"y": 216
+},
+"Name": "label7",
+"Size": {
+"t": "size",
+"x": 16,
+"y": 15
+},
+"TabIndex": 21,
+"Text": "O"
+},
+"events": {},
+"children": []
+},
+"label8": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 143,
+"y": 217
+},
+"Name": "label8",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 15
+},
+"TabIndex": 22,
+"Text": "REST"
+},
+"events": {},
+"children": []
+},
+"label9": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 206,
+"y": 216
+},
+"Name": "label9",
+"Size": {
+"t": "size",
+"x": 15,
+"y": 15
+},
+"TabIndex": 23,
+"Text": "U"
+},
+"events": {},
+"children": []
+},
+"label10": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 266,
+"y": 217
+},
+"Name": "label10",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 15
+},
+"TabIndex": 24,
+"Text": "WQ"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+446,
+320
+]
+},
+"MaximumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+462,
+358
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+462,
+358
+]
+}
+}
+}

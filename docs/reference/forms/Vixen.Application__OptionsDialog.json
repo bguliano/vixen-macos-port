@@ -1,0 +1,412 @@
+{
+"class": "OptionsDialog",
+"source": "Vixen.Application/OptionsDialog.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "btnOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "ref",
+"name": "btnCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "OptionsDialog",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Options"
+},
+"events": {
+"Load": "OptionsDialog_Load"
+},
+"children": [
+{
+"name": "grpVideoEffectCache"
+},
+{
+"name": "grpAudio"
+},
+{
+"name": "chkBoxClearEffectCacheOnExit"
+},
+{
+"name": "ctlUpdateInteral"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOK"
+}
+],
+"objects": {
+"btnOK": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 196,
+"y": 255
+},
+"Name": "btnOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnOK_Click"
+},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 290,
+"y": 255
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 7,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 10
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 346,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "This form lets you set various options that control V3's operation"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 47
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 90,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Update Interval:"
+},
+"events": {},
+"children": []
+},
+"ctlUpdateInteral": {
+"type": "NumericUpDown",
+"props": {
+"Increment": {
+"t": "raw",
+"v": "new decimal(new int[] { 23, 0, 0, 0 })"
+},
+"Location": {
+"t": "point",
+"x": 116,
+"y": 44
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 500, 0, 0, 0 })"
+},
+"Name": "ctlUpdateInteral",
+"Size": {
+"t": "size",
+"x": 59,
+"y": 23
+},
+"TabIndex": 0,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 23, 0, 0, 0 })"
+}
+},
+"events": {},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 31
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 51,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Latency:"
+},
+"events": {},
+"children": []
+},
+"wasapiLatency": {
+"type": "NumericUpDown",
+"props": {
+"Increment": {
+"t": "raw",
+"v": "new decimal(new int[] { 10, 0, 0, 0 })"
+},
+"Location": {
+"t": "point",
+"x": 99,
+"y": 29
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 500, 0, 0, 0 })"
+},
+"Minimum": {
+"t": "raw",
+"v": "new decimal(new int[] { 5, 0, 0, 0 })"
+},
+"Name": "wasapiLatency",
+"Size": {
+"t": "size",
+"x": 59,
+"y": 23
+},
+"TabIndex": 3,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 25, 0, 0, 0 })"
+}
+},
+"events": {},
+"children": []
+},
+"grpAudio": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 80
+},
+"Name": "grpAudio",
+"Size": {
+"t": "size",
+"x": 343,
+"y": 76
+},
+"TabIndex": 2,
+"TabStop": false,
+"Text": "Audio"
+},
+"events": {},
+"children": [
+{
+"name": "label3"
+},
+{
+"name": "wasapiLatency"
+}
+]
+},
+"grpVideoEffectCache": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 166
+},
+"Name": "grpVideoEffectCache",
+"Size": {
+"t": "size",
+"x": 343,
+"y": 76
+},
+"TabIndex": 4,
+"TabStop": false,
+"Text": "Video Effect Cache"
+},
+"events": {},
+"children": [
+{
+"name": "label4"
+},
+{
+"name": "cmbBoxVideoEffectCacheFileType"
+}
+]
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 31
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 91,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "Cache File Type:"
+},
+"events": {},
+"children": []
+},
+"cmbBoxVideoEffectCacheFileType": {
+"type": "ComboBox",
+"props": {
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 99,
+"y": 28
+},
+"Name": "cmbBoxVideoEffectCacheFileType",
+"Size": {
+"t": "size",
+"x": 59,
+"y": 23
+},
+"TabIndex": 5,
+"Text": "bmp"
+},
+"events": {},
+"children": [],
+"Items": [
+"bmp",
+"png"
+]
+},
+"chkBoxClearEffectCacheOnExit": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"CheckState": {
+"t": "enum",
+"type": "CheckState",
+"v": "Checked"
+},
+"Location": {
+"t": "point",
+"x": 216,
+"y": 46
+},
+"Name": "chkBoxClearEffectCacheOnExit",
+"Size": {
+"t": "size",
+"x": 161,
+"y": 19
+},
+"TabIndex": 1,
+"Text": "Clear Effect Cache on Exit",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+392,
+293
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+408,
+39
+]
+}
+}
+}

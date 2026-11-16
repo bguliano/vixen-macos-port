@@ -1,0 +1,107 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace VixenRaster {
+    [DataContract] public sealed class CaseSpec {
+        [DataMember] public string id, family, operation, fillMode;
+        [DataMember] public int width, height, maxWidth, maxHeight;
+        [DataMember] public bool alpha;
+        [DataMember] public double scale;
+        [DataMember] public double[] rect, line, points;
+        [DataMember] public int angle, lineLength;
+    }
+    [DataContract] public sealed class CaseSet {
+        [DataMember] public int schema = 2;
+        [DataMember] public string byteOrder = "ARGB8-row-major-top-down";
+        [DataMember] public CaseSpec[] cases;
+    }
+    [DataContract] public sealed class FileRecord {
+        [DataMember] public string path, sha256;
+        [DataMember] public long bytes;
+    }
+    [DataContract] public sealed class PackManifest {
+        [DataMember] public int schema;
+        [DataMember] public FileRecord[] files;
+    }
+    [DataContract] public sealed class RasterReport {
+        [DataMember] public int schema = 2;
+        [DataMember] public string status, id, byteOrder = "ARGB8-row-major-top-down";
+        [DataMember] public CaseSpec input;
+        [DataMember] public int outputWidth, outputHeight, inputStride, outputStride;
+        [DataMember] public string inputPixelFormat, outputPixelFormat;
+        [DataMember] public bool inputUnchanged, inputReadbacksEqual, outputReadbacksEqual;
+        [DataMember] public FileRecord[] files;
+        [DataMember] public string originalMethodsSha256, countDownMethodsSha256, fastPixelSha256, hostSha256;
+        [DataMember] public DrawingDefaults freshGraphicsDefaults;
+        [DataMember] public DrawingDefaults actualDrawingDefaults;
+        [DataMember] public string drawingStateScope;
+    }
+    [DataContract] public sealed class DrawingDefaults {
+        [DataMember] public string smoothing, pixelOffset, interpolation, compositingMode, compositingQuality, pageUnit;
+        [DataMember] public float pageScale, dpiX, dpiY;
+        [DataMember] public float[] transform;
+        [DataMember] public float[] clipBounds, visibleClipBounds;
+        [DataMember] public bool clipIsInfinite;
+    }
+    [DataContract] public sealed class RuntimeReport {
+        [DataMember] public int schema = 1;
+        [DataMember] public string status, os, clr, hostSha256;
+        [DataMember] public bool is64BitProcess, is64BitOperatingSystem;
+        [DataMember] public string drawingIdentity, drawingPath, drawingSha256, gdiplusPath, gdiplusVersion, gdiplusSha256;
+        [DataMember] public DrawingDefaults freshGraphicsDefaults;
+        [DataMember] public string scope = "Windows Framework GDI+ availability/provenance; not whole-effect or installed Vixen binary equivalence";
+    }
+    public static class Data {
+        public static string Hash(byte[] bytes) { using(var sha=SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-","").ToLowerInvariant(); }
+        public static string HashFile(string path) { using(var file=File.OpenRead(path)) using(var sha=SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(file)).Replace("-","").ToLowerInvariant(); }
+        public static byte[] Json(object value) { using(var stream=new MemoryStream()) { new DataContractJsonSerializer(value.GetType()).WriteObject(stream,value); return stream.ToArray(); } }
+        public static void SaveNew(string path,object value) { WriteNew(path,Json(value)); }
+        public static void WriteNew(string path,byte[] bytes) { using(var file=new FileStream(path,FileMode.CreateNew,FileAccess.Write,FileShare.Read)) { file.Write(bytes,0,bytes.Length);file.Flush(); } }
+        public static T Read<T>(string path,int limit) {
+            if(new FileInfo(path).Length>limit) throw new InvalidDataException("JSON exceeds limit");
+            using(var stream=File.OpenRead(path)) return (T)new DataContractJsonSerializer(typeof(T)).ReadObject(stream);
+        }
+        public static FileRecord Record(string directory,string name) { string p=Path.Combine(directory,name);return new FileRecord{path=name,bytes=new FileInfo(p).Length,sha256=HashFile(p)}; }
+        public static CaseSet Cases() {
+            var all=new List<CaseSpec>();
+            foreach(var size in new[]{new[]{3,5},new[]{8,4}}) foreach(bool alpha in new[]{false,true}) {
+                string prefix="picture-"+size[0]+"x"+size[1]+(alpha?"-alpha-":"-opaque-");
+                all.Add(new CaseSpec{id=prefix+"identity",operation="identity",width=size[0],height=size[1],alpha=alpha});
+                foreach(var box in new[]{new[]{1,1},new[]{5,3},new[]{13,11}}) all.Add(new CaseSpec{id=prefix+"fit-"+box[0]+"x"+box[1],operation="fit",width=size[0],height=size[1],alpha=alpha,maxWidth=box[0],maxHeight=box[1]});
+                int[] percents={25,50,100,150};
+                foreach(int percent in percents) all.Add(new CaseSpec{id=prefix+"scale-"+percent,operation="scale",width=size[0],height=size[1],alpha=alpha,scale=percent/100.0});
+                all.Add(new CaseSpec{id=prefix+"grayscale",operation="grayscale",width=size[0],height=size[1],alpha=alpha});
+            }
+            foreach(var c in all)c.family="picture";
+            double[][] crossRects={new double[]{0,0,4,4},new double[]{2,3,9,9},new double[]{1,1,20,12},new double[]{-2,2,9,9}};
+            for(int i=0;i<crossRects.Length;i++)all.Add(new CaseSpec{id="countdown-cross-"+(i+1),family="countdown",operation="cross-hash",width=32,height=32,alpha=true,rect=crossRects[i]});
+            double[][] spinnerRects={new double[]{2,3,9,9},new double[]{12,10,12,12}};int[] lengths={8,18};
+            for(int i=0;i<spinnerRects.Length;i++)foreach(int angle in new[]{0,44,45,46,90,179,180,359})all.Add(new CaseSpec{id="countdown-spinner-"+(i+1)+"-angle-"+angle,family="countdown",operation="spinner",width=32,height=32,alpha=true,rect=spinnerRects[i],angle=angle,lineLength=lengths[i]});
+            double[][] lines={new double[]{20,20,29,24},new double[]{20,20,24,29},new double[]{20,20,16,29},new double[]{20,20,11,24},new double[]{20,20,11,16},new double[]{20,20,16,11},new double[]{20,20,24,11},new double[]{20,20,29,16},new double[]{2,2,2,2},new double[]{1,3,10,3},new double[]{3,1,3,10}};
+            for(int i=0;i<lines.Length;i++)all.Add(new CaseSpec{id="primitive-line-"+(i+1),family="primitive",operation="line",width=40,height=40,alpha=true,line=lines[i]});
+            double[][] fills={new double[]{2,3,4,5},new double[]{-2,1,5,3},new double[]{1.5,2.5,3.5,4.5}};
+            for(int i=0;i<fills.Length;i++)all.Add(new CaseSpec{id="primitive-fill-rectangle-"+(i+1),family="primitive",operation="fill-rectangle",width=40,height=40,alpha=true,rect=fills[i]});
+            all.Add(new CaseSpec{id="primitive-rectangle",family="primitive",operation="rectangle",width=40,height=40,alpha=true,rect=new double[]{1,1,4,3}});
+            all.Add(new CaseSpec{id="primitive-ellipse",family="primitive",operation="ellipse",width=40,height=40,alpha=true,rect=new double[]{5,5,20,12}});
+            foreach(string mode in new[]{"Alternate","Winding"})all.Add(new CaseSpec{id="primitive-polygon-"+mode.ToLowerInvariant(),family="primitive",operation="polygon",width=40,height=40,alpha=true,fillMode=mode,points=new double[]{20,2,31,35,3,14,37,14,9,35}});
+            return new CaseSet{cases=all.ToArray()};
+        }
+        public static CaseSet ValidateCases(string path) {
+            var actual=Read<CaseSet>(path,65536);var expected=Cases();
+            if(actual==null || actual.schema!=2 || actual.byteOrder!=expected.byteOrder || actual.cases==null || actual.cases.Length!=74) throw new InvalidDataException("Case schema/grid mismatch");
+            for(int i=0;i<74;i++) if(Hash(Json(actual.cases[i]))!=Hash(Json(expected.cases[i]))) throw new InvalidDataException("Unexpected case at "+i);
+            return actual;
+        }
+        public static byte[] Requested(CaseSpec c) {
+            var bytes=new byte[c.width*c.height*4];int[] alpha={0,1,127,128,254,255};
+            if(c.family!="picture")return bytes;
+            for(int y=0;y<c.height;y++) for(int x=0;x<c.width;x++) { int i=y*c.width+x,o=i*4;bytes[o]=(byte)(c.alpha?alpha[i%6]:255);bytes[o+1]=(byte)((71*x+31*y+17)%256);bytes[o+2]=(byte)((29*x+97*y+43)%256);bytes[o+3]=(byte)((113*x+19*y+89)%256); }
+            return bytes;
+        }
+    }
+}

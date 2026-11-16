@@ -1,84 +1,63 @@
-[![GitHub release (with filter)](https://img.shields.io/github/v/release/Vixenlights/Vixen)](https://www.vixenlights.com/download/release-build/)
-[![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/vixenlights/vixen/latest/total)](https://www.vixenlights.com/download/release-build/)
-[![GitHub release (with filter)](https://img.shields.io/github/v/release/Vixenlights/Vixen?filter=DevBuild*&label=development)](https://www.vixenlights.com/download/develop-build/)
-[![Issue Tracker](https://img.shields.io/badge/issue-tracker-blue.svg?logo=jira)](http://bugs.vixenlights.com)
+# Vixen for macOS
 
-<img src="Assets/Vixen3-Logo.png" width=600 />
+A work-in-progress native macOS port of [Vixen Lights](https://github.com/VixenLights/Vixen), with a Rust engine and SwiftUI/AppKit interface. This is an independent port, not an official Vixen release.
 
-Vixen is a full featured sequencer for producing animated light shows. It provides all the software tools necessary to create and run an animated light show sequenced to music. It supports typical DIY controllers as well as DMX, traditional and pixel lighting. It runs on the Windows platform under .NET Core.
+The current priority is reliable everyday use on the maintainer's Mac: opening, editing, saving and reopening shows, preview, playback, and export. Crashes, lost changes, broken workflows, and noticeable performance or synchronization issues take priority over exact Windows pixel or audio-sample parity. The port is not yet declared fully verified or ready for public release.
 
-<img src="Assets/Editor.png" width=600 />
+## Upstream and repository layout
 
-## User and Developer Documentation
+This public fork preserves the official Vixen commit history. The `macos-port` branch contains the native macOS port; `master` retains the original Windows source. The original Vixen source and its history are retained through the `upstream/Vixen` Git submodule, pinned to commit `e111ae41963abfa48b70f884445950e94e432e02`. Initialize it when cloning:
 
-[Vixen Documentation](https://www.vixenlights.com/docs/)
+```sh
+git clone --branch macos-port --recurse-submodules https://github.com/bguliano/vixen-macos-port.git
+cd vixen-macos-port
+```
 
-## Installation
-You can download and install Vixen via the self contained installer:
+- `app/`: native Swift interface and application resources.
+- `crates/`: Rust engine, effects, media, file formats, and app bindings.
+- `tests/` and `tools/`: reference fixtures and verification tools.
+- `scripts/`: app builds and workflow checks.
+- `docs/`: implementation specifications, differences, and continuation notes.
 
-[Download Vixen 3](http://www.vixenlights.com/downloads/vixen-3-downloads/)
+Local toolchains, app bundles, raw verification captures, screenshots, credentials, personal show/media directories, machine-access scripts and private session handoffs are not uploaded. Some development notes refer to local evidence under `target/`; those references describe historical checks and are not reproducible evidence included in this repository.
 
-[Latest Release Notes](https://github.com/VixenLights/Vixen/blob/master/Release%20Notes.txt)
+## Build
 
-#### Bugs / Feature requests
+The current build targets Apple Silicon and macOS 26 or later. It requires Apple's development tools with Swift 6.2 or later, Python 3, and the Rust version pinned in `rust-toolchain.toml`. Intel support and notarized distribution are not claimed.
 
-[Bug Tracker](https://bugs.vixenlights.com)
+The build scripts use project-local Rust directories. After installing rustup through its official installer, initialize those directories in a Bash shell:
 
-## License
+```sh
+bash
+export RUSTUP_HOME="$PWD/.tools/rustup"
+export CARGO_HOME="$PWD/.tools/cargo"
+rustup toolchain install 1.99.1 --profile minimal --component clippy --component rustfmt
+mkdir -p "$CARGO_HOME/bin"
+ln -s "$(command -v rustup)" "$CARGO_HOME/bin/rustup"
+ln -s rustup "$CARGO_HOME/bin/cargo"
+ln -s rustup "$CARGO_HOME/bin/rustc"
+source ./env.sh
+cargo fetch --locked
+scripts/build_media_tools.sh --fetch
+scripts/build_app.sh release
+```
 
-Vixen 3 is unlicensed and free to use.  
-[License](https://github.com/VixenLights/Vixen/blob/master/License.txt)
+The initial fetches download dependencies and the checksum-pinned FFmpeg source. The app is written to `build/Vixen.app`. Build scripts generate Swift bindings automatically; do not run `swift build` directly in `app/`. Existing development machines with `.tools/` already initialized can start with `source ./env.sh`.
 
-#### WARRANTY DISCLAIMER
+## Verification and status
 
-This software is provided 'as-is', without any express or implied warranty. 
+```sh
+# In Bash, with the project-local toolchain initialized:
+source ./env.sh
+cargo test --workspace --locked
+```
 
-#### Source Code
+Some integration checks require native macOS services, media helpers, foreground desktop access, or external hardware. Read the relevant script before running it. Always test with a private copy of a show.
 
-Vixen 3 is Open Source and source code is available on GitHub at https://github.com/VixenLights/Vixen/ under the licensing outlined above. 
-#### Developer Info
+The latest recorded workspace suite passed 3,549 tests, with zero failures and 10 ignored tests. This records a local checkpoint, not proof that all user workflows or hardware configurations work. See [current status](docs/STATUS.md), [known differences](docs/DIFFERENCES.md), and [UI guide](docs/UI_GUIDE.md).
 
-This repository contains all the public source available for to build the Vixen 3 system. 
+Historical test helpers may refer to example paths under `/Users/developer`; configure those for your own private fixtures before using them. Private-fixture tests can skip when those files are absent, so a green test count alone does not establish real-show coverage. The public snapshot normalizes local paths and omits private orchestration records; the recorded local test results predate that packaging cleanup.
 
-Vixen 3 is a modular application that allows for pluggable modules to be developed for it. It is written in C# and some small parts in C++. The code structure is as follows under the src folder: 
+## Licenses and attribution
 
-* /Vixen.Common - Common components used by the application and modules
-* /Vixen.Modules - Modules developed and maintained by the core team, and other contributors
-* /Vixen.Application - The main Vixen application
-* /Vixen.Core - The Vixen core framework 
-* /Vixen.Installer - Installer projects
-
-For current developer setup information, see the [Developer](https://www.vixenlights.com/developer/) pages on the Vixen website.
-
-Conventions for development:
-
-- The assembly name should be the name of the module (eg. TimedSequenceEditor), and
-  the default namespace should be "Module.\<ModuleType>.\<ModuleName>". For
-  example, Modules.Editor.TimedSequenceEditor.
- 
-  
-- The build output directory should be relative to the solution directory, in a
-  'Release' directory release builds and a Debug folder for Debug builds. We no longer actively support x86 builds.
-  It will also depend on the type of module. For example:
-  
-  Vixen Modules (Release):              $(SolutionDir)\Release\Output\Module.ModuleType.ModuleName\
-  Vixen Common assemblies (Release):    $(SolutionDir)\Release\Output\
-  Vixen Applications (Release):         $(SolutionDir)\Release\Output
-
-- Assembly names are handled by the Directory.Build.Props file for each module type.
-  
-- To reference the Vixen project (or any other projects that are needed), make sure you
-  add a 'project reference', and not a "normal" reference (to the binary DLL). This will help compatibility for other developers when used in different locations. References to projects should be set so they do not copy local. This avoids assembly loader issues with multiple copies. Under Properties of the reference.
-  
-  * Copy Local : No
-  * Include Assets: None
-
-- NuGet packages follow the same principle as Project References. You should include the package in the Common area and allow the libraries to be deployed in that path. Then in the local project the NuGet package is added but is set not to copy the assets locally by setting the following in the properties of the library.
-
-    * Exclude Assets : None
-      
-- Tabs vs. Spaces, and other formatting: Tabs are preferred, and general formatting standards are followed. An editorconfig file in the src root controls the code styles. However, please try to review all your own changes before committing, to ensure you are not making large changes to unrelated sections of code (eg. changing formatting in a file, or whitespace, etc.). Commits like this may be rejected. If larger reformats are desired, include them in their own commits noted as such to distingush them from logic changes. See [Visual Studio Setup](https://www.vixenlights.com/developer/visual-studio/) for more info.
-
-- ### Powered by
-[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSource) 
-
+Vixen's copyright and license are retained in [License.txt](License.txt) and the upstream submodule. This project also includes components under other licenses, including GPL-2.0-or-later analysis code. The upstream license alone does not describe every component or the combined app's distribution requirements. Preserve all notices and review [the component license inventory](docs/LICENSES.md) before distributing builds or making a public release.

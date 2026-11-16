@@ -1,0 +1,1090 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/Controller/E131/SetupForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "okButton"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "cancelButton"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MinimizeBox": false,
+"MaximizeBox": false,
+"MainMenuStrip": {
+"t": "ref",
+"name": "mainMenu"
+},
+"Name": "SetupForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Streaming ACN (E1.31) Configuration"
+},
+"events": {
+"FormClosing": "SetupForm_FormClosing"
+},
+"children": [
+{
+"name": "tabControlEX1"
+},
+{
+"name": "cancelButton"
+},
+{
+"name": "okButton"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle1": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleLeft"
+},
+"BackColor": {
+"t": "color",
+"system": "Control"
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"system": "WindowText"
+},
+"SelectionBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"SelectionForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"WrapMode": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "True"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle5": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleLeft"
+},
+"BackColor": {
+"t": "color",
+"system": "Window"
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"system": "ControlText"
+},
+"SelectionBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"SelectionForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"WrapMode": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle2": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle3": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"dataGridViewCellStyle4": {
+"type": "DataGridViewCellStyle",
+"props": {
+"Alignment": {
+"t": "enum",
+"type": "DataGridViewContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"rowManipulationContextMenuStrip": {
+"type": "ContextMenuStrip",
+"props": {
+"Name": "rowManipulationContextMenuStrip",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 4
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"mIHelp": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "mIHelp",
+"Size": {
+"t": "size",
+"x": 32,
+"y": 19
+},
+"Text": "&Help"
+},
+"events": {},
+"children": []
+},
+"mainMenu": {
+"type": "MenuStrip",
+"props": {
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "mainMenu",
+"Size": {
+"t": "size",
+"x": 200,
+"y": 24
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"warningsCheckBox": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 35,
+"y": 38
+},
+"Name": "warningsCheckBox",
+"Size": {
+"t": "size",
+"x": 262,
+"y": 19
+},
+"TabIndex": 51,
+"Text": "Display ALL Warnings/Errors and wait For OK"
+},
+"events": {},
+"children": []
+},
+"statisticsCheckBox": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 35,
+"y": 64
+},
+"Name": "statisticsCheckBox",
+"Size": {
+"t": "size",
+"x": 263,
+"y": 19
+},
+"TabIndex": 52,
+"Text": "Gather statistics and display at end of session"
+},
+"events": {},
+"children": []
+},
+"eventRepeatCountTextBox": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 42,
+"y": 162
+},
+"MaxLength": 2,
+"Name": "eventRepeatCountTextBox",
+"Size": {
+"t": "size",
+"x": 30,
+"y": 23
+},
+"TabIndex": 55,
+"Text": "0",
+"TextAlign": {
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Center"
+}
+},
+"events": {
+"Validating": "eventRepeatCountTextBoxValidating"
+},
+"children": []
+},
+"label": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 78,
+"y": 162
+},
+"Name": "label",
+"Size": {
+"t": "size",
+"x": 192,
+"y": 90
+},
+"TabIndex": 5,
+"Text": "Max Repeat Count\r\n\r\nSet to 0 to send all events (even 0s)\r\nto each universe, Set to >0 to stop\r\nrepeating frames after N duplicates\r\nare sent."
+},
+"events": {},
+"children": []
+},
+"okButton": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 188,
+"y": 447
+},
+"Name": "okButton",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 25
+},
+"TabIndex": 199,
+"Text": "OK"
+},
+"events": {},
+"children": []
+},
+"cancelButton": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 281,
+"y": 448
+},
+"Name": "cancelButton",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 25
+},
+"TabIndex": 200,
+"Text": "Cancel"
+},
+"events": {},
+"children": []
+},
+"eventSuppressCountTextBox": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 42,
+"y": 276
+},
+"MaxLength": 2,
+"Name": "eventSuppressCountTextBox",
+"Size": {
+"t": "size",
+"x": 30,
+"y": 23
+},
+"TabIndex": 56,
+"Text": "0",
+"TextAlign": {
+"t": "enum",
+"type": "HorizontalAlignment",
+"v": "Center"
+}
+},
+"events": {
+"Validating": "eventSuppressCountTextBoxValidating"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 78,
+"y": 276
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 182,
+"y": 90
+},
+"TabIndex": 104,
+"Text": "Max Suppress Count\r\n\r\nOnly used if Max Repeat Count\r\nis not  0. Set to >0 to allow every\r\nNth duplicate frame in a universe\r\nto go out."
+},
+"events": {},
+"children": []
+},
+"autoPopulateStart": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 35,
+"y": 15
+},
+"Name": "autoPopulateStart",
+"Size": {
+"t": "size",
+"x": 186,
+"y": 19
+},
+"TabIndex": 50,
+"Text": "Manually manage start values."
+},
+"events": {
+"CheckedChanged": "autoPopulateStart_CheckedChanged"
+},
+"children": []
+},
+"btnDeleteUnicast": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderSize": 0,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 261,
+"y": 337
+},
+"Name": "btnDeleteUnicast",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 28
+},
+"TabIndex": 7,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnRemoveUnicast_Click"
+},
+"children": []
+},
+"btnAddUnicast": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderSize": 0,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 228,
+"y": 337
+},
+"Name": "btnAddUnicast",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 28
+},
+"TabIndex": 6,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnAddUnicast_Click_1"
+},
+"children": []
+},
+"btnDeleteUniverse": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderSize": 0,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 294,
+"y": 78
+},
+"Name": "btnDeleteUniverse",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 28
+},
+"TabIndex": 5,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnDelete_Click"
+},
+"children": []
+},
+"btnAddMultipleUniverses": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderSize": 0,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 294,
+"y": 44
+},
+"Name": "btnAddMultipleUniverses",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 28
+},
+"TabIndex": 4,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnAddMultipleUniverses_Click"
+},
+"children": []
+},
+"btnAddUniverse": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderSize": 0,
+"FlatStyle": {
+"t": "enum",
+"type": "FlatStyle",
+"v": "Flat"
+},
+"Location": {
+"t": "point",
+"x": 294,
+"y": 10
+},
+"Name": "btnAddUniverse",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 28
+},
+"TabIndex": 3,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnAdd_Click"
+},
+"children": []
+},
+"lblDestination": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 339
+},
+"Name": "lblDestination",
+"Size": {
+"t": "size",
+"x": 67,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Destination"
+},
+"events": {},
+"children": []
+},
+"comboDestination": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 368
+},
+"Name": "comboDestination",
+"Size": {
+"t": "size",
+"x": 269,
+"y": 24
+},
+"TabIndex": 5
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "comboDestination_SelectedIndexChanged"
+},
+"children": []
+},
+"lblPriority": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 102,
+"y": 119
+},
+"Name": "lblPriority",
+"Size": {
+"t": "size",
+"x": 81,
+"y": 15
+},
+"TabIndex": 108,
+"Text": "sACN priority."
+},
+"events": {},
+"children": []
+},
+"numericPriority": {
+"type": "NumericUpDown",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 35,
+"y": 115
+},
+"Maximum": {
+"t": "raw",
+"v": "new decimal(new int[] { 200, 0, 0, 0 })"
+},
+"Name": "numericPriority",
+"Size": {
+"t": "size",
+"x": 49,
+"y": 23
+},
+"TabIndex": 54,
+"Value": {
+"t": "raw",
+"v": "new decimal(new int[] { 100, 0, 0, 0 })"
+}
+},
+"events": {},
+"children": []
+},
+"chkBoxTransmitBlind": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 35,
+"y": 88
+},
+"Name": "chkBoxTransmitBlind",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 19
+},
+"TabIndex": 53,
+"Text": "Transmit blind data.",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"tabControlEX1": {
+"type": "TabControl",
+"props": {
+"ItemSize": {
+"t": "size",
+"x": 59,
+"y": 18
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Name": "tabControlEX1",
+"SelectedIndex": 0,
+"Size": {
+"t": "size",
+"x": 351,
+"y": 424
+},
+"TabIndex": 201
+},
+"events": {},
+"children": [
+{
+"name": "tabPageEX1"
+},
+{
+"name": "tabPageEX2"
+}
+]
+},
+"tabPageEX1": {
+"type": "TabPage",
+"props": {
+"Location": {
+"t": "point",
+"x": 4,
+"y": 22
+},
+"Name": "tabPageEX1",
+"Size": {
+"t": "size",
+"x": 343,
+"y": 398
+},
+"TabIndex": 0,
+"Text": "Universes",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": [
+{
+"name": "btnDeleteAllUniverses"
+},
+{
+"name": "btnDeleteUnicast"
+},
+{
+"name": "univDGVN"
+},
+{
+"name": "btnAddUnicast"
+},
+{
+"name": "comboDestination"
+},
+{
+"name": "btnDeleteUniverse"
+},
+{
+"name": "btnAddMultipleUniverses"
+},
+{
+"name": "lblDestination"
+},
+{
+"name": "btnAddUniverse"
+}
+]
+},
+"btnDeleteAllUniverses": {
+"type": "Button",
+"props": {
+"FlatAppearance.BorderSize": 0,
+"Location": {
+"t": "point",
+"x": 294,
+"y": 112
+},
+"Name": "btnDeleteAllUniverses",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 28
+},
+"TabIndex": 9,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnDeleteAllUniverses_Click"
+},
+"children": []
+},
+"univDGVN": {
+"type": "DataGridViewNumbered",
+"props": {
+"AllowUserToAddRows": false,
+"AutoSizeColumnsMode": {
+"t": "enum",
+"type": "DataGridViewAutoSizeColumnsMode",
+"v": "AllCells"
+},
+"AutoSizeRowsMode": {
+"t": "enum",
+"type": "DataGridViewAutoSizeRowsMode",
+"v": "AllCells"
+},
+"BackgroundColor": {
+"t": "color",
+"system": "Control"
+},
+"ColumnHeadersDefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle1"
+},
+"ContextMenuStrip": {
+"t": "ref",
+"name": "rowManipulationContextMenuStrip"
+},
+"DefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle5"
+},
+"Location": {
+"t": "point",
+"x": 19,
+"y": 10
+},
+"Name": "univDGVN",
+"SelectionMode": {
+"t": "enum",
+"type": "DataGridViewSelectionMode",
+"v": "CellSelect"
+},
+"Size": {
+"t": "size",
+"x": 269,
+"y": 317
+},
+"TabIndex": 2
+},
+"events": {
+"CellEndEdit": "UnivDgvnCellEndEdit",
+"CellEnter": "UnivDgvnCellEnter",
+"CellMouseClick": "UnivDgvnCellMouseClick",
+"CellMouseEnter": "UnivDgvnCellMouseEnter",
+"CellValidated": "univDGVN_CellValidated",
+"CellValidating": "UnivDgvnCellValidating",
+"EditingControlShowing": "UnivDgvnEditingControlShowing",
+"UserAddedRow": "UnivDgvnInsertRow",
+"UserDeletedRow": "UnivDgvnDeletedRow",
+"KeyPress": "univDGVN_KeyPress",
+"KeyUp": "univDGVN_KeyUp"
+},
+"children": [],
+"Columns": [
+{
+"ref": "startColumn"
+},
+{
+"ref": "activeColumn"
+},
+{
+"ref": "universeColumn"
+},
+{
+"ref": "sizeColumn"
+}
+]
+},
+"startColumn": {
+"type": "DataGridViewTextBoxColumn",
+"props": {
+"ContextMenuStrip": {
+"t": "ref",
+"name": "rowManipulationContextMenuStrip"
+},
+"DefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle2"
+},
+"HeaderText": "Start",
+"MaxInputLength": 5,
+"Name": "startColumn",
+"Resizable": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+},
+"SortMode": {
+"t": "enum",
+"type": "DataGridViewColumnSortMode",
+"v": "NotSortable"
+},
+"ToolTipText": "Sort (LeftClick = Ascending, RightClick = Descending)",
+"Width": 37
+},
+"events": {},
+"children": []
+},
+"activeColumn": {
+"type": "DataGridViewCheckBoxColumn",
+"props": {
+"ContextMenuStrip": {
+"t": "ref",
+"name": "rowManipulationContextMenuStrip"
+},
+"HeaderText": "On",
+"Name": "activeColumn",
+"Resizable": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+},
+"Width": 29
+},
+"events": {},
+"children": []
+},
+"universeColumn": {
+"type": "DataGridViewTextBoxColumn",
+"props": {
+"ContextMenuStrip": {
+"t": "ref",
+"name": "rowManipulationContextMenuStrip"
+},
+"DefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle3"
+},
+"HeaderText": "Universe",
+"MaxInputLength": 5,
+"Name": "universeColumn",
+"Resizable": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+},
+"SortMode": {
+"t": "enum",
+"type": "DataGridViewColumnSortMode",
+"v": "NotSortable"
+},
+"ToolTipText": "Sort (LeftClick = Ascending, RightClick = Descending)",
+"Width": 58
+},
+"events": {},
+"children": []
+},
+"sizeColumn": {
+"type": "DataGridViewTextBoxColumn",
+"props": {
+"ContextMenuStrip": {
+"t": "ref",
+"name": "rowManipulationContextMenuStrip"
+},
+"DefaultCellStyle": {
+"t": "ref",
+"name": "dataGridViewCellStyle4"
+},
+"HeaderText": "Size",
+"MaxInputLength": 3,
+"Name": "sizeColumn",
+"Resizable": {
+"t": "enum",
+"type": "DataGridViewTriState",
+"v": "False"
+},
+"SortMode": {
+"t": "enum",
+"type": "DataGridViewColumnSortMode",
+"v": "NotSortable"
+},
+"ToolTipText": "Sort (LeftClick = Ascending, RightClick = Descending)",
+"Width": 33
+},
+"events": {},
+"children": []
+},
+"tabPageEX2": {
+"type": "TabPage",
+"props": {
+"Location": {
+"t": "point",
+"x": 4,
+"y": 22
+},
+"Name": "tabPageEX2",
+"Size": {
+"t": "size",
+"x": 343,
+"y": 398
+},
+"TabIndex": 1,
+"Text": "Advanced Options",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": [
+{
+"name": "lblPriority"
+},
+{
+"name": "autoPopulateStart"
+},
+{
+"name": "numericPriority"
+},
+{
+"name": "warningsCheckBox"
+},
+{
+"name": "chkBoxTransmitBlind"
+},
+{
+"name": "eventSuppressCountTextBox"
+},
+{
+"name": "label"
+},
+{
+"name": "statisticsCheckBox"
+},
+{
+"name": "label1"
+},
+{
+"name": "eventRepeatCountTextBox"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+382,
+485
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+397,
+519
+]
+}
+}
+}

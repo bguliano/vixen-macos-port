@@ -1,0 +1,23 @@
+Vixen Windows font-free raster verification (schema 2)
+
+1. Extract the entire ZIP to a normal local folder such as Downloads.
+   Do not put it inside your Vixen installation or show folder.
+2. Double-click Run-Raster.cmd. No Vixen install path is requested.
+3. Leave its console open. It compiles two tiny programs with the Windows
+   compiler already on this PC and runs 74 small independent drawing cases:
+   36 Picture helpers, 20 CountDown spinner helpers and 18 basic shapes/lines.
+4. Copy the displayed results-...zip back to the Mac. If no ZIP was made,
+   copy the entire displayed results-... folder instead, even after errors.
+
+Nothing is installed or downloaded. Vixen, your show, audio and controllers
+are not opened. All fixtures are generated colored pixels supplied here.
+Every case has a 10-second limit. Normal operation should be much faster;
+an independent outer watchdog limits the entire bootstrap/run to 15 minutes,
+including compilation and early setup stalls. Partial results remain available.
+The main run reserves time for diagnostics/packaging. If repeated case timeouts
+exhaust its budget, remaining cases are explicitly skipped and returned as such.
+It does not promise to finish all 74 cases when they stall.
+
+Successful capture is not proof of Mac parity. The returned exact pixels
+must be compared with the Mac implementation. No Windows result exists yet
+for this new raster pack.

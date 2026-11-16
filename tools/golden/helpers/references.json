@@ -1,0 +1,34 @@
+{
+  "Matrix.cs": {
+    "url": "https://raw.githubusercontent.com/dotnet/wpf/v10.0.0/src/Microsoft.DotNet.Wpf/src/WindowsBase/System/Windows/Media/Matrix.cs",
+    "sha256": "cbdf3115ca68bdb2ce2abcc24ed8d2569cd1f7c64296096336d8a159f90c6ae3"
+  },
+  "MatrixUtil.cs": {
+    "url": "https://raw.githubusercontent.com/dotnet/wpf/v10.0.0/src/Microsoft.DotNet.Wpf/src/Shared/MS/Internal/MatrixUtil.cs",
+    "sha256": "8be9d734d0b7c58642e86a9cc6a56eba7a0887c4eb5b82ef1472bab2341fe1be"
+  },
+  "RotateTransform.cs": {
+    "url": "https://raw.githubusercontent.com/dotnet/wpf/v10.0.0/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Media/RotateTransform.cs",
+    "sha256": "fef03fd53e495216ec4def872794f31a6bbe7182238df463d58abcd9de4fa120"
+  },
+  "Transform.cs": {
+    "url": "https://raw.githubusercontent.com/dotnet/wpf/v10.0.0/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Media/Transform.cs",
+    "sha256": "002705d3e79db6e688140d46944c38539726170e3f3474f8967eeaaef7ce551d"
+  },
+  "GeneralTransform.cs": {
+    "url": "https://raw.githubusercontent.com/dotnet/wpf/v10.0.0/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Media/GeneralTransform.cs",
+    "sha256": "a8e440aa423139b9d3e2aa17cc56cce2fc1d9274c18f5902594fd97ab22c910e"
+  },
+  "WPF-LICENSE.txt": {
+    "url": "https://raw.githubusercontent.com/dotnet/wpf/v10.0.0/LICENSE.TXT",
+    "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+  },
+  "NAudio-LICENSE.txt": {
+    "url": "https://raw.githubusercontent.com/naudio/NAudio/v2.3.0/license.txt",
+    "sha256": "303e01786b271eb464b3f43d18a375f2f17d37bc708a37c2fdf45b289fb5bfaa"
+  },
+  "naudio.core.2.3.0.nupkg": {
+    "url": "https://api.nuget.org/v3-flatcontainer/naudio.core/2.3.0/naudio.core.2.3.0.nupkg",
+    "sha256": "2940c2dbeabe7736424549227de3d27f10100858be56920ab120e4621b7f320c"
+  }
+}

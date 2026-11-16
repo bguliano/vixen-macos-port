@@ -1,0 +1,275 @@
+{
+"class": "InstrumentationForm",
+"source": "Vixen.Modules/App/Instrumentation/InstrumentationForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnClose"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"Name": "InstrumentationForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Instrumentation"
+},
+"events": {
+"Load": "InstrumentationForm_Load"
+},
+"children": [
+{
+"name": "tableLayoutPanel2"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"timer": {
+"type": "Timer",
+"props": {
+"Interval": 1000
+},
+"events": {
+"Tick": "timer_Tick"
+},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"btnClose": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 618,
+"y": 3
+},
+"Name": "btnClose",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnClose_Click"
+},
+"children": []
+},
+"btnReset": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 711,
+"y": 3
+},
+"Name": "btnReset",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "Reset",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "btnReset_Click"
+},
+"children": []
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Bottom"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "RightToLeft"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 368
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 801,
+"y": 33
+},
+"TabIndex": 1
+},
+"events": {},
+"children": [
+{
+"name": "btnReset"
+},
+{
+"name": "btnClose"
+}
+]
+},
+"textBox1": {
+"type": "RichTextBox",
+"props": {
+"Cursor": {
+"t": "enum",
+"type": "Cursors",
+"v": "Default"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "textBox1",
+"ScrollBars": {
+"t": "enum",
+"type": "RichTextBoxScrollBars",
+"v": "ForcedVertical"
+},
+"Size": {
+"t": "size",
+"x": 801,
+"y": 357
+},
+"TabIndex": 0,
+"Text": ""
+},
+"events": {},
+"children": []
+},
+"tableLayoutPanel2": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "tableLayoutPanel2",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 807,
+"y": 404
+},
+"TabIndex": 3
+},
+"events": {},
+"children": [
+{
+"name": "textBox1",
+"col": 0,
+"row": 0
+},
+{
+"name": "flowLayoutPanel1",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 90.0
+},
+{
+"type": "Percent",
+"size": 10.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+807,
+404
+]
+}
+}
+}

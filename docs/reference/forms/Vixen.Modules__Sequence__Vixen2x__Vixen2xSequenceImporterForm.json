@@ -1,0 +1,403 @@
+{
+"class": "Vixen2xSequenceImporterForm",
+"source": "Vixen.Modules/Sequence/Vixen2x/Vixen2xSequenceImporterForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "cancelButton"
+},
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MinimizeBox": false,
+"MaximizeBox": false,
+"Name": "Vixen2xSequenceImporterForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Vixen 2 to Vixen 3 Converter"
+},
+"events": {},
+"children": [
+{
+"name": "label2"
+},
+{
+"name": "vixen2ToVixen3MappingTextBox"
+},
+{
+"name": "vixen2ToVixen3MappingListBox"
+},
+{
+"name": "label1"
+},
+{
+"name": "cancelButton"
+},
+{
+"name": "convertButton"
+},
+{
+"name": "createMapButton"
+},
+{
+"name": "vixen2ProfileTextBox"
+},
+{
+"name": "vixen2ProfileLabel"
+},
+{
+"name": "vixen2SequenceTextBox"
+},
+{
+"name": "sequenceToConvertLabel"
+}
+],
+"objects": {
+"sequenceToConvertLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 177,
+"y": 13
+},
+"Name": "sequenceToConvertLabel",
+"Size": {
+"t": "size",
+"x": 101,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Vixen 2 Sequence:"
+},
+"events": {},
+"children": []
+},
+"vixen2SequenceTextBox": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 181,
+"y": 31
+},
+"Name": "vixen2SequenceTextBox",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 529,
+"y": 23
+},
+"TabIndex": 5
+},
+"events": {},
+"children": []
+},
+"vixen2ProfileLabel": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 177,
+"y": 62
+},
+"Name": "vixen2ProfileLabel",
+"Size": {
+"t": "size",
+"x": 84,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Vixen 2 Profile:"
+},
+"events": {},
+"children": []
+},
+"createMapButton": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 172
+},
+"Name": "createMapButton",
+"Size": {
+"t": "size",
+"x": 148,
+"y": 29
+},
+"TabIndex": 13,
+"Text": "Create New Map",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "createMapButton_Click"
+},
+"children": []
+},
+"convertButton": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 181,
+"y": 172
+},
+"Name": "convertButton",
+"Size": {
+"t": "size",
+"x": 128,
+"y": 29
+},
+"TabIndex": 14,
+"Text": "Convert Sequence",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "convertButton_Click"
+},
+"children": []
+},
+"cancelButton": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 605,
+"y": 172
+},
+"Name": "cancelButton",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 29
+},
+"TabIndex": 15,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "cancelButton_Click"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 177,
+"y": 112
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 81,
+"y": 15
+},
+"TabIndex": 16,
+"Text": "Selected Map:"
+},
+"events": {},
+"children": []
+},
+"vixen2ToVixen3MappingListBox": {
+"type": "ListBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"ItemHeight": 15,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 31
+},
+"Name": "vixen2ToVixen3MappingListBox",
+"Size": {
+"t": "size",
+"x": 147,
+"y": 124
+},
+"TabIndex": 17
+},
+"events": {
+"MouseClick": "vixen2ToVixen3MappingListBox_MouseClick"
+},
+"children": []
+},
+"vixen2ProfileTextBox": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 181,
+"y": 81
+},
+"Name": "vixen2ProfileTextBox",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 529,
+"y": 23
+},
+"TabIndex": 8
+},
+"events": {},
+"children": []
+},
+"vixen2ToVixen3MappingTextBox": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 181,
+"y": 130
+},
+"Name": "vixen2ToVixen3MappingTextBox",
+"ReadOnly": true,
+"Size": {
+"t": "size",
+"x": 529,
+"y": 23
+},
+"TabIndex": 18
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 86,
+"y": 15
+},
+"TabIndex": 19,
+"Text": "Channel Maps:"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+724,
+215
+]
+}
+}
+}

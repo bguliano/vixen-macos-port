@@ -1,0 +1,40 @@
+[package]
+name = "vixen-ffi"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["lib", "cdylib", "staticlib"]
+name = "vixen_ffi"
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "src/bin/uniffi-bindgen.rs"
+
+# One feature per window area, matching a Swift module. A worker building one area leaves the others out, so someone
+# else's half-finished area can't break its build. See scripts/build_app.sh.
+[features]
+default = ["admin", "dialogs", "setup", "preview", "sequencer", "scheduler", "tools"]
+admin = []
+dialogs = []
+setup = ["dialogs"]
+preview = ["vixen-session/prop-import"]
+timeline = []
+effecteditor = []
+marks = ["dialogs"]
+# The window itself, without the parts it assembles.
+shell = []
+sequencer = ["shell", "timeline", "effecteditor", "marks"]
+scheduler = []
+tools = ["dep:vixen-prop"]
+
+[dependencies]
+vixen-core = { path = "../vixen-core" }
+vixen-io = { path = "../vixen-io" }
+vixen-session = { path = "../vixen-session" }
+vixen-output = { path = "../vixen-output" }
+vixen-prop = { path = "../vixen-prop", optional = true }
+uuid.workspace = true
+parking_lot.workspace = true
+thiserror.workspace = true
+uniffi = { version = "0.29", features = ["cli"] }

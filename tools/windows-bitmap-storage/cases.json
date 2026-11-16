@@ -1,0 +1,477 @@
+{
+  "schema": 1,
+  "byteOrder": "ARGB8-row-major-top-down",
+  "cases": [
+    {
+      "id": "storage-01-owner-only",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "operation:graphics-owner-only",
+        "read:after-owner:getpixel",
+        "read:after-owner:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-owner",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-owner",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        }
+      ]
+    },
+    {
+      "id": "storage-02-partial-opaque",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "operation:fill-opaque",
+        "read:after-fill:getpixel",
+        "read:after-fill:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-fill",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-fill",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        }
+      ]
+    },
+    {
+      "id": "storage-03-partial-alpha0",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "operation:fill-alpha0",
+        "read:after-fill:getpixel",
+        "read:after-fill:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-fill",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-fill",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        }
+      ]
+    },
+    {
+      "id": "storage-04-partial-alpha1",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "operation:fill-alpha1",
+        "read:after-fill:getpixel",
+        "read:after-fill:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-fill",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-fill",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        }
+      ]
+    },
+    {
+      "id": "storage-05-partial-image",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "read:image-source-before:getpixel",
+        "read:image-source-before:lockbits-readonly",
+        "operation:draw-image-explicit-pixel-rectangles",
+        "read:after-image:getpixel",
+        "read:after-image:lockbits-readonly",
+        "read:image-source-after:getpixel",
+        "read:image-source-after:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "image-source-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 1
+        },
+        {
+          "label": "image-source-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 1
+        },
+        {
+          "label": "after-image",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-image",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "image-source-after",
+          "api": "getpixel",
+          "width": 6,
+          "height": 1
+        },
+        {
+          "label": "image-source-after",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "id": "storage-06-clear",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "operation:clear-alpha254",
+        "read:after-clear254:getpixel",
+        "read:after-clear254:lockbits-readonly",
+        "operation:clear-alpha0",
+        "read:after-clear0:getpixel",
+        "read:after-clear0:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-clear254",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-clear254",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-clear0",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-clear0",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        }
+      ]
+    },
+    {
+      "id": "storage-07-antialias",
+      "width": 6,
+      "height": 3,
+      "events": [
+        "read:seed-before:getpixel",
+        "read:seed-before:lockbits-readonly",
+        "operation:antialias-fill",
+        "read:after-antialias:getpixel",
+        "read:after-antialias:lockbits-readonly",
+        "read:coverage-before:getpixel",
+        "read:coverage-before:lockbits-readonly",
+        "operation:antialias-white-coverage",
+        "read:coverage-after:getpixel",
+        "read:coverage-after:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "seed-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "seed-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-antialias",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "after-antialias",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "coverage-before",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "coverage-before",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "coverage-after",
+          "api": "getpixel",
+          "width": 6,
+          "height": 3
+        },
+        {
+          "label": "coverage-after",
+          "api": "lockbits-readonly",
+          "width": 6,
+          "height": 3
+        }
+      ]
+    },
+    {
+      "id": "storage-08-drawn-source",
+      "width": 3,
+      "height": 5,
+      "events": [
+        "read:gray-input-before:getpixel",
+        "read:gray-input-before:lockbits-readonly",
+        "operation:original-grayscale-a",
+        "read:a-before-draw:getpixel",
+        "operation:draw-a-1to1-integer-overload",
+        "operation:original-grayscale-b",
+        "read:b-before-copy:getpixel",
+        "operation:reconstruct-c-setpixel",
+        "read:c-before-draw:getpixel",
+        "operation:draw-c-1to1-integer-overload",
+        "read:a-after-draw:getpixel",
+        "read:a-after-draw:lockbits-readonly",
+        "read:b-after-draw:getpixel",
+        "read:b-after-draw:lockbits-readonly",
+        "read:c-after-draw:getpixel",
+        "read:c-after-draw:lockbits-readonly",
+        "read:drawn-a:getpixel",
+        "read:drawn-a:lockbits-readonly",
+        "read:drawn-c:getpixel",
+        "read:drawn-c:lockbits-readonly",
+        "read:gray-input-after:getpixel",
+        "read:gray-input-after:lockbits-readonly"
+      ],
+      "observations": [
+        {
+          "label": "gray-input-before",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "gray-input-before",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "a-before-draw",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "b-before-copy",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "c-before-draw",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "a-after-draw",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "a-after-draw",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "b-after-draw",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "b-after-draw",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "c-after-draw",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "c-after-draw",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "drawn-a",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "drawn-a",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "drawn-c",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "drawn-c",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "gray-input-after",
+          "api": "getpixel",
+          "width": 3,
+          "height": 5
+        },
+        {
+          "label": "gray-input-after",
+          "api": "lockbits-readonly",
+          "width": 3,
+          "height": 5
+        }
+      ]
+    }
+  ]
+}

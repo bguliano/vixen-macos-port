@@ -1,0 +1,291 @@
+{
+  "steps": [
+    {
+      "action": "window",
+      "id": "administration"
+    },
+    {
+      "action": "wait",
+      "seconds": 2
+    },
+    {
+      "action": "window",
+      "id": "sequencer"
+    },
+    {
+      "action": "wait",
+      "seconds": 4
+    },
+    {
+      "action": "focus",
+      "window": "Ruler"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.resize",
+      "path": [
+        "1400",
+        "900"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "mouse",
+      "x": 900,
+      "y": 340
+    },
+    {
+      "action": "wait",
+      "seconds": 0.5
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f9"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f9"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f5"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f5"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "space"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "space"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f5"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f8"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "space",
+        "opt"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "space",
+        "opt"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "space",
+        "opt"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyEvent",
+      "path": [
+        "f8"
+      ]
+    },
+    {
+      "action": "wait",
+      "seconds": 0.4
+    },
+    {
+      "action": "hook",
+      "name": "sequencer.keyboardState"
+    },
+    {
+      "action": "hook",
+      "name": "timelinePlayback"
+    },
+    {
+      "action": "snapshot",
+      "name": "final"
+    },
+    {
+      "action": "quit"
+    }
+  ]
+}

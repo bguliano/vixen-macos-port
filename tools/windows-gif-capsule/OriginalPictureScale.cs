@@ -1,0 +1,31 @@
+// Exact 41c3f4f7 Picture.ScaleImage, unchanged method body.
+using System;
+using System.Drawing;
+internal static class OriginalPictureScale {
+		public static Bitmap ScaleImage(Image image, double scale)
+		{
+			lock (image)
+			{
+				int maxWidth = Convert.ToInt32((double) image.Width * scale);
+				int maxHeight = Convert.ToInt32((double) image.Height * scale);
+				var ratioX = (double) maxWidth / image.Width;
+				var ratioY = (double) maxHeight / image.Height;
+				var ratio = Math.Min(ratioX, ratioY);
+
+				var newWidth = (int) (image.Width * ratio);
+				var newHeight = (int) (image.Height * ratio);
+
+				// Make sure dimensions are at least 1 pixel
+				newWidth = Math.Max(1, newWidth);
+				newHeight = Math.Max(1, newHeight);
+
+				var newImage = new Bitmap(newWidth, newHeight);
+				using (var g = Graphics.FromImage(newImage))
+				{
+					g.DrawImage(image, 0, 0, newWidth, newHeight);
+					return newImage;
+				}
+			}
+		}
+
+}

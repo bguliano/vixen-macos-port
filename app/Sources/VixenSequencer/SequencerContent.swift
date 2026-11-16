@@ -1,0 +1,466 @@
+import AppKit
+import SwiftUI
+import VixenBridge
+import VixenKit
+
+#if canImport(VixenEffectEditor)
+import VixenEffectEditor
+#endif
+
+#if canImport(VixenMarks)
+import VixenMarks
+#endif
+
+#if canImport(VixenTimeline)
+import VixenTimeline
+#endif
+
+/// The window's regions, top to bottom, as upstream: tool strips; Effects, Timeline and the tabbed panels; the status bar.
+struct SequencerContent: View {
+    @Bindable var model: SequencerModel
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ToolbarBand(model: model)
+                .fixedSize(horizontal: false, vertical: true)
+            Divider()
+            DockArea(model: model)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            Divider()
+            StatusBarView(model: model)
+        }
+        .background(Theme.background)
+        .background(KeyCatcher(model: model))
+        .sheet(item: $model.sheet) { sheet in
+            SequencerSheetView(model: model, sheet: sheet)
+        }
+    }
+}
+
+/// Holds the first responder when nothing else wants it, so a key press with no control focused reaches the window's hotkeys.
+private struct KeyCatcher: NSViewRepresentable {
+    let model: SequencerModel
+
+    final class CatcherView: NSView {
+        weak var model: SequencerModel?
+
+        override var acceptsFirstResponder: Bool { true }
+
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            if let window, window.firstResponder === window {
+                window.makeFirstResponder(self)
+            }
+        }
+
+        override func keyDown(with event: NSEvent) {
+            if model?.handleKey(event) != true {
+                super.keyDown(with: event)
+            }
+        }
+    }
+
+    func makeNSView(context: Context) -> CatcherView {
+        let view = CatcherView()
+        view.model = model
+        return view
+    }
+
+    func updateNSView(_ nsView: CatcherView, context: Context) {}
+}
+
+/// `dockPanel`: Effects on the left, the timeline in the middle, the tabbed panels on the right. An `NSSplitView`, because the side panes hold their width as the window resizes and
+/// come back at the width they had. Panels hide rather than dispose, so what's in them survives (F2).
+struct DockArea: NSViewRepresentable {
+    let model: SequencerModel
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(model: model)
+    }
+
+    func makeNSView(context: Context) -> NSSplitView {
+        let split = NSSplitView()
+        split.isVertical = true
+        split.dividerStyle = .thin
+        split.delegate = context.coordinator
+        let left = hosted(DockPane(model: model, side: .left))
+        let centre = hosted(TimelineRegion(model: model))
+        let right = hosted(DockPane(model: model, side: .right))
+        for pane in [left, centre, right] {
+            split.addArrangedSubview(pane)
+        }
+        split.setHoldingPriority(NSLayoutConstraint.Priority(260), forSubviewAt: 0)
+        split.setHoldingPriority(NSLayoutConstraint.Priority(200), forSubviewAt: 1)
+        split.setHoldingPriority(NSLayoutConstraint.Priority(260), forSubviewAt: 2)
+        context.coordinator.split = split
+        return split
+    }
+
+    private func hosted(_ view: some View) -> NSView {
+        let host = NSHostingView(rootView: view)
+        // The split view decides sizes, not what's inside.
+        host.sizingOptions = []
+        return host
+    }
+
+    func updateNSView(_ split: NSSplitView, context: Context) {
+        context.coordinator.apply(model.panels)
+    }
+
+    @MainActor
+    final class Coordinator: NSObject, NSSplitViewDelegate {
+        let model: SequencerModel
+        weak var split: NSSplitView?
+        private var placed = false
+        private var leftHidden = false
+        private var rightHidden = false
+
+        init(model: SequencerModel) {
+            self.model = model
+        }
+
+        /// Shows or hides the side panes to match the layout, and puts the dividers where they were saved.
+        func apply(_ panels: ShellPanels?) {
+            guard let split, let panels, split.arrangedSubviews.count == 3 else { return }
+            let hideLeft = panels.leftTabs.isEmpty
+            let hideRight = panels.rightTabs.isEmpty
+            let changed = !placed || hideLeft != leftHidden || hideRight != rightHidden
+            guard changed else { return }
+            leftHidden = hideLeft
+            rightHidden = hideRight
+            split.arrangedSubviews[0].isHidden = hideLeft
+            split.arrangedSubviews[2].isHidden = hideRight
+            split.adjustSubviews()
+            place(panels)
+        }
+
+        private func place(_ panels: ShellPanels) {
+            guard let split else { return }
+            // Sizes aren't known until there's a window to lay out in.
+            if split.bounds.width < 1 {
+                DispatchQueue.main.async { [weak self] in
+                    if let panels = self?.model.panels {
+                        self?.place(panels)
+                    }
+                }
+                return
+            }
+            placed = true
+            let width = split.bounds.width
+            if !leftHidden {
+                split.setPosition(panels.leftWidth, ofDividerAt: 0)
+            }
+            if !rightHidden {
+                split.setPosition(width - panels.rightWidth - split.dividerThickness, ofDividerAt: 1)
+            }
+        }
+
+        func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+            dividerIndex == 0 ? max(proposedMinimumPosition, 120) : max(proposedMinimumPosition, splitView.arrangedSubviews[0].frame.maxX + 320)
+        }
+
+        func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+            if dividerIndex == 0 {
+                return min(proposedMaximumPosition, splitView.arrangedSubviews[2].frame.minX - 320)
+            }
+            return min(proposedMaximumPosition, splitView.bounds.width - 160)
+        }
+
+        func splitViewDidResizeSubviews(_ notification: Notification) {
+            guard placed, let split else { return }
+            let left = leftHidden ? nil : Double(split.arrangedSubviews[0].frame.width)
+            let right = rightHidden ? nil : Double(split.arrangedSubviews[2].frame.width)
+            model.setPanelWidths(left: left, right: right)
+        }
+    }
+}
+
+/// The timeline's tab: `Form_Grid`. Title "Timeline", changed by the audio it holds (F319), and with no close button.
+struct TimelineRegion: View {
+    let model: SequencerModel
+
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Text(model.ui?.timelineTitle ?? "Timeline")
+                    .font(.callout)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 4)
+                    .background(Theme.inputBackground, in: UnevenRoundedRectangle(topLeadingRadius: 5, topTrailingRadius: 5))
+                    .accessibilityIdentifier("timeline-tab")
+                Spacer(minLength: 0)
+            }
+            .padding(.top, 4)
+            .padding(.leading, 6)
+            Divider()
+            timeline
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+
+    @ViewBuilder
+    private var timeline: some View {
+        #if canImport(VixenTimeline)
+        if let canvas = model.canvas {
+            TimelinePane(canvas: canvas)
+        } else {
+            placeholder
+        }
+        #else
+        placeholder
+        #endif
+    }
+
+    private var placeholder: some View {
+        ContentUnavailableView {
+            Label("Timeline", systemImage: "rectangle.split.3x1")
+        } description: {
+            if model.ui != nil {
+                Text("The timeline joins this build with the VixenTimeline module.")
+            } else {
+                Text("Loading")
+            }
+        }
+        .background(Color(nsColor: Theme.Timeline.panelBackground))
+    }
+}
+
+/// One side's tabs. Upstream's sit along the bottom of the pane (`Editor.png`).
+struct DockPane: View {
+    let model: SequencerModel
+    let side: ShellSide
+
+    private var tabs: [ShellPanelTab] {
+        (side == .left ? model.panels?.leftTabs : model.panels?.rightTabs) ?? []
+    }
+
+    private var current: ShellPanelTab? {
+        let selected = side == .left ? model.panels?.selectedLeft : model.panels?.selectedRight
+        return tabs.first { $0.panel == selected } ?? tabs.first
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            if let current {
+                PanelHeader(title: current.title) {
+                    model.detachPanel(current.panel)
+                } close: {
+                    model.togglePanel(current.panel)
+                }
+                Divider()
+                // Every panel stays alive behind the one showing, so switching tabs keeps its state.
+                ZStack {
+                    ForEach(tabs, id: \.panel) { tab in
+                        PanelContent(model: model, panel: tab.panel)
+                            .opacity(tab.panel == current.panel ? 1 : 0)
+                            .allowsHitTesting(tab.panel == current.panel)
+                            .accessibilityHidden(tab.panel != current.panel)
+                            .environment(\.panelIsShowing, tab.panel == current.panel)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            Divider()
+            TabStrip(tabs: tabs, selected: current?.panel) { model.selectPanel($0, side: side) }
+        }
+        .background(Theme.background)
+    }
+}
+
+/// A panel's title row: `Effect Editor`, with detach and close at the right.
+struct PanelHeader: View {
+    let title: String
+    let detach: () -> Void
+    let close: () -> Void
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Text(title)
+                .font(.callout)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+            Spacer(minLength: 4)
+            Button(action: detach) {
+                Image(systemName: "rectangle.portrait.on.rectangle.portrait")
+            }
+            .help("Float this panel")
+            .accessibilityLabel("Float \(title)")
+            Button(action: close) {
+                Image(systemName: "xmark")
+            }
+            .help("Close")
+            .accessibilityLabel("Close \(title)")
+        }
+        .buttonStyle(.borderless)
+        .controlSize(.small)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+    }
+}
+
+/// The tabs along the bottom. Wraps rather than hides when there are more than fit.
+struct TabStrip: View {
+    let tabs: [ShellPanelTab]
+    let selected: ShellPanel?
+    let choose: (ShellPanel) -> Void
+
+    var body: some View {
+        WrappingStack(spacing: 2, lineSpacing: 2) {
+            ForEach(tabs, id: \.panel) { tab in
+                Button {
+                    choose(tab.panel)
+                } label: {
+                    Text(tab.title)
+                        .font(.caption)
+                        .lineLimit(1)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 3)
+                        .foregroundStyle(tab.panel == selected ? Color.accentColor : Color.primary)
+                        .background(tab.panel == selected ? Theme.inputBackground : Color.clear, in: RoundedRectangle(cornerRadius: 4))
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(tab.panel == selected ? .isSelected : [])
+            }
+        }
+        .padding(.horizontal, 4)
+        .padding(.vertical, 3)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+/// Lays children left to right, wrapping to another line when they don't fit.
+struct WrappingStack: Layout {
+    var spacing: CGFloat = 4
+    var lineSpacing: CGFloat = 4
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let width = proposal.width ?? .infinity
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var lineHeight: CGFloat = 0
+        var widest: CGFloat = 0
+        for view in subviews {
+            let size = view.sizeThatFits(.unspecified)
+            if x > 0, x + size.width > width {
+                y += lineHeight + lineSpacing
+                x = 0
+                lineHeight = 0
+            }
+            x += size.width + spacing
+            widest = max(widest, x - spacing)
+            lineHeight = max(lineHeight, size.height)
+        }
+        return CGSize(width: width.isFinite ? width : widest, height: y + lineHeight)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var x = bounds.minX
+        var y = bounds.minY
+        var lineHeight: CGFloat = 0
+        for view in subviews {
+            let size = view.sizeThatFits(.unspecified)
+            if x > bounds.minX, x + size.width > bounds.maxX {
+                y += lineHeight + lineSpacing
+                x = bounds.minX
+                lineHeight = 0
+            }
+            view.place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(size))
+            x += size.width + spacing
+            lineHeight = max(lineHeight, size.height)
+        }
+    }
+}
+
+/// What each panel shows.
+struct PanelContent: View {
+    let model: SequencerModel
+    let panel: ShellPanel
+
+    var body: some View {
+        switch panel {
+        case .effects:
+            EffectsPanel(model: model)
+        case .effectEditor:
+            #if canImport(VixenEffectEditor)
+            if let session = model.session {
+                EffectEditorPane(session: session, selectedEffects: model.editorSelection) { _ in
+                    model.refresh()
+                    return true
+                }
+            }
+            #else
+            PanelPlaceholder(title: "Effect Editor", detail: "The effect's properties show here, from the VixenEffectEditor module.", symbol: "slider.horizontal.3")
+            #endif
+        case .marks:
+            #if canImport(VixenMarks)
+            if let session = model.session {
+                MarkCollectionsPanel(session: session)
+            }
+            #else
+            PanelPlaceholder(title: "Mark Collections", detail: "Mark collections show here, from the VixenMarks module.", symbol: "metronome")
+            #endif
+        case .colorLibrary:
+            LibraryPanel(model: model, kind: .color)
+        case .curveLibrary:
+            LibraryPanel(model: model, kind: .curve)
+        case .gradientLibrary:
+            LibraryPanel(model: model, kind: .gradient)
+        case .layers:
+            LayersPanel(model: model)
+        case .findEffects:
+            FindPanel(model: model)
+        }
+    }
+}
+
+/// A panel whose contents come from another module or a later pass.
+struct PanelPlaceholder: View {
+    let title: String
+    let detail: String
+    let symbol: String
+
+    var body: some View {
+        ContentUnavailableView {
+            Label(title, systemImage: symbol)
+        } description: {
+            Text(detail)
+        }
+    }
+}
+
+/// A panel in its own `NSPanel`, floating beside the window.
+final class FloatingPanelWindow: NSPanel, NSWindowDelegate {
+    private weak var model: SequencerModel?
+    private let panelID: ShellPanel
+    private var closingProgrammatically = false
+
+    init(title: String, model: SequencerModel, panel: ShellPanel) {
+        self.model = model
+        self.panelID = panel
+        super.init(
+            contentRect: NSRect(x: 0, y: 0, width: 320, height: 480),
+            styleMask: [.titled, .closable, .resizable, .utilityWindow],
+            backing: .buffered,
+            defer: false
+        )
+        self.title = title
+        isFloatingPanel = true
+        hidesOnDeactivate = false
+        isReleasedWhenClosed = false
+        delegate = self
+        contentView = NSHostingView(rootView: PanelContent(model: model, panel: panel).preferredColorScheme(.dark))
+        setFrameAutosaveName("SequencerPanel-\(title)")
+    }
+
+    /// Closing a floating panel puts it back in the dock.
+    func windowWillClose(_ notification: Notification) {
+        guard !closingProgrammatically else { return }
+        model?.redockPanel(panelID)
+    }
+
+    func closeProgrammatically() {
+        closingProgrammatically = true
+        close()
+    }
+}

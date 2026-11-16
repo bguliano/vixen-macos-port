@@ -1,0 +1,827 @@
+{
+"class": "SetupForm",
+"source": "Vixen.Modules/Controller/RDSController/SetupForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupForm",
+"Text": "Launcher Commands and RDS Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "groupBox1"
+},
+{
+"name": "pictureBox1"
+},
+{
+"name": "button1"
+},
+{
+"name": "statusStrip1"
+},
+{
+"name": "groupBox3"
+},
+{
+"name": "groupBox4"
+},
+{
+"name": "groupBox2"
+}
+],
+"objects": {
+"groupBox3": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 465,
+"y": 204
+},
+"Name": "groupBox3",
+"Size": {
+"t": "size",
+"x": 181,
+"y": 52
+},
+"TabIndex": 3,
+"TabStop": false,
+"Text": "Options"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "chkSlow"
+},
+{
+"name": "chkBiDirectional"
+}
+]
+},
+"chkSlow": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 117,
+"y": 22
+},
+"Name": "chkSlow",
+"Size": {
+"t": "size",
+"x": 51,
+"y": 19
+},
+"TabIndex": 1,
+"Text": "Slow",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkSlow_CheckedChanged"
+},
+"children": []
+},
+"chkBiDirectional": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 22
+},
+"Name": "chkBiDirectional",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 19
+},
+"TabIndex": 0,
+"Text": "BiDirectional",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkBiDirectional_CheckedChanged"
+},
+"children": []
+},
+"groupBox4": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 10,
+"y": 10
+},
+"Name": "groupBox4",
+"Size": {
+"t": "size",
+"x": 444,
+"y": 246
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "RDS Hardware"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "label1"
+},
+{
+"name": "cboPortName"
+},
+{
+"name": "chkRequiresAuthentication"
+},
+{
+"name": "lblPassword"
+},
+{
+"name": "lblUserName"
+},
+{
+"name": "txtHttpPassword"
+},
+{
+"name": "txtHttpUsername"
+},
+{
+"name": "txtUrl"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "lblUrl"
+},
+{
+"name": "radioHttp"
+},
+{
+"name": "radioVFMT212R"
+},
+{
+"name": "radioMRDS1322"
+},
+{
+"name": "radioMRDS192"
+}
+]
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 283,
+"y": 27
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 15
+},
+"TabIndex": 15,
+"Text": "Serial Port"
+},
+"events": {},
+"children": []
+},
+"cboPortName": {
+"type": "ComboBox",
+"props": {
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 287,
+"y": 44
+},
+"Name": "cboPortName",
+"Size": {
+"t": "size",
+"x": 89,
+"y": 23
+},
+"TabIndex": 4
+},
+"events": {
+"SelectedIndexChanged": "cboPortName_SelectedIndexChanged"
+},
+"children": []
+},
+"chkRequiresAuthentication": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 146
+},
+"Name": "chkRequiresAuthentication",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 19
+},
+"TabIndex": 6,
+"Text": "HTTP(s) Requires Authentication",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkRequiresAuthentication_CheckedChanged"
+},
+"children": []
+},
+"lblPassword": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 228,
+"y": 176
+},
+"Name": "lblPassword",
+"Size": {
+"t": "size",
+"x": 57,
+"y": 15
+},
+"TabIndex": 13,
+"Text": "Password"
+},
+"events": {},
+"children": []
+},
+"lblUserName": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 46,
+"y": 176
+},
+"Name": "lblUserName",
+"Size": {
+"t": "size",
+"x": 62,
+"y": 15
+},
+"TabIndex": 12,
+"Text": "UserName"
+},
+"events": {},
+"children": []
+},
+"txtHttpPassword": {
+"type": "TextBox",
+"props": {
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 291,
+"y": 173
+},
+"MaxLength": 8,
+"Name": "txtHttpPassword",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 23
+},
+"TabIndex": 8
+},
+"events": {
+"TextChanged": "txtHttpPassword_TextChanged"
+},
+"children": []
+},
+"txtHttpUsername": {
+"type": "TextBox",
+"props": {
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 120,
+"y": 173
+},
+"MaxLength": 8,
+"Name": "txtHttpUsername",
+"Size": {
+"t": "size",
+"x": 102,
+"y": 23
+},
+"TabIndex": 7
+},
+"events": {
+"TextChanged": "txtHttpUsername_TextChanged"
+},
+"children": []
+},
+"txtUrl": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 48,
+"y": 75
+},
+"Name": "txtUrl",
+"Size": {
+"t": "size",
+"x": 389,
+"y": 23
+},
+"TabIndex": 5
+},
+"events": {
+"TextChanged": "txtUrl_TextChanged"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 90,
+"y": 111
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "{text}, {time}"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 111
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 77,
+"y": 15
+},
+"TabIndex": 7,
+"Text": "Macro Fields:"
+},
+"events": {},
+"children": []
+},
+"lblUrl": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 77
+},
+"Name": "lblUrl",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "URL"
+},
+"events": {},
+"children": []
+},
+"radioHttp": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 48
+},
+"Name": "radioHttp",
+"Size": {
+"t": "size",
+"x": 69,
+"y": 19
+},
+"TabIndex": 2,
+"Text": "HTTP(S)",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioHttp_CheckedChanged"
+},
+"children": []
+},
+"radioVFMT212R": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 140,
+"y": 48
+},
+"Name": "radioVFMT212R",
+"Size": {
+"t": "size",
+"x": 86,
+"y": 19
+},
+"TabIndex": 3,
+"Text": "V-FMT212R",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioVFMT212R_CheckedChanged"
+},
+"children": []
+},
+"radioMRDS1322": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 140,
+"y": 22
+},
+"Name": "radioMRDS1322",
+"Size": {
+"t": "size",
+"x": 81,
+"y": 19
+},
+"TabIndex": 1,
+"Text": "MRDS1322",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioMRDS1322_CheckedChanged"
+},
+"children": []
+},
+"radioMRDS192": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 22
+},
+"Name": "radioMRDS192",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "MRDS192",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "radioMRDS192_CheckedChanged"
+},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 10,
+"y": 263
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 444,
+"y": 60
+},
+"TabIndex": 2,
+"TabStop": false,
+"Text": "Test Interface"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "label4"
+},
+{
+"name": "btnTX"
+},
+{
+"name": "txtPSInterface"
+}
+]
+},
+"btnTX": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 350,
+"y": 22
+},
+"Name": "btnTX",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "Send"
+},
+"events": {
+"Click": "btnTX_Click"
+},
+"children": []
+},
+"txtPSInterface": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 114,
+"y": 24
+},
+"MaxLength": 64,
+"Name": "txtPSInterface",
+"Size": {
+"t": "size",
+"x": 229,
+"y": 23
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"pictureBox1": {
+"type": "PictureBox",
+"props": {
+"Enabled": false,
+"Image": {
+"t": "image",
+"file": "SetupForm__pictureBox1.Image.png"
+},
+"Location": {
+"t": "point",
+"x": 465,
+"y": 10
+},
+"Name": "pictureBox1",
+"Size": {
+"t": "size",
+"x": 181,
+"y": 138
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "StretchImage"
+},
+"TabIndex": 20,
+"TabStop": false
+},
+"events": {},
+"children": []
+},
+"statusStrip1": {
+"type": "StatusStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 326
+},
+"Name": "statusStrip1",
+"Padding": {
+"t": "padding",
+"l": 1,
+"t_": 0,
+"r": 16,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 662,
+"y": 22
+},
+"TabIndex": 24,
+"Text": "statusStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "StatusLbl1"
+}
+]
+},
+"StatusLbl1": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "StatusLbl1",
+"Size": {
+"t": "size",
+"x": 33,
+"y": 17
+},
+"Text": "DIYC"
+},
+"events": {},
+"children": []
+},
+"button1": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Font": {
+"t": "font",
+"name": "Microsoft Sans Serif",
+"size": 9.75
+},
+"Location": {
+"t": "point",
+"x": 521,
+"y": 287
+},
+"Name": "button1",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "Save",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 465,
+"y": 156
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 181,
+"y": 45
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Launcher Options",
+"Visible": false
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "chkHideLaunchedWindows"
+}
+]
+},
+"chkHideLaunchedWindows": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 22
+},
+"Name": "chkHideLaunchedWindows",
+"Size": {
+"t": "size",
+"x": 158,
+"y": 19
+},
+"TabIndex": 0,
+"Text": "Hide Launched Windows",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkHideLaunchedWindows_CheckedChanged"
+},
+"children": []
+},
+"label4": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 6,
+"y": 26
+},
+"Name": "label4",
+"Size": {
+"t": "size",
+"x": 102,
+"y": 15
+},
+"TabIndex": 16,
+"Text": "Macro value {text}"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+662,
+348
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit()"
+]
+}

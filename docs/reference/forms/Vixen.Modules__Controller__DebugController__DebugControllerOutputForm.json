@@ -1,0 +1,103 @@
+{
+"class": "DebugControllerOutputForm",
+"source": "Vixen.Modules/Controller/DebugController/DebugControllerOutputForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"DoubleBuffered": true,
+"Name": "DebugControllerOutputForm",
+"Text": "Debug Controller Output"
+},
+"events": {},
+"children": [
+{
+"name": "chkVerbose"
+},
+{
+"name": "textBoxOutput"
+}
+],
+"objects": {
+"textBoxOutput": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Multiline": true,
+"Name": "textBoxOutput",
+"Size": {
+"t": "size",
+"x": 514,
+"y": 331
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"chkVerbose": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 395,
+"y": 366
+},
+"Name": "chkVerbose",
+"Size": {
+"t": "size",
+"x": 65,
+"y": 17
+},
+"TabIndex": 1,
+"Text": "Verbose",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "chkVerbose_CheckedChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+538,
+405
+]
+}
+}
+}

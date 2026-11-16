@@ -1,0 +1,244 @@
+{
+"class": "UnicastForm",
+"source": "Vixen.Modules/Controller/E131/UnicastForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "okButton"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "cancelButton"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Icon": {
+"t": "image",
+"file": "UnicastForm___this.Icon.ico"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "UnicastForm",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "New Unicast Destination",
+"TopMost": true
+},
+"events": {
+"Load": "UnicastForm_Load"
+},
+"children": [
+{
+"name": "networkNameTextBox"
+},
+{
+"name": "networkNameRadio"
+},
+{
+"name": "ipRadio"
+},
+{
+"name": "okButton"
+},
+{
+"name": "cancelButton"
+},
+{
+"name": "ipTextBox"
+}
+],
+"objects": {
+"okButton": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 28,
+"y": 80
+},
+"Name": "okButton",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 25
+},
+"TabIndex": 101,
+"Text": "&OK"
+},
+"events": {
+"Click": "okButton_Click"
+},
+"children": []
+},
+"cancelButton": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 117,
+"y": 80
+},
+"Name": "cancelButton",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 25
+},
+"TabIndex": 102,
+"Text": "&Cancel"
+},
+"events": {
+"Click": "cancelButton_Click"
+},
+"children": []
+},
+"ipRadio": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Checked": true,
+"Location": {
+"t": "point",
+"x": 26,
+"y": 49
+},
+"Name": "ipRadio",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 19
+},
+"TabIndex": 104,
+"TabStop": true,
+"Text": "IP Address",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "Radio_CheckedChanged"
+},
+"children": []
+},
+"networkNameRadio": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 103,
+"y": 49
+},
+"Name": "networkNameRadio",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 19
+},
+"TabIndex": 105,
+"Text": "Network Name",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "Radio_CheckedChanged"
+},
+"children": []
+},
+"networkNameTextBox": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 45,
+"y": 18
+},
+"Name": "networkNameTextBox",
+"Size": {
+"t": "size",
+"x": 139,
+"y": 23
+},
+"TabIndex": 106,
+"Text": "myComputer"
+},
+"events": {},
+"children": []
+},
+"ipTextBox": {
+"type": "IpTextBox",
+"props": {
+"Font": {
+"t": "font",
+"name": "Microsoft Sans Serif",
+"size": 8.25
+},
+"Location": {
+"t": "point",
+"x": 45,
+"y": 18
+},
+"Name": "ipTextBox",
+"Size": {
+"t": "size",
+"x": 139,
+"y": 20
+},
+"TabIndex": 103,
+"Text": "127.0.0.1"
+},
+"events": {
+"TextChanged": "ipTextBox_TextChanged"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+227,
+110
+]
+}
+}
+}

@@ -1,0 +1,280 @@
+{
+"class": "DimmingFilterSetup",
+"source": "Vixen.Modules/OutputFilter/DimmingFilter/DimmingFilterSetup.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOk"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "DimmingFilterSetup",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Dimming Filter Setup"
+},
+"events": {},
+"children": [
+{
+"name": "checkBoxConvert"
+},
+{
+"name": "textBoxTag"
+},
+{
+"name": "label1"
+},
+{
+"name": "flowLayoutPanel1"
+}
+],
+"objects": {
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Bottom"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "RightToLeft"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 75
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 383,
+"y": 35
+},
+"TabIndex": 2
+},
+"events": {},
+"children": [
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOk"
+}
+]
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 304,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 0,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOk": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 221,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "buttonOk",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOk_Click"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 15,
+"y": 15
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Tag:"
+},
+"events": {},
+"children": []
+},
+"textBoxTag": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 44,
+"y": 15
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "textBoxTag",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 23
+},
+"TabIndex": 4
+},
+"events": {
+"TextChanged": "textBoxTag_TextChanged"
+},
+"children": []
+},
+"checkBoxConvert": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 19,
+"y": 45
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "checkBoxConvert",
+"Size": {
+"t": "size",
+"x": 189,
+"y": 19
+},
+"TabIndex": 5,
+"Text": "Automatically Control Dimmer",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+383,
+110
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+}
+}
+}

@@ -1,0 +1,389 @@
+{
+"class": "LaunchTypeEditor",
+"source": "Vixen.Modules/App/Shows/Editors/LaunchTypeEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "LaunchTypeEditor"
+},
+"events": {
+"Load": "LaunchTypeEditor_Load"
+},
+"children": [
+{
+"name": "panel1"
+},
+{
+"name": "checkBoxWaitForExit"
+},
+{
+"name": "checkBoxShowCommandWindow"
+},
+{
+"name": "label2"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"buttonSelectProgram": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 276,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "buttonSelectProgram",
+"Size": {
+"t": "size",
+"x": 30,
+"y": 31
+},
+"TabIndex": 12,
+"Text": "S",
+"toolTipText": "Select a File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSelectProgram_Click"
+},
+"children": []
+},
+"textBoxProgram": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 11,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "textBoxProgram",
+"Size": {
+"t": "size",
+"x": 262,
+"y": 26
+},
+"TabIndex": 11
+},
+"events": {
+"TextChanged": "textBoxProgram_TextChanged"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 9
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 125,
+"y": 20
+},
+"TabIndex": 10,
+"Text": "Program to Run:"
+},
+"events": {},
+"children": []
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {},
+"events": {},
+"children": []
+},
+"textBoxCommandLine": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 11,
+"y": 43
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "textBoxCommandLine",
+"Size": {
+"t": "size",
+"x": 262,
+"y": 26
+},
+"TabIndex": 14
+},
+"events": {
+"TextChanged": "textBoxCommandLine_TextChanged"
+},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 0,
+"y": 49
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 20
+},
+"TabIndex": 13,
+"Text": "Command Line:"
+},
+"events": {},
+"children": []
+},
+"buttonTest": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 276,
+"y": 43
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "buttonTest",
+"Size": {
+"t": "size",
+"x": 30,
+"y": 31
+},
+"TabIndex": 15,
+"Text": "T",
+"toolTipText": "Test",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonTest_Click"
+},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"checkBoxShowCommandWindow": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 135,
+"y": 83
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "checkBoxShowCommandWindow",
+"Size": {
+"t": "size",
+"x": 212,
+"y": 24
+},
+"TabIndex": 16,
+"Text": "Show Command Window",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxShowCommandWindow_CheckedChanged"
+},
+"children": []
+},
+"checkBoxWaitForExit": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 135,
+"y": 118
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "checkBoxWaitForExit",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 24
+},
+"TabIndex": 17,
+"Text": "Wait for Exit",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "checkBoxWaitForExit_CheckedChanged"
+},
+"children": []
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 124,
+"y": 0
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 308,
+"y": 79
+},
+"TabIndex": 18
+},
+"events": {},
+"children": [
+{
+"name": "buttonTest"
+},
+{
+"name": "textBoxCommandLine"
+},
+{
+"name": "buttonSelectProgram"
+},
+{
+"name": "textBoxProgram"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+9,
+20
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+5,
+4,
+5
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+435,
+231
+]
+}
+}
+}

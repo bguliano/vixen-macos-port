@@ -1,0 +1,18 @@
+[package]
+name = "vixen-effects"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vixen-video = { path = "../vixen-video" }
+vixen-core = { path = "../vixen-core" }
+uuid.workspace = true
+fastrand.workspace = true
+tiny-skia.workspace = true
+image.workspace = true
+core-text = "21"
+core-graphics = "0.24"
+core-foundation = "0.10"
+
+[dev-dependencies]
+serde_json.workspace = true

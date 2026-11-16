@@ -1,0 +1,494 @@
+{
+"class": "ColorCollectionLibrary_Form",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/ColorCollectionLibrary_Form.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "btnOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "btnCancel"
+},
+"DoubleBuffered": true,
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "ColorCollectionLibrary_Form",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Color Collection Editor"
+},
+"events": {
+"FormClosing": "RandomColorLibrary_Form_FormClosing"
+},
+"children": [
+{
+"name": "buttonRemoveColor"
+},
+{
+"name": "buttonExportCollection"
+},
+{
+"name": "buttonImportCollection"
+},
+{
+"name": "buttonAddColor"
+},
+{
+"name": "buttonNewCollection"
+},
+{
+"name": "buttonDeleteCollection"
+},
+{
+"name": "textBoxDescription"
+},
+{
+"name": "label1"
+},
+{
+"name": "btnCancel"
+},
+{
+"name": "btnOK"
+},
+{
+"name": "comboBoxCollections"
+},
+{
+"name": "lblLibraryName"
+},
+{
+"name": "listViewColors"
+}
+],
+"objects": {
+"listViewColors": {
+"type": "ListView",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Font": {
+"t": "font",
+"name": "Microsoft Sans Serif",
+"size": 8.25
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 42
+},
+"Name": "listViewColors",
+"ShowItemToolTips": true,
+"Size": {
+"t": "size",
+"x": 651,
+"y": 353
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false
+},
+"events": {
+"ItemDrag": "listViewColors_ItemDrag",
+"SelectedIndexChanged": "listViewColors_SelectedIndexChanged",
+"DragDrop": "listViewColors_DragDrop",
+"DragEnter": "listViewColors_DragEnter"
+},
+"children": []
+},
+"lblLibraryName": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 15
+},
+"Name": "lblLibraryName",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "Color Collection"
+},
+"events": {},
+"children": []
+},
+"comboBoxCollections": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 99,
+"y": 12
+},
+"Margin": {
+"t": "padding",
+"l": 1,
+"t_": 1,
+"r": 1,
+"b": 1
+},
+"Name": "comboBoxCollections",
+"Size": {
+"t": "size",
+"x": 207,
+"y": 21
+},
+"TabIndex": 2
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "comboBoxCollections_SelectedIndexChanged"
+},
+"children": []
+},
+"btnOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 452,
+"y": 412
+},
+"Name": "btnOK",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 23
+},
+"TabIndex": 8,
+"Text": "OK",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "btnOK_Click"
+},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 560,
+"y": 412
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 23
+},
+"TabIndex": 9,
+"Text": "Cancel",
+"UseVisualStyleBackColor": false
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 394,
+"y": 15
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 13
+},
+"TabIndex": 11,
+"Text": "Description"
+},
+"events": {},
+"children": []
+},
+"textBoxDescription": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Enabled": false,
+"Location": {
+"t": "point",
+"x": 460,
+"y": 12
+},
+"Name": "textBoxDescription",
+"Size": {
+"t": "size",
+"x": 203,
+"y": 20
+},
+"TabIndex": 12
+},
+"events": {
+"KeyUp": "textBoxDescription_KeyUp"
+},
+"children": []
+},
+"buttonNewCollection": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 317,
+"y": 11
+},
+"Name": "buttonNewCollection",
+"Size": {
+"t": "size",
+"x": 25,
+"y": 25
+},
+"TabIndex": 14,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonNewCollection_Click"
+},
+"children": []
+},
+"buttonDeleteCollection": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 352,
+"y": 11
+},
+"Name": "buttonDeleteCollection",
+"Size": {
+"t": "size",
+"x": 25,
+"y": 25
+},
+"TabIndex": 15,
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDeleteCollection_Click"
+},
+"children": []
+},
+"buttonAddColor": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 231,
+"y": 412
+},
+"Name": "buttonAddColor",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 23
+},
+"TabIndex": 16,
+"Text": "Add Color",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"EnabledChanged": "buttonTextColorChange",
+"Click": "buttonAddColor_Click"
+},
+"children": []
+},
+"buttonImportCollection": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 13,
+"y": 412
+},
+"Name": "buttonImportCollection",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 23
+},
+"TabIndex": 17,
+"Text": "Import Collection",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonImportCollection_Click"
+},
+"children": []
+},
+"buttonExportCollection": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 122,
+"y": 412
+},
+"Name": "buttonExportCollection",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 23
+},
+"TabIndex": 18,
+"Text": "Export Collection",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonExportCollection_Click"
+},
+"children": []
+},
+"buttonRemoveColor": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left"
+]
+},
+"Location": {
+"t": "point",
+"x": 340,
+"y": 412
+},
+"Name": "buttonRemoveColor",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 23
+},
+"TabIndex": 19,
+"Text": "Remove Color",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"EnabledChanged": "buttonTextColorChange",
+"Click": "buttonRemoveColor_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+675,
+447
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+691,
+486
+]
+}
+}
+}

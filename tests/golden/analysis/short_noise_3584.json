@@ -1,0 +1,35 @@
+{
+  "name": "short_noise_3584",
+  "input": {"kind": "noise", "rate": 44100, "seed": 21, "amplitude": 1.52587890625e-05, "length": 3584, "position": 0, "frequency": 0, "lead": 0, "tail": 0},
+  "input_len": 3584,
+  "input_fnv1a64": "0xde0673276de48dfd",
+  "driver": "beatsandbars",
+  "params": {"bpb": 4},
+  "step_size": 512,
+  "block_size": 1024,
+  "blocks": 7,
+  "features": {
+    "0": [
+      [0, 46439909, "1", []]
+    ],
+    "1": [
+      [0, 46439909, "1", []]
+    ],
+    "2": [
+      [0, 46439909, "1", [1]]
+    ]
+  },
+  "intermediate": {
+    "df_len": 5,
+    "df_fnv1a64": "0xc602b5e8c34d7452",
+    "beat_period_rle": [[0, 5]],
+    "tempi_len": 0,
+    "tempi_fnv1a64": "0xcbf29ce484222325",
+    "beats": [4],
+    "downbeats": [0],
+    "beatsd_len": 0,
+    "beatsd_fnv1a64": "0xcbf29ce484222325",
+    "downsampled_len": 224,
+    "downsampled_fnv1a64": "0x7fc2f839137a86ab"
+  }
+}

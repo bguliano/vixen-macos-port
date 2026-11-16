@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using VixenRaster;
+public static class RasterCapture {
+ [DllImport("kernel32.dll")] static extern uint SetErrorMode(uint mode);
+ static string Host{get{return Assembly.GetExecutingAssembly().Location;}}
+ static DrawingDefaults Settings(Graphics g){using(var clip=g.Clip)using(var t=g.Transform)return new DrawingDefaults{smoothing=g.SmoothingMode.ToString(),pixelOffset=g.PixelOffsetMode.ToString(),interpolation=g.InterpolationMode.ToString(),compositingMode=g.CompositingMode.ToString(),compositingQuality=g.CompositingQuality.ToString(),pageUnit=g.PageUnit.ToString(),pageScale=g.PageScale,dpiX=g.DpiX,dpiY=g.DpiY,transform=t.Elements,clipBounds=new[]{g.ClipBounds.X,g.ClipBounds.Y,g.ClipBounds.Width,g.ClipBounds.Height},visibleClipBounds=new[]{g.VisibleClipBounds.X,g.VisibleClipBounds.Y,g.VisibleClipBounds.Width,g.VisibleClipBounds.Height},clipIsInfinite=clip.IsInfinite(g)};}
+ static byte[] Pixels(Bitmap b){byte[] v=new byte[b.Width*b.Height*4];int n=0;for(int y=0;y<b.Height;y++)for(int x=0;x<b.Width;x++){var c=b.GetPixel(x,y);v[n++]=c.A;v[n++]=c.R;v[n++]=c.G;v[n++]=c.B;}return v;}
+ static byte[] Locked(Bitmap b,out int stride){
+  // This observer NEVER acquires WriteOnly/ReadWrite and NEVER copies bytes back.
+  var d=b.LockBits(new Rectangle(0,0,b.Width,b.Height),ImageLockMode.ReadOnly,PixelFormat.Format32bppArgb);stride=d.Stride;
+  try{if(Math.Abs(stride)!=b.Width*4||d.PixelFormat!=PixelFormat.Format32bppArgb)throw new InvalidDataException("Unexpected stride/pixel format");byte[] v=new byte[b.Width*b.Height*4],row=new byte[b.Width*4];for(int y=0;y<b.Height;y++){Marshal.Copy(IntPtr.Add(d.Scan0,y*stride),row,0,row.Length);for(int x=0;x<b.Width;x++){int o=(y*b.Width+x)*4,s=x*4;v[o]=row[s+3];v[o+1]=row[s+2];v[o+2]=row[s+1];v[o+3]=row[s];}}return v;}finally{b.UnlockBits(d);}
+ }
+ static Bitmap Seed(int w,int h,byte[] bytes){var b=new Bitmap(w,h,PixelFormat.Format32bppArgb);for(int y=0;y<h;y++)for(int x=0;x<w;x++){int i=(y*w+x)*4;b.SetPixel(x,y,Color.FromArgb(bytes[i],bytes[i+1],bytes[i+2],bytes[i+3]));}return b;}
+ static void Preflight(string output){using(var b=new Bitmap(2,2,PixelFormat.Format32bppArgb))using(var g=Graphics.FromImage(b)){
+  g.Clear(Color.Transparent);var a=typeof(Bitmap).Assembly;var r=new RuntimeReport{status="available",os=Environment.OSVersion.VersionString,clr=Environment.Version.ToString(),hostSha256=Data.HashFile(Host),is64BitProcess=Environment.Is64BitProcess,is64BitOperatingSystem=Environment.Is64BitOperatingSystem,drawingIdentity=a.FullName,drawingPath=a.Location,drawingSha256=Data.HashFile(a.Location),freshGraphicsDefaults=Settings(g)};
+  foreach(ProcessModule m in Process.GetCurrentProcess().Modules)if(String.Equals(Path.GetFileName(m.FileName),"gdiplus.dll",StringComparison.OrdinalIgnoreCase)){r.gdiplusPath=m.FileName;r.gdiplusVersion=m.FileVersionInfo.FileVersion;r.gdiplusSha256=Data.HashFile(m.FileName);break;}if(r.gdiplusPath==null)throw new InvalidOperationException("GDI provenance missing");Data.SaveNew(Path.Combine(output,"preflight.json"),r);
+ }}
+ sealed class Recorder {
+  public readonly List<string> events=new List<string>();public readonly List<Observation> observations=new List<Observation>();public readonly List<DrawingState> states=new List<DrawingState>();public readonly List<FileRecord> files=new List<FileRecord>();readonly string dir;
+  public Recorder(string dir){this.dir=dir;}
+  public void Write(string name,byte[] bytes){Data.WriteNew(Path.Combine(dir,name),bytes);files.Add(Data.Record(dir,name));}
+  public byte[] Read(string label,Bitmap b,bool lockAlso){byte[] first=null;foreach(string api in lockAlso?new[]{"getpixel","lockbits-readonly"}:new[]{"getpixel"}){int stride=0;byte[] bytes=api=="getpixel"?Pixels(b):Locked(b,out stride);if(first==null)first=bytes;string file=label+"-"+api+".argb";events.Add("read:"+label+":"+api);Write(file,bytes);observations.Add(new Observation{label=label,api=api,width=b.Width,height=b.Height,stride=stride,pixelFormat=b.PixelFormat.ToString(),file=file});}return first;}
+  public void Operation(string label){events.Add("operation:"+label);}
+  public void Draw(string label,Bitmap b,Action<Graphics> draw,bool aa){Operation(label);using(var g=Graphics.FromImage(b)){if(aa)g.SmoothingMode=SmoothingMode.AntiAlias;states.Add(new DrawingState{label=label,state=Settings(g)});draw(g);}}
+ }
+ static void Capture(string pack,CaseSpec c,string dir){
+  var r=new Recorder(dir);byte[] input=Data.Requested(c);r.Write("input-requested.argb",input);
+  using(var b=Seed(c.width,c.height,input)){
+   if(c.id=="storage-08-drawn-source"){
+    r.Read("gray-input-before",b,true);
+    r.Operation("original-grayscale-a");using(var a=(Bitmap)OriginalPictureMethods.ConvertToGrayScale(b))using(var drawnA=new Bitmap(3,5,PixelFormat.Format32bppArgb)){
+     r.Read("a-before-draw",a,false); // GetPixel only. Do NOT LockBits A before its later DrawImage.
+     r.Draw("draw-a-1to1-integer-overload",drawnA,delegate(Graphics g){g.DrawImage(a,0,0,3,5);},false);
+     r.Operation("original-grayscale-b");using(var second=(Bitmap)OriginalPictureMethods.ConvertToGrayScale(b)){
+      byte[] stored=r.Read("b-before-copy",second,false);r.Operation("reconstruct-c-setpixel");using(var copy=Seed(3,5,stored))using(var drawnC=new Bitmap(3,5,PixelFormat.Format32bppArgb)){
+       byte[] copied=r.Read("c-before-draw",copy,false);if(Data.Hash(copied)!=Data.Hash(stored))throw new InvalidDataException("GetPixel/SetPixel reconstruction differs; partial bytes preserved");
+       r.Draw("draw-c-1to1-integer-overload",drawnC,delegate(Graphics g){g.DrawImage(copy,0,0,3,5);},false);
+       r.Read("a-after-draw",a,true);r.Read("b-after-draw",second,true);r.Read("c-after-draw",copy,true);r.Read("drawn-a",drawnA,true);r.Read("drawn-c",drawnC,true);r.Read("gray-input-after",b,true);
+      }
+     }
+    }
+   }else{
+    r.Read("seed-before",b,true);
+    if(c.id=="storage-01-owner-only"){r.Draw("graphics-owner-only",b,delegate(Graphics g){},false);r.Read("after-owner",b,true);}
+    else if(c.id=="storage-02-partial-opaque"||c.id=="storage-03-partial-alpha0"||c.id=="storage-04-partial-alpha1"){
+     int alpha=c.id=="storage-02-partial-opaque"?255:c.id=="storage-03-partial-alpha0"?0:1;string label=alpha==255?"fill-opaque":alpha==0?"fill-alpha0":"fill-alpha1";
+     using(var brush=new SolidBrush(alpha==1?Color.FromArgb(1,255,255,255):Color.FromArgb(alpha,19,101,203)))r.Draw(label,b,delegate(Graphics g){g.FillRectangle(brush,0,1,6,1);},false);r.Read("after-fill",b,true);
+    }else if(c.id=="storage-05-partial-image"){
+     var row=new byte[24];Array.Copy(input,row,24);using(var source=Seed(6,1,row)){r.Read("image-source-before",source,true);r.Draw("draw-image-explicit-pixel-rectangles",b,delegate(Graphics g){g.DrawImage(source,new Rectangle(0,1,6,1),0,0,6,1,GraphicsUnit.Pixel);},false);r.Read("after-image",b,true);r.Read("image-source-after",source,true);}
+    }else if(c.id=="storage-06-clear"){
+     r.Draw("clear-alpha254",b,delegate(Graphics g){g.Clear(Color.FromArgb(254,177,177,177));},false);r.Read("after-clear254",b,true);r.Draw("clear-alpha0",b,delegate(Graphics g){g.Clear(Color.FromArgb(0,17,43,89));},false);r.Read("after-clear0",b,true);
+    }else if(c.id=="storage-07-antialias"){
+     using(var brush=new SolidBrush(Color.FromArgb(127,31,97,211)))r.Draw("antialias-fill",b,delegate(Graphics g){g.FillRectangle(brush,1.25f,.875f,3.5f,.25f);},true);r.Read("after-antialias",b,true);
+     using(var coverage=new Bitmap(6,3,PixelFormat.Format32bppArgb))using(var white=new SolidBrush(Color.White)){r.Read("coverage-before",coverage,true);r.Draw("antialias-white-coverage",coverage,delegate(Graphics g){g.FillRectangle(white,1.25f,.875f,3.5f,.25f);},true);r.Read("coverage-after",coverage,true);}
+    }else throw new InvalidDataException("Unknown case");
+   }
+  }
+  var report=new RasterReport{status="complete",id=c.id,input=c,events=r.events.ToArray(),observations=r.observations.ToArray(),drawingStates=r.states.ToArray(),files=r.files.ToArray(),hostSha256=Data.HashFile(Host),originalMethodsSha256=Data.HashFile(Path.Combine(pack,"OriginalPictureMethods.cs.in"))};
+  Data.SaveNew(Path.Combine(dir,"manifest.json"),report);Data.ValidateReport(dir,c,report.hostSha256,report.originalMethodsSha256);
+ }
+ public static int Main(string[] args){try{
+  if(args.Length==1&&args[0]=="--emit-cases"){Console.WriteLine(System.Text.Encoding.UTF8.GetString(Data.Json(Data.Cases())));return 0;}
+  if(args.Length==1&&args[0]=="--emit-input-digests"){foreach(var c in Data.Cases().cases)Console.WriteLine(c.id+" "+Data.Hash(Data.Requested(c)));return 0;}
+  if(args.Length==2&&args[0]=="--validate-cases"){Data.ValidateCases(args[1]);return 0;}
+  if(Environment.OSVersion.Platform!=PlatformID.Win32NT)throw new PlatformNotSupportedException("Windows GDI only; no fallback drawing");SetErrorMode(0x0001|0x0002|0x8000);
+  string output=Path.GetDirectoryName(Host);
+  if(args.Length==1&&args[0]=="--preflight"){Preflight(output);return 0;}
+  if(args.Length!=3||args[0]!="--case")throw new ArgumentException("Expected --case pack id");string pack=Path.GetFullPath(args[1]);
+  if(Path.GetDirectoryName(output)!=pack||!Path.GetFileName(output).StartsWith("results-"))throw new IOException("Owned direct results directory required");
+  foreach(var c in Data.ValidateCases(Path.Combine(pack,"cases.json")).cases)if(c.id==args[2]){string dir=Path.Combine(output,"cases",c.id);if(!Directory.Exists(dir)||Directory.GetFileSystemEntries(dir).Length!=0)throw new IOException("Fresh empty case directory required");Capture(pack,c,dir);return 0;}throw new ArgumentException("Unknown case id");
+ }catch(Exception e){Console.Error.WriteLine(e);return 2;}}
+}

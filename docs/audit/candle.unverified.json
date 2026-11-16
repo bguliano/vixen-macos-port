@@ -1,0 +1,83 @@
+{
+ "findings": [
+  {
+   "id": "candle-1",
+   "severity": "wrong-output",
+   "summary": "The valid-colour check compares only ARGB, but C# also compares known-colour identity, so a default Candle on an RGBW element stays white instead of turning red.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:185 calls validColors.Contains(_data.Color) on a HashSet<System.Drawing.Color>, whose equality includes known-colour state. CandleData.cs:17 defaults to the known Color.White, and /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Property/Color/ColorStaticData.cs:21-24 builds RGBW with FromArgb. Contains is therefore false, and CandleModule.cs:189 sets Color to the first valid colour, (255,0,0).",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/candle.rs:10 calls valid.contains(&p.color(\"Color\")) on vixen_core::Color, which is four bytes. /Users/developer/nosync/Vixen Lights Port/crates/vixen-core/src/color.rs:5-14 says Vixen never relies on the distinction, but this check does. White is found, so nothing changes. /Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/values.rs:165-167 also reduces a known colour from a file to plain ARGB.",
+   "scenario": "New Candle with the default Color, targeting elements set to MultipleDiscreteColors \"RGBW\". C#: Color becomes (255,0,0) and the DiscreteLightingIntent is red (confirmed by running the compiled CandleModule). Rust: the discrete intents stay (255,255,255) (confirmed by rendering DESCRIPTOR with validate applied). By reading, the same happens to a saved Candle holding known White whose targets later became RGBW. A Candle already holding FromArgb white stays white in both, and an RGB set without white turns red in both."
+  },
+  {
+   "id": "candle-2",
+   "severity": "needs-context",
+   "summary": "Only test code calls the validate hook, so CheckForInvalidColorData does not run on load or on a target change. The session layer that would call it isn't built yet, so this may simply be pending.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:19-28 (ModuleData setter) and 35-38 (TargetNodesChanged) run CheckForInvalidColorData. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/Module/Effect/EffectModuleInstanceBase.cs:53-67 calls TargetNodesChanged when targets are assigned, so every loaded or retargeted effect is corrected before it renders.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/vixen-engine/src/render.rs:44-45 passes job.params straight to render, and /Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/sequence.rs:462 decodes params without validating. The only callers of EffectDescriptor.validate are /Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/testing.rs:68, /Users/developer/nosync/Vixen Lights Port/crates/vixen-effect-registry/tests/golden.rs:396 and the cfg(test) module at /Users/developer/nosync/Vixen Lights Port/crates/fx-audio-state/src/audio_helper.rs:522. /Users/developer/nosync/Vixen Lights Port/crates/vixen-session/src/lib.rs only holds the thumbnail module so far.",
+   "scenario": "Saved Candle with Color white whose target is now SingleColor red. C#: Color is corrected to red at load, the intents are red discrete, and the element lights. Rust engine path as it stands: the intent is white discrete, and /Users/developer/nosync/Vixen Lights Port/crates/vixen-output/src/filters/color_breakdown.rs:183 matches exact ARGB only, so the red output gets 0 and stays dark. The tests call validate themselves, so they wouldn't notice. Whoever builds the session needs to call validate at load and on target change, and keep the corrected colour."
+  },
+  {
+   "id": "candle-3",
+   "severity": "wrong-output",
+   "summary": "FlickerFrequency 0 always renders dark in Rust, while C# can render a full-length fade.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:297 computes 1000f/_data.FlickerFrequency, which is +Infinity with no exception. Line 302 gives Infinity when the deviation is positive and NaN otherwise. Line 236 caps Infinity to the remaining time, so that block gets one intent spanning the effect. NaN throws at line 237, PreRender fails, and earlier blocks are kept. The property has no NumberRange, and the integer editor's default minimum is 0 (/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/Controls/IntegerEditor.cs:137-138), so 0 can be entered.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/candle.rs:46-49 returns empty intents for frequency <= 0, with a comment saying the C# throws. The test at line 175 pins the dark result.",
+   "scenario": "FlickerFrequency 0, default deviation cap 0.25, 1500 ms. Each block has a 24 in 50 chance of a single 1500 ms ramp. Compiled C# on one element: 285 of 400 renders lit, higher than 24/50 because a failed effect stays dirty and Render tries again. Compiled C# on 30 elements: 91 of 200 renders had some light, with a mean of 0.83 elements lit. Rust: nothing lit in any render. With deviation cap 0, both are always dark. By reading, a negative frequency (XML only) never finishes in C#, so the Rust guard is reasonable there."
+  },
+  {
+   "id": "candle-4",
+   "severity": "wrong-output",
+   "summary": "A childless group node in the target stops the C# render part-way, but Rust skips it and lights every element.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:260 and 268 read element.Element.Id, which throws NullReferenceException on a leaf with a null Element, and lines 273-277 rethrow it. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/Module/Effect/EffectModuleInstanceBase.cs:132-138 catches it, and Render (142-150) returns the intents built so far. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/IO/Xml/Serializer/XmlElementNodeSerializer.cs:92-96 can load such a node, and /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Core/Sys/ElementNode.cs:258-266 enumerates it as a leaf.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/candle.rs:85 uses let Some(id) = ... else { continue }, which skips the node and carries on. /Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/system.rs:313-314 loads the same node with element_id None.",
+   "scenario": "Target group [a0, a1, a2, empty group, b0, b1, b2], defaults, 1000 ms. C# (run): a0-a2 flicker, b0-b2 get no intents, and PreRender returns false. Rust (run): all six flicker. With GroupLevel 10, C# gives a0-a2 one intent each and nothing else, while Rust gives all six about 21 intents. The porting guide allows a dark render for a C# exception, but here Rust lights more than C#. Only configurations containing an empty group are affected."
+  },
+  {
+   "id": "candle-5",
+   "severity": "editor-metadata",
+   "summary": "The five Percentage properties have no percent editor in the Rust table.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:94, 109, 124, 139 and 154 declare them as Percentage. /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/Editors/EditorCollection.cs:53 maps that type to the percentage slider. Themes/SliderEditor.xaml:65-81 in the same editor project makes it 0 to 100 without snapping. Converters/PercentageValueConverter.cs shows value*100, stores value/100, and resets an out-of-range value to 1.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/candle.rs lines 42/51, 59/68, 110/119, 144/153 and 161/170 use ParamKind::Double with Editor::Default, which /Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:83-84 says is chosen by type, so a plain number field. Double is right for the XML, because CandleData.cs:32-44 stores float. ParamKind::Percentage expects a <Value> child (/Users/developer/nosync/Vixen Lights Port/crates/vixen-io/src/values.rs:358-361), so it can't simply be swapped in.",
+   "scenario": "MinLevel at its default: C# shows a slider at 10 of 100. A field built from this table holds 0.1 with no limits, so typing 50 would store 50.0, not 0.5. CandleModule is the only effect with Percentage properties, so no other effect's table shows this case."
+  },
+  {
+   "id": "candle-6",
+   "severity": "editor-metadata",
+   "summary": "Group Level is a slider in the table, but C# uses the integer text box.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:40-46 has [NumberRange(1, 5000, 1)] and no [PropertyEditor], so /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/Editors/EditorCollection.cs:40 picks the integer editor. Themes/EditorResources.xaml:70-79 in that project reads the range from NumberRange: a text box with a drag strip, 1 to 5000, step 1.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/candle.rs:136 has Editor::Slider { min: 1.0, max: 5000.0, step: 1.0 }. /Users/developer/nosync/Vixen Lights Port/scripts/gen_effect_params.py:688-690 turns any NumberRange into a slider. The Editor enum (/Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:82-92) has no integer field with a range, and Editor::Default would lose the limits.",
+   "scenario": "Setting GroupLevel to 7: C# lets you type 7. On a 1 to 5000 slider that value is hard to hit, and the control differs from the original."
+  },
+  {
+   "id": "candle-7",
+   "severity": "editor-metadata",
+   "summary": "In the Flicker category, Frequency and Flicker appear in the opposite order from C#.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/PropertyEditing/PropertyItemComparer.cs:49-63 sorts by PropertyOrder, then by DisplayName ignoring case. The Flicker category is therefore Change Percent, Deviation, Flicker, Frequency.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:528-541 (visible_params) breaks ties by table index, and /Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/candle.rs lists properties by C# name. The printed result is Change Percent, Deviation, Frequency, Flicker.",
+   "scenario": "Opening any Candle's editor: C# shows Flicker above Frequency, and Rust shows the reverse. The other categories match, including Brightness (Max then Min). The cause is in the shared sort, so other effects whose display names sort differently from their property names are likely affected too."
+  },
+  {
+   "id": "candle-8",
+   "severity": "editor-metadata",
+   "summary": "The effect's Information text has no place in the Rust descriptor.",
+   "csharp": "/Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Effect/Candle/CandleModule.cs:167-170 returns \"Visit the Vixen Lights website for more information on this effect.\" /Users/developer/nosync/Vixen Lights Port/upstream/Vixen/src/Vixen.Modules/Editor/EffectEditor/EffectPropertyEditorGrid.cs:295-298 reads it, and Design/CategorizedLayout.xaml:55-58 in that project shows it in a box above the properties, with a More Info link.",
+   "rust": "/Users/developer/nosync/Vixen Lights Port/crates/vixen-effects/src/framework.rs:492 has info_link, filled from /Users/developer/nosync/Vixen Lights Port/crates/fx-basic/src/generated/candle.rs:15, but EffectDescriptor has no text field, so the sentence isn't carried anywhere.",
+   "scenario": "Selecting a Candle: C# shows the sentence and the More Info link, and a Rust editor can only show the link. Candle uses the common wording, so a shared default would cover it, but Strobe and Glediator have their own text."
+  }
+ ],
+ "areas_checked": [
+  "Rendering, line by line (_PreRender, _RenderCandleOnElements, all three generators): no differences when frequency is above 0 and every leaf has an element. That covers float/double widths, the (int) truncation of the caps, the Next ranges, clamp order, the zero-length state's 1 ms path without an intent, state reset per block, intent timing, per-target Distinct, chunking across targets, and discrete versus full-colour selection.",
+  "Hand-worked sets. Defaults: 50 ms state, cap 25, so 37.5 to 62 ms, matching the golden span_max of 62. Frequency 3 with caps 0 and a flat level: 3333333-tick states in both, plus a final 1-tick intent (Rust run; C# by the same arithmetic). MinLevel 0.9 with MaxLevel 0.2: both pin to 0.2f (C# run; Rust by reading).",
+  "Golden comparison: tests/golden/Candle.json gave 0 mismatches over 5 runs of the current 52 cases (5 exact, 47 statistical), after 3 earlier clean runs of the previous 35-case file. It ran from a scratch copy of the test, because /Users/developer/nosync/Vixen Lights Port/crates/vixen-effect-registry/Cargo.toml has no serde_json dev-dependency, so the repo's golden test target would not build when I tried it. Other agents are editing these files.",
+  "C# behaviour in candle-1, candle-3 and candle-4 was confirmed by running the compiled CandleModule from target/golden/bin in a scratch probe; the Rust results came from a scratch test against DESCRIPTOR. Caveat: that compiled build's ColorProperty.cs converts valid colours to plain ARGB, unlike upstream, so golden data cannot show upstream's named-colour cases. The Candle sources are identical, and candle-1's result doesn't depend on that change.",
+  "Parameter table: all nine names, xml names, types, xml levels and namespaces, defaults (full constructor), categories and order, labels and descriptions (resolved from the resx files), browsable state, [Value] flags, and the TargetPositioning enum match. Editor kinds and property order are the exceptions, in candle-5 to candle-7. Descriptor identity, info link and icon also match.",
+  "OnDeserialized: the GroupLevel <= 0 and empty Color fixes are ported in crates/vixen-io/src/fixups.rs, and absent members take C# default values. One unreachable difference: FromArgb(0,0,0,0) is treated as empty and becomes white, but the colour pickers cannot produce it.",
+  "Visibility: the C# has no UpdateAttributes or SetBrowsable logic and Rust has visibility None, so they match and the known VisibilityFn limitation doesn't apply here.",
+  "Property setters: they only set IsDirty and raise OnPropertyChanged, so param_changed None is correct. The ModuleData setter's validation is covered by candle-2.",
+  "Validation: apart from candle-1 and candle-2, the logic and first-valid-colour order match, including insertion order through nested HashSets and missing colour sets.",
+  "Thumbnails: Candle does not override GenerateVisualRepresentation or ForceGenerateVisualRepresentation, so force_visual false and visual None match, and the known VisualFn limitation doesn't apply. crates/vixen-session/src/thumbnail.rs follows IntentRasterizer for lighting and discrete ramps.",
+  "Panic review: no panic path found for empty targets, zero-length effects, single elements, GroupLevel above the element count, deviation caps of 0 or 1, or frequency <= 0. The 4 fx-basic Candle tests pass.",
+  "Seen but not reported as a finding: crates/vixen-io/src/system.rs keeps a leaf whose channel is missing from the file, which C# drops at load. With GroupLevel above 1 this could shift which elements share a group, but only on damaged files, and the code documents the choice as deliberate.",
+  "I edited no source files in the repo. Probes and build output are in the scratchpad, and cargo ran with --offline and a scratch target directory."
+ ]
+}

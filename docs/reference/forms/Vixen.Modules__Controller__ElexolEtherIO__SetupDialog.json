@@ -1,0 +1,383 @@
+{
+"class": "SetupDialog",
+"source": "Vixen.Modules/Controller/ElexolEtherIO/SetupDialog.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "okButton"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "ref",
+"name": "cancelButton"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "SetupDialog",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Elexol USB I/O 24 Configuration"
+},
+"events": {},
+"children": [
+{
+"name": "cancelButton"
+},
+{
+"name": "okButton"
+},
+{
+"name": "groupBox1"
+},
+{
+"name": "ethernetSettingsGroupBox"
+}
+],
+"objects": {
+"ethernetSettingsGroupBox": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 15,
+"y": 15
+},
+"Name": "ethernetSettingsGroupBox",
+"Size": {
+"t": "size",
+"x": 324,
+"y": 91
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Ethernet Settings"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "portTextBox"
+},
+{
+"name": "portLabel"
+},
+{
+"name": "testButton"
+},
+{
+"name": "ipAddressTextBox"
+},
+{
+"name": "ipaddressLabel"
+}
+]
+},
+"portTextBox": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 84,
+"y": 53
+},
+"Name": "portTextBox",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "2424"
+},
+"events": {},
+"children": []
+},
+"portLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 47,
+"y": 57
+},
+"Name": "portLabel",
+"Size": {
+"t": "size",
+"x": 29,
+"y": 15
+},
+"TabIndex": 3,
+"Text": "Port"
+},
+"events": {},
+"children": []
+},
+"testButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 230,
+"y": 21
+},
+"Name": "testButton",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 55
+},
+"TabIndex": 2,
+"Text": "Test",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "testButton_Click"
+},
+"children": []
+},
+"ipAddressTextBox": {
+"type": "TextBox",
+"props": {
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Location": {
+"t": "point",
+"x": 84,
+"y": 23
+},
+"Name": "ipAddressTextBox",
+"Size": {
+"t": "size",
+"x": 130,
+"y": 23
+},
+"TabIndex": 0,
+"Text": "10.10.10.10"
+},
+"events": {},
+"children": []
+},
+"ipaddressLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 9,
+"y": 27
+},
+"Name": "ipaddressLabel",
+"Size": {
+"t": "size",
+"x": 62,
+"y": 15
+},
+"TabIndex": 0,
+"Text": "IP Address"
+},
+"events": {},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 113
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 324,
+"y": 105
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "Advanced"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "minOnIntensityLabel"
+},
+{
+"name": "minIntensityLabel"
+},
+{
+"name": "sliderMinIntensityTrackBar"
+}
+]
+},
+"minOnIntensityLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 18
+},
+"Name": "minOnIntensityLabel",
+"Size": {
+"t": "size",
+"x": 167,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "Minium 'ON' Intensity (0-255):"
+},
+"events": {},
+"children": []
+},
+"minIntensityLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 147,
+"y": 77
+},
+"Name": "minIntensityLabel",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "1"
+},
+"events": {},
+"children": []
+},
+"sliderMinIntensityTrackBar": {
+"type": "TrackBar",
+"props": {
+"LargeChange": 16,
+"Location": {
+"t": "point",
+"x": 13,
+"y": 40
+},
+"Maximum": 255,
+"Name": "sliderMinIntensityTrackBar",
+"Size": {
+"t": "size",
+"x": 296,
+"y": 45
+},
+"TabIndex": 0,
+"TickFrequency": 16
+},
+"events": {
+"ValueChanged": "sliderMinIntensityTrackBar_ValueChanged"
+},
+"children": []
+},
+"okButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 164,
+"y": 227
+},
+"Name": "okButton",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "okButton_Click"
+},
+"children": []
+},
+"cancelButton": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 260,
+"y": 226
+},
+"Name": "cancelButton",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+358,
+275
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+374,
+313
+]
+}
+}
+}

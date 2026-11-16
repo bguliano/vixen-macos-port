@@ -1,0 +1,20 @@
+Vixen Windows raster detail diagnostic (schema 3)
+
+1. Extract the entire ZIP to a normal local folder such as Downloads.
+   Do not put it inside your Vixen installation or show folder.
+2. Double-click Run-Raster.cmd. No Vixen install path is requested.
+3. Leave its console open. It compiles two tiny programs with the Windows
+   compiler already on this PC and runs 80 independent numeric drawing cases.
+4. Copy the displayed results-...zip back to the Mac. If no ZIP was made,
+   copy the entire displayed results-... folder instead, even after errors.
+
+The earlier 74-case capture completed successfully. This focused follow-up
+records extra numeric details needed to resolve the remaining Mac differences:
+Picture resize/alpha rounding, grayscale boundary colors and ellipse paths.
+
+Nothing is installed or downloaded. Vixen, your show, audio and controllers
+are not opened. Every case has a 10-second limit; ordinary cases are expected
+to be much faster. The main workflow reserves time for diagnostics/packaging,
+and an independent outer watchdog bounds all bootstrap/run work to 15 minutes.
+If repeated stalls exhaust the budget, later cases are returned as skipped.
+A successful capture still needs offline comparison; it is not a Mac parity pass.

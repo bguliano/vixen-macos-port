@@ -1,0 +1,157 @@
+{
+"class": "WebPageTypeEditor",
+"source": "Vixen.Modules/App/Shows/Editors/WebPageTypeEditor.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "WebPageTypeEditor"
+},
+"events": {
+"Load": "SequenceTypeEditor_Load"
+},
+"children": [
+{
+"name": "buttonTest"
+},
+{
+"name": "textBoxWebsite"
+},
+{
+"name": "label1"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 1,
+"y": 6
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 13
+},
+"TabIndex": 0,
+"Text": "Web Page:"
+},
+"events": {},
+"children": []
+},
+"textBoxWebsite": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 66,
+"y": 3
+},
+"Name": "textBoxWebsite",
+"Size": {
+"t": "size",
+"x": 193,
+"y": 20
+},
+"TabIndex": 1
+},
+"events": {
+"TextChanged": "textBoxWebsite_TextChanged"
+},
+"children": []
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {
+"FileName": "openFileDialog",
+"Multiselect": true
+},
+"events": {},
+"children": []
+},
+"buttonTest": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 260,
+"y": 3
+},
+"Name": "buttonTest",
+"Size": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"TabIndex": 16,
+"Text": "T",
+"toolTipText": "Test - Load Website",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonTest_Click"
+},
+"children": []
+},
+"toolTip1": {
+"type": "ToolTip",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "enum",
+"type": "this",
+"v": "components"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+285,
+79
+]
+}
+}
+}

@@ -1,0 +1,392 @@
+{
+"class": "ColorGradientEditor",
+"source": "Vixen.Modules/App/ColorGradients/ColorGradientEditor.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"CancelButton": {
+"t": "ref",
+"name": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"KeyPreview": true,
+"Name": "ColorGradientEditor",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Color Gradient Editor"
+},
+"events": {
+"KeyDown": "ColorGradientEditor_KeyDown"
+},
+"children": [
+{
+"name": "gradientEditPanel"
+},
+{
+"name": "groupBoxLibrary"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+}
+],
+"objects": {
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 399,
+"y": 270
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 300,
+"y": 270
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"groupBoxLibrary": {
+"type": "GroupBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Left",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 159
+},
+"Name": "groupBoxLibrary",
+"Size": {
+"t": "size",
+"x": 478,
+"y": 98
+},
+"TabIndex": 9,
+"TabStop": false,
+"Text": "Library"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "buttonEditLibraryItem"
+},
+{
+"name": "buttonUnlink"
+},
+{
+"name": "labelCurve"
+},
+{
+"name": "buttonSaveToLibrary"
+},
+{
+"name": "buttonLoadFromLibrary"
+}
+]
+},
+"buttonEditLibraryItem": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Location": {
+"t": "point",
+"x": 247,
+"y": 58
+},
+"Name": "buttonEditLibraryItem",
+"Size": {
+"t": "size",
+"x": 128,
+"y": 29
+},
+"TabIndex": 4,
+"Text": "Edit Library Gradient",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonEditLibraryItem_Click"
+},
+"children": []
+},
+"buttonUnlink": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"name": "Transparent"
+},
+"Location": {
+"t": "point",
+"x": 124,
+"y": 58
+},
+"Name": "buttonUnlink",
+"Size": {
+"t": "size",
+"x": 117,
+"y": 29
+},
+"TabIndex": 3,
+"Text": "Unlink Gradient",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonUnlink_Click"
+},
+"children": []
+},
+"labelCurve": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 120,
+"y": 29
+},
+"Name": "labelCurve",
+"Size": {
+"t": "size",
+"x": 276,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "This curve is linked to the library curve: 'ASDFASDF'"
+},
+"events": {},
+"children": []
+},
+"buttonSaveToLibrary": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 58
+},
+"Name": "buttonSaveToLibrary",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 1,
+"Text": "Save Preset",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonSaveToLibrary_Click"
+},
+"children": []
+},
+"buttonLoadFromLibrary": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 22
+},
+"Name": "buttonLoadFromLibrary",
+"Size": {
+"t": "size",
+"x": 93,
+"y": 29
+},
+"TabIndex": 0,
+"Text": "Load Preset",
+"UseVisualStyleBackColor": false
+},
+"events": {
+"Click": "buttonLoadFromLibrary_Click"
+},
+"children": []
+},
+"gradientEditPanel": {
+"type": "GradientEditPanel",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"Font": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+235,
+235,
+235
+]
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"MinimumSize": {
+"t": "size",
+"x": 416,
+"y": 138
+},
+"Name": "gradientEditPanel",
+"Size": {
+"t": "size",
+"x": 478,
+"y": 138
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+506,
+314
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+522,
+352
+]
+}
+}
+}

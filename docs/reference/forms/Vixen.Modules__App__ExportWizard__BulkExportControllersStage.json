@@ -1,0 +1,283 @@
+{
+"class": "BulkExportControllersStage",
+"source": "Vixen.Modules/App/ExportWizard/BulkExportControllersStage.Designer.cs",
+"props": {
+"controllerColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"channelsColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"startColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"endColumn": {
+"t": "raw",
+"v": "new System.Windows.Forms.ColumnHeader()"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "BulkExportControllersStage"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutMain"
+},
+{
+"name": "lblConfigureOutput"
+}
+],
+"objects": {
+"lblConfigureOutput": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"Name": "lblConfigureOutput",
+"Size": {
+"t": "size",
+"x": 269,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Step 3:  Configure the required outputs and order."
+},
+"events": {},
+"children": []
+},
+"tableLayoutMain": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Name": "tableLayoutMain",
+"RowCount": 2,
+"TabIndex": 3
+},
+"events": {},
+"children": [
+{
+"name": "flowLayoutButtons",
+"col": 0,
+"row": 0
+},
+{
+"name": "networkListView",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "Percent",
+"size": 100.0
+}
+]
+},
+"flowLayoutButtons": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "LeftToRight"
+},
+"Name": "flowLayoutButtons",
+"TabIndex": 0,
+"WrapContents": false
+},
+"events": {},
+"children": [
+{
+"name": "btnEnableAll"
+},
+{
+"name": "btnDisableAll"
+}
+]
+},
+"btnEnableAll": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 3,
+"r": 3,
+"b": 3
+},
+"Name": "btnEnableAll",
+"TabIndex": 0,
+"Text": "Enable All",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"btnDisableAll": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"Enabled": false,
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 3,
+"r": 3,
+"b": 3
+},
+"Name": "btnDisableAll",
+"TabIndex": 1,
+"Text": "Disable All",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"networkListView": {
+"type": "ListViewEx",
+"props": {
+"AllowDrop": true,
+"AllowRowReorder": true,
+"CheckBoxes": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ForeColor": {
+"t": "color",
+"argb": [
+221,
+221,
+221
+]
+},
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "Nonclickable"
+},
+"MultiSelect": true,
+"Name": "networkListView",
+"OwnerDraw": true,
+"TabIndex": 2,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {},
+"children": [],
+"Columns": [
+{
+"ref": "controllerColumn"
+},
+{
+"ref": "channelsColumn"
+},
+{
+"ref": "startColumn"
+},
+{
+"ref": "endColumn"
+}
+]
+},
+"controllerColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Controller",
+"Width": 176
+},
+"events": {},
+"children": []
+},
+"channelsColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Channels",
+"Width": 76
+},
+"events": {},
+"children": []
+},
+"startColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "Start"
+},
+"events": {},
+"children": []
+},
+"endColumn": {
+"type": "ColumnHeader",
+"props": {
+"Text": "End",
+"Width": 234
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+573,
+355
+]
+}
+}
+}

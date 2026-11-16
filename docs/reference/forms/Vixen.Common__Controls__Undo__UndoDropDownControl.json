@@ -1,0 +1,127 @@
+{
+"class": "UndoDropDownControl",
+"source": "Vixen.Common/Controls/Undo/UndoDropDownControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"BorderStyle": {
+"t": "enum",
+"type": "BorderStyle",
+"v": "FixedSingle"
+},
+"Name": "UndoDropDownControl"
+},
+"events": {},
+"children": [
+{
+"name": "bottomtext"
+},
+{
+"name": "listbox"
+}
+],
+"objects": {
+"listbox": {
+"type": "ListBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 1,
+"y": 1
+},
+"Name": "listbox",
+"SelectionMode": {
+"t": "enum",
+"type": "SelectionMode",
+"v": "MultiSimple"
+},
+"Size": {
+"t": "size",
+"x": 146,
+"y": 195
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"bottomtext": {
+"type": "Label",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Bottom"
+},
+"Location": {
+"t": "point",
+"x": 1,
+"y": 183
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 4,
+"r": 3,
+"b": 1
+},
+"Name": "bottomtext",
+"Size": {
+"t": "size",
+"x": 146,
+"y": 13
+},
+"TabIndex": 1,
+"Text": "bottomtext",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "BottomCenter"
+}
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Padding": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+1,
+1,
+1,
+4
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+148,
+200
+]
+}
+}
+}

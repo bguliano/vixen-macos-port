@@ -1,0 +1,35 @@
+{
+  "name": "short_noise_df513",
+  "input": {"kind": "noise", "rate": 44100, "seed": 22, "amplitude": 1.52587890625e-05, "length": 263680, "position": 0, "frequency": 0, "lead": 0, "tail": 0},
+  "input_len": 263680,
+  "input_fnv1a64": "0x604de0e43ec65e2d",
+  "driver": "beatsandbars",
+  "params": {"bpb": 4},
+  "step_size": 512,
+  "block_size": 1024,
+  "blocks": 515,
+  "features": {
+    "0": [
+      [5, 944308390, "1", []]
+    ],
+    "1": [
+      [5, 944308390, "1", []]
+    ],
+    "2": [
+      [5, 944308390, "1", [1]]
+    ]
+  },
+  "intermediate": {
+    "df_len": 513,
+    "df_fnv1a64": "0x203e03bc45707797",
+    "beat_period_rle": [[0, 513]],
+    "tempi_len": 0,
+    "tempi_fnv1a64": "0xcbf29ce484222325",
+    "beats": [512],
+    "downbeats": [0],
+    "beatsd_len": 0,
+    "beatsd_fnv1a64": "0xcbf29ce484222325",
+    "downsampled_len": 16480,
+    "downsampled_fnv1a64": "0xef029fc76c5e4abe"
+  }
+}

@@ -1,0 +1,176 @@
+{
+"class": "TemplateDialog",
+"source": "Vixen.Modules/Preview/VixenPreview/TemplateDialog.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "TemplateDialog",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Text": "TemplateDialog"
+},
+"events": {},
+"children": [
+{
+"name": "btnCancel"
+},
+{
+"name": "comboBoxTemplates"
+},
+{
+"name": "buttonAddToPreview"
+}
+],
+"objects": {
+"buttonAddToPreview": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 14,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 5,
+"r": 3,
+"b": 5
+},
+"Name": "buttonAddToPreview",
+"Size": {
+"t": "size",
+"x": 115,
+"y": 31
+},
+"TabIndex": 30,
+"Text": "Add to Preview",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"comboBoxTemplates": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 15
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 5,
+"r": 3,
+"b": 5
+},
+"Name": "comboBoxTemplates",
+"Size": {
+"t": "size",
+"x": 237,
+"y": 24
+},
+"TabIndex": 26
+},
+"events": {
+"SelectedIndexChanged": "comboBoxTemplates_SelectedIndexChanged"
+},
+"children": []
+},
+"btnCancel": {
+"type": "Button",
+"props": {
+"AutoSize": true,
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"ImageAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+},
+"Location": {
+"t": "point",
+"x": 136,
+"y": 48
+},
+"Margin": {
+"t": "padding",
+"l": 3,
+"t_": 5,
+"r": 3,
+"b": 5
+},
+"Name": "btnCancel",
+"Size": {
+"t": "size",
+"x": 115,
+"y": 31
+},
+"TabIndex": 32,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+264,
+108
+]
+}
+}
+}

@@ -1,0 +1,390 @@
+{
+"class": "Form_GradientLibrary",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/Forms/Form_GradientLibrary.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ControlBox": false,
+"DockAreas": {
+"t": "flags",
+"v": [
+"Float",
+"DockLeft)",
+"DockRight)",
+"DockTop)",
+"DockBottom"
+]
+},
+"DoubleBuffered": true,
+"Name": "Form_GradientLibrary",
+"Text": "Gradient Library"
+},
+"events": {
+"FormClosing": "Form_ToolPalette_FormClosing",
+"Load": "ColorPalette_Load"
+},
+"children": [
+{
+"name": "panel1"
+},
+{
+"name": "checkBoxLinkGradients"
+},
+{
+"name": "toolStripGradients"
+}
+],
+"objects": {
+"toolStripGradients": {
+"type": "ToolStrip",
+"props": {
+"AutoSize": false,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "toolStripGradients",
+"Padding": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 2,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 602,
+"y": 27
+},
+"TabIndex": 10,
+"Text": "Color Gradients"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripButtonEditGradient"
+},
+{
+"ref": "toolStripButtonNewGradient"
+},
+{
+"ref": "toolStripButtonDeleteGradient"
+},
+{
+"ref": "toolStripButtonExportGradients"
+},
+{
+"ref": "toolStripButtonImportGradients"
+}
+]
+},
+"toolStripButtonEditGradient": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonEditGradient",
+"Size": {
+"t": "size",
+"x": 79,
+"y": 24
+},
+"Text": "Edit Gradient"
+},
+"events": {
+"Click": "toolStripButtonEditGradient_Click"
+},
+"children": []
+},
+"toolStripButtonNewGradient": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonNewGradient",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 24
+},
+"Text": "New Gradient"
+},
+"events": {
+"Click": "toolStripButtonNewGradient_Click"
+},
+"children": []
+},
+"toolStripButtonDeleteGradient": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Enabled": false,
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonDeleteGradient",
+"Size": {
+"t": "size",
+"x": 92,
+"y": 24
+},
+"Text": "Delete Gradient"
+},
+"events": {
+"Click": "toolStripButtonDeleteGradient_Click"
+},
+"children": []
+},
+"toolStripButtonExportGradients": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonExportGradients",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 24
+},
+"Text": "Export",
+"ToolTipText": "Export Gradient Library"
+},
+"events": {
+"Click": "toolStripButtonExportGradients_Click"
+},
+"children": []
+},
+"toolStripButtonImportGradients": {
+"type": "ToolStripButton",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"ImageTransparentColor": {
+"t": "color",
+"name": "Magenta"
+},
+"Name": "toolStripButtonImportGradients",
+"Size": {
+"t": "size",
+"x": 47,
+"y": 24
+},
+"Text": "Import",
+"ToolTipText": "Import Gradient Library"
+},
+"events": {
+"Click": "toolStripButtonImportGradients_Click"
+},
+"children": []
+},
+"checkBoxLinkGradients": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Bottom"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 402
+},
+"Margin": {
+"t": "padding",
+"l": 6,
+"t_": 6,
+"r": 6,
+"b": 6
+},
+"Name": "checkBoxLinkGradients",
+"Size": {
+"t": "size",
+"x": 602,
+"y": 17
+},
+"TabIndex": 9,
+"Text": "Maintain Library Link",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"listViewGradients": {
+"type": "ListView",
+"props": {
+"AllowDrop": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 6,
+"t_": 6,
+"r": 6,
+"b": 6
+},
+"Name": "listViewGradients",
+"Size": {
+"t": "size",
+"x": 602,
+"y": 375
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false
+},
+"events": {
+"ItemDrag": "listViewGradient_ItemDrag",
+"SelectedIndexChanged": "listViewGradients_SelectedIndexChanged",
+"DragDrop": "listViewGradients_DragDrop",
+"DragEnter": "listViewGradients_DragEnter",
+"KeyDown": "listViewGradients_KeyDown",
+"KeyUp": "listViewGradients_KeyUp",
+"MouseDoubleClick": "listViewGradients_MouseDoubleClick"
+},
+"children": []
+},
+"panel1": {
+"type": "Panel",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 27
+},
+"Name": "panel1",
+"Size": {
+"t": "size",
+"x": 602,
+"y": 375
+},
+"TabIndex": 11
+},
+"events": {},
+"children": [
+{
+"name": "listViewGradients"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+602,
+419
+]
+},
+"Font": {
+"type": "Font",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"Microsoft Sans Serif",
+7.875,
+{
+"t": "enum",
+"type": "FontStyle",
+"v": "Regular"
+},
+{
+"t": "enum",
+"type": "GraphicsUnit",
+"v": "Point"
+},
+0
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6
+]
+}
+}
+}

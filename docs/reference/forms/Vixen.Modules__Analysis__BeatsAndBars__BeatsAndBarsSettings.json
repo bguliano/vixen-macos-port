@@ -1,0 +1,505 @@
+{
+"class": "BeatsAndBarsDialog",
+"source": "Vixen.Modules/Analysis/BeatsAndBars/BeatsAndBarsSettings.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedSingle"
+},
+"Name": "BeatsAndBarsDialog",
+"ShowIcon": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Beats and Bars"
+},
+"events": {},
+"children": [
+{
+"name": "PreviewGroupBox"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "grpDivisions"
+},
+{
+"name": "CancelBtn"
+},
+{
+"name": "GenerateButton"
+}
+],
+"objects": {
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 35,
+"y": 29
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 126,
+"y": 15
+},
+"TabIndex": 6,
+"Text": "Collection Base Name:"
+},
+"events": {},
+"children": []
+},
+"BeatsNameTB": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 38,
+"y": 47
+},
+"Name": "BeatsNameTB",
+"Size": {
+"t": "size",
+"x": 194,
+"y": 23
+},
+"TabIndex": 2,
+"Text": "Beats"
+},
+"events": {},
+"children": []
+},
+"GenerateButton": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 531,
+"y": 560
+},
+"Name": "GenerateButton",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 4,
+"Text": "Generate",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "GoButton_Click"
+},
+"children": []
+},
+"CancelBtn": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 630,
+"y": 560
+},
+"Name": "CancelBtn",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"grpDivisions": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 14
+},
+"Name": "grpDivisions",
+"Size": {
+"t": "size",
+"x": 714,
+"y": 205
+},
+"TabIndex": 13,
+"TabStop": false,
+"Text": "Divisons"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "musicStaff1"
+}
+]
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 407
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 709,
+"y": 132
+},
+"TabIndex": 14,
+"TabStop": false,
+"Text": "Output"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "AllColorPanel"
+},
+{
+"name": "BeatSplitsColorPanel"
+},
+{
+"name": "BeatCountsColorPanel"
+},
+{
+"name": "BarsColorPanel"
+},
+{
+"name": "BeatSplitsCB"
+},
+{
+"name": "AllFeaturesCB"
+},
+{
+"name": "BeatCountsCB"
+},
+{
+"name": "BarsCB"
+},
+{
+"name": "label1"
+},
+{
+"name": "BeatsNameTB"
+}
+]
+},
+"AllColorPanel": {
+"type": "Panel",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "White"
+},
+"Location": {
+"t": "point",
+"x": 589,
+"y": 84
+},
+"Name": "AllColorPanel",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 24
+},
+"TabIndex": 18
+},
+"events": {
+"Click": "ColorPanel_Click"
+},
+"children": []
+},
+"BeatSplitsColorPanel": {
+"type": "Panel",
+"props": {
+"BackColor": {
+"t": "color",
+"name": "Lime"
+},
+"Location": {
+"t": "point",
+"x": 434,
+"y": 84
+},
+"Name": "BeatSplitsColorPanel",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 24
+},
+"TabIndex": 17
+},
+"events": {
+"Click": "ColorPanel_Click"
+},
+"children": []
+},
+"BeatCountsColorPanel": {
+"type": "Panel",
+"props": {
+"BackColor": {
+"t": "color",
+"argb": [
+255,
+128,
+0
+]
+},
+"Location": {
+"t": "point",
+"x": 275,
+"y": 84
+},
+"Name": "BeatCountsColorPanel",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 24
+},
+"TabIndex": 17
+},
+"events": {
+"Click": "ColorPanel_Click"
+},
+"children": []
+},
+"BarsColorPanel": {
+"type": "Panel",
+"props": {
+"BackColor": {
+"t": "color",
+"argb": [
+255,
+255,
+128
+]
+},
+"Location": {
+"t": "point",
+"x": 100,
+"y": 84
+},
+"Name": "BarsColorPanel",
+"Size": {
+"t": "size",
+"x": 28,
+"y": 24
+},
+"TabIndex": 16
+},
+"events": {
+"Click": "ColorPanel_Click"
+},
+"children": []
+},
+"BeatSplitsCB": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 338,
+"y": 89
+},
+"Name": "BeatSplitsCB",
+"Size": {
+"t": "size",
+"x": 80,
+"y": 19
+},
+"TabIndex": 16,
+"Text": "Beat Splits",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "BeatSplitsCB_CheckedChanged"
+},
+"children": []
+},
+"AllFeaturesCB": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 488,
+"y": 89
+},
+"Name": "AllFeaturesCB",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 19
+},
+"TabIndex": 15,
+"Text": "All Features",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "AllFeaturesCB_CheckedChanged"
+},
+"children": []
+},
+"BeatCountsCB": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 170,
+"y": 89
+},
+"Name": "BeatCountsCB",
+"Size": {
+"t": "size",
+"x": 90,
+"y": 19
+},
+"TabIndex": 14,
+"Text": "Beat Counts",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "BeatCountsCB_CheckedChanged"
+},
+"children": []
+},
+"BarsCB": {
+"type": "CheckBox",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 38,
+"y": 89
+},
+"Name": "BarsCB",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 19
+},
+"TabIndex": 13,
+"Text": "Bars",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"CheckedChanged": "BarsCB_CheckedChanged"
+},
+"children": []
+},
+"PreviewGroupBox": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 226
+},
+"Name": "PreviewGroupBox",
+"Size": {
+"t": "size",
+"x": 714,
+"y": 145
+},
+"TabIndex": 15,
+"TabStop": false,
+"Text": "Preview"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": []
+},
+"musicStaff1": {
+"type": "MusicStaff",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left)",
+"Right"
+]
+},
+"BeatPeriod": 0,
+"BeatsPerBar": 4,
+"Location": {
+"t": "point",
+"x": 7,
+"y": 22
+},
+"Margin": {
+"t": "padding",
+"l": 5,
+"t_": 6,
+"r": 5,
+"b": 6
+},
+"Name": "musicStaff1",
+"Size": {
+"t": "size",
+"x": 696,
+"y": 174
+},
+"TabIndex": 6
+},
+"events": {
+"Paint": "musicStaff1_Paint"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+740,
+600
+]
+}
+}
+}

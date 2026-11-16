@@ -1,0 +1,167 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using VixenRaster;
+
+public static class RasterCapture {
+    [DllImport("kernel32.dll")] static extern uint SetErrorMode(uint mode);
+    static string Host { get { return Assembly.GetExecutingAssembly().Location; } }
+    static float[] RectangleValues(RectangleF r) {return new[]{r.X,r.Y,r.Width,r.Height};}
+    static DrawingDefaults Settings(Graphics g) {
+        using(var clip=g.Clip) using(var transform=g.Transform) return new DrawingDefaults{smoothing=g.SmoothingMode.ToString(),pixelOffset=g.PixelOffsetMode.ToString(),interpolation=g.InterpolationMode.ToString(),compositingMode=g.CompositingMode.ToString(),compositingQuality=g.CompositingQuality.ToString(),pageUnit=g.PageUnit.ToString(),pageScale=g.PageScale,dpiX=g.DpiX,dpiY=g.DpiY,transform=transform.Elements,clipBounds=RectangleValues(g.ClipBounds),visibleClipBounds=RectangleValues(g.VisibleClipBounds),clipIsInfinite=clip.IsInfinite(g)};
+    }
+    static DrawingDefaults Defaults(Bitmap bitmap) {using(var g=Graphics.FromImage(bitmap))return Settings(g);}
+    static void Local(string path) {
+        string p=Path.GetFullPath(path);
+        if(p.StartsWith(@"\\") || new DriveInfo(Path.GetPathRoot(p)).DriveType==DriveType.Network) throw new IOException("Local extracted paths only");
+        while(!String.IsNullOrEmpty(p)) {
+            if((File.Exists(p)||Directory.Exists(p)) && (File.GetAttributes(p)&FileAttributes.ReparsePoint)!=0) throw new IOException("Linked paths excluded");
+            p=Path.GetDirectoryName(p);
+        }
+    }
+    static byte[] Pixels(Bitmap image) {
+        var bytes=new byte[checked(image.Width*image.Height*4)];int i=0;
+        for(int y=0;y<image.Height;y++) for(int x=0;x<image.Width;x++) {var c=image.GetPixel(x,y);bytes[i++]=c.A;bytes[i++]=c.R;bytes[i++]=c.G;bytes[i++]=c.B;}
+        return bytes;
+    }
+    static byte[] FastPixels(Bitmap image,out int stride) {
+        // FastPixel owns the supplied bitmap when disposed. The caller owns it
+        // here, so unlock without writing and dispose that bitmap at scope end.
+        var reader=new FastPixel.FastPixel(image);reader.Lock();
+        try {
+            var data=(BitmapData)typeof(FastPixel.FastPixel).GetField("bmpData",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(reader);stride=data.Stride;
+            if(image.PixelFormat!=PixelFormat.Format32bppArgb || !reader.IsAlphaBitmap || stride!=image.Width*4) throw new InvalidDataException("Unexpected GDI pixel layout; no stride normalization applied");
+            var bytes=new byte[checked(image.Width*image.Height*4)];int i=0;
+            for(int y=0;y<image.Height;y++) for(int x=0;x<image.Width;x++) {var c=reader.GetPixel(x,y);bytes[i++]=c.A;bytes[i++]=c.R;bytes[i++]=c.G;bytes[i++]=c.B;}
+            return bytes;
+        } finally {reader.Unlock(false);}
+    }
+    static void Preflight(string output) {
+        using(var bitmap=new Bitmap(8,8,PixelFormat.Format32bppArgb)) {
+            using(var g=Graphics.FromImage(bitmap)) using(var pen=new Pen(Color.White,1)) g.DrawLine(pen,0,0,7,7);
+            var assembly=typeof(Bitmap).Assembly;
+            var report=new RuntimeReport{status="available",os=Environment.OSVersion.VersionString,clr=Environment.Version.ToString(),is64BitProcess=Environment.Is64BitProcess,is64BitOperatingSystem=Environment.Is64BitOperatingSystem,drawingIdentity=assembly.FullName,drawingPath=assembly.Location,drawingSha256=Data.HashFile(assembly.Location),hostSha256=Data.HashFile(Host),freshGraphicsDefaults=Defaults(bitmap)};
+            foreach(ProcessModule module in Process.GetCurrentProcess().Modules) if(String.Equals(Path.GetFileName(module.FileName),"gdiplus.dll",StringComparison.OrdinalIgnoreCase)) {report.gdiplusPath=module.FileName;report.gdiplusVersion=module.FileVersionInfo.FileVersion;report.gdiplusSha256=Data.HashFile(module.FileName);break;}
+            if(report.gdiplusPath==null) throw new InvalidOperationException("Drawing succeeded but loaded GDI+ provenance was unavailable");
+            Data.SaveNew(Path.Combine(output,"preflight.json"),report);
+        }
+    }
+    static PathObservation ObservePath(GraphicsPath path,string label,float flatness) {
+        var source=path.PathPoints;var types=path.PathTypes;
+        var points=new float[source.Length*2];var bits=new int[points.Length];var convertedTypes=new int[types.Length];
+        for(int i=0;i<source.Length;i++) {points[i*2]=source[i].X;points[i*2+1]=source[i].Y;convertedTypes[i]=types[i];}
+        for(int i=0;i<points.Length;i++)bits[i]=BitConverter.ToInt32(BitConverter.GetBytes(points[i]),0);
+        return new PathObservation{label=label,flatness=flatness,points=points,pointBits=bits,types=convertedTypes};
+    }
+    static void EllipsePaths(CaseSpec c,Action<string,byte[]> write) {
+        var traces=new List<PathObservation>();
+        using(var original=new GraphicsPath()) {
+            original.AddEllipse((float)c.rect[0],(float)c.rect[1],(float)c.rect[2],(float)c.rect[3]);
+            string[] labels={"original","flat025","flat050","flat100"};float[] flatness={0,0.25f,0.5f,1.0f};
+            for(int i=0;i<labels.Length;i++) using(var path=(GraphicsPath)original.Clone()) using(var bitmap=new Bitmap(c.width,c.height,PixelFormat.Format32bppArgb)) {
+                if(i>0)path.Flatten(null,flatness[i]);
+                var trace=ObservePath(path,labels[i],flatness[i]);
+                using(var graphics=Graphics.FromImage(bitmap)) using(var pen=new Pen(Color.White,1)) {
+                    trace.drawingDefaults=Settings(graphics);trace.fillMode=path.FillMode.ToString();
+                    trace.penColor=pen.Color.ToArgb().ToString("X8");trace.penWidth=pen.Width;trace.penStartCap=pen.StartCap.ToString();trace.penEndCap=pen.EndCap.ToString();trace.penLineJoin=pen.LineJoin.ToString();trace.penAlignment=pen.Alignment.ToString();trace.penMiterLimit=pen.MiterLimit;
+                    graphics.DrawPath(pen,path);
+                }
+                traces.Add(trace);
+                int stride;write("path-"+labels[i]+"-getpixel.argb",Pixels(bitmap));write("path-"+labels[i]+"-fastpixel.argb",FastPixels(bitmap,out stride));
+            }
+        }
+        write("path-trace.json",Data.Json(new PathTraceReport{id=c.id,paths=traces.ToArray()}));
+    }
+    static Bitmap DrawFixture(CaseSpec c,out DrawingDefaults actual,Action<string,byte[]> write) {
+        actual=null;
+        var image=new Bitmap(c.width,c.height,PixelFormat.Format32bppArgb);
+        try {
+            using(var g=Graphics.FromImage(image)) using(var pen=new Pen(Color.White,1)) using(var brush=new SolidBrush(Color.White)) {
+                actual=Settings(g); // Effective state of the Graphics about to execute this fixture.
+                if(c.family=="countdown") {
+                    var r=new Rectangle((int)c.rect[0],(int)c.rect[1],(int)c.rect[2],(int)c.rect[3]);var original=new OriginalCountDownMethods();
+                    if(c.operation=="cross-hash")original.Cross(g,r,pen);
+                    else if(c.operation=="spinner")original.Spinner(g,r,c.lineLength,c.angle);
+                    else throw new InvalidDataException("Unknown CountDown fixture");
+                } else if(c.family=="primitive") {
+                    switch(c.operation) {
+                        case "line":g.DrawLine(pen,(float)c.line[0],(float)c.line[1],(float)c.line[2],(float)c.line[3]);break;
+                        case "fill-rectangle":g.FillRectangle(brush,(float)c.rect[0],(float)c.rect[1],(float)c.rect[2],(float)c.rect[3]);break;
+                        case "rectangle":g.DrawRectangle(pen,(float)c.rect[0],(float)c.rect[1],(float)c.rect[2],(float)c.rect[3]);break;
+                        case "ellipse":g.DrawEllipse(pen,(float)c.rect[0],(float)c.rect[1],(float)c.rect[2],(float)c.rect[3]);EllipsePaths(c,write);break;
+                        case "polygon":
+                            var points=new PointF[c.points.Length/2];for(int i=0;i<points.Length;i++)points[i]=new PointF((float)c.points[i*2],(float)c.points[i*2+1]);
+                            g.FillPolygon(brush,points,c.fillMode=="Alternate"?FillMode.Alternate:FillMode.Winding);break;
+                        default:throw new InvalidDataException("Unknown primitive fixture");
+                    }
+                } else throw new InvalidDataException("Unknown drawing family");
+            }
+            return image;
+        } catch {image.Dispose();throw;}
+    }
+    static void Capture(string pack,CaseSpec c,string output) {
+        byte[] requested=Data.Requested(c);var files=new List<FileRecord>();
+        Action<string,byte[]> write=delegate(string name,byte[] bytes){Data.WriteNew(Path.Combine(output,name),bytes);files.Add(Data.Record(output,name));};
+        write("input-requested.argb",requested);
+        using(var source=new Bitmap(c.width,c.height,PixelFormat.Format32bppArgb)) {
+            for(int y=0;y<c.height;y++) for(int x=0;x<c.width;x++) {int i=(y*c.width+x)*4;source.SetPixel(x,y,Color.FromArgb(requested[i],requested[i+1],requested[i+2],requested[i+3]));}
+            byte[] before=Pixels(source);int inputStride,outputStride;
+            byte[] inputFast=FastPixels(source,out inputStride);
+            write("input-getpixel.argb",before);write("input-fastpixel.argb",inputFast);
+            Bitmap rendered=null;DrawingDefaults actual=null;
+            try {
+                if(c.family!="picture")rendered=DrawFixture(c,out actual,write);
+                else switch(c.operation) {
+                    case "resize-exact":
+                        // Same destination-size DrawImage overload as both original Picture
+                        // resize helpers, with independent width/height to probe dispatch.
+                        rendered=new Bitmap(c.maxWidth,c.maxHeight);
+                        using(var graphics=Graphics.FromImage(rendered)) {
+                            actual=Settings(graphics);graphics.DrawImage(source,0,0,c.maxWidth,c.maxHeight);
+                        }
+                        break;
+                    case "identity":rendered=source;break;
+                    case "fit":rendered=OriginalPictureMethods.ScalePictureImage(source,c.maxWidth,c.maxHeight);break;
+                    case "scale":rendered=OriginalPictureMethods.ScaleImage(source,c.scale);break;
+                    case "grayscale":rendered=(Bitmap)OriginalPictureMethods.ConvertToGrayScale(source);break;
+                    default:throw new InvalidDataException("Unknown operation");
+                }
+                if(rendered.Width<1 || rendered.Height<1 || rendered.Width>64 || rendered.Height>64) throw new InvalidDataException("Unexpected output dimensions");
+                byte[] result=Pixels(rendered),fast=FastPixels(rendered,out outputStride);
+                write("output-getpixel.argb",result);write("output-fastpixel.argb",fast);
+                bool unchanged=Data.Hash(before)==Data.Hash(Pixels(source));
+                if(!unchanged) throw new InvalidDataException("Original helper modified its input bitmap");
+                var report=new RasterReport{status="complete",id=c.id,input=c,outputWidth=rendered.Width,outputHeight=rendered.Height,inputStride=inputStride,outputStride=outputStride,inputPixelFormat=source.PixelFormat.ToString(),outputPixelFormat=rendered.PixelFormat.ToString(),inputUnchanged=unchanged,inputReadbacksEqual=Data.Hash(before)==Data.Hash(inputFast),outputReadbacksEqual=Data.Hash(result)==Data.Hash(fast),files=files.ToArray(),originalMethodsSha256=Data.HashFile(Path.Combine(pack,"OriginalPictureMethods.cs.in")),countDownMethodsSha256=Data.HashFile(Path.Combine(pack,"OriginalCountDownMethods.cs.in")),fastPixelSha256=Data.HashFile(Path.Combine(pack,"OriginalFastPixel.cs.in")),hostSha256=Data.HashFile(Host),freshGraphicsDefaults=Defaults(rendered),actualDrawingDefaults=actual,drawingStateScope=c.operation=="resize-exact"?"actual-before-original-picture-drawimage-overload":c.family=="picture"?"fresh-defaults-only-original-picture-body-uninstrumented":"actual-before-identity-transform-fixture"};
+                // Manifest is last. A crash or deadline leaves partial raw files,
+                // never a successful manifest for incomplete pixels.
+                Data.SaveNew(Path.Combine(output,"manifest.json"),report);
+            } finally {if(rendered!=null && !Object.ReferenceEquals(rendered,source)) rendered.Dispose();}
+        }
+    }
+    public static int Main(string[] args) {
+        try {
+            // These two common-code modes deliberately avoid all drawing calls.
+            if(args.Length==1 && args[0]=="--emit-cases") {Console.WriteLine(System.Text.Encoding.UTF8.GetString(Data.Json(Data.Cases())));return 0;}
+            if(args.Length==2 && args[0]=="--validate-cases") {Data.ValidateCases(args[1]);Console.WriteLine(Data.Cases().cases.Length+" detail case definitions validated; no drawing executed");return 0;}
+            if(Environment.OSVersion.Platform!=PlatformID.Win32NT) throw new PlatformNotSupportedException("Actual raster capture requires Windows; no fallback renderer");
+            SetErrorMode(0x0001|0x0002|0x8000); // No system error/open-file fault dialogs.
+            string results=Path.GetDirectoryName(Host);Local(results);
+            if(args.Length==1 && args[0]=="--preflight") {Preflight(results);return 0;}
+            if(args.Length!=3 || args[0]!="--case") throw new ArgumentException("Expected --preflight or --case pack case-id");
+            string pack=Path.GetFullPath(args[1]);Local(pack);
+            if(!String.Equals(Path.GetDirectoryName(results),pack,StringComparison.OrdinalIgnoreCase) || !Path.GetFileName(results).StartsWith("results-")) throw new IOException("Host must be in this pack's private results folder");
+            var cases=Data.ValidateCases(Path.Combine(pack,"cases.json"));CaseSpec selected=null;
+            foreach(var item in cases.cases) if(item.id==args[2]) selected=item;
+            if(selected==null) throw new ArgumentException("Unknown case id");
+            string output=Path.Combine(results,"cases",selected.id);Local(output);
+            if(!Directory.Exists(output) || Directory.GetFileSystemEntries(output).Length!=0) throw new IOException("Case needs an existing empty private directory");
+            Capture(pack,selected,output);Console.WriteLine("Captured "+selected.id);return 0;
+        } catch(Exception error) {Console.Error.WriteLine(error);return 2;}
+    }
+}

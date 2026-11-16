@@ -1,0 +1,1579 @@
+{
+"class": "VixenApplication",
+"source": "Vixen.Application/VixenApplication.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"DoubleBuffered": true,
+"MainMenuStrip": {
+"t": "ref",
+"name": "menuStripMain"
+},
+"Name": "VixenApplication",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Vixen Administration"
+},
+"events": {
+"FormClosing": "VixenApp_FormClosing",
+"Load": "VixenApplication_Load",
+"Shown": "VixenApplication_Shown",
+"SizeChanged": "VixenApplication_SizeChanged"
+},
+"children": [
+{
+"name": "mainLayoutPanel"
+},
+{
+"name": "statusStrip"
+},
+{
+"name": "menuStripMain"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"listViewItem1": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"asdfadsa"
+]
+},
+"listViewItem2": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"rewqrewq"
+]
+},
+"listViewItem3": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"vbcbxvxc"
+]
+},
+"listViewItem4": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"gfdsgfsd"
+]
+},
+"listViewItem5": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"ytreyre"
+]
+},
+"listViewItem6": {
+"type": "ListViewItem",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+"xvcbxvcx"
+]
+},
+"contextMenuStripNewSequence": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Name": "contextMenuStripNewSequence",
+"ShowImageMargin": false,
+"Size": {
+"t": "size",
+"x": 36,
+"y": 4
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"openFileDialog": {
+"type": "OpenFileDialog",
+"props": {
+"Multiselect": true
+},
+"events": {},
+"children": []
+},
+"menuStripMain": {
+"type": "MenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Name": "menuStripMain",
+"Padding": {
+"t": "padding",
+"l": 9,
+"t_": 3,
+"r": 0,
+"b": 3
+},
+"RenderMode": {
+"t": "enum",
+"type": "ToolStripRenderMode",
+"v": "Professional"
+},
+"Size": {
+"t": "size",
+"x": 459,
+"y": 25
+},
+"TabIndex": 2,
+"Text": "menuStrip1"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "vixenToolStripMenuItem"
+}
+]
+},
+"vixenToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "vixenToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 57,
+"y": 19
+},
+"Text": "System"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "logsToolStripMenuItem"
+},
+{
+"ref": "viewInstalledModulesToolStripMenuItem"
+},
+{
+"ref": "profilesToolStripMenuItem"
+},
+{
+"ref": "systemConfigurationToolStripMenuItem"
+},
+{
+"ref": "executionToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator1"
+},
+{
+"ref": "exitToolStripMenuItem"
+}
+]
+},
+"logsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "logsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 22
+},
+"Text": "Logs"
+},
+"events": {},
+"children": []
+},
+"viewInstalledModulesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "viewInstalledModulesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 22
+},
+"Text": "View Installed Modules"
+},
+"events": {
+"Click": "viewInstalledModulesToolStripMenuItem_Click"
+},
+"children": []
+},
+"profilesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "profilesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 22
+},
+"Text": "Profiles..."
+},
+"events": {
+"Click": "profilesToolStripMenuItem_Click"
+},
+"children": []
+},
+"systemConfigurationToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "systemConfigurationToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 22
+},
+"Text": "System Configuration"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "setupDisplayToolStripMenuItem"
+},
+{
+"ref": "setupPreviewsToolStripMenuItem"
+}
+]
+},
+"setupDisplayToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "setupDisplayToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 153,
+"y": 22
+},
+"Text": "Setup Display"
+},
+"events": {
+"Click": "setupDisplayToolStripMenuItem_Click"
+},
+"children": []
+},
+"setupPreviewsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "setupPreviewsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 153,
+"y": 22
+},
+"Text": "Setup Previews"
+},
+"events": {
+"Click": "setupPreviewsToolStripMenuItem_Click"
+},
+"children": []
+},
+"executionToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "executionToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 22
+},
+"Text": "Execution Engine"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "startToolStripMenuItem"
+},
+{
+"ref": "stopToolStripMenuItem"
+}
+]
+},
+"startToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "startToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 22
+},
+"Text": "Start"
+},
+"events": {
+"Click": "startToolStripMenuItem_Click"
+},
+"children": []
+},
+"stopToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "stopToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 98,
+"y": 22
+},
+"Text": "Stop"
+},
+"events": {
+"Click": "stopToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator1",
+"Size": {
+"t": "size",
+"x": 192,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"exitToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exitToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 195,
+"y": 22
+},
+"Text": "Shutdown and E&xit"
+},
+"events": {
+"Click": "exitToolStripMenuItem_Click"
+},
+"children": []
+},
+"contextMenuStripRecent": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 20,
+"y": 20
+},
+"Name": "contextMenuStripRecent",
+"Size": {
+"t": "size",
+"x": 200,
+"y": 26
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+],
+"Items": [
+{
+"ref": "toolStripItemClearSequences"
+}
+]
+},
+"toolStripItemClearSequences": {
+"type": "ToolStripMenuItem",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Name": "toolStripItemClearSequences",
+"Size": {
+"t": "size",
+"x": 199,
+"y": 22
+},
+"Text": "Clear Recent Sequences",
+"ToolTipText": "Clears the Recent Sequence list"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabelExecutionLight": {
+"type": "ToolStripStatusLabel",
+"props": {
+"AutoSize": false,
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabelExecutionLight",
+"Size": {
+"t": "size",
+"x": 22,
+"y": 22
+}
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel1": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel1",
+"Size": {
+"t": "size",
+"x": 13,
+"y": 22
+},
+"Text": "  "
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabelExecutionState": {
+"type": "ToolStripStatusLabel",
+"props": {
+"BorderSides": {
+"t": "enum",
+"type": "ToolStripStatusLabelBorderSides",
+"v": "Right"
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabelExecutionState",
+"Size": {
+"t": "size",
+"x": 120,
+"y": 22
+},
+"Text": "Execution: Unknown"
+},
+"events": {},
+"children": []
+},
+"toolStripStatusLabel_memory": {
+"type": "ToolStripStatusLabel",
+"props": {
+"DisplayStyle": {
+"t": "enum",
+"type": "ToolStripItemDisplayStyle",
+"v": "Text"
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 1,
+"r": 0,
+"b": 1
+},
+"Name": "toolStripStatusLabel_memory",
+"Size": {
+"t": "size",
+"x": 231,
+"y": 22
+},
+"Spring": true,
+"Text": "Resource Usage",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleRight"
+}
+},
+"events": {},
+"children": []
+},
+"statusStrip": {
+"type": "StatusStrip",
+"props": {
+"AutoSize": false,
+"GripMargin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 515
+},
+"Name": "statusStrip",
+"Padding": {
+"t": "padding",
+"l": 2,
+"t_": 0,
+"r": 21,
+"b": 0
+},
+"Size": {
+"t": "size",
+"x": 459,
+"y": 24
+},
+"SizingGrip": false,
+"TabIndex": 13,
+"Text": "statusStrip"
+},
+"events": {},
+"children": [],
+"Items": [
+{
+"ref": "toolStripStatusLabelExecutionLight"
+},
+{
+"ref": "toolStripStatusLabel1"
+},
+{
+"ref": "toolStripStatusLabelExecutionState"
+},
+{
+"ref": "toolStripStatusUpdates"
+},
+{
+"ref": "toolStripStatusLabel_memory"
+}
+]
+},
+"toolStripStatusUpdates": {
+"type": "ToolStripStatusLabel",
+"props": {
+"Name": "toolStripStatusUpdates",
+"Size": {
+"t": "size",
+"x": 50,
+"y": 19
+},
+"Text": "Updates"
+},
+"events": {},
+"children": []
+},
+"progressBar": {
+"type": "TextProgressBar",
+"props": {
+"CustomText": "",
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 300
+},
+"Name": "progressBar",
+"ProgressColor": {
+"t": "color",
+"name": "Lime"
+},
+"Size": {
+"t": "size",
+"x": 444,
+"y": 34
+},
+"TabIndex": 17,
+"TextColor": {
+"t": "color",
+"name": "Black"
+},
+"TextFont": {
+"t": "font",
+"name": "Segoe UI",
+"size": 9
+},
+"VisualMode": {
+"t": "enum",
+"type": "ProgressBarDisplayMode",
+"v": "CustomText"
+}
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 2
+},
+"groupBoxSequences": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "groupBoxSequences",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Size": {
+"t": "size",
+"x": 217,
+"y": 287
+},
+"TabIndex": 0,
+"TabStop": false,
+"Text": "Sequences"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "tableLayoutPanel2"
+}
+]
+},
+"tableLayoutPanel2": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 21
+},
+"Name": "tableLayoutPanel2",
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 209,
+"y": 261
+},
+"TabIndex": 19
+},
+"events": {},
+"children": [
+{
+"name": "listViewRecentSequences",
+"col": 0,
+"row": 3
+},
+{
+"name": "label2",
+"col": 0,
+"row": 2
+},
+{
+"name": "buttonOpenSequence",
+"col": 0,
+"row": 1
+},
+{
+"name": "buttonNewSequence",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"listViewRecentSequences": {
+"type": "ListView",
+"props": {
+"ContextMenuStrip": {
+"t": "ref",
+"name": "contextMenuStripRecent"
+},
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FullRowSelect": true,
+"HeaderStyle": {
+"t": "enum",
+"type": "ColumnHeaderStyle",
+"v": "None"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 97
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"MultiSelect": false,
+"Name": "listViewRecentSequences",
+"Size": {
+"t": "size",
+"x": 201,
+"y": 159
+},
+"TabIndex": 0,
+"UseCompatibleStateImageBehavior": false,
+"View": {
+"t": "enum",
+"type": "View",
+"v": "Details"
+}
+},
+"events": {
+"DoubleClick": "listViewRecentSequences_DoubleClick"
+},
+"children": [],
+"Columns": [
+{
+"ref": "columnHeader1"
+}
+],
+"Items": [
+{
+"ref": "listViewItem1"
+},
+{
+"ref": "listViewItem2"
+},
+{
+"ref": "listViewItem3"
+},
+{
+"ref": "listViewItem4"
+},
+{
+"ref": "listViewItem5"
+},
+{
+"ref": "listViewItem6"
+}
+]
+},
+"columnHeader1": {
+"type": "ColumnHeader",
+"props": {
+"Width": 150
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 77
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 105,
+"y": 15
+},
+"TabIndex": 8,
+"Text": "Recent Sequences:"
+},
+"events": {},
+"children": []
+},
+"buttonOpenSequence": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 42
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "buttonOpenSequence",
+"Size": {
+"t": "size",
+"x": 201,
+"y": 30
+},
+"TabIndex": 2,
+"Text": "Open Sequence...",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOpenSequence_Click"
+},
+"children": []
+},
+"buttonNewSequence": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "buttonNewSequence",
+"Size": {
+"t": "size",
+"x": 201,
+"y": 27
+},
+"TabIndex": 1,
+"Text": "New Sequence...",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonNewSequence_Click"
+},
+"children": []
+},
+"groupBoxSystemConfig": {
+"type": "GroupBox",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Top"
+},
+"Location": {
+"t": "point",
+"x": 229,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "groupBoxSystemConfig",
+"Padding": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Size": {
+"t": "size",
+"x": 217,
+"y": 106
+},
+"TabIndex": 1,
+"TabStop": false,
+"Text": "System Configuration"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "tableLayoutPanel4"
+}
+]
+},
+"tableLayoutPanel4": {
+"type": "TableLayoutPanel",
+"props": {
+"AutoSize": true,
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 21
+},
+"Name": "tableLayoutPanel4",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 209,
+"y": 80
+},
+"TabIndex": 19
+},
+"events": {},
+"children": [
+{
+"name": "buttonSetupOutputPreviews",
+"col": 0,
+"row": 1
+},
+{
+"name": "buttonSetupDisplay",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "AutoSize",
+"size": 0.0
+},
+{
+"type": "AutoSize",
+"size": 0.0
+}
+]
+},
+"buttonSetupOutputPreviews": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 45
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "buttonSetupOutputPreviews",
+"Size": {
+"t": "size",
+"x": 201,
+"y": 30
+},
+"TabIndex": 4,
+"Text": "Setup Previews",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSetupOutputPreviews_Click"
+},
+"children": []
+},
+"buttonSetupDisplay": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Left",
+"Right"
+]
+},
+"AutoSize": true,
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "Stretch"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 5
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 5,
+"r": 4,
+"b": 5
+},
+"Name": "buttonSetupDisplay",
+"Size": {
+"t": "size",
+"x": 201,
+"y": 30
+},
+"TabIndex": 3,
+"Text": "Setup Display",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSetupDisplay_Click"
+},
+"children": []
+},
+"buttonPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 150
+},
+"Name": "buttonPanel",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 450,
+"y": 337
+},
+"TabIndex": 18
+},
+"events": {},
+"children": [
+{
+"name": "groupBoxSystemConfig",
+"col": 1,
+"row": 0
+},
+{
+"name": "groupBoxSequences",
+"col": 0,
+"row": 0
+},
+{
+"name": "progressBar",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 50.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 88.35714
+},
+{
+"type": "Percent",
+"size": 11.6428566
+},
+{
+"type": "Absolute",
+"size": 20.0
+}
+]
+},
+"titlePanel": {
+"type": "TableLayoutPanel",
+"props": {
+"CausesValidation": false,
+"ColumnCount": 4,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "titlePanel",
+"RowCount": 3,
+"Size": {
+"t": "size",
+"x": 456,
+"y": 147
+},
+"TabIndex": 19
+},
+"events": {},
+"children": [
+{
+"name": "labelRelease",
+"col": 2,
+"row": 1
+},
+{
+"name": "labelBuild",
+"col": 2,
+"row": 2
+},
+{
+"name": "logoImage",
+"col": 0,
+"row": 0
+},
+{
+"name": "labelVixen",
+"col": 1,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 40.0
+},
+{
+"type": "Percent",
+"size": 25.0
+},
+{
+"type": "Percent",
+"size": 25.0
+},
+{
+"type": "Percent",
+"size": 10.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 70.0
+},
+{
+"type": "Percent",
+"size": 15.0
+},
+{
+"type": "Percent",
+"size": 15.0
+}
+]
+},
+"labelRelease": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"Location": {
+"t": "point",
+"x": 299,
+"y": 102
+},
+"Name": "labelRelease",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 22
+},
+"TabIndex": 2,
+"Text": "Release ",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"labelBuild": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"Location": {
+"t": "point",
+"x": 299,
+"y": 124
+},
+"Name": "labelBuild",
+"Size": {
+"t": "size",
+"x": 108,
+"y": 23
+},
+"TabIndex": 3,
+"Text": "Build",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"logoImage": {
+"type": "PictureBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom",
+"Left",
+"Right"
+]
+},
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "None"
+},
+"Image": {
+"t": "res",
+"name": "V3Logo"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "logoImage",
+"Size": {
+"t": "size",
+"x": 176,
+"y": 141
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "Zoom"
+},
+"TabIndex": 4,
+"TabStop": false
+},
+"events": {},
+"children": [],
+"layoutRowSpan": 3
+},
+"labelVixen": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"ForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"Location": {
+"t": "point",
+"x": 182,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "labelVixen",
+"Size": {
+"t": "size",
+"x": 274,
+"y": 102
+},
+"TabIndex": 5,
+"Text": "Vixen",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": [],
+"layoutColumnSpan": 3
+},
+"mainLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 1,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 25
+},
+"Name": "mainLayoutPanel",
+"RowCount": 2,
+"Size": {
+"t": "size",
+"x": 456,
+"y": 490
+},
+"TabIndex": 20
+},
+"events": {},
+"children": [
+{
+"name": "titlePanel",
+"col": 0,
+"row": 0
+},
+{
+"name": "buttonPanel",
+"col": 0,
+"row": 1
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 30.0
+},
+{
+"type": "Percent",
+"size": 70.0
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+456,
+539
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+5,
+4,
+5
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+472,
+578
+]
+}
+}
+}

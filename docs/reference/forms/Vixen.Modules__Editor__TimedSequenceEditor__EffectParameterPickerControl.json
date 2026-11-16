@@ -1,0 +1,184 @@
+{
+"class": "EffectParameterPickerControl",
+"source": "Vixen.Modules/Editor/TimedSequenceEditor/EffectParameterPickerControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Dpi"
+},
+"AutoSize": true,
+"AutoSizeMode": {
+"t": "enum",
+"type": "AutoSizeMode",
+"v": "GrowAndShrink"
+},
+"Name": "EffectParameterPickerControl"
+},
+"events": {},
+"children": [
+{
+"name": "flowLayoutPanel1"
+}
+],
+"objects": {
+"labelParameterName": {
+"type": "Label",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Top"
+},
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 4,
+"y": 72
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 0,
+"r": 4,
+"b": 5
+},
+"MaximumSize": {
+"t": "size",
+"x": 64,
+"y": 0
+},
+"MinimumSize": {
+"t": "size",
+"x": 64,
+"y": 15
+},
+"Name": "labelParameterName",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Gradients",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {
+"Click": "labelParameterName_Click"
+},
+"children": []
+},
+"pictureParameterImage": {
+"type": "PictureBox",
+"props": {
+"Anchor": {
+"t": "enum",
+"type": "AnchorStyles",
+"v": "Top"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 4
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 4,
+"r": 4,
+"b": 4
+},
+"Name": "pictureParameterImage",
+"Size": {
+"t": "size",
+"x": 64,
+"y": 64
+},
+"TabIndex": 2,
+"TabStop": false
+},
+"events": {
+"Click": "pictureParameterImage_Click"
+},
+"children": []
+},
+"flowLayoutPanel1": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "TopDown"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 0,
+"t_": 0,
+"r": 0,
+"b": 0
+},
+"Name": "flowLayoutPanel1",
+"Size": {
+"t": "size",
+"x": 72,
+"y": 92
+},
+"TabIndex": 3,
+"WrapContents": false
+},
+"events": {},
+"children": [
+{
+"name": "pictureParameterImage"
+},
+{
+"name": "labelParameterName"
+}
+]
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+96,
+96
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+72,
+92
+]
+}
+}
+}

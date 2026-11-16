@@ -1,0 +1,575 @@
+{
+"class": "LipSyncMapMatrixEditor",
+"source": "Vixen.Modules/App/LipSyncApp/LipSyncMapMatrixEditor.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AllowDrop": true,
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackgroundImageLayout": {
+"t": "enum",
+"type": "ImageLayout",
+"v": "None"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"DoubleBuffered": true,
+"Name": "LipSyncMapMatrixEditor",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Image Map"
+},
+"events": {
+"Load": "OnLoad",
+"ResizeEnd": "OnResizeEnd",
+"DragDrop": "OnDragDrop",
+"DragEnter": "OnDragEnter"
+},
+"children": [
+{
+"name": "notesTextBox"
+},
+{
+"name": "notesLabel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "tableLayoutGridArea"
+},
+{
+"name": "phonemeLabel"
+},
+{
+"name": "nextPhonemeButton"
+},
+{
+"name": "prevPhonemeButton"
+},
+{
+"name": "phonemeIcon"
+},
+{
+"name": "nameTextBox"
+},
+{
+"name": "nameLabel"
+}
+],
+"objects": {
+"nameTextBox": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 59,
+"y": 28
+},
+"Name": "nameTextBox",
+"Size": {
+"t": "size",
+"x": 177,
+"y": 23
+},
+"TabIndex": 42
+},
+"events": {},
+"children": []
+},
+"nameLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 30
+},
+"Name": "nameLabel",
+"Size": {
+"t": "size",
+"x": 39,
+"y": 15
+},
+"TabIndex": 41,
+"Text": "Name"
+},
+"events": {},
+"children": []
+},
+"phonemeLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 105,
+"y": 62
+},
+"Name": "phonemeLabel",
+"Size": {
+"t": "size",
+"x": 58,
+"y": 15
+},
+"TabIndex": 46,
+"Text": "Phoneme",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleCenter"
+}
+},
+"events": {},
+"children": []
+},
+"nextPhonemeButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 167,
+"y": 100
+},
+"Name": "nextPhonemeButton",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 27
+},
+"TabIndex": 45,
+"Text": ">",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "nextPhonemeButton_Click"
+},
+"children": []
+},
+"prevPhonemeButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 55,
+"y": 100
+},
+"Name": "prevPhonemeButton",
+"Size": {
+"t": "size",
+"x": 42,
+"y": 27
+},
+"TabIndex": 44,
+"Text": "<",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "prevPhonemeButton_Click"
+},
+"children": []
+},
+"phonemeIcon": {
+"type": "PictureBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 104,
+"y": 84
+},
+"Name": "phonemeIcon",
+"Size": {
+"t": "size",
+"x": 56,
+"y": 55
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "Zoom"
+},
+"TabIndex": 43,
+"TabStop": false
+},
+"events": {},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 149,
+"y": 342
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 3,
+"r": 2,
+"b": 3
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 29
+},
+"TabIndex": 15,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "OK"
+},
+"Location": {
+"t": "point",
+"x": 52,
+"y": 342
+},
+"Margin": {
+"t": "padding",
+"l": 2,
+"t_": 3,
+"r": 2,
+"b": 3
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 86,
+"y": 29
+},
+"TabIndex": 16,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"flowLayoutImportExportButtons": {
+"type": "FlowLayoutPanel",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"FlowDirection": {
+"t": "enum",
+"type": "FlowDirection",
+"v": "TopDown"
+},
+"Location": {
+"t": "point",
+"x": 105,
+"y": 3
+},
+"Name": "flowLayoutImportExportButtons",
+"Size": {
+"t": "size",
+"x": 54,
+"y": 95
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "openButton"
+},
+{
+"name": "editButton"
+},
+{
+"name": "clearButton"
+}
+]
+},
+"openButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "openButton",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 25
+},
+"TabIndex": 48,
+"Text": "File",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "openButton_Click"
+},
+"children": []
+},
+"editButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 34
+},
+"Name": "editButton",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 25
+},
+"TabIndex": 49,
+"Text": "Edit",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "editButton_Click"
+},
+"children": []
+},
+"clearButton": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 65
+},
+"Name": "clearButton",
+"Size": {
+"t": "size",
+"x": 48,
+"y": 25
+},
+"TabIndex": 50,
+"Text": "Clear",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "clearButton_Click"
+},
+"children": []
+},
+"tableLayoutGridArea": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Location": {
+"t": "point",
+"x": 50,
+"y": 149
+},
+"Name": "tableLayoutGridArea",
+"RowCount": 1,
+"Size": {
+"t": "size",
+"x": 162,
+"y": 101
+},
+"TabIndex": 47
+},
+"events": {},
+"children": [
+{
+"name": "flowLayoutImportExportButtons",
+"col": 1,
+"row": 0
+},
+{
+"name": "renderedPicture",
+"col": 0,
+"row": 0
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "Absolute",
+"size": 60.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 100.0
+},
+{
+"type": "Absolute",
+"size": 101.0
+}
+]
+},
+"renderedPicture": {
+"type": "PictureBox",
+"props": {
+"BackgroundImage": {
+"t": "image",
+"file": "LipSyncMapMatrixEditor__renderedPicture.BackgroundImage.png"
+},
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "renderedPicture",
+"Size": {
+"t": "size",
+"x": 96,
+"y": 95
+},
+"TabIndex": 20,
+"TabStop": false
+},
+"events": {
+"DoubleClick": "renderedPicture_DoubleClick"
+},
+"children": []
+},
+"notesLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 272
+},
+"Name": "notesLabel",
+"Size": {
+"t": "size",
+"x": 41,
+"y": 15
+},
+"TabIndex": 48,
+"Text": "Notes:"
+},
+"events": {},
+"children": []
+},
+"notesTextBox": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 59,
+"y": 270
+},
+"Multiline": true,
+"Name": "notesTextBox",
+"Size": {
+"t": "size",
+"x": 177,
+"y": 55
+},
+"TabIndex": 49
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+258,
+384
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+2,
+3,
+2,
+3
+]
+},
+"MinimumSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+239,
+422
+]
+}
+},
+"unparsed": [
+"((System.ComponentModel.ISupportInitialize)(this.phonemeIcon)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.renderedPicture)).BeginInit()",
+"((System.ComponentModel.ISupportInitialize)(this.phonemeIcon)).EndInit()",
+"((System.ComponentModel.ISupportInitialize)(this.renderedPicture)).EndInit()"
+]
+}

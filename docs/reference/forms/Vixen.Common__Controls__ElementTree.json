@@ -1,0 +1,723 @@
+{
+"class": "ElementTree",
+"source": "Vixen.Common/Controls/ElementTree.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"Name": "ElementTree"
+},
+"events": {
+"Load": "ElementTree_Load"
+},
+"children": [
+{
+"name": "treeview"
+}
+],
+"objects": {
+"components": {
+"type": "Container",
+"props": {},
+"events": {},
+"children": []
+},
+"treeIconsImageList": {
+"type": "ImageList",
+"props": {
+"ColorDepth": {
+"t": "enum",
+"type": "ColorDepth",
+"v": "Depth32Bit"
+},
+"ImageStream": "\n        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs\n        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu\n        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAzhYAAAJNU0Z0AUkBTAIBAQcB\n        AAFYAQABWAEAARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMAASADAAEBAQABIAYAASD/\n        AP8AKAABLwHGAv8BLwHGAv8BLwHGAv8BLwHGAv8BLwHGAv8BLwHGAv8DFQEdJAABuwGOASEB/wG7AY4B\n        IQH/AbsBjgEhAf8BuwGOASEB/wG7AY4BIQH/AbsBjgEhAf8DFQEdAxABFSAAAesC6gH/AesC6gH/AesC\n        6gH/AesC6gH/AesC6gH/AesC6gH/ZAABLwHGAv8BUQHYAv8BbwHjAv8BggHlAv8BggHlAv8BbwHjAv8B\n        UQHYAv8BLwHGAv8gAAG7AY4BIQH/Ad0BrAFJAf8B7wHCAW8B/wH0AckBgQH/AfQByQGBAf8B7wHCAW8B\n        /wHdAawBSQH/AbsBjgEhAf8gAAHrAuoB/wHoAecB6AH/AekC6AH/AesC6gH/AesC6gH/AekC6AH/AegB\n        5wHoAf8B6wLqAf9YAAMJAQsBLwHGAv8BWwHbAv8BcQHhAv8BZwHdAv8BZQHdAv8BZQHdAv8BZwHdAv8B\n        cQHhAv8BWwHbAv8BLwHGAv8DCQELEAADCQELAbsBjgEhAf8B5AGyAVIB/wHyAcMBbAH/AewBvAFhAf8B\n        6gG6AV8B/wHqAboBXwH/AewBvAFhAf8B8gHDAWwB/wHkAbIBUgH/AbsBjgEhAf8DCQELEAADCQELAesC\n        6gH/AecC5gH/AegB5wHmAf8B5gHlAeQB/wHmAeUB5AH/AeYB5QHkAf8B5gHlAeQB/wHoAecB5gH/AecC\n        5gH/AesC6gH/AwkBC1AAAS8BxgL/AUoB0wL/AWkB3QL/AV8B2QL/AV8B2QL/AV8B2QL/AV8B2QL/AV8B\n        2QL/AV8B2QL/AWkB3QL/AUoB0wL/AS8BxgL/EAABuwGOASEB/wHbAaYBPgH/Ae8BvAFhAf8B6AG0AVUB\n        /wHoAbQBVQH/AegBtAFVAf8B6AG0AVUB/wHoAbQBVQH/AegBtAFVAf8B7wG8AWEB/wHbAaYBPgH/AbsB\n        jgEhAf8QAAHrAuoB/wHkAuMB/wHkAuMB/wHjAuIB/wHjAuIB/wHjAuIB/wHjAuIB/wHjAuIB/wHjAuIB\n        /wHkAuMB/wHkAuMB/wHrAuoB/1AAAS8BxgL/AVsB1gL/AVoB1QL/AVkB1QL/AVkB1QL/AVkB1QL/AVkB\n        1QL/AVkB1QL/AVkB1QL/AVoB1QL/AVsB1gL/AS8BxgL/EAABuwGOASEB/wHoAbEBTQH/AeYBsgFMAf8B\n        5QGwAUsB/wHlAbABSwH/AeUBsAFLAf8B5QGwAUsB/wHlAbABSwH/AeUBsAFLAf8B5gGyAUwB/wHoAbEB\n        TQH/AbsBjgEhAf8QAAHrAuoB/wHhAd8B3gH/AeAC3wH/AeAC3wH/AeAC3wH/AeAC3wH/AeAC3wH/AeAC\n        3wH/AeAC3wH/AeAC3wH/AeEB3wHeAf8B6wLqAf9QAAEvAcYC/wFlAdgC/wFQAdAC/wFTAdEC/wFTAdEC\n        /wFTAdEC/wFTAdEC/wFTAdEC/wFTAdEC/wFQAdAC/wFlAdgC/wEvAcYC/xAAAbsBjgEhAf8B6wG3AVUB\n        /wHjAaoBPgH/AeQBqwFBAf8B5AGrAUEB/wHkAasBQQH/AeQBqwFBAf8B5AGrAUEB/wHkAasBQQH/AeMB\n        qgE+Af8B6wG3AVUB/wG7AY4BIQH/EAAB6wLqAf8B4QHgAd8B/wHeAd0B3AH/Ad4B3QHcAf8B3gHdAdwB\n        /wHeAd0B3AH/Ad4B3QHcAf8B3gHdAdwB/wHeAd0B3AH/Ad4B3QHcAf8B4QHgAd8B/wHrAuoB/1AAAS8B\n        xgL/AXMB2QL/AUUBywL/AU0BzgL/AU0BzgL/AU0BzgL/AU0BzgL/AU0BzgL/AU0BzgL/AUUBywL/AXMB\n        2QL/AS8BxgL/EAABuwGOASEB/wHtAbwBYQH/AeEBogEuAf8B4gGmATgB/wHiAaYBNwH/AeIBpgE3Af8B\n        4gGmATcB/wHiAaYBNwH/AeIBpgE4Af8B4QGiAS4B/wHtAbwBYQH/AbsBjgEhAf8QAAHrAuoB/wHjAeIB\n        4AH/AdoB2QHYAf8B3AHbAdoB/wHcAdsB2gH/AdwB2wHaAf8B3AHbAdoB/wHcAdsB2gH/AdwB2wHaAf8B\n        2gHZAdgB/wHjAeIB4AH/AesC6gH/UAABLwHGAv8BkQHeAv8BPAHGAv8BRAHKAv8BRwHKAv8BRwHKAv8B\n        RwHKAv8BRwHKAv8BRAHKAv8BPAHGAv8BkQHeAv8BLwHGAv8QAAG7AY4BIQH/Ae0BxAGBAf8B4AGcASEB\n        /wHgAaABKwH/AeEBoQEuAf8B4QGhAS4B/wHhAaEBLgH/AeEBoQEuAf8B4AGgASsB/wHgAZwBIQH/Ae0B\n        xAGBAf8BuwGOASEB/xAAAesC6gH/AecB5gHlAf8C1gHUAf8B2QHYAdYB/wLZAdcB/wLZAdYB/wLZAdYB\n        /wLZAdcB/wHZAdgB1gH/AtYB1AH/AecB5gHlAf8B6wLqAf9QAAEvAcYC/wFyAdgC/wFwAdQC/wEwAcIC\n        /wE6AcUC/wFAAccC/wFAAccC/wE6AcUC/wEwAcIC/wFwAdQC/wFyAdgC/wEvAcYC/xAAAbsBjgEhAf8B\n        3QG1AWMB/wHrAbcBVwH/AdsBkwERAf8B3QGZARwB/wHeAZ0BIwH/Ad4BnQEjAf8B3QGZARwB/wHbAZMB\n        EQH/AesBtwFXAf8B3AG1AWMB/wG7AY4BIQH/EAAB6wLqAf8B5QLmAf8B3wHeAd0B/wLSAdAB/wHVAdQB\n        0wH/AtYB1QH/AtYB1QH/AdUB1AHTAf8C0gHQAf8B3wHeAd0B/wHlAuYB/wHrAuoB/1AAAxIBFwEvAcYC\n        /wGTAd0C/wGGAdgC/wE/AcUC/wEoAbwC/wEoAbwC/wE/AcUC/wGGAdgC/wGSAdwC/wEvAcYC/wMOARIQ\n        AAMSARcBwwGaAS4B/wHmAcEBgQH/Ae0BvAFkAf8B3QGaAR4B/wHZAYwBAwH/AdkBjAEDAf8B3QGaAR4B\n        /wHtAbwBZAH/AeYBwQGBAf8BuwGOASEB/wMOARIQAAMJAQwB6wLqAf8B6QHoAecB/wHhAuAB/wHUAdMB\n        0gH/Ac8BzgHNAf8BzwHOAc0B/wHUAdMB0gH/AeEC4AH/AekB6AHnAf8B6wLqAf8DDgESUAADAwEEBAAB\n        LwHGAv8BdAHYAv8BnAHeAv8BnAHcAv8BnAHcAv8BnAHeAv8BdAHXAv8BLwHGAv8YAAMDAQQEAAG+AZwB\n        OAH/AdwBtAFkAf8B7QHHAYgB/wHxAcgBhwH/AfEByAGHAf8B7QHHAYgB/wHcAbQBZAH/AbsBjgEhAf8Y\n        AAMDAQQEAAHrAuoB/wPlAf8B5gHnAeUB/wLmAeQB/wLmAeQB/wHmAecB5QH/A+UB/wHrAuoB/2QAAS8B\n        xgL/AS8BxgL/AS8BxgL/AS8BxgL/AS8BxgL/AS8BxgL/KAABuwGOASEB/wG7AY4BIQH/AbsBjgEhAf8B\n        uwGOASEB/wG7AY4BIQH/AbsBjgEhAf8oAAHrAuoB/wHrAuoB/wHrAuoB/wHrAuoB/wHrAuoB/wHrAuoB\n        //8A/wD/AP8ArAACtgG1Af8CtgG1Af8CtgG1Af8CtgG1Af8CtgG1Af8CtgG1Af8oAAFcAS4B8gH/AVwB\n        PwGsAfgBXAE/AawB+AFcAT8BrAH4AVwBPwGsAfgBXAEuAfIB/ygAAQsBlQFQAf8BCwGVAVAB/wELAZUB\n        UAH/AQsBlQFQAf8BCwGVAVAB/wELAZUBUAH/ZAACtgG1Af8DvgH/A74B/wO+Af8DvgH/A74B/wO+Af8C\n        tgG1Af8gAAFcAS4B8gH/AWoBUAH6Af8BgAFzAv8BggGHAv8BggGHAv8BgAFzAv8BagFQAfoB/wFcAS4B\n        8gH/IAABCwGVAVAB/wEAAbUBbQH/AQABzgGSAf8BAAHUAZgB/wEAAdQBmAH/AQABzgGSAf8BAAG1AW0B\n        /wELAZUBUAH/BAADAwEEFAABKQGZASkB/wQAA90B/wPdAf8D1wH/AfABygGmAf8DzAH/A8AB/wPAAf8D\n        wAH/GAACtgG1Af8DvgH/A9YB/wPWAf8D1gH/A9YB/wPWAf8D1gH/A74B/wK2AbUB/xQAAwkBCwFcAS4B\n        8gH/AW0BXQH9Af8BcwF1Av8BcQFrAv8BcAFoAv8BcAFoAv8BcQFrAv8BcwF1Av8BbQFdAf0B/wFcAS4B\n        8gH/AwkBCxAAAwkCCwGVAVAB/wEAAcEBgwH/AQAB0gGVAf8BAAHKAY0B/wEAAcgBiwH/AQAByAGLAf8B\n        AAHKAY0B/wEAAdIBlQH/AQABwQGDAf8BCwGVAVAB/1QAArYBtQH/A74B/wPWAf8D1gH/A9YB/wPWAf8D\n        1gH/A9YB/wPWAf8D1gH/A74B/wK2AbUB/xAAAVwBLgHyAf8BZAFJAfoB/wFvAW0C/wFrAWMC/wFrAWEC\n        /wFrAWEC/wFrAWEC/wFrAWEC/wFrAWMC/wFvAW0C/wFkAUkB+gH/AVwBLgHyAf8QAAELAZUBUAH/AQAB\n        swFpAf8BAAHOAZIB/wEAAcYBiAH/AQABxgGHAf8BAAHGAYgB/wEAAcYBiAH/AQABxgGHAf8BAAHGAYgB\n        /wEAAc4BkgH/AQABswFpAf8BCwGVAVAB/xQAASkBmQEpAf8EAAPdAf8D3QH/A9cB/wHwAcoBpgH/A8wB\n        /wPAAf8DwAH/A8AB/xQAArYBtQH/A74B/wPWAf8D1gH/A9YB/wPWAf8D1gH/A9YB/wPWAf8D1gH/A74B\n        /wK2AbUB/xAAAV4BMgG/AfsBZwFdAv8BZwFeAv8BZwFbAv8BZwFbAv8BZwFbAv8BZwFbAv8BZwFbAv8B\n        ZwFbAv8BZwFeAv8BZwFdAv8BXgEyAb8B+xAAARcBhAFRAfsBAAHGAYcB/wEAAcUBhgH/AQABwwGFAf8B\n        AAHDAYUB/wEAAcMBhQH/AQABwwGFAf8BAAHDAYUB/wEAAcMBhQH/AQABxQGGAf8BAAHGAYcB/wELAZUB\n        UAH/UAACtgG1Af8DvgH/A9YB/wHeAd0B3AH/Ad4B3QHcAf8B3gHdAdwB/wHeAd0B3AH/Ad4B3QHcAf8B\n        3gHdAdwB/wPWAf8DvgH/ArYBtQH/EAABUAFBAbcB+gFuAWUC/wFhAVMC/wFiAVQC/wFiAVQC/wFiAVQC\n        /wFiAVQC/wFiAVQC/wFiAVQC/wFhAVMC/wFuAWUC/wFQAUEBtwH6EAABHwF8AU0B+gEKAc0BlAH/AQAB\n        wAGBAf8BAAHBAYMB/wEAAcEBgwH/AQABwQGDAf8BAAHBAYMB/wEAAcEBgwH/AQABwQGDAf8BAAHAAYEB\n        /wEKAc0BlAH/AQsBlQFQAf8UAAEpAZkBKQH/BAAD3QH/A90B/wPXAf8B8AHKAaYB/wPMAf8DwAH/A8AB\n        /wPAAf8UAAK2AbUB/wO+Af8D1gH/AdwB2wHaAf8B3AHbAdoB/wHcAdsB2gH/AdwB2wHaAf8B3AHbAdoB\n        /wHcAdsB2gH/A9YB/wO+Af8CtgG1Af8QAAFfATIBwQH7AYQBcAL/AVkBSQL/AV8BTwL/AV8BTwL/AV8B\n        TwL/AV8BTwL/AV8BTwL/AV8BTwL/AVkBSQL/AYQBcAL/AV8BMgHBAfsQAAEhAYoBWAH7ASoB0wGgAf8B\n        AAG9AXEB/wEAAcABgQH/AQABwAGBAf8BAAHAAYEB/wEAAcABgQH/AQABwAGBAf8BAAHAAYEB/wEAAb0B\n        cQH/ASoB0wGgAf8BCwGVAVAB/1AAArYBtQH/A74B/wPWAf8D1gH/A9YB/wPWAf8D1gH/A9YB/wPWAf8D\n        1gH/A74B/wK2AbUB/xAAAVwBPwGsAfgBlgGIAv8BUwFBAv8BWQFIAv8BXAFKAv8BWwFKAv8BWwFKAv8B\n        XAFKAv8BWQFIAv8BUwFBAv8BlgGIAv8BXAE/AawB+BAAATUBfAFcAfgBUwHXAa8B/wEAAboBbgH/AQAB\n        vQFzAf8BAAG+AXUB/wEAAb4BdQH/AQABvgF1Af8BAAG+AXUB/wEAAb0BcwH/AQABugFuAf8BUwHXAa8B\n        /wELAZUBUAH/FAABKQGZASkB/wQAA90B/wPdAf8D1wH/AfABygGmAf8DzAH/A8AB/wPAAf8DwAH/FAAC\n        tgG1Af8DvgH/A9YB/wPWAf8D1gH/A9YB/wPWAf8D1gH/A9YB/wPWAf8DvgH/ArYBtQH/EAABXAEuAfIB\n        /wGOAWUB+QH/AYEBbAL/AUsBNwL/AVQBPwL/AVcBRAL/AVcBRAL/AVQBPwL/AUsBNwL/AYEBbAL/AY4B\n        ZQH5Af8BXAEuAfIB/xAAAQsBlQFQAf8BSQHBAZYB/wEzAdIBogH/AQABtgFmAf8BAAG5AW0B/wEAAbsB\n        cQH/AQABuwFxAf8BAAG5AW0B/wEAAbYBZgH/ATMB0gGiAf8BSQHBAZYB/wELAZUBUAH/UAADCQEMArYB\n        tQH/A74B/wPWAf8D1gH/A9YB/wPWAf8D1gH/A9YB/wO+Af8CtgG1Af8DBwEJFAABXAEuAfIB/wGbAYcB\n        /AH/AYwBgAL/AVYBQAL/AUYBLwL/AUYBLwL/AVYBQAL/AYwBgAL/AZsBhwH8Af8BXAEuAfIB/wMHAQkU\n        AAELAZUBUAH/AWIB0QGsAf8BTQHXAawB/wEBAbwBcgH/AQABsgFiAf8BAAGyAWIB/wEBAbwBcgH/AU0B\n        1wGsAf8BYgHQAasB/wELAZUBUAH/GAABKQGZASkB/wQAA90B/wPdAf8D1wH/AfABygGmAf8DzAH/A8AB\n        /wPAAf8DwAH/HAACtgG1Af8DvgH/A74B/wO+Af8DvgH/A74B/wO+Af8CtgG1Af8YAAMDAQQEAAFcAS4B\n        8gH/AY8BZgH3Af8BnwGPAv8BoQGWAv8BoQGWAv8BnwGPAv8BkAFmAfgB/wFcAS4B8gH/IAABCwGVAVAB\n        /wFQAcIBmQH/AXAB2wG6Af8BdQHfAb0B/wF1Ad8BvQH/AXAB2wG6Af8BUAHBAZgB/wELAZUBUAH/ZAAC\n        tgG1Af8CtgG1Af8CtgG1Af8CtgG1Af8CtgG1Af8CtgG1Af8oAAFcAS4B8gH/AWIBSAGbAfYBXAFDAawB\n        +AFcAUMBrAH4AWIBSAGbAfYBXAEuAfIB/ygAAQsBlQFQAf8BCwGVAVAB/wELAZUBUAH/AQsBlQFQAf8B\n        CwGVAVAB/wELAZUBUAH//wD/ABYAAUIBTQE+BwABPgMAASgDAAFAAwABIAMAAQEBAAEBBgABARYAA/8B\n        AAb/AgAG/wIAAfgBDwH4AQcB+AEfAgAB8AEPAfABDwHwAQ8CAAHAAQMBwAEDAcABAwIAAcABAwHAAQMB\n        wAEDAgABwAEDAcABAwHAAQMCAAHAAQMBwAEDAcABAwIAAcABAwHAAQMBwAEDAgABwAEDAcABAwHAAQMC\n        AAHAAQMBwAEDAcABAwIAAcABAwHAAQMBwAEDAgAB0AEPAdABDwHQAQ8CAAH4AR8B+AEfAfgBHwIABv8C\n        AAb/AgAS/wH4AR8B+AEfAfgBHwL/AfABDwHwAQ8B8AELAegBBwHgAQcBwAEDAcABBwL/AcABAwHAAQMB\n        wAEDAegBBwHAAQMBwAEDAcABAwL/AcABAwHAAQMBwAEDAegBBwHAAQMBwAEDAcABAwL/AcABAwHAAQMB\n        wAEDAegBBwHAAQMBwAEDAcABAwL/AcABAwHgAQMB4AEHAegBBwHwAQ8B0AEPAfABDwL/AfgBHwH4AR8B\n        +AEfEP8L\n",
+"TransparentColor": {
+"t": "color",
+"name": "Transparent"
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+]
+},
+"contextMenuStripTreeView": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Name": "contextMenuStripTreeView",
+"Size": {
+"t": "size",
+"x": 217,
+"y": 390
+}
+},
+"events": {
+"Opening": "contextMenuStripTreeView_Opening"
+},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+],
+"Items": [
+{
+"ref": "cutNodesToolStripMenuItem"
+},
+{
+"ref": "copyNodesToolStripMenuItem"
+},
+{
+"ref": "pasteNodesToolStripMenuItem"
+},
+{
+"ref": "pasteAsNewToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator1"
+},
+{
+"ref": "nodePropertiesToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator2"
+},
+{
+"ref": "addNewNodeToolStripMenuItem"
+},
+{
+"ref": "addMultipleNewNodesToolStripMenuItem"
+},
+{
+"ref": "deleteNodesToolStripMenuItem"
+},
+{
+"ref": "createGroupWithNodesToolStripMenuItem"
+},
+{
+"ref": "renameNodesToolStripMenuItem"
+},
+{
+"ref": "patternRenameToolStripMenuItem"
+},
+{
+"ref": "collapseAllToolStripMenuItem"
+},
+{
+"ref": "reverseElementsToolStripMenuItem"
+},
+{
+"ref": "sortToolStripMenuItem"
+},
+{
+"ref": "exportWireDiagramToolStripMenuItem"
+},
+{
+"ref": "exportElementTreeToolStripMenuItem"
+},
+{
+"ref": "toolStripSeparator3"
+},
+{
+"ref": "tagsToolStripMenuItem"
+}
+]
+},
+"cutNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "cutNodesToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"X"
+]
+},
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Cut"
+},
+"events": {
+"Click": "cutNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"copyNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "copyNodesToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"C"
+]
+},
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Copy"
+},
+"events": {
+"Click": "copyNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"pasteNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "pasteNodesToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"V"
+]
+},
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Paste"
+},
+"events": {
+"Click": "pasteNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"pasteAsNewToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Enabled": false,
+"Name": "pasteAsNewToolStripMenuItem",
+"ShortcutKeys": {
+"t": "flags",
+"v": [
+"Control",
+"Shift",
+"V"
+]
+},
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Paste as New"
+},
+"events": {
+"Click": "pasteNodesAsNewToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator1": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator1",
+"Size": {
+"t": "size",
+"x": 213,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"nodePropertiesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "nodePropertiesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Item properties"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "copyPropertiesToolStripMenuItem"
+},
+{
+"ref": "pastePropertiesToolStripMenuItem"
+}
+]
+},
+"copyPropertiesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "copyPropertiesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 158,
+"y": 22
+},
+"Text": "Copy properties"
+},
+"events": {
+"Click": "copyPropertiesToolStripMenuItem_Click"
+},
+"children": []
+},
+"pastePropertiesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "pastePropertiesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 158,
+"y": 22
+},
+"Text": "Paste properties"
+},
+"events": {
+"Click": "pastePropertiesToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator2": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator2",
+"Size": {
+"t": "size",
+"x": 213,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"addNewNodeToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "addNewNodeToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "&Add"
+},
+"events": {
+"Click": "addNewNodeToolStripMenuItem_Click"
+},
+"children": []
+},
+"addMultipleNewNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "addMultipleNewNodesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Add &Multiple"
+},
+"events": {
+"Click": "addMultipleNewNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"deleteNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "deleteNodesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "&Delete"
+},
+"events": {
+"Click": "deleteNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"createGroupWithNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "createGroupWithNodesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Create &Group"
+},
+"events": {
+"Click": "createGroupWithNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"renameNodesToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "renameNodesToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Re&name"
+},
+"events": {
+"Click": "renameNodesToolStripMenuItem_Click"
+},
+"children": []
+},
+"patternRenameToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "patternRenameToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Find/Replace"
+},
+"events": {
+"Click": "patternRenameToolStripMenuItem_Click"
+},
+"children": []
+},
+"collapseAllToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "collapseAllToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "&Collapse All"
+},
+"events": {
+"Click": "collapseAllToolStripMenuItem_Click"
+},
+"children": []
+},
+"reverseElementsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "reverseElementsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Reverse Elements"
+},
+"events": {
+"Click": "reverseElementsToolStripMenuItem_Click"
+},
+"children": []
+},
+"sortToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "sortToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "&Sort"
+},
+"events": {
+"Click": "sortToolStripMenuItem_Click"
+},
+"children": []
+},
+"exportWireDiagramToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exportWireDiagramToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Export Wire Diagram"
+},
+"events": {},
+"children": [],
+"DropDownItems": [
+{
+"ref": "frontWireDiagramToolStripMenuItem"
+},
+{
+"ref": "backWireDiagramToolStripMenuItem"
+}
+]
+},
+"exportElementTreeToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "exportElementTreeToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Export Element Tree",
+"ToolTipText": "Export the element tree for importing into other profiles."
+},
+"events": {
+"Click": "ExportElementTreeToolStripMenuItem_Click"
+},
+"children": []
+},
+"toolStripSeparator3": {
+"type": "ToolStripSeparator",
+"props": {
+"Name": "toolStripSeparator3",
+"Size": {
+"t": "size",
+"x": 213,
+"y": 6
+}
+},
+"events": {},
+"children": []
+},
+"tagsToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "tagsToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 216,
+"y": 22
+},
+"Text": "Tags"
+},
+"events": {},
+"children": []
+},
+"contextMenuStripDragging": {
+"type": "ContextMenuStrip",
+"props": {
+"ImageScalingSize": {
+"t": "size",
+"x": 24,
+"y": 24
+},
+"Name": "contextMenuStripProperties",
+"Size": {
+"t": "size",
+"x": 133,
+"y": 48
+}
+},
+"events": {},
+"children": [],
+"ctor": [
+{
+"t": "ref",
+"name": "components"
+}
+],
+"Items": [
+{
+"ref": "moveHereToolStripMenuItem"
+},
+{
+"ref": "copyHereToolStripMenuItem"
+}
+]
+},
+"moveHereToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "moveHereToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 132,
+"y": 22
+},
+"Text": "Move Here"
+},
+"events": {},
+"children": []
+},
+"copyHereToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "copyHereToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 132,
+"y": 22
+},
+"Text": "Copy Here"
+},
+"events": {},
+"children": []
+},
+"treeview": {
+"type": "MultiSelectTreeview",
+"props": {
+"AllowDrop": true,
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom",
+"Left",
+"Right"
+]
+},
+"ContextMenuStrip": {
+"t": "ref",
+"name": "contextMenuStripTreeView"
+},
+"CustomDragCursor": null,
+"DragDefaultMode": {
+"t": "enum",
+"type": "DragDropEffects",
+"v": "Move"
+},
+"DragDestinationNodeBackColor": {
+"t": "color",
+"system": "Highlight"
+},
+"DragDestinationNodeForeColor": {
+"t": "color",
+"system": "HighlightText"
+},
+"DragSourceNodeBackColor": {
+"t": "color",
+"system": "ControlLight"
+},
+"DragSourceNodeForeColor": {
+"t": "color",
+"system": "ControlText"
+},
+"HideSelection": false,
+"ImageIndex": 0,
+"ImageList": {
+"t": "ref",
+"name": "treeIconsImageList"
+},
+"Location": {
+"t": "point",
+"x": 0,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "treeview",
+"SelectedImageIndex": 0,
+"SelectedNodes": {
+"t": "raw",
+"v": "(List<TreeNode>)resources.GetObject(\"treeview.SelectedNodes\")"
+},
+"Size": {
+"t": "size",
+"x": 233,
+"y": 461
+},
+"TabIndex": 13,
+"UsingCustomDragCursor": false
+},
+"events": {
+"KeyDown": "treeview_KeyDown"
+},
+"children": []
+},
+"frontWireDiagramToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "frontWireDiagramToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 180,
+"y": 22
+},
+"Text": "Front Wire Diagram"
+},
+"events": {
+"Click": "frontWireDiagramToolStripMenuItem_Click"
+},
+"children": []
+},
+"backWireDiagramToolStripMenuItem": {
+"type": "ToolStripMenuItem",
+"props": {
+"Name": "backWireDiagramToolStripMenuItem",
+"Size": {
+"t": "size",
+"x": 180,
+"y": 22
+},
+"Text": "Back Wire Diagram"
+},
+"events": {
+"Click": "backWireDiagramToolStripMenuItem_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+233,
+462
+]
+}
+}
+}

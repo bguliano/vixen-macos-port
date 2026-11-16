@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<!-- Original effects the read-only compiled Vixen assemblies do not include, compiled straight from upstream/Vixen/src.
+	     The output name follows Vixen's Module.Effect.*.dll convention, so the real module loader discovers them.
+	     Bars is compiled again here because the compiled assembly replaced its WPF RotateTransform call with different
+	     arithmetic; pinned original WPF methods now supply the arithmetic; WpfShim.cs hosts only the UI properties.
+	     Pulse and SetLevel are compiled again here because the compiled assembly changed what they do with several targets.
+	     Twinkle and Candle are compiled again here so their random numbers can be redirected; see RandomShims.cs. -->
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<AssemblyName>Module.Effect.GoldenExtras</AssemblyName>
+		<RootNamespace>VixenModules</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);CS0436;CS1591;CA1416;NU1701;CS0108;CS0162;CS0168;CS0219;CS0414;CS0649;CS8632</NoWarn>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+		<OutputPath>$(GoldenOut)/bin/</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<VixenNativeBin>/Users/developer/Documents/Codex/2026-09-13/is-the/outputs/Vixen/native/Vixen.Native.Tests/bin/Release/net10.0</VixenNativeBin>
+		<Upstream>$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Modules/Effect</Upstream>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+	<ItemGroup>
+		<Using Include="System.Drawing" />
+		<Compile Include="*.cs" />
+        <Compile Include="$(GoldenOut)/helpers/OriginalWpfMethods.cs" />
+        <Compile Include="$(GoldenRepoRoot)/tools/golden/helpers/reference/RotateTransform.cs" />
+        <Compile Include="$(GoldenOut)/helpers/OriginalAudioMethods.cs" />
+        <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Common/AudioPlayer/SampleProvider/CachedSoundSampleProvider.cs" />
+        <Compile Include="$(GoldenRepoRoot)/upstream/Vixen/src/Vixen.Modules/Media/Audio/SampleProviders/MonoSampleProvider.cs" />
+        <Reference Include="NAudio.Core"><HintPath>$(GoldenOut)/helpers/lib/NAudio.Core.dll</HintPath><Private>true</Private></Reference>
+		<Compile Include="../GoldenRandom.cs" />
+		<Compile Include="../AudioSignal.cs" />
+		<Compile Include="$(Upstream)/Butterfly/*.cs" LinkBase="Upstream/Butterfly" />
+		<Compile Include="$(Upstream)/Spiral/*.cs" LinkBase="Upstream/Spiral" />
+		<Compile Include="$(Upstream)/Bars/*.cs" Exclude="$(Upstream)/Bars/BarDescriptor.cs" LinkBase="Upstream/Bars" />
+		<Compile Include="$(Upstream)/Twinkle/*.cs" Exclude="$(Upstream)/Twinkle/TwinkleDescriptor.cs;$(Upstream)/Twinkle/RandomGenerator.cs" LinkBase="Upstream/Twinkle" />
+		<Compile Include="$(Upstream)/Candle/*.cs" Exclude="$(Upstream)/Candle/CandleDescriptor.cs" LinkBase="Upstream/Candle" />
+		<Compile Include="$(Upstream)/Pulse/*.cs" Exclude="$(Upstream)/Pulse/PulseDescriptor.cs;$(Upstream)/Pulse/PulseRenderer.cs" LinkBase="Upstream/Pulse" />
+		<Compile Include="$(Upstream)/SetLevel/*.cs" Exclude="$(Upstream)/SetLevel/SetLevelDescriptor.cs" LinkBase="Upstream/SetLevel" />
+		<Compile Include="$(Upstream)/Fire/*.cs" LinkBase="Upstream/Fire" />
+		<Compile Include="$(Upstream)/Balls/*.cs" LinkBase="Upstream/Balls" />
+		<Compile Include="$(Upstream)/Shockwave/*.cs" LinkBase="Upstream/Shockwave" />
+		<Compile Include="$(Upstream)/Fireworks/*.cs" LinkBase="Upstream/Fireworks" />
+		<Compile Include="$(Upstream)/CustomValue/*.cs" LinkBase="Upstream/CustomValue" />
+		<Compile Include="$(Upstream)/Launcher/*.cs" LinkBase="Upstream/Launcher" />
+		<Compile Include="$(Upstream)/RDS/*.cs" LinkBase="Upstream/RDS" />
+		<Compile Include="$(Upstream)/Effect/*Expando*.cs" LinkBase="Upstream/Effect" />
+		<Compile Include="$(Upstream)/Effect/NotifyPropertyObservableCollection.cs" LinkBase="Upstream/Effect" />
+		<Compile Include="$(Upstream)/Pattern/*.cs" LinkBase="Upstream/Pattern" />
+		<Compile Include="$(Upstream)/Wave/**/*.cs" LinkBase="Upstream/Wave" />
+		<Compile Include="$(Upstream)/Whirlpool/**/*.cs" LinkBase="Upstream/Whirlpool" />
+		<Compile Include="$(Upstream)/AudioHelper/*.cs" LinkBase="Upstream/AudioHelper" />
+		<Compile Include="$(Upstream)/VerticalMeter/*.cs" LinkBase="Upstream/VerticalMeter" />
+		<Compile Include="$(Upstream)/VUMeter/*.cs" LinkBase="Upstream/VUMeter" />
+		<Compile Include="$(Upstream)/Waveform/*.cs" LinkBase="Upstream/Waveform" />
+		<Compile Include="$(Upstream)/../Media/Audio/AudioUtilities.cs" LinkBase="Upstream/Audio" />
+		<Compile Include="$(Upstream)/../Media/Audio/AudioFilters.cs" LinkBase="Upstream/Audio" />
+		<Reference Include="Vixen.Core"><HintPath>$(VixenNativeBin)/Vixen.Core.dll</HintPath><Private>false</Private></Reference>
+		<Reference Include="Module.Effect.Native"><HintPath>$(VixenNativeBin)/Module.Effect.Native.dll</HintPath><Private>false</Private></Reference>
+		<Reference Include="Module.App.Native"><HintPath>$(VixenNativeBin)/Module.App.Native.dll</HintPath><Private>false</Private></Reference>
+		<Reference Include="Module.Property.Native"><HintPath>$(VixenNativeBin)/Module.Property.Native.dll</HintPath><Private>false</Private></Reference>
+		<Reference Include="NLog"><HintPath>$(VixenNativeBin)/NLog.dll</HintPath><Private>false</Private></Reference>
+		<Reference Include="System.Drawing.Common"><HintPath>$(VixenNativeBin)/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
+	</ItemGroup>
+</Project>

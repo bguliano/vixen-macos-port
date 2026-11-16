@@ -1,0 +1,96 @@
+{
+"class": "ConversionProgressForm",
+"source": "Vixen.Modules/Sequence/Vixen2x/ConversionProgressForm.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"ControlBox": false,
+"DoubleBuffered": true,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"Name": "ConversionProgressForm",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Coversion Progress Form"
+},
+"events": {},
+"children": [
+{
+"name": "pbImport"
+},
+{
+"name": "lblStatusLine"
+}
+],
+"objects": {
+"pbImport": {
+"type": "ProgressBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 12,
+"y": 22
+},
+"Name": "pbImport",
+"Size": {
+"t": "size",
+"x": 516,
+"y": 23
+},
+"TabIndex": 5
+},
+"events": {},
+"children": []
+},
+"lblStatusLine": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 14,
+"y": 6
+},
+"Name": "lblStatusLine",
+"Size": {
+"t": "size",
+"x": 61,
+"y": 13
+},
+"TabIndex": 4,
+"Text": "Status here"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+548,
+62
+]
+}
+}
+}

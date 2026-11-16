@@ -1,0 +1,134 @@
+{
+"class": "BeatsAndBarsProgress",
+"source": "Vixen.Modules/Analysis/BeatsAndBars/BeatsAndBarsProgress.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"BackColor": {
+"t": "color",
+"argb": [
+68,
+68,
+68
+]
+},
+"ControlBox": false,
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedToolWindow"
+},
+"MinimizeBox": false,
+"Name": "BeatsAndBarsProgress",
+"ShowIcon": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Beats and Bars",
+"UseWaitCursor": true
+},
+"events": {},
+"children": [
+{
+"name": "percentLabel"
+},
+{
+"name": "generateLabel"
+},
+{
+"name": "progressBar1"
+}
+],
+"objects": {
+"progressBar1": {
+"type": "ProgressBar",
+"props": {
+"Location": {
+"t": "point",
+"x": 14,
+"y": 43
+},
+"Name": "progressBar1",
+"Size": {
+"t": "size",
+"x": 218,
+"y": 27
+},
+"TabIndex": 0,
+"UseWaitCursor": true
+},
+"events": {},
+"children": []
+},
+"generateLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 10,
+"y": 10
+},
+"Name": "generateLabel",
+"Size": {
+"t": "size",
+"x": 103,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Generating Marks:",
+"UseWaitCursor": true
+},
+"events": {},
+"children": []
+},
+"percentLabel": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 239,
+"y": 54
+},
+"Name": "percentLabel",
+"Size": {
+"t": "size",
+"x": 23,
+"y": 15
+},
+"TabIndex": 2,
+"Text": "0%",
+"UseWaitCursor": true
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+275,
+93
+]
+}
+}
+}

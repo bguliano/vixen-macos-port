@@ -1,0 +1,147 @@
+{
+"class": "LaunchTypeTester",
+"source": "Vixen.Modules/App/Shows/Editors/LaunchTypeTester.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonClose"
+},
+"Name": "LaunchTypeTester",
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterScreen"
+},
+"Text": "Program Output Window"
+},
+"events": {},
+"children": [
+{
+"name": "labelStatus"
+},
+{
+"name": "buttonClose"
+},
+{
+"name": "textBoxOutput"
+}
+],
+"objects": {
+"textBoxOutput": {
+"type": "TextBox",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Bottom)",
+"Left)",
+"Right"
+]
+},
+"Location": {
+"t": "point",
+"x": 12,
+"y": 12
+},
+"Multiline": true,
+"Name": "textBoxOutput",
+"ScrollBars": {
+"t": "enum",
+"type": "ScrollBars",
+"v": "Both"
+},
+"Size": {
+"t": "size",
+"x": 529,
+"y": 248
+},
+"TabIndex": 0
+},
+"events": {},
+"children": []
+},
+"buttonClose": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Top",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 466,
+"y": 272
+},
+"Name": "buttonClose",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 23
+},
+"TabIndex": 1,
+"Text": "Close",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonClose_Click"
+},
+"children": []
+},
+"labelStatus": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 12,
+"y": 277
+},
+"Name": "labelStatus",
+"Size": {
+"t": "size",
+"x": 83,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "Status: Running"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+553,
+306
+]
+}
+}
+}

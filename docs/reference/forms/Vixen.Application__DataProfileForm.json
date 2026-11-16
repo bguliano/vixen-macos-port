@@ -1,0 +1,529 @@
+{
+"class": "DataProfileForm",
+"source": "Vixen.Application/DataProfileForm.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonOK"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"AutoSize": true,
+"CancelButton": {
+"t": "enum",
+"type": "this",
+"v": "buttonCancel"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "DataProfileForm",
+"SizeGripStyle": {
+"t": "enum",
+"type": "SizeGripStyle",
+"v": "Hide"
+},
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "Data Profile"
+},
+"events": {
+"Load": "DataProfileForm_Load"
+},
+"children": [
+{
+"name": "buttonZipWizard"
+},
+{
+"name": "buttonCancel"
+},
+{
+"name": "buttonOK"
+},
+{
+"name": "groupBox2"
+},
+{
+"name": "groupBox1"
+}
+],
+"objects": {
+"comboBoxProfiles": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 69,
+"y": 21
+},
+"Name": "comboBoxProfiles",
+"Size": {
+"t": "size",
+"x": 317,
+"y": 24
+},
+"TabIndex": 0
+},
+"events": {
+"DrawItem": "comboBox_DrawItem",
+"SelectedIndexChanged": "comboBoxProfiles_SelectedIndexChanged",
+"SelectionChangeCommitted": "comboBoxProfiles_SelectionChangeCommitted"
+},
+"children": []
+},
+"groupBox1": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 160
+},
+"Name": "groupBox1",
+"Size": {
+"t": "size",
+"x": 467,
+"y": 65
+},
+"TabIndex": 3,
+"TabStop": false,
+"Text": "Profile to Use when Loading Vixen"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "comboBoxLoadThisProfile"
+},
+{
+"name": "radioButtonLoadThisProfile"
+},
+{
+"name": "radioButtonAskMe"
+}
+]
+},
+"comboBoxLoadThisProfile": {
+"type": "ComboBox",
+"props": {
+"DrawMode": {
+"t": "enum",
+"type": "DrawMode",
+"v": "OwnerDrawFixed"
+},
+"DropDownStyle": {
+"t": "enum",
+"type": "ComboBoxStyle",
+"v": "DropDownList"
+},
+"FormattingEnabled": true,
+"Location": {
+"t": "point",
+"x": 279,
+"y": 25
+},
+"Name": "comboBoxLoadThisProfile",
+"Size": {
+"t": "size",
+"x": 172,
+"y": 24
+},
+"TabIndex": 2
+},
+"events": {
+"DrawItem": "comboBox_DrawItem"
+},
+"children": []
+},
+"radioButtonLoadThisProfile": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 152,
+"y": 27
+},
+"Name": "radioButtonLoadThisProfile",
+"Size": {
+"t": "size",
+"x": 116,
+"y": 19
+},
+"TabIndex": 1,
+"TabStop": true,
+"Text": "Load This Profile:",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"radioButtonAskMe": {
+"type": "RadioButton",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 8,
+"y": 27
+},
+"Name": "radioButtonAskMe",
+"Size": {
+"t": "size",
+"x": 125,
+"y": 19
+},
+"TabIndex": 0,
+"TabStop": true,
+"Text": "Ask Me Every Time",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"groupBox2": {
+"type": "GroupBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 14
+},
+"Name": "groupBox2",
+"Size": {
+"t": "size",
+"x": 467,
+"y": 140
+},
+"TabIndex": 4,
+"TabStop": false,
+"Text": "Profiles:"
+},
+"events": {
+"Paint": "groupBoxes_Paint"
+},
+"children": [
+{
+"name": "buttonSetDataFolder"
+},
+{
+"name": "textBoxDataFolder"
+},
+{
+"name": "textBoxProfileName"
+},
+{
+"name": "label3"
+},
+{
+"name": "label2"
+},
+{
+"name": "buttonDeleteProfile"
+},
+{
+"name": "buttonAddProfile"
+},
+{
+"name": "label1"
+},
+{
+"name": "comboBoxProfiles"
+}
+]
+},
+"buttonSetDataFolder": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 425,
+"y": 100
+},
+"Name": "buttonSetDataFolder",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 27
+},
+"TabIndex": 9,
+"Text": "FOLDER",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonSetDataFolder_Click"
+},
+"children": []
+},
+"textBoxDataFolder": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 117,
+"y": 102
+},
+"Name": "textBoxDataFolder",
+"Size": {
+"t": "size",
+"x": 304,
+"y": 23
+},
+"TabIndex": 7
+},
+"events": {},
+"children": []
+},
+"textBoxProfileName": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 117,
+"y": 72
+},
+"Name": "textBoxProfileName",
+"Size": {
+"t": "size",
+"x": 159,
+"y": 23
+},
+"TabIndex": 6
+},
+"events": {
+"Leave": "textBoxProfileName_Leave"
+},
+"children": []
+},
+"label3": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 34,
+"y": 105
+},
+"Name": "label3",
+"Size": {
+"t": "size",
+"x": 70,
+"y": 15
+},
+"TabIndex": 5,
+"Text": "Data Folder:"
+},
+"events": {},
+"children": []
+},
+"label2": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 28,
+"y": 75
+},
+"Name": "label2",
+"Size": {
+"t": "size",
+"x": 79,
+"y": 15
+},
+"TabIndex": 4,
+"Text": "Profile Name:"
+},
+"events": {},
+"children": []
+},
+"buttonDeleteProfile": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 423,
+"y": 20
+},
+"Name": "buttonDeleteProfile",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 27
+},
+"TabIndex": 3,
+"Text": "-",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDeleteProfile_Click"
+},
+"children": []
+},
+"buttonAddProfile": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 393,
+"y": 20
+},
+"Name": "buttonAddProfile",
+"Size": {
+"t": "size",
+"x": 27,
+"y": 27
+},
+"TabIndex": 2,
+"Text": "+",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonAddProfile_Click"
+},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 16,
+"y": 24
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 44,
+"y": 15
+},
+"TabIndex": 1,
+"Text": "Profile:"
+},
+"events": {},
+"children": []
+},
+"buttonOK": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 306,
+"y": 238
+},
+"Name": "buttonOK",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 5,
+"Text": "OK",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonOK_Click"
+},
+"children": []
+},
+"buttonCancel": {
+"type": "Button",
+"props": {
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 400,
+"y": 238
+},
+"Name": "buttonCancel",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 6,
+"Text": "Cancel",
+"UseVisualStyleBackColor": true
+},
+"events": {},
+"children": []
+},
+"folderBrowserDataFolder": {
+"type": "FolderBrowserDialog",
+"props": {},
+"events": {},
+"children": []
+},
+"buttonZipWizard": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 17,
+"y": 238
+},
+"Name": "buttonZipWizard",
+"Size": {
+"t": "size",
+"x": 87,
+"y": 27
+},
+"TabIndex": 8,
+"Text": "Zip Wizard",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonZipWizard_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+507,
+282
+]
+}
+}
+}

@@ -1,0 +1,135 @@
+{
+"class": "ColorBreakdownItemControl",
+"source": "Vixen.Modules/OutputFilter/ColorBreakdown/ColorBreakdownItemControl.Designer.cs",
+"props": {
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"DoubleBuffered": true,
+"Name": "ColorBreakdownItemControl"
+},
+"events": {},
+"children": [
+{
+"name": "buttonDelete"
+},
+{
+"name": "label1"
+},
+{
+"name": "textBoxName"
+},
+{
+"name": "panelColor"
+}
+],
+"objects": {
+"panelColor": {
+"type": "Panel",
+"props": {
+"Location": {
+"t": "point",
+"x": 3,
+"y": 3
+},
+"Name": "panelColor",
+"Size": {
+"t": "size",
+"x": 60,
+"y": 40
+},
+"TabIndex": 0
+},
+"events": {
+"Click": "panelColor_Click"
+},
+"children": []
+},
+"textBoxName": {
+"type": "TextBox",
+"props": {
+"Location": {
+"t": "point",
+"x": 112,
+"y": 13
+},
+"Name": "textBoxName",
+"Size": {
+"t": "size",
+"x": 100,
+"y": 20
+},
+"TabIndex": 1,
+"Text": "New Color"
+},
+"events": {},
+"children": []
+},
+"label1": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Location": {
+"t": "point",
+"x": 71,
+"y": 16
+},
+"Name": "label1",
+"Size": {
+"t": "size",
+"x": 38,
+"y": 13
+},
+"TabIndex": 2,
+"Text": "Name:"
+},
+"events": {},
+"children": []
+},
+"buttonDelete": {
+"type": "Button",
+"props": {
+"Location": {
+"t": "point",
+"x": 218,
+"y": 10
+},
+"Name": "buttonDelete",
+"Size": {
+"t": "size",
+"x": 75,
+"y": 25
+},
+"TabIndex": 3,
+"Text": "Delete",
+"UseVisualStyleBackColor": true
+},
+"events": {
+"Click": "buttonDelete_Click"
+},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+6,
+13
+]
+},
+"Size": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+300,
+46
+]
+}
+}
+}

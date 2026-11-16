@@ -1,0 +1,11 @@
+[package]
+name = "windows-library-interop-fixture"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+vixen-core = { path = "../../../crates/vixen-core" }
+vixen-session = { path = "../../../crates/vixen-session" }
+serde_json = "1"

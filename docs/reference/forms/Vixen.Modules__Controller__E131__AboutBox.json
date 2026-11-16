@@ -1,0 +1,378 @@
+{
+"class": "AboutBox",
+"source": "Vixen.Modules/Controller/E131/AboutBox.Designer.cs",
+"props": {
+"AcceptButton": {
+"t": "ref",
+"name": "okButton"
+},
+"AutoScaleMode": {
+"t": "enum",
+"type": "AutoScaleMode",
+"v": "Font"
+},
+"FormBorderStyle": {
+"t": "enum",
+"type": "FormBorderStyle",
+"v": "FixedDialog"
+},
+"MaximizeBox": false,
+"MinimizeBox": false,
+"Name": "AboutBox",
+"ShowInTaskbar": false,
+"StartPosition": {
+"t": "enum",
+"type": "FormStartPosition",
+"v": "CenterParent"
+},
+"Text": "AboutBox"
+},
+"events": {},
+"children": [
+{
+"name": "tableLayoutPanel"
+}
+],
+"objects": {
+"tableLayoutPanel": {
+"type": "TableLayoutPanel",
+"props": {
+"ColumnCount": 2,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 10,
+"y": 10
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "tableLayoutPanel",
+"RowCount": 4,
+"Size": {
+"t": "size",
+"x": 604,
+"y": 422
+},
+"TabIndex": 0
+},
+"events": {},
+"children": [
+{
+"name": "logoPictureBox",
+"col": 0,
+"row": 0
+},
+{
+"name": "labelProductName",
+"col": 1,
+"row": 0
+},
+{
+"name": "labelVersion",
+"col": 1,
+"row": 1
+},
+{
+"name": "textBoxDescription",
+"col": 1,
+"row": 2
+},
+{
+"name": "okButton",
+"col": 1,
+"row": 3
+}
+],
+"ColumnStyles": [
+{
+"type": "Percent",
+"size": 33.0
+},
+{
+"type": "Percent",
+"size": 67.0
+}
+],
+"RowStyles": [
+{
+"type": "Percent",
+"size": 10.0
+},
+{
+"type": "Percent",
+"size": 10.0
+},
+{
+"type": "Percent",
+"size": 50.0
+},
+{
+"type": "Percent",
+"size": 10.0
+}
+]
+},
+"logoPictureBox": {
+"type": "PictureBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Image": {
+"t": "image",
+"file": "AboutBox__logoPictureBox.Image.png"
+},
+"Location": {
+"t": "point",
+"x": 4,
+"y": 3
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "logoPictureBox",
+"Size": {
+"t": "size",
+"x": 191,
+"y": 416
+},
+"SizeMode": {
+"t": "enum",
+"type": "PictureBoxSizeMode",
+"v": "StretchImage"
+},
+"TabIndex": 12,
+"TabStop": false
+},
+"events": {},
+"children": [],
+"layoutRowSpan": 4
+},
+"labelProductName": {
+"type": "Label",
+"props": {
+"AutoSize": true,
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Font": {
+"t": "font",
+"name": "Microsoft Sans Serif",
+"size": 12,
+"bold": true
+},
+"Location": {
+"t": "point",
+"x": 206,
+"y": 0
+},
+"Margin": {
+"t": "padding",
+"l": 7,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"MaximumSize": {
+"t": "size",
+"x": 0,
+"y": 35
+},
+"Name": "labelProductName",
+"Size": {
+"t": "size",
+"x": 394,
+"y": 35
+},
+"TabIndex": 19,
+"Text": "Product Name",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"labelVersion": {
+"type": "Label",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 206,
+"y": 52
+},
+"Margin": {
+"t": "padding",
+"l": 7,
+"t_": 0,
+"r": 4,
+"b": 0
+},
+"MaximumSize": {
+"t": "size",
+"x": 0,
+"y": 20
+},
+"Name": "labelVersion",
+"Size": {
+"t": "size",
+"x": 394,
+"y": 20
+},
+"TabIndex": 0,
+"Text": "Version",
+"TextAlign": {
+"t": "enum",
+"type": "ContentAlignment",
+"v": "MiddleLeft"
+}
+},
+"events": {},
+"children": []
+},
+"textBoxDescription": {
+"type": "TextBox",
+"props": {
+"Dock": {
+"t": "enum",
+"type": "DockStyle",
+"v": "Fill"
+},
+"Location": {
+"t": "point",
+"x": 206,
+"y": 107
+},
+"Margin": {
+"t": "padding",
+"l": 7,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Multiline": true,
+"Name": "textBoxDescription",
+"ReadOnly": true,
+"ScrollBars": {
+"t": "enum",
+"type": "ScrollBars",
+"v": "Both"
+},
+"Size": {
+"t": "size",
+"x": 394,
+"y": 257
+},
+"TabIndex": 23,
+"TabStop": false,
+"Text": "Description"
+},
+"events": {},
+"children": []
+},
+"okButton": {
+"type": "Button",
+"props": {
+"Anchor": {
+"t": "flags",
+"v": [
+"Bottom",
+"Right"
+]
+},
+"DialogResult": {
+"t": "enum",
+"type": "DialogResult",
+"v": "Cancel"
+},
+"Location": {
+"t": "point",
+"x": 512,
+"y": 392
+},
+"Margin": {
+"t": "padding",
+"l": 4,
+"t_": 3,
+"r": 4,
+"b": 3
+},
+"Name": "okButton",
+"Size": {
+"t": "size",
+"x": 88,
+"y": 27
+},
+"TabIndex": 24,
+"Text": "&OK"
+},
+"events": {},
+"children": []
+},
+"AutoScaleDimensions": {
+"type": "SizeF",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+7,
+15
+]
+},
+"ClientSize": {
+"type": "Size",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+624,
+442
+]
+},
+"Margin": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+4,
+3,
+4,
+3
+]
+},
+"Padding": {
+"type": "Padding",
+"props": {},
+"events": {},
+"children": [],
+"ctor": [
+10
+]
+}
+}
+}
