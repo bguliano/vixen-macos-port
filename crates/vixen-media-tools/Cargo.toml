@@ -8,3 +8,6 @@ license-file.workspace = true
 libc = "0.2"
 thiserror.workspace = true
 
+[lints.rust]
+# Set by scripts/build_app.sh: app-bundle builds leave out developer fallback paths.
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(vixen_app_bundle)'] }

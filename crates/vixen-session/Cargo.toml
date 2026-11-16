@@ -37,3 +37,7 @@ libc = "0.2"
 rust_decimal = { version = "=1.43.0", default-features = false }
 zip = { version = "2", default-features = false, features = ["deflate"] }
 unicode-normalization = "=0.1.26"
+
+[lints.rust]
+# Set by scripts/build_app.sh: app-bundle builds leave out developer fallback paths.
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(vixen_app_bundle)'] }

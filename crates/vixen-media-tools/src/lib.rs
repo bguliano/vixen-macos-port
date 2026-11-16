@@ -41,17 +41,25 @@ fn locate(name: &str, executable: &Path) -> Result<PathBuf, Error> {
     {
         contents.join("Helpers").join(name)
     } else {
-        // Only standalone developer tools/tests take this path. The reproducible
-        // media build stages its output here; no machine-wide install is needed.
-        Path::new(env!("CARGO_MANIFEST_DIR"))
-            .join("../../target/media-tools/bin")
-            .join(name)
+        developer_tool(name)
     };
     if path.is_file() {
         Ok(path)
     } else {
         Err(Error::MissingTool(path))
     }
+}
+
+/// Only standalone developer tools/tests take this path. The reproducible media build stages its output here; no
+/// machine-wide install is needed. App-bundle builds leave it out, so the build machine's path isn't shipped.
+#[cfg(not(vixen_app_bundle))]
+fn developer_tool(name: &str) -> PathBuf {
+    Path::new(env!("CARGO_MANIFEST_DIR")).join("../../target/media-tools/bin").join(name)
+}
+
+#[cfg(vixen_app_bundle)]
+fn developer_tool(name: &str) -> PathBuf {
+    PathBuf::from("Contents/Helpers").join(name)
 }
 
 #[derive(Debug, thiserror::Error)]

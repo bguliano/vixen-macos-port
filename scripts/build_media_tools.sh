@@ -37,7 +37,7 @@ if [ ! -f "$SOURCE/configure" ]; then
 fi
 SDK="$(/usr/bin/xcrun --sdk macosx --show-sdk-path)"
 CONFIG=(
-    --prefix="$WORK" --cc=/usr/bin/clang --arch=arm64 --target-os=darwin
+    --prefix=/opt/vixen-media-tools --cc=/usr/bin/clang --arch=arm64 --target-os=darwin
     --sysroot="$SDK" --extra-cflags=-mmacosx-version-min=26.0
     --extra-ldflags=-mmacosx-version-min=26.0
     --disable-shared --enable-static --disable-autodetect --disable-network
@@ -81,7 +81,8 @@ root = pathlib.Path(sys.argv[1])
 files = []
 for name in ['ffmpeg', 'ffprobe']:
     path = root / 'bin' / name
-    dependencies = subprocess.check_output(['/usr/bin/otool', '-L', str(path)], text=True)
+    # Relative names keep this checkout's absolute path out of the shipped manifest.
+    dependencies = subprocess.check_output(['/usr/bin/otool', '-L', name], text=True, cwd=root / 'bin')
     for line in dependencies.splitlines()[1:]:
         library = line.strip().split(' (compatibility version')[0]
         if not library.startswith(('/usr/lib/', '/System/Library/')):
@@ -89,7 +90,7 @@ for name in ['ffmpeg', 'ffprobe']:
     files.append({'name': name, 'bytes': path.stat().st_size,
                   'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
                   'dependencies': dependencies,
-                  'loadCommands': subprocess.check_output(['/usr/bin/otool', '-l', str(path)], text=True)})
+                  'loadCommands': subprocess.check_output(['/usr/bin/otool', '-l', name], text=True, cwd=root / 'bin')})
 manifest = {'version': sys.argv[2], 'source': sys.argv[3], 'sourceSha256': sys.argv[4],
             'minimumMacOS': '26.0', 'architecture': 'arm64', 'files': files}
 (root / 'provenance/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

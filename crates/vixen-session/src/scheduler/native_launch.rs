@@ -37,9 +37,17 @@ fn helper_path() -> io::Result<PathBuf> {
         }
     }
     // Cargo tests and standalone developer tools use the matching build output.
-    #[cfg(target_os = "macos")]
+    // App-bundle builds leave this out, so the build machine's path isn't shipped.
+    #[cfg(all(target_os = "macos", not(vixen_app_bundle)))]
     {
         Ok(PathBuf::from(env!("VIXEN_LAUNCH_HELPER")))
+    }
+    #[cfg(all(target_os = "macos", vixen_app_bundle))]
+    {
+        Err(io::Error::new(
+            io::ErrorKind::NotFound,
+            "The application launch helper is missing from this bundle",
+        ))
     }
     #[cfg(not(target_os = "macos"))]
     {

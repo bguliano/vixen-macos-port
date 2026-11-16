@@ -26,6 +26,11 @@ export CARGO_TARGET_DIR="$WORK/cargo"
 # Keep Rust's C/C++ dependencies aligned with SwiftPM and Info.plist. Without an
 # explicit target, cc uses the build host's macOS version for native objects.
 export MACOSX_DEPLOYMENT_TARGET=26.0
+# Keep this machine's paths (home folder, checkout, Cargo registry) out of the shipped binaries. Rust and Swift otherwise
+# embed absolute source paths for panic and assertion messages. CARGO_ENCODED_RUSTFLAGS is used because paths may have spaces.
+_SEP=$'\x1f'
+CARGO_ENCODED_RUSTFLAGS="--remap-path-prefix=$HOME=~${_SEP}--remap-path-prefix=$ROOT=/vixen${_SEP}--remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=/cargo${_SEP}--remap-path-prefix=${RUSTUP_HOME:-$HOME/.rustup}=/rustup${_SEP}--cfg${_SEP}vixen_app_bundle"
+export CARGO_ENCODED_RUSTFLAGS
 
 echo "==> Media fallback (pinned FFmpeg source; downloaded and checksum-verified on the first build)"
 "$ROOT/scripts/build_media_tools.sh" --fetch
@@ -78,7 +83,7 @@ cmp -s "$GEN/vixen_ffiFFI.h" "$PKG/Sources/vixen_ffiFFI/include/vixen_ffiFFI.h" 
 cp "$RUST_OUT/libvixen_ffi.a" "$PKG/lib/libvixen_ffi.a"
 
 echo "==> Swift ($CONFIG)"
-( cd "$PKG" && VIXEN_SWIFT_MODULES="$SWIFT_MODULES" swift build -j "${VIXEN_SWIFT_JOBS:-$(sysctl -n hw.ncpu)}" -c "$CONFIG" --scratch-path "$WORK/swift" --product Vixen )
+( cd "$PKG" && VIXEN_SWIFT_MODULES="$SWIFT_MODULES" swift build -Xswiftc -file-prefix-map -Xswiftc "$ROOT=/vixen" -Xcc "-ffile-prefix-map=$ROOT=/vixen" -j "${VIXEN_SWIFT_JOBS:-$(sysctl -n hw.ncpu)}" -c "$CONFIG" --scratch-path "$WORK/swift" --product Vixen )
 BIN="$WORK/swift/$CONFIG/Vixen"
 
 echo "==> Bundle"
@@ -90,6 +95,10 @@ fi
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$APP/Contents/Helpers"
 cp "$BIN" "$APP/Contents/MacOS/Vixen"
+if [ "$CONFIG" = "release" ]; then
+    # Debug-map entries name the object files in this checkout; release builds don't need them.
+    /usr/bin/strip -S "$APP/Contents/MacOS/Vixen"
+fi
 cp app/Info.plist "$APP/Contents/Info.plist"
 cp -R app/Resources/. "$APP/Contents/Resources/"
 cp "$ROOT/target/media-tools/bin/ffmpeg" "$ROOT/target/media-tools/bin/ffprobe" "$APP/Contents/Helpers/"
