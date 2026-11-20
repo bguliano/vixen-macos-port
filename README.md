@@ -44,7 +44,7 @@ The `--depth 1` and `--shallow-submodules` options skip Vixen's full 15-year his
 
 ### Running the tests
 
-Build the app once first (the audio tests use the FFmpeg it builds), then:
+Build the app once first (the audio and video tests use the FFmpeg it builds; `scripts/build_media_tools.sh --fetch` builds just that), then:
 
 ```sh
 source ./env.sh
