@@ -63,6 +63,15 @@ Some extra scripts in `scripts/` check the app's interface by driving it on scre
 - `scripts/`: the app build and interface checks.
 - `docs/`: specifications, known differences and development notes. Some notes refer to local evidence under `target/` that isn't in this repository.
 
+## Credits
+
+- **Vixen Lights** — the original Windows application, its show format and its effects — is the work of
+  [the Vixen team](https://github.com/VixenLights/Vixen) and its contributors since 2011. Their commit history is kept
+  in this repository, which is why they appear in its contributor list. They aren't involved in this edition and
+  aren't responsible for it.
+- **The macOS port** — the Rust engine and native Mac app that replace the Windows/.NET code — is by
+  [Braden Guliano](https://github.com/bguliano).
+
 ## Licenses and attribution
 
 Vixen is created by the Vixen team; its copyright and license are retained in [License.txt](License.txt) and the upstream submodule. This port also includes components under other licenses, including GPL-2.0-or-later analysis code, so the upstream license alone doesn't describe the combined app. Review [the component license inventory](docs/LICENSES.md) before redistributing builds.
