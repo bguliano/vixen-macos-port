@@ -126,7 +126,7 @@ VIXEN_UI_TEST=/path/to/script.json VIXEN_UI_TEST_OUT=/path/to/out VIXEN_DATA=/pa
 ] }
 ```
 
-`menus` writes the menu bar as text, with each item's shortcut and whether it's off. `selectRow` with a `label` selects the table or list row showing that text, because a test window is never key and ignores a first click on a table. `closeWindow` closes the current window as its close button would. Alerts are reachable: `dump` lists their text and buttons, and `click` presses them. An alert's text is light on transparent, so its snapshot looks mostly blank. Under test the app writes what it would hand to another app, such as a browser address, to `notes.txt`.
+`menus` writes the menu bar as text, with each item's shortcut, whether it's off, and whether it's hidden. `selectRow` with a `label` selects the table or list row showing that text, because a test window is never key and ignores a first click on a table. `closeWindow` closes the current window as its close button would. Alerts are reachable: `dump` lists their text and buttons, and `click` presses them. An alert's text is light on transparent, so its snapshot looks mostly blank. Under test the app writes what it would hand to another app, such as a browser address, to `notes.txt`.
 
 `popup` (`x`, `y`, `label`, and `button: "right"` for a context menu, and `path` to walk submenus first) clicks a pop-up or menu button at those window coordinates and chooses by title (`name` can instead locate its currently displayed text, with optional `index`), and `editCell` (`x`, `y`) starts editing a table cell. A plain click can't do either here: SwiftUI draws its own pop-ups, and a test window never takes a first click on a table.
 
